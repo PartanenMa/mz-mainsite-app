@@ -224,13 +224,13 @@ function Skills() {
                         <div className="BEF1">
                             <div className="BEF1Logo"></div>
                             <div className="BEF1Content">
-                                <h4>Node.js</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>Node.js + Express</h4><p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="BEF2">
                             <div className="BEF2Logo"></div>
                             <div className="BEF2Content">
-                                <h4>FastAPI</h4><p>{info.LinkedIn.skillsLevel2}</p>
+                                <h4>FastAPI</h4><p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                     </div>

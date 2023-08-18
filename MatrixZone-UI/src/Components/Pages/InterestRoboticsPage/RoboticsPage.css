@@ -20,6 +20,7 @@
     width: 95%;
     border: 3px solid #03A062;
     border-radius: 10px;
+    overflow: hidden;
   }
 
 .RoboticsTitle {
