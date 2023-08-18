@@ -1,0 +1,522 @@
+/*Footer:*/
+.FooterContainer {
+    background-color: #333;
+    height: 720px;
+    width: 1244px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 3px solid #03A062;
+    overflow: hidden;
+}
+
+/*Footer info box:*/
+.FooterInfoBoxContainer {
+    height: 270px;
+    width: 100%;
+    gap: 10px;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.FooterInfoBoxTitle {
+    height: 70px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.FooterInfoBoxTitleLogo {
+    background-image: url("/src/Assets/Images/Logo.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100px;
+    cursor: pointer;
+    border: 1px solid #03A062;
+    border-radius: 5px;
+    position: relative;
+    left: 10px;
+    transition: filter 300ms;
+}
+
+.FooterInfoBoxTitleLogo:hover {
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03A062);
+}
+
+.FooterInfoBoxTitle h3 {
+    color: #03A062;
+    font-size: 60px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px 0 lightgreen;
+    position: relative;
+    bottom: 130px;
+    left: 140px;
+}
+
+.FooterInfoBoxContent {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.FooterNav1 {
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.FooterNav1-1 {
+    height: 20px;
+}
+
+.FooterNav1-1 h3 {
+    color: #03A062;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    left: 20px;
+    transition: background-color 300ms;
+}
+
+.FooterNav1-1 h3:hover {
+    background-color: lightgreen;
+    border: 1px solid #03A062;
+    border-radius: 5px;
+}
+
+.FooterNav1-2 {
+    height: 20px;
+}
+
+.FooterNav1-2 h3 {
+    color: #03A062;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 5px;
+    left: 20px;
+    transition: background-color 300ms;
+}
+
+.FooterNav1-2 h3:hover {
+    background-color: lightgreen;
+    border: 1px solid #03A062;
+    border-radius: 5px;
+}
+
+.FooterNav1-3 {
+    height: 20px;
+}
+
+.FooterNav1-3 h3 {
+    color: #03A062;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 10px;
+    left: 20px;
+    transition: background-color 300ms;
+}
+
+.FooterNav1-3 h3:hover {
+    background-color: lightgreen;
+    border: 1px solid #03A062;
+    border-radius: 5px;
+}
+
+.FooterNav1-4 {
+    height: 20px;
+}
+
+.FooterNav1-4 h3 {
+    color: #03A062;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 15px;
+    left: 20px;
+    transition: background-color 300ms;
+}
+
+.FooterNav1-4 h3:hover {
+    background-color: lightgreen;
+    border: 1px solid #03A062;
+    border-radius: 5px;
+}
+
+.FooterNav1-5 {
+    height: 20px;
+}
+
+.FooterNav1-5 h3 {
+    color: #03A062;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 20px;
+    left: 20px;
+    transition: background-color 300ms;
+}
+
+.FooterNav1-5 h3:hover {
+    background-color: lightgreen;
+    border: 1px solid #03A062;
+    border-radius: 5px;
+}
+
+.FooterNav2 {
+    height: 180px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.FooterNav2-1 {
+    height: 40px;
+    width: 130px;
+    padding-left: 10px;
+    position: relative;
+    top: 10px;
+}
+
+.FooterNav2-1:hover h3 {
+    background-color: #0072b1;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.FooterNav2-1 .LinkedInLogoContainer {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 3px;
+    position: relative;
+    top: 5px;
+    
+}
+
+.FooterNav2-1 .LinkedInLogo {
+    background-image: url("/src/Assets/Images/LinkedIn.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.FooterNav2-1 h3 {
+    color: #0072b1;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    bottom: 40px;
+    left: 45px;
+    transition: background-color 300ms;
+}
+
+.FooterNav2-2 {
+    height: 40px;
+    width: 130px;
+    padding-left: 10px;
+    position: relative;
+    top: 25px;
+}
+
+.FooterNav2-2:hover h3 {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.FooterNav2-2 .GitHubLogoContainer {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 100%;
+    position: relative;
+    top: 6px;
+    overflow: hidden;
+}
+
+.FooterNav2-2 .GitHubLogo {
+    background-image: url("/src/Assets/Images/GitHub.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 98%;
+    width: 100%;
+    position: relative;
+}
+
+.FooterNav2-2 h3 {
+    color: black;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    bottom: 40px;
+    left: 45px;
+    transition: background-color 300ms;
+}
+
+.FooterNav2-3 {
+    height: 40px;
+    width: 130px;
+    padding-left: 10px;
+    position: relative;
+    top: 40px;
+}
+
+.FooterNav2-3:hover h3 {
+    background-color: #c4302b;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.FooterNav2-3 .YouTubeLogoContainer {
+    background-color: white;
+    height: 25px;
+    width: 35px;
+    border: 1px solid white;
+    border-radius: 5px;
+    position: relative;
+    top: 8px;
+    
+}
+
+.FooterNav2-3 .YouTubeLogo {
+    background-image: url("/src/Assets/Images/YouTube.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 280%;
+    height: 99%;
+    width: 100%;
+    position: relative;
+}
+
+.FooterNav2-3 h3 {
+    color: #c4302b;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    bottom: 35px;
+    left: 45px;
+    transition: background-color 300ms;
+}
+
+.FooterNav3 {
+    height: 180px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.FooterNav3-1 {
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.FooterNav3-1 h3 {
+    color: #03A062;
+}
+
+.FooterNav3-2 {
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.FooterNav3-2 h3 {
+    color: #03A062;
+}
+
+.FooterNav3-3 {
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.FooterNav3-3 h3 {
+    color: #03A062;
+}
+
+/*FooterTitle:*/
+.FooterTitleText {
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #03A062;
+}
+
+.FooterTitleText h3 {
+    color: #03A062;
+    font-size: 50px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 30px;
+}
+
+/*FooterBoxLeft:*/
+.LeftBox {
+    height: 240px;
+    width: 400px;
+    float: left;
+    position: relative;
+    top: 30px;
+    left: 11px;
+}
+
+.ReactLogo {
+    background-image: url("/src/Assets/Images/ReactLogo.svg");
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+    float: right;
+    position: relative;
+    top: 30px;
+    right: 110px;
+    transition: filter 300ms;
+}
+
+.ReactLogo:hover {
+    filter: drop-shadow(0 0 2em #61DBFB);
+}
+
+/*FooterBoxMiddle:*/
+.MiddleBox {
+    height: 240px;
+    width: 400px;
+    float: left;
+    position: relative;
+    top: 30px;
+    left: 22px;
+}
+
+.ViteLogo {
+    background-image: url("/src/Assets/Images/ViteLogo.png");
+    background-size: 65%;
+    background-repeat: no-repeat;
+    height: 220px;
+    width: 280px;
+    border-radius: 10px;
+    float: right;
+    position: relative;
+    top: 30px;
+    right: 20px;
+    transition: filter 300ms;
+}
+
+.ViteLogo:hover {
+    filter: drop-shadow(0 0 2em mediumorchid);
+}
+
+/*FooterBoxRight:*/
+.RightBox {
+    height: 240px;
+    width: 400px;
+    float: left;
+    position: relative;
+    top: 30px;
+    left: 35px;
+}
+
+.JSLogo {
+    background-image: url("/src/Assets/Images/JSLogo.png");
+    background-size: 55%;
+    background-repeat: no-repeat;
+    height: 220px;
+    width: 280px;
+    float: right;
+    position: relative;
+    top: 35px;
+    left: 5px;
+    transition: filter 300ms;
+}
+
+.JSLogo:hover {
+    filter: drop-shadow(0 0 2em yellow);
+}
+
+#FooterTitle {
+    color: #61DBFB;
+    font-size: 50px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: right;
+    position: relative;
+    bottom: 10px;
+    right: 90px;
+}
+
+/*FooterBoxNames:*/
+.FooterNames {
+    height: 0px;
+    width: 0px;
+    position: relative;
+    top: 120px;
+    left: 30px;
+    display: flex;
+}
+
+.FooterNames #ReactText {
+    color: #61DBFB;
+    font-size: 60px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    position:relative;
+    top: 100px;
+    right: 1100px;
+}
+
+.FooterNames #ViteText {
+    color: mediumorchid;
+    font-size: 60px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    top: 100px;
+    right: 820px;
+}
+
+.FooterNames #JSText {
+    color: yellow;
+    font-size: 60px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    top: 100px;
+    right: 580px;
+}

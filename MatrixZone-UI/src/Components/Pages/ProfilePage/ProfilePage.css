@@ -1,0 +1,2165 @@
+/*ProfilePage:*/
+.ProfilePageContainer {
+    animation: fadeIn 0.3s;
+    background-color: #333;
+    width: 1244px;
+    border-left: 3px solid #03A062;
+    border-right: 3px solid #03A062;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.Breadcrumb {
+    background-color: lightgreen;
+    height: 30px;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.Breadcrumb h2 {
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+/*Title:*/
+.ProfilePageTitleContainer {
+    background-color: #0072b1;
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #03A062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.ProfilePageTitleContainer h2 {
+    color: white;
+    font-size: 70px;
+    position: relative;
+    bottom: 40px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*About me:*/
+.AboutMeContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #03A062;
+    border-bottom: 1px solid #03A062;
+}
+
+.AboutMeTitle {
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.AboutMeTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.AboutMeContent {
+    background-image: url("/src/Assets/Images/AboutMeBG.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 12px;
+}
+
+.AboutMePhoto {
+    background-image: url("/src/Assets/Images/Photo.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+    width: 15%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.AboutMePhoto:hover {
+    border: 1px solid white;
+    filter: drop-shadow(0 0 2em #0072b1);
+}
+
+.AboutMeLinkedInLogo {
+    background-image: url("/src/Assets/Images/LinkedIn.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10%;
+    height: 30px;
+    width: 30px;
+    float: left;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.AboutMeTextContainer {
+    background-color: #333;
+    height: 90%;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+}
+
+.AboutMeTextTitle {
+    height: 20%;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+}
+
+.AboutMeTextTitle .h4_1 {
+    color: #03A062;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 15px;
+    left: 10px;
+}
+
+.AboutMeTextTitle .h4_2 {
+    color: #03A062;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 32px;
+    left: 10px;
+}
+
+.AboutMeText {
+    background-color: gray;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.AboutMeText p {
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    left: 6px;
+    bottom: 13px;
+}
+
+/*Languages:*/
+.LanguagesContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.LanguagesTitle {
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.LanguagesTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.LanguagesContent {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.Lang1 {
+    background-color: white;
+    height: 40px;
+    width: 96%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+}
+
+.Lang1 h4 {
+    color: #003580;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 28px;
+    left: 10px;
+}
+
+.Lang1 p {
+    color: #003580;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 88px;
+    left: 780px;
+}
+
+.Lang2 {
+    background-color: #012169;
+    height: 40px;
+    width: 96%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+}
+
+.Lang2 h4 {
+    color: #C8102E;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 28px;
+    left: 10px;
+}
+
+.Lang2 p {
+    color: #C8102E;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 88px;
+    left: 780px;
+}
+
+.Lang3 {
+    background-color: #006AA7;
+    height: 40px;
+    width: 96%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+}
+
+.Lang3 h4 {
+    color: #FFCD00;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 28px;
+    left: 10px;
+}
+
+.Lang3 p {
+    color: #FFCD00;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 88px;
+    left: 780px;
+}
+
+/*Education:*/
+.EducationContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.EducationTitle {
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.EducationTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.EducationContent {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.EducationHighSchool {
+    height: 130px;
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.EHSTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EHSTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.EHSContent {
+    background-color: gray;
+    height: 100px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EHSContent p {
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.EducationMilitaryService {
+    height: 130px;
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.EMSTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EMSTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.EMSContent {
+    background-color: red;
+    height: 100px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EMSContent p {
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.MilitaryLogo {
+    background-color: white;
+    background-image: url("/src/Assets/Images/FDFLogo.svg");
+    background-repeat: no-repeat;
+    background-position: 45% 50%;
+    background-size: 40%;
+    height: 100%;
+    width: 15%;
+    border-bottom-right-radius: 10px;
+    float: right;
+    position: relative;
+    bottom: 96px;
+}
+
+.EducationUniversityOfAppliedSciences {
+    height: 130px;
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.EUOASTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EUOASTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.EUOASContent {
+    background-color: #00A5CD;
+    height: 100px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EUOASContent p {
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.SchoolLogo {
+    background-color: white;
+    background-image: url("/src/Assets/Images/SAMKLogo.png");
+    background-repeat: no-repeat;
+    background-position: 30% 50%;
+    background-size: 90%;
+    height: 100%;
+    width: 15%;
+    border-bottom-right-radius: 10px;
+    float: right;
+    position: relative;
+    bottom: 96px;
+}
+
+/*Skills:*/
+.SkillsContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.SkillsTitle {
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.SkillsTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.SkillsContent {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.ProgrammingLanguages {
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.PLTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.PLTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.PLContent {
+    background-color: gray;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 2%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.PL1 {
+    background-color: #044F88;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL1Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/CppLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL1Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL1Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL1Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 930px;
+    bottom: 61px;
+}
+
+.PL2 {
+    background-color: #f89820;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL2Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/JavaLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL2Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL2Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL2Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 926px;
+    bottom: 61px;
+}
+
+.PL3 {
+    background-color: #682876;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL3Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/CsLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL3Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL3Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL3Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 944px;
+    bottom: 61px;
+}
+
+.PL4 {
+    background-color: #e34c26;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL4Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/HTMLLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL4Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL4Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL4Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 912px;
+    bottom: 61px;
+}
+
+.PL5 {
+    background-color: #264de4;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL5Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/CSSLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 55%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL5Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL5Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL5Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 930px;
+    bottom: 61px;
+}
+
+.PL6 {
+    background-color: #F0DB4F;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL6Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/JavaScriptLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL6Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL6Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL6Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 862px;
+    bottom: 61px;
+}
+
+.PL7 {
+    background-color: #00A5CD;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL7Logo {
+    background-color: black;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL7LogoBG {
+    background-color: white;
+    height: 32px;
+    width: 23px;
+    border-radius: 10px;
+    position: relative;
+    left: 12px;
+    top: 5px;
+}
+
+.PL7LogoL {
+    background-image: url("/src/Assets/Images/SQLLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.PL7Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL7Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL7Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 932px;
+    bottom: 61px;
+}
+
+.PL8 {
+    background-color: #0072b1;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL8Logo {
+    background-color: black;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL8LogoBG {
+    background-color: white;
+    height: 32px;
+    width: 23px;
+    border-radius: 9px;
+    position: relative;
+    left: 12px;
+    top: 4px;
+}
+
+.PL8LogoL {
+    background-image: url("/src/Assets/Images/NoSQLLogo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 103%;
+    width: 100%;
+    position: relative;
+    bottom: 1px;
+}
+
+.PL8Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL8Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL8Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 902px;
+    bottom: 61px;
+}
+
+.PL9 {
+    background-color: #4B8BBE;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL9Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/PythonLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL9Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL9Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL9Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 898px;
+    bottom: 61px;
+}
+
+.Front-endFrameworks {
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.FEFTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.FEFTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.FEFContent {
+    background-color: gray;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 2%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.FEF1 {
+    background-color: #61DBFB;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.FEF1Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/React.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.FEF1Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.FEF1Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.FEF1Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 910px;
+    bottom: 61px;
+}
+
+.Back-endFrameworks {
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.BEFTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.BEFTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.BEFContent {
+    background-color: gray;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 2%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.BEF1 {
+    background-color: #215732;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.BEF1Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/Node.jsLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.BEF1Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.BEF1Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.BEF1Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 892px;
+    bottom: 61px;
+}
+
+.BEF2 {
+    background-color: #009688;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.BEF2Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/FastAPILogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.BEF2Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.BEF2Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.BEF2Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    position: relative;
+    left: 888px;
+    bottom: 61px;
+}
+
+.Databases {
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.DBTitle {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.DBTitle h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.DBContent {
+    background-color: gray;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 2%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*Experience:*/
+.ExperienceContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.ExperienceTitle {
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ExperienceTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.ExperienceContent {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.ExperienceInternship1 {
+    height: 130px;
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.EI1Title {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EI1Title h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.EI1Content {
+    background-color: #B11226;
+    height: 100px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EI1Content p {
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.CompanyLogo1 {
+    background-color: white;
+    background-image: url("/src/Assets/Images/VismaLogo.svg");
+    background-repeat: no-repeat;
+    background-position: 20% 50%;
+    background-size: 90%;
+    height: 100%;
+    width: 15%;
+    border-bottom-right-radius: 10px;
+    float: right;
+    position: relative;
+    bottom: 96px;
+}
+
+.ExperienceInternship2 {
+    height: 130px;
+    width: 98%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.EI2Title {
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #03A062;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EI2Title h4 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 22px;
+}
+
+.EI2Content {
+    background-color: #B11226;
+    height: 100px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.EI2Content p {
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.CompanyLogo2 {
+    background-color: white;
+    background-image: url("/src/Assets/Images/VismaLogo.svg");
+    background-repeat: no-repeat;
+    background-position: 20% 50%;
+    background-size: 90%;
+    height: 100%;
+    width: 15%;
+    border-bottom-right-radius: 10px;
+    float: right;
+    position: relative;
+    bottom: 96px;
+}
+
+/*Interests:*/
+.InterestsContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.InterestsTitle {
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.InterestsTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.InterestsContent {
+    background-image: url("/src/Assets/Images/InterestsBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-top: 12px;
+}
+
+.Interest1 {
+    cursor: pointer;
+    height: 90%;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.Interest1:hover {
+    filter: drop-shadow(0 0 2em white);
+}
+
+.Interest1:hover .Interest1ContentCover {
+    display: block;
+}
+
+.Interest1Title {
+    background-color: #333;
+    color: #03A062;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.Interest1Title h4 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+.Interest1Content {
+    background-image: url("/src/Assets/Images/ITInfraBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.Interest1ContentCover {
+    display: none;
+    background-color: black;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.Interest1ContentCoverLogo {
+    background-image: url("/src/Assets/Images/ITInfra.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 20%;
+    left: 25%;
+    
+}
+
+.Interest2 {
+    cursor: pointer;
+    height: 90%;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.Interest2:hover {
+    filter: drop-shadow(0 0 2em white);
+}
+
+.Interest2:hover .Interest2ContentCover {
+    display: block;
+}
+
+.Interest2Title {
+    background-color: #333;
+    color: #03A062;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.Interest2Title h4 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+.Interest2Content {
+    background-image: url("/src/Assets/Images/ProgrammingIBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.Interest2ContentCover {
+    display: none;
+    background-color: black;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.Interest2ContentCoverLogo {
+    background-image: url("/src/Assets/Images/ProgrammingI.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    
+}
+
+.Interest3 {
+    cursor: pointer;
+    height: 90%;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.Interest3:hover {
+    filter: drop-shadow(0 0 2em white);
+}
+
+.Interest3:hover .Interest3ContentCover {
+    display: block;
+}
+
+.Interest3Title {
+    background-color: #333;
+    color: #03A062;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.Interest3Title h4 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+.Interest3Content {
+    background-image: url("/src/Assets/Images/RoboticsBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.Interest3ContentCover {
+    display: none;
+    background-color: black;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.Interest3ContentCoverLogo {
+    background-image: url("/src/Assets/Images/Robotics.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    height: 80%;
+    width: 30%;
+    position: relative;
+    top: 10%;
+    left: 33%;
+    
+}
+
+/*Hobbies:*/
+.HobbiesContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.HobbiesTitle {
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.HobbiesTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.HobbiesContent {
+    background-image: url("/src/Assets/Images/HobbiesBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-top: 12px;
+}
+
+.Hobby1 {
+    cursor: pointer;
+    height: 90%;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.Hobby1:hover {
+    filter: drop-shadow(0 0 2em red);
+}
+
+.Hobby1:hover .Hobby1ContentCover {
+    display: block;
+}
+
+.Hobby1Title {
+    background-color: #333;
+    color: #03A062;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.Hobby1Title h4 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+.Hobby1Content {
+    background-image: url("/src/Assets/Images/GamingBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.Hobby1ContentCover {
+    display: none;
+    background-color: black;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.Hobby1ContentCoverLogo {
+    background-image: url("/src/Assets/Images/OpenRA.svg");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    
+}
+
+.Hobby2 {
+    cursor: pointer;
+    height: 90%;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.Hobby2:hover {
+    filter: drop-shadow(0 0 2em blue);
+}
+
+.Hobby2:hover .Hobby2ContentCover {
+    display: block;
+}
+
+.Hobby2Title {
+    background-color: #333;
+    color: #03A062;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.Hobby2Title h4 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+.Hobby2Content {
+    background-image: url("/src/Assets/Images/ProgrammingBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.Hobby2ContentCover {
+    display: none;
+    background-color: black;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.Hobby2ContentCoverLogo {
+    background-image: url("/src/Assets/Images/Programming.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    
+}
+
+.Hobby3 {
+    cursor: pointer;
+    height: 90%;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+}
+
+.Hobby3:hover {
+    filter: drop-shadow(0 0 2em green);
+}
+
+.Hobby3:hover .Hobby3ContentCover {
+    display: block;
+}
+
+.Hobby3Title {
+    background-color: #333;
+    color: #03A062;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.Hobby3Title h4 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
+.Hobby3Content {
+    background-image: url("/src/Assets/Images/CampingBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.Hobby3ContentCover {
+    display: none;
+    background-color: black;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.Hobby3ContentCoverLogo {
+    background-image: url("/src/Assets/Images/Camping.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    
+}
+
+/*Contact info:*/
+.ContactContainer {
+    height: 510px;
+    width: 100%;
+    border-top: 1px solid #03A062;
+    overflow: hidden;
+}
+
+.ContactTitle {
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ContactTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.ContactContent {
+    background-image: url("/src/Assets/Images/ContactBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 160px;
+    gap: 80px;
+}
+
+.PhoneContainer {
+    background-color: #333;
+    height: 90%;
+    width: 30%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.PhoneContainerTitle {
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.PhoneContainerTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 18px;
+}
+
+.PhoneContainerContent {
+    height: 90%;
+    width: 100%;
+    border-top: 1px solid #03A062;
+}
+
+.Phone1 {
+    height: 25%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+    display: flex;
+    justify-content: center;
+}
+
+.Phone1 h4 {
+    color: #03A062;
+    font-size: 26px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Phone2 {
+    background-image: url("/src/Assets/Images/PhoneLogo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    height: 75%;
+    width: 100%;
+}
+
+.EmailContainer {
+    background-color: #333;
+    height: 90%;
+    width: 30%;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.EmailContainerTitle {
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.EmailContainerTitle h3 {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 18px;
+}
+
+.EmailContainerContent {
+    height: 90%;
+    width: 100%;
+    border-top: 1px solid #03A062;
+}
+
+.Email1 {
+    height: 25%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+    display: flex;
+    justify-content: center;
+}
+
+.Email1 h4 {
+    color: #03A062;
+    font-size: 26px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Email2 {
+    background-image: url("/src/Assets/Images/EmailLogo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    height: 75%;
+    width: 100%;
+}

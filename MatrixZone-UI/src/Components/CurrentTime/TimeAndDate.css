@@ -1,0 +1,27 @@
+.TimeAndDateContainer {
+    background-color: #333;
+    height: 70px;
+    width: 260px;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+}
+
+.Time {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    left: 10px;
+    bottom: 23px;
+}
+
+.Date {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 50px;
+    left: 10px;
+}

@@ -1,0 +1,158 @@
+/*Front page:*/
+.FP {
+  animation: fadeIn 0.3s;
+  width: 100%;
+}
+
+.FrontPageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*Header:*/
+.Header {
+  height: 50px;
+  width: 100%;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #03A062;
+  margin-bottom: 30px;
+}
+
+.HeaderTitle {
+  height: 100%;
+  width: 260px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.HeaderLogo {
+  background-image: url("/src/Assets/Images/Logo.PNG");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  height: 44px;
+  width: 64px;
+  margin-top: 2px;
+  border: 1px solid #03A062;
+  border-radius: 5px;
+  transition: filter 300ms;
+}
+
+.HeaderLogo:hover {
+  border: 1px solid lightgreen;
+  filter: drop-shadow(0 0 2em #03A062);
+}
+
+.HeaderTitle h1 {
+  color: #03A062;
+  font-size: 35px;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 1px 1px 0 lightgreen;
+  position: relative;
+  bottom: 20px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #03A062, 0 0 10px #03A062, 0 0 12px #03A062, 0 0 15px #03A062, 0 0 17px #03A062;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 7px lightgreen, 0 0 10px lightgreen, 0 0 12px lightgreen, 0 0 15px lightgreen, 0 0 17px lightgreen, 0 0 20px lightgreen;
+  }
+}
+
+.NavOptions {
+  margin-right: 10px;
+}
+
+.NavOptions h2 {
+  color: #03A062;
+  font-size: 25px;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.LoginButtonFP {
+  animation: fadeIn 0.3s;
+  background-color: #333;
+  color: #03A062;
+  height: 44px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #03A062;
+  font-size: 25px;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition: filter 300ms;
+}
+
+.NavOptions button:hover {
+  background-color: lightgreen;
+  transition: background-color 500ms ease-in-out;
+  filter: drop-shadow(0 0 2em #03A062);
+}
+
+.Menu-icon {
+  animation: fadeIn 0.3s;
+  cursor: pointer;
+  transition: filter 300ms;
+}
+
+.Menu-icon:hover .Bar {
+  background-color: lightgreen;
+  transition: background-color 500ms ease-in-out;
+}
+
+.Menu-icon:hover {
+  filter: drop-shadow(0 0 2em #03A062);
+}
+
+.Bar {
+  background-color: #03A062;
+  width: 45px;
+  height: 6px;
+  margin: 10px 0;
+  border-radius: 2px;
+}
+
+/*Main:*/
+.Main {
+  height: 1000px;
+  max-width: 1244px;
+  width: 100%;
+  border: 0.1px solid grey;
+  border-radius: 2px;
+  margin: auto;
+  box-shadow: 0 0 30px 5px #03A062;
+}
+
+/*Footer:*/
+.Footer {
+  min-height: 50px;
+  width: 100%;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #03A062;
+  margin-top: auto;
+  margin-top: 30px;
+}
+  

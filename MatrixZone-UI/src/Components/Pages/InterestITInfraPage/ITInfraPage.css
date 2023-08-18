@@ -1,0 +1,81 @@
+/*IT infra page:*/
+.ITInfraPageContent {
+    animation: fadeIn 0.3s;
+    height: 593px;
+    width: 1244px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/*IT infra container*/
+.ITInfraContainer {
+    background-color: #333;
+    height: 100%;
+    width: 95%;
+    border: 3px solid #03A062;
+    border-radius: 10px;
+  }
+
+.ITInfraTitle {
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.ITInfraTitle h2 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 10px;
+    text-decoration-line: underline;
+}
+
+.ITInfra {
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ITInfra p {
+    color: #03A062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Back {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.BackButton {
+    background-color: #333;
+    color: #03A062;
+    cursor: pointer;
+    height: 48px;
+    width: 207px;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    font-size: 30px;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  
+  .BackButton:hover {
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em #03A062);
+  }

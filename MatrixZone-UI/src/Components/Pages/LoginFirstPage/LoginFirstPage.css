@@ -1,0 +1,149 @@
+/*LoginScreenPage:*/
+.LoginScreenContainer {
+    animation: fadeIn 0.3s;
+    height: 580px;
+    width: 1244px;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.LoginTitleContainer {
+    height: 50%;
+    width: 1244px;
+    display: flex;
+    justify-content: center;
+}
+
+.LoginTitleContainer h1 {
+    background-color: #333;
+    color: #03A062;
+    height: fit-content;
+    padding: 10px;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+    font-size: 80px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 20px;
+}
+
+.LoginContainer {
+    height: 50%;
+    width: 1244px;   
+}
+
+.Login {
+    background-color: #333;
+    height: 380px;
+    width: 300px;
+    position: relative;
+    bottom: 105px;
+    left: 455px;
+    border: 1px solid #03A062;
+    border-radius: 10px;
+}
+
+.Login h2 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
+    position: relative;
+    bottom: 15px;
+    left: 80px;
+}
+
+.User {
+    position: relative;
+    bottom: 40px;
+    left: 40px;
+}
+
+.Password {
+    position: relative;
+    bottom: 60px;
+    left: 40px;
+}
+
+.Login h3 {
+    color: #03A062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    top: 10px;
+}
+
+.UsernameField {
+    background-color: #03A062;
+    border-radius: 50px;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.UsernameField:hover {
+    background-color: lightgreen;
+    filter: drop-shadow(0 0 2em #03A062);
+}
+
+.PasswordField {
+    background-color: #03A062;
+    border-radius: 50px;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.PasswordField:hover {
+    background-color: lightgreen;
+    filter: drop-shadow(0 0 2em #03A062);
+}
+
+.LoginButton {
+    background-color: #333;
+    color: #03A062;
+    cursor: pointer;
+    height: 48px;
+    width: 207px;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 40px;
+    left: 47px;
+}
+
+.LoginButton:hover {
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em #03A062);
+}
+
+.LoginGuestButton {
+    background-color: #333;
+    color: #03A062;
+    cursor: pointer;
+    height: 48px;
+    width: 207px;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 30px;
+    left: 47px;
+}
+
+.LoginGuestButton:hover {
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em #03A062);
+}

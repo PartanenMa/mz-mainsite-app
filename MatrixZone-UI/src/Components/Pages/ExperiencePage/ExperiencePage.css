@@ -1,0 +1,64 @@
+/*ExperiencePage:*/
+.ExperiencePageContainer {
+    animation: fadeIn 0.3s;
+    background-color: #333;
+    height: 600px;
+    width: 1244px;
+    border-left: 3px solid #03A062;
+    border-right: 3px solid #03A062;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.Breadcrumb {
+    background-color: lightgreen;
+    height: 30px;
+    overflow: hidden;
+    border-bottom: 1px solid #03A062;
+}
+
+.Breadcrumb h2 {
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+/*Title:*/
+.ExperiencePageTitleContainer {
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #03A062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.ExperiencePageTitleContainer h2 {
+    color: #03A062;
+    font-size: 70px;
+    position: relative;
+    bottom: 50px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration-line: underline;
+}
+
+/*Content:*/
+.ExperiencePageContentContainer {
+    height: 80%;
+    width: 100%;
+    border-top: 1px solid #03A062;
+    overflow: hidden;
+    padding-top: 23px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 160px;
+}

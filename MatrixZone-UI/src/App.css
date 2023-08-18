@@ -1,0 +1,10 @@
+/*Body:*/
+body {
+  background-color: black;
+}
+
+/*App:*/
+.AppContainer {
+  display: flex;
+  justify-content: center;
+}

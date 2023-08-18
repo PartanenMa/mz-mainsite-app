@@ -1,0 +1,50 @@
+.CalculatorAppContainer {
+    background-color: #333;
+    height: 600px;
+    width: 30%;
+    border: 1px solid #03A062;
+    transition: filter 300ms;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.CalculatorAppContainer:hover {
+    filter: drop-shadow(0 0 2em #03A062);
+}
+
+.CalculatorAppContainer h3 {
+    color: #03A062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.CalcScreen {
+    background-color: lightgreen;
+    height: 10%;
+    width: 90%;
+    border: 3px solid #03A062;
+    border-radius: 10px;
+    position: relative;
+    left: 15px;
+}
+
+.CalcScreen h4 {
+    color: black;
+    font-size: 40px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    bottom: 46px;
+    left: 10px;
+}
+
+.CalcButtons {
+    height: 70%;
+    width: 95%;
+    position: relative;
+    top: 12px;
+    left: 9px;
+    border-radius: 10px;
+    border: 1px solid #03A062;
+}
