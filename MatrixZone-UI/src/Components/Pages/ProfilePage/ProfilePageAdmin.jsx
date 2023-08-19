@@ -186,11 +186,8 @@ function Skills() {
                         </div>
                         <div className="PL7">
                             <div className="PL7Logo"></div>
-                            <div className="PL7LogoBG">
-                                <div className="PL7LogoL"></div>
-                            </div>
                             <div className="PL7Content">
-                                <h4>SQL</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>TypeScript</h4><p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="PL8">
@@ -199,55 +196,62 @@ function Skills() {
                                 <div className="PL8LogoL"></div>
                             </div>
                             <div className="PL8Content">
-                                <h4>NoSQL</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>SQL</h4><p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="PL9">
                             <div className="PL9Logo"></div>
+                            <div className="PL9LogoBG">
+                                <div className="PL9LogoL"></div>
+                            </div>
                             <div className="PL9Content">
+                                <h4>NoSQL</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                            </div>
+                        </div>
+                        <div className="PL10">
+                            <div className="PL10Logo"></div>
+                            <div className="PL10Content">
                                 <h4>Python</h4><p>{info.LinkedIn.skillsLevel2}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="Front-endFrameworks">
-                    <div className="FEFTitle">
+                <div className="Front-endDevelopment">
+                    <div className="FEDTitle">
                         <h4>{info.LinkedIn.skillsTitle2}</h4>
                     </div>
-                    <div className="FEFContent">
-                        <div className="FEF1">
-                            <div className="FEF1Logo"></div>
-                            <div className="FEF1Content">
+                    <div className="FEDContent">
+                        <div className="FED1">
+                            <div className="FED1Logo"></div>
+                            <div className="FED1Content">
                                 <h4>React</h4><p>{info.LinkedIn.skillsLevel3}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="Back-endFrameworks">
-                    <div className="BEFTitle">
+                <div className="Back-endDevelopment">
+                    <div className="BEDTitle">
                         <h4>{info.LinkedIn.skillsTitle3}</h4>
                     </div>
-                    <div className="BEFContent">
-                        <div className="BEF1">
-                            <div className="BEF1Logo"></div>
-                            <div className="BEF1Content">
-                                <h4>Node.js + Express</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                    <div className="BEDContent">
+                        <div className="BED1">
+                            <div className="BED1Logo"></div>
+                            <div className="BED1Content">
+                                <h4>Node.js</h4><p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
-                        <div className="BEF2">
-                            <div className="BEF2Logo"></div>
-                            <div className="BEF2Content">
+                        <div className="BED2">
+                            <div className="BED2Logo"></div>
+                            <div className="BED2Content">
                                 <h4>FastAPI</h4><p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className="Databases">
-                    <div className="DBTitle">
-                        <h4>{info.LinkedIn.skillsTitle4}</h4>
-                    </div>
-                    <div className="DBContent">
-
+                        <div className="BED3">
+                            <div className="BED3Logo"></div>
+                            <div className="BED3Content">
+                                <h4>Express.js</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

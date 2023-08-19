@@ -26,9 +26,8 @@ export const info = {
         timeAndPlace3: "16.08.2021 - present, Pori, Finland",
         //Skills:
         skillsTitle1: "Programming languages",
-        skillsTitle2: "Front-end frameworks",
-        skillsTitle3: "Back-end frameworks",
-        skillsTitle4: "Databases",
+        skillsTitle2: "Front-end development",
+        skillsTitle3: "Back-end development",
         skillsLevel1: "Beginner",
         skillsLevel2: "Intermediate",
         skillsLevel3: "Advanced",

@@ -221,20 +221,22 @@
 }
 
 .Lang1 h4 {
-    color: #003580;
+    color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 28px;
     left: 10px;
 }
 
 .Lang1 p {
-    color: #003580;
+    color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 88px;
     left: 780px;
@@ -249,20 +251,22 @@
 }
 
 .Lang2 h4 {
-    color: #C8102E;
+    color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 28px;
     left: 10px;
 }
 
 .Lang2 p {
-    color: #C8102E;
+    color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 88px;
     left: 780px;
@@ -277,20 +281,22 @@
 }
 
 .Lang3 h4 {
-    color: #FFCD00;
+    color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 28px;
     left: 10px;
 }
 
 .Lang3 p {
-    color: #FFCD00;
+    color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 88px;
     left: 780px;
@@ -612,6 +618,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -623,6 +630,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 930px;
@@ -664,6 +672,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -675,6 +684,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 926px;
@@ -716,6 +726,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -727,6 +738,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 944px;
@@ -768,6 +780,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -779,6 +792,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 912px;
@@ -820,6 +834,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -831,6 +846,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 930px;
@@ -872,6 +888,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -883,6 +900,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 862px;
@@ -890,7 +908,7 @@
 }
 
 .PL7 {
-    background-color: #00A5CD;
+    background-color: #007acc;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -899,31 +917,16 @@
 
 .PL7Logo {
     background-color: black;
+    background-image: url("/src/Assets/Images/TypeScriptLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
     height: 100%;
     width: 4%;
     float: left;
     border-right: 1px solid black;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-}
-
-.PL7LogoBG {
-    background-color: white;
-    height: 32px;
-    width: 23px;
-    border-radius: 10px;
-    position: relative;
-    left: 12px;
-    top: 5px;
-}
-
-.PL7LogoL {
-    background-image: url("/src/Assets/Images/SQLLogo.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
 }
 
 .PL7Content {
@@ -939,6 +942,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -950,14 +954,15 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
-    left: 932px;
+    left: 860px;
     bottom: 61px;
 }
 
 .PL8 {
-    background-color: #0072b1;
+    background-color: #00A5CD;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -978,21 +983,19 @@
     background-color: white;
     height: 32px;
     width: 23px;
-    border-radius: 9px;
+    border-radius: 10px;
     position: relative;
     left: 12px;
-    top: 4px;
+    top: 5px;
 }
 
 .PL8LogoL {
-    background-image: url("/src/Assets/Images/NoSQLLogo.png");
+    background-image: url("/src/Assets/Images/SQLLogo.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 103%;
+    height: 100%;
     width: 100%;
-    position: relative;
-    bottom: 1px;
 }
 
 .PL8Content {
@@ -1008,6 +1011,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -1019,14 +1023,15 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
-    left: 902px;
+    left: 932px;
     bottom: 61px;
 }
 
 .PL9 {
-    background-color: #4B8BBE;
+    background-color: #0072b1;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -1035,16 +1040,33 @@
 
 .PL9Logo {
     background-color: black;
-    background-image: url("/src/Assets/Images/PythonLogo.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
     height: 100%;
     width: 4%;
     float: left;
     border-right: 1px solid black;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.PL9LogoBG {
+    background-color: white;
+    height: 32px;
+    width: 23px;
+    border-radius: 9px;
+    position: relative;
+    left: 12px;
+    top: 4px;
+}
+
+.PL9LogoL {
+    background-image: url("/src/Assets/Images/NoSQLLogo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 103%;
+    width: 100%;
+    position: relative;
+    bottom: 1px;
 }
 
 .PL9Content {
@@ -1060,6 +1082,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
@@ -1071,20 +1094,75 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
+    float: left;
+    position: relative;
+    left: 902px;
+    bottom: 61px;
+}
+
+.PL10 {
+    background-color: #4B8BBE;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.PL10Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/PythonLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.PL10Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.PL10Content h4 {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
+    float: left;
+    position: relative;
+    left: 10px;
+    bottom: 68px;
+}
+
+.PL10Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 898px;
     bottom: 61px;
 }
 
-.Front-endFrameworks {
+.Front-endDevelopment {
     width: 98%;
     border: 1px solid #03A062;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.FEFTitle {
+.FEDTitle {
     background-color: #333;
     height: 30px;
     width: 100%;
@@ -1095,7 +1173,7 @@
     overflow: hidden;
 }
 
-.FEFTitle h4 {
+.FEDTitle h4 {
     color: #03A062;
     font-size: 20px;
     font-style: italic;
@@ -1104,7 +1182,7 @@
     bottom: 22px;
 }
 
-.FEFContent {
+.FEDContent {
     background-color: gray;
     width: 100%;
     border-bottom-left-radius: 10px;
@@ -1117,7 +1195,7 @@
     gap: 10px;
 }
 
-.FEF1 {
+.FED1 {
     background-color: #61DBFB;
     height: 40px;
     width: 96%;
@@ -1125,7 +1203,7 @@
     border-radius: 10px;
 }
 
-.FEF1Logo {
+.FED1Logo {
     background-color: black;
     background-image: url("/src/Assets/Images/React.svg");
     background-repeat: no-repeat;
@@ -1139,7 +1217,7 @@
     border-bottom-left-radius: 10px;
 }
 
-.FEF1Content {
+.FED1Content {
     height: 100%;
     width: 96%;
     float: right;
@@ -1147,36 +1225,38 @@
     border-bottom-right-radius: 10px;
 }
 
-.FEF1Content h4 {
+.FED1Content h4 {
     color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
     bottom: 68px;
 }
 
-.FEF1Content p {
+.FED1Content p {
     color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 910px;
     bottom: 61px;
 }
 
-.Back-endFrameworks {
+.Back-endDevelopment {
     width: 98%;
     border: 1px solid #03A062;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.BEFTitle {
+.BEDTitle {
     background-color: #333;
     height: 30px;
     width: 100%;
@@ -1187,7 +1267,7 @@
     overflow: hidden;
 }
 
-.BEFTitle h4 {
+.BEDTitle h4 {
     color: #03A062;
     font-size: 20px;
     font-style: italic;
@@ -1196,7 +1276,7 @@
     bottom: 22px;
 }
 
-.BEFContent {
+.BEDContent {
     background-color: gray;
     width: 100%;
     border-bottom-left-radius: 10px;
@@ -1209,7 +1289,7 @@
     gap: 10px;
 }
 
-.BEF1 {
+.BED1 {
     background-color: #215732;
     height: 40px;
     width: 96%;
@@ -1217,7 +1297,7 @@
     border-radius: 10px;
 }
 
-.BEF1Logo {
+.BED1Logo {
     background-color: black;
     background-image: url("/src/Assets/Images/Node.jsLogo.svg");
     background-repeat: no-repeat;
@@ -1231,7 +1311,7 @@
     border-bottom-left-radius: 10px;
 }
 
-.BEF1Content {
+.BED1Content {
     height: 100%;
     width: 96%;
     float: right;
@@ -1239,29 +1319,31 @@
     border-bottom-right-radius: 10px;
 }
 
-.BEF1Content h4 {
+.BED1Content h4 {
     color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
     bottom: 68px;
 }
 
-.BEF1Content p {
+.BED1Content p {
     color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
-    left: 782px;
+    left: 892px;
     bottom: 61px;
 }
 
-.BEF2 {
+.BED2 {
     background-color: #009688;
     height: 40px;
     width: 96%;
@@ -1269,7 +1351,7 @@
     border-radius: 10px;
 }
 
-.BEF2Logo {
+.BED2Logo {
     background-color: black;
     background-image: url("/src/Assets/Images/FastAPILogo.svg");
     background-repeat: no-repeat;
@@ -1283,7 +1365,7 @@
     border-bottom-left-radius: 10px;
 }
 
-.BEF2Content {
+.BED2Content {
     height: 100%;
     width: 96%;
     float: right;
@@ -1291,66 +1373,82 @@
     border-bottom-right-radius: 10px;
 }
 
-.BEF2Content h4 {
+.BED2Content h4 {
     color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
     left: 10px;
     bottom: 68px;
 }
 
-.BEF2Content p {
+.BED2Content p {
     color: black;
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
-    left: 888px;
+    left: 886px;
     bottom: 61px;
 }
 
-.Databases {
-    width: 98%;
-    border: 1px solid #03A062;
+.BED3 {
+    background-color: white;
+    height: 40px;
+    width: 96%;
+    border: 1px solid black;
     border-radius: 10px;
-    overflow: hidden;
 }
 
-.DBTitle {
-    background-color: #333;
-    height: 30px;
-    width: 100%;
-    border-bottom: 1px solid #03A062;
+.BED3Logo {
+    background-color: black;
+    background-image: url("/src/Assets/Images/ExpressLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 140%;
+    height: 100%;
+    width: 4%;
+    float: left;
+    border-right: 1px solid black;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-left: 10px;
-    overflow: hidden;
+    border-bottom-left-radius: 10px;
 }
 
-.DBTitle h4 {
-    color: #03A062;
-    font-size: 20px;
+.BED3Content {
+    height: 100%;
+    width: 96%;
+    float: right;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.BED3Content h4 {
+    color: black;
+    font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
+    float: left;
     position: relative;
-    bottom: 22px;
+    left: 10px;
+    bottom: 68px;
 }
 
-.DBContent {
-    background-color: gray;
-    width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 2%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+.BED3Content p {
+    color: black;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 gray;
+    float: left;
+    position: relative;
+    left: 861px;
+    bottom: 61px;
 }
 
 /*Experience:*/
