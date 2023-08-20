@@ -9,8 +9,12 @@
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /*Web dev container*/
@@ -18,10 +22,10 @@
     background-color: #333;
     height: 100%;
     width: 95%;
-    border: 3px solid #03A062;
+    border: 3px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
-  }
+}
 
 .WebDevTitle {
     height: 10%;
@@ -32,10 +36,10 @@
 }
 
 .WebDevTitle h2 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     margin-bottom: 10px;
     text-decoration-line: underline;
 }
@@ -49,10 +53,10 @@
 }
 
 .WebDev p {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .Back {
@@ -64,19 +68,19 @@
 
 .BackButton {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     height: 48px;
     width: 207px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     font-size: 30px;
     font-style: italic;
     margin-top: 6px;
-  }
-  
-  .BackButton:hover {
+}
+
+.BackButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
-  }
+    filter: drop-shadow(0 0 2em #03a062);
+}

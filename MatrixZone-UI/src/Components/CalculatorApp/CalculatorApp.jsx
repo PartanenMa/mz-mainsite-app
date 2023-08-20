@@ -7,10 +7,10 @@ function CalculatorApp() {
     return (
         <div className="CalculatorAppContainer">
             <h3>CalculatorApp</h3>
-            <div className="CalcScreen"><h4>{number}</h4></div>
-            <div className="CalcButtons">
-
+            <div className="CalcScreen">
+                <h4>{number}</h4>
             </div>
+            <div className="CalcButtons"></div>
         </div>
     );
 }

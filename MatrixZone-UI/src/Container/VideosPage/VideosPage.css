@@ -4,27 +4,31 @@
     background-color: #333;
     height: 600px;
     width: 1244px;
-    border-left: 3px solid #03A062;
-    border-right: 3px solid #03A062;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
     overflow: hidden;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .Breadcrumb {
     background-color: lightgreen;
     height: 30px;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .Breadcrumb h2 {
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 20px;
     left: 10px;
@@ -35,7 +39,7 @@
     background-color: #c4302b;
     height: 120px;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -47,14 +51,14 @@
     position: relative;
     bottom: 40px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 /*Content:*/
 .VideosPageContentContainer {
     height: 80%;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
     overflow: hidden;
     padding-top: 23px;
     display: flex;

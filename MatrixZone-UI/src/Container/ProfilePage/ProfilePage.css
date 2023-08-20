@@ -3,27 +3,31 @@
     animation: fadeIn 0.3s;
     background-color: #333;
     width: 1244px;
-    border-left: 3px solid #03A062;
-    border-right: 3px solid #03A062;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
     overflow: hidden;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .Breadcrumb {
     background-color: lightgreen;
     height: 30px;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .Breadcrumb h2 {
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 20px;
     left: 10px;
@@ -34,7 +38,7 @@
     background-color: #0072b1;
     height: 120px;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -46,7 +50,7 @@
     position: relative;
     bottom: 40px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 /*About me:*/
@@ -54,8 +58,8 @@
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border-top: 1px solid #03A062;
-    border-bottom: 1px solid #03A062;
+    border-top: 1px solid #03a062;
+    border-bottom: 1px solid #03a062;
 }
 
 .AboutMeTitle {
@@ -65,10 +69,10 @@
 }
 
 .AboutMeTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -95,7 +99,7 @@
     height: 90%;
     width: 15%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -124,7 +128,7 @@
     height: 90%;
     width: 80%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
 }
 
 .AboutMeTextTitle {
@@ -133,22 +137,22 @@
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .AboutMeTextTitle .h4_1 {
-    color: #03A062;
+    color: #03a062;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 15px;
     left: 10px;
 }
 
 .AboutMeTextTitle .h4_2 {
-    color: #03A062;
+    color: #03a062;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 32px;
     left: 10px;
@@ -167,7 +171,7 @@
     color: black;
     font-size: 16px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 6px;
     bottom: 13px;
@@ -177,7 +181,7 @@
 .LanguagesContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .LanguagesTitle {
@@ -187,10 +191,10 @@
 }
 
 .LanguagesTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -216,7 +220,7 @@
     background-color: white;
     height: 40px;
     width: 96%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
 }
 
@@ -224,7 +228,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 28px;
@@ -235,7 +239,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 88px;
@@ -246,7 +250,7 @@
     background-color: #012169;
     height: 40px;
     width: 96%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
 }
 
@@ -254,7 +258,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 28px;
@@ -265,7 +269,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 88px;
@@ -273,10 +277,10 @@
 }
 
 .Lang3 {
-    background-color: #006AA7;
+    background-color: #006aa7;
     height: 40px;
     width: 96%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
 }
 
@@ -284,7 +288,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 28px;
@@ -295,7 +299,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     position: relative;
     bottom: 88px;
@@ -306,7 +310,7 @@
 .EducationContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .EducationTitle {
@@ -316,10 +320,10 @@
 }
 
 .EducationTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -344,7 +348,7 @@
 .EducationHighSchool {
     height: 130px;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -353,7 +357,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -361,10 +365,10 @@
 }
 
 .EHSTitle h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
@@ -383,13 +387,13 @@
     color: white;
     font-size: 18px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .EducationMilitaryService {
     height: 130px;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -398,7 +402,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -406,10 +410,10 @@
 }
 
 .EMSTitle h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
@@ -428,7 +432,7 @@
     color: white;
     font-size: 18px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .MilitaryLogo {
@@ -448,7 +452,7 @@
 .EducationUniversityOfAppliedSciences {
     height: 130px;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -457,7 +461,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -465,16 +469,16 @@
 }
 
 .EUOASTitle h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
 
 .EUOASContent {
-    background-color: #00A5CD;
+    background-color: #00a5cd;
     height: 100px;
     width: 100%;
     border-bottom-left-radius: 10px;
@@ -487,7 +491,7 @@
     color: white;
     font-size: 18px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .SchoolLogo {
@@ -508,7 +512,7 @@
 .SkillsContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .SkillsTitle {
@@ -518,10 +522,10 @@
 }
 
 .SkillsTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -545,7 +549,7 @@
 
 .ProgrammingLanguages {
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -554,7 +558,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -562,10 +566,10 @@
 }
 
 .PLTitle h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
@@ -584,7 +588,7 @@
 }
 
 .PL1 {
-    background-color: #044F88;
+    background-color: #044f88;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -617,7 +621,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -629,7 +633,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -671,7 +675,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -683,7 +687,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -725,7 +729,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -737,7 +741,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -779,7 +783,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -791,7 +795,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -833,7 +837,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -845,7 +849,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -854,7 +858,7 @@
 }
 
 .PL6 {
-    background-color: #F0DB4F;
+    background-color: #f0db4f;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -887,7 +891,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -899,7 +903,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -941,7 +945,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -953,7 +957,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -962,7 +966,7 @@
 }
 
 .PL8 {
-    background-color: #00A5CD;
+    background-color: #00a5cd;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -1010,7 +1014,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1022,7 +1026,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1081,7 +1085,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1093,7 +1097,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1102,7 +1106,7 @@
 }
 
 .PL10 {
-    background-color: #4B8BBE;
+    background-color: #4b8bbe;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -1135,7 +1139,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1147,7 +1151,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1157,7 +1161,7 @@
 
 .Front-endDevelopment {
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -1166,7 +1170,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -1174,10 +1178,10 @@
 }
 
 .FEDTitle h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
@@ -1196,7 +1200,7 @@
 }
 
 .FED1 {
-    background-color: #61DBFB;
+    background-color: #61dbfb;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -1229,7 +1233,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1241,7 +1245,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1251,7 +1255,7 @@
 
 .Back-endDevelopment {
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -1260,7 +1264,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -1268,10 +1272,10 @@
 }
 
 .BEDTitle h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
@@ -1323,7 +1327,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1335,7 +1339,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1377,7 +1381,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1389,7 +1393,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1431,7 +1435,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1443,7 +1447,7 @@
     color: black;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 gray;
     float: left;
     position: relative;
@@ -1455,7 +1459,7 @@
 .ExperienceContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .ExperienceTitle {
@@ -1465,10 +1469,10 @@
 }
 
 .ExperienceTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -1493,7 +1497,7 @@
 .ExperienceInternship1 {
     height: 130px;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -1502,7 +1506,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -1510,16 +1514,16 @@
 }
 
 .EI1Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
 
 .EI1Content {
-    background-color: #B11226;
+    background-color: #b11226;
     height: 100px;
     width: 100%;
     border-bottom-left-radius: 10px;
@@ -1532,7 +1536,7 @@
     color: white;
     font-size: 18px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .CompanyLogo1 {
@@ -1552,7 +1556,7 @@
 .ExperienceInternship2 {
     height: 130px;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -1561,7 +1565,7 @@
     background-color: #333;
     height: 30px;
     width: 100%;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 10px;
@@ -1569,16 +1573,16 @@
 }
 
 .EI2Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 22px;
 }
 
 .EI2Content {
-    background-color: #B11226;
+    background-color: #b11226;
     height: 100px;
     width: 100%;
     border-bottom-left-radius: 10px;
@@ -1591,7 +1595,7 @@
     color: white;
     font-size: 18px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .CompanyLogo2 {
@@ -1613,7 +1617,7 @@
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .InterestsTitle {
@@ -1623,10 +1627,10 @@
 }
 
 .InterestsTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -1650,7 +1654,7 @@
     height: 90%;
     width: 25%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -1664,20 +1668,20 @@
 
 .Interest1Title {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 20%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     overflow: hidden;
 }
 
 .Interest1Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 10px;
@@ -1713,7 +1717,6 @@
     position: relative;
     top: 20%;
     left: 25%;
-    
 }
 
 .Interest2 {
@@ -1721,7 +1724,7 @@
     height: 90%;
     width: 25%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -1735,20 +1738,20 @@
 
 .Interest2Title {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 20%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     overflow: hidden;
 }
 
 .Interest2Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 10px;
@@ -1784,7 +1787,6 @@
     position: relative;
     top: 25%;
     left: 25%;
-    
 }
 
 .Interest3 {
@@ -1792,7 +1794,7 @@
     height: 90%;
     width: 25%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -1806,20 +1808,20 @@
 
 .Interest3Title {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 20%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     overflow: hidden;
 }
 
 .Interest3Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 10px;
@@ -1855,7 +1857,6 @@
     position: relative;
     top: 10%;
     left: 33%;
-    
 }
 
 /*Hobbies:*/
@@ -1863,7 +1864,7 @@
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .HobbiesTitle {
@@ -1873,10 +1874,10 @@
 }
 
 .HobbiesTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -1900,7 +1901,7 @@
     height: 90%;
     width: 25%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -1914,20 +1915,20 @@
 
 .Hobby1Title {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 20%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     overflow: hidden;
 }
 
 .Hobby1Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 10px;
@@ -1963,7 +1964,6 @@
     position: relative;
     top: 25%;
     left: 25%;
-    
 }
 
 .Hobby2 {
@@ -1971,7 +1971,7 @@
     height: 90%;
     width: 25%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -1985,20 +1985,20 @@
 
 .Hobby2Title {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 20%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     overflow: hidden;
 }
 
 .Hobby2Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 10px;
@@ -2034,7 +2034,6 @@
     position: relative;
     top: 25%;
     left: 25%;
-    
 }
 
 .Hobby3 {
@@ -2042,7 +2041,7 @@
     height: 90%;
     width: 25%;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
@@ -2056,20 +2055,20 @@
 
 .Hobby3Title {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 20%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     overflow: hidden;
 }
 
 .Hobby3Title h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 10px;
@@ -2105,14 +2104,13 @@
     position: relative;
     top: 25%;
     left: 25%;
-    
 }
 
 /*Contact info:*/
 .ContactContainer {
     height: 510px;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
     overflow: hidden;
 }
 
@@ -2123,10 +2121,10 @@
 }
 
 .ContactTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 23px;
     left: 10px;
@@ -2150,7 +2148,7 @@
     background-color: #333;
     height: 90%;
     width: 30%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     top: 20px;
@@ -2165,10 +2163,10 @@
 }
 
 .PhoneContainerTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 18px;
 }
@@ -2176,23 +2174,23 @@
 .PhoneContainerContent {
     height: 90%;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
 }
 
 .Phone1 {
     height: 25%;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     display: flex;
     justify-content: center;
 }
 
 .Phone1 h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 26px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .Phone2 {
@@ -2208,7 +2206,7 @@
     background-color: #333;
     height: 90%;
     width: 30%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     top: 20px;
@@ -2223,10 +2221,10 @@
 }
 
 .EmailContainerTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 18px;
 }
@@ -2234,23 +2232,23 @@
 .EmailContainerContent {
     height: 90%;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
 }
 
 .Email1 {
     height: 25%;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
     display: flex;
     justify-content: center;
 }
 
 .Email1 h4 {
-    color: #03A062;
+    color: #03a062;
     font-size: 26px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .Email2 {

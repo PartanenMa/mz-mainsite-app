@@ -4,9 +4,12 @@ export const info = {
         user: "Manu Partanen",
         name: "Manu Partanen",
         jobTitle: "Front-end Developer",
-        description1: "As a web developer, I have a strong foundation in HTML, CSS, and JavaScript. I'm also comfortable with C++, Java, C# and python, which I've been working with in several of my school and personal projects.",
-        description2: "My expertise lies in front-end web development, where I enjoy creating visually appealing and user-friendly interfaces. I have a passion for using tools like React to create high-quality web applications, and have some experience working with Node.js and FastAPI on the backend. I've also used Figma for UI design, Git for version control and WordPress for creation of some websites.",
-        description3: "While my knowledge of databases is basic, I have studied SQL and NoSQL, which gives me a solid foundation for working with data. I've also studied some data analysis using Python.",
+        description1:
+            "As a web developer, I have a strong foundation in HTML, CSS, and JavaScript. I'm also comfortable with C++, Java, C# and python, which I've been working with in several of my school and personal projects.",
+        description2:
+            "My expertise lies in front-end web development, where I enjoy creating visually appealing and user-friendly interfaces. I have a passion for using tools like React to create high-quality web applications, and have some experience working with Node.js and FastAPI on the backend. I've also used Figma for UI design, Git for version control and WordPress for creation of some websites.",
+        description3:
+            "While my knowledge of databases is basic, I have studied SQL and NoSQL, which gives me a solid foundation for working with data. I've also studied some data analysis using Python.",
         phoneNumber: "0440602810",
         emailAddress: "manu111.partanen@gmail.com",
         link: "https://www.linkedin.com/in/manu-partanen-7864b4265/",
@@ -19,10 +22,12 @@ export const info = {
         degreeName1: "High School Diploma",
         timeAndPlace1: "11.08.2014 - 05.12.2017, Pori, Finland",
         schoolName2: "Finnish Defence Forces",
-        degreeName2: "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
+        degreeName2:
+            "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
         timeAndPlace2: "09.07.2018 - 20.06.2019, Niinisalo, Finland",
         schoolName3: "Satakunta University of Applied Sciences",
-        degreeName3: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
+        degreeName3:
+            "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
         timeAndPlace3: "16.08.2021 - present, Pori, Finland",
         //Skills:
         skillsTitle1: "Programming languages",
@@ -76,5 +81,5 @@ export const info = {
         experiencePageAdmin: "/admin/experience",
         contactPageGuest: "/guest/contact",
         contactPageAdmin: "/admin/contact",
-    }
-}
+    },
+};

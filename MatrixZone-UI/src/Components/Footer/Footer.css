@@ -5,7 +5,7 @@
     width: 1244px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border: 3px solid #03A062;
+    border: 3px solid #03a062;
     overflow: hidden;
 }
 
@@ -32,7 +32,7 @@
     height: 100%;
     width: 100px;
     cursor: pointer;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 5px;
     position: relative;
     left: 10px;
@@ -41,14 +41,14 @@
 
 .FooterInfoBoxTitleLogo:hover {
     border: 1px solid lightgreen;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .FooterInfoBoxTitle h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 60px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 1px 1px 0 lightgreen;
     position: relative;
     bottom: 130px;
@@ -76,11 +76,11 @@
 }
 
 .FooterNav1-1 h3 {
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     width: fit-content;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 20px;
     transition: background-color 300ms;
@@ -88,7 +88,7 @@
 
 .FooterNav1-1 h3:hover {
     background-color: lightgreen;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 5px;
 }
 
@@ -97,11 +97,11 @@
 }
 
 .FooterNav1-2 h3 {
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     width: fit-content;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 5px;
     left: 20px;
@@ -110,7 +110,7 @@
 
 .FooterNav1-2 h3:hover {
     background-color: lightgreen;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 5px;
 }
 
@@ -119,11 +119,11 @@
 }
 
 .FooterNav1-3 h3 {
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     width: fit-content;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 10px;
     left: 20px;
@@ -132,7 +132,7 @@
 
 .FooterNav1-3 h3:hover {
     background-color: lightgreen;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 5px;
 }
 
@@ -141,11 +141,11 @@
 }
 
 .FooterNav1-4 h3 {
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     width: fit-content;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 15px;
     left: 20px;
@@ -154,7 +154,7 @@
 
 .FooterNav1-4 h3:hover {
     background-color: lightgreen;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 5px;
 }
 
@@ -163,11 +163,11 @@
 }
 
 .FooterNav1-5 h3 {
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     width: fit-content;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 20px;
     left: 20px;
@@ -176,7 +176,7 @@
 
 .FooterNav1-5 h3:hover {
     background-color: lightgreen;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 5px;
 }
 
@@ -209,7 +209,6 @@
     border-radius: 3px;
     position: relative;
     top: 5px;
-    
 }
 
 .FooterNav2-1 .LinkedInLogo {
@@ -224,7 +223,7 @@
 .FooterNav2-1 h3 {
     color: #0072b1;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     height: fit-content;
     width: fit-content;
     position: relative;
@@ -272,7 +271,7 @@
 .FooterNav2-2 h3 {
     color: black;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     height: fit-content;
     width: fit-content;
     position: relative;
@@ -304,7 +303,6 @@
     border-radius: 5px;
     position: relative;
     top: 8px;
-    
 }
 
 .FooterNav2-3 .YouTubeLogo {
@@ -320,7 +318,7 @@
 .FooterNav2-3 h3 {
     color: #c4302b;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     height: fit-content;
     width: fit-content;
     position: relative;
@@ -343,7 +341,7 @@
 }
 
 .FooterNav3-1 h3 {
-    color: #03A062;
+    color: #03a062;
 }
 
 .FooterNav3-2 {
@@ -354,7 +352,7 @@
 }
 
 .FooterNav3-2 h3 {
-    color: #03A062;
+    color: #03a062;
 }
 
 .FooterNav3-3 {
@@ -365,21 +363,21 @@
 }
 
 .FooterNav3-3 h3 {
-    color: #03A062;
+    color: #03a062;
 }
 
 /*FooterTitle:*/
 .FooterTitleText {
     height: 60px;
     width: 100%;
-    border-top: 1px solid #03A062;
+    border-top: 1px solid #03a062;
 }
 
 .FooterTitleText h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 50px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 30px;
@@ -411,7 +409,7 @@
 }
 
 .ReactLogo:hover {
-    filter: drop-shadow(0 0 2em #61DBFB);
+    filter: drop-shadow(0 0 2em #61dbfb);
 }
 
 /*FooterBoxMiddle:*/
@@ -470,10 +468,10 @@
 }
 
 #FooterTitle {
-    color: #61DBFB;
+    color: #61dbfb;
     font-size: 50px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     float: right;
     position: relative;
     bottom: 10px;
@@ -491,12 +489,12 @@
 }
 
 .FooterNames #ReactText {
-    color: #61DBFB;
+    color: #61dbfb;
     font-size: 60px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
-    position:relative;
+    position: relative;
     top: 100px;
     right: 1100px;
 }
@@ -505,7 +503,7 @@
     color: mediumorchid;
     font-size: 60px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     top: 100px;
     right: 820px;
@@ -515,7 +513,7 @@
     color: yellow;
     font-size: 60px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     top: 100px;
     right: 580px;

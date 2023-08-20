@@ -5,11 +5,10 @@ function TimeAndDate() {
     const [clock, setClock] = useState(new Date());
 
     useEffect(() => {
-        var timer = setInterval(() => setClock(new Date()), 1000)
+        var timer = setInterval(() => setClock(new Date()), 1000);
         return function cleanup() {
-            clearInterval(timer)
-        }
-
+            clearInterval(timer);
+        };
     });
 
     return (

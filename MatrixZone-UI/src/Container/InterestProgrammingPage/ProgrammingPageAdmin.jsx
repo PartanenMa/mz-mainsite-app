@@ -31,12 +31,15 @@ function ProgrammingPageAdmin() {
                         <h2>Programming</h2>
                     </div>
                     <div className="Programming">
-                        <p>
-                            vgsfbhndhfm...
-                        </p>
+                        <p>vgsfbhndhfm...</p>
                     </div>
                     <div className="Back">
-                        <button className="BackButton" onClick={toggleContainer}>Back</button>
+                        <button
+                            className="BackButton"
+                            onClick={toggleContainer}
+                        >
+                            Back
+                        </button>
                     </div>
                 </motion.div>
             </div>

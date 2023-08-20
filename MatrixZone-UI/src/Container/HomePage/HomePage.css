@@ -2,14 +2,18 @@
 .HomePageContainer {
     animation: fadeIn 0.3s;
     width: 1244px;
-    border-left: 3px solid #03A062;
-    border-right: 3px solid #03A062;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
     overflow: hidden;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /*First section:*/
@@ -23,13 +27,13 @@
     background-color: lightgreen;
     height: 30px;
     overflow: hidden;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }
 
 .Breadcrumb h2 {
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 20px;
     left: 10px;
@@ -43,8 +47,8 @@
     width: 100%;
     padding-top: 5px;
     padding-left: 5px;
-    border-top: 1px solid #03A062;
-    border-bottom: 1px solid #03A062;
+    border-top: 1px solid #03a062;
+    border-bottom: 1px solid #03a062;
 }
 
 .LogOutSectionGuest {
@@ -56,13 +60,13 @@
     width: 100%;
     padding-top: 5px;
     padding-left: 5px;
-    border-top: 1px solid #03A062;
-    border-bottom: 1px solid #03A062;
+    border-top: 1px solid #03a062;
+    border-bottom: 1px solid #03a062;
 }
 
 .ShowGIF {
     background-image: url("/src/Assets/Images/UserBG.gif");
-}  
+}
 
 .LogOutContainer1 {
     animation: fadeIn 0.3s;
@@ -75,20 +79,31 @@
     top: 0px;
     right: 0px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
 }
 
 .LogOutContainer1:hover {
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .LogOutContainer1:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
@@ -96,12 +111,12 @@
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
 }
 
 .LogOutContainer1:active {
-    color: #000
+    color: #000;
 }
 
 .LogOutContainer1:active:after {
@@ -114,7 +129,7 @@
 
 .LogOutContainer1:after {
     z-index: -1;
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -125,26 +140,32 @@
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 .NameAdmin {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 64px;
     bottom: 69px;
 }
 
 .NameGuest {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 65px;
     bottom: 73px;
@@ -155,7 +176,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 100%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     height: 45px;
     width: 45px;
     position: relative;
@@ -165,7 +186,7 @@
 
 .LogoGuest1 {
     border-radius: 100%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     height: 45px;
     width: 45px;
     position: relative;
@@ -198,15 +219,15 @@
     height: 300px;
     width: 200px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
 }
 
 .LogOutContainer2Admin h3 {
     animation: fadeIn 0.3s;
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 12px;
     bottom: 25px;
@@ -242,7 +263,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 100%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     cursor: pointer;
     height: 100px;
     width: 100px;
@@ -267,7 +288,7 @@
     border: 1px solid orange;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 35px;
     bottom: 45px;
@@ -292,7 +313,7 @@
     border: 1px solid red;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 35px;
     bottom: 34px;
@@ -312,15 +333,15 @@
     height: 300px;
     width: 200px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
 }
 
 .LogOutContainer2Guest h3 {
     animation: fadeIn 0.3s;
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 12px;
     bottom: 25px;
@@ -353,7 +374,7 @@
 .LogoGuest2 {
     animation: fadeIn 0.3s;
     border-radius: 100%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     height: 100px;
     width: 100px;
     position: relative;
@@ -372,7 +393,7 @@
     border: 1px solid orange;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 35px;
     bottom: 25px;
@@ -397,7 +418,7 @@
     border: 1px solid red;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 35px;
     bottom: 12px;
@@ -417,15 +438,15 @@
     height: 300px;
     width: 200px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
 }
 
 .LogOutContainer3 h3 {
     animation: fadeIn 0.3s;
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 12px;
     bottom: 25px;
@@ -457,7 +478,7 @@
 
 .OptionText {
     animation: fadeIn 0.3s;
-    color: #03A062;
+    color: #03a062;
     position: relative;
     bottom: 85px;
     left: 50px;
@@ -466,7 +487,7 @@
 .OptionBG {
     animation: fadeIn 0.3s;
     background-color: #333;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     cursor: pointer;
     border-radius: 20px;
     height: 40px;
@@ -477,7 +498,7 @@
 }
 
 .OptionBG .OptionBall {
-    background-color: #03A062;
+    background-color: #03a062;
     border-radius: 100%;
     height: 40px;
     width: 40px;
@@ -487,15 +508,15 @@
 .SettingsBackButton {
     animation: fadeIn 0.3s;
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 35px;
     top: 25px;
@@ -504,7 +525,7 @@
 .SettingsBackButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .Clock {
@@ -513,15 +534,14 @@
     position: relative;
     bottom: 50px;
     right: 10px;
-    
 }
 
 .Welcome {
     animation: fadeIn 0.3s;
-    color: #03A062;
+    color: #03a062;
     font-size: 150px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 1px 1px 0 lightgreen;
     float: center;
     position: relative;
@@ -557,7 +577,7 @@
     background-size: 60%;
     height: 90%;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     top: 50px;
@@ -577,7 +597,7 @@
     color: #68a063;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     top: 80px;
 }
@@ -586,7 +606,7 @@
     color: #3c873a;
     font-size: 25px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 80px;
 }
@@ -598,7 +618,7 @@
     background-size: cover;
     height: 300px;
     width: 300px;
-    border: 3px solid #03A062;
+    border: 3px solid #03a062;
     border-radius: 100%;
     position: relative;
     top: 50px;
@@ -619,7 +639,7 @@
     background-size: cover;
     height: 90%;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     top: 50px;
@@ -639,7 +659,7 @@
     background-size: cover;
     height: 90%;
     width: 98%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     top: 50px;
@@ -650,7 +670,7 @@
     cursor: pointer;
     height: 100px;
     width: 60px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     bottom: 325px;
@@ -661,7 +681,7 @@
 .CarouselButtonLeft:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .CarouselButtonRight {
@@ -669,7 +689,7 @@
     cursor: pointer;
     height: 100px;
     width: 60px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     bottom: 325px;
@@ -680,15 +700,15 @@
 .CarouselButtonRight:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .HomeFirstSection1 {
     background-color: #333;
     height: 360px;
     width: 100%;
-    border-top: 1px solid #03A062;
-    border-bottom: 1px solid #03A062;
+    border-top: 1px solid #03a062;
+    border-bottom: 1px solid #03a062;
 }
 
 .CheckMyProfile {
@@ -703,7 +723,7 @@
 .CheckMyProfile h2 {
     color: white;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 15px;
     left: 10px;
@@ -781,13 +801,13 @@
     border-radius: 10px;
     padding: 7px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .ProfileTextBox p {
     color: #0072b1;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 white;
 }
 
@@ -802,7 +822,7 @@
     border: 1px solid #0072b1;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     transition: filter 300ms;
 }
 
@@ -838,7 +858,7 @@
 .CheckMyProjects h2 {
     color: white;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 15px;
     left: 10px;
@@ -883,7 +903,7 @@
     width: 18%;
     border-radius: 10px;
     margin-top: 30px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     padding-left: 15px;
 }
 
@@ -917,13 +937,13 @@
     border-radius: 10px;
     padding: 7px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .ProjectsTextBox p {
     color: black;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 white;
 }
 
@@ -938,7 +958,7 @@
     border: 1px solid black;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     transition: filter 300ms;
 }
 
@@ -974,7 +994,7 @@
 .CheckMyVideos h2 {
     color: white;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 15px;
     left: 10px;
@@ -1053,13 +1073,13 @@
     border-radius: 10px;
     padding: 7px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .VideosTextBox p {
     color: #c4302b;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 white;
 }
 
@@ -1074,7 +1094,7 @@
     border: 1px solid #c4302b;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     transition: filter 300ms;
 }
 
@@ -1098,22 +1118,22 @@
     height: 900px;
     width: 1244px;
     overflow: hidden;
-    border-top: 1px solid #03A062;
-    border-bottom: 1px solid #03A062;
+    border-top: 1px solid #03a062;
+    border-bottom: 1px solid #03a062;
 }
 
 .CPTitle {
     height: 10%;
-    width: 100%;;
+    width: 100%;
     padding-bottom: 80px;
     padding-left: 60px;
 }
 
 .CPTitle h2 {
-    color: #03A062;
+    color: #03a062;
     font-size: 60px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-decoration-line: underline;
 }
 
@@ -1131,16 +1151,16 @@
 
 .AppsTitle {
     height: 10%;
-    width: 100%;;
+    width: 100%;
     padding-bottom: 80px;
     padding-left: 60px;
 }
 
 .AppsTitle h2 {
-    color: #03A062;
+    color: #03a062;
     font-size: 60px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-decoration-line: underline;
 }
 
@@ -1154,5 +1174,5 @@
     justify-content: center;
     flex-direction: row;
     gap: 200px;
-    border-bottom: 1px solid #03A062;
+    border-bottom: 1px solid #03a062;
 }

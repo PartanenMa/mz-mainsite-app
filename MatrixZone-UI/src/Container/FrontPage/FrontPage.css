@@ -1,271 +1,285 @@
 /*Front page:*/
 .FP {
-  animation: fadeIn 0.3s;
-  width: 100%;
+    animation: fadeIn 0.3s;
+    width: 100%;
 }
 
 .FrontPageContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }
 
 /*Header:*/
 .Header {
-  height: 50px;
-  width: 100%;
-  padding: 3px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #03A062;
-  margin-bottom: 30px;
+    height: 50px;
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #03a062;
+    margin-bottom: 30px;
 }
 
 .HeaderTitle {
-  height: 100%;
-  width: 260px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    height: 100%;
+    width: 260px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .HeaderLogo {
-  background-image: url("/src/Assets/Images/Logo.PNG");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  cursor: pointer;
-  height: 44px;
-  width: 64px;
-  margin-top: 2px;
-  border: 1px solid #03A062;
-  border-radius: 5px;
-  transition: filter 300ms;
+    background-image: url("/src/Assets/Images/Logo.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    height: 44px;
+    width: 64px;
+    margin-top: 2px;
+    border: 1px solid #03a062;
+    border-radius: 5px;
+    transition: filter 300ms;
 }
 
 .HeaderLogo:hover {
-  border: 1px solid lightgreen;
-  filter: drop-shadow(0 0 2em #03A062);
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .HeaderTitle h1 {
-  color: #03A062;
-  font-size: 35px;
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-shadow: 1px 1px 0 lightgreen;
-  position: relative;
-  bottom: 20px;
-  animation: glow 1s ease-in-out infinite alternate;
+    color: #03a062;
+    font-size: 35px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 1px 1px 0 lightgreen;
+    position: relative;
+    bottom: 20px;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-  from {
-    text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #03A062, 0 0 10px #03A062, 0 0 12px #03A062, 0 0 15px #03A062, 0 0 17px #03A062;
-  }
+    from {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 7px #03a062,
+            0 0 10px #03a062,
+            0 0 12px #03a062,
+            0 0 15px #03a062,
+            0 0 17px #03a062;
+    }
 
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 7px lightgreen, 0 0 10px lightgreen, 0 0 12px lightgreen, 0 0 15px lightgreen, 0 0 17px lightgreen, 0 0 20px lightgreen;
-  }
+    to {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 7px lightgreen,
+            0 0 10px lightgreen,
+            0 0 12px lightgreen,
+            0 0 15px lightgreen,
+            0 0 17px lightgreen,
+            0 0 20px lightgreen;
+    }
 }
 
 .NavOptions {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .NavOptions h2 {
-  color: #03A062;
-  font-size: 25px;
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #03a062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .LoginButtonFP {
-  animation: fadeIn 0.3s;
-  background-color: transparent;
-  color: #03A062;
-  height: 44px;
-  width: 100px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #03A062;
-  font-size: 25px;
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  transition: filter 300ms;
+    animation: fadeIn 0.3s;
+    background-color: transparent;
+    color: #03a062;
+    height: 44px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #03a062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    transition: filter 300ms;
 }
 
 .NavOptions button:hover {
-  background-color: lightgreen;
-  transition: background-color 500ms ease-in-out;
-  filter: drop-shadow(0 0 2em #03A062);
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .Menu-icon {
-  animation: fadeIn 0.3s;
-  cursor: pointer;
-  transition: filter 300ms;
+    animation: fadeIn 0.3s;
+    cursor: pointer;
+    transition: filter 300ms;
 }
 
 .Menu-icon:hover .Bar {
-  background-color: lightgreen;
-  transition: background-color 500ms ease-in-out;
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
 }
 
 .Menu-icon:hover {
-  filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .Bar {
-  background-color: #03A062;
-  width: 45px;
-  height: 6px;
-  margin: 10px 0;
-  border-radius: 2px;
+    background-color: #03a062;
+    width: 45px;
+    height: 6px;
+    margin: 10px 0;
+    border-radius: 2px;
 }
 
 /*Main:*/
 .Main {
-  min-height: 580px;
-  max-width: 1244px;
-  width: 100%;
-  border: 0.1px solid grey;
-  border-radius: 2px;
-  margin: auto;
-  box-shadow: 0 0 30px 5px #03A062;
-  overflow: hidden;
+    min-height: 580px;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
 }
 
 .FPModal {
-  background-color: #333;
-  height: 580px;
-  width: 746px;
-  padding-bottom: 10px;
-  border: 3px solid #03A062;
-  border-radius: 10px;
-  box-shadow: 0 0 30px 5px #03A062;
-  position: relative;
-  left: 20%;
-  top: 0%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  overflow: hidden;
+    background-color: #333;
+    height: 580px;
+    width: 746px;
+    padding-bottom: 10px;
+    border: 3px solid #03a062;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #03a062;
+    position: relative;
+    left: 20%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: hidden;
 }
 
 .FPAboutTitle {
-  height: 10%;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .FPAboutTitle h2 {
-  color: #03A062;
-  font-size: 30px;
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-bottom: 10px;
-  text-decoration-line: underline;
-  text-shadow: 0.5px 0.5px 0 lightgreen;
+    color: #03a062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-bottom: 10px;
+    text-decoration-line: underline;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
 }
 
 .FPTitleX-button {
-  animation: fadeIn 0.3s;
-  background-color: lightcoral;
-  color: red;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-  border: 1px solid red;
-  border-radius: 5px;
-  font-size: 20px;
-  font-style: italic;
-  position: relative;
-  top: 7px;
-  left: 190px;
+    animation: fadeIn 0.3s;
+    background-color: lightcoral;
+    color: red;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-size: 20px;
+    font-style: italic;
+    position: relative;
+    top: 7px;
+    left: 190px;
 }
 
 .FPTitleX-button:hover {
-  background-color: red;
-  color: lightcoral;
-  border: 1px solid lightcoral;
-  transition: background-color 500ms ease-in-out;
-  filter: drop-shadow(0 0 2em red);
+    background-color: red;
+    color: lightcoral;
+    border: 1px solid lightcoral;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em red);
 }
 
 .FPAbout {
-  height: 80%;
-  width: 100%;
-  overflow: hidden;
-  padding-left: 10px;
-  padding-right: 10px;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .FPAbout p {
-  color: #03A062;
-  font-size: 25px;
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-shadow: 0.3px 0.3px 0 lightgreen;
+    color: #03a062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
 .FPBack {
-  height: 10%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .FPBackButton {
-  background-color: lightcoral;
-  color: red;
-  cursor: pointer;
-  height: 48px;
-  width: 207px;
-  border-radius: 10px;
-  border: 1px solid red;
-  font-size: 30px;
-  font-style: italic;
-  transition: filter 300ms;
+    background-color: lightcoral;
+    color: red;
+    cursor: pointer;
+    height: 48px;
+    width: 207px;
+    border-radius: 10px;
+    border: 1px solid red;
+    font-size: 30px;
+    font-style: italic;
+    transition: filter 300ms;
 }
 
 .FPBackButton:hover {
-  background-color: red;
-  color: lightcoral;
-  border: 1px solid lightcoral;
-  transition: background-color 500ms ease-in-out;
-  filter: drop-shadow(0 0 2em red);
+    background-color: red;
+    color: lightcoral;
+    border: 1px solid lightcoral;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em red);
 }
 
 .HeroSection {
-  background-color: transparent;
-  height: 580px;
-  width: 100%;
+    background-color: transparent;
+    height: 580px;
+    width: 100%;
 }
 
 /*Footer:*/
 .Footer {
-  min-height: 50px;
-  width: 100%;
-  padding: 3px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #03A062;
-  margin-top: auto;
-  margin-top: 30px;
+    min-height: 50px;
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #03a062;
+    margin-top: auto;
+    margin-top: 30px;
 }

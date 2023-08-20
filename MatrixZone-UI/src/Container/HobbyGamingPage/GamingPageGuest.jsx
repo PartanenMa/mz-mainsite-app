@@ -31,12 +31,15 @@ function GamingPageGuest() {
                         <h2>Gaming</h2>
                     </div>
                     <div className="Gaming">
-                        <p>
-                            vgsfbhndhfm...
-                        </p>
+                        <p>vgsfbhndhfm...</p>
                     </div>
                     <div className="Back">
-                        <button className="BackButton" onClick={toggleContainer}>Back</button>
+                        <button
+                            className="BackButton"
+                            onClick={toggleContainer}
+                        >
+                            Back
+                        </button>
                     </div>
                 </motion.div>
             </div>

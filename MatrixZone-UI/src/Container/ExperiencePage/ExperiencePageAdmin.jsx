@@ -9,75 +9,71 @@ import { info } from "/src/Constants/Info.jsx";
 import "./ExperiencePage.css";
 
 function ExperiencePageAdmin() {
-  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-  const load = sessionStorage.getItem("load");
-  const [loading, setLoading] = useState(true);
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    const load = sessionStorage.getItem("load");
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (isLoggedIn === "true") {
-      //Simulate loading for 1 second:
-      const timer = setTimeout(() => {
-        setLoading(false);
-        if (load === "true") {
-          sessionStorage.setItem("load", "false");
-          notification.success({
-            message: "LOGGED IN!",
-            description: "Welcome back Admin.",
-            placement: "bottomLeft",
-            style: {
-              backgroundColor: "lightgreen",
-              border: "3px solid green",
-            },
-          });
+    useEffect(() => {
+        if (isLoggedIn === "true") {
+            //Simulate loading for 1 second:
+            const timer = setTimeout(() => {
+                setLoading(false);
+                if (load === "true") {
+                    sessionStorage.setItem("load", "false");
+                    notification.success({
+                        message: "LOGGED IN!",
+                        description: "Welcome back Admin.",
+                        placement: "bottomLeft",
+                        style: {
+                            backgroundColor: "lightgreen",
+                            border: "3px solid green",
+                        },
+                    });
+                }
+            }, 1000);
+
+            //Clean up the timer to prevent memory leaks:
+            return () => clearTimeout(timer);
         }
-      }, 1000);
+    }, [isLoggedIn, load]);
 
-      //Clean up the timer to prevent memory leaks:
-      return () => clearTimeout(timer);
-    }
-  }, [isLoggedIn, load]);
-
-  if (isLoggedIn === "true") {
-    return (
-      <div>
-        {loading && load === "true" ? (
-          //Loading component here:
-          <LoadingScreen />
-        ) : (
-          <div>
-            <HeaderAdmin />
-            <NavAdmin />
-            <div className="ExperiencePageContainer">
-              <div className="Breadcrumb">
-                <h2>Admin / experience</h2>
-              </div>
-              <ExperiencePageTitle />
-              <ExperiencePageContent />
+    if (isLoggedIn === "true") {
+        return (
+            <div>
+                {loading && load === "true" ? (
+                    //Loading component here:
+                    <LoadingScreen />
+                ) : (
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
+                        <div className="ExperiencePageContainer">
+                            <div className="Breadcrumb">
+                                <h2>Admin / experience</h2>
+                            </div>
+                            <ExperiencePageTitle />
+                            <ExperiencePageContent />
+                        </div>
+                        <FooterAdmin />
+                    </div>
+                )}
             </div>
-            <FooterAdmin />
-          </div>
-        )}
-      </div>
-    );
-  } else {
-    return <LoginFirstScreen />;
-  }
+        );
+    } else {
+        return <LoginFirstScreen />;
+    }
 }
 
 function ExperiencePageTitle() {
-  return (
-    <div className="ExperiencePageTitleContainer">
-      <h2>MY EXPERIENCE</h2>
-    </div>
-  );
+    return (
+        <div className="ExperiencePageTitleContainer">
+            <h2>MY EXPERIENCE</h2>
+        </div>
+    );
 }
 
 function ExperiencePageContent() {
-  return (
-    <div className="ExperiencePageContentContainer">
-
-    </div>
-  );
+    return <div className="ExperiencePageContentContainer"></div>;
 }
 
 export default ExperiencePageAdmin;

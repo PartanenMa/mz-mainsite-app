@@ -7,8 +7,12 @@
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .LoginTitleContainer {
@@ -20,21 +24,21 @@
 
 .LoginTitleContainer h1 {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: fit-content;
     padding: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     font-size: 80px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 20px;
 }
 
 .LoginContainer {
     height: 50%;
-    width: 1244px;   
+    width: 1244px;
 }
 
 .Login {
@@ -44,15 +48,15 @@
     position: relative;
     bottom: 105px;
     left: 455px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
 }
 
 .Login h2 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.5px 0.5px 0 lightgreen;
     position: relative;
     bottom: 15px;
@@ -72,16 +76,16 @@
 }
 
 .Login h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     top: 10px;
 }
 
 .UsernameField {
-    background-color: #03A062;
+    background-color: #03a062;
     border-radius: 50px;
     will-change: filter;
     transition: filter 300ms;
@@ -89,11 +93,11 @@
 
 .UsernameField:hover {
     background-color: lightgreen;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .PasswordField {
-    background-color: #03A062;
+    background-color: #03a062;
     border-radius: 50px;
     will-change: filter;
     transition: filter 300ms;
@@ -101,20 +105,20 @@
 
 .PasswordField:hover {
     background-color: lightgreen;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .LoginButton {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     height: 48px;
     width: 207px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 40px;
     left: 47px;
@@ -123,20 +127,20 @@
 .LoginButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .LoginGuestButton {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     cursor: pointer;
     height: 48px;
     width: 207px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     bottom: 30px;
     left: 47px;
@@ -145,5 +149,5 @@
 .LoginGuestButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }

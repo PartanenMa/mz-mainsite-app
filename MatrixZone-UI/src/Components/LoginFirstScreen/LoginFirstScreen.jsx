@@ -11,7 +11,7 @@ function LoginFirstScreen() {
             <LoginTitleContainer />
             <LoginSection />
         </div>
-    )
+    );
 }
 
 function LoginTitleContainer() {
@@ -29,27 +29,30 @@ function LoginSection() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleUserChange = event => {
+    const handleUserChange = (event) => {
         setUserValue(event.target.value);
-    }
+    };
 
-    const handlePasswordChange = event => {
+    const handlePasswordChange = (event) => {
         setPasswordValue(event.target.value);
-    }
+    };
 
     const togglePassword = () => {
         if (passwordType === "password") {
-            setPasswordType("text")
+            setPasswordType("text");
             return;
         }
-        setPasswordType("password")
-    }
+        setPasswordType("password");
+    };
 
     function handleLogin() {
-        togglePassword
+        togglePassword;
         const username = userValue;
         const password = passwordValue;
-        if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
+        if (
+            username === info.loginInfo.adminUserName &&
+            password === info.loginInfo.adminPassword
+        ) {
             sessionStorage.setItem("load", "true");
             sessionStorage.setItem("isLoggedIn", "true");
             navigate(location.pathname);
@@ -78,16 +81,32 @@ function LoginSection() {
                 <h2>MatrixZone</h2>
                 <div className="User">
                     <h3>Username:</h3>
-                    <TextField className="UsernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
+                    <TextField
+                        className="UsernameField"
+                        value={userValue}
+                        label="Enter username"
+                        variant="outlined"
+                        onChange={handleUserChange}
+                    />
                 </div>
                 <div className="Password">
                     <h3>Password:</h3>
-                    <TextField className="PasswordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
+                    <TextField
+                        className="PasswordField"
+                        type={passwordType}
+                        value={passwordValue}
+                        label="Enter password"
+                        variant="outlined"
+                        onChange={handlePasswordChange}
+                    />
                 </div>
                 <button className="LoginButton" onClick={() => handleLogin()}>
                     Log in
                 </button>
-                <button className="LoginGuestButton" onClick={() => handleLoginGuest()}>
+                <button
+                    className="LoginGuestButton"
+                    onClick={() => handleLoginGuest()}
+                >
                     I'm a guest
                 </button>
             </form>

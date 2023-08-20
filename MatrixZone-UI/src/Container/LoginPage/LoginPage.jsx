@@ -21,7 +21,12 @@ function BackToFrontPage() {
     const navigate = useNavigate();
 
     return (
-        <button className="BackToFrontPage" onClick={() => navigate(info.routes.frontPage)}>{"<"}</button>
+        <button
+            className="BackToFrontPage"
+            onClick={() => navigate(info.routes.frontPage)}
+        >
+            {"<"}
+        </button>
     );
 }
 
@@ -33,12 +38,19 @@ function LogosSection() {
             <div className="Logos">
                 <div className="ThreeLogos">
                     <a href="https://reactjs.org" target="_blank">
-                        <img src={reactLogo} className="logo react" alt="React logo" />
+                        <img
+                            src={reactLogo}
+                            className="logo react"
+                            alt="React logo"
+                        />
                     </a>
                     <a href="https://vitejs.dev" target="_blank">
                         <img src={viteLogo} className="logo" alt="Vite logo" />
                     </a>
-                    <div className="logo_m" onClick={() => navigate(info.routes.aboutPage)}></div>
+                    <div
+                        className="logo_m"
+                        onClick={() => navigate(info.routes.aboutPage)}
+                    ></div>
                 </div>
                 <div className="Text">
                     <h3 className="React">React</h3>
@@ -58,27 +70,30 @@ function LoginSection() {
     const [passwordType, setPasswordType] = useState("password");
     const navigate = useNavigate();
 
-    const handleUserChange = event => {
+    const handleUserChange = (event) => {
         setUserValue(event.target.value);
-    }
+    };
 
-    const handlePasswordChange = event => {
+    const handlePasswordChange = (event) => {
         setPasswordValue(event.target.value);
-    }
+    };
 
     const togglePassword = () => {
         if (passwordType === "password") {
-            setPasswordType("text")
+            setPasswordType("text");
             return;
         }
-        setPasswordType("password")
-    }
+        setPasswordType("password");
+    };
 
     function handleLogin() {
-        togglePassword
+        togglePassword;
         const username = userValue;
         const password = passwordValue;
-        if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
+        if (
+            username === info.loginInfo.adminUserName &&
+            password === info.loginInfo.adminPassword
+        ) {
             sessionStorage.setItem("isLoggedIn", "true");
             sessionStorage.setItem("load", "true");
             navigate(info.routes.homePageAdmin);
@@ -107,16 +122,32 @@ function LoginSection() {
                 <h2>MatrixZone</h2>
                 <div className="User">
                     <h3>Username:</h3>
-                    <TextField className="UsernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
+                    <TextField
+                        className="UsernameField"
+                        value={userValue}
+                        label="Enter username"
+                        variant="outlined"
+                        onChange={handleUserChange}
+                    />
                 </div>
                 <div className="Password">
                     <h3>Password:</h3>
-                    <TextField className="PasswordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
+                    <TextField
+                        className="PasswordField"
+                        type={passwordType}
+                        value={passwordValue}
+                        label="Enter password"
+                        variant="outlined"
+                        onChange={handlePasswordChange}
+                    />
                 </div>
                 <button className="LoginButton" onClick={() => handleLogin()}>
                     Log in
                 </button>
-                <button className="LoginGuestButton" onClick={() => handleLoginGuest()}>
+                <button
+                    className="LoginGuestButton"
+                    onClick={() => handleLoginGuest()}
+                >
                     I'm a guest
                 </button>
             </form>

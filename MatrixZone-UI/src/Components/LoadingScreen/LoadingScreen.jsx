@@ -8,7 +8,7 @@ function LoadingScreen() {
             <LoadingTitleContainer />
             <LoadingSection />
         </div>
-    )
+    );
 }
 
 function LoadingLogo() {

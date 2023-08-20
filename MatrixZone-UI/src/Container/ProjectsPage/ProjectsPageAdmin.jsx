@@ -73,11 +73,7 @@ function ProjectsPageTitle() {
 }
 
 function ProjectsPageContent() {
-    return (
-        <div className="ProjectsPageContentContainer">
-
-        </div>
-    );
+    return <div className="ProjectsPageContentContainer"></div>;
 }
 
 export default ProjectsPageAdmin;

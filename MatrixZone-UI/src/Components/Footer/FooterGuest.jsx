@@ -21,43 +21,82 @@ function FooterInfoBox() {
     return (
         <div className="FooterInfoBoxContainer">
             <div className="FooterInfoBoxTitle">
-                <div className="FooterInfoBoxTitleLogo" onClick={() => navigate(info.routes.homePageGuest)}></div>
+                <div
+                    className="FooterInfoBoxTitleLogo"
+                    onClick={() => navigate(info.routes.homePageGuest)}
+                ></div>
                 <h3>MatrixZone</h3>
             </div>
             <div className="FooterInfoBoxContent">
                 <div className="FooterNav1">
                     <div className="FooterNav1-1">
-                        <h3 onClick={() => navigate(info.routes.profilePageGuest)}>Profile</h3>
+                        <h3
+                            onClick={() =>
+                                navigate(info.routes.profilePageGuest)
+                            }
+                        >
+                            Profile
+                        </h3>
                     </div>
                     <div className="FooterNav1-2">
-                        <h3 onClick={() => navigate(info.routes.projectsPageGuest)}>Projects</h3>
+                        <h3
+                            onClick={() =>
+                                navigate(info.routes.projectsPageGuest)
+                            }
+                        >
+                            Projects
+                        </h3>
                     </div>
                     <div className="FooterNav1-3">
-                        <h3 onClick={() => navigate(info.routes.videosPageGuest)}>Videos</h3>
+                        <h3
+                            onClick={() =>
+                                navigate(info.routes.videosPageGuest)
+                            }
+                        >
+                            Videos
+                        </h3>
                     </div>
                     <div className="FooterNav1-4">
-                        <h3 onClick={() => navigate(info.routes.experiencePageGuest)}>Experience</h3>
+                        <h3
+                            onClick={() =>
+                                navigate(info.routes.experiencePageGuest)
+                            }
+                        >
+                            Experience
+                        </h3>
                     </div>
                     <div className="FooterNav1-5">
-                        <h3 onClick={() => navigate(info.routes.contactPageGuest)}>Contact</h3>
+                        <h3
+                            onClick={() =>
+                                navigate(info.routes.contactPageGuest)
+                            }
+                        >
+                            Contact
+                        </h3>
                     </div>
                 </div>
                 <div className="FooterNav2">
                     <a href={info.LinkedIn.link} target="_blank">
                         <div className="FooterNav2-1">
-                            <div className="LinkedInLogoContainer"><div className="LinkedInLogo"></div></div>
+                            <div className="LinkedInLogoContainer">
+                                <div className="LinkedInLogo"></div>
+                            </div>
                             <h3>LinkedIn</h3>
                         </div>
                     </a>
                     <a href={info.GitHub.link} target="_blank">
                         <div className="FooterNav2-2">
-                            <div className="GitHubLogoContainer"><div className="GitHubLogo"></div></div>
+                            <div className="GitHubLogoContainer">
+                                <div className="GitHubLogo"></div>
+                            </div>
                             <h3>GitHub</h3>
                         </div>
                     </a>
                     <a href="" target="_blank">
                         <div className="FooterNav2-3">
-                            <div className="YouTubeLogoContainer"><div className="YouTubeLogo"></div></div>
+                            <div className="YouTubeLogoContainer">
+                                <div className="YouTubeLogo"></div>
+                            </div>
                             <h3>YouTube</h3>
                         </div>
                     </a>
@@ -109,7 +148,10 @@ function FooterBoxMiddle() {
 function FooterBoxRight() {
     return (
         <div className="RightBox">
-            <a href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(%2F%CB%88d%CA%92%C9%91%CB%90v,often%20incorporating%20third-party%20librarie" target="_blank">
+            <a
+                href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(%2F%CB%88d%CA%92%C9%91%CB%90v,often%20incorporating%20third-party%20librarie"
+                target="_blank"
+            >
                 <div className="JSLogo"></div>
             </a>
         </div>

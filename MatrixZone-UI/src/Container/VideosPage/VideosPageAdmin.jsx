@@ -73,11 +73,7 @@ function VideosPageTitle() {
 }
 
 function VideosPageContent() {
-    return (
-        <div className="VideosPageContentContainer">
-
-        </div>
-    );
+    return <div className="VideosPageContentContainer"></div>;
 }
 
 export default VideosPageAdmin;

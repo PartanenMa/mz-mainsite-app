@@ -2,25 +2,25 @@
     background-color: #333;
     height: 600px;
     width: 30%;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     transition: filter 300ms;
     border-radius: 10px;
     padding: 10px;
 }
 
 .TodoAppContainer:hover {
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .TodoAppContainer h3 {
-    color: #03A062;
+    color: #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .TodoAppContainer input {
-    background-color: #03A062;
+    background-color: #03a062;
     color: black;
     height: 48px;
     width: 207px;
@@ -34,19 +34,19 @@
 
 .TodoAppContainer input:hover {
     background-color: lightgreen;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .TodoAppContainer button {
     background-color: #333;
-    color: #03A062;
+    color: #03a062;
     height: 48px;
     width: 135px;
     border-radius: 10px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     font-size: 30px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 10px;
 }
@@ -54,14 +54,14 @@
 .TodoAppContainer button:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .Todo {
     background-color: #333;
     height: 80px;
     width: 350px;
-    border: 1px solid #03A062;
+    border: 1px solid #03a062;
     border-radius: 10px;
     position: relative;
     right: 30px;
@@ -70,14 +70,14 @@
 .Todo:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03A062);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .Todo .p1 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: bold;
     position: relative;
     bottom: 10px;
@@ -85,10 +85,10 @@
 }
 
 .TodoAppContainer .p2 {
-    color: #03A062;
+    color: #03a062;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     height: fit-content;
     width: fit-content;
     position: relative;

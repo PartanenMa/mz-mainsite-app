@@ -44,7 +44,11 @@ function AboutMe() {
                 <h3>ABOUT ME</h3>
             </div>
             <div className="AboutMeContent">
-                <a className="AboutMePhoto" href={info.LinkedIn.link} target="_blank">
+                <a
+                    className="AboutMePhoto"
+                    href={info.LinkedIn.link}
+                    target="_blank"
+                >
                     <div className="AboutMeLinkedInLogo"></div>
                 </a>
                 <div className="AboutMeTextContainer">
@@ -56,9 +60,11 @@ function AboutMe() {
                         <p>
                             {info.LinkedIn.description1}
                             <br />
-                            <br />{info.LinkedIn.description2}
                             <br />
-                            <br />{info.LinkedIn.description3}
+                            {info.LinkedIn.description2}
+                            <br />
+                            <br />
+                            {info.LinkedIn.description3}
                         </p>
                     </div>
                 </div>
@@ -75,13 +81,16 @@ function Languages() {
             </div>
             <div className="LanguagesContent">
                 <div className="Lang1">
-                    <h4>Finnish</h4><p>{info.LinkedIn.language1}</p>
+                    <h4>Finnish</h4>
+                    <p>{info.LinkedIn.language1}</p>
                 </div>
                 <div className="Lang2">
-                    <h4>English</h4><p>{info.LinkedIn.language2}</p>
+                    <h4>English</h4>
+                    <p>{info.LinkedIn.language2}</p>
                 </div>
                 <div className="Lang3">
-                    <h4>Swedish</h4><p>{info.LinkedIn.language3}</p>
+                    <h4>Swedish</h4>
+                    <p>{info.LinkedIn.language3}</p>
                 </div>
             </div>
         </div>
@@ -144,43 +153,50 @@ function Skills() {
                         <div className="PL1">
                             <div className="PL1Logo"></div>
                             <div className="PL1Content">
-                                <h4>C++</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>C++</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="PL2">
                             <div className="PL2Logo"></div>
                             <div className="PL2Content">
-                                <h4>Java</h4><p>{info.LinkedIn.skillsLevel2}</p>
+                                <h4>Java</h4>
+                                <p>{info.LinkedIn.skillsLevel2}</p>
                             </div>
                         </div>
                         <div className="PL3">
                             <div className="PL3Logo"></div>
                             <div className="PL3Content">
-                                <h4>C#</h4><p>{info.LinkedIn.skillsLevel2}</p>
+                                <h4>C#</h4>
+                                <p>{info.LinkedIn.skillsLevel2}</p>
                             </div>
                         </div>
                         <div className="PL4">
                             <div className="PL4Logo"></div>
                             <div className="PL4Content">
-                                <h4>HTML</h4><p>{info.LinkedIn.skillsLevel3}</p>
+                                <h4>HTML</h4>
+                                <p>{info.LinkedIn.skillsLevel3}</p>
                             </div>
                         </div>
                         <div className="PL5">
                             <div className="PL5Logo"></div>
                             <div className="PL5Content">
-                                <h4>CSS</h4><p>{info.LinkedIn.skillsLevel3}</p>
+                                <h4>CSS</h4>
+                                <p>{info.LinkedIn.skillsLevel3}</p>
                             </div>
                         </div>
                         <div className="PL6">
                             <div className="PL6Logo"></div>
                             <div className="PL6Content">
-                                <h4>JavaScript</h4><p>{info.LinkedIn.skillsLevel3}</p>
+                                <h4>JavaScript</h4>
+                                <p>{info.LinkedIn.skillsLevel3}</p>
                             </div>
                         </div>
                         <div className="PL7">
                             <div className="PL7Logo"></div>
                             <div className="PL7Content">
-                                <h4>TypeScript</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>TypeScript</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="PL8">
@@ -189,7 +205,8 @@ function Skills() {
                                 <div className="PL8LogoL"></div>
                             </div>
                             <div className="PL8Content">
-                                <h4>SQL</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>SQL</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="PL9">
@@ -198,13 +215,15 @@ function Skills() {
                                 <div className="PL9LogoL"></div>
                             </div>
                             <div className="PL9Content">
-                                <h4>NoSQL</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>NoSQL</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="PL10">
                             <div className="PL10Logo"></div>
                             <div className="PL10Content">
-                                <h4>Python</h4><p>{info.LinkedIn.skillsLevel2}</p>
+                                <h4>Python</h4>
+                                <p>{info.LinkedIn.skillsLevel2}</p>
                             </div>
                         </div>
                     </div>
@@ -217,7 +236,8 @@ function Skills() {
                         <div className="FED1">
                             <div className="FED1Logo"></div>
                             <div className="FED1Content">
-                                <h4>React</h4><p>{info.LinkedIn.skillsLevel3}</p>
+                                <h4>React</h4>
+                                <p>{info.LinkedIn.skillsLevel3}</p>
                             </div>
                         </div>
                     </div>
@@ -230,19 +250,22 @@ function Skills() {
                         <div className="BED1">
                             <div className="BED1Logo"></div>
                             <div className="BED1Content">
-                                <h4>Node.js</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>Node.js</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="BED2">
                             <div className="BED2Logo"></div>
                             <div className="BED2Content">
-                                <h4>FastAPI</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>FastAPI</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                         <div className="BED3">
                             <div className="BED3Logo"></div>
                             <div className="BED3Content">
-                                <h4>Express.js</h4><p>{info.LinkedIn.skillsLevel1}</p>
+                                <h4>Express.js</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
                         </div>
                     </div>
@@ -293,7 +316,10 @@ function Interests() {
                 <h3>INTERESTS</h3>
             </div>
             <div className="InterestsContent">
-                <div className="Interest1" onClick={() => navigate(info.routes.iTInfraPageGuest)}>
+                <div
+                    className="Interest1"
+                    onClick={() => navigate(info.routes.iTInfraPageGuest)}
+                >
                     <div className="Interest1Title">
                         <h4>IT infrastructure</h4>
                     </div>
@@ -303,7 +329,10 @@ function Interests() {
                         </div>
                     </div>
                 </div>
-                <div className="Interest2" onClick={() => navigate(info.routes.programmingPageGuest)}>
+                <div
+                    className="Interest2"
+                    onClick={() => navigate(info.routes.programmingPageGuest)}
+                >
                     <div className="Interest2Title">
                         <h4>Programming</h4>
                     </div>
@@ -313,7 +342,10 @@ function Interests() {
                         </div>
                     </div>
                 </div>
-                <div className="Interest3" onClick={() => navigate(info.routes.roboticsPageGuest)}>
+                <div
+                    className="Interest3"
+                    onClick={() => navigate(info.routes.roboticsPageGuest)}
+                >
                     <div className="Interest3Title">
                         <h4>Robotics</h4>
                     </div>
@@ -337,7 +369,10 @@ function Hobbies() {
                 <h3>HOBBIES</h3>
             </div>
             <div className="HobbiesContent">
-                <div className="Hobby1" onClick={() => navigate(info.routes.gamingPageGuest)}>
+                <div
+                    className="Hobby1"
+                    onClick={() => navigate(info.routes.gamingPageGuest)}
+                >
                     <div className="Hobby1Title">
                         <h4>Gaming</h4>
                     </div>
@@ -347,7 +382,10 @@ function Hobbies() {
                         </div>
                     </div>
                 </div>
-                <div className="Hobby2" onClick={() => navigate(info.routes.webDevPageGuest)}>
+                <div
+                    className="Hobby2"
+                    onClick={() => navigate(info.routes.webDevPageGuest)}
+                >
                     <div className="Hobby2Title">
                         <h4>Web development</h4>
                     </div>
@@ -357,7 +395,10 @@ function Hobbies() {
                         </div>
                     </div>
                 </div>
-                <div className="Hobby3" onClick={() => navigate(info.routes.campingPageGuest)}>
+                <div
+                    className="Hobby3"
+                    onClick={() => navigate(info.routes.campingPageGuest)}
+                >
                     <div className="Hobby3Title">
                         <h4>Camping</h4>
                     </div>

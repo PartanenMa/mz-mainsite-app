@@ -14,7 +14,12 @@ function HeaderAdmin() {
 
 function Logo() {
     const navigate = useNavigate();
-    return (<div className="LogoContainer" onClick={() => navigate(info.routes.homePageAdmin)}></div>);
+    return (
+        <div
+            className="LogoContainer"
+            onClick={() => navigate(info.routes.homePageAdmin)}
+        ></div>
+    );
 }
 
 function Title() {
@@ -26,9 +31,7 @@ function Title() {
 }
 
 function Matrix() {
-    return (
-        <div className="MatrixContainer"></div>
-    );
+    return <div className="MatrixContainer"></div>;
 }
 
 export default HeaderAdmin;
