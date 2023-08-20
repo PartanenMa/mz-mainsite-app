@@ -39,6 +39,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 10px;
     text-decoration-line: underline;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
 }
 
 .About {
@@ -54,6 +55,7 @@
     font-size: 25px;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
 .Back {
