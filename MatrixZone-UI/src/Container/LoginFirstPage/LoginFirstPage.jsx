@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { notification } from "antd";
 import { info } from "/src/Constants/Info.jsx";
@@ -27,6 +27,7 @@ function LoginSection() {
     const [passwordValue, setPasswordValue] = useState("");
     const [passwordType, setPasswordType] = useState("password");
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleUserChange = event => {
         setUserValue(event.target.value);
@@ -51,7 +52,7 @@ function LoginSection() {
         if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
             sessionStorage.setItem("load", "true");
             sessionStorage.setItem("isLoggedIn", "true");
-            navigate(info.routes.homePageAdmin);
+            navigate(location.pathname);
         } else {
             event.preventDefault();
             notification.error({
