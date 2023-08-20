@@ -3,9 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { notification } from "antd";
 import { info } from "/src/Constants/Info.jsx";
-import "./LoginFirstPage.css";
+import "./LoginFirstScreen.css";
 
-function LoginFirstPage() {
+function LoginFirstScreen() {
     return (
         <div className="LoginScreenContainer">
             <LoginTitleContainer />
@@ -95,4 +95,4 @@ function LoginSection() {
     );
 }
 
-export default LoginFirstPage;
+export default LoginFirstScreen;

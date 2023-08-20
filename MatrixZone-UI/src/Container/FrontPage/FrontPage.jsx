@@ -41,21 +41,31 @@ function Header({ setIsModalOpen }) {
 
   return (
     <header className="Header">
-      <div className="HeaderTitle">
-        <div className="HeaderLogo" onClick={handleLogoClick}></div>
-        <h1>MatrixZone</h1>
-      </div>
-      {isSmallScreen ? (
-        <div className="Menu-icon">
-          <div className="Bar"></div>
-          <div className="Bar"></div>
-          <div className="Bar"></div>
-        </div>
-      ) : (
-        <div className="NavOptions">
-          <button className="LoginButtonFP" onClick={() => navigate(info.routes.loginPage)}>Log in</button>
-        </div>
-      )}
+      <AnimatePresence>
+        <motion.div
+          className="HeaderTitle"
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="HeaderLogo" onClick={handleLogoClick}></div>
+          <h1>MatrixZone</h1>
+        </motion.div>
+        {isSmallScreen ? (
+          <div className="Menu-icon">
+            <div className="Bar"></div>
+            <div className="Bar"></div>
+            <div className="Bar"></div>
+          </div>
+        ) : (
+          <motion.div
+            className="NavOptions"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+          >
+            <button className="LoginButtonFP" onClick={() => navigate(info.routes.loginPage)}>Log in</button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
@@ -96,6 +106,9 @@ function Main({ isModalOpen, setIsModalOpen }) {
           </motion.div>
         )}
       </AnimatePresence>
+      <section className="HeroSection">
+
+      </section>
     </div>
   );
 }

@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { notification, Carousel } from "antd";
 import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
-import LoginFirstPage from "/src/Container/LoginFirstPage/LoginFirstPage.jsx";
-import LoadingPage from "/src/Container/LoadingPage/LoadingPage.jsx";
+import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
+import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
@@ -48,7 +48,7 @@ function HomePageAdmin() {
             <div>
                 {loading && load === "true" ? (
                     //Loading component here:
-                    <LoadingPage />
+                    <LoadingScreen />
                 ) : (
                     <div>
                         <HeaderAdmin />
@@ -64,7 +64,7 @@ function HomePageAdmin() {
             </div>
         );
     } else {
-        return <LoginFirstPage />;
+        return <LoginFirstScreen />;
     }
 }
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { notification } from "antd";
+import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
+import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
-import LoginFirstPage from "/src/Container/LoginFirstPage/LoginFirstPage.jsx";
-import LoadingPage from "/src/Container/LoadingPage/LoadingPage.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./VideosPage.css";
 
@@ -42,7 +42,7 @@ function VideosPageAdmin() {
             <div>
                 {loading && load === "true" ? (
                     //Loading component here:
-                    <LoadingPage />
+                    <LoadingScreen />
                 ) : (
                     <div>
                         <HeaderAdmin />
@@ -60,7 +60,7 @@ function VideosPageAdmin() {
             </div>
         );
     } else {
-        return <LoginFirstPage />;
+        return <LoginFirstScreen />;
     }
 }
 

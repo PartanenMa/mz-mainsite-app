@@ -1,9 +1,9 @@
 import reactLogo from "/src/Assets/Images/React.svg";
-import "./LoadingPage.css";
+import "./LoadingScreen.css";
 
-function LoadingPage() {
+function LoadingScreen() {
     return (
-        <div className="LoadingPageContainer">
+        <div className="LoadingScreenContainer">
             <LoadingLogo />
             <LoadingTitleContainer />
             <LoadingSection />
@@ -36,4 +36,4 @@ function LoadingSection() {
     );
 }
 
-export default LoadingPage;
+export default LoadingScreen;

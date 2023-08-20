@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { notification, Carousel } from "antd";
 import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
-import LoadingPage from "/src/Container/LoadingPage/LoadingPage.jsx";
+import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
@@ -42,7 +42,7 @@ function HomePageGuest() {
         <div>
             {loading && load === "true" ? (
                 //Loading component here:
-                <LoadingPage />
+                <LoadingScreen />
             ) : (
                 <div>
                     <HeaderGuest />
