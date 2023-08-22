@@ -38,8 +38,8 @@ export const info = {
         skillsLevel3: "Advanced",
         //Experience:
         companyName1: "Visma Real Estate Oy",
-        workTitle1: "Intern - Internship",
-        workTitle2: "Software Developer - Internship",
+        workTitle1: "Front-end Developer Intern - Internship",
+        workTitle2: "Front-end Developer Intern - Internship",
         workTimeAndPlace1: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
         workTimeAndPlace2: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
         workDescription1:
