@@ -1495,11 +1495,17 @@
 }
 
 .ExperienceInternship1 {
-    height: 130px;
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+    transition: filter 300ms;
+}
+
+.ExperienceInternship1:hover {
+    border: 1px solid white;
+    filter: drop-shadow(0 0 2em #b11226);
 }
 
 .EI1Title {
@@ -1522,21 +1528,43 @@
     bottom: 22px;
 }
 
-.EI1Content {
+.EI1Content1 {
     background-color: #b11226;
     height: 100px;
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     padding-left: 10px;
     overflow: hidden;
 }
 
-.EI1Content p {
+.EI1Content1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.EI1Content2 {
+    background-color: #333;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.EI1Content2 p {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.EI1Content2 .Tech {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "DejaVu Sans Mono, monospace";
 }
 
 .CompanyLogo1 {
@@ -1554,11 +1582,17 @@
 }
 
 .ExperienceInternship2 {
-    height: 130px;
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+    transition: filter 300ms;
+}
+
+.ExperienceInternship2:hover {
+    border: 1px solid white;
+    filter: drop-shadow(0 0 2em #b11226);
 }
 
 .EI2Title {
@@ -1581,21 +1615,43 @@
     bottom: 22px;
 }
 
-.EI2Content {
+.EI2Content1 {
     background-color: #b11226;
     height: 100px;
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     padding-left: 10px;
     overflow: hidden;
 }
 
-.EI2Content p {
+.EI2Content1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.EI2Content2 {
+    background-color: #333;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.EI2Content2 p {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.EI2Content2 .Tech {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "DejaVu Sans Mono, monospace";
 }
 
 .CompanyLogo2 {
@@ -1604,9 +1660,8 @@
     background-repeat: no-repeat;
     background-position: 20% 50%;
     background-size: 90%;
-    height: 100%;
+    height: 100px;
     width: 15%;
-    border-bottom-right-radius: 10px;
     float: right;
     position: relative;
     bottom: 96px;

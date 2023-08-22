@@ -319,30 +319,73 @@ function Skills() {
 }
 
 function Experience() {
+    const [isVisible1, setIsVisible1] = useState(false);
+    const [isVisible2, setIsVisible2] = useState(false);
+
+    const showWorkDescription1 = () => {
+        if (isVisible1 === false) {
+            setIsVisible1(true);
+        } else {
+            setIsVisible1(false);
+        }
+    };
+
+    const showWorkDescription2 = () => {
+        if (isVisible2 === false) {
+            setIsVisible2(true);
+        } else {
+            setIsVisible2(false);
+        }
+    };
+
     return (
         <div className="ExperienceContainer">
             <div className="ExperienceTitle">
                 <h3>MY EXPERIENCE</h3>
             </div>
             <div className="ExperienceContent">
-                <div className="ExperienceInternship1">
+                <div
+                    className="ExperienceInternship1"
+                    onClick={() => showWorkDescription1()}
+                >
                     <div className="EI1Title">
                         <h4>{info.LinkedIn.companyName1}</h4>
                     </div>
-                    <div className="EI1Content">
+                    <div className="EI1Content1">
                         <p>{info.LinkedIn.workTitle1}</p>
                         <p>{info.LinkedIn.workTimeAndPlace1}</p>
                         <div className="CompanyLogo1"></div>
                     </div>
+                    <div
+                        className="EI1Content2"
+                        style={{ display: isVisible1 ? "block" : "none" }}
+                    >
+                        <p>{info.LinkedIn.workDescription1}</p>
+                        <p className="Tech">
+                            Technologies used: {info.LinkedIn.workTech1}
+                        </p>
+                    </div>
                 </div>
-                <div className="ExperienceInternship2">
+                <div
+                    className="ExperienceInternship2"
+                    onClick={() => showWorkDescription2()}
+                >
                     <div className="EI2Title">
                         <h4>{info.LinkedIn.companyName1}</h4>
                     </div>
-                    <div className="EI2Content">
-                        <p>{info.LinkedIn.workTitle1}</p>
+                    <div className="EI2Content1">
+                        <p>{info.LinkedIn.workTitle2}</p>
                         <p>{info.LinkedIn.workTimeAndPlace2}</p>
                         <div className="CompanyLogo2"></div>
+                    </div>
+                    <div
+                        className="EI2Content2"
+                        style={{ display: isVisible2 ? "block" : "none" }}
+                    >
+                        <p>{info.LinkedIn.workDescription2}</p>
+                        <p className="Tech">
+                            Technologies used: {info.LinkedIn.workTech2}
+                        </p>
                     </div>
                 </div>
             </div>
