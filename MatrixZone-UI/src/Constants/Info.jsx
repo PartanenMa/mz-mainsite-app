@@ -60,7 +60,6 @@ export const info = {
         adminUserName: "Admin",
         adminPassword: "ManuAdminReact123",
     },
-
     routes: {
         frontPage: "/",
         loginPage: "/login",

@@ -2150,6 +2150,7 @@
     height: 90%;
     width: 30%;
     border: 1px solid #03a062;
+    box-shadow: 10px 5px 5px red;
     border-radius: 10px;
     position: relative;
     top: 20px;
@@ -2209,6 +2210,7 @@
     width: 30%;
     border: 1px solid #03a062;
     border-radius: 10px;
+    box-shadow: 10px 5px 5px blue;
     position: relative;
     top: 20px;
 }

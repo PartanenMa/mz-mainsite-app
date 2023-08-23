@@ -141,7 +141,6 @@ function FirstSection() {
     }
 
     const contentStyle = {
-        background: "#333",
         height: "600px",
         lineHeight: "160px",
         textAlign: "center",
