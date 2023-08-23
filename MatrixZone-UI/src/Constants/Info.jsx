@@ -3,7 +3,7 @@ export const info = {
         //Account data:
         user: "Manu Partanen",
         name: "Manu Partanen",
-        jobTitle: "Front-end Developer",
+        jobTitle: "Junior Software Developer",
         description1:
             "As a web developer, I have a strong foundation in HTML, CSS, and JavaScript. I'm also comfortable with C++, Java, C# and python, which I've been working with in several of my school and personal projects.",
         description2:
@@ -38,14 +38,14 @@ export const info = {
         skillsLevel3: "Advanced",
         //Experience:
         companyName1: "Visma Real Estate Oy",
-        workTitle1: "Front-end Developer Intern - Internship",
-        workTitle2: "Front-end Developer Intern - Internship",
+        workTitle1: "Intern - Internship",
+        workTitle2: "Junior Software Developer - Internship",
         workTimeAndPlace1: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
         workTimeAndPlace2: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
         workDescription1:
             "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
         workDescription2:
-            "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
+            "Another 4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
         workTech1: "React, Git, Node.js, Docker",
         workTech2: "React, Git, Node.js, Docker",
     },
