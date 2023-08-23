@@ -21,59 +21,26 @@ function FooterInfoBox() {
     return (
         <div className="FooterInfoBoxContainer">
             <div className="FooterInfoBoxTitle">
-                <div
-                    className="FooterInfoBoxTitleLogo"
-                    onClick={() => navigate(info.routes.homePageAdmin)}
-                ></div>
+                <div className="FooterInfoBoxTitleLogo" onClick={() => navigate(info.routes.homePageAdmin)}></div>
                 <h3>MatrixZone</h3>
             </div>
             <div className="FooterInfoBoxContent">
                 <div className="FooterNav1">
                     <div className="FooterNav1">
                         <div className="FooterNav1-1">
-                            <h3
-                                onClick={() =>
-                                    navigate(info.routes.profilePageAdmin)
-                                }
-                            >
-                                Profile
-                            </h3>
+                            <h3 onClick={() => navigate(info.routes.profilePageAdmin)}>Profile</h3>
                         </div>
                         <div className="FooterNav1-2">
-                            <h3
-                                onClick={() =>
-                                    navigate(info.routes.projectsPageAdmin)
-                                }
-                            >
-                                Projects
-                            </h3>
+                            <h3 onClick={() => navigate(info.routes.projectsPageAdmin)}>Projects</h3>
                         </div>
                         <div className="FooterNav1-3">
-                            <h3
-                                onClick={() =>
-                                    navigate(info.routes.videosPageAdmin)
-                                }
-                            >
-                                Videos
-                            </h3>
+                            <h3 onClick={() => navigate(info.routes.videosPageAdmin)}>Videos</h3>
                         </div>
                         <div className="FooterNav1-4">
-                            <h3
-                                onClick={() =>
-                                    navigate(info.routes.experiencePageAdmin)
-                                }
-                            >
-                                Experience
-                            </h3>
+                            <h3 onClick={() => navigate(info.routes.experiencePageAdmin)}>Experience</h3>
                         </div>
                         <div className="FooterNav1-5">
-                            <h3
-                                onClick={() =>
-                                    navigate(info.routes.contactPageAdmin)
-                                }
-                            >
-                                Contact
-                            </h3>
+                            <h3 onClick={() => navigate(info.routes.contactPageAdmin)}>Contact</h3>
                         </div>
                     </div>
                 </div>

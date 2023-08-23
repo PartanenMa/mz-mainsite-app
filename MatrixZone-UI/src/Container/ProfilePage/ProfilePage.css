@@ -1348,7 +1348,7 @@
 }
 
 .BED2 {
-    background-color: #009688;
+    background-color: white;
     height: 40px;
     width: 96%;
     border: 1px solid black;
@@ -1357,10 +1357,10 @@
 
 .BED2Logo {
     background-color: black;
-    background-image: url("/src/Assets/Images/FastAPILogo.svg");
+    background-image: url("/src/Assets/Images/ExpressLogo.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 70%;
+    background-size: 140%;
     height: 100%;
     width: 4%;
     float: left;
@@ -1390,60 +1390,6 @@
 }
 
 .BED2Content p {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 gray;
-    float: left;
-    position: relative;
-    left: 886px;
-    bottom: 61px;
-}
-
-.BED3 {
-    background-color: white;
-    height: 40px;
-    width: 96%;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-.BED3Logo {
-    background-color: black;
-    background-image: url("/src/Assets/Images/ExpressLogo.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 140%;
-    height: 100%;
-    width: 4%;
-    float: left;
-    border-right: 1px solid black;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.BED3Content {
-    height: 100%;
-    width: 96%;
-    float: right;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.BED3Content h4 {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 gray;
-    float: left;
-    position: relative;
-    left: 10px;
-    bottom: 68px;
-}
-
-.BED3Content p {
     color: black;
     font-size: 25px;
     font-style: italic;

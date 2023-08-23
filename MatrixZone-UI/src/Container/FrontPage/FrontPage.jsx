@@ -11,10 +11,7 @@ function FrontPage() {
         <div className="FP">
             <Header setIsModalOpen={setIsModalOpen} />
             <div className="FrontPageContainer">
-                <Main
-                    isModalOpen={isModalOpen}
-                    setIsModalOpen={setIsModalOpen}
-                />
+                <Main isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
             </div>
             <Footer />
         </div>
@@ -45,11 +42,7 @@ function Header({ setIsModalOpen }) {
     return (
         <header className="Header">
             <AnimatePresence>
-                <motion.div
-                    className="HeaderTitle"
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                >
+                <motion.div className="HeaderTitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                     <div className="HeaderLogo" onClick={handleLogoClick}></div>
                     <h1>MatrixZone</h1>
                 </motion.div>
@@ -60,15 +53,8 @@ function Header({ setIsModalOpen }) {
                         <div className="Bar"></div>
                     </div>
                 ) : (
-                    <motion.div
-                        className="NavOptions"
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                    >
-                        <button
-                            className="LoginButtonFP"
-                            onClick={() => navigate(info.routes.loginPage)}
-                        >
+                    <motion.div className="NavOptions" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
+                        <button className="LoginButtonFP" onClick={() => navigate(info.routes.loginPage)}>
                             Log in
                         </button>
                     </motion.div>
@@ -91,49 +77,36 @@ function Main({ isModalOpen, setIsModalOpen }) {
                     >
                         <div className="FPAboutTitle">
                             <h2>What is the MatrixZone?</h2>
-                            <button
-                                className="FPTitleX-button"
-                                onClick={() => setIsModalOpen(false)}
-                            >
+                            <button className="FPTitleX-button" onClick={() => setIsModalOpen(false)}>
                                 X
                             </button>
                         </div>
                         <div className="FPAbout">
                             <p>
-                                Welcome to the MatrixZone! Here, I invite you to
-                                delve into my
+                                Welcome to the MatrixZone! Here, I invite you to delve into my
                                 <br />
-                                world of passion and creativity. As an
-                                enthusiast in the realm of software development,
+                                world of passion and creativity. As an enthusiast in the realm of software development,
                                 this platform serves as a window into my
                                 <br />
                                 programming journey.
                                 <br />
                                 <br />
-                                Explore my profile to discover the mind behind
-                                the projects that
+                                Explore my profile to discover the mind behind the projects that
                                 <br />
-                                blend imagination with ingenuity, and immerse
-                                yourself in my
+                                blend imagination with ingenuity, and immerse yourself in my
                                 <br />
-                                diverse project portfolio, where innovation
-                                meets determination.
+                                diverse project portfolio, where innovation meets determination.
                                 <br />
                                 <br />
-                                From coding marvels to ingenious experiments,
-                                MatrixZone is a
+                                From coding marvels to ingenious experiments, MatrixZone is a
                                 <br />
-                                testament to my journey of growth and
-                                exploration as a fellow
+                                testament to my journey of growth and exploration as a fellow
                                 <br />
                                 software developer.
                             </p>
                         </div>
                         <div className="FPBack">
-                            <button
-                                className="FPBackButton"
-                                onClick={() => setIsModalOpen(false)}
-                            >
+                            <button className="FPBackButton" onClick={() => setIsModalOpen(false)}>
                                 Close
                             </button>
                         </div>

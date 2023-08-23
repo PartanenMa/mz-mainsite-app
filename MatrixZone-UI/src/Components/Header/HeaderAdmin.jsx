@@ -14,12 +14,7 @@ function HeaderAdmin() {
 
 function Logo() {
     const navigate = useNavigate();
-    return (
-        <div
-            className="LogoContainer"
-            onClick={() => navigate(info.routes.homePageAdmin)}
-        ></div>
-    );
+    return <div className="LogoContainer" onClick={() => navigate(info.routes.homePageAdmin)}></div>;
 }
 
 function Title() {

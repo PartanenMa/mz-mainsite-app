@@ -35,23 +35,12 @@ function TodoApp() {
     return (
         <div className="TodoAppContainer">
             <h3>TodoApp</h3>
-            <input
-                id="InputTodo"
-                value={inputValue}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-            />
+            <input id="InputTodo" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown} />
             <button onClick={addTodo}>Add todo</button>
             <ul>
                 {todos.map((todo, index) => (
-                    <div
-                        className="Todo"
-                        onClick={() => removeTodo(index)}
-                        key={index}
-                    >
-                        <p className="p1">
-                            Todo {index + 1} (CLICK TO REMOVE):
-                        </p>
+                    <div className="Todo" onClick={() => removeTodo(index)} key={index}>
+                        <p className="p1">Todo {index + 1} (CLICK TO REMOVE):</p>
                         <p className="p2">{todo}</p>
                     </div>
                 ))}

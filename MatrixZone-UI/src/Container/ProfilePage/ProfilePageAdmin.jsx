@@ -87,17 +87,13 @@ function AboutMe() {
                 <h3>ABOUT ME</h3>
             </div>
             <div className="AboutMeContent">
-                <a
-                    className="AboutMePhoto"
-                    href={info.LinkedIn.link}
-                    target="_blank"
-                >
+                <a className="AboutMePhoto" href={info.LinkedIn.link} target="_blank">
                     <div className="AboutMeLinkedInLogo"></div>
                 </a>
                 <div className="AboutMeTextContainer">
                     <div className="AboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
-                        <h4 className="h4_2">{info.LinkedIn.jobTitle}</h4>
+                        <h4 className="h4_2">{info.LinkedIn.jobTitle + " " + info.LinkedIn.company}</h4>
                     </div>
                     <div className="AboutMeText">
                         <p>
@@ -300,13 +296,6 @@ function Skills() {
                         <div className="BED2">
                             <div className="BED2Logo"></div>
                             <div className="BED2Content">
-                                <h4>FastAPI</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                            </div>
-                        </div>
-                        <div className="BED3">
-                            <div className="BED3Logo"></div>
-                            <div className="BED3Content">
                                 <h4>Express.js</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
                             </div>
@@ -344,10 +333,7 @@ function Experience() {
                 <h3>MY EXPERIENCE</h3>
             </div>
             <div className="ExperienceContent">
-                <div
-                    className="ExperienceInternship1"
-                    onClick={() => showWorkDescription1()}
-                >
+                <div className="ExperienceInternship1" onClick={() => showWorkDescription1()}>
                     <div className="EI1Title">
                         <h4>{info.LinkedIn.companyName1}</h4>
                     </div>
@@ -356,20 +342,12 @@ function Experience() {
                         <p>{info.LinkedIn.workTimeAndPlace1}</p>
                         <div className="CompanyLogo1"></div>
                     </div>
-                    <div
-                        className="EI1Content2"
-                        style={{ display: isVisible1 ? "block" : "none" }}
-                    >
+                    <div className="EI1Content2" style={{ display: isVisible1 ? "block" : "none" }}>
                         <p>{info.LinkedIn.workDescription1}</p>
-                        <p className="Tech">
-                            Technologies used: {info.LinkedIn.workTech1}
-                        </p>
+                        <p className="Tech">Technologies used: {info.LinkedIn.workTech1}</p>
                     </div>
                 </div>
-                <div
-                    className="ExperienceInternship2"
-                    onClick={() => showWorkDescription2()}
-                >
+                <div className="ExperienceInternship2" onClick={() => showWorkDescription2()}>
                     <div className="EI2Title">
                         <h4>{info.LinkedIn.companyName1}</h4>
                     </div>
@@ -378,14 +356,9 @@ function Experience() {
                         <p>{info.LinkedIn.workTimeAndPlace2}</p>
                         <div className="CompanyLogo2"></div>
                     </div>
-                    <div
-                        className="EI2Content2"
-                        style={{ display: isVisible2 ? "block" : "none" }}
-                    >
+                    <div className="EI2Content2" style={{ display: isVisible2 ? "block" : "none" }}>
                         <p>{info.LinkedIn.workDescription2}</p>
-                        <p className="Tech">
-                            Technologies used: {info.LinkedIn.workTech2}
-                        </p>
+                        <p className="Tech">Technologies used: {info.LinkedIn.workTech2}</p>
                     </div>
                 </div>
             </div>
@@ -402,10 +375,7 @@ function Interests() {
                 <h3>MY INTERESTS</h3>
             </div>
             <div className="InterestsContent">
-                <div
-                    className="Interest1"
-                    onClick={() => navigate(info.routes.iTInfraPageAdmin)}
-                >
+                <div className="Interest1" onClick={() => navigate(info.routes.iTInfraPageAdmin)}>
                     <div className="Interest1Title">
                         <h4>IT infrastructure</h4>
                     </div>
@@ -415,10 +385,7 @@ function Interests() {
                         </div>
                     </div>
                 </div>
-                <div
-                    className="Interest2"
-                    onClick={() => navigate(info.routes.programmingPageAdmin)}
-                >
+                <div className="Interest2" onClick={() => navigate(info.routes.programmingPageAdmin)}>
                     <div className="Interest2Title">
                         <h4>Programming</h4>
                     </div>
@@ -428,10 +395,7 @@ function Interests() {
                         </div>
                     </div>
                 </div>
-                <div
-                    className="Interest3"
-                    onClick={() => navigate(info.routes.roboticsPageAdmin)}
-                >
+                <div className="Interest3" onClick={() => navigate(info.routes.roboticsPageAdmin)}>
                     <div className="Interest3Title">
                         <h4>Robotics</h4>
                     </div>
@@ -455,10 +419,7 @@ function Hobbies() {
                 <h3>MY HOBBIES</h3>
             </div>
             <div className="HobbiesContent">
-                <div
-                    className="Hobby1"
-                    onClick={() => navigate(info.routes.gamingPageAdmin)}
-                >
+                <div className="Hobby1" onClick={() => navigate(info.routes.gamingPageAdmin)}>
                     <div className="Hobby1Title">
                         <h4>Gaming</h4>
                     </div>
@@ -468,10 +429,7 @@ function Hobbies() {
                         </div>
                     </div>
                 </div>
-                <div
-                    className="Hobby2"
-                    onClick={() => navigate(info.routes.webDevPageAdmin)}
-                >
+                <div className="Hobby2" onClick={() => navigate(info.routes.webDevPageAdmin)}>
                     <div className="Hobby2Title">
                         <h4>Web development</h4>
                     </div>
@@ -481,10 +439,7 @@ function Hobbies() {
                         </div>
                     </div>
                 </div>
-                <div
-                    className="Hobby3"
-                    onClick={() => navigate(info.routes.campingPageAdmin)}
-                >
+                <div className="Hobby3" onClick={() => navigate(info.routes.campingPageAdmin)}>
                     <div className="Hobby3Title">
                         <h4>Camping</h4>
                     </div>

@@ -3,7 +3,9 @@ export const info = {
         //Account data:
         user: "Manu Partanen",
         name: "Manu Partanen",
+        profession: "Front-end Web Developer",
         jobTitle: "Junior Software Developer",
+        company: "at Visma Real Estate Oy",
         description1:
             "As a web developer, I have a strong foundation in HTML, CSS, and JavaScript. I'm also comfortable with C++, Java, C# and python, which I've been working with in several of my school and personal projects.",
         description2:
@@ -26,8 +28,7 @@ export const info = {
             "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
         timeAndPlace2: "09.07.2018 - 20.06.2019, Niinisalo, Finland",
         schoolName3: "Satakunta University of Applied Sciences",
-        degreeName3:
-            "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
+        degreeName3: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
         timeAndPlace3: "16.08.2021 - present, Pori, Finland",
         //Skills:
         skillsTitle1: "Programming languages",
@@ -46,8 +47,8 @@ export const info = {
             "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
         workDescription2:
             "Another 4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
-        workTech1: "React, Git, Node.js, Docker",
-        workTech2: "React, Git, Node.js, Docker",
+        workTech1: "HTML, CSS, JavaScript, React, Sass, Node.js, Git, Docker",
+        workTech2: "HTML, CSS, JavaScript, React, Sass, Node.js, Git, Docker",
     },
     GitHub: {
         //Account data:

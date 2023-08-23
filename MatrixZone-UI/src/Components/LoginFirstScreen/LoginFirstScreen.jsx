@@ -49,10 +49,7 @@ function LoginSection() {
         togglePassword;
         const username = userValue;
         const password = passwordValue;
-        if (
-            username === info.loginInfo.adminUserName &&
-            password === info.loginInfo.adminPassword
-        ) {
+        if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
             sessionStorage.setItem("load", "true");
             sessionStorage.setItem("isLoggedIn", "true");
             navigate(location.pathname);
@@ -103,10 +100,7 @@ function LoginSection() {
                 <button className="LoginButton" onClick={() => handleLogin()}>
                     Log in
                 </button>
-                <button
-                    className="LoginGuestButton"
-                    onClick={() => handleLoginGuest()}
-                >
+                <button className="LoginGuestButton" onClick={() => handleLoginGuest()}>
                     I'm a guest
                 </button>
             </form>

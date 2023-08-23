@@ -21,10 +21,7 @@ function BackToFrontPage() {
     const navigate = useNavigate();
 
     return (
-        <button
-            className="BackToFrontPage"
-            onClick={() => navigate(info.routes.frontPage)}
-        >
+        <button className="BackToFrontPage" onClick={() => navigate(info.routes.frontPage)}>
             {"<"}
         </button>
     );
@@ -38,19 +35,12 @@ function LogosSection() {
             <div className="Logos">
                 <div className="ThreeLogos">
                     <a href="https://reactjs.org" target="_blank">
-                        <img
-                            src={reactLogo}
-                            className="logo react"
-                            alt="React logo"
-                        />
+                        <img src={reactLogo} className="logo react" alt="React logo" />
                     </a>
                     <a href="https://vitejs.dev" target="_blank">
                         <img src={viteLogo} className="logo" alt="Vite logo" />
                     </a>
-                    <div
-                        className="logo_m"
-                        onClick={() => navigate(info.routes.aboutPage)}
-                    ></div>
+                    <div className="logo_m" onClick={() => navigate(info.routes.aboutPage)}></div>
                 </div>
                 <div className="Text">
                     <h3 className="React">React</h3>
@@ -90,10 +80,7 @@ function LoginSection() {
         togglePassword;
         const username = userValue;
         const password = passwordValue;
-        if (
-            username === info.loginInfo.adminUserName &&
-            password === info.loginInfo.adminPassword
-        ) {
+        if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
             sessionStorage.setItem("isLoggedIn", "true");
             sessionStorage.setItem("load", "true");
             navigate(info.routes.homePageAdmin);
@@ -144,10 +131,7 @@ function LoginSection() {
                 <button className="LoginButton" onClick={() => handleLogin()}>
                     Log in
                 </button>
-                <button
-                    className="LoginGuestButton"
-                    onClick={() => handleLoginGuest()}
-                >
+                <button className="LoginGuestButton" onClick={() => handleLoginGuest()}>
                     I'm a guest
                 </button>
             </form>
