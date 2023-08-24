@@ -9,8 +9,6 @@ import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import TimeAndDate from "/src/Components/CurrentTime/TimeAndDate.jsx";
 import reactLogo from "/src/Assets/Images/React.svg";
-import TodoApp from "/src/Components/TodoApp/TodoApp.jsx";
-import CalculatorApp from "/src/Components/CalculatorApp/CalculatorApp.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./HomePage.css";
 
@@ -55,8 +53,6 @@ function HomePageAdmin() {
                         <NavAdmin />
                         <div className="HomePageContainer">
                             <FirstSection />
-                            <AdminControlPanel />
-                            <AdminTools />
                         </div>
                         <FooterAdmin />
                     </div>
@@ -304,30 +300,6 @@ function FirstSection() {
                     <div className="Box3"></div>
                 </div>
             </section>
-        </div>
-    );
-}
-
-function AdminControlPanel() {
-    return (
-        <div className="AdminControlPanelContainer">
-            <div className="CPTitle">
-                <h2>Control panel:</h2>
-            </div>
-        </div>
-    );
-}
-
-function AdminTools() {
-    return (
-        <div className="AdminToolsContainer">
-            <div className="AppsTitle">
-                <h2>Tools:</h2>
-            </div>
-            <div className="Apps">
-                <CalculatorApp />
-                <TodoApp />
-            </div>
         </div>
     );
 }

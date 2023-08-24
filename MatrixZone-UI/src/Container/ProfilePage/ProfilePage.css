@@ -58,18 +58,20 @@
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border-top: 1px solid #03a062;
-    border-bottom: 1px solid #03a062;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .AboutMeTitle {
+    background-color: #0072b1;
     height: 10%;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .AboutMeTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -181,17 +183,19 @@
 .LanguagesContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
 }
 
 .LanguagesTitle {
+    background-color: #0072b1;
     height: 30px;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .LanguagesTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -310,17 +314,19 @@
 .EducationContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
 }
 
 .EducationTitle {
+    background-color: #0072b1;
     height: 30px;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .EducationTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -512,17 +518,19 @@
 .SkillsContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
 }
 
 .SkillsTitle {
+    background-color: #0072b1;
     height: 30px;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .SkillsTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1405,17 +1413,19 @@
 .ExperienceContainer {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
 }
 
 .ExperienceTitle {
+    background-color: #0072b1;
     height: 30px;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .ExperienceTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1618,17 +1628,19 @@
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
 }
 
 .InterestsTitle {
+    background-color: #0072b1;
     height: 10%;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .InterestsTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1865,17 +1877,19 @@
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
 }
 
 .HobbiesTitle {
+    background-color: #0072b1;
     height: 10%;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .HobbiesTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -2111,18 +2125,20 @@
 .ContactContainer {
     height: 510px;
     width: 100%;
-    border-top: 1px solid #03a062;
+    border-top: 1px solid white;
     overflow: hidden;
 }
 
 .ContactTitle {
+    background-color: #0072b1;
     height: 30px;
     width: 100%;
     overflow: hidden;
+    border-bottom: 1px solid white;
 }
 
 .ContactTitle h3 {
-    color: #03a062;
+    color: white;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
