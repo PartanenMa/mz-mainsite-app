@@ -34,14 +34,6 @@
     margin-bottom: 30px;
 }
 
-.HeaderTitle {
-    height: 100%;
-    width: 260px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .HeaderLogo {
     background-image: url("/src/Assets/Images/Logo.PNG");
     background-repeat: no-repeat;
@@ -59,6 +51,14 @@
 .HeaderLogo:hover {
     border: 1px solid lightgreen;
     filter: drop-shadow(0 0 2em #03a062);
+}
+
+.HeaderTitle {
+    height: 100%;
+    width: 260px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .HeaderTitle h1 {
@@ -267,8 +267,63 @@
 
 .HeroSection {
     background-color: transparent;
-    height: 580px;
+    height: 595px;
     width: 100%;
+}
+
+.HeroTitle {
+    animation: fadeIn 0.3s;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.HeroTitle h2 {
+    font-size: 100px;
+    background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    outline: none;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.HeroTitle h2:hover {
+    font-variation-settings: "wght" 582;
+    letter-spacing: 1px;
+}
+
+.HeroTitle p {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.HeroTitle span {
+    color: #61dbfb;
+    text-shadow: 0.5px 0.5px 0 lightblue;
+}
+
+.HeroContent {
+    animation: fadeIn 0.3s;
+    background-color: #333;
+    height: 40%;
+    width: 100%;
+    overflow: hidden;
 }
 
 /*Footer:*/
