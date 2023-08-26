@@ -114,15 +114,23 @@ function Main({ isModalOpen, setIsModalOpen }) {
                         </motion.div>
                     )}
                 </AnimatePresence>
-                <div class="HeroTitle">
-                    <h2 contenteditable>Welcome to the MatrixZone</h2>
-                    <p>My personal website</p>
-                    <p>
-                        Made with love using <span>React</span>
-                    </p>
-                </div>
-                <div class="HeroContent"></div>
+                <AnimatePresence>
+                    <motion.div class="HeroTitle" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }}>
+                        <h2 contenteditable>Welcome to the MatrixZone</h2>
+                        <p>My personal website</p>
+                        <p>
+                            Made with love using <span>React</span>
+                        </p>
+                    </motion.div>
+                    <motion.div class="HeroContent" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }}>
+                        <div className="HeroContent1"></div>
+                        <div className="HeroContent2"></div>
+                        <div className="HeroContent2"></div>
+                    </motion.div>
+                </AnimatePresence>
             </section>
+            <section className="AboutSection"></section>
+            <section className="ProjectsSection"></section>
         </div>
     );
 }

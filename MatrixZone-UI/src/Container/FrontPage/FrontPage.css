@@ -269,6 +269,7 @@
     background-color: transparent;
     height: 595px;
     width: 100%;
+    overflow: hidden;
 }
 
 .HeroTitle {
@@ -320,8 +321,47 @@
 
 .HeroContent {
     animation: fadeIn 0.3s;
-    background-color: #333;
     height: 40%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+.HeroContent1 {
+    height: 90%;
+    width: 30%;
+    border: 1px solid #03a062;
+    border-radius: 10px;
+}
+
+.HeroContent2 {
+    height: 90%;
+    width: 30%;
+    border: 1px solid #03a062;
+    border-radius: 10px;
+}
+
+.HeroContent3 {
+    height: 90%;
+    width: 23%;
+    border: 1px solid #03a062;
+    border-radius: 10px;
+}
+
+.AboutSection {
+    background-color: transparent;
+    height: 595px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ProjectsSection {
+    background-color: transparent;
+    height: 595px;
     width: 100%;
     overflow: hidden;
 }
