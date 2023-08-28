@@ -116,11 +116,21 @@ function Main({ isModalOpen, setIsModalOpen }) {
                 </AnimatePresence>
                 <AnimatePresence>
                     <motion.div class="HeroTitle" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }}>
-                        <h2 contenteditable>Welcome to the MatrixZone</h2>
-                        <p>My personal website</p>
-                        <p>
-                            Made with love using <span>React</span>
-                        </p>
+                        <div className="HTWelcome1">
+                            <h2>Hi, I'm Manu Partanen</h2>
+                        </div>
+                        <div className="HTWelcome2">
+                            <h3 contenteditable>Welcome to the MatrixZone</h3>
+                        </div>
+                        <div className="HTWelcome3">
+                            <p>My personal website</p>
+                            <p>
+                                Made with love using{" "}
+                                <span>
+                                    React<div className="HTRL"></div>
+                                </span>
+                            </p>
+                        </div>
                     </motion.div>
                     <motion.div class="HeroContent" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }}>
                         <div className="HeroContent1"></div>
