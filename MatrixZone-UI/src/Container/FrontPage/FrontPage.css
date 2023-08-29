@@ -164,7 +164,7 @@
 }
 
 .FPModal {
-    background-color: #333;
+    background-color: #111;
     height: 580px;
     width: 746px;
     padding-bottom: 10px;
@@ -395,7 +395,7 @@
 }
 
 .HeroContent1 {
-    background-color: #333;
+    background-color: #111;
     height: 90%;
     width: 30%;
     border: 1px solid #03a062;
@@ -403,7 +403,7 @@
 }
 
 .HeroContent2 {
-    background-color: #333;
+    background-color: #111;
     height: 90%;
     width: 30%;
     border: 1px solid #03a062;
@@ -411,7 +411,7 @@
 }
 
 .HeroContent3 {
-    background-color: #333;
+    background-color: #111;
     height: 90%;
     width: 23%;
     border: 1px solid #03a062;

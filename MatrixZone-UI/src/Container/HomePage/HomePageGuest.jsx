@@ -78,7 +78,7 @@ function FirstSection() {
         } else {
             setBGoption("OFF");
             option.style.left = "0px";
-            bg.style.backgroundColor = "#333";
+            bg.style.backgroundColor = "#111";
         }
     }, []);
 
@@ -93,7 +93,7 @@ function FirstSection() {
             setBGoption("OFF");
             sessionStorage.setItem("isGuestGIF", "false");
             option.style.left = "0px";
-            bg.style.backgroundColor = "#333";
+            bg.style.backgroundColor = "#111";
         } else if (BGoption === "OFF") {
             setBGoption("ON");
             sessionStorage.setItem("isGuestGIF", "true");

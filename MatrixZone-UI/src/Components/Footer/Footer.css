@@ -1,6 +1,6 @@
 /*Footer:*/
 .FooterContainer {
-    background-color: #333;
+    background-color: #111;
     height: 720px;
     width: 1244px;
     border-bottom-left-radius: 10px;
@@ -83,6 +83,7 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 20px;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
     transition: background-color 300ms;
 }
 
@@ -105,6 +106,7 @@
     position: relative;
     bottom: 5px;
     left: 20px;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
     transition: background-color 300ms;
 }
 
@@ -127,6 +129,7 @@
     position: relative;
     bottom: 10px;
     left: 20px;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
     transition: background-color 300ms;
 }
 
@@ -149,6 +152,7 @@
     position: relative;
     bottom: 15px;
     left: 20px;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
     transition: background-color 300ms;
 }
 
@@ -171,6 +175,7 @@
     position: relative;
     bottom: 20px;
     left: 20px;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
     transition: background-color 300ms;
 }
 
@@ -229,6 +234,7 @@
     position: relative;
     bottom: 40px;
     left: 45px;
+    text-shadow: 0.5px 0.5px 0 white;
     transition: background-color 300ms;
 }
 
@@ -277,6 +283,7 @@
     position: relative;
     bottom: 40px;
     left: 45px;
+    text-shadow: 0.5px 0.5px 0 white;
     transition: background-color 300ms;
 }
 
@@ -324,6 +331,7 @@
     position: relative;
     bottom: 35px;
     left: 45px;
+    text-shadow: 0.5px 0.5px 0 white;
     transition: background-color 300ms;
 }
 

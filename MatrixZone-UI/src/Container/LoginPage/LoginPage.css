@@ -17,7 +17,7 @@
 
 /*Back button:*/
 .BackToFrontPage {
-    background-color: #333;
+    background-color: #111;
     color: #03a062;
     height: 44px;
     width: 44px;
@@ -125,7 +125,7 @@
 }
 
 .Text .React {
-    background-color: #333;
+    background-color: #111;
     color: #61dbfb;
     font-size: 30px;
     font-style: italic;
@@ -151,7 +151,7 @@
 }
 
 .Text .Vite {
-    background-color: #333;
+    background-color: #111;
     color: mediumorchid;
     font-size: 30px;
     font-style: italic;
@@ -177,7 +177,7 @@
 }
 
 .Text .App {
-    background-color: #333;
+    background-color: #111;
     color: #03a062;
     font-size: 30px;
     font-style: italic;
@@ -197,7 +197,7 @@
 }
 
 .Login {
-    background-color: #333;
+    background-color: #111;
     height: 380px;
     width: 300px;
     position: relative;
@@ -264,7 +264,7 @@
 }
 
 .LoginButton {
-    background-color: #333;
+    background-color: #111;
     color: #03a062;
     cursor: pointer;
     height: 48px;
@@ -286,7 +286,7 @@
 }
 
 .LoginGuestButton {
-    background-color: #333;
+    background-color: #111;
     color: #03a062;
     cursor: pointer;
     height: 48px;

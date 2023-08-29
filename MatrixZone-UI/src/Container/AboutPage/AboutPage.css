@@ -19,7 +19,7 @@
 
 /*About container*/
 .AboutContainer {
-    background-color: #333;
+    background-color: #111;
     height: 100%;
     width: 60%;
     padding-bottom: 10px;
@@ -69,8 +69,8 @@
     justify-content: center;
 }
 
-.BackButton {
-    background-color: #333;
+.AboutBackButton {
+    background-color: #111;
     color: #03a062;
     cursor: pointer;
     height: 48px;
@@ -81,7 +81,7 @@
     font-style: italic;
 }
 
-.BackButton:hover {
+.AboutBackButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);

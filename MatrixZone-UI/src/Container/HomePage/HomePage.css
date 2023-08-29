@@ -1,6 +1,7 @@
 /*HomePage:*/
 .HomePageContainer {
     animation: fadeIn 0.3s;
+    background-color: #111;
     width: 1244px;
     border-left: 3px solid #03a062;
     border-right: 3px solid #03a062;
@@ -18,7 +19,6 @@
 
 /*First section:*/
 .FirstSectionContainer {
-    background-color: #333;
     width: 1244px;
     overflow: hidden;
 }
@@ -204,7 +204,7 @@
 
 .LogOutContainer2Admin {
     display: block;
-    background-color: #333;
+    background-color: #111;
     height: 300px;
     width: 200px;
     border-radius: 10px;
@@ -224,12 +224,12 @@
 
 .X-buttonAdmin {
     animation: fadeIn 0.3s;
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: lightcoral;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid red;
+    border: 1px solid lightcoral;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;
@@ -239,11 +239,11 @@
 }
 
 .X-buttonAdmin:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .LogoAdmin2 {
@@ -268,13 +268,13 @@
 
 .SettingsButtonAdmin {
     animation: fadeIn 0.3s;
-    background-color: yellow;
-    color: orange;
+    background-color: orange;
+    color: yellow;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid orange;
+    border: 1px solid yellow;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -284,22 +284,22 @@
 }
 
 .SettingsButtonAdmin:hover {
-    background-color: orange;
-    color: yellow;
-    border: 1px solid yellow;
+    background-color: yellow;
+    color: orange;
+    border: 1px solid orange;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em orange);
+    filter: drop-shadow(0 0 2em yellow);
 }
 
 .LogOutButtonAdmin {
     animation: fadeIn 0.3s;
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: lightcoral;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid red;
+    border: 1px solid lightcoral;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -309,16 +309,16 @@
 }
 
 .LogOutButtonAdmin:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .LogOutContainer2Guest {
     display: block;
-    background-color: #333;
+    background-color: #111;
     height: 300px;
     width: 200px;
     border-radius: 10px;
@@ -338,12 +338,12 @@
 
 .X-buttonGuest {
     animation: fadeIn 0.3s;
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: lightcoral;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid red;
+    border: 1px solid lightcoral;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;
@@ -353,11 +353,11 @@
 }
 
 .X-buttonGuest:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .LogoGuest2 {
@@ -373,13 +373,13 @@
 
 .SettingsButtonGuest {
     animation: fadeIn 0.3s;
-    background-color: yellow;
-    color: orange;
+    background-color: orange;
+    color: yellow;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid orange;
+    border: 1px solid yellow;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -389,22 +389,22 @@
 }
 
 .SettingsButtonGuest:hover {
-    background-color: orange;
-    color: yellow;
-    border: 1px solid yellow;
+    background-color: yellow;
+    color: orange;
+    border: 1px solid orange;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em orange);
+    filter: drop-shadow(0 0 2em yellow);
 }
 
 .LogOutButtonGuest {
     animation: fadeIn 0.3s;
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: lightcoral;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid red;
+    border: 1px solid lightcoral;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -414,16 +414,16 @@
 }
 
 .LogOutButtonGuest:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .LogOutContainer3 {
     display: block;
-    background-color: #333;
+    background-color: #111;
     height: 300px;
     width: 200px;
     border-radius: 10px;
@@ -443,12 +443,12 @@
 
 .Settings_X-button {
     animation: fadeIn 0.3s;
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: lightcoral;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid red;
+    border: 1px solid lightcoral;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;
@@ -458,11 +458,11 @@
 }
 
 .Settings_X-button:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .OptionText {
@@ -475,7 +475,6 @@
 
 .OptionBG {
     animation: fadeIn 0.3s;
-    background-color: #333;
     border: 1px solid #03a062;
     cursor: pointer;
     border-radius: 20px;
@@ -496,7 +495,7 @@
 
 .SettingsBackButton {
     animation: fadeIn 0.3s;
-    background-color: #333;
+    background-color: #111;
     color: #03a062;
     cursor: pointer;
     height: 48px;
@@ -657,7 +656,7 @@
 }
 
 .CarouselButtonLeft {
-    background-color: #333;
+    background-color: #111;
     cursor: pointer;
     height: 100px;
     width: 60px;
@@ -676,7 +675,7 @@
 }
 
 .CarouselButtonRight {
-    background-color: #333;
+    background-color: #111;
     cursor: pointer;
     height: 100px;
     width: 60px;
@@ -695,7 +694,6 @@
 }
 
 .HomeFirstSection1 {
-    background-color: #333;
     height: 360px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -722,7 +720,6 @@
 }
 
 .GoToMyProfile {
-    background-color: #333;
     background-image: url("/src/Assets/Images/ProfileBG.jpg");
     background-repeat: no-repeat;
     background-size: 100% 180%;
@@ -803,14 +800,14 @@
 }
 
 .GoToProfile {
-    background-color: #333;
+    background-color: #0072b1;
     color: white;
     cursor: pointer;
     height: 48px;
     width: 207px;
     float: left;
     border-radius: 10px;
-    border: 1px solid #0072b1;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -818,7 +815,7 @@
 }
 
 .GoToProfile:hover {
-    background-color: #0072b1;
+    background-color: lightblue;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #0072b1);
 }
@@ -832,7 +829,6 @@
 }
 
 .HomeFirstSection2 {
-    background-color: #333;
     height: 360px;
     width: 100%;
 }
@@ -856,7 +852,6 @@
 }
 
 .GoToMyProjects {
-    background-color: black;
     background-image: url("/src/Assets/Images/ProjectsBG.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -894,7 +889,7 @@
     width: 18%;
     border-radius: 10px;
     margin-top: 30px;
-    border: 1px solid #03a062;
+    border: 1px solid black;
     padding-left: 15px;
 }
 
@@ -939,14 +934,14 @@
 }
 
 .GoToProjects {
-    background-color: #333;
+    background-color: black;
     color: white;
     cursor: pointer;
     height: 48px;
     width: 207px;
     float: left;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -954,7 +949,7 @@
 }
 
 .GoToProjects:hover {
-    background-color: black;
+    background-color: gray;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em black);
 }
@@ -968,7 +963,6 @@
 }
 
 .HomeFirstSection3 {
-    background-color: #333;
     height: 360px;
     width: 100%;
 }
@@ -992,7 +986,6 @@
 }
 
 .GoToMyVideos {
-    background-color: black;
     background-image: url("/src/Assets/Images/VideosBG.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -1075,14 +1068,14 @@
 }
 
 .GoToVideos {
-    background-color: #333;
+    background-color: #c4302b;
     color: white;
     cursor: pointer;
     height: 48px;
     width: 207px;
     float: left;
     border-radius: 10px;
-    border: 1px solid #c4302b;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1090,7 +1083,7 @@
 }
 
 .GoToVideos:hover {
-    background-color: #c4302b;
+    background-color: lightcoral;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #c4302b);
 }
