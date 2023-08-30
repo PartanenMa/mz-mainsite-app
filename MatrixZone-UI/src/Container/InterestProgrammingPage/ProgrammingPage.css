@@ -19,7 +19,7 @@
 
 /*Programming container*/
 .ProgrammingContainer {
-    background-color: #333;
+    background-color: #111;
     height: 100%;
     width: 95%;
     border: 3px solid #03a062;
@@ -66,8 +66,8 @@
     justify-content: center;
 }
 
-.BackButton {
-    background-color: #333;
+.PPBackButton {
+    background-color: #111;
     color: #03a062;
     cursor: pointer;
     height: 48px;
@@ -79,7 +79,7 @@
     margin-top: 6px;
 }
 
-.BackButton:hover {
+.PPBackButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);

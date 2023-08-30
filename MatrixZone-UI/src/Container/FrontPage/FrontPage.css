@@ -199,12 +199,12 @@
 
 .FPTitleX-button {
     animation: fadeIn 0.3s;
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: white;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid red;
+    border: 1px solid white;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;
@@ -214,11 +214,11 @@
 }
 
 .FPTitleX-button:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .FPAbout {
@@ -245,24 +245,24 @@
 }
 
 .FPBackButton {
-    background-color: lightcoral;
-    color: red;
+    background-color: red;
+    color: white;
     cursor: pointer;
     height: 48px;
     width: 207px;
     border-radius: 10px;
-    border: 1px solid red;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     transition: filter 300ms;
 }
 
 .FPBackButton:hover {
-    background-color: red;
-    color: lightcoral;
-    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em red);
+    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .HeroSection {

@@ -225,11 +225,11 @@
 .X-buttonAdmin {
     animation: fadeIn 0.3s;
     background-color: red;
-    color: lightcoral;
+    color: white;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid lightcoral;
+    border: 1px solid white;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;
@@ -269,12 +269,12 @@
 .SettingsButtonAdmin {
     animation: fadeIn 0.3s;
     background-color: orange;
-    color: yellow;
+    color: white;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid yellow;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -294,12 +294,12 @@
 .LogOutButtonAdmin {
     animation: fadeIn 0.3s;
     background-color: red;
-    color: lightcoral;
+    color: white;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid lightcoral;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -339,11 +339,11 @@
 .X-buttonGuest {
     animation: fadeIn 0.3s;
     background-color: red;
-    color: lightcoral;
+    color: white;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid lightcoral;
+    border: 1px solid white;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;
@@ -374,12 +374,12 @@
 .SettingsButtonGuest {
     animation: fadeIn 0.3s;
     background-color: orange;
-    color: yellow;
+    color: white;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid yellow;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -399,12 +399,12 @@
 .LogOutButtonGuest {
     animation: fadeIn 0.3s;
     background-color: red;
-    color: lightcoral;
+    color: white;
     cursor: pointer;
     height: 48px;
     width: 127px;
     border-radius: 10px;
-    border: 1px solid lightcoral;
+    border: 1px solid white;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -444,11 +444,11 @@
 .Settings_X-button {
     animation: fadeIn 0.3s;
     background-color: red;
-    color: lightcoral;
+    color: white;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    border: 1px solid lightcoral;
+    border: 1px solid white;
     border-radius: 5px;
     font-size: 20px;
     font-style: italic;

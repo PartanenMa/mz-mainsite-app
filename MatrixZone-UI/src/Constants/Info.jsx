@@ -40,13 +40,13 @@ export const info = {
         //Experience:
         companyName1: "Visma Real Estate Oy",
         workTitle1: "Intern - Internship",
-        workTitle2: "Junior Software Developer - Internship",
+        workTitle2: "Junior Software Developer - Full-time",
         workTimeAndPlace1: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
         workTimeAndPlace2: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
         workDescription1:
             "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
         workDescription2:
-            "Another 4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
+            "My first full-time front-end developer job at Visma Real Estate Oy after my internship there. My tasks once again included developing the UI of the Hausvise housing management system using React.",
         workTech1: "HTML, CSS, JavaScript, React, Sass, Node.js, Git, Docker",
         workTech2: "HTML, CSS, JavaScript, React, Sass, Node.js, Git, Docker",
     },

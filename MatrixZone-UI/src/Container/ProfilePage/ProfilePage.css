@@ -1454,7 +1454,7 @@
     padding-right: 1%;
 }
 
-.ExperienceInternship1 {
+.ExperienceInternship {
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
@@ -1463,12 +1463,12 @@
     transition: filter 300ms;
 }
 
-.ExperienceInternship1:hover {
+.ExperienceInternship:hover {
     border: 1px solid white;
     filter: drop-shadow(0 0 2em #b11226);
 }
 
-.EI1Title {
+.EITitle {
     background-color: #111;
     height: 30px;
     width: 100%;
@@ -1479,7 +1479,7 @@
     overflow: hidden;
 }
 
-.EI1Title h4 {
+.EITitle h4 {
     color: #03a062;
     font-size: 20px;
     font-style: italic;
@@ -1489,7 +1489,7 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EI1Content1 {
+.EIContent1 {
     background-color: #b11226;
     height: 100px;
     width: 100%;
@@ -1497,14 +1497,14 @@
     overflow: hidden;
 }
 
-.EI1Content1 p {
+.EIContent1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.EI1Content2 {
+.EIContent2 {
     background-color: #333;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -1514,14 +1514,14 @@
     overflow: hidden;
 }
 
-.EI1Content2 p {
+.EIContent2 p {
     color: white;
     font-size: 15px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.EI1Content2 .Tech {
+.EIContent2 .Tech {
     color: white;
     font-size: 15px;
     font-style: italic;
@@ -1542,7 +1542,7 @@
     bottom: 96px;
 }
 
-.ExperienceInternship2 {
+.ExperienceJob1 {
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
@@ -1551,12 +1551,12 @@
     transition: filter 300ms;
 }
 
-.ExperienceInternship2:hover {
+.ExperienceJob1:hover {
     border: 1px solid white;
     filter: drop-shadow(0 0 2em #b11226);
 }
 
-.EI2Title {
+.EJ1Title {
     background-color: #111;
     height: 30px;
     width: 100%;
@@ -1567,7 +1567,7 @@
     overflow: hidden;
 }
 
-.EI2Title h4 {
+.EJ1Title h4 {
     color: #03a062;
     font-size: 20px;
     font-style: italic;
@@ -1577,7 +1577,7 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EI2Content1 {
+.EJ1Content1 {
     background-color: #b11226;
     height: 100px;
     width: 100%;
@@ -1585,14 +1585,14 @@
     overflow: hidden;
 }
 
-.EI2Content1 p {
+.EJ1Content1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.EI2Content2 {
+.EJ1Content2 {
     background-color: #333;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -1602,14 +1602,14 @@
     overflow: hidden;
 }
 
-.EI2Content2 p {
+.EJ1Content2 p {
     color: white;
     font-size: 15px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.EI2Content2 .Tech {
+.EJ1Content2 .Tech {
     color: white;
     font-size: 15px;
     font-style: italic;

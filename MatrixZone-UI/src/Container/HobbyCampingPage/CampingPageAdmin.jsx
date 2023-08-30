@@ -69,7 +69,7 @@ function CampingPageAdmin() {
                                     <p>vgsfbhndhfm...</p>
                                 </div>
                                 <div className="Back">
-                                    <button className="BackButton" onClick={toggleContainer}>
+                                    <button className="CPBackButton" onClick={toggleContainer}>
                                         Back
                                     </button>
                                 </div>

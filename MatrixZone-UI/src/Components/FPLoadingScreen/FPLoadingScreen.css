@@ -1,0 +1,8 @@
+.FPLoadingScreenContainer {
+    background-image: url("/src/Assets/Images/FPLoadingImage.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}

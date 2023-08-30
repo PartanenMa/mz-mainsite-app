@@ -291,30 +291,30 @@ function Experience() {
                 <h3>EXPERIENCE</h3>
             </div>
             <div className="ExperienceContent">
-                <div className="ExperienceInternship1" onClick={() => showWorkDescription1()}>
-                    <div className="EI1Title">
+                <div className="ExperienceInternship" onClick={() => showWorkDescription1()}>
+                    <div className="EITitle">
                         <h4>{info.LinkedIn.companyName1}</h4>
                     </div>
-                    <div className="EI1Content1">
+                    <div className="EIContent1">
                         <p>{info.LinkedIn.workTitle1}</p>
                         <p>{info.LinkedIn.workTimeAndPlace1}</p>
                         <div className="CompanyLogo1"></div>
                     </div>
-                    <div className="EI1Content2" style={{ display: isVisible1 ? "block" : "none" }}>
+                    <div className="EIContent2" style={{ display: isVisible1 ? "block" : "none" }}>
                         <p>{info.LinkedIn.workDescription1}</p>
                         <p className="Tech">Technologies used: {info.LinkedIn.workTech1}</p>
                     </div>
                 </div>
-                <div className="ExperienceInternship2" onClick={() => showWorkDescription2()}>
-                    <div className="EI2Title">
+                <div className="ExperienceJob1" onClick={() => showWorkDescription2()}>
+                    <div className="EJ1Title">
                         <h4>{info.LinkedIn.companyName1}</h4>
                     </div>
-                    <div className="EI2Content1">
+                    <div className="EJ1Content1">
                         <p>{info.LinkedIn.workTitle2}</p>
                         <p>{info.LinkedIn.workTimeAndPlace2}</p>
                         <div className="CompanyLogo2"></div>
                     </div>
-                    <div className="EI2Content2" style={{ display: isVisible2 ? "block" : "none" }}>
+                    <div className="EJ1Content2" style={{ display: isVisible2 ? "block" : "none" }}>
                         <p>{info.LinkedIn.workDescription2}</p>
                         <p className="Tech">Technologies used: {info.LinkedIn.workTech2}</p>
                     </div>
