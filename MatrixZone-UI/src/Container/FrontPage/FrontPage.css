@@ -173,7 +173,7 @@
     box-shadow: 0 0 30px 5px #03a062;
     position: relative;
     left: 20%;
-    top: 0%;
+    top: 10%;
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: hidden;
@@ -269,9 +269,9 @@
     background-image: url("/src/Assets/Images/HeroSectionBG.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 130%;
     background-color: transparent;
-    height: 595px;
+    height: 800px;
     width: 100%;
     overflow: hidden;
 }
@@ -279,7 +279,7 @@
 .HeroTitle {
     animation: fadeIn 0.3s;
     width: 100%;
-    height: 60%;
+    height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -289,7 +289,7 @@
 
 .HTWelcome1 {
     position: relative;
-    top: 70px;
+    top: 20px;
 }
 
 .HTWelcome1 h2 {
@@ -300,11 +300,19 @@
     text-shadow: 0.5px 0.5px 0 lightgreen;
     text-align: center;
     letter-spacing: 0.5px;
+    text-shadow:
+        0 0 10px black,
+        0 0 20px black,
+        0 0 30px black,
+        0 0 40px black,
+        0 0 50px black,
+        0 0 60px black,
+        0 0 70px black;
 }
 
 .HTWelcome2 {
     position: relative;
-    bottom: 30px;
+    bottom: 50px;
 }
 
 .HTWelcome2 h3 {
@@ -340,7 +348,7 @@
 
 .HTWelcome3 {
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
 }
 
 .HTWelcome3 p {
@@ -352,11 +360,27 @@
     line-height: 150%;
     text-align: center;
     letter-spacing: 0.5px;
+    text-shadow:
+        0 0 10px black,
+        0 0 20px black,
+        0 0 30px black,
+        0 0 40px black,
+        0 0 50px black,
+        0 0 60px black,
+        0 0 70px black;
 }
 
 .HTWelcome3 span {
     color: #61dbfb;
     text-shadow: 0.5px 0.5px 0 lightblue;
+    text-shadow:
+        0 0 10px black,
+        0 0 20px black,
+        0 0 30px black,
+        0 0 40px black,
+        0 0 50px black,
+        0 0 60px black,
+        0 0 70px black;
 }
 
 .HTRL {
@@ -384,9 +408,8 @@
 
 .HeroContent {
     animation: fadeIn 0.3s;
-    height: 40%;
+    height: 35%;
     width: 100%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -398,24 +421,45 @@
     background-color: #111;
     height: 90%;
     width: 30%;
+    cursor: pointer;
     border: 1px solid #03a062;
     border-radius: 10px;
+    transition: filter 300ms;
+}
+
+.HeroContent1:hover {
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .HeroContent2 {
     background-color: #111;
     height: 90%;
     width: 30%;
+    cursor: pointer;
     border: 1px solid #03a062;
     border-radius: 10px;
+    transition: filter 300ms;
+}
+
+.HeroContent2:hover {
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .HeroContent3 {
     background-color: #111;
     height: 90%;
-    width: 23%;
+    width: 30%;
+    cursor: pointer;
     border: 1px solid #03a062;
     border-radius: 10px;
+    transition: filter 300ms;
+}
+
+.HeroContent3:hover {
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
 .AboutSection {
