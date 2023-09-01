@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
+import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
+import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./CampingPage.css";
 
 function CampingPageAdmin() {
@@ -52,30 +54,27 @@ function CampingPageAdmin() {
                     //Loading component here:
                     <LoadingScreen />
                 ) : (
-                    <AnimatePresence>
-                        <div className="CampingPageContent">
-                            <motion.div
-                                className="CampingContainer"
-                                initial={{ height: "0%" }}
-                                animate={{ height: isOpen ? "100%" : "0%" }}
-                                exit={{ height: "0%" }}
-                                transition={{ duration: 0.5 }}
-                                exitBeforeEnter
-                            >
-                                <div className="CampingTitle">
-                                    <h2>Camping</h2>
-                                </div>
-                                <div className="Camping">
-                                    <p>vgsfbhndhfm...</p>
-                                </div>
-                                <div className="Back">
-                                    <button className="CPBackButton" onClick={toggleContainer}>
-                                        Back
-                                    </button>
-                                </div>
-                            </motion.div>
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
+                        <div className="CampingContainer">
+                            <div className="Breadcrumb">
+                                <h2>Admin / profile / camping</h2>
+                            </div>
+                            <div className="CampingTitle">
+                                <h2>CAMPING</h2>
+                            </div>
+                            <div className="CampingContent">
+                                <p>vgsfbhndhfm...</p>
+                            </div>
+                            <div className="CPBack">
+                                <button className="CPBackButton" onClick={toggleContainer}>
+                                    Back
+                                </button>
+                            </div>
                         </div>
-                    </AnimatePresence>
+                        <FooterAdmin />
+                    </div>
                 )}
             </div>
         );

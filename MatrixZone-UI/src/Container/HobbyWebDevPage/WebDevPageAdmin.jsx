@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
+import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
+import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./WebDevPage.css";
 
 function WebDevPageAdmin() {
@@ -52,30 +54,27 @@ function WebDevPageAdmin() {
                     //Loading component here:
                     <LoadingScreen />
                 ) : (
-                    <AnimatePresence>
-                        <div className="WebDevPageContent">
-                            <motion.div
-                                className="WebDevContainer"
-                                initial={{ height: "0%" }}
-                                animate={{ height: isOpen ? "100%" : "0%" }}
-                                exit={{ height: "0%" }}
-                                transition={{ duration: 0.5 }}
-                                exitBeforeEnter
-                            >
-                                <div className="WebDevTitle">
-                                    <h2>Web development</h2>
-                                </div>
-                                <div className="WebDev">
-                                    <p>vgsfbhndhfm...</p>
-                                </div>
-                                <div className="Back">
-                                    <button className="WDPBackButton" onClick={toggleContainer}>
-                                        Back
-                                    </button>
-                                </div>
-                            </motion.div>
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
+                        <div className="WebDevContainer">
+                            <div className="Breadcrumb">
+                                <h2>Admin / profile / web_dev</h2>
+                            </div>
+                            <div className="WebDevTitle">
+                                <h2>WEB DEVELOPMENT</h2>
+                            </div>
+                            <div className="WebDevContent">
+                                <p>vgsfbhndhfm...</p>
+                            </div>
+                            <div className="WDPBack">
+                                <button className="WDPBackButton" onClick={toggleContainer}>
+                                    Back
+                                </button>
+                            </div>
                         </div>
-                    </AnimatePresence>
+                        <FooterAdmin />
+                    </div>
                 )}
             </div>
         );

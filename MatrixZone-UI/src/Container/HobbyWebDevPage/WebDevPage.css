@@ -1,11 +1,11 @@
 /*Web dev page:*/
-.WebDevPageContent {
+.WebDevContainer {
     animation: fadeIn 0.3s;
-    height: 593px;
+    background-color: #111;
     width: 1244px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -17,50 +17,51 @@
     }
 }
 
-/*Web dev container*/
-.WebDevContainer {
-    background-color: #111;
-    height: 100%;
-    width: 95%;
-    border: 3px solid #03a062;
-    border-radius: 10px;
+.Breadcrumb {
+    background-color: lightgreen;
+    height: 30px;
     overflow: hidden;
+    border-bottom: 1px solid #03a062;
 }
 
+/*Title:*/
 .WebDevTitle {
-    height: 10%;
+    background-color: #0072b1;
+    height: 120px;
     width: 100%;
+    border-top: 1px solid #03a062;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
 .WebDevTitle h2 {
-    color: #03a062;
-    font-size: 30px;
+    color: white;
+    font-size: 70px;
+    position: relative;
+    bottom: 40px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    margin-bottom: 10px;
-    text-decoration-line: underline;
 }
 
-.WebDev {
-    height: 80%;
+/*Content:*/
+.WebDevContent {
+    height: 500px;
     width: 100%;
     overflow: hidden;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.WebDev p {
+.WebDevContent p {
     color: #03a062;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.Back {
-    height: 10%;
+.WDPBack {
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: center;

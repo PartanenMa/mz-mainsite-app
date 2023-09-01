@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
+import NavGuest from "/src/Components/Nav/NavGuest.jsx";
+import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./ProgrammingPage.css";
 
 function ProgrammingPageGuest() {
@@ -17,30 +19,27 @@ function ProgrammingPageGuest() {
     };
 
     return (
-        <AnimatePresence>
-            <div className="ProgrammingPageContent">
-                <motion.div
-                    className="ProgrammingContainer"
-                    initial={{ height: "0%" }}
-                    animate={{ height: isOpen ? "100%" : "0%" }}
-                    exit={{ height: "0%" }}
-                    transition={{ duration: 0.5 }}
-                    exitBeforeEnter
-                >
-                    <div className="ProgrammingTitle">
-                        <h2>Programming</h2>
-                    </div>
-                    <div className="Programming">
-                        <p>vgsfbhndhfm...</p>
-                    </div>
-                    <div className="Back">
-                        <button className="PPBackButton" onClick={toggleContainer}>
-                            Back
-                        </button>
-                    </div>
-                </motion.div>
+        <div>
+            <HeaderGuest />
+            <NavGuest />
+            <div className="ProgrammingContainer">
+                <div className="Breadcrumb">
+                    <h2>Guest / profile / programming</h2>
+                </div>
+                <div className="ProgrammingTitle">
+                    <h2>PROGRAMMING</h2>
+                </div>
+                <div className="ProgrammingContent">
+                    <p>vgsfbhndhfm...</p>
+                </div>
+                <div className="PPBack">
+                    <button className="PPBackButton" onClick={toggleContainer}>
+                        Back
+                    </button>
+                </div>
             </div>
-        </AnimatePresence>
+            <FooterGuest />
+        </div>
     );
 }
 

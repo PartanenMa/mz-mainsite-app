@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
+import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
+import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./ITInfraPage.css";
 
 function ITInfraPageAdmin() {
@@ -52,30 +54,29 @@ function ITInfraPageAdmin() {
                     //Loading component here:
                     <LoadingScreen />
                 ) : (
-                    <AnimatePresence>
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
                         <div className="ITInfraPageContent">
-                            <motion.div
-                                className="ITInfraContainer"
-                                initial={{ height: "0%" }}
-                                animate={{ height: isOpen ? "100%" : "0%" }}
-                                exit={{ height: "0%" }}
-                                transition={{ duration: 0.5 }}
-                                exitBeforeEnter
-                            >
-                                <div className="ITInfraTitle">
-                                    <h2>IT infrastructure</h2>
+                            <div className="ITInfraContainer">
+                                <div className="Breadcrumb">
+                                    <h2>Admin / profile / IT_infra</h2>
                                 </div>
-                                <div className="ITInfra">
+                                <div className="ITInfraTitle">
+                                    <h2>IT INFRASTRUCTURE</h2>
+                                </div>
+                                <div className="ITInfraContent">
                                     <p>vgsfbhndhfm...</p>
                                 </div>
-                                <div className="Back">
+                                <div className="ITIPBack">
                                     <button className="ITIPBackButton" onClick={toggleContainer}>
                                         Back
                                     </button>
                                 </div>
-                            </motion.div>
+                            </div>
                         </div>
-                    </AnimatePresence>
+                        <FooterAdmin />
+                    </div>
                 )}
             </div>
         );

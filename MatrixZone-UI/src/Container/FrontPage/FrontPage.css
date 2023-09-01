@@ -289,7 +289,7 @@
 
 .HTWelcome1 {
     position: relative;
-    bottom: 10px;
+    bottom: 70px;
 }
 
 .HTWelcome1 h2 {
@@ -306,8 +306,15 @@
 }
 
 .HTWelcome2 {
+    background-color: black;
+    border-radius: 20px;
     position: relative;
-    bottom: 80px;
+    bottom: 30px;
+    height: 100px;
+    width: fit-content;
+    box-shadow:
+        0 0 10px black,
+        0 0 20px black;
 }
 
 .HTWelcome2 h3 {
@@ -324,6 +331,8 @@
     margin-bottom: 0.8rem;
     text-align: center;
     animation: hover-effect 5s infinite;
+    position: relative;
+    bottom: 110px;
 }
 
 @keyframes hover-effect {

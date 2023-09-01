@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
+import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
+import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./GamingPage.css";
 
 function GamingPageAdmin() {
@@ -52,30 +54,27 @@ function GamingPageAdmin() {
                     //Loading component here:
                     <LoadingScreen />
                 ) : (
-                    <AnimatePresence>
-                        <div className="GamingPageContent">
-                            <motion.div
-                                className="GamingContainer"
-                                initial={{ height: "0%" }}
-                                animate={{ height: isOpen ? "100%" : "0%" }}
-                                exit={{ height: "0%" }}
-                                transition={{ duration: 0.5 }}
-                                exitBeforeEnter
-                            >
-                                <div className="GamingTitle">
-                                    <h2>Gaming</h2>
-                                </div>
-                                <div className="Gaming">
-                                    <p>vgsfbhndhfm...</p>
-                                </div>
-                                <div className="Back">
-                                    <button className="GPBackButton" onClick={toggleContainer}>
-                                        Back
-                                    </button>
-                                </div>
-                            </motion.div>
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
+                        <div className="GamingContainer">
+                            <div className="Breadcrumb">
+                                <h2>Admin / profile / gaming</h2>
+                            </div>
+                            <div className="GamingTitle">
+                                <h2>GAMING</h2>
+                            </div>
+                            <div className="GamingContent">
+                                <p>vgsfbhndhfm...</p>
+                            </div>
+                            <div className="GPBack">
+                                <button className="GPBackButton" onClick={toggleContainer}>
+                                    Back
+                                </button>
+                            </div>
                         </div>
-                    </AnimatePresence>
+                        <FooterAdmin />
+                    </div>
                 )}
             </div>
         );

@@ -3,15 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { notification } from "antd";
 import { info } from "/src/Constants/Info.jsx";
-import reactLogo from "/src/Assets/Images/React.svg";
-import viteLogo from "/src/Assets/Images/Vite.svg";
 import "./LoginPage.css";
 
 function LoginPage() {
     return (
         <div className="LoginPageContainer">
             <BackToFrontPage />
-            <LogosSection />
+            <LogoSection />
             <LoginSection />
         </div>
     );
@@ -27,29 +25,10 @@ function BackToFrontPage() {
     );
 }
 
-function LogosSection() {
-    const navigate = useNavigate();
-
+function LogoSection() {
     return (
-        <div className="LogosContainer">
-            <div className="Logos">
-                <div className="ThreeLogos">
-                    <a href="https://reactjs.org" target="_blank">
-                        <img src={reactLogo} className="logo react" alt="React logo" />
-                    </a>
-                    <a href="https://vitejs.dev" target="_blank">
-                        <img src={viteLogo} className="logo" alt="Vite logo" />
-                    </a>
-                    <div className="logo_m" onClick={() => navigate(info.routes.aboutPage)}></div>
-                </div>
-                <div className="Text">
-                    <h3 className="React">React</h3>
-                    <h3 className="Plus"> + </h3>
-                    <h3 className="Vite">Vite</h3>
-                    <h3 className="Equals"> = </h3>
-                    <h3 className="App"> MatrixZone </h3>
-                </div>
-            </div>
+        <div className="LogoRGContainer">
+            <div className="LogoRG"></div>
         </div>
     );
 }

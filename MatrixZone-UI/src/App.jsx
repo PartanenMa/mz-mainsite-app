@@ -4,7 +4,6 @@ import DarkBG from "./Components/BGAnimation/DarkBG.jsx";
 import MatrixBG from "./Components/BGAnimation/MatrixBG.jsx";
 import FrontPage from "./Container/FrontPage/FrontPage.jsx";
 import LoginPage from "./Container/LoginPage/LoginPage.jsx";
-import AboutPage from "./Container/AboutPage/AboutPage.jsx";
 import HomePageGuest from "./Container/HomePage/HomePageGuest.jsx";
 import HomePageAdmin from "./Container/HomePage/HomePageAdmin.jsx";
 import ProfilePageGuest from "./Container/ProfilePage/ProfilePageGuest.jsx";
@@ -48,7 +47,6 @@ function App() {
                     <Routes>
                         <Route path={info.routes.frontPage} element={<FrontPage />} />
                         <Route path={info.routes.loginPage} element={<LoginPage />} />
-                        <Route path={info.routes.aboutPage} element={<AboutPage />} />
                         <Route path={info.routes.homePageGuest} element={<HomePageGuest />} />
                         <Route path={info.routes.homePageAdmin} element={<HomePageAdmin />} />
                         <Route path={info.routes.profilePageGuest} element={<ProfilePageGuest />} />

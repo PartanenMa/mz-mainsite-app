@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
+import NavGuest from "/src/Components/Nav/NavGuest.jsx";
+import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./WebDevPage.css";
 
 function WebDevPageGuest() {
@@ -17,30 +19,27 @@ function WebDevPageGuest() {
     };
 
     return (
-        <AnimatePresence>
-            <div className="WebDevPageContent">
-                <motion.div
-                    className="WebDevContainer"
-                    initial={{ height: "0%" }}
-                    animate={{ height: isOpen ? "100%" : "0%" }}
-                    exit={{ height: "0%" }}
-                    transition={{ duration: 0.5 }}
-                    exitBeforeEnter
-                >
-                    <div className="WebDevTitle">
-                        <h2>Web development</h2>
-                    </div>
-                    <div className="WebDev">
-                        <p>vgsfbhndhfm...</p>
-                    </div>
-                    <div className="Back">
-                        <button className="WDPBackButton" onClick={toggleContainer}>
-                            Back
-                        </button>
-                    </div>
-                </motion.div>
+        <div>
+            <HeaderGuest />
+            <NavGuest />
+            <div className="WebDevContainer">
+                <div className="Breadcrumb">
+                    <h2>Guest / profile / web_dev</h2>
+                </div>
+                <div className="WebDevTitle">
+                    <h2>WEB DEVELOPMENT</h2>
+                </div>
+                <div className="WebDevContent">
+                    <p>vgsfbhndhfm...</p>
+                </div>
+                <div className="WDPBack">
+                    <button className="WDPBackButton" onClick={toggleContainer}>
+                        Back
+                    </button>
+                </div>
             </div>
-        </AnimatePresence>
+            <FooterGuest />
+        </div>
     );
 }
 

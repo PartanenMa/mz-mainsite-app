@@ -41,153 +41,23 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-/*Logos*/
-.LogosContainer {
+/*Logo*/
+.LogoRGContainer {
     height: 50%;
     width: 1244px;
 }
 
-.Logos {
-    height: 230px;
-    width: 300px;
+.LogoRG {
+    background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 260%;
+    height: 140px;
+    width: 140px;
     position: relative;
-    bottom: 45px;
-    left: 454px;
+    top: 5px;
+    left: 534px;
     border-radius: 100%;
-}
-
-.ThreeLogos {
-    position: relative;
-    top: 30px;
-    right: 70px;
-}
-
-.logo.react {
-    position: relative;
-    right: 15px;
-}
-
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-    position: relative;
-    right: 10px;
-}
-
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(1) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
-}
-
-.logo_m {
-    background-image: url("/src/Assets/Images/Logo.PNG");
-    background-size: cover;
-    background-color: black;
-    cursor: pointer;
-    transition: filter 300ms;
-    height: 90px;
-    width: 125px;
-    border-radius: 10px;
-    border: 1px solid #03a062;
-    position: relative;
-    bottom: 120px;
-    left: 325px;
-}
-
-.logo_m:hover {
-    border: 1px solid lightgreen;
-    filter: drop-shadow(0 0 2em #03a062);
-}
-
-.Text {
-    display: flex;
-    justify-content: center;
-}
-
-.Text .React {
-    background-color: #111;
-    color: #61dbfb;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    border: 1px solid #61dbfb;
-    border-radius: 10px;
-    position: relative;
-    bottom: 100px;
-    right: 10px;
-    padding: 5px;
-}
-
-.Text .Plus {
-    color: white;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    padding-left: 10px;
-    padding-right: 10px;
-    position: relative;
-    bottom: 95px;
-    left: 15px;
-}
-
-.Text .Vite {
-    background-color: #111;
-    color: mediumorchid;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    border: 1px solid mediumorchid;
-    border-radius: 10px;
-    position: relative;
-    bottom: 100px;
-    left: 35px;
-    padding: 5px;
-}
-
-.Text .Equals {
-    color: white;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    padding-left: 10px;
-    padding-right: 10px;
-    position: relative;
-    bottom: 95px;
-    left: 45px;
-}
-
-.Text .App {
-    background-color: #111;
-    color: #03a062;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    border: 1px solid #03a062;
-    border-radius: 10px;
-    position: relative;
-    bottom: 100px;
-    left: 58px;
-    padding: 5px;
 }
 
 /*Login:*/

@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
+import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
+import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { motion, AnimatePresence } from "framer-motion";
 import "./ProgrammingPage.css";
 
 function ProgrammingPageAdmin() {
@@ -52,30 +54,27 @@ function ProgrammingPageAdmin() {
                     //Loading component here:
                     <LoadingScreen />
                 ) : (
-                    <AnimatePresence>
-                        <div className="ProgrammingPageContent">
-                            <motion.div
-                                className="ProgrammingContainer"
-                                initial={{ height: "0%" }}
-                                animate={{ height: isOpen ? "100%" : "0%" }}
-                                exit={{ height: "0%" }}
-                                transition={{ duration: 0.5 }}
-                                exitBeforeEnter
-                            >
-                                <div className="ProgrammingTitle">
-                                    <h2>Programming</h2>
-                                </div>
-                                <div className="Programming">
-                                    <p>vgsfbhndhfm...</p>
-                                </div>
-                                <div className="Back">
-                                    <button className="PPBackButton" onClick={toggleContainer}>
-                                        Back
-                                    </button>
-                                </div>
-                            </motion.div>
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
+                        <div className="ProgrammingContainer">
+                            <div className="Breadcrumb">
+                                <h2>Admin / profile / programming</h2>
+                            </div>
+                            <div className="ProgrammingTitle">
+                                <h2>PROGRAMMING</h2>
+                            </div>
+                            <div className="ProgrammingContent">
+                                <p>vgsfbhndhfm...</p>
+                            </div>
+                            <div className="PPBack">
+                                <button className="PPBackButton" onClick={toggleContainer}>
+                                    Back
+                                </button>
+                            </div>
                         </div>
-                    </AnimatePresence>
+                        <FooterAdmin />
+                    </div>
                 )}
             </div>
         );

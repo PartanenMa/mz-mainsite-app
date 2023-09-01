@@ -47,8 +47,8 @@ export const info = {
             "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
         workDescription2:
             "My first full-time front-end developer job at Visma Real Estate Oy after my internship there. My tasks once again included developing the UI of the Hausvise housing management system using React.",
-        workTech1: "HTML, CSS, JavaScript, React, Sass, Node.js, Git, Docker",
-        workTech2: "HTML, CSS, JavaScript, React, Sass, Node.js, Git, Docker",
+        workTech1: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
+        workTech2: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
     },
     GitHub: {
         //Account data:
@@ -63,7 +63,6 @@ export const info = {
     routes: {
         frontPage: "/",
         loginPage: "/login",
-        aboutPage: "/about",
         homePageGuest: "/guest/home",
         homePageAdmin: "/admin/home",
         profilePageGuest: "/guest/profile",
