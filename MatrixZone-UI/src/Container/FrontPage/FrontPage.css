@@ -173,7 +173,7 @@
     box-shadow: 0 0 30px 5px #03a062;
     position: relative;
     left: 20%;
-    top: 10%;
+    top: 2px;
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: hidden;
@@ -269,9 +269,9 @@
     background-image: url("/src/Assets/Images/HeroSectionBG.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 130%;
+    background-size: cover;
     background-color: transparent;
-    height: 800px;
+    height: 600px;
     width: 100%;
     overflow: hidden;
 }
@@ -289,7 +289,7 @@
 
 .HTWelcome1 {
     position: relative;
-    top: 20px;
+    bottom: 10px;
 }
 
 .HTWelcome1 h2 {
@@ -302,17 +302,12 @@
     letter-spacing: 0.5px;
     text-shadow:
         0 0 10px black,
-        0 0 20px black,
-        0 0 30px black,
-        0 0 40px black,
-        0 0 50px black,
-        0 0 60px black,
-        0 0 70px black;
+        0 0 20px black;
 }
 
 .HTWelcome2 {
     position: relative;
-    bottom: 50px;
+    bottom: 80px;
 }
 
 .HTWelcome2 h3 {
@@ -343,66 +338,6 @@
     100% {
         font-variation-settings: "wght" 582;
         letter-spacing: -2px;
-    }
-}
-
-.HTWelcome3 {
-    position: relative;
-    bottom: 10px;
-}
-
-.HTWelcome3 p {
-    color: #03a062;
-    font-size: 20px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 lightgreen;
-    line-height: 150%;
-    text-align: center;
-    letter-spacing: 0.5px;
-    text-shadow:
-        0 0 10px black,
-        0 0 20px black,
-        0 0 30px black,
-        0 0 40px black,
-        0 0 50px black,
-        0 0 60px black,
-        0 0 70px black;
-}
-
-.HTWelcome3 span {
-    color: #61dbfb;
-    text-shadow: 0.5px 0.5px 0 lightblue;
-    text-shadow:
-        0 0 10px black,
-        0 0 20px black,
-        0 0 30px black,
-        0 0 40px black,
-        0 0 50px black,
-        0 0 60px black,
-        0 0 70px black;
-}
-
-.HTRL {
-    background-image: url("/src/Assets/Images/React.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    height: 20px;
-    width: 20px;
-    position: relative;
-    bottom: 25px;
-    left: 260px;
-    animation: logo-spin infinite 20s linear;
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
     }
 }
 

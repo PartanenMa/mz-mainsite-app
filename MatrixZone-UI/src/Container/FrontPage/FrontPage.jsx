@@ -75,6 +75,17 @@ function Header({ setIsModalOpen }) {
 }
 
 function Main({ isModalOpen, setIsModalOpen }) {
+    const [shouldAnimate, setShouldAnimate] = useState(false);
+
+    useEffect(() => {
+        if (!isModalOpen) {
+            setTimeout(() => {
+                setShouldAnimate(true);
+            }, 500);
+            setShouldAnimate(false);
+        }
+    }, [isModalOpen]);
+
     return (
         <div className="Main">
             <section className="HeroSection">
@@ -125,67 +136,60 @@ function Main({ isModalOpen, setIsModalOpen }) {
                         </motion.div>
                     </AnimatePresence>
                 ) : (
-                    <AnimatePresence>
-                        <motion.div
-                            class="HeroTitle"
-                            key="heroT"
-                            initial={{ opacity: 0, x: -1000 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 1000 }}
-                        >
-                            <div className="HTWelcome1">
-                                <h2>Hi, I'm {info.LinkedIn.name}</h2>
-                                <h2>{info.LinkedIn.profession}</h2>
-                            </div>
-                            <div className="HTWelcome2">
-                                <h3 contenteditable>Welcome to the MatrixZone</h3>
-                            </div>
-                            <div className="HTWelcome3">
-                                <p>My personal website</p>
-                                <p>
-                                    Made with love using{" "}
-                                    <span>
-                                        React<div className="HTRL"></div>
-                                    </span>
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div
-                            class="HeroContent"
-                            key="heroC"
-                            initial={{ opacity: 0, x: 1000 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -1000 }}
-                        >
+                    shouldAnimate && (
+                        <AnimatePresence>
                             <motion.div
-                                className="HeroContent1"
-                                key="heroC1"
-                                whileHover={{
-                                    scale: 1.1,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.9 }}
-                            ></motion.div>
+                                className="HeroTitle"
+                                key="heroT"
+                                initial={{ opacity: 0, x: -1000 }}
+                                animate={shouldAnimate ? { opacity: 1, x: 0 } : {}}
+                                exit={{ opacity: 0, x: 1000 }}
+                            >
+                                <div className="HTWelcome1">
+                                    <h2>Hi, I'm {info.LinkedIn.name}</h2>
+                                    <h2>{info.LinkedIn.profession}</h2>
+                                </div>
+                                <div className="HTWelcome2">
+                                    <h3>Welcome to the MatrixZone</h3>
+                                </div>
+                            </motion.div>
                             <motion.div
-                                className="HeroContent2"
-                                key="heroC2"
-                                whileHover={{
-                                    scale: 1.1,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.9 }}
-                            ></motion.div>
-                            <motion.div
-                                className="HeroContent2"
-                                key="heroC3"
-                                whileHover={{
-                                    scale: 1.1,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.9 }}
-                            ></motion.div>
-                        </motion.div>
-                    </AnimatePresence>
+                                className="HeroContent"
+                                key="heroC"
+                                initial={{ opacity: 0, x: 1000 }}
+                                animate={shouldAnimate ? { opacity: 1, x: 0 } : {}}
+                                exit={{ opacity: 0, x: -1000 }}
+                            >
+                                <motion.div
+                                    className="HeroContent1"
+                                    key="heroC1"
+                                    whileHover={{
+                                        scale: 1.1,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                ></motion.div>
+                                <motion.div
+                                    className="HeroContent2"
+                                    key="heroC2"
+                                    whileHover={{
+                                        scale: 1.1,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                ></motion.div>
+                                <motion.div
+                                    className="HeroContent2"
+                                    key="heroC3"
+                                    whileHover={{
+                                        scale: 1.1,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                ></motion.div>
+                            </motion.div>
+                        </AnimatePresence>
+                    )
                 )}
             </section>
             <section className="AboutSection"></section>
