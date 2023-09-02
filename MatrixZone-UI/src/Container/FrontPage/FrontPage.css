@@ -368,12 +368,74 @@
     cursor: pointer;
     border: 1px solid #03a062;
     border-radius: 10px;
+    display: flex;
     transition: filter 300ms;
+    overflow: hidden;
 }
 
 .HeroContent1:hover {
     border: 1px solid lightgreen;
     filter: drop-shadow(0 0 2em #03a062);
+}
+
+.HC1-1 {
+    background-color: #333;
+    height: 100%;
+    width: 60%;
+}
+
+.HC1-1 .TitleProfile {
+    height: 20%;
+    padding-left: 10px;
+    border-bottom: 1px solid #03a062;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 38px;
+    overflow: hidden;
+}
+
+.TitleProfile h3 {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 13px;
+}
+
+.LogoProfile {
+    background-image: url("/src/Assets/Images/Profile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    height: 100%;
+    width: 20%;
+}
+
+.HC1-1 .ContentProfile {
+    background-color: #0072b1;
+    height: 80%;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.ContentProfile p {
+    color: white;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 10px;
+}
+
+.HC1-2 {
+    background-image: url("/src/Assets/Images/Photo.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 40%;
+    border-left: 1px solid #03a062;
 }
 
 .HeroContent2 {
@@ -383,12 +445,71 @@
     cursor: pointer;
     border: 1px solid #03a062;
     border-radius: 10px;
+    display: flex;
     transition: filter 300ms;
+    overflow: hidden;
 }
 
 .HeroContent2:hover {
     border: 1px solid lightgreen;
     filter: drop-shadow(0 0 2em #03a062);
+}
+
+.HC2-1 {
+    background-color: #333;
+    height: 100%;
+    width: 60%;
+}
+
+.HC2-1 .TitleProjects {
+    height: 20%;
+    padding-left: 10px;
+    border-bottom: 1px solid #03a062;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.TitleProjects h3 {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 13px;
+}
+
+.LogoProjects {
+    background-image: url("/src/Assets/Images/Projects.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    height: 100%;
+    width: 20%;
+}
+
+.HC2-1 .ContentProjects {
+    background-color: black;
+    height: 80%;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.ContentProjects p {
+    color: white;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 10px;
+}
+
+.HC2-2 {
+    background-color: #333;
+    height: 100%;
+    width: 40%;
+    border-left: 1px solid #03a062;
 }
 
 .HeroContent3 {
@@ -398,7 +519,9 @@
     cursor: pointer;
     border: 1px solid #03a062;
     border-radius: 10px;
+    display: flex;
     transition: filter 300ms;
+    overflow: hidden;
 }
 
 .HeroContent3:hover {
@@ -406,18 +529,61 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-.AboutSection {
-    background-color: transparent;
-    height: 595px;
-    width: 100%;
+.HC3-1 {
+    background-color: #333;
+    height: 100%;
+    width: 60%;
+}
+
+.HC3-1 .TitleVideos {
+    height: 20%;
+    padding-left: 10px;
+    border-bottom: 1px solid #03a062;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 38px;
     overflow: hidden;
 }
 
-.ProjectsSection {
-    background-color: transparent;
-    height: 595px;
-    width: 100%;
+.TitleVideos h3 {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 13px;
+}
+
+.LogoVideos {
+    background-image: url("/src/Assets/Images/Videos.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    height: 100%;
+    width: 20%;
+}
+
+.HC3-1 .ContentVideos {
+    background-color: #c4302b;
+    height: 80%;
+    padding-left: 10px;
     overflow: hidden;
+}
+
+.ContentVideos p {
+    color: white;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 10px;
+}
+
+.HC3-2 {
+    background-color: #333;
+    height: 100%;
+    width: 40%;
+    border-left: 1px solid #03a062;
 }
 
 /*Footer:*/

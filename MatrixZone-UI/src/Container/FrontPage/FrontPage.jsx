@@ -76,6 +76,7 @@ function Header({ setIsModalOpen }) {
 
 function Main({ isModalOpen, setIsModalOpen }) {
     const [shouldAnimate, setShouldAnimate] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!isModalOpen) {
@@ -162,38 +163,78 @@ function Main({ isModalOpen, setIsModalOpen }) {
                             >
                                 <motion.div
                                     className="HeroContent1"
+                                    onClick={() => navigate(info.routes.profilePageGuest)}
                                     key="heroC1"
                                     whileHover={{
                                         scale: 1.1,
                                         transition: { duration: 0.1 },
                                     }}
                                     whileTap={{ scale: 0.9 }}
-                                ></motion.div>
+                                >
+                                    <div className="HC1-1">
+                                        <div className="TitleProfile">
+                                            <h3>View my profile</h3>
+                                            <div className="LogoProfile" />
+                                        </div>
+                                        <div className="ContentProfile">
+                                            <p>- About me</p>
+                                            <p>- My education background</p>
+                                            <p>- My programming skills</p>
+                                            <p>
+                                                - My experience as a <br />
+                                                software developer
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="HC1-2" />
+                                </motion.div>
                                 <motion.div
                                     className="HeroContent2"
+                                    onClick={() => navigate(info.routes.projectsPageGuest)}
                                     key="heroC2"
                                     whileHover={{
                                         scale: 1.1,
                                         transition: { duration: 0.1 },
                                     }}
                                     whileTap={{ scale: 0.9 }}
-                                ></motion.div>
+                                >
+                                    <div className="HC2-1">
+                                        <div className="TitleProjects">
+                                            <h3>View my projects</h3>
+                                            <div className="LogoProjects" />
+                                        </div>
+                                        <div className="ContentProjects">
+                                            <p>NOT YET AVAILABLE</p>
+                                        </div>
+                                    </div>
+                                    <div className="HC2-2" />
+                                </motion.div>
                                 <motion.div
                                     className="HeroContent2"
+                                    onClick={() => navigate(info.routes.videosPageGuest)}
                                     key="heroC3"
                                     whileHover={{
                                         scale: 1.1,
                                         transition: { duration: 0.1 },
                                     }}
                                     whileTap={{ scale: 0.9 }}
-                                ></motion.div>
+                                >
+                                    <div className="HC3-1">
+                                        <div className="TitleVideos">
+                                            <h3>View my videos</h3>
+                                            <div className="LogoVideos" />
+                                        </div>
+                                        <div className="ContentVideos">
+                                            <p>NOT YET AVAILABLE</p>
+                                        </div>
+                                    </div>
+                                    <div className="HC3-2" />
+                                </motion.div>
                             </motion.div>
                         </AnimatePresence>
                     )
                 )}
             </section>
-            <section className="AboutSection"></section>
-            <section className="ProjectsSection"></section>
         </div>
     );
 }

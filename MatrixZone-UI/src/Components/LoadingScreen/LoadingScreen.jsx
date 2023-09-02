@@ -1,4 +1,3 @@
-import reactLogo from "/src/Assets/Images/React.svg";
 import "./LoadingScreen.css";
 
 function LoadingScreen() {
@@ -31,7 +30,7 @@ function LoadingSection() {
     return (
         <div className="LoadingContainer">
             <h2>LOADING...</h2>
-            <img src={reactLogo} className="Logo_reactL" alt="React logo L" />
+            <div className="Logo_reactL" alt="React logo L" />
         </div>
     );
 }

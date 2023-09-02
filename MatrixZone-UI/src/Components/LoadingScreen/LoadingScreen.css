@@ -70,11 +70,15 @@
 }
 
 .Logo_reactL {
+    background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
+    background-repeat: no-repeat;
+    background-position: 49% 58%;
+    background-size: 300%;
     height: 180px;
     width: 180px;
     position: relative;
     left: 535px;
-    filter: drop-shadow(0 0 2em #61dafbaa);
+    filter: drop-shadow(0 0 2em #03a062);
     animation: logo-spin infinite 3s linear;
 }
 

@@ -48,12 +48,14 @@
 }
 
 .LogoRG {
+    background-color: #111;
     background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 49% 60%;
     background-size: 260%;
     height: 140px;
     width: 140px;
+    border: 1px solid #03a062;
     position: relative;
     top: 5px;
     left: 534px;
