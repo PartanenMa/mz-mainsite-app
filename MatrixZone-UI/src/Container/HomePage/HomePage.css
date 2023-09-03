@@ -561,10 +561,10 @@
 
 .CarouselItem1 {
     background-color: black;
-    background-image: url("/src/Assets/Images/Carousel1.png");
+    background-image: url("/src/Assets/Images/Carousel1.jpg");
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 60%;
+    background-size: cover;
     height: 90%;
     width: 98%;
     border: 1px solid #03a062;
@@ -584,19 +584,25 @@
 }
 
 .CarouselItem1 .Name {
-    color: #68a063;
+    color: green;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow:
+        0 0 10px black,
+        0 0 20px black;
     position: relative;
     top: 80px;
 }
 
 .CarouselItem1 .JobTitle {
-    color: #3c873a;
+    color: #03a062;
     font-size: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow:
+        0 0 10px black,
+        0 0 20px black;
     position: relative;
     bottom: 80px;
 }

@@ -20,20 +20,6 @@ function FrontPage() {
 
 function Header({ setIsModalOpen }) {
     const navigate = useNavigate();
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 500);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
 
     const handleLogoClick = () => {
         setIsModalOpen(true);
@@ -51,24 +37,16 @@ function Header({ setIsModalOpen }) {
                     <div className="HeaderLogo" onClick={handleLogoClick}></div>
                     <h1>MatrixZone</h1>
                 </motion.div>
-                {isSmallScreen ? (
-                    <div className="Menu-icon">
-                        <div className="Bar"></div>
-                        <div className="Bar"></div>
-                        <div className="Bar"></div>
-                    </div>
-                ) : (
-                    <motion.div
-                        className="NavOptions"
-                        key="navO"
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                    >
-                        <button className="LoginButtonFP" onClick={() => navigate(info.routes.loginPage)}>
-                            Log in
-                        </button>
-                    </motion.div>
-                )}
+                <motion.div
+                    className="NavOptions"
+                    key="navO"
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                >
+                    <button className="LoginButtonFP" onClick={() => navigate(info.routes.loginPage)}>
+                        Log in
+                    </button>
+                </motion.div>
             </AnimatePresence>
         </header>
     );
@@ -86,6 +64,17 @@ function Main({ isModalOpen, setIsModalOpen }) {
             setShouldAnimate(false);
         }
     }, [isModalOpen]);
+
+    const handleLoginGuest = (page) => {
+        sessionStorage.setItem("load", "true");
+        if (page === "profile") {
+            navigate(info.routes.profilePageGuest);
+        } else if (page === "projects") {
+            navigate(info.routes.projectsPageGuest);
+        } else if (page === "videos") {
+            navigate(info.routes.videosPageGuest);
+        }
+    };
 
     return (
         <div className="Main">
@@ -147,7 +136,9 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 exit={{ opacity: 0, x: 1000 }}
                             >
                                 <div className="HTWelcome1">
-                                    <h2>Hi, I'm {info.LinkedIn.name}</h2>
+                                    <h2>
+                                        Hi, I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
+                                    </h2>
                                     <h2>{info.LinkedIn.profession}</h2>
                                 </div>
                                 <div className="HTWelcome2">
@@ -163,7 +154,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                             >
                                 <motion.div
                                     className="HeroContent1"
-                                    onClick={() => navigate(info.routes.profilePageGuest)}
+                                    onClick={() => handleLoginGuest("profile")}
                                     key="heroC1"
                                     whileHover={{
                                         scale: 1.1,
@@ -177,12 +168,12 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                             <div className="LogoProfile" />
                                         </div>
                                         <div className="ContentProfile">
-                                            <p>- About me</p>
-                                            <p>- My education background</p>
-                                            <p>- My programming skills</p>
+                                            <p>- About me.</p>
+                                            <p>- My educational background.</p>
+                                            <p>- My programming skills.</p>
                                             <p>
                                                 - My experience as a <br />
-                                                software developer
+                                                software developer.
                                             </p>
                                         </div>
                                     </div>
@@ -190,7 +181,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 </motion.div>
                                 <motion.div
                                     className="HeroContent2"
-                                    onClick={() => navigate(info.routes.projectsPageGuest)}
+                                    onClick={() => handleLoginGuest("projects")}
                                     key="heroC2"
                                     whileHover={{
                                         scale: 1.1,
@@ -210,8 +201,8 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                     <div className="HC2-2" />
                                 </motion.div>
                                 <motion.div
-                                    className="HeroContent2"
-                                    onClick={() => navigate(info.routes.videosPageGuest)}
+                                    className="HeroContent3"
+                                    onClick={() => handleLoginGuest("videos")}
                                     key="heroC3"
                                     whileHover={{
                                         scale: 1.1,

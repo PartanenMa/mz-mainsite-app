@@ -128,29 +128,6 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-.Menu-icon {
-    animation: fadeIn 0.3s;
-    cursor: pointer;
-    transition: filter 300ms;
-}
-
-.Menu-icon:hover .Bar {
-    background-color: lightgreen;
-    transition: background-color 500ms ease-in-out;
-}
-
-.Menu-icon:hover {
-    filter: drop-shadow(0 0 2em #03a062);
-}
-
-.Bar {
-    background-color: #03a062;
-    width: 45px;
-    height: 6px;
-    margin: 10px 0;
-    border-radius: 2px;
-}
-
 /*Main:*/
 .Main {
     min-height: 580px;
@@ -400,6 +377,7 @@
     font-size: 20px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
     position: relative;
     bottom: 13px;
 }
@@ -477,6 +455,7 @@
     font-size: 20px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
     position: relative;
     bottom: 13px;
 }
@@ -551,6 +530,7 @@
     font-size: 20px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
     position: relative;
     bottom: 13px;
 }
