@@ -31,13 +31,13 @@ function Buttons() {
                 <div className="VideosIcon"></div>
                 <h3 className="VideosText">Videos</h3>
             </button>
-            <button id="btn5" onClick={() => navigate(info.routes.experiencePageGuest)}>
-                <div className="ExperienceIcon"></div>
-                <h3 className="ExperienceText">Experience</h3>
+            <button id="btn5" onClick={() => navigate(info.routes.goalsPageGuest)}>
+                <div className="GoalsIcon"></div>
+                <h3 className="GoalsText">Goals</h3>
             </button>
-            <button id="btn3" onClick={() => navigate(info.routes.contactPageGuest)}>
-                <div className="ContactIcon"></div>
-                <h3 className="ContactText">Contact</h3>
+            <button id="btn3" onClick={() => navigate(info.routes.cvPageGuest)}>
+                <div className="CVIcon"></div>
+                <h3 className="CVText">CV</h3>
             </button>
         </div>
     );

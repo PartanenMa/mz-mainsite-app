@@ -24,10 +24,10 @@ import ProjectsPageGuest from "./Container/ProjectsPage/ProjectsPageGuest.jsx";
 import ProjectsPageAdmin from "./Container/ProjectsPage/ProjectsPageAdmin.jsx";
 import VideosPageGuest from "./Container/VideosPage/VideosPageGuest.jsx";
 import VideosPageAdmin from "./Container/VideosPage/VideosPageAdmin.jsx";
-import ExperiencePageGuest from "./Container/ExperiencePage/ExperiencePageGuest.jsx";
-import ExperiencePageAdmin from "./Container/ExperiencePage/ExperiencePageAdmin.jsx";
-import ContactPageGuest from "./Container/ContactPage/ContactPageGuest.jsx";
-import ContactPageAdmin from "./Container/ContactPage/ContactPageAdmin.jsx";
+import GoalsPageGuest from "./Container/GoalsPage/GoalsPageGuest.jsx";
+import GoalsPageAdmin from "./Container/GoalsPage/GoalsPageAdmin.jsx";
+import CVPageGuest from "./Container/CVPage/CVPageGuest.jsx";
+import CVPageAdmin from "./Container/CVPage/CVPageAdmin.jsx";
 import { info } from "./Constants/Info.jsx";
 import "./App.css";
 
@@ -67,10 +67,10 @@ function App() {
                         <Route path={info.routes.projectsPageAdmin} element={<ProjectsPageAdmin />} />
                         <Route path={info.routes.videosPageGuest} element={<VideosPageGuest />} />
                         <Route path={info.routes.videosPageAdmin} element={<VideosPageAdmin />} />
-                        <Route path={info.routes.experiencePageGuest} element={<ExperiencePageGuest />} />
-                        <Route path={info.routes.experiencePageAdmin} element={<ExperiencePageAdmin />} />
-                        <Route path={info.routes.contactPageGuest} element={<ContactPageGuest />} />
-                        <Route path={info.routes.contactPageAdmin} element={<ContactPageAdmin />} />
+                        <Route path={info.routes.goalsPageGuest} element={<GoalsPageGuest />} />
+                        <Route path={info.routes.goalsPageAdmin} element={<GoalsPageAdmin />} />
+                        <Route path={info.routes.cvPageGuest} element={<CVPageGuest />} />
+                        <Route path={info.routes.cvPageAdmin} element={<CVPageAdmin />} />
                     </Routes>
                 </div>
             }

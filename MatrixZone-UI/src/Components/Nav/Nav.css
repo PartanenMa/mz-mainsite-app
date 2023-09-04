@@ -103,8 +103,8 @@
     left: 25px;
 }
 
-.ExperienceIcon {
-    background-image: url("/src/Assets/Images/Videos.png");
+.GoalsIcon {
+    background-image: url("/src/Assets/Images/Goals.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% 70%;
@@ -112,16 +112,16 @@
     width: 20%;
 }
 
-.ExperienceText {
+.GoalsText {
     height: 100%;
     width: 80%;
     position: relative;
     bottom: 74px;
-    left: 35px;
+    left: 25px;
 }
 
-.ContactIcon {
-    background-image: url("/src/Assets/Images/Videos.png");
+.CVIcon {
+    background-image: url("/src/Assets/Images/CV.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% 70%;
@@ -129,7 +129,7 @@
     width: 20%;
 }
 
-.ContactText {
+.CVText {
     height: 100%;
     width: 80%;
     position: relative;

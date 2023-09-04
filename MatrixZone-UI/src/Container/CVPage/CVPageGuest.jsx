@@ -5,9 +5,9 @@ import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./ContactPage.css";
+import "./CVPage.css";
 
-function ContactPageGuest() {
+function CVPageGuest() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
 
@@ -42,12 +42,12 @@ function ContactPageGuest() {
                 <div>
                     <HeaderGuest />
                     <NavGuest />
-                    <div className="ContactPageContainer">
+                    <div className="CVPageContainer">
                         <div className="Breadcrumb">
-                            <h2>Guest / contact</h2>
+                            <h2>Guest / cv</h2>
                         </div>
-                        <ContactPageTitle />
-                        <ContactPageContent />
+                        <CVPageTitle />
+                        <CVPageContent />
                     </div>
                     <FooterGuest />
                 </div>
@@ -56,16 +56,16 @@ function ContactPageGuest() {
     );
 }
 
-function ContactPageTitle() {
+function CVPageTitle() {
     return (
-        <div className="ContactPageTitleContainer">
-            <h2>CONTACT</h2>
+        <div className="CVPageTitleContainer">
+            <h2>CV</h2>
         </div>
     );
 }
 
-function ContactPageContent() {
-    return <div className="ContactPageContentContainer"></div>;
+function CVPageContent() {
+    return <div className="CVPageContentContainer"></div>;
 }
 
-export default ContactPageGuest;
+export default CVPageGuest;

@@ -6,9 +6,9 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./ExperiencePage.css";
+import "./CVPage.css";
 
-function ExperiencePageAdmin() {
+function CVPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
@@ -47,12 +47,12 @@ function ExperiencePageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="ExperiencePageContainer">
+                        <div className="CVPageContainer">
                             <div className="Breadcrumb">
-                                <h2>Admin / experience</h2>
+                                <h2>Admin / cv</h2>
                             </div>
-                            <ExperiencePageTitle />
-                            <ExperiencePageContent />
+                            <CVPageTitle />
+                            <CVPageContent />
                         </div>
                         <FooterAdmin />
                     </div>
@@ -64,16 +64,16 @@ function ExperiencePageAdmin() {
     }
 }
 
-function ExperiencePageTitle() {
+function CVPageTitle() {
     return (
-        <div className="ExperiencePageTitleContainer">
-            <h2>MY EXPERIENCE</h2>
+        <div className="CVPageTitleContainer">
+            <h2>MY CV</h2>
         </div>
     );
 }
 
-function ExperiencePageContent() {
-    return <div className="ExperiencePageContentContainer"></div>;
+function CVPageContent() {
+    return <div className="CVPageContentContainer"></div>;
 }
 
-export default ExperiencePageAdmin;
+export default CVPageAdmin;

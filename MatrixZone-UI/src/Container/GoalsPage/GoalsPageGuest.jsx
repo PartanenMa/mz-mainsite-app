@@ -5,9 +5,9 @@ import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./ExperiencePage.css";
+import "./GoalsPage.css";
 
-function ExperiencePageGuest() {
+function GoalsPageGuest() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
 
@@ -42,12 +42,12 @@ function ExperiencePageGuest() {
                 <div>
                     <HeaderGuest />
                     <NavGuest />
-                    <div className="ExperiencePageContainer">
+                    <div className="GoalsPageContainer">
                         <div className="Breadcrumb">
-                            <h2>Guest / experience</h2>
+                            <h2>Guest / goals</h2>
                         </div>
-                        <ExperiencePageTitle />
-                        <ExperiencePageContent />
+                        <GoalsPageTitle />
+                        <GoalsPageContent />
                     </div>
                     <FooterGuest />
                 </div>
@@ -56,16 +56,16 @@ function ExperiencePageGuest() {
     );
 }
 
-function ExperiencePageTitle() {
+function GoalsPageTitle() {
     return (
-        <div className="ExperiencePageTitleContainer">
-            <h2>EXPERIENCE</h2>
+        <div className="GoalsPageTitleContainer">
+            <h2>GOALS</h2>
         </div>
     );
 }
 
-function ExperiencePageContent() {
-    return <div className="ExperiencePageContentContainer"></div>;
+function GoalsPageContent() {
+    return <div className="GoalsPageContentContainer"></div>;
 }
 
-export default ExperiencePageGuest;
+export default GoalsPageGuest;

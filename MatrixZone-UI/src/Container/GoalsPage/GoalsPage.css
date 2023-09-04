@@ -1,5 +1,5 @@
-/*ExperiencePage:*/
-.ExperiencePageContainer {
+/*GoalsPage:*/
+.GoalsPageContainer {
     animation: fadeIn 0.3s;
     background-color: #111;
     height: 600px;
@@ -35,7 +35,8 @@
 }
 
 /*Title:*/
-.ExperiencePageTitleContainer {
+.GoalsPageTitleContainer {
+    background-color: gray;
     height: 120px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -44,18 +45,17 @@
     justify-content: center;
 }
 
-.ExperiencePageTitleContainer h2 {
-    color: #03a062;
+.GoalsPageTitleContainer h2 {
+    color: white;
     font-size: 70px;
     position: relative;
     bottom: 50px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-decoration-line: underline;
 }
 
 /*Content:*/
-.ExperiencePageContentContainer {
+.GoalsPageContentContainer {
     height: 80%;
     width: 100%;
     border-top: 1px solid #03a062;

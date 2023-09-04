@@ -245,7 +245,7 @@ function FirstSection() {
                 <div className="GoToMyProfile">
                     <a className="Photo" href={info.LinkedIn.link} target="_blank"></a>
                     <div className="ProfileTextBox">
-                        <a href={info.LinkedIn.link} target="_blank"></a>
+                        <a href={info.LinkedIn.link} title="My LinkedIn" target="_blank"></a>
                         <h3>LinkedIn</h3>
                         <p>{info.LinkedIn.user}</p>
                         <p>{info.LinkedIn.jobTitle}</p>
@@ -263,7 +263,7 @@ function FirstSection() {
                 <div className="GoToMyProjects">
                     <a className="GHLogo" href={info.GitHub.link} target="_blank"></a>
                     <div className="ProjectsTextBox">
-                        <a href={info.GitHub.link} target="_blank"></a>
+                        <a href={info.GitHub.link} title="My GitHub" target="_blank"></a>
                         <h3>GitHub</h3>
                         <p>{info.GitHub.user}</p>
                         <p>{info.GitHub.name}</p>
@@ -281,7 +281,7 @@ function FirstSection() {
                 <div className="GoToMyVideos">
                     <a className="YTLogo" href={info.GitHub.link} target="_blank"></a>
                     <div className="VideosTextBox">
-                        <a href={info.GitHub.link} target="_blank"></a>
+                        <a href={info.GitHub.link} title="My YouTube" target="_blank"></a>
                         <h3>YouTube</h3>
                         <p>{info.GitHub.user}</p>
                         <p>{info.GitHub.name}</p>

@@ -6,9 +6,9 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./ContactPage.css";
+import "./GoalsPage.css";
 
-function ContactPageAdmin() {
+function GoalsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
@@ -47,12 +47,12 @@ function ContactPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="ContactPageContainer">
+                        <div className="GoalsPageContainer">
                             <div className="Breadcrumb">
-                                <h2>Admin / contact</h2>
+                                <h2>Admin / goals</h2>
                             </div>
-                            <ContactPageTitle />
-                            <ContactPageContent />
+                            <GoalsPageTitle />
+                            <GoalsPageContent />
                         </div>
                         <FooterAdmin />
                     </div>
@@ -64,16 +64,16 @@ function ContactPageAdmin() {
     }
 }
 
-function ContactPageTitle() {
+function GoalsPageTitle() {
     return (
-        <div className="ContactPageTitleContainer">
-            <h2>MY CONTACT</h2>
+        <div className="GoalsPageTitleContainer">
+            <h2>MY GOALS</h2>
         </div>
     );
 }
 
-function ContactPageContent() {
-    return <div className="ContactPageContentContainer"></div>;
+function GoalsPageContent() {
+    return <div className="GoalsPageContentContainer"></div>;
 }
 
-export default ContactPageAdmin;
+export default GoalsPageAdmin;

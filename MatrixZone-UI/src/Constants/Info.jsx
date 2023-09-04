@@ -83,9 +83,9 @@ export const info = {
         projectsPageAdmin: "/admin/projects",
         videosPageGuest: "/guest/videos",
         videosPageAdmin: "/admin/videos",
-        experiencePageGuest: "/guest/experience",
-        experiencePageAdmin: "/admin/experience",
-        contactPageGuest: "/guest/contact",
-        contactPageAdmin: "/admin/contact",
+        goalsPageGuest: "/guest/goals",
+        goalsPageAdmin: "/admin/goals",
+        cvPageGuest: "/guest/cv",
+        cvPageAdmin: "/admin/cv",
     },
 };
