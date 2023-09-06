@@ -169,7 +169,7 @@
 .FooterNav1-5 h3 {
     color: #03a062;
     cursor: pointer;
-    width: fit-content;
+    width: 25px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;

@@ -339,11 +339,11 @@
 }
 
 .HeroContent1 {
-    background-color: #111;
+    background-color: #0072b1;
     height: 90%;
     width: 30%;
     cursor: pointer;
-    border: 1px solid #03a062;
+    border: 1px solid white;
     border-radius: 10px;
     display: flex;
     transition: filter 300ms;
@@ -351,11 +351,37 @@
 }
 
 .HeroContent1:hover {
-    border: 1px solid lightgreen;
-    filter: drop-shadow(0 0 2em #03a062);
+    border: 1px solid lightblue;
+    filter: drop-shadow(0 0 2em #0072b1);
+}
+
+.HeroContent1:hover .HC1-1 {
+    animation: fadeIn 0.3s;
+    display: block;
+}
+
+.HeroContent1:hover .HC1-2 {
+    animation: fadeIn 0.3s;
+    display: block;
+}
+
+.HeroContent1:hover .HC-1T {
+    display: none;
+}
+
+.HC-1T {
+    display: block;
+    color: white;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    top: 5px;
+    left: 65px;
 }
 
 .HC1-1 {
+    display: none;
     background-color: #333;
     height: 100%;
     width: 60%;
@@ -364,7 +390,7 @@
 .HC1-1 .TitleProfile {
     height: 20%;
     padding-left: 10px;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -407,21 +433,22 @@
 }
 
 .HC1-2 {
+    display: none;
     background-image: url("/src/Assets/Images/Photo.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
     width: 40%;
-    border-left: 1px solid #03a062;
+    border-left: 1px solid white;
 }
 
 .HeroContent2 {
-    background-color: #111;
+    background-color: black;
     height: 90%;
     width: 30%;
     cursor: pointer;
-    border: 1px solid #03a062;
+    border: 1px solid white;
     border-radius: 10px;
     display: flex;
     transition: filter 300ms;
@@ -429,11 +456,37 @@
 }
 
 .HeroContent2:hover {
-    border: 1px solid lightgreen;
-    filter: drop-shadow(0 0 2em #03a062);
+    border: 1px solid gray;
+    filter: drop-shadow(0 0 2em black);
+}
+
+.HeroContent2:hover .HC2-1 {
+    animation: fadeIn 0.3s;
+    display: block;
+}
+
+.HeroContent2:hover .HC2-2 {
+    animation: fadeIn 0.3s;
+    display: block;
+}
+
+.HeroContent2:hover .HC-2T {
+    display: none;
+}
+
+.HC-2T {
+    display: block;
+    color: white;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    top: 5px;
+    left: 50px;
 }
 
 .HC2-1 {
+    display: none;
     background-color: #333;
     height: 100%;
     width: 60%;
@@ -442,7 +495,7 @@
 .HC2-1 .TitleProjects {
     height: 20%;
     padding-left: 10px;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -485,18 +538,19 @@
 }
 
 .HC2-2 {
+    display: none;
     background-color: #333;
     height: 100%;
     width: 40%;
-    border-left: 1px solid #03a062;
+    border-left: 1px solid white;
 }
 
 .HeroContent3 {
-    background-color: #111;
+    background-color: #c4302b;
     height: 90%;
     width: 30%;
     cursor: pointer;
-    border: 1px solid #03a062;
+    border: 1px solid white;
     border-radius: 10px;
     display: flex;
     transition: filter 300ms;
@@ -504,11 +558,37 @@
 }
 
 .HeroContent3:hover {
-    border: 1px solid lightgreen;
-    filter: drop-shadow(0 0 2em #03a062);
+    border: 1px solid lightcoral;
+    filter: drop-shadow(0 0 2em #c4302b);
+}
+
+.HeroContent3:hover .HC3-1 {
+    animation: fadeIn 0.3s;
+    display: block;
+}
+
+.HeroContent3:hover .HC3-2 {
+    animation: fadeIn 0.3s;
+    display: block;
+}
+
+.HeroContent3:hover .HC-3T {
+    display: none;
+}
+
+.HC-3T {
+    display: block;
+    color: white;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    top: 5px;
+    left: 85px;
 }
 
 .HC3-1 {
+    display: none;
     background-color: #333;
     height: 100%;
     width: 60%;
@@ -517,7 +597,7 @@
 .HC3-1 .TitleVideos {
     height: 20%;
     padding-left: 10px;
-    border-bottom: 1px solid #03a062;
+    border-bottom: 1px solid white;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -560,10 +640,11 @@
 }
 
 .HC3-2 {
+    display: none;
     background-color: #333;
     height: 100%;
     width: 40%;
-    border-left: 1px solid #03a062;
+    border-left: 1px solid white;
 }
 
 /*Footer:*/

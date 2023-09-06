@@ -162,6 +162,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
+                                    <h2 className="HC-1T">PROFILE</h2>
                                     <div className="HC1-1">
                                         <div className="TitleProfile">
                                             <h3>View my profile</h3>
@@ -189,6 +190,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
+                                    <h2 className="HC-2T">PROJECTS</h2>
                                     <div className="HC2-1">
                                         <div className="TitleProjects">
                                             <h3>View my projects</h3>
@@ -210,6 +212,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
+                                    <h2 className="HC-3T">VIDEOS</h2>
                                     <div className="HC3-1">
                                         <div className="TitleVideos">
                                             <h3>View my videos</h3>

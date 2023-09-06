@@ -37,10 +37,10 @@ function FooterInfoBox() {
                             <h3 onClick={() => navigate(info.routes.videosPageAdmin)}>Videos</h3>
                         </div>
                         <div className="FooterNav1-4">
-                            <h3 onClick={() => navigate(info.routes.experiencePageAdmin)}>Experience</h3>
+                            <h3 onClick={() => navigate(info.routes.goalsPageAdmin)}>Goals</h3>
                         </div>
                         <div className="FooterNav1-5">
-                            <h3 onClick={() => navigate(info.routes.contactPageAdmin)}>Contact</h3>
+                            <h3 onClick={() => navigate(info.routes.cvPageAdmin)}>CV</h3>
                         </div>
                     </div>
                 </div>
