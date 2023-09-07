@@ -18,8 +18,8 @@ function ProfilePageGuest() {
             setLoading(false);
             if (load === "true") {
                 notification.success({
-                    message: "LOGGED IN!",
-                    description: "Welcome to the MatrixZone Guest.",
+                    message: "LOGGED IN AS GUEST",
+                    description: "Welcome to the MatrixZone!",
                     placement: "bottomLeft",
                     style: {
                         backgroundColor: "lightgreen",

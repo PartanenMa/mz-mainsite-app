@@ -21,8 +21,8 @@ function GoalsPageAdmin() {
                 if (load === "true") {
                     sessionStorage.setItem("load", "false");
                     notification.success({
-                        message: "LOGGED IN!",
-                        description: "Welcome back Admin.",
+                        message: "LOGGED IN AS ADMIN",
+                        description: "Welcome back!",
                         placement: "bottomLeft",
                         style: {
                             backgroundColor: "lightgreen",

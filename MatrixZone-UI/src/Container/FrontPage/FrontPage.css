@@ -391,7 +391,7 @@
 .HC1-1 .TitleProfile {
     height: 20%;
     padding-left: 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid lightblue;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -441,7 +441,7 @@
     background-size: cover;
     height: 100%;
     width: 40%;
-    border-left: 1px solid white;
+    border-left: 1px solid lightblue;
 }
 
 .HeroContent2 {
@@ -497,7 +497,7 @@
 .HC2-1 .TitleProjects {
     height: 20%;
     padding-left: 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid gray;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -544,7 +544,7 @@
     background-color: #333;
     height: 100%;
     width: 40%;
-    border-left: 1px solid white;
+    border-left: 1px solid gray;
 }
 
 .HeroContent3 {
@@ -600,7 +600,7 @@
 .HC3-1 .TitleVideos {
     height: 20%;
     padding-left: 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid lightcoral;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -647,7 +647,7 @@
     background-color: #333;
     height: 100%;
     width: 40%;
-    border-left: 1px solid white;
+    border-left: 1px solid lightcoral;
 }
 
 /*Footer:*/

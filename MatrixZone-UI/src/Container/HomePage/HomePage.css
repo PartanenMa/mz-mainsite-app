@@ -749,6 +749,7 @@
     border-radius: 100%;
     margin-top: 30px;
     transition: filter 300ms;
+    transition: border 300ms;
 }
 
 .GoToMyProfile .Photo:hover {
@@ -882,6 +883,7 @@
     border-radius: 100%;
     margin-top: 30px;
     transition: filter 300ms;
+    transition: border 300ms;
 }
 
 .GoToMyProjects .GHLogo:hover {
@@ -1016,6 +1018,7 @@
     border-radius: 100%;
     margin-top: 30px;
     transition: filter 300ms;
+    transition: border 300ms;
 }
 
 .GoToMyVideos .YTLogo:hover {

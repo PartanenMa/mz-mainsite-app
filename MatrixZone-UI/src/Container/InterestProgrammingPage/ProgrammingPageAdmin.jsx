@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { notification } from "antd";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
@@ -31,8 +32,8 @@ function ProgrammingPageAdmin() {
                 if (load === "true") {
                     sessionStorage.setItem("load", "false");
                     notification.success({
-                        message: "LOGGED IN!",
-                        description: "Welcome back Admin.",
+                        message: "LOGGED IN AS ADMIN",
+                        description: "Welcome back!",
                         placement: "bottomLeft",
                         style: {
                             backgroundColor: "lightgreen",
