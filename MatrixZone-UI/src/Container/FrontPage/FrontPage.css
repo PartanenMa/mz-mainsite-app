@@ -370,6 +370,7 @@
 }
 
 .HC-1T {
+    animation: fadeIn 0.3s;
     display: block;
     color: white;
     font-size: 60px;
@@ -475,6 +476,7 @@
 }
 
 .HC-2T {
+    animation: fadeIn 0.3s;
     display: block;
     color: white;
     font-size: 60px;
@@ -577,6 +579,7 @@
 }
 
 .HC-3T {
+    animation: fadeIn 0.3s;
     display: block;
     color: white;
     font-size: 60px;

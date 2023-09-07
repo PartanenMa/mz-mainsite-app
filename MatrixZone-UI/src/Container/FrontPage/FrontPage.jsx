@@ -34,7 +34,7 @@ function Header({ setIsModalOpen }) {
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <div className="HeaderLogo" onClick={handleLogoClick}></div>
+                    <div className="HeaderLogo" title="Info" onClick={handleLogoClick}></div>
                     <h1>MatrixZone</h1>
                 </motion.div>
                 <motion.div

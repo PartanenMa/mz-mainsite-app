@@ -858,7 +858,7 @@
 }
 
 .GoToMyProjects {
-    background-image: url("/src/Assets/Images/ProjectsBG.jpg");
+    background-image: url("/src/Assets/Images/ProjectsBG.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
@@ -992,7 +992,7 @@
 }
 
 .GoToMyVideos {
-    background-image: url("/src/Assets/Images/VideosBG.jpeg");
+    background-image: url("/src/Assets/Images/VideosBG.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;

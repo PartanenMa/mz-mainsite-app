@@ -19,16 +19,26 @@ function BackToFrontPage() {
     const navigate = useNavigate();
 
     return (
-        <button className="BackToFrontPage" onClick={() => navigate(info.routes.frontPage)}>
+        <button
+            className="BackToFrontPage"
+            title="Back to the front page"
+            onClick={() => navigate(info.routes.frontPage)}
+        >
             {"<"}
         </button>
     );
 }
 
 function LogoSection() {
+    const navigate = useNavigate();
+
     return (
         <div className="LogoRGContainer">
-            <div className="LogoRG"></div>
+            <div
+                className="LogoRG"
+                title="Back to the front page"
+                onClick={() => navigate(info.routes.frontPage)}
+            ></div>
         </div>
     );
 }
