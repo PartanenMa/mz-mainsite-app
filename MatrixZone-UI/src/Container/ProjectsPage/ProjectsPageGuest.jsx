@@ -47,7 +47,7 @@ function ProjectsPageGuest() {
                             <h2>Guest / projects</h2>
                         </div>
                         <ProjectsPageTitle />
-                        <ProjectsPageContent />
+                        <AboutMyProjects />
                     </div>
                     <FooterGuest />
                 </div>
@@ -64,8 +64,34 @@ function ProjectsPageTitle() {
     );
 }
 
-function ProjectsPageContent() {
-    return <div className="ProjectsPageContentContainer"></div>;
+function AboutMyProjects() {
+    return (
+        <div className="AboutMyProjectsContainer">
+            <div className="AboutMyProjectsTitle">
+                <h3>ABOUT MY PROJECTS</h3>
+            </div>
+            <div className="AboutMyProjectsContent">
+                <a className="AboutMyProjectsPhoto" href={info.GitHub.link} target="_blank" />
+                <div className="AboutMyProjectsTextContainer">
+                    <div className="AboutMyProjectsTextTitle">
+                        <h4 className="h4_1">{info.GitHub.user}</h4>
+                        <h4 className="h4_2">{info.LinkedIn.name}</h4>
+                    </div>
+                    <div className="AboutMyProjectsText">
+                        <p>
+                            {info.GitHub.description1}
+                            <br />
+                            <br />
+                            {info.GitHub.description2}
+                            <br />
+                            <br />
+                            {info.GitHub.description3}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default ProjectsPageGuest;

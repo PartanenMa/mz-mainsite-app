@@ -89,6 +89,7 @@
     border-radius: 50px;
     will-change: filter;
     transition: filter 300ms;
+    transition: background-color 500ms ease-in-out;
 }
 
 .UsernameField:hover {
@@ -101,6 +102,7 @@
     border-radius: 50px;
     will-change: filter;
     transition: filter 300ms;
+    transition: background-color 500ms ease-in-out;
 }
 
 .PasswordField:hover {

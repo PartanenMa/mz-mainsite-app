@@ -33,11 +33,11 @@
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     transition: filter 300ms;
+    transition: background-color 500ms ease-in-out;
 }
 
 .BackToFrontPage:hover {
     background-color: lightgreen;
-    transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);
 }
 
@@ -62,6 +62,7 @@
     left: 534px;
     border-radius: 100%;
     transition: filter 300ms;
+    transition: background-color 500ms ease-in-out;
 }
 
 .LogoRG:hover {
@@ -134,6 +135,7 @@
     border-radius: 50px;
     will-change: filter;
     transition: filter 300ms;
+    transition: background-color 500ms ease-in-out;
 }
 
 .UsernameField:hover {
@@ -146,6 +148,7 @@
     border-radius: 50px;
     will-change: filter;
     transition: filter 300ms;
+    transition: background-color 500ms ease-in-out;
 }
 
 .PasswordField:hover {

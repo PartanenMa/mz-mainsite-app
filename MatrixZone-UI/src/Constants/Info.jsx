@@ -53,7 +53,9 @@ export const info = {
     GitHub: {
         //Account data:
         user: "PartanenMa",
-        name: "Manu Partanen",
+        description1: "",
+        description2: "",
+        description3: "",
         link: "https://github.com/PartanenMa",
     },
     loginInfo: {
