@@ -36,7 +36,7 @@
 
 /*Title:*/
 .CVPageTitleContainer {
-    background-color: gray;
+    background-color: green;
     height: 120px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -58,7 +58,7 @@
 .CVPageContentContainer {
     height: 80%;
     width: 100%;
-    border-top: 1px solid #03a062;
+    border-top: 1px solid white;
     overflow: hidden;
     padding-top: 23px;
     display: flex;
