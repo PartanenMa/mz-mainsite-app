@@ -4,6 +4,7 @@ import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
+import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./CVPage.css";
 
@@ -65,7 +66,16 @@ function CVPageTitle() {
 }
 
 function CVPageContent() {
-    return <div className="CVPageContentContainer"></div>;
+    return (
+        <div className="CVPageContentContainer">
+            <div className="CVContent">
+                <h1>{info.LinkedIn.name}</h1>
+                <h2>{info.LinkedIn.profession}</h2>
+                <div />
+            </div>
+            <GeneratePDF />
+        </div>
+    );
 }
 
 export default CVPageGuest;

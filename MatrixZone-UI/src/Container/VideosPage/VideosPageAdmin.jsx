@@ -52,7 +52,7 @@ function VideosPageAdmin() {
                                 <h2>Admin / videos</h2>
                             </div>
                             <VideosPageTitle />
-                            <VideosPageContent />
+                            <AboutMyVideos />
                         </div>
                         <FooterAdmin />
                     </div>
@@ -72,8 +72,34 @@ function VideosPageTitle() {
     );
 }
 
-function VideosPageContent() {
-    return <div className="VideosPageContentContainer"></div>;
+function AboutMyVideos() {
+    return (
+        <div className="AboutMyVideosContainer">
+            <div className="AboutMyVideosTitle">
+                <h3>ABOUT MY VIDEOS</h3>
+            </div>
+            <div className="AboutMyVideosContent">
+                <a className="AboutMyVideosPhoto" href={info.YouTube.link} target="_blank" />
+                <div className="AboutMyVideosTextContainer">
+                    <div className="AboutMyVideosTextTitle">
+                        <h4 className="h4_1">{info.YouTube.user}</h4>
+                        <h4 className="h4_2">{info.LinkedIn.name}</h4>
+                    </div>
+                    <div className="AboutMyVideosText">
+                        <p>
+                            {info.YouTube.description1}
+                            <br />
+                            <br />
+                            {info.YouTube.description2}
+                            <br />
+                            <br />
+                            {info.YouTube.description3}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default VideosPageAdmin;

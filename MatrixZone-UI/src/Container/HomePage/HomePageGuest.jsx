@@ -266,7 +266,7 @@ function FirstSection() {
                         <a href={info.GitHub.link} title="My GitHub" target="_blank"></a>
                         <h3>GitHub</h3>
                         <p>{info.GitHub.user}</p>
-                        <p>{info.GitHub.name}</p>
+                        <p>{info.LinkedIn.name}</p>
                         <button className="GoToProjects" onClick={() => navigate(info.routes.projectsPageGuest)}>
                             Projects
                         </button>
@@ -279,12 +279,12 @@ function FirstSection() {
                     <h2>CHECK OUT MY VIDEOS!</h2>
                 </div>
                 <div className="GoToMyVideos">
-                    <a className="YTLogo" href={info.GitHub.link} target="_blank"></a>
+                    <a className="YTLogo" href={info.YouTube.link} target="_blank"></a>
                     <div className="VideosTextBox">
-                        <a href={info.GitHub.link} title="My YouTube" target="_blank"></a>
+                        <a href={info.YouTube.link} title="My YouTube" target="_blank"></a>
                         <h3>YouTube</h3>
-                        <p>{info.GitHub.user}</p>
-                        <p>{info.GitHub.name}</p>
+                        <p>{info.YouTube.user}</p>
+                        <p>{info.LinkedIn.name}</p>
                         <button className="GoToVideos" onClick={() => navigate(info.routes.videosPageGuest)}>
                             Videos
                         </button>

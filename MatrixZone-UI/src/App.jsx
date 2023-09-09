@@ -8,18 +8,6 @@ import HomePageGuest from "./Container/HomePage/HomePageGuest.jsx";
 import HomePageAdmin from "./Container/HomePage/HomePageAdmin.jsx";
 import ProfilePageGuest from "./Container/ProfilePage/ProfilePageGuest.jsx";
 import ProfilePageAdmin from "./Container/ProfilePage/ProfilePageAdmin.jsx";
-import ITInfraPageGuest from "./Container/InterestITInfraPage/ITInfraPageGuest.jsx";
-import ITInfraPageAdmin from "./Container/InterestITInfraPage/ITInfraPageAdmin.jsx";
-import ProgrammingPageGuest from "./Container/InterestProgrammingPage/ProgrammingPageGuest.jsx";
-import ProgrammingPageAdmin from "./Container/InterestProgrammingPage/ProgrammingPageAdmin.jsx";
-import RoboticsPageGuest from "./Container/InterestRoboticsPage/RoboticsPageGuest.jsx";
-import RoboticsPageAdmin from "./Container/InterestRoboticsPage/RoboticsPageAdmin.jsx";
-import GamingPageGuest from "./Container/HobbyGamingPage/GamingPageGuest.jsx";
-import GamingPageAdmin from "./Container/HobbyGamingPage/GamingPageAdmin.jsx";
-import WebDevPageGuest from "./Container/HobbyWebDevPage/WebDevPageGuest.jsx";
-import WebDevPageAdmin from "./Container/HobbyWebDevPage/WebDevPageAdmin.jsx";
-import CampingPageGuest from "./Container/HobbyCampingPage/CampingPageGuest.jsx";
-import CampingPageAdmin from "./Container/HobbyCampingPage/CampingPageAdmin.jsx";
 import ProjectsPageGuest from "./Container/ProjectsPage/ProjectsPageGuest.jsx";
 import ProjectsPageAdmin from "./Container/ProjectsPage/ProjectsPageAdmin.jsx";
 import VideosPageGuest from "./Container/VideosPage/VideosPageGuest.jsx";
@@ -51,18 +39,6 @@ function App() {
                         <Route path={info.routes.homePageAdmin} element={<HomePageAdmin />} />
                         <Route path={info.routes.profilePageGuest} element={<ProfilePageGuest />} />
                         <Route path={info.routes.profilePageAdmin} element={<ProfilePageAdmin />} />
-                        <Route path={info.routes.iTInfraPageGuest} element={<ITInfraPageGuest />} />
-                        <Route path={info.routes.iTInfraPageAdmin} element={<ITInfraPageAdmin />} />
-                        <Route path={info.routes.programmingPageGuest} element={<ProgrammingPageGuest />} />
-                        <Route path={info.routes.programmingPageAdmin} element={<ProgrammingPageAdmin />} />
-                        <Route path={info.routes.roboticsPageGuest} element={<RoboticsPageGuest />} />
-                        <Route path={info.routes.roboticsPageAdmin} element={<RoboticsPageAdmin />} />
-                        <Route path={info.routes.gamingPageGuest} element={<GamingPageGuest />} />
-                        <Route path={info.routes.gamingPageAdmin} element={<GamingPageAdmin />} />
-                        <Route path={info.routes.webDevPageGuest} element={<WebDevPageGuest />} />
-                        <Route path={info.routes.webDevPageAdmin} element={<WebDevPageAdmin />} />
-                        <Route path={info.routes.campingPageGuest} element={<CampingPageGuest />} />
-                        <Route path={info.routes.campingPageAdmin} element={<CampingPageAdmin />} />
                         <Route path={info.routes.projectsPageGuest} element={<ProjectsPageGuest />} />
                         <Route path={info.routes.projectsPageAdmin} element={<ProjectsPageAdmin />} />
                         <Route path={info.routes.videosPageGuest} element={<VideosPageGuest />} />

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { notification } from "antd";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
@@ -359,15 +358,13 @@ function Experience() {
 }
 
 function Interests() {
-    const navigate = useNavigate();
-
     return (
         <div className="InterestsContainer">
             <div className="InterestsTitle">
                 <h3>INTERESTS</h3>
             </div>
             <div className="InterestsContent">
-                <div className="Interest1" onClick={() => navigate(info.routes.iTInfraPageGuest)}>
+                <div className="Interest1">
                     <div className="Interest1Title">
                         <h4>IT infrastructure</h4>
                     </div>
@@ -377,7 +374,7 @@ function Interests() {
                         </div>
                     </div>
                 </div>
-                <div className="Interest2" onClick={() => navigate(info.routes.programmingPageGuest)}>
+                <div className="Interest2">
                     <div className="Interest2Title">
                         <h4>Programming</h4>
                     </div>
@@ -387,7 +384,7 @@ function Interests() {
                         </div>
                     </div>
                 </div>
-                <div className="Interest3" onClick={() => navigate(info.routes.roboticsPageGuest)}>
+                <div className="Interest3">
                     <div className="Interest3Title">
                         <h4>Robotics</h4>
                     </div>
@@ -403,15 +400,13 @@ function Interests() {
 }
 
 function Hobbies() {
-    const navigate = useNavigate();
-
     return (
         <div className="HobbiesContainer">
             <div className="HobbiesTitle">
                 <h3>HOBBIES</h3>
             </div>
             <div className="HobbiesContent">
-                <div className="Hobby1" onClick={() => navigate(info.routes.gamingPageGuest)}>
+                <div className="Hobby1">
                     <div className="Hobby1Title">
                         <h4>Gaming</h4>
                     </div>
@@ -421,7 +416,7 @@ function Hobbies() {
                         </div>
                     </div>
                 </div>
-                <div className="Hobby2" onClick={() => navigate(info.routes.webDevPageGuest)}>
+                <div className="Hobby2">
                     <div className="Hobby2Title">
                         <h4>Web development</h4>
                     </div>
@@ -431,7 +426,7 @@ function Hobbies() {
                         </div>
                     </div>
                 </div>
-                <div className="Hobby3" onClick={() => navigate(info.routes.campingPageGuest)}>
+                <div className="Hobby3">
                     <div className="Hobby3Title">
                         <h4>Camping</h4>
                     </div>
