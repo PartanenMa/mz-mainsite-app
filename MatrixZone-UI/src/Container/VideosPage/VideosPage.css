@@ -81,6 +81,10 @@
 }
 
 .AboutMyVideosContent {
+    background-image: url("/src/Assets/Images/VideosBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 90%;
     width: 100%;
     display: flex;

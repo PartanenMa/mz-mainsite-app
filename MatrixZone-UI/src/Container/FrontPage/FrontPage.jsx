@@ -139,7 +139,9 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                     <h2>
                                         Hi, I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
                                     </h2>
-                                    <h2>{info.LinkedIn.profession}</h2>
+                                    <h2>
+                                        I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession}</span>
+                                    </h2>
                                 </div>
                                 <div className="HTWelcome2">
                                     <h3>Welcome to the MatrixZone</h3>

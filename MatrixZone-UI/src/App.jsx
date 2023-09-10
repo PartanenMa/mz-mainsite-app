@@ -29,7 +29,7 @@ function App() {
 
     return (
         <>
-            {location.pathname === info.routes.frontPage ? <DarkBG /> : <MatrixBG />}
+            {location.pathname === info.routes.loginPage ? <MatrixBG /> : <DarkBG />}
             {
                 <div className="AppContainer">
                     <Routes>
