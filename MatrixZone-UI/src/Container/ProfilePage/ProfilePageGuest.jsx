@@ -185,6 +185,9 @@ function Skills() {
                             <div className="PL1Content">
                                 <h4>C++</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
                             </div>
                         </div>
                         <div className="PL2">
@@ -192,6 +195,9 @@ function Skills() {
                             <div className="PL2Content">
                                 <h4>Java</h4>
                                 <p>{info.LinkedIn.skillsLevel2}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>**</span>**
+                                </div>
                             </div>
                         </div>
                         <div className="PL3">
@@ -199,6 +205,9 @@ function Skills() {
                             <div className="PL3Content">
                                 <h4>C#</h4>
                                 <p>{info.LinkedIn.skillsLevel2}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>**</span>**
+                                </div>
                             </div>
                         </div>
                         <div className="PL4">
@@ -206,6 +215,9 @@ function Skills() {
                             <div className="PL4Content">
                                 <h4>HTML</h4>
                                 <p>{info.LinkedIn.skillsLevel3}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>***</span>*
+                                </div>
                             </div>
                         </div>
                         <div className="PL5">
@@ -213,6 +225,9 @@ function Skills() {
                             <div className="PL5Content">
                                 <h4>CSS</h4>
                                 <p>{info.LinkedIn.skillsLevel3}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>***</span>*
+                                </div>
                             </div>
                         </div>
                         <div className="PL6">
@@ -220,6 +235,9 @@ function Skills() {
                             <div className="PL6Content">
                                 <h4>JavaScript</h4>
                                 <p>{info.LinkedIn.skillsLevel3}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>***</span>*
+                                </div>
                             </div>
                         </div>
                         <div className="PL7">
@@ -227,6 +245,9 @@ function Skills() {
                             <div className="PL7Content">
                                 <h4>TypeScript</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
                             </div>
                         </div>
                         <div className="PL8">
@@ -237,6 +258,9 @@ function Skills() {
                             <div className="PL8Content">
                                 <h4>SQL</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
                             </div>
                         </div>
                         <div className="PL9">
@@ -247,6 +271,9 @@ function Skills() {
                             <div className="PL9Content">
                                 <h4>NoSQL</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
                             </div>
                         </div>
                         <div className="PL10">
@@ -254,6 +281,9 @@ function Skills() {
                             <div className="PL10Content">
                                 <h4>Python</h4>
                                 <p>{info.LinkedIn.skillsLevel2}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>**</span>**
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -261,6 +291,7 @@ function Skills() {
                 <div className="Front-endDevelopment">
                     <div className="FEDTitle">
                         <h4>{info.LinkedIn.skillsTitle2}</h4>
+                        <div>**</div>
                     </div>
                     <div className="FEDContent">
                         <div className="FED1">
@@ -268,6 +299,9 @@ function Skills() {
                             <div className="FED1Content">
                                 <h4>React</h4>
                                 <p>{info.LinkedIn.skillsLevel3}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>***</span>*
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -275,6 +309,7 @@ function Skills() {
                 <div className="Back-endDevelopment">
                     <div className="BEDTitle">
                         <h4>{info.LinkedIn.skillsTitle3}</h4>
+                        <div>***</div>
                     </div>
                     <div className="BEDContent">
                         <div className="BED1">
@@ -282,6 +317,9 @@ function Skills() {
                             <div className="BED1Content">
                                 <h4>Node.js</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
                             </div>
                         </div>
                         <div className="BED2">
@@ -289,6 +327,9 @@ function Skills() {
                             <div className="BED2Content">
                                 <h4>Express.js</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
                             </div>
                         </div>
                     </div>

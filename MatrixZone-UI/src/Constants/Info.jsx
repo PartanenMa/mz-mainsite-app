@@ -37,6 +37,7 @@ export const info = {
         skillsLevel1: "Beginner",
         skillsLevel2: "Intermediate",
         skillsLevel3: "Advanced",
+        skillsLevel4: "Professional",
         //Experience:
         companyName1: "Visma Real Estate Oy",
         workTitle1: "Intern - Internship",
