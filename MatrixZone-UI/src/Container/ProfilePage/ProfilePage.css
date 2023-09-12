@@ -357,11 +357,17 @@
 }
 
 .EducationHighSchool {
-    height: 130px;
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+    transition: filter 300ms;
+}
+
+.EducationHighSchool:hover {
+    border: 1px solid white;
+    filter: drop-shadow(0 0 2em #333);
 }
 
 .EHSTitle {
@@ -385,29 +391,59 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EHSContent {
+.EHSContent1 {
     background-color: #333;
     height: 100px;
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     padding-left: 10px;
     overflow: hidden;
 }
 
-.EHSContent p {
+.EHSContent1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.EHSContent2 {
+    background-color: #333;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.EHSContent2 p {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 1200px;
+}
+
+.EHSContent2 .Tech {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "DejaVu Sans Mono, monospace";
+}
+
 .EducationMilitaryService {
-    height: 130px;
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+    transition: filter 300ms;
+}
+
+.EducationMilitaryService:hover {
+    border: 1px solid white;
+    filter: drop-shadow(0 0 2em red);
 }
 
 .EMSTitle {
@@ -431,21 +467,45 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EMSContent {
+.EMSContent1 {
     background-color: red;
     height: 100px;
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     padding-left: 10px;
     overflow: hidden;
 }
 
-.EMSContent p {
+.EMSContent1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.EMSContent2 {
+    background-color: #333;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.EMSContent2 p {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 1200px;
+}
+
+.EMSContent2 .Tech {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "DejaVu Sans Mono, monospace";
 }
 
 .MilitaryLogo {
@@ -463,11 +523,17 @@
 }
 
 .EducationUniversityOfAppliedSciences {
-    height: 130px;
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
+    transition: filter 300ms;
+}
+
+.EducationUniversityOfAppliedSciences:hover {
+    border: 1px solid white;
+    filter: drop-shadow(0 0 2em #00a5cd);
 }
 
 .EUOASTitle {
@@ -491,17 +557,15 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EUOASContent {
+.EUOASContent1 {
     background-color: #00a5cd;
     height: 100px;
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     padding-left: 10px;
     overflow: hidden;
 }
 
-.EUOASContent p {
+.EUOASContent1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
@@ -520,6 +584,32 @@
     float: right;
     position: relative;
     bottom: 96px;
+}
+
+.EUOASContent2 {
+    background-color: #333;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.EUOASContent2 p {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 1200px;
+}
+
+.EUOASContent2 .Tech {
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "DejaVu Sans Mono, monospace";
 }
 
 /*Skills:*/

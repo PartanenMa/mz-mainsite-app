@@ -22,14 +22,21 @@ export const info = {
         //Education:
         schoolName1: "PSYL",
         degreeName1: "High School Diploma",
-        timeAndPlace1: "11.08.2014 - 05.12.2017, Pori, Finland",
+        timeAndPlace1: "11.08.2014 - 05.12.2017 (3 years and 4 months), Pori, Finland",
         schoolName2: "Finnish Defence Forces",
         degreeName2:
             "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
-        timeAndPlace2: "09.07.2018 - 20.06.2019, Niinisalo, Finland",
+        timeAndPlace2: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
         schoolName3: "Satakunta University of Applied Sciences",
         degreeName3: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
         timeAndPlace3: "16.08.2021 - present, Pori, Finland",
+        educationDescription1: "desc1",
+        educationDescription2: "desc2",
+        educationDescription3: "desc3",
+        educationSubjects1:
+            "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
+        educationSubjects2: "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
+        educationSubjects3: "IT infrastructure, programming, software engineering, robotics",
         //Skills:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",

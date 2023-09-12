@@ -128,39 +128,79 @@ function Languages() {
 }
 
 function Education() {
+    const [isVisible1e, setIsVisible1e] = useState(false);
+    const [isVisible2e, setIsVisible2e] = useState(false);
+    const [isVisible3e, setIsVisible3e] = useState(false);
+
+    const showEducationDescription1 = () => {
+        if (isVisible1e === false) {
+            setIsVisible1e(true);
+        } else {
+            setIsVisible1e(false);
+        }
+    };
+
+    const showEducationDescription2 = () => {
+        if (isVisible2e === false) {
+            setIsVisible2e(true);
+        } else {
+            setIsVisible2e(false);
+        }
+    };
+
+    const showEducationDescription3 = () => {
+        if (isVisible3e === false) {
+            setIsVisible3e(true);
+        } else {
+            setIsVisible3e(false);
+        }
+    };
+
     return (
         <div className="EducationContainer">
             <div className="EducationTitle">
                 <h3>EDUCATION</h3>
             </div>
             <div className="EducationContent">
-                <div className="EducationHighSchool">
+                <div className="EducationHighSchool" onClick={() => showEducationDescription1()}>
                     <div className="EHSTitle">
                         <h4>{info.LinkedIn.schoolName1}</h4>
                     </div>
-                    <div className="EHSContent">
+                    <div className="EHSContent1">
                         <p>{info.LinkedIn.degreeName1}</p>
                         <p>{info.LinkedIn.timeAndPlace1}</p>
                     </div>
+                    <div className="EHSContent2" style={{ display: isVisible1e ? "block" : "none" }}>
+                        <p>{info.LinkedIn.educationDescription1}</p>
+                        <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects1}</p>
+                    </div>
                 </div>
-                <div className="EducationMilitaryService">
+                <div className="EducationMilitaryService" onClick={() => showEducationDescription2()}>
                     <div className="EMSTitle">
                         <h4>{info.LinkedIn.schoolName2}</h4>
                     </div>
-                    <div className="EMSContent">
+                    <div className="EMSContent1">
                         <p>{info.LinkedIn.degreeName2}</p>
                         <p>{info.LinkedIn.timeAndPlace2}</p>
                         <div className="MilitaryLogo"></div>
                     </div>
+                    <div className="EMSContent2" style={{ display: isVisible2e ? "block" : "none" }}>
+                        <p>{info.LinkedIn.educationDescription2}</p>
+                        <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects2}</p>
+                    </div>
                 </div>
-                <div className="EducationUniversityOfAppliedSciences">
+                <div className="EducationUniversityOfAppliedSciences" onClick={() => showEducationDescription3()}>
                     <div className="EUOASTitle">
                         <h4>{info.LinkedIn.schoolName3}</h4>
                     </div>
-                    <div className="EUOASContent">
+                    <div className="EUOASContent1">
                         <p>{info.LinkedIn.degreeName3}</p>
                         <p>{info.LinkedIn.timeAndPlace3}</p>
                         <div className="SchoolLogo"></div>
+                    </div>
+                    <div className="EUOASContent2" style={{ display: isVisible3e ? "block" : "none" }}>
+                        <p>{info.LinkedIn.educationDescription3}</p>
+                        <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects3}</p>
                     </div>
                 </div>
             </div>
