@@ -36,7 +36,7 @@
 
 /*Title:*/
 .GoalsPageTitleContainer {
-    background-color: #333;
+    background-color: #111;
     height: 120px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -46,7 +46,7 @@
 }
 
 .GoalsPageTitleContainer h2 {
-    color: white;
+    color: #03a062;
     font-size: 70px;
     position: relative;
     bottom: 50px;

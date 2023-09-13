@@ -30,13 +30,16 @@ export const info = {
         schoolName3: "Satakunta University of Applied Sciences",
         degreeName3: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
         timeAndPlace3: "16.08.2021 - present, Pori, Finland",
-        educationDescription1: "desc1",
-        educationDescription2: "desc2",
-        educationDescription3: "desc3",
+        educationDescription1:
+            "3 and a half year high school education. Studied regular school subjects in addition to psychology and philosophy.",
+        educationDescription2:
+            "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
+        educationDescription3:
+            "Studied information technology and automation, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
         educationSubjects1:
             "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
         educationSubjects2: "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
-        educationSubjects3: "IT infrastructure, programming, software engineering, robotics",
+        educationSubjects3: "IT infrastructure, programming, software engineering, automation, 3D technology, robotics",
         //Skills:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",
