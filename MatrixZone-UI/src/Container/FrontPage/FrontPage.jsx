@@ -25,6 +25,11 @@ function Header({ setIsModalOpen }) {
         setIsModalOpen(true);
     };
 
+    const handleLoginClick = () => {
+        sessionStorage.setItem("logoutLoad", "false");
+        navigate(info.routes.loginPage);
+    };
+
     return (
         <header className="Header">
             <AnimatePresence>
@@ -34,7 +39,7 @@ function Header({ setIsModalOpen }) {
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <div className="HeaderLogo" title="Info" onClick={handleLogoClick}></div>
+                    <div className="HeaderLogo" title="Info" onClick={() => handleLogoClick()}></div>
                     <h1>MatrixZone</h1>
                 </motion.div>
                 <motion.div
@@ -43,7 +48,7 @@ function Header({ setIsModalOpen }) {
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                 >
-                    <button className="LoginButtonFP" onClick={() => navigate(info.routes.loginPage)}>
+                    <button className="LoginButtonFP" onClick={() => handleLoginClick()}>
                         Log in
                     </button>
                 </motion.div>

@@ -126,18 +126,10 @@ function FirstSection() {
         setBGoption("OFF");
         option.style.left = "0px";
         sessionStorage.setItem("isGuestGIF", "false");
+        sessionStorage.setItem("logoutLoad", "true");
         setIsVisible2(false);
         setIsVisible1(true);
         navigate(info.routes.loginPage);
-        notification.warning({
-            message: "LOGGED OUT!",
-            description: "You've logged out of the MatrixZone.",
-            placement: "bottomLeft",
-            style: {
-                backgroundColor: "yellow",
-                border: "3px solid orange",
-            },
-        });
     }
 
     const contentStyle = {

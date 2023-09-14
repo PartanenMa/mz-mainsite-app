@@ -1,7 +1,7 @@
 /*GoalsPage:*/
 .GoalsPageContainer {
     animation: fadeIn 0.3s;
-    background-color: #111;
+    background-color: transparent;
     height: 600px;
     width: 1244px;
     border-left: 3px solid #03a062;

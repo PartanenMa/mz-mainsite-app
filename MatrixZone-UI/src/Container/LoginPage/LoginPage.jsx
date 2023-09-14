@@ -1,16 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { notification } from "antd";
+import LogoutLoadingScreen from "/src/Components/LogoutLoadingScreen/LogoutLoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./LoginPage.css";
 
 function LoginPage() {
+    const load = sessionStorage.getItem("logoutLoad");
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        //Simulate loading for 1 second:
+        const timer = setTimeout(() => {
+            setLoading(false);
+            if (load === "true") {
+                notification.warning({
+                    message: "LOGGED OUT!",
+                    description: "You've logged out of the MatrixZone.",
+                    placement: "bottomLeft",
+                    style: {
+                        backgroundColor: "yellow",
+                        border: "3px solid orange",
+                    },
+                });
+            }
+            sessionStorage.setItem("load", "false");
+        }, 4000);
+
+        //Clean up the timer to prevent memory leaks:
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
-        <div className="LoginPageContainer">
-            <BackToFrontPage />
-            <LogoSection />
-            <LoginSection />
+        <div>
+            {loading && load === "true" ? (
+                //Loading component here:
+                <LogoutLoadingScreen />
+            ) : (
+                <div className="LoginPageContainer">
+                    <BackToFrontPage />
+                    <LogoSection />
+                    <LoginSection />
+                </div>
+            )}
         </div>
     );
 }

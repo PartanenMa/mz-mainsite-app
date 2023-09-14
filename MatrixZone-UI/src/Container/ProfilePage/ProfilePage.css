@@ -1,7 +1,7 @@
 /*ProfilePage:*/
 .ProfilePageContainer {
     animation: fadeIn 0.3s;
-    background-color: lightblue;
+    background-color: transparent;
     width: 1244px;
     border-left: 3px solid #03a062;
     border-right: 3px solid #03a062;
@@ -2438,7 +2438,6 @@
 .ContactContainer {
     height: 510px;
     width: 100%;
-    border-top: 1px solid white;
     overflow: hidden;
 }
 
