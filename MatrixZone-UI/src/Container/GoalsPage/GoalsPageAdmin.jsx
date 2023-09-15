@@ -73,7 +73,88 @@ function GoalsPageTitle() {
 }
 
 function GoalsPageContent() {
-    return <div className="GoalsPageContentContainer"></div>;
+    return (
+        <div className="GoalsPageContentContainer">
+            <div className="Goal">
+                <h3>
+                    Learn basic programming: <span style={{ color: "green" }}>COMPLETED</span>
+                </h3>
+                <p>
+                    - Learn languages such as C++, Java and C#. <span style={{ color: "green" }}>COMPLETED</span>
+                </p>
+                <p>
+                    - Learn data structures, algorithms and heuristics.{" "}
+                    <span style={{ color: "green" }}>COMPLETED</span>
+                </p>
+                <p>
+                    - Learn to use office software, version control software and task automation software.{" "}
+                    <span style={{ color: "green" }}>COMPLETED</span>
+                </p>
+            </div>
+            <div className="Goal">
+                <h3>
+                    Learn basic web development: <span style={{ color: "green" }}>COMPLETED</span>
+                </h3>
+                <p>
+                    - Learn languages such as HTML, CSS and JavaScript.{" "}
+                    <span style={{ color: "green" }}>COMPLETED</span>
+                </p>
+                <p>
+                    - Learn to use browser dev tools. <span style={{ color: "green" }}>COMPLETED</span>
+                </p>
+                <p>
+                    - Learn to make websites responsive. <span style={{ color: "green" }}>COMPLETED</span>
+                </p>
+            </div>
+            <div className="Goal">
+                <h3>
+                    Learn front-end development: <span style={{ color: "yellow" }}>IN PROGRESS</span>
+                </h3>
+                <p>
+                    - Learn a front-end framework and TypeScript. <span style={{ color: "yellow" }}>IN PROGRESS</span>
+                </p>
+                <p>
+                    - Learn an additional front-end framework like Next.js.{" "}
+                    <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+                <p>
+                    - Learn a CSS framework. <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+            </div>
+            <div className="Goal">
+                <h3>
+                    Learn back-end development: <span style={{ color: "yellow" }}>IN PROGRESS</span>
+                </h3>
+                <p>
+                    - Learn a back-end framework, and languages such as Go and PHP.{" "}
+                    <span style={{ color: "yellow" }}>IN PROGRESS</span>
+                </p>
+                <p>
+                    - Learn an additional back-end framework like Express.js.{" "}
+                    <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+                <p>
+                    - Learn to use SQL databases and NoSQL databases.{" "}
+                    <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+            </div>
+            <div className="Goal">
+                <h3>
+                    Learn full-stack development: <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </h3>
+                <p>
+                    - Learn to connect the front-end to the back-end.{" "}
+                    <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+                <p>
+                    - Learn sensible web design. <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+                <p>
+                    - Learn project management. <span style={{ color: "red" }}>NOT YET STARTED</span>
+                </p>
+            </div>
+        </div>
+    );
 }
 
 export default GoalsPageAdmin;

@@ -2,7 +2,6 @@
 .GoalsPageContainer {
     animation: fadeIn 0.3s;
     background-color: transparent;
-    height: 600px;
     width: 1244px;
     border-left: 3px solid #03a062;
     border-right: 3px solid #03a062;
@@ -62,7 +61,35 @@
     overflow: hidden;
     padding-top: 23px;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 160px;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Goal {
+    background-color: #111;
+    height: 200px;
+    width: 90%;
+    border: 1px solid #03a062;
+    border-radius: 10px;
+}
+
+.Goal h3 {
+    color: #03a062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    left: 30px;
+}
+
+.Goal p {
+    color: #03a062;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    left: 30px;
 }

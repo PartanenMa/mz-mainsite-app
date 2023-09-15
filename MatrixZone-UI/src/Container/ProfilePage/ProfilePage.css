@@ -367,7 +367,7 @@
 
 .EducationHighSchool:hover {
     border: 1px solid white;
-    filter: drop-shadow(0 0 2em #333);
+    filter: drop-shadow(0 0 2em gray);
 }
 
 .EHSTitle {
@@ -392,7 +392,7 @@
 }
 
 .EHSContent1 {
-    background-color: #333;
+    background-color: gray;
     height: 100px;
     width: 100%;
     padding-left: 10px;

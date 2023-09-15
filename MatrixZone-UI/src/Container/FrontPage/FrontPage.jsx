@@ -41,6 +41,9 @@ function Header({ setIsModalOpen }) {
                 >
                     <div className="HeaderLogo" title="Info" onClick={() => handleLogoClick()}></div>
                     <h1>MatrixZone</h1>
+                    <div className="Version">
+                        <p>Pre-alpha</p>
+                    </div>
                 </motion.div>
                 <motion.div
                     className="NavOptions"

@@ -34,6 +34,14 @@
     margin-bottom: 30px;
 }
 
+.HeaderTitle {
+    height: 100%;
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .HeaderLogo {
     background-image: url("/src/Assets/Images/Logo.PNG");
     background-repeat: no-repeat;
@@ -51,14 +59,6 @@
 .HeaderLogo:hover {
     border: 1px solid lightgreen;
     filter: drop-shadow(0 0 2em #03a062);
-}
-
-.HeaderTitle {
-    height: 100%;
-    width: 260px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .HeaderTitle h1 {
@@ -94,6 +94,25 @@
             0 0 17px lightgreen,
             0 0 20px lightgreen;
     }
+}
+
+.Version {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 0px;
+}
+
+.Version p {
+    color: #03a062;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
+    position: relative;
+    top: 5px;
 }
 
 .NavOptions {
