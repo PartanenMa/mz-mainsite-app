@@ -42,7 +42,7 @@ function Header({ setIsModalOpen }) {
                     <div className="HeaderLogo" title="Info" onClick={() => handleLogoClick()}></div>
                     <h1>MatrixZone</h1>
                     <div className="Version">
-                        <p>Pre-alpha</p>
+                        <p>{info.version}</p>
                     </div>
                 </motion.div>
                 <motion.div
@@ -85,7 +85,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
     };
 
     return (
-        <div className="Main">
+        <main className="Main">
             <section className="HeroSection">
                 {isModalOpen ? (
                     <AnimatePresence>
@@ -239,12 +239,12 @@ function Main({ isModalOpen, setIsModalOpen }) {
                     )
                 )}
             </section>
-        </div>
+        </main>
     );
 }
 
 function Footer() {
-    return <div className="Footer"></div>;
+    return <footer className="Footer"></footer>;
 }
 
 export default FrontPage;

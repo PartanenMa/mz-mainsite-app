@@ -4,10 +4,10 @@ import "./Header.css";
 
 function HeaderGuest() {
     return (
-        <div className="HeaderContainer">
+        <header className="HeaderContainer">
             <Logo />
             <Title />
-        </div>
+        </header>
     );
 }
 

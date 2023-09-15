@@ -48,7 +48,8 @@
 }
 
 .LogoRG {
-    background-color: #111;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
     background-repeat: no-repeat;
     background-position: 49% 60%;
@@ -82,13 +83,14 @@
 }
 
 /*Login:*/
-.LoginContainer {
+.LPLoginContainer {
     height: 50%;
     width: 1244px;
 }
 
-.Login {
-    background-color: #111;
+.LPLogin {
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     height: 380px;
     width: 300px;
     position: relative;
@@ -98,7 +100,7 @@
     border-radius: 10px;
 }
 
-.Login h2 {
+.LPLogin h2 {
     color: #03a062;
     font-size: 30px;
     font-style: italic;
@@ -121,7 +123,7 @@
     left: 40px;
 }
 
-.Login h3 {
+.LPLogin h3 {
     color: #03a062;
     font-size: 20px;
     font-style: italic;

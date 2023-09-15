@@ -4,9 +4,9 @@ import "./Nav.css";
 
 function NavGuest() {
     return (
-        <div className="NavContainer">
+        <nav className="NavContainer">
             <Buttons />
-        </div>
+        </nav>
     );
 }
 

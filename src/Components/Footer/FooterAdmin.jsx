@@ -4,14 +4,14 @@ import "./Footer.css";
 
 function FooterAdmin() {
     return (
-        <div className="FooterContainer">
+        <footer className="FooterContainer">
             <FooterInfoBox />
             <FooterTitle />
             <FooterBoxLeft />
             <FooterBoxMiddle />
             <FooterBoxRight />
             <FooterBoxNames />
-        </div>
+        </footer>
     );
 }
 

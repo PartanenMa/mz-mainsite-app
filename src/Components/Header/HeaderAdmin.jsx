@@ -4,11 +4,11 @@ import "./Header.css";
 
 function HeaderAdmin() {
     return (
-        <div className="HeaderContainer">
+        <header className="HeaderContainer">
             <Logo />
             <Title />
             <Matrix />
-        </div>
+        </header>
     );
 }
 

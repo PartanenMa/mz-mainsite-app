@@ -126,8 +126,8 @@ function LoginSection() {
     }
 
     return (
-        <div className="LoginContainer">
-            <form className="Login">
+        <div className="LPLoginContainer">
+            <form className="LPLogin">
                 <h2>MatrixZone</h2>
                 <div className="User">
                     <h3>Username:</h3>

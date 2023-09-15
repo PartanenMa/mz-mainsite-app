@@ -23,7 +23,8 @@
 }
 
 .LoginTitleContainer h1 {
-    background-color: #111;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     color: #03a062;
     height: fit-content;
     padding: 10px;
@@ -42,7 +43,8 @@
 }
 
 .Login {
-    background-color: #111;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     height: 380px;
     width: 300px;
     position: relative;

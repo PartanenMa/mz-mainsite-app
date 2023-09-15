@@ -64,7 +64,8 @@
 
 /*Section:*/
 .LogoutLoadingContainer h2 {
-    background-color: #111;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     color: #03a062;
     height: fit-content;
     width: fit-content;

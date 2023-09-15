@@ -1,4 +1,25 @@
 export const info = {
+    version: "Pre-alpha",
+    loginInfo: {
+        adminUserName: "Admin",
+        adminPassword: "ManuAdminReact123",
+    },
+    routes: {
+        frontPage: "/",
+        loginPage: "/login",
+        homePageGuest: "/guest/home",
+        homePageAdmin: "/admin/home",
+        profilePageGuest: "/guest/profile",
+        profilePageAdmin: "/admin/profile",
+        projectsPageGuest: "/guest/projects",
+        projectsPageAdmin: "/admin/projects",
+        videosPageGuest: "/guest/videos",
+        videosPageAdmin: "/admin/videos",
+        goalsPageGuest: "/guest/goals",
+        goalsPageAdmin: "/admin/goals",
+        cvPageGuest: "/guest/cv",
+        cvPageAdmin: "/admin/cv",
+    },
     LinkedIn: {
         //Account data:
         user: "Manu Partanen",
@@ -76,25 +97,5 @@ export const info = {
         description2: "YT2",
         description3: "YT3",
         link: "https://github.com/PartanenMa",
-    },
-    loginInfo: {
-        adminUserName: "Admin",
-        adminPassword: "ManuAdminReact123",
-    },
-    routes: {
-        frontPage: "/",
-        loginPage: "/login",
-        homePageGuest: "/guest/home",
-        homePageAdmin: "/admin/home",
-        profilePageGuest: "/guest/profile",
-        profilePageAdmin: "/admin/profile",
-        projectsPageGuest: "/guest/projects",
-        projectsPageAdmin: "/admin/projects",
-        videosPageGuest: "/guest/videos",
-        videosPageAdmin: "/admin/videos",
-        goalsPageGuest: "/guest/goals",
-        goalsPageAdmin: "/admin/goals",
-        cvPageGuest: "/guest/cv",
-        cvPageAdmin: "/admin/cv",
     },
 };

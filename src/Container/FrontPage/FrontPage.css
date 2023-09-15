@@ -128,7 +128,7 @@
 
 .LoginButtonFP {
     animation: fadeIn 0.3s;
-    background-color: transparent;
+    background-color: #111;
     color: #03a062;
     height: 44px;
     width: 100px;
