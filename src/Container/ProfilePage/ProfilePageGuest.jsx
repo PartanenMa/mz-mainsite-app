@@ -111,16 +111,25 @@ function Languages() {
             </div>
             <div className="LanguagesContent">
                 <div className="Lang1">
-                    <h4>Finnish</h4>
-                    <p>{info.LinkedIn.language1}</p>
+                    <div className="Lang1Logo"></div>
+                    <div className="Lang1Content">
+                        <h4>Finnish</h4>
+                        <p>{info.LinkedIn.language1}</p>
+                    </div>
                 </div>
                 <div className="Lang2">
-                    <h4>English</h4>
-                    <p>{info.LinkedIn.language2}</p>
+                    <div className="Lang2Logo"></div>
+                    <div className="Lang2Content">
+                        <h4>English</h4>
+                        <p>{info.LinkedIn.language2}</p>
+                    </div>
                 </div>
                 <div className="Lang3">
-                    <h4>Swedish</h4>
-                    <p>{info.LinkedIn.language3}</p>
+                    <div className="Lang3Logo"></div>
+                    <div className="Lang3Content">
+                        <h4>Swedish</h4>
+                        <p>{info.LinkedIn.language3}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -292,11 +301,8 @@ function Skills() {
                         </div>
                         <div className="PL8">
                             <div className="PL8Logo"></div>
-                            <div className="PL8LogoBG">
-                                <div className="PL8LogoL"></div>
-                            </div>
                             <div className="PL8Content">
-                                <h4>SQL</h4>
+                                <h4>Go</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
                                 <div>
                                     <span style={{ color: "lightgreen" }}>*</span>***
@@ -305,11 +311,8 @@ function Skills() {
                         </div>
                         <div className="PL9">
                             <div className="PL9Logo"></div>
-                            <div className="PL9LogoBG">
-                                <div className="PL9LogoL"></div>
-                            </div>
                             <div className="PL9Content">
-                                <h4>NoSQL</h4>
+                                <h4>PHP</h4>
                                 <p>{info.LinkedIn.skillsLevel1}</p>
                                 <div>
                                     <span style={{ color: "lightgreen" }}>*</span>***
@@ -318,7 +321,33 @@ function Skills() {
                         </div>
                         <div className="PL10">
                             <div className="PL10Logo"></div>
+                            <div className="PL10LogoBG">
+                                <div className="PL10LogoL"></div>
+                            </div>
                             <div className="PL10Content">
+                                <h4>SQL</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
+                            </div>
+                        </div>
+                        <div className="PL11">
+                            <div className="PL11Logo"></div>
+                            <div className="PL11LogoBG">
+                                <div className="PL11LogoL"></div>
+                            </div>
+                            <div className="PL11Content">
+                                <h4>NoSQL</h4>
+                                <p>{info.LinkedIn.skillsLevel1}</p>
+                                <div>
+                                    <span style={{ color: "lightgreen" }}>*</span>***
+                                </div>
+                            </div>
+                        </div>
+                        <div className="PL12">
+                            <div className="PL12Logo"></div>
+                            <div className="PL12Content">
                                 <h4>Python</h4>
                                 <p>{info.LinkedIn.skillsLevel2}</p>
                                 <div>
