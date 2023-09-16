@@ -147,6 +147,7 @@ function FirstSection() {
             <div className={`LogOutSectionGuest ${isGIFVisible ? "ShowGIF" : ""}`}>
                 <div
                     className="LogOutContainer1"
+                    title="User"
                     style={{ display: isVisible1 ? "block" : "none" }}
                     onClick={() => displayUser2()}
                 >
@@ -235,9 +236,9 @@ function FirstSection() {
                     <h2>CHECK OUT MY PROFILE!</h2>
                 </div>
                 <div className="GoToMyProfile">
-                    <a className="Photo" href={info.LinkedIn.link} target="_blank"></a>
+                    <a className="Photo" title="My LinkedIn" href={info.LinkedIn.link} target="_blank"></a>
                     <div className="ProfileTextBox">
-                        <a href={info.LinkedIn.link} title="My LinkedIn" target="_blank"></a>
+                        <a title="My LinkedIn" href={info.LinkedIn.link} target="_blank"></a>
                         <h3>LinkedIn</h3>
                         <p>{info.LinkedIn.user}</p>
                         <p>{info.LinkedIn.jobTitle}</p>
@@ -253,9 +254,9 @@ function FirstSection() {
                     <h2>CHECK OUT MY PROJECTS!</h2>
                 </div>
                 <div className="GoToMyProjects">
-                    <a className="GHLogo" href={info.GitHub.link} target="_blank"></a>
+                    <a className="GHLogo" title="My GitHub" href={info.GitHub.link} target="_blank"></a>
                     <div className="ProjectsTextBox">
-                        <a href={info.GitHub.link} title="My GitHub" target="_blank"></a>
+                        <a title="My GitHub" href={info.GitHub.link} target="_blank"></a>
                         <h3>GitHub</h3>
                         <p>{info.GitHub.user}</p>
                         <p>{info.LinkedIn.name}</p>
@@ -271,9 +272,9 @@ function FirstSection() {
                     <h2>CHECK OUT MY VIDEOS!</h2>
                 </div>
                 <div className="GoToMyVideos">
-                    <a className="YTLogo" href={info.YouTube.link} target="_blank"></a>
+                    <a className="YTLogo" title="My YouTube" href={info.YouTube.link} target="_blank"></a>
                     <div className="VideosTextBox">
-                        <a href={info.YouTube.link} title="My YouTube" target="_blank"></a>
+                        <a title="My YouTube" href={info.YouTube.link} target="_blank"></a>
                         <h3>YouTube</h3>
                         <p>{info.YouTube.user}</p>
                         <p>{info.LinkedIn.name}</p>
