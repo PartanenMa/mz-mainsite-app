@@ -97,32 +97,19 @@
     background-image: url("/src/Assets/Images/Photo.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 90%;
+    background-position: 50% 10%;
+    height: 70%;
     width: 15%;
-    border-radius: 10px;
+    border-radius: 100%;
     border: 1px solid #03a062;
+    position: relative;
+    top: 20px;
     transition: filter 300ms;
 }
 
 .AboutMePhoto:hover {
     border: 1px solid white;
     filter: drop-shadow(0 0 2em #0072b1);
-}
-
-.AboutMeLinkedInLogo {
-    background-image: url("/src/Assets/Images/LinkedIn.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 10%;
-    height: 30px;
-    width: 30px;
-    float: left;
-    position: relative;
-    top: 5px;
-    left: 5px;
 }
 
 .AboutMeTextContainer {

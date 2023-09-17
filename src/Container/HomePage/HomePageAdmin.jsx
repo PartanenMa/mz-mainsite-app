@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { notification, Carousel } from "antd";
-import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
@@ -68,6 +67,7 @@ function FirstSection() {
     const [isVisible1, setIsVisible1] = useState(true);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
+    const [isVisible4, setIsVisible4] = useState(false);
     const [isVisibleY, setIsVisibleY] = useState(true);
     const [BGoption, setBGoption] = useState("OFF");
     const [isGIFVisible, setIsGIFVisible] = useState(true);
@@ -93,7 +93,7 @@ function FirstSection() {
         setIsGIFVisible(BGoption === "ON");
     }, [BGoption]);
 
-    function option() {
+    const option = () => {
         let option = document.getElementsByClassName("OptionBall")[0];
         let bg = document.getElementsByClassName("OptionBG")[0];
         if (BGoption === "ON") {
@@ -107,28 +107,35 @@ function FirstSection() {
             option.style.left = "60px";
             bg.style.backgroundColor = "lightgreen";
         }
-    }
+    };
 
-    function displayUser1() {
+    const displayUser1 = () => {
         setIsVisibleY(true);
+        setIsVisible4(false);
         setIsVisible3(false);
         setIsVisible2(false);
         setIsVisible1(true);
-    }
+    };
 
-    function displayUser2() {
+    const displayUser2 = () => {
         setIsVisibleY(false);
+        setIsVisible4(false);
         setIsVisible3(false);
         setIsVisible2(true);
         setIsVisible1(false);
-    }
+    };
 
-    function displayUser3() {
+    const displayUser3 = () => {
         setIsVisible2(false);
         setIsVisible3(true);
-    }
+    };
 
-    function logOut() {
+    const displayUser4 = () => {
+        setIsVisible2(false);
+        setIsVisible4(true);
+    };
+
+    const logOut = () => {
         let option = document.getElementsByClassName("OptionBall")[0];
         setBGoption("OFF");
         option.style.left = "0px";
@@ -138,7 +145,7 @@ function FirstSection() {
         setIsVisible2(false);
         setIsVisible1(true);
         navigate(info.routes.loginPage);
-    }
+    };
 
     const contentStyle = {
         height: "600px",
@@ -172,7 +179,7 @@ function FirstSection() {
                     <button className="SettingsButtonAdmin" onClick={() => displayUser3()}>
                         Settings
                     </button>
-                    <button className="LogOutButtonAdmin" onClick={() => logOut()}>
+                    <button className="LogOutButtonAdmin" onClick={() => displayUser4()}>
                         Log out
                     </button>
                 </div>
@@ -188,6 +195,20 @@ function FirstSection() {
                     <button className="SettingsBackButton" onClick={() => displayUser2()}>
                         Back
                     </button>
+                </div>
+                <div className="LogOutContainer4" style={{ display: isVisible4 ? "block" : "none" }}>
+                    <h3>Log out?</h3>
+                    <button className="LogOut_X-button" onClick={() => displayUser1()}>
+                        X
+                    </button>
+                    <div className="LOC4Buttons">
+                        <button className="LogOutButton" onClick={() => logOut()}>
+                            Log out
+                        </button>
+                        <button className="LogOutBackButton" onClick={() => displayUser2()}>
+                            Back
+                        </button>
+                    </div>
                 </div>
                 <div className="Clock" style={{ display: isVisibleY ? "block" : "none" }}>
                     <TimeAndDate />
@@ -206,7 +227,6 @@ function FirstSection() {
                                         <h2 className="Name">{info.LinkedIn.name}</h2>
                                         <h2 className="JobTitle">{info.LinkedIn.profession}</h2>
                                     </div>
-                                    <div className="Photo"></div>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +248,12 @@ function FirstSection() {
                         ref.current.prev();
                     }}
                 >
-                    <CaretLeftFilled style={{ color: "#03A062", fontSize: 40 }} />
+                    <p
+                        title="Previous"
+                        style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}
+                    >
+                        {"<"}
+                    </p>
                 </button>
                 <button
                     className="CarouselButtonRight"
@@ -236,7 +261,9 @@ function FirstSection() {
                         ref.current.next();
                     }}
                 >
-                    <CaretRightFilled style={{ color: "#03A062", fontSize: 40 }} />
+                    <p title="Next" style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}>
+                        {">"}
+                    </p>
                 </button>
             </section>
             <section className="HomeFirstSection1">

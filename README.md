@@ -4,7 +4,6 @@
 **npm i --save-dev --save-exact prettier**  
 **npm i react-router-dom**  
 **npm i antd**  
-**npm i --save @ant-design/icons**  
 **npm i @mui/material @emotion/react @emotion/styled**  
 **npm i framer-motion**  
 **npm i html2canvas**  

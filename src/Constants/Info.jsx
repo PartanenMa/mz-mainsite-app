@@ -1,9 +1,5 @@
 export const info = {
     version: "Pre-alpha",
-    loginInfo: {
-        adminUserName: "Admin",
-        adminPassword: "ManuAdminReact123",
-    },
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -97,5 +93,9 @@ export const info = {
         description2: "YT2",
         description3: "YT3",
         link: "https://github.com/PartanenMa",
+    },
+    loginInfo: {
+        adminUserName: "Admin",
+        adminPassword: "ManuAdminReact123",
     },
 };

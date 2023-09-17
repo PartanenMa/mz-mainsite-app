@@ -21,7 +21,11 @@ function FooterInfoBox() {
     return (
         <div className="FooterInfoBoxContainer">
             <div className="FooterInfoBoxTitle">
-                <div className="FooterInfoBoxTitleLogo" onClick={() => navigate(info.routes.homePageGuest)}></div>
+                <div
+                    className="FooterInfoBoxTitleLogo"
+                    title="Go to home page"
+                    onClick={() => navigate(info.routes.homePageGuest)}
+                ></div>
                 <h3>MatrixZone</h3>
             </div>
             <div className="FooterInfoBoxContent">

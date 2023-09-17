@@ -516,6 +516,106 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
+.LogOutContainer4 {
+    display: block;
+    background-color: #111;
+    height: 190px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #03a062;
+}
+
+.LogOutContainer4 h3 {
+    animation: fadeIn 0.3s;
+    color: #03a062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    left: 12px;
+    bottom: 25px;
+}
+
+.LogOut_X-button {
+    animation: fadeIn 0.3s;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-style: italic;
+    position: relative;
+    bottom: 85px;
+    left: 160px;
+}
+
+.LogOut_X-button:hover {
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em lightcoral);
+}
+
+.LOC4Buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    bottom: 80px;
+}
+
+.LogOutBackButton {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    color: #03a062;
+    cursor: pointer;
+    height: 48px;
+    width: 127px;
+    border-radius: 10px;
+    border: 1px solid #03a062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    left: 35px;
+    top: 25px;
+}
+
+.LogOutBackButton:hover {
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em #03a062);
+}
+
+.LogOutButton {
+    animation: fadeIn 0.3s;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    height: 48px;
+    width: 127px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    left: 35px;
+    top: 25px;
+}
+
+.LogOutButton:hover {
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em lightcoral);
+}
+
 .Clock {
     animation: fadeIn 0.3s;
     float: right;
@@ -605,20 +705,6 @@
         0 0 20px black;
     position: relative;
     bottom: 80px;
-}
-
-.CarouselItem1 .Photo {
-    background-image: url("/src/Assets/Images/Photo.jpeg");
-    background-repeat: no-repeat;
-    background-position: 50 50;
-    background-size: cover;
-    height: 300px;
-    width: 300px;
-    border: 3px solid #03a062;
-    border-radius: 100%;
-    position: relative;
-    top: 50px;
-    left: 80px;
 }
 
 .CarouselSlide2 {

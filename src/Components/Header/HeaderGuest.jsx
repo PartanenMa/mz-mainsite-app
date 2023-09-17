@@ -13,7 +13,13 @@ function HeaderGuest() {
 
 function Logo() {
     const navigate = useNavigate();
-    return <div className="LogoContainer" onClick={() => navigate(info.routes.homePageGuest)}></div>;
+    return (
+        <div
+            className="LogoContainer"
+            title="Go to home page"
+            onClick={() => navigate(info.routes.homePageGuest)}
+        ></div>
+    );
 }
 
 function Title() {
