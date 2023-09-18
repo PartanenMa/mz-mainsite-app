@@ -13,8 +13,12 @@ function TimeAndDate() {
 
     return (
         <div className="TimeAndDateContainer">
-            <h2 className="Time">Time: {clock.toLocaleTimeString()}</h2>
-            <h2 className="Date">Date: {clock.toLocaleDateString()}</h2>
+            <h2 className="Time">
+                Time: <span style={{ color: "lightgreen" }}>{clock.toLocaleTimeString()}</span>
+            </h2>
+            <h2 className="Date">
+                Date: <span style={{ color: "green" }}>{clock.toLocaleDateString()}</span>
+            </h2>
         </div>
     );
 }
