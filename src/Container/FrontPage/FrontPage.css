@@ -296,10 +296,29 @@
     bottom: 10px;
 }
 
-.HTWelcome1 h3 {
+.HTW1text {
+    width: 25ch;
+    animation:
+        typing 2s steps(22),
+        blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
     text-shadow:
         0 0 7px black,
         0 0 3px black;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 
 .HTWelcome2 {

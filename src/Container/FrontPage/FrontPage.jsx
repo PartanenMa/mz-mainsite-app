@@ -144,7 +144,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 exit={{ opacity: 0, x: 1000 }}
                             >
                                 <div class="HTWelcome1">
-                                    <h3>
+                                    <h3 className="HTW1text">
                                         Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
                                     </h3>
                                 </div>
