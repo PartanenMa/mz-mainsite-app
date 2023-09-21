@@ -71,7 +71,7 @@ function AboutMyProjects() {
                 <h3>ABOUT MY PROJECTS</h3>
             </div>
             <div className="AboutMyProjectsContent">
-                <a className="AboutMyProjectsPhoto" href={info.GitHub.link} target="_blank" />
+                <a className="AboutMyProjectsPhoto" title="My GitHub" href={info.GitHub.link} target="_blank" />
                 <div className="AboutMyProjectsTextContainer">
                     <div className="AboutMyProjectsTextTitle">
                         <h4 className="h4_1">{info.GitHub.user}</h4>

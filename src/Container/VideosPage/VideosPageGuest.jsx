@@ -71,7 +71,7 @@ function AboutMyVideos() {
                 <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="AboutMyVideosContent">
-                <a className="AboutMyVideosPhoto" href={info.YouTube.link} target="_blank" />
+                <a className="AboutMyVideosPhoto" title="My YouTube" href={info.YouTube.link} target="_blank" />
                 <div className="AboutMyVideosTextContainer">
                     <div className="AboutMyVideosTextTitle">
                         <h4 className="h4_1">{info.YouTube.user}</h4>

@@ -86,7 +86,7 @@ function AboutMe() {
                 <h3>ABOUT ME</h3>
             </div>
             <div className="AboutMeContent">
-                <a className="AboutMePhoto" href={info.LinkedIn.link} target="_blank" />
+                <a className="AboutMePhoto" title="My LinkedIn" href={info.LinkedIn.link} target="_blank" />
                 <div className="AboutMeTextContainer">
                     <div className="AboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>

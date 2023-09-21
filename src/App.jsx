@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import DarkBG from "./Components/BGAnimation/DarkBG.jsx";
 import MatrixBG from "./Components/BGAnimation/MatrixBG.jsx";
+import GuestMatrixBG from "./Components/BGAnimation/GuestMatrixBG.jsx";
+import AdminMatrixBG from "./Components/BGAnimation/AdminMatrixBG.jsx";
 import FrontPage from "./Container/FrontPage/FrontPage.jsx";
 import LoginPage from "./Container/LoginPage/LoginPage.jsx";
 import HomePageGuest from "./Container/HomePage/HomePageGuest.jsx";
@@ -29,7 +31,10 @@ function App() {
 
     return (
         <>
-            {location.pathname === info.routes.loginPage ? <MatrixBG /> : <DarkBG />}
+            {location.pathname === info.routes.frontPage && <DarkBG />}
+            {location.pathname === info.routes.loginPage && <MatrixBG />}
+            {location.pathname.includes("guest") && <GuestMatrixBG />}
+            {location.pathname.includes("admin") && <AdminMatrixBG />}
             {
                 <div className="AppContainer">
                     <Routes>
