@@ -81,17 +81,17 @@ export const info = {
     GitHub: {
         //Account data:
         user: "PartanenMa",
-        description1: "GH1",
-        description2: "GH2",
-        description3: "GH3",
+        description1: "NOT YET AVAILABLE",
+        description2: "",
+        description3: "",
         link: "https://github.com/PartanenMa",
     },
     YouTube: {
         //Account data:
         user: "YTUser",
-        description1: "YT1",
-        description2: "YT2",
-        description3: "YT3",
+        description1: "NOT YET AVAILABLE",
+        description2: "",
+        description3: "",
         link: "https://github.com/PartanenMa",
     },
     loginInfo: {

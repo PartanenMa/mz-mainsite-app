@@ -355,7 +355,7 @@
 
 .HTW2animation div:first-child {
     animation: text-animation 8s infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .HTW2first div {

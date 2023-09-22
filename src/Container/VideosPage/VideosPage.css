@@ -1,7 +1,7 @@
 /*VideosPage:*/
 .VideosPageContainer {
     animation: fadeIn 0.3s;
-    background-color: transparent;
+    background-color: #111;
     width: 1244px;
     border-left: 3px solid #03a062;
     border-right: 3px solid #03a062;
