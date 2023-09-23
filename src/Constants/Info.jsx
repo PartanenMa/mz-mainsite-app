@@ -56,7 +56,8 @@ export const info = {
         educationSubjects1:
             "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
         educationSubjects2: "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
-        educationSubjects3: "IT infrastructure, programming, software development, automation, 3D technology, robotics",
+        educationSubjects3:
+            "IT infrastructure, software development, software engineering, automation, 3D technology, robotics",
         //Skills:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",

@@ -9,6 +9,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import TimeAndDate from "/src/Components/CurrentTime/TimeAndDate.jsx";
 import reactLogo from "/src/Assets/Images/React.svg";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./HomePage.css";
 
 function HomePageAdmin() {
@@ -160,16 +161,21 @@ function FirstSection() {
                 <h2>Admin / home</h2>
             </div>
             <div className={`LogOutSectionAdmin ${isGIFVisible ? "ShowGIF" : ""}`}>
-                <div
-                    className="LogOutContainer1"
-                    title="User"
-                    style={{ display: isVisible1 ? "block" : "none" }}
-                    onClick={() => displayUser2()}
-                >
-                    <img src={reactLogo} className="logo_react" alt="React logo" />
-                    <div className="LogoAdmin1"></div>
-                    <h3 className="NameAdmin">Admin</h3>
-                </div>
+                <AnimatePresence>
+                    <motion.div
+                        className="LogOutContainer1"
+                        title="User"
+                        style={{ display: isVisible1 ? "block" : "none" }}
+                        onClick={() => displayUser2()}
+                        key="loc1"
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
+                    >
+                        <img src={reactLogo} className="logo_react" alt="React logo" />
+                        <div className="LogoAdmin1"></div>
+                        <h3 className="NameAdmin">Admin</h3>
+                    </motion.div>
+                </AnimatePresence>
                 <div className="LogOutContainer2Admin" style={{ display: isVisible2 ? "block" : "none" }}>
                     <h3>Admin</h3>
                     <button className="X-buttonAdmin" onClick={() => displayUser1()}>
@@ -210,12 +216,26 @@ function FirstSection() {
                         </button>
                     </div>
                 </div>
-                <div className="Clock" style={{ display: isVisibleY ? "block" : "none" }}>
-                    <TimeAndDate />
-                </div>
-                <h2 className="Welcome" style={{ display: isVisibleY ? "block" : "none" }}>
-                    WELCOME ADMIN
-                </h2>
+                <AnimatePresence>
+                    <motion.div
+                        className="Clock"
+                        style={{ display: isVisibleY ? "block" : "none" }}
+                        key="clock"
+                        initial={{ opacity: 0, x: 300 }}
+                        animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
+                    >
+                        <TimeAndDate />
+                    </motion.div>
+                    <motion.h2
+                        className="Welcome"
+                        style={{ display: isVisibleY ? "block" : "none" }}
+                        key="welcome"
+                        initial={{ opacity: 0, x: -1000 }}
+                        animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
+                    >
+                        WELCOME ADMIN
+                    </motion.h2>
+                </AnimatePresence>
             </div>
             <section className="HomeFirstSectionCarousel">
                 <div className="CarouselContainer">
@@ -271,15 +291,49 @@ function FirstSection() {
                     <h2>MY PROFILE</h2>
                 </div>
                 <div className="GoToMyProfile">
-                    <a className="Photo" title="My LinkedIn" href={info.LinkedIn.link} target="_blank"></a>
+                    <AnimatePresence>
+                        <motion.a
+                            className="Photo"
+                            title="My LinkedIn"
+                            href={info.LinkedIn.link}
+                            target="_blank"
+                            key="photoA"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
                     <div className="ProfileTextBox">
-                        <a title="My LinkedIn" href={info.LinkedIn.link} target="_blank"></a>
-                        <h3>LinkedIn</h3>
-                        <p>{info.LinkedIn.user}</p>
-                        <p>{info.LinkedIn.jobTitle}</p>
-                        <button className="GoToProfile" onClick={() => navigate(info.routes.profilePageAdmin)}>
-                            Profile
-                        </button>
+                        <AnimatePresence>
+                            <motion.a
+                                title="My LinkedIn"
+                                href={info.LinkedIn.link}
+                                target="_blank"
+                                key="linkedinlogoA"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                            <h3>LinkedIn</h3>
+                            <p>{info.LinkedIn.user}</p>
+                            <p>{info.LinkedIn.jobTitle}</p>
+                            <motion.button
+                                className="GoToProfile"
+                                onClick={() => navigate(info.routes.profilePageAdmin)}
+                                key="gotoprofileA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Profile
+                            </motion.button>
+                        </AnimatePresence>
                     </div>
                     <div className="Box1"></div>
                 </div>
@@ -289,15 +343,49 @@ function FirstSection() {
                     <h2>MY PROJECTS</h2>
                 </div>
                 <div className="GoToMyProjects">
-                    <a className="GHLogo" title="My GitHub" href={info.GitHub.link} target="_blank"></a>
+                    <AnimatePresence>
+                        <motion.a
+                            className="GHLogo"
+                            title="My GitHub"
+                            href={info.GitHub.link}
+                            target="_blank"
+                            key="ghlogo1A"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
                     <div className="ProjectsTextBox">
-                        <a title="My GitHub" href={info.GitHub.link} target="_blank"></a>
-                        <h3>GitHub</h3>
-                        <p>{info.GitHub.user}</p>
-                        <p>{info.LinkedIn.name}</p>
-                        <button className="GoToProjects" onClick={() => navigate(info.routes.projectsPageAdmin)}>
-                            Projects
-                        </button>
+                        <AnimatePresence>
+                            <motion.a
+                                title="My GitHub"
+                                href={info.GitHub.link}
+                                target="_blank"
+                                key="ghlogo2A"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                            <h3>GitHub</h3>
+                            <p>{info.GitHub.user}</p>
+                            <p>{info.LinkedIn.name}</p>
+                            <motion.button
+                                className="GoToProjects"
+                                onClick={() => navigate(info.routes.projectsPageAdmin)}
+                                key="gotoprojectsA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Projects
+                            </motion.button>
+                        </AnimatePresence>
                     </div>
                     <div className="Box2"></div>
                 </div>
@@ -307,15 +395,49 @@ function FirstSection() {
                     <h2>MY VIDEOS</h2>
                 </div>
                 <div className="GoToMyVideos">
-                    <a className="YTLogo" title="My YouTube" href={info.YouTube.link} target="_blank"></a>
+                    <AnimatePresence>
+                        <motion.a
+                            className="YTLogo"
+                            title="My YouTube"
+                            href={info.YouTube.link}
+                            target="_blank"
+                            key="ytlogo1A"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
                     <div className="VideosTextBox">
-                        <a title="My YouTube" href={info.YouTube.link} target="_blank"></a>
-                        <h3>YouTube</h3>
-                        <p>{info.YouTube.user}</p>
-                        <p>{info.LinkedIn.name}</p>
-                        <button className="GoToVideos" onClick={() => navigate(info.routes.videosPageAdmin)}>
-                            Videos
-                        </button>
+                        <AnimatePresence>
+                            <motion.a
+                                title="My YouTube"
+                                href={info.YouTube.link}
+                                target="_blank"
+                                key="ytlogo2A"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                            <h3>YouTube</h3>
+                            <p>{info.YouTube.user}</p>
+                            <p>{info.LinkedIn.name}</p>
+                            <motion.button
+                                className="GoToVideos"
+                                onClick={() => navigate(info.routes.videosPageAdmin)}
+                                key="gotovideosA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Videos
+                            </motion.button>
+                        </AnimatePresence>
                     </div>
                     <div className="Box3"></div>
                 </div>
