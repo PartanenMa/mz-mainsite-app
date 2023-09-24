@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Header.css";
 
 function HeaderAdmin() {
@@ -15,11 +16,19 @@ function HeaderAdmin() {
 function Logo() {
     const navigate = useNavigate();
     return (
-        <div
-            className="LogoContainer"
-            title="Go to home page"
-            onClick={() => navigate(info.routes.homePageAdmin)}
-        ></div>
+        <AnimatePresence>
+            <motion.div
+                className="LogoContainer"
+                title="Go to home page"
+                onClick={() => navigate(info.routes.homePageAdmin)}
+                key="logocontainerA"
+                whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+            />
+        </AnimatePresence>
     );
 }
 
@@ -32,7 +41,7 @@ function Title() {
 }
 
 function Matrix() {
-    return <div className="MatrixContainer"></div>;
+    return <div className="MatrixContainer" />;
 }
 
 export default HeaderAdmin;

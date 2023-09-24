@@ -5,6 +5,7 @@ import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.css";
 
 function VideosPageGuest() {
@@ -71,7 +72,20 @@ function AboutMyVideos() {
                 <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="AboutMyVideosContent">
-                <a className="AboutMyVideosPhoto" title="My YouTube" href={info.YouTube.link} target="_blank" />
+                <AnimatePresence>
+                    <motion.a
+                        className="AboutMyVideosPhoto"
+                        title="My YouTube"
+                        href={info.YouTube.link}
+                        target="_blank"
+                        key="aboutmyviedosphoto"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
                 <div className="AboutMyVideosTextContainer">
                     <div className="AboutMyVideosTextTitle">
                         <h4 className="h4_1">{info.YouTube.user}</h4>

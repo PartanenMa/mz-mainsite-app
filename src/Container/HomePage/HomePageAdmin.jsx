@@ -167,9 +167,14 @@ function FirstSection() {
                         title="User"
                         style={{ display: isVisible1 ? "block" : "none" }}
                         onClick={() => displayUser2()}
-                        key="loc1"
+                        key="loc1A"
                         initial={{ opacity: 0, y: -100 }}
                         animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
                     >
                         <img src={reactLogo} className="logo_react" alt="React logo" />
                         <div className="LogoAdmin1"></div>
@@ -220,7 +225,7 @@ function FirstSection() {
                     <motion.div
                         className="Clock"
                         style={{ display: isVisibleY ? "block" : "none" }}
-                        key="clock"
+                        key="clockA"
                         initial={{ opacity: 0, x: 300 }}
                         animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
                     >
@@ -229,7 +234,7 @@ function FirstSection() {
                     <motion.h2
                         className="Welcome"
                         style={{ display: isVisibleY ? "block" : "none" }}
-                        key="welcome"
+                        key="welcomeA"
                         initial={{ opacity: 0, x: -1000 }}
                         animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
                     >

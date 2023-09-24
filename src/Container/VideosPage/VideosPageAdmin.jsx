@@ -6,6 +6,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.css";
 
 function VideosPageAdmin() {
@@ -79,7 +80,20 @@ function AboutMyVideos() {
                 <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="AboutMyVideosContent">
-                <a className="AboutMyVideosPhoto" title="My YouTube" href={info.YouTube.link} target="_blank" />
+                <AnimatePresence>
+                    <motion.a
+                        className="AboutMyVideosPhoto"
+                        title="My YouTube"
+                        href={info.YouTube.link}
+                        target="_blank"
+                        key="aboutmyviedosphotoA"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
                 <div className="AboutMyVideosTextContainer">
                     <div className="AboutMyVideosTextTitle">
                         <h4 className="h4_1">{info.YouTube.user}</h4>

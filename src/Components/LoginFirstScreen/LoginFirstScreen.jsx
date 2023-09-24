@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { notification } from "antd";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./LoginFirstScreen.css";
 
 function LoginFirstScreen() {
@@ -97,12 +98,32 @@ function LoginSection() {
                         onChange={handlePasswordChange}
                     />
                 </div>
-                <button className="LoginButton" onClick={() => handleLogin()}>
-                    Log in
-                </button>
-                <button className="LoginGuestButton" onClick={() => handleLoginGuest()}>
-                    I'm a guest
-                </button>
+                <AnimatePresence>
+                    <motion.button
+                        className="LoginFButton"
+                        onClick={() => handleLogin()}
+                        key="loginfbutton"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        Log in
+                    </motion.button>
+                    <motion.button
+                        className="LoginFGuestButton"
+                        onClick={() => handleLoginGuest()}
+                        key="loginfguestbutton"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        I'm a guest
+                    </motion.button>
+                </AnimatePresence>
             </form>
         </div>
     );

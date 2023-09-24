@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Header.css";
 
 function HeaderGuest() {
@@ -14,11 +15,19 @@ function HeaderGuest() {
 function Logo() {
     const navigate = useNavigate();
     return (
-        <div
-            className="LogoContainer"
-            title="Go to home page"
-            onClick={() => navigate(info.routes.homePageGuest)}
-        ></div>
+        <AnimatePresence>
+            <motion.div
+                className="LogoContainer"
+                title="Go to home page"
+                onClick={() => navigate(info.routes.homePageGuest)}
+                key="logocontainer"
+                whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+            />
+        </AnimatePresence>
     );
 }
 

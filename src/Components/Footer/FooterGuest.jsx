@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Footer.css";
 
 function FooterGuest() {
@@ -21,11 +22,19 @@ function FooterInfoBox() {
     return (
         <div className="FooterInfoBoxContainer">
             <div className="FooterInfoBoxTitle">
-                <div
-                    className="FooterInfoBoxTitleLogo"
-                    title="Go to home page"
-                    onClick={() => navigate(info.routes.homePageGuest)}
-                ></div>
+                <AnimatePresence>
+                    <motion.div
+                        className="FooterInfoBoxTitleLogo"
+                        title="Go to home page"
+                        onClick={() => navigate(info.routes.homePageGuest)}
+                        key="fibtl"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
                 <h3>MatrixZone</h3>
             </div>
             <div className="FooterInfoBoxContent">
@@ -100,7 +109,17 @@ function FooterBoxLeft() {
     return (
         <div className="LeftBox">
             <a href="https://react.dev" target="_blank">
-                <div className="ReactLogo"></div>
+                <AnimatePresence>
+                    <motion.div
+                        className="ReactLogo"
+                        key="reactlogo"
+                        whileHover={{
+                            scale: 1.1,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
             </a>
         </div>
     );
@@ -110,7 +129,17 @@ function FooterBoxMiddle() {
     return (
         <div className="MiddleBox">
             <a href="https://vitejs.dev" target="_blank">
-                <div className="ViteLogo"></div>
+                <AnimatePresence>
+                    <motion.div
+                        className="ViteLogo"
+                        key="vitelogo"
+                        whileHover={{
+                            scale: 1.1,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
             </a>
         </div>
     );
@@ -123,7 +152,17 @@ function FooterBoxRight() {
                 href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(%2F%CB%88d%CA%92%C9%91%CB%90v,often%20incorporating%20third-party%20librarie"
                 target="_blank"
             >
-                <div className="JSLogo"></div>
+                <AnimatePresence>
+                    <motion.div
+                        className="JSLogo"
+                        key="jslogo"
+                        whileHover={{
+                            scale: 1.1,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
             </a>
         </div>
     );

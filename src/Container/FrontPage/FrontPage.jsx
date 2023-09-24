@@ -39,7 +39,17 @@ function Header({ setIsModalOpen }) {
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <div className="HeaderLogo" title="Info" onClick={() => handleLogoClick()}></div>
+                    <motion.div
+                        className="HeaderLogo"
+                        title="Info"
+                        onClick={() => handleLogoClick()}
+                        key="headerL"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
                     <h1>MatrixZone</h1>
                     <div className="Version">
                         <p>{info.version}</p>
@@ -51,9 +61,18 @@ function Header({ setIsModalOpen }) {
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                 >
-                    <button className="LoginButtonFP" onClick={() => handleLoginClick()}>
+                    <motion.button
+                        className="LoginButtonFP"
+                        onClick={() => handleLoginClick()}
+                        key="navB"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
                         Log in
-                    </button>
+                    </motion.button>
                 </motion.div>
             </AnimatePresence>
         </header>

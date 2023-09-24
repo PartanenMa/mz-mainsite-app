@@ -162,6 +162,11 @@ function FirstSection() {
                         key="loc1"
                         initial={{ opacity: 0, y: -100 }}
                         animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
                     >
                         <img src={reactLogo} className="logo_react" alt="React logo" />
                         <img src={user} className="LogoGuest1" alt="User logo" />

@@ -5,6 +5,7 @@ import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.css";
 
 function ProfilePageGuest() {
@@ -78,7 +79,20 @@ function AboutMe() {
                 <h3>ABOUT ME</h3>
             </div>
             <div className="AboutMeContent">
-                <a className="AboutMePhoto" title="My LinkedIn" href={info.LinkedIn.link} target="_blank" />
+                <AnimatePresence>
+                    <motion.a
+                        className="AboutMePhoto"
+                        title="My LinkedIn"
+                        href={info.LinkedIn.link}
+                        target="_blank"
+                        key="aboutmephoto"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
                 <div className="AboutMeTextContainer">
                     <div className="AboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
@@ -169,47 +183,76 @@ function Education() {
                 <h3>EDUCATION</h3>
             </div>
             <div className="EducationContent">
-                <div className="EducationHighSchool" onClick={() => showEducationDescription1()}>
-                    <div className="EHSTitle">
-                        <h4>{info.LinkedIn.schoolName1}</h4>
-                    </div>
-                    <div className="EHSContent1">
-                        <p>{info.LinkedIn.degreeName1}</p>
-                        <p>{info.LinkedIn.timeAndPlace1}</p>
-                    </div>
-                    <div className="EHSContent2" style={{ display: isVisible1e ? "block" : "none" }}>
-                        <p>{info.LinkedIn.educationDescription1}</p>
-                        <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects1}</p>
-                    </div>
-                </div>
-                <div className="EducationMilitaryService" onClick={() => showEducationDescription2()}>
-                    <div className="EMSTitle">
-                        <h4>{info.LinkedIn.schoolName2}</h4>
-                    </div>
-                    <div className="EMSContent1">
-                        <p>{info.LinkedIn.degreeName2}</p>
-                        <p>{info.LinkedIn.timeAndPlace2}</p>
-                        <div className="MilitaryLogo"></div>
-                    </div>
-                    <div className="EMSContent2" style={{ display: isVisible2e ? "block" : "none" }}>
-                        <p>{info.LinkedIn.educationDescription2}</p>
-                        <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects2}</p>
-                    </div>
-                </div>
-                <div className="EducationUniversityOfAppliedSciences" onClick={() => showEducationDescription3()}>
-                    <div className="EUOASTitle">
-                        <h4>{info.LinkedIn.schoolName3}</h4>
-                    </div>
-                    <div className="EUOASContent1">
-                        <p>{info.LinkedIn.degreeName3}</p>
-                        <p>{info.LinkedIn.timeAndPlace3}</p>
-                        <div className="SchoolLogo"></div>
-                    </div>
-                    <div className="EUOASContent2" style={{ display: isVisible3e ? "block" : "none" }}>
-                        <p>{info.LinkedIn.educationDescription3}</p>
-                        <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects3}</p>
-                    </div>
-                </div>
+                <AnimatePresence>
+                    <motion.div
+                        className="EducationHighSchool"
+                        onClick={() => showEducationDescription1()}
+                        key="educationhighschool"
+                        whileHover={{
+                            scale: 1.01,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.99 }}
+                    >
+                        <div className="EHSTitle">
+                            <h4>{info.LinkedIn.schoolName1}</h4>
+                        </div>
+                        <div className="EHSContent1">
+                            <p>{info.LinkedIn.degreeName1}</p>
+                            <p>{info.LinkedIn.timeAndPlace1}</p>
+                        </div>
+                        <div className="EHSContent2" style={{ display: isVisible1e ? "block" : "none" }}>
+                            <p>{info.LinkedIn.educationDescription1}</p>
+                            <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects1}</p>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        className="EducationMilitaryService"
+                        onClick={() => showEducationDescription2()}
+                        key="educationmilitaryservice"
+                        whileHover={{
+                            scale: 1.01,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.99 }}
+                    >
+                        <div className="EMSTitle">
+                            <h4>{info.LinkedIn.schoolName2}</h4>
+                        </div>
+                        <div className="EMSContent1">
+                            <p>{info.LinkedIn.degreeName2}</p>
+                            <p>{info.LinkedIn.timeAndPlace2}</p>
+                            <div className="MilitaryLogo"></div>
+                        </div>
+                        <div className="EMSContent2" style={{ display: isVisible2e ? "block" : "none" }}>
+                            <p>{info.LinkedIn.educationDescription2}</p>
+                            <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects2}</p>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        className="EducationUniversityOfAppliedSciences"
+                        onClick={() => showEducationDescription3()}
+                        key="educationuniversityofappliedsciences"
+                        whileHover={{
+                            scale: 1.01,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.99 }}
+                    >
+                        <div className="EUOASTitle">
+                            <h4>{info.LinkedIn.schoolName3}</h4>
+                        </div>
+                        <div className="EUOASContent1">
+                            <p>{info.LinkedIn.degreeName3}</p>
+                            <p>{info.LinkedIn.timeAndPlace3}</p>
+                            <div className="SchoolLogo"></div>
+                        </div>
+                        <div className="EUOASContent2" style={{ display: isVisible3e ? "block" : "none" }}>
+                            <p>{info.LinkedIn.educationDescription3}</p>
+                            <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects3}</p>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
             </div>
         </div>
     );
@@ -432,34 +475,54 @@ function Experience() {
                 <h3>EXPERIENCE</h3>
             </div>
             <div className="ExperienceContent">
-                <div className="ExperienceInternship" onClick={() => showWorkDescription1()}>
-                    <div className="EITitle">
-                        <h4>{info.LinkedIn.companyName1}</h4>
-                    </div>
-                    <div className="EIContent1">
-                        <p>{info.LinkedIn.workTitle1}</p>
-                        <p>{info.LinkedIn.workTimeAndPlace1}</p>
-                        <div className="CompanyLogo1"></div>
-                    </div>
-                    <div className="EIContent2" style={{ display: isVisible1 ? "block" : "none" }}>
-                        <p>{info.LinkedIn.workDescription1}</p>
-                        <p className="Tech">Technologies used: {info.LinkedIn.workTech1}</p>
-                    </div>
-                </div>
-                <div className="ExperienceJob1" onClick={() => showWorkDescription2()}>
-                    <div className="EJ1Title">
-                        <h4>{info.LinkedIn.companyName1}</h4>
-                    </div>
-                    <div className="EJ1Content1">
-                        <p>{info.LinkedIn.workTitle2}</p>
-                        <p>{info.LinkedIn.workTimeAndPlace2}</p>
-                        <div className="CompanyLogo2"></div>
-                    </div>
-                    <div className="EJ1Content2" style={{ display: isVisible2 ? "block" : "none" }}>
-                        <p>{info.LinkedIn.workDescription2}</p>
-                        <p className="Tech">Technologies used: {info.LinkedIn.workTech2}</p>
-                    </div>
-                </div>
+                <AnimatePresence>
+                    <motion.div
+                        className="ExperienceInternship"
+                        onClick={() => showWorkDescription1()}
+                        key="experienceinternship"
+                        whileHover={{
+                            scale: 1.01,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.99 }}
+                    >
+                        <div className="EITitle">
+                            <h4>{info.LinkedIn.companyName1}</h4>
+                        </div>
+                        <div className="EIContent1">
+                            <p>{info.LinkedIn.workTitle1}</p>
+                            <p>{info.LinkedIn.workTimeAndPlace1}</p>
+                            <div className="CompanyLogo1"></div>
+                        </div>
+                        <div className="EIContent2" style={{ display: isVisible1 ? "block" : "none" }}>
+                            <p>{info.LinkedIn.workDescription1}</p>
+                            <p className="Tech">Technologies used: {info.LinkedIn.workTech1}</p>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        className="ExperienceJob1"
+                        onClick={() => showWorkDescription2()}
+                        key="experiencejob1"
+                        whileHover={{
+                            scale: 1.01,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.99 }}
+                    >
+                        <div className="EJ1Title">
+                            <h4>{info.LinkedIn.companyName1}</h4>
+                        </div>
+                        <div className="EJ1Content1">
+                            <p>{info.LinkedIn.workTitle2}</p>
+                            <p>{info.LinkedIn.workTimeAndPlace2}</p>
+                            <div className="CompanyLogo2"></div>
+                        </div>
+                        <div className="EJ1Content2" style={{ display: isVisible2 ? "block" : "none" }}>
+                            <p>{info.LinkedIn.workDescription2}</p>
+                            <p className="Tech">Technologies used: {info.LinkedIn.workTech2}</p>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
             </div>
         </div>
     );

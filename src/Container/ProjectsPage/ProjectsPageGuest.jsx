@@ -5,6 +5,7 @@ import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
 import NavGuest from "/src/Components/Nav/NavGuest.jsx";
 import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.css";
 
 function ProjectsPageGuest() {
@@ -71,7 +72,20 @@ function AboutMyProjects() {
                 <h3>ABOUT MY PROJECTS</h3>
             </div>
             <div className="AboutMyProjectsContent">
-                <a className="AboutMyProjectsPhoto" title="My GitHub" href={info.GitHub.link} target="_blank" />
+                <AnimatePresence>
+                    <motion.a
+                        className="AboutMyProjectsPhoto"
+                        title="My GitHub"
+                        href={info.GitHub.link}
+                        target="_blank"
+                        key="aboutmyprojectsphoto"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
                 <div className="AboutMyProjectsTextContainer">
                     <div className="AboutMyProjectsTextTitle">
                         <h4 className="h4_1">{info.GitHub.user}</h4>

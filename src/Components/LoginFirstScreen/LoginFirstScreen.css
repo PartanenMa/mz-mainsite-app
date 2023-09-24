@@ -112,7 +112,7 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-.LoginButton {
+.LoginFButton {
     background-color: #111;
     color: #03a062;
     cursor: pointer;
@@ -128,13 +128,13 @@
     left: 47px;
 }
 
-.LoginButton:hover {
+.LoginFButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-.LoginGuestButton {
+.LoginFGuestButton {
     background-color: #111;
     color: #03a062;
     cursor: pointer;
@@ -150,7 +150,7 @@
     left: 47px;
 }
 
-.LoginGuestButton:hover {
+.LoginFGuestButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);
