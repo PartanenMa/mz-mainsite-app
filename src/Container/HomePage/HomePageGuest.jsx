@@ -175,43 +175,121 @@ function FirstSection() {
                 </AnimatePresence>
                 <div className="LogOutContainer2Guest" style={{ display: isVisible2 ? "block" : "none" }}>
                     <h3>Guest</h3>
-                    <button className="X-buttonGuest" onClick={() => displayUser1()}>
-                        X
-                    </button>
-                    <img src={user} className="LogoGuest2" alt="User logo" />
-                    <button className="SettingsButtonGuest" onClick={() => displayUser3()}>
-                        Settings
-                    </button>
-                    <button className="LogOutButtonGuest" onClick={() => displayUser4()}>
-                        Log out
-                    </button>
+                    <AnimatePresence>
+                        <motion.button
+                            className="X-buttonGuest"
+                            onClick={() => displayUser1()}
+                            key="x-buttonguest"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            X
+                        </motion.button>
+                        <img src={user} className="LogoGuest2" alt="User logo" />
+                        <motion.button
+                            className="SettingsButtonGuest"
+                            onClick={() => displayUser3()}
+                            key="settingsbuttonguest"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            Settings
+                        </motion.button>
+                        <motion.button
+                            className="LogOutButtonGuest"
+                            onClick={() => displayUser4()}
+                            key="logoutbuttonguest"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            Log out
+                        </motion.button>
+                    </AnimatePresence>
                 </div>
                 <div className="LogOutContainer3" style={{ display: isVisible3 ? "block" : "none" }}>
                     <h3>Settings</h3>
-                    <button className="Settings_X-button" onClick={() => displayUser1()}>
-                        X
-                    </button>
-                    <p className="OptionText">BG GIF: {BGoption}</p>
-                    <div className="OptionBG" onClick={() => option()}>
-                        <div className="OptionBall"></div>
-                    </div>
-                    <button className="SettingsBackButton" onClick={() => displayUser2()}>
-                        Back
-                    </button>
+                    <AnimatePresence>
+                        <motion.button
+                            className="Settings_X-button"
+                            onClick={() => displayUser1()}
+                            key="settings_x-button"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            X
+                        </motion.button>
+                        <p className="OptionText">BG GIF: {BGoption}</p>
+                        <div className="OptionBG" onClick={() => option()}>
+                            <div className="OptionBall"></div>
+                        </div>
+                        <motion.button
+                            className="SettingsBackButton"
+                            onClick={() => displayUser2()}
+                            key="settingsbackbutton"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            Back
+                        </motion.button>
+                    </AnimatePresence>
                 </div>
                 <div className="LogOutContainer4" style={{ display: isVisible4 ? "block" : "none" }}>
                     <h3>Log out?</h3>
-                    <button className="LogOut_X-button" onClick={() => displayUser1()}>
-                        X
-                    </button>
-                    <div className="LOC4Buttons">
-                        <button className="LogOutButton" onClick={() => logOut()}>
-                            Log out
-                        </button>
-                        <button className="LogOutBackButton" onClick={() => displayUser2()}>
-                            Back
-                        </button>
-                    </div>
+                    <AnimatePresence>
+                        <motion.button
+                            className="LogOut_X-button"
+                            onClick={() => displayUser1()}
+                            key="logout_x-button"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            X
+                        </motion.button>
+                        <div className="LOC4Buttons">
+                            <motion.button
+                                className="LogOutButton"
+                                onClick={() => logOut()}
+                                key="logoutbutton"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Log out
+                            </motion.button>
+                            <motion.button
+                                className="LogOutBackButton"
+                                onClick={() => displayUser2()}
+                                key="logoutbackbutton"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Back
+                            </motion.button>
+                        </div>
+                    </AnimatePresence>
                 </div>
                 <AnimatePresence>
                     <motion.div

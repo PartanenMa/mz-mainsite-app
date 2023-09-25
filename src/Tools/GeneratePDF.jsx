@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import PDF from "/src/Assets/Templates/PDF.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 
 function GeneratePDF() {
     const [isHovered, setIsHovered] = useState(false);
@@ -70,17 +71,25 @@ function GeneratePDF() {
             <div style={{ display: "none" }} ref={pdfRef}>
                 <PDF />
             </div>
-            <button
-                style={{
-                    ...buttonStyles,
-                    ...(isHovered && buttonHoverStyles),
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={downloadPDF}
-            >
-                Download CV
-            </button>
+            <AnimatePresence>
+                <motion.button
+                    style={{
+                        ...buttonStyles,
+                        ...(isHovered && buttonHoverStyles),
+                    }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={downloadPDF}
+                    key="pdfbtn"
+                    whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.1 },
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    Download CV
+                </motion.button>
+            </AnimatePresence>
         </div>
     );
 }

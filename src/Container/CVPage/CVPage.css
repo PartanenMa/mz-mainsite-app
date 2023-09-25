@@ -115,4 +115,17 @@
         0 0 20px black;
     position: relative;
     bottom: 40px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 5px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
 }

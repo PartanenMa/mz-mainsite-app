@@ -117,9 +117,18 @@ function Main({ isModalOpen, setIsModalOpen }) {
                         >
                             <div className="FPAboutTitle">
                                 <h2>What is the MatrixZone?</h2>
-                                <button className="FPTitleX-button" onClick={() => setIsModalOpen(false)}>
+                                <motion.button
+                                    className="FPTitleX-button"
+                                    onClick={() => setIsModalOpen(false)}
+                                    key="fptitlex-button"
+                                    whileHover={{
+                                        scale: 1.05,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
                                     X
-                                </button>
+                                </motion.button>
                             </div>
                             <div className="FPAbout">
                                 <p>
@@ -146,9 +155,18 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 </p>
                             </div>
                             <div className="FPBack">
-                                <button className="FPBackButton" onClick={() => setIsModalOpen(false)}>
+                                <motion.button
+                                    className="FPBackButton"
+                                    onClick={() => setIsModalOpen(false)}
+                                    key="fpbackbutton"
+                                    whileHover={{
+                                        scale: 1.05,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
                                     Close
-                                </button>
+                                </motion.button>
                             </div>
                         </motion.div>
                     </AnimatePresence>
