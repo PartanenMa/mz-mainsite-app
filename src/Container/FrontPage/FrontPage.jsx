@@ -180,21 +180,21 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 animate={shouldAnimate ? { opacity: 1, x: 0 } : {}}
                                 exit={{ opacity: 0, x: 1000 }}
                             >
-                                <div class="HTWelcome1">
+                                <div className="HTWelcome1">
                                     <h3 className="HTW1text">
                                         Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
                                     </h3>
                                 </div>
-                                <div class="HTWelcome2">
+                                <div className="HTWelcome2">
                                     <p>I'm a</p>
-                                    <div class="HTW2animation">
-                                        <div class="HTW2first">
+                                    <div className="HTW2animation">
+                                        <div className="HTW2first">
                                             <div>{info.LinkedIn.profession}</div>
                                         </div>
-                                        <div class="HTW2second">
+                                        <div className="HTW2second">
                                             <div>Software Developer</div>
                                         </div>
-                                        <div class="HTW2third">
+                                        <div className="HTW2third">
                                             <div>IT Engineer</div>
                                         </div>
                                     </div>

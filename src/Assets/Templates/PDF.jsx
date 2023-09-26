@@ -3,7 +3,7 @@ function PDF() {
         page: {
             marginLeft: "5rem",
             marginRight: "5rem",
-            "page-break-after": "always",
+            pageBreakAfter: "always",
         },
 
         columnLayout: {
