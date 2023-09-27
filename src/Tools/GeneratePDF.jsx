@@ -1,12 +1,11 @@
 import { useState, useRef } from "react";
-import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import PDF from "/src/Assets/Templates/PDF.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 
 function GeneratePDF() {
     const [isHovered, setIsHovered] = useState(false);
-    const pdfRef = useRef();
+    const pdfRef = useRef(null);
 
     const downloadPDF = () => {
         const doc = new jsPDF({
@@ -18,11 +17,7 @@ function GeneratePDF() {
 
         doc.html(pdfRef.current, {
             async callback(doc) {
-                try {
-                    await doc.save("CV Manu Partanen");
-                } catch (error) {
-                    console.error("Error saving PDF:", error);
-                }
+                doc.save("CV Manu Partanen.pdf");
             },
         });
     };
@@ -68,9 +63,6 @@ function GeneratePDF() {
 
     return (
         <div style={componentStyles}>
-            <div style={{ display: "none" }} ref={pdfRef}>
-                <PDF />
-            </div>
             <AnimatePresence>
                 <motion.button
                     style={{
@@ -90,6 +82,11 @@ function GeneratePDF() {
                     Download CV
                 </motion.button>
             </AnimatePresence>
+            <div style={{ display: "none" }}>
+                <div ref={pdfRef}>
+                    <PDF />
+                </div>
+            </div>
         </div>
     );
 }

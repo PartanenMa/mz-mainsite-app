@@ -6,7 +6,6 @@
 **npm i antd**  
 **npm i @mui/material @emotion/react @emotion/styled**  
 **npm i framer-motion**  
-**npm i html2canvas**  
 **npm i jspdf**
 
 # 2. Run program:
