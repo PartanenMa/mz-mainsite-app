@@ -1,60 +1,67 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { notification, Carousel } from "antd";
+import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
-import HeaderGuest from "/src/Components/Header/HeaderGuest.jsx";
-import NavGuest from "/src/Components/Nav/NavGuest.jsx";
-import FooterGuest from "/src/Components/Footer/FooterGuest.jsx";
+import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
+import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
+import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import TimeAndDate from "/src/Components/CurrentTime/TimeAndDate.jsx";
+import reactLogo from "/src/Assets/Images/React.svg";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import reactLogo from "/src/Assets/Images/React.svg";
-import user from "/src/Assets/Images/User.png";
 import "./HomePage.css";
 
-function HomePageGuest() {
+function HomePageAdmin() {
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        //Simulate loading for 1 second:
-        const timer = setTimeout(() => {
-            setLoading(false);
-            if (load === "true") {
-                notification.success({
-                    message: "LOGGED IN AS GUEST",
-                    description: "Welcome to the MatrixZone!",
-                    placement: "bottomLeft",
-                    style: {
-                        backgroundColor: "lightgreen",
-                        border: "3px solid green",
-                    },
-                });
-            }
-            sessionStorage.setItem("load", "false");
-        }, 1000);
+        if (isLoggedIn === "true") {
+            //Simulate loading for 1 second:
+            const timer = setTimeout(() => {
+                setLoading(false);
+                if (load === "true") {
+                    sessionStorage.setItem("load", "false");
+                    notification.success({
+                        message: "LOGGED IN AS ADMIN",
+                        description: "Welcome back!",
+                        placement: "bottomLeft",
+                        style: {
+                            backgroundColor: "lightgreen",
+                            border: "3px solid green",
+                        },
+                    });
+                }
+            }, 2000);
 
-        //Clean up the timer to prevent memory leaks:
-        return () => clearTimeout(timer);
-    }, []);
+            //Clean up the timer to prevent memory leaks:
+            return () => clearTimeout(timer);
+        }
+    }, [isLoggedIn, load]);
 
-    return (
-        <div>
-            {loading && load === "true" ? (
-                //Loading component here:
-                <LoadingScreen />
-            ) : (
-                <div>
-                    <HeaderGuest />
-                    <NavGuest />
-                    <div className="HomePageContainer">
-                        <FirstSection />
+    if (isLoggedIn === "true") {
+        return (
+            <div>
+                {loading && load === "true" ? (
+                    //Loading component here:
+                    <LoadingScreen />
+                ) : (
+                    <div>
+                        <HeaderAdmin />
+                        <NavAdmin />
+                        <div className="HomePageContainer">
+                            <FirstSection />
+                        </div>
+                        <FooterAdmin />
                     </div>
-                    <FooterGuest />
-                </div>
-            )}
-        </div>
-    );
+                )}
+            </div>
+        );
+    } else {
+        return <LoginFirstScreen />;
+    }
 }
 
 function FirstSection() {
@@ -62,7 +69,7 @@ function FirstSection() {
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
     const [isVisible4, setIsVisible4] = useState(false);
-    const [isVisibleW, setIsVisibleW] = useState(true);
+    const [isVisibleY, setIsVisibleY] = useState(true);
     const [BGoption, setBGoption] = useState("OFF");
     const [isGIFVisible, setIsGIFVisible] = useState(true);
     const ref = useRef();
@@ -71,7 +78,7 @@ function FirstSection() {
     useEffect(() => {
         let option = document.getElementsByClassName("OptionBall")[0];
         let bg = document.getElementsByClassName("OptionBG")[0];
-        const GIF = sessionStorage.getItem("isGuestGIF");
+        const GIF = sessionStorage.getItem("isAdminGIF");
         if (GIF === "true") {
             setBGoption("ON");
             option.style.left = "60px";
@@ -92,19 +99,19 @@ function FirstSection() {
         let bg = document.getElementsByClassName("OptionBG")[0];
         if (BGoption === "ON") {
             setBGoption("OFF");
-            sessionStorage.setItem("isGuestGIF", "false");
+            sessionStorage.setItem("isAdminGIF", "false");
             option.style.left = "0px";
             bg.style.backgroundColor = "#111";
         } else if (BGoption === "OFF") {
             setBGoption("ON");
-            sessionStorage.setItem("isGuestGIF", "true");
+            sessionStorage.setItem("isAdminGIF", "true");
             option.style.left = "60px";
             bg.style.backgroundColor = "lightgreen";
         }
     };
 
     const displayUser1 = () => {
-        setIsVisibleW(true);
+        setIsVisibleY(true);
         setIsVisible4(false);
         setIsVisible3(false);
         setIsVisible2(false);
@@ -112,7 +119,7 @@ function FirstSection() {
     };
 
     const displayUser2 = () => {
-        setIsVisibleW(false);
+        setIsVisibleY(false);
         setIsVisible4(false);
         setIsVisible3(false);
         setIsVisible2(true);
@@ -133,8 +140,9 @@ function FirstSection() {
         let option = document.getElementsByClassName("OptionBall")[0];
         setBGoption("OFF");
         option.style.left = "0px";
-        sessionStorage.setItem("isGuestGIF", "false");
+        sessionStorage.setItem("isAdminGIF", "false");
         sessionStorage.setItem("logoutLoad", "true");
+        sessionStorage.setItem("isLoggedIn", "false");
         setIsVisible2(false);
         setIsVisible1(true);
         navigate(info.routes.loginPage);
@@ -150,16 +158,16 @@ function FirstSection() {
     return (
         <div className="FirstSectionContainer">
             <div className="Breadcrumb">
-                <h2>Guest / home</h2>
+                <h2>Admin / home</h2>
             </div>
-            <div className={`LogOutSectionGuest ${isGIFVisible ? "ShowGIF" : ""}`}>
+            <div className={`LogOutSectionAdmin ${isGIFVisible ? "ShowGIF" : ""}`}>
                 <AnimatePresence>
                     <motion.div
                         className="LogOutContainer1"
                         title="User"
                         style={{ display: isVisible1 ? "block" : "none" }}
                         onClick={() => displayUser2()}
-                        key="loc1"
+                        key="loc1A"
                         initial={{ opacity: 0, y: -100 }}
                         animate={isVisible1 ? { opacity: 1, y: 0 } : {}}
                         whileHover={{
@@ -169,17 +177,17 @@ function FirstSection() {
                         whileTap={{ scale: 0.9 }}
                     >
                         <img src={reactLogo} className="logo_react" alt="React logo" />
-                        <img src={user} className="LogoGuest1" alt="User logo" />
-                        <h3 className="NameGuest">Guest</h3>
+                        <div className="LogoAdmin1"></div>
+                        <h3 className="NameAdmin">Admin</h3>
                     </motion.div>
                 </AnimatePresence>
-                <div className="LogOutContainer2Guest" style={{ display: isVisible2 ? "block" : "none" }}>
-                    <h3>Guest</h3>
+                <div className="LogOutContainer2Admin" style={{ display: isVisible2 ? "block" : "none" }}>
+                    <h3>Admin</h3>
                     <AnimatePresence>
                         <motion.button
-                            className="X-buttonGuest"
+                            className="X-buttonAdmin"
                             onClick={() => displayUser1()}
-                            key="x-buttonguest"
+                            key="x-buttonadmin"
                             whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.1 },
@@ -188,11 +196,20 @@ function FirstSection() {
                         >
                             X
                         </motion.button>
-                        <img src={user} className="LogoGuest2" alt="User logo" />
+                        <motion.div
+                            className="LogoAdmin2"
+                            onClick={() => navigate(info.routes.profilePageAdmin)}
+                            key="logoadmin2"
+                            whileHover={{
+                                scale: 1.05,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
                         <motion.button
-                            className="SettingsButtonGuest"
+                            className="SettingsButtonAdmin"
                             onClick={() => displayUser3()}
-                            key="settingsbuttonguest"
+                            key="settingsbuttonadmin"
                             whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.1 },
@@ -202,9 +219,9 @@ function FirstSection() {
                             Settings
                         </motion.button>
                         <motion.button
-                            className="LogOutButtonGuest"
+                            className="LogOutButtonAdmin"
                             onClick={() => displayUser4()}
-                            key="logoutbuttonguest"
+                            key="logoutbuttonadmin"
                             whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.1 },
@@ -221,7 +238,7 @@ function FirstSection() {
                         <motion.button
                             className="Settings_X-button"
                             onClick={() => displayUser1()}
-                            key="settings_x-button"
+                            key="settings_x-buttonA"
                             whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.1 },
@@ -237,7 +254,7 @@ function FirstSection() {
                         <motion.button
                             className="SettingsBackButton"
                             onClick={() => displayUser2()}
-                            key="settingsbackbutton"
+                            key="settingsbackbuttonA"
                             whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.1 },
@@ -254,7 +271,7 @@ function FirstSection() {
                         <motion.button
                             className="LogOut_X-button"
                             onClick={() => displayUser1()}
-                            key="logout_x-button"
+                            key="logout_x-buttonA"
                             whileHover={{
                                 scale: 1.05,
                                 transition: { duration: 0.1 },
@@ -267,7 +284,7 @@ function FirstSection() {
                             <motion.button
                                 className="LogOutButton"
                                 onClick={() => logOut()}
-                                key="logoutbutton"
+                                key="logoutbuttonA"
                                 whileHover={{
                                     scale: 1.05,
                                     transition: { duration: 0.1 },
@@ -279,7 +296,7 @@ function FirstSection() {
                             <motion.button
                                 className="LogOutBackButton"
                                 onClick={() => displayUser2()}
-                                key="logoutbackbutton"
+                                key="logoutbackbuttonA"
                                 whileHover={{
                                     scale: 1.05,
                                     transition: { duration: 0.1 },
@@ -294,21 +311,21 @@ function FirstSection() {
                 <AnimatePresence>
                     <motion.div
                         className="Clock"
-                        style={{ display: isVisibleW ? "block" : "none" }}
-                        key="clock"
+                        style={{ display: isVisibleY ? "block" : "none" }}
+                        key="clockA"
                         initial={{ opacity: 0, x: 300 }}
-                        animate={isVisibleW ? { opacity: 1, x: 0 } : {}}
+                        animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
                     >
                         <TimeAndDate />
                     </motion.div>
                     <motion.h2
                         className="Welcome"
-                        style={{ display: isVisibleW ? "block" : "none" }}
-                        key="welcome"
+                        style={{ display: isVisibleY ? "block" : "none" }}
+                        key="welcomeA"
                         initial={{ opacity: 0, x: -1000 }}
-                        animate={isVisibleW ? { opacity: 1, x: 0 } : {}}
+                        animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
                     >
-                        WELCOME GUEST
+                        WELCOME ADMIN
                     </motion.h2>
                 </AnimatePresence>
             </div>
@@ -363,7 +380,7 @@ function FirstSection() {
             </section>
             <section className="HomeFirstSection1">
                 <div className="CheckMyProfile">
-                    <h2>CHECK OUT MY PROFILE!</h2>
+                    <h2>MY PROFILE</h2>
                 </div>
                 <div className="GoToMyProfile">
                     <AnimatePresence>
@@ -372,7 +389,7 @@ function FirstSection() {
                             title="My LinkedIn"
                             href={info.LinkedIn.link}
                             target="_blank"
-                            key="photo"
+                            key="photoA"
                             whileHover={{
                                 scale: 1.1,
                                 transition: { duration: 0.1 },
@@ -386,7 +403,7 @@ function FirstSection() {
                                 title="My LinkedIn"
                                 href={info.LinkedIn.link}
                                 target="_blank"
-                                key="linkedinlogo"
+                                key="linkedinlogoA"
                                 whileHover={{
                                     scale: 1.1,
                                     transition: { duration: 0.1 },
@@ -398,8 +415,8 @@ function FirstSection() {
                             <p>{info.LinkedIn.jobTitle}</p>
                             <motion.button
                                 className="GoToProfile"
-                                onClick={() => navigate(info.routes.profilePageGuest)}
-                                key="gotoprofile"
+                                onClick={() => navigate(info.routes.profilePageAdmin)}
+                                key="gotoprofileA"
                                 whileHover={{
                                     scale: 1.05,
                                     transition: { duration: 0.1 },
@@ -415,7 +432,7 @@ function FirstSection() {
             </section>
             <section className="HomeFirstSection2">
                 <div className="CheckMyProjects">
-                    <h2>CHECK OUT MY PROJECTS!</h2>
+                    <h2>MY PROJECTS</h2>
                 </div>
                 <div className="GoToMyProjects">
                     <AnimatePresence>
@@ -424,7 +441,7 @@ function FirstSection() {
                             title="My GitHub"
                             href={info.GitHub.link}
                             target="_blank"
-                            key="ghlogo1"
+                            key="ghlogo1A"
                             whileHover={{
                                 scale: 1.1,
                                 transition: { duration: 0.1 },
@@ -438,7 +455,7 @@ function FirstSection() {
                                 title="My GitHub"
                                 href={info.GitHub.link}
                                 target="_blank"
-                                key="ghlogo2"
+                                key="ghlogo2A"
                                 whileHover={{
                                     scale: 1.1,
                                     transition: { duration: 0.1 },
@@ -450,8 +467,8 @@ function FirstSection() {
                             <p>{info.LinkedIn.name}</p>
                             <motion.button
                                 className="GoToProjects"
-                                onClick={() => navigate(info.routes.projectsPageGuest)}
-                                key="gotoprojects"
+                                onClick={() => navigate(info.routes.projectsPageAdmin)}
+                                key="gotoprojectsA"
                                 whileHover={{
                                     scale: 1.05,
                                     transition: { duration: 0.1 },
@@ -467,7 +484,7 @@ function FirstSection() {
             </section>
             <section className="HomeFirstSection3">
                 <div className="CheckMyVideos">
-                    <h2>CHECK OUT MY VIDEOS!</h2>
+                    <h2>MY VIDEOS</h2>
                 </div>
                 <div className="GoToMyVideos">
                     <AnimatePresence>
@@ -476,7 +493,7 @@ function FirstSection() {
                             title="My YouTube"
                             href={info.YouTube.link}
                             target="_blank"
-                            key="ytlogo1"
+                            key="ytlogo1A"
                             whileHover={{
                                 scale: 1.1,
                                 transition: { duration: 0.1 },
@@ -490,7 +507,7 @@ function FirstSection() {
                                 title="My YouTube"
                                 href={info.YouTube.link}
                                 target="_blank"
-                                key="ytlogo2"
+                                key="ytlogo2A"
                                 whileHover={{
                                     scale: 1.1,
                                     transition: { duration: 0.1 },
@@ -502,8 +519,8 @@ function FirstSection() {
                             <p>{info.LinkedIn.name}</p>
                             <motion.button
                                 className="GoToVideos"
-                                onClick={() => navigate(info.routes.videosPageGuest)}
-                                key="gotovideos"
+                                onClick={() => navigate(info.routes.videosPageAdmin)}
+                                key="gotovideosA"
                                 whileHover={{
                                     scale: 1.05,
                                     transition: { duration: 0.1 },
@@ -521,4 +538,4 @@ function FirstSection() {
     );
 }
 
-export default HomePageGuest;
+export default HomePageAdmin;

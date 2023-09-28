@@ -8,16 +8,16 @@ function GeneratePDF() {
     const pdfRef = useRef(null);
 
     const downloadPDF = () => {
-        const doc = new jsPDF({
+        const pdf = new jsPDF({
             format: "a4",
             unit: "px",
         });
 
-        doc.setFont("Inter-Regular", "normal");
+        pdf.setFont("Inter-Regular", "normal");
 
-        doc.html(pdfRef.current, {
-            async callback(doc) {
-                doc.save("CV Manu Partanen.pdf");
+        pdf.html(pdfRef.current, {
+            async callback(pdf) {
+                pdf.save("CV Manu Partanen.pdf");
             },
         });
     };

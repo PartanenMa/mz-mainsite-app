@@ -27,7 +27,7 @@ function GoalsPageGuest() {
                 });
             }
             sessionStorage.setItem("load", "false");
-        }, 1000);
+        }, 2000);
 
         //Clean up the timer to prevent memory leaks:
         return () => clearTimeout(timer);
