@@ -1,4 +1,153 @@
 /*Header:*/
+.Header {
+    height: 50px;
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #03a062;
+    margin-bottom: 30px;
+}
+
+.HeaderTitle {
+    height: 100%;
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.HeaderLogo {
+    background-image: url("/src/Assets/Images/Logo.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    height: 44px;
+    width: 64px;
+    margin-top: 2px;
+    border: 1px solid #03a062;
+    border-radius: 5px;
+    transition: filter 300ms;
+}
+
+.HeaderLogo:hover {
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
+}
+
+.HeaderTitle h1 {
+    color: #03a062;
+    font-size: 35px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 1px 1px 0 lightgreen;
+    cursor: pointer;
+    position: relative;
+    bottom: 20px;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 7px #03a062,
+            0 0 10px #03a062,
+            0 0 12px #03a062,
+            0 0 15px #03a062,
+            0 0 17px #03a062;
+    }
+
+    to {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 7px lightgreen,
+            0 0 10px lightgreen,
+            0 0 12px lightgreen,
+            0 0 15px lightgreen,
+            0 0 17px lightgreen,
+            0 0 20px lightgreen;
+    }
+}
+
+.Version {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 0px;
+}
+
+.Version p {
+    color: #03a062;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
+    position: relative;
+    top: 5px;
+}
+
+.NavOptions {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.NavOptionsBar {
+    display: flex;
+    flex-direction: row;
+}
+
+.NavOBtn {
+    animation: fadeIn 0.3s;
+    background: none;
+    border: none;
+    color: #03a062;
+    height: 44px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    transition: color 300ms;
+    transition: filter 300ms;
+    transition: text-decoration 300ms;
+}
+
+.NavOBtn:hover {
+    color: lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
+    text-decoration: underline;
+}
+
+.LoginButtonFP {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    color: #03a062;
+    height: 44px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #03a062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    transition: filter 300ms;
+}
+
+.LoginButtonFP:hover {
+    background-color: lightgreen;
+    transition: background-color 500ms ease-in-out;
+    filter: drop-shadow(0 0 2em #03a062);
+}
+
+/*HeaderAdmin:*/
 .HeaderContainer {
     background-color: #111;
     height: 120px;
@@ -13,7 +162,6 @@
     overflow: hidden;
 }
 
-/*Logo:*/
 .LogoContainer {
     background-image: url("/src/Assets/Images/Logo.PNG");
     background-size: cover;
@@ -31,7 +179,6 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-/*Title:*/
 .TitleContainer {
     height: 0px;
     float: right;
@@ -48,7 +195,6 @@
     text-shadow: 1px 1px 0 lightgreen;
 }
 
-/*Matrix:*/
 .MatrixContainer {
     background-image: url("/src/Assets/Images/Matrix.png");
     background-repeat: no-repeat;

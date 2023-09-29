@@ -19,7 +19,7 @@ function Logo() {
             <motion.div
                 className="LogoContainer"
                 title="Go to home page"
-                onClick={() => navigate(info.routes.homePageGuest)}
+                onClick={() => navigate(info.routes.homePage)}
                 key="logocontainer"
                 whileHover={{
                     scale: 1.05,

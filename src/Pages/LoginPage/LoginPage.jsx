@@ -55,10 +55,10 @@ function BackToFrontPage() {
     return (
         <AnimatePresence>
             <motion.button
-                className="BackToFrontPage"
+                className="BackToFrontPage1"
                 title="Back to the front page"
                 onClick={() => navigate(info.routes.frontPage)}
-                key="backtofrontpage"
+                key="backtofrontpage1"
                 whileHover={{
                     scale: 1.05,
                     transition: { duration: 0.1 },
@@ -125,11 +125,6 @@ function LoginSection() {
         }
     }
 
-    function handleLoginGuest() {
-        sessionStorage.setItem("load", "true");
-        navigate(info.routes.homePageGuest);
-    }
-
     return (
         <div className="LPLoginContainer">
             <form className="LPLogin">
@@ -169,16 +164,16 @@ function LoginSection() {
                         Log in
                     </motion.button>
                     <motion.button
-                        className="LoginGuestButton"
-                        onClick={() => handleLoginGuest()}
-                        key="loginguestbutton"
+                        className="BackToFrontPage2"
+                        onClick={() => navigate(info.routes.frontPage)}
+                        key="backtofrontpage2"
                         whileHover={{
                             scale: 1.05,
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        I'm a guest
+                        Back
                     </motion.button>
                 </AnimatePresence>
             </form>

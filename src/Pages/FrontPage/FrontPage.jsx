@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
+import Header from "/src/Components/Header/Header.jsx";
+import Footer from "/src/Components/Footer/Footer.jsx";
 import "./FrontPage.css";
 
 function FrontPage() {
@@ -18,67 +20,6 @@ function FrontPage() {
     );
 }
 
-function Header({ setIsModalOpen }) {
-    const navigate = useNavigate();
-
-    const handleLogoClick = () => {
-        setIsModalOpen(true);
-    };
-
-    const handleLoginClick = () => {
-        sessionStorage.setItem("logoutLoad", "false");
-        navigate(info.routes.loginPage);
-    };
-
-    return (
-        <header className="Header">
-            <AnimatePresence>
-                <motion.div
-                    className="HeaderTitle"
-                    key="headerT"
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                >
-                    <motion.div
-                        className="HeaderLogo"
-                        title="Info"
-                        onClick={() => handleLogoClick()}
-                        key="headerL"
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.9 }}
-                    />
-                    <h1>MatrixZone</h1>
-                    <div className="Version">
-                        <p>{info.version}</p>
-                    </div>
-                </motion.div>
-                <motion.div
-                    className="NavOptions"
-                    key="navO"
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                >
-                    <motion.button
-                        className="LoginButtonFP"
-                        onClick={() => handleLoginClick()}
-                        key="navB"
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.9 }}
-                    >
-                        Log in
-                    </motion.button>
-                </motion.div>
-            </AnimatePresence>
-        </header>
-    );
-}
-
 function Main({ isModalOpen, setIsModalOpen }) {
     const [shouldAnimate, setShouldAnimate] = useState(false);
     const navigate = useNavigate();
@@ -92,14 +33,13 @@ function Main({ isModalOpen, setIsModalOpen }) {
         }
     }, [isModalOpen]);
 
-    const handleLoginGuest = (page) => {
-        sessionStorage.setItem("load", "true");
+    const handleNavigation = (page) => {
         if (page === "profile") {
-            navigate(info.routes.profilePageGuest);
+            navigate(info.routes.profilePage);
         } else if (page === "projects") {
-            navigate(info.routes.projectsPageGuest);
+            navigate(info.routes.projectsPage);
         } else if (page === "videos") {
-            navigate(info.routes.videosPageGuest);
+            navigate(info.routes.videosPage);
         }
     };
 
@@ -212,7 +152,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                             >
                                 <motion.div
                                     className="HeroContent1"
-                                    onClick={() => handleLoginGuest("profile")}
+                                    onClick={() => handleNavigation("profile")}
                                     key="heroC1"
                                     whileHover={{
                                         scale: 1.1,
@@ -240,7 +180,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 </motion.div>
                                 <motion.div
                                     className="HeroContent2"
-                                    onClick={() => handleLoginGuest("projects")}
+                                    onClick={() => handleNavigation("projects")}
                                     key="heroC2"
                                     whileHover={{
                                         scale: 1.1,
@@ -262,7 +202,7 @@ function Main({ isModalOpen, setIsModalOpen }) {
                                 </motion.div>
                                 <motion.div
                                     className="HeroContent3"
-                                    onClick={() => handleLoginGuest("videos")}
+                                    onClick={() => handleNavigation("videos")}
                                     key="heroC3"
                                     whileHover={{
                                         scale: 1.1,
@@ -289,10 +229,6 @@ function Main({ isModalOpen, setIsModalOpen }) {
             </section>
         </main>
     );
-}
-
-function Footer() {
-    return <footer className="Footer"></footer>;
 }
 
 export default FrontPage;

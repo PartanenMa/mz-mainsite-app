@@ -16,7 +16,7 @@
 }
 
 /*Back button:*/
-.BackToFrontPage {
+.BackToFrontPage1 {
     background-color: #111;
     color: #03a062;
     height: 44px;
@@ -36,7 +36,7 @@
     transition: background-color 500ms ease-in-out;
 }
 
-.BackToFrontPage:hover {
+.BackToFrontPage1:hover {
     background-color: lightgreen;
     filter: drop-shadow(0 0 2em #03a062);
 }
@@ -180,7 +180,7 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-.LoginGuestButton {
+.BackToFrontPage2 {
     background-color: #111;
     color: #03a062;
     cursor: pointer;
@@ -196,7 +196,7 @@
     left: 47px;
 }
 
-.LoginGuestButton:hover {
+.BackToFrontPage2:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);

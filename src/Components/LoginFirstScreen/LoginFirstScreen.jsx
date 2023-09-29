@@ -68,11 +68,6 @@ function LoginSection() {
         }
     }
 
-    function handleLoginGuest() {
-        sessionStorage.setItem("load", "true");
-        navigate(info.routes.homePageGuest);
-    }
-
     return (
         <div className="LoginContainer">
             <form className="Login">
@@ -112,16 +107,16 @@ function LoginSection() {
                         Log in
                     </motion.button>
                     <motion.button
-                        className="LoginFGuestButton"
-                        onClick={() => handleLoginGuest()}
-                        key="loginfguestbutton"
+                        className="BackToFPButton"
+                        onClick={() => navigate(info.routes.frontPage)}
+                        key="backtofpbutton"
                         whileHover={{
                             scale: 1.05,
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        I'm a guest
+                        Back
                     </motion.button>
                 </AnimatePresence>
             </form>

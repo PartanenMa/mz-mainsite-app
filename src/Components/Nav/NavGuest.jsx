@@ -19,7 +19,7 @@ function Buttons() {
             <AnimatePresence>
                 <motion.button
                     id="Btn1"
-                    onClick={() => navigate(info.routes.homePageGuest)}
+                    onClick={() => navigate(info.routes.homePage)}
                     key="btn1"
                     whileHover={{
                         scale: 1.05,
@@ -32,7 +32,7 @@ function Buttons() {
                 </motion.button>
                 <motion.button
                     id="Btn2"
-                    onClick={() => navigate(info.routes.profilePageGuest)}
+                    onClick={() => navigate(info.routes.profilePage)}
                     key="btn2"
                     whileHover={{
                         scale: 1.05,
@@ -45,7 +45,7 @@ function Buttons() {
                 </motion.button>
                 <motion.button
                     id="Btn3"
-                    onClick={() => navigate(info.routes.projectsPageGuest)}
+                    onClick={() => navigate(info.routes.projectsPage)}
                     key="btn3"
                     whileHover={{
                         scale: 1.05,
@@ -58,7 +58,7 @@ function Buttons() {
                 </motion.button>
                 <motion.button
                     id="Btn4"
-                    onClick={() => navigate(info.routes.videosPageGuest)}
+                    onClick={() => navigate(info.routes.videosPage)}
                     key="btn4"
                     whileHover={{
                         scale: 1.05,
@@ -71,7 +71,7 @@ function Buttons() {
                 </motion.button>
                 <motion.button
                     id="Btn5"
-                    onClick={() => navigate(info.routes.goalsPageGuest)}
+                    onClick={() => navigate(info.routes.goalsPage)}
                     key="btn5"
                     whileHover={{
                         scale: 1.05,
@@ -84,7 +84,7 @@ function Buttons() {
                 </motion.button>
                 <motion.button
                     id="Btn6"
-                    onClick={() => navigate(info.routes.cvPageGuest)}
+                    onClick={() => navigate(info.routes.cvPage)}
                     key="btn6"
                     whileHover={{
                         scale: 1.05,

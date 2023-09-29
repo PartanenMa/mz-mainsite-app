@@ -1,4 +1,17 @@
 /*Footer:*/
+.Footer {
+    min-height: 50px;
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #03a062;
+    margin-top: auto;
+    margin-top: 30px;
+}
+
+/*FooterAdmin:*/
 .FooterContainer {
     background-color: #111;
     height: 720px;
@@ -9,7 +22,6 @@
     overflow: hidden;
 }
 
-/*Footer info box:*/
 .FooterInfoBoxContainer {
     height: 270px;
     width: 100%;
@@ -374,7 +386,6 @@
     color: #03a062;
 }
 
-/*FooterTitle:*/
 .FooterTitleText {
     height: 60px;
     width: 100%;
@@ -391,7 +402,6 @@
     left: 30px;
 }
 
-/*FooterBoxLeft:*/
 .LeftBox {
     height: 240px;
     width: 400px;
@@ -420,7 +430,6 @@
     filter: drop-shadow(0 0 2em #61dbfb);
 }
 
-/*FooterBoxMiddle:*/
 .MiddleBox {
     height: 240px;
     width: 400px;
@@ -448,7 +457,6 @@
     filter: drop-shadow(0 0 2em mediumorchid);
 }
 
-/*FooterBoxRight:*/
 .RightBox {
     height: 240px;
     width: 400px;
@@ -486,7 +494,6 @@
     right: 90px;
 }
 
-/*FooterBoxNames:*/
 .FooterNames {
     height: 0px;
     width: 0px;

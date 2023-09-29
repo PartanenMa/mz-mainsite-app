@@ -134,7 +134,7 @@
     filter: drop-shadow(0 0 2em #03a062);
 }
 
-.LoginFGuestButton {
+.BackToFPButton {
     background-color: #111;
     color: #03a062;
     cursor: pointer;
@@ -150,7 +150,7 @@
     left: 47px;
 }
 
-.LoginFGuestButton:hover {
+.BackToFPButton:hover {
     background-color: lightgreen;
     transition: background-color 500ms ease-in-out;
     filter: drop-shadow(0 0 2em #03a062);

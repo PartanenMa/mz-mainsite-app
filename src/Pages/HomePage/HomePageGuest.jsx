@@ -398,7 +398,7 @@ function FirstSection() {
                             <p>{info.LinkedIn.jobTitle}</p>
                             <motion.button
                                 className="GoToProfile"
-                                onClick={() => navigate(info.routes.profilePageGuest)}
+                                onClick={() => navigate(info.routes.profilePage)}
                                 key="gotoprofile"
                                 whileHover={{
                                     scale: 1.05,
@@ -450,7 +450,7 @@ function FirstSection() {
                             <p>{info.LinkedIn.name}</p>
                             <motion.button
                                 className="GoToProjects"
-                                onClick={() => navigate(info.routes.projectsPageGuest)}
+                                onClick={() => navigate(info.routes.projectsPage)}
                                 key="gotoprojects"
                                 whileHover={{
                                     scale: 1.05,
@@ -502,7 +502,7 @@ function FirstSection() {
                             <p>{info.LinkedIn.name}</p>
                             <motion.button
                                 className="GoToVideos"
-                                onClick={() => navigate(info.routes.videosPageGuest)}
+                                onClick={() => navigate(info.routes.videosPage)}
                                 key="gotovideos"
                                 whileHover={{
                                     scale: 1.05,
