@@ -47,7 +47,7 @@ function GoalsPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="GoalsPageContainer">
+                        <div className="GoalsPageContainerAdmin">
                             <div className="Breadcrumb">
                                 <h2>Admin / goals</h2>
                             </div>

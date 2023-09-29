@@ -51,7 +51,7 @@ function HomePageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="HomePageContainer">
+                        <div className="HomePageContainerAdmin">
                             <FirstSection />
                         </div>
                         <FooterAdmin />

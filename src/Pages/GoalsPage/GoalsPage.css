@@ -1,7 +1,23 @@
 /*GoalsPage:*/
-.GoalsPageContainer {
+.GP {
     animation: fadeIn 0.3s;
-    background-color: #111;
+    width: 100%;
+}
+
+.GoalsPageContainer {
+    min-height: 580px;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+}
+
+/*GoalsPageAdmin:*/
+.GoalsPageContainerAdmin {
+    animation: fadeIn 0.3s;
     width: 1244px;
     border-left: 3px solid #03a062;
     border-right: 3px solid #03a062;
@@ -55,6 +71,7 @@
 
 /*Content:*/
 .GoalsPageContentContainer {
+    background-color: #111;
     height: 80%;
     width: 100%;
     border-top: 1px solid #03a062;

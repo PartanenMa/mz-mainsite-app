@@ -48,7 +48,7 @@ function AboutMePageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="ProfilePageContainer">
+                        <div className="ProfilePageContainerAdmin">
                             <div className="Breadcrumb">
                                 <h2>Admin / profile</h2>
                             </div>

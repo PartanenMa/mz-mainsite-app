@@ -1,5 +1,22 @@
 /*ProfilePage:*/
+.PP {
+    animation: fadeIn 0.3s;
+    width: 100%;
+}
+
 .ProfilePageContainer {
+    min-height: 580px;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+}
+
+/*ProfilePageAdmin:*/
+.ProfilePageContainerAdmin {
     animation: fadeIn 0.3s;
     background-color: #111;
     width: 1244px;
@@ -33,7 +50,6 @@
     left: 10px;
 }
 
-/*Title:*/
 .ProfilePageTitleContainer {
     background-color: #0072b1;
     height: 120px;
@@ -53,7 +69,6 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-/*Content:*/
 .AboutMeContainer {
     height: 300px;
     width: 100%;
@@ -173,7 +188,6 @@
     bottom: 13px;
 }
 
-/*Languages:*/
 .LanguagesContainer {
     width: 100%;
     overflow: hidden;
@@ -390,7 +404,6 @@
     left: 40px;
 }
 
-/*Education:*/
 .EducationContainer {
     width: 100%;
     overflow: hidden;
@@ -686,7 +699,6 @@
     font-family: "DejaVu Sans Mono, monospace";
 }
 
-/*Skills:*/
 .SkillsContainer {
     width: 100%;
     overflow: hidden;
@@ -1931,7 +1943,6 @@
     bottom: 41px;
 }
 
-/*Experience:*/
 .ExperienceContainer {
     width: 100%;
     overflow: hidden;
@@ -2150,7 +2161,6 @@
     bottom: 96px;
 }
 
-/*Interests:*/
 .InterestsContainer {
     height: 300px;
     width: 100%;
@@ -2399,7 +2409,6 @@
     left: 33%;
 }
 
-/*Hobbies:*/
 .HobbiesContainer {
     height: 300px;
     width: 100%;
@@ -2648,7 +2657,6 @@
     left: 25%;
 }
 
-/*Contact info:*/
 .ContactContainer {
     height: 510px;
     width: 100%;

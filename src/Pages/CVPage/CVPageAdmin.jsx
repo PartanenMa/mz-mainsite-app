@@ -48,7 +48,7 @@ function CVPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="CVPageContainer">
+                        <div className="CVPageContainerAdmin">
                             <div className="Breadcrumb">
                                 <h2>Admin / cv</h2>
                             </div>

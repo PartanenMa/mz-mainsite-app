@@ -43,7 +43,6 @@
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 1px 1px 0 lightgreen;
-    cursor: pointer;
     position: relative;
     bottom: 20px;
     animation: glow 1s ease-in-out infinite alternate;
@@ -90,61 +89,6 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
     position: relative;
     top: 5px;
-}
-
-.NavOptions {
-    margin-right: 10px;
-    display: flex;
-    flex-direction: row;
-}
-
-.NavOptionsBar {
-    display: flex;
-    flex-direction: row;
-}
-
-.NavOBtn {
-    animation: fadeIn 0.3s;
-    background: none;
-    border: none;
-    color: #03a062;
-    height: 44px;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 20px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    transition: color 300ms;
-    transition: filter 300ms;
-    transition: text-decoration 300ms;
-}
-
-.NavOBtn:hover {
-    color: lightgreen;
-    filter: drop-shadow(0 0 2em #03a062);
-    text-decoration: underline;
-}
-
-.LoginButtonFP {
-    animation: fadeIn 0.3s;
-    background-color: #111;
-    color: #03a062;
-    height: 44px;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #03a062;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    transition: filter 300ms;
-}
-
-.LoginButtonFP:hover {
-    background-color: lightgreen;
-    transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em #03a062);
 }
 
 /*HeaderAdmin:*/

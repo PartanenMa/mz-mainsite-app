@@ -48,7 +48,7 @@ function ProjectsPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="ProjectsPageContainer">
+                        <div className="ProjectsPageContainerAdmin">
                             <div className="Breadcrumb">
                                 <h2>Admin / projects</h2>
                             </div>

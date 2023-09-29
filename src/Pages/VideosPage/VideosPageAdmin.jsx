@@ -48,7 +48,7 @@ function VideosPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="VideosPageContainer">
+                        <div className="VideosPageContainerAdmin">
                             <div className="Breadcrumb">
                                 <h2>Admin / videos</h2>
                             </div>

@@ -1,5 +1,22 @@
 /*HomePage:*/
+.HP {
+    animation: fadeIn 0.3s;
+    width: 100%;
+}
+
 .HomePageContainer {
+    min-height: 580px;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+}
+
+/*HomePageAdmin:*/
+.HomePageContainerAdmin {
     animation: fadeIn 0.3s;
     background-color: #111;
     width: 1244px;
@@ -17,7 +34,6 @@
     }
 }
 
-/*First section:*/
 .FirstSectionContainer {
     width: 1244px;
     overflow: hidden;
@@ -42,19 +58,6 @@
 .LogOutSectionAdmin {
     background-image: url("/src/Assets/Images/AdminBG.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 480px;
-    width: 100%;
-    padding-top: 5px;
-    padding-left: 5px;
-    border-top: 1px solid #03a062;
-    border-bottom: 1px solid #03a062;
-}
-
-.LogOutSectionGuest {
-    background-image: url("/src/Assets/Images/UserBG.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
     background-size: 100% 100%;
     height: 480px;
     width: 100%;
@@ -150,16 +153,6 @@
     bottom: 69px;
 }
 
-.NameGuest {
-    color: #03a062;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    left: 65px;
-    bottom: 73px;
-}
-
 .LogoAdmin1 {
     background-image: url("/src/Assets/Images/Admin.jpeg");
     background-repeat: no-repeat;
@@ -171,16 +164,6 @@
     position: relative;
     top: 3px;
     left: 5px;
-}
-
-.LogoGuest1 {
-    border-radius: 100%;
-    border: 1px solid #03a062;
-    height: 45px;
-    width: 45px;
-    position: relative;
-    top: 3px;
-    right: 30px;
 }
 
 .logo_react {
@@ -309,111 +292,6 @@
 }
 
 .LogOutButtonAdmin:hover {
-    background-color: lightcoral;
-    color: red;
-    border: 1px solid red;
-    transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em lightcoral);
-}
-
-.LogOutContainer2Guest {
-    display: block;
-    background-color: #111;
-    height: 300px;
-    width: 200px;
-    border-radius: 10px;
-    border: 1px solid #03a062;
-}
-
-.LogOutContainer2Guest h3 {
-    animation: fadeIn 0.3s;
-    color: #03a062;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    left: 12px;
-    bottom: 25px;
-}
-
-.X-buttonGuest {
-    animation: fadeIn 0.3s;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    border: 1px solid white;
-    border-radius: 5px;
-    font-size: 20px;
-    font-style: italic;
-    position: relative;
-    bottom: 165px;
-    left: 160px;
-}
-
-.X-buttonGuest:hover {
-    background-color: lightcoral;
-    color: red;
-    border: 1px solid red;
-    transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em lightcoral);
-}
-
-.LogoGuest2 {
-    animation: fadeIn 0.3s;
-    border-radius: 100%;
-    border: 1px solid #03a062;
-    height: 100px;
-    width: 100px;
-    position: relative;
-    bottom: 35px;
-    left: 20px;
-}
-
-.SettingsButtonGuest {
-    animation: fadeIn 0.3s;
-    background-color: orange;
-    color: white;
-    cursor: pointer;
-    height: 48px;
-    width: 127px;
-    border-radius: 10px;
-    border: 1px solid white;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    left: 35px;
-    bottom: 25px;
-}
-
-.SettingsButtonGuest:hover {
-    background-color: yellow;
-    color: orange;
-    border: 1px solid orange;
-    transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em yellow);
-}
-
-.LogOutButtonGuest {
-    animation: fadeIn 0.3s;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    height: 48px;
-    width: 127px;
-    border-radius: 10px;
-    border: 1px solid white;
-    font-size: 30px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    left: 35px;
-    bottom: 12px;
-}
-
-.LogOutButtonGuest:hover {
     background-color: lightcoral;
     color: red;
     border: 1px solid red;
