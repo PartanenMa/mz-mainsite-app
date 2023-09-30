@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.1",
+    version: "Alpha 0.3.2",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -108,27 +108,43 @@ export const info = {
                 status: "completed",
             },
             step2: {
-                step: "Learn data structures, algorithms, and heuristics.",
+                step: "Learn to use PowerShell.",
                 status: "completed",
             },
             step3: {
-                step: "Learn to use office software, version control software, and task automation software.",
+                step: "Learn to use Bash.",
                 status: "completed",
             },
         },
         {
-            title: "Learn basic web development",
+            title: "Learn problem solving",
             status: "completed",
             step1: {
-                step: "Learn languages such as HTML, CSS and JavaScript.",
+                step: "Learn data structures.",
                 status: "completed",
             },
             step2: {
-                step: "Learn to use browser dev tools.",
+                step: "Learn algorithms.",
                 status: "completed",
             },
             step3: {
-                step: "Learn to make websites responsive.",
+                step: "Learn heuristics.",
+                status: "completed",
+            },
+        },
+        {
+            title: "Learn utility software",
+            status: "completed",
+            step1: {
+                step: "Learn to use office software.",
+                status: "completed",
+            },
+            step2: {
+                step: "Learn to use version control software.",
+                status: "completed",
+            },
+            step3: {
+                step: "Learn to use browser dev tools.",
                 status: "completed",
             },
         },
@@ -136,31 +152,31 @@ export const info = {
             title: "Learn front-end development",
             status: "inprogress",
             step1: {
-                step: "Learn a front-end framework and TypeScript.",
-                status: "inprogress",
+                step: "Learn languages such as HTML, CSS, JavaScript and TypeScript.",
+                status: "completed",
             },
             step2: {
-                step: "Learn an additional front-end framework like Next.js.",
-                status: "notyetstarted",
+                step: "Learn a front-end framework",
+                status: "completed",
             },
             step3: {
                 step: "Learn a CSS framework.",
-                status: "notyetstarted",
+                status: "inprogress",
             },
         },
         {
             title: "Learn back-end development",
             status: "inprogress",
             step1: {
-                step: "Learn a back-end framework, and languages such as Go and PHP.",
+                step: "Learn languages such as Python, Go and PHP.",
                 status: "inprogress",
             },
             step2: {
-                step: "Learn an additional back-end framework like Express.js.",
-                status: "notyetstarted",
+                step: "Learn a back-end framework.",
+                status: "inprogress",
             },
             step3: {
-                step: "Learn to use SQL databases and NoSQL databases.",
+                step: "Learn SQL- and NoSQL databases.",
                 status: "notyetstarted",
             },
         },

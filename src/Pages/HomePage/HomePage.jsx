@@ -12,9 +12,18 @@ function HomePage() {
         <div className="HP">
             <Header />
             <div className="HomePageContainer">
+                <HomePageTitle />
                 <FirstSection />
             </div>
             <Footer />
+        </div>
+    );
+}
+
+function HomePageTitle() {
+    return (
+        <div className="HomePageTitleContainer">
+            <h2>HOME</h2>
         </div>
     );
 }

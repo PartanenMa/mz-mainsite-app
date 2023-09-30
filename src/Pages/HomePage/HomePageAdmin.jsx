@@ -52,6 +52,10 @@ function HomePageAdmin() {
                         <HeaderAdmin />
                         <NavAdmin />
                         <div className="HomePageContainerAdmin">
+                            <div className="Breadcrumb">
+                                <h2>Admin / home</h2>
+                            </div>
+                            <HomePageTitle />
                             <FirstSection />
                         </div>
                         <FooterAdmin />
@@ -62,6 +66,14 @@ function HomePageAdmin() {
     } else {
         return <LoginFirstScreen />;
     }
+}
+
+function HomePageTitle() {
+    return (
+        <div className="HomePageTitleContainer">
+            <h2>HOME</h2>
+        </div>
+    );
 }
 
 function FirstSection() {
@@ -157,9 +169,6 @@ function FirstSection() {
 
     return (
         <div className="FirstSectionContainer">
-            <div className="Breadcrumb">
-                <h2>Admin / home</h2>
-            </div>
             <div className={`LogOutSectionAdmin ${isGIFVisible ? "ShowGIF" : ""}`}>
                 <AnimatePresence>
                     <motion.div
