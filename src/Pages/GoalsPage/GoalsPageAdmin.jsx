@@ -12,6 +12,11 @@ function GoalsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [goals, setGoals] = useState([]);
+
+    useEffect(() => {
+        setGoals(info.goalsData);
+    }, []);
 
     useEffect(() => {
         if (isLoggedIn === "true") {
@@ -52,7 +57,7 @@ function GoalsPageAdmin() {
                                 <h2>Admin / goals</h2>
                             </div>
                             <GoalsPageTitle />
-                            <GoalsPageContent />
+                            <GoalsPageContent goals={goals} />
                         </div>
                         <FooterAdmin />
                     </div>
@@ -72,87 +77,48 @@ function GoalsPageTitle() {
     );
 }
 
-function GoalsPageContent() {
+function GoalsPageContent({ goals }) {
+    const getColor = (status) => {
+        if (status === "completed") {
+            return "green";
+        } else if (status === "inprogress") {
+            return "yellow";
+        } else if (status === "notyetstarted") {
+            return "red";
+        }
+    };
+
+    const getStatus = (status) => {
+        if (status === "completed") {
+            return "COMPLETED";
+        } else if (status === "inprogress") {
+            return "IN PROGRESS";
+        } else if (status === "notyetstarted") {
+            return "NOT YET STARTED";
+        }
+    };
+
     return (
         <div className="GoalsPageContentContainer">
-            <div className="Goal">
-                <h3>
-                    Learn basic programming: <span style={{ color: "green" }}>COMPLETED</span>
-                </h3>
-                <p>
-                    - Learn languages such as C++, Java and C#. <span style={{ color: "green" }}>COMPLETED</span>
-                </p>
-                <p>
-                    - Learn data structures, algorithms and heuristics.{" "}
-                    <span style={{ color: "green" }}>COMPLETED</span>
-                </p>
-                <p>
-                    - Learn to use office software, version control software and task automation software.{" "}
-                    <span style={{ color: "green" }}>COMPLETED</span>
-                </p>
-            </div>
-            <div className="Goal">
-                <h3>
-                    Learn basic web development: <span style={{ color: "green" }}>COMPLETED</span>
-                </h3>
-                <p>
-                    - Learn languages such as HTML, CSS and JavaScript.{" "}
-                    <span style={{ color: "green" }}>COMPLETED</span>
-                </p>
-                <p>
-                    - Learn to use browser dev tools. <span style={{ color: "green" }}>COMPLETED</span>
-                </p>
-                <p>
-                    - Learn to make websites responsive. <span style={{ color: "green" }}>COMPLETED</span>
-                </p>
-            </div>
-            <div className="Goal">
-                <h3>
-                    Learn front-end development: <span style={{ color: "yellow" }}>IN PROGRESS</span>
-                </h3>
-                <p>
-                    - Learn a front-end framework and TypeScript. <span style={{ color: "yellow" }}>IN PROGRESS</span>
-                </p>
-                <p>
-                    - Learn an additional front-end framework like Next.js.{" "}
-                    <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-                <p>
-                    - Learn a CSS framework. <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-            </div>
-            <div className="Goal">
-                <h3>
-                    Learn back-end development: <span style={{ color: "yellow" }}>IN PROGRESS</span>
-                </h3>
-                <p>
-                    - Learn a back-end framework, and languages such as Go and PHP.{" "}
-                    <span style={{ color: "yellow" }}>IN PROGRESS</span>
-                </p>
-                <p>
-                    - Learn an additional back-end framework like Express.js.{" "}
-                    <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-                <p>
-                    - Learn to use SQL databases and NoSQL databases.{" "}
-                    <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-            </div>
-            <div className="Goal">
-                <h3>
-                    Learn full-stack development: <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </h3>
-                <p>
-                    - Learn to connect the front-end to the back-end.{" "}
-                    <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-                <p>
-                    - Learn sensible web design. <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-                <p>
-                    - Learn project management. <span style={{ color: "red" }}>NOT YET STARTED</span>
-                </p>
-            </div>
+            {goals.map((goal, index) => (
+                <div className="Goal" key={index}>
+                    <h3>
+                        {goal.title}: <span style={{ color: getColor(goal.status) }}>{getStatus(goal.status)}</span>
+                    </h3>
+                    <p>
+                        - {goal.step1.step}{" "}
+                        <span style={{ color: getColor(goal.step1.status) }}>{getStatus(goal.step1.status)}</span>
+                    </p>
+                    <p>
+                        - {goal.step2.step}{" "}
+                        <span style={{ color: getColor(goal.step2.status) }}>{getStatus(goal.step2.status)}</span>
+                    </p>
+                    <p>
+                        - {goal.step3.step}{" "}
+                        <span style={{ color: getColor(goal.step3.status) }}>{getStatus(goal.step3.status)}</span>
+                    </p>
+                </div>
+            ))}
         </div>
     );
 }

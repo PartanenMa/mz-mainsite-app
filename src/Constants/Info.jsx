@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3",
+    version: "Alpha 0.3.1",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -15,6 +15,10 @@ export const info = {
         goalsPageAdmin: "/admin/goals",
         cvPage: "/cv",
         cvPageAdmin: "/admin/cv",
+    },
+    loginInfo: {
+        adminUserName: "Admin",
+        adminPassword: "ManuAdminReact123",
     },
     LinkedIn: {
         //Account data:
@@ -95,8 +99,86 @@ export const info = {
         description3: "",
         link: "https://github.com/PartanenMa",
     },
-    loginInfo: {
-        adminUserName: "Admin",
-        adminPassword: "ManuAdminReact123",
-    },
+    goalsData: [
+        {
+            title: "Learn basic programming",
+            status: "completed",
+            step1: {
+                step: "Learn languages such as C++, Java, and C#.",
+                status: "completed",
+            },
+            step2: {
+                step: "Learn data structures, algorithms, and heuristics.",
+                status: "completed",
+            },
+            step3: {
+                step: "Learn to use office software, version control software, and task automation software.",
+                status: "completed",
+            },
+        },
+        {
+            title: "Learn basic web development",
+            status: "completed",
+            step1: {
+                step: "Learn languages such as HTML, CSS and JavaScript.",
+                status: "completed",
+            },
+            step2: {
+                step: "Learn to use browser dev tools.",
+                status: "completed",
+            },
+            step3: {
+                step: "Learn to make websites responsive.",
+                status: "completed",
+            },
+        },
+        {
+            title: "Learn front-end development",
+            status: "inprogress",
+            step1: {
+                step: "Learn a front-end framework and TypeScript.",
+                status: "inprogress",
+            },
+            step2: {
+                step: "Learn an additional front-end framework like Next.js.",
+                status: "notyetstarted",
+            },
+            step3: {
+                step: "Learn a CSS framework.",
+                status: "notyetstarted",
+            },
+        },
+        {
+            title: "Learn back-end development",
+            status: "inprogress",
+            step1: {
+                step: "Learn a back-end framework, and languages such as Go and PHP.",
+                status: "inprogress",
+            },
+            step2: {
+                step: "Learn an additional back-end framework like Express.js.",
+                status: "notyetstarted",
+            },
+            step3: {
+                step: "Learn to use SQL databases and NoSQL databases.",
+                status: "notyetstarted",
+            },
+        },
+        {
+            title: "Learn full-stack development",
+            status: "notyetstarted",
+            step1: {
+                step: "Learn to connect the front-end to the back-end.",
+                status: "notyetstarted",
+            },
+            step2: {
+                step: "Learn sensible web design.",
+                status: "notyetstarted",
+            },
+            step3: {
+                step: "Learn project management.",
+                status: "notyetstarted",
+            },
+        },
+    ],
 };
