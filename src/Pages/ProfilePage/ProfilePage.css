@@ -1,10 +1,6 @@
 /*ProfilePage:*/
-.PP {
-    animation: fadeIn 0.3s;
-    width: 100%;
-}
-
 .ProfilePageContainer {
+    animation: fadeIn 0.3s;
     max-width: 1244px;
     width: 100%;
     border: 0.1px solid grey;

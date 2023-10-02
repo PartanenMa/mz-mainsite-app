@@ -1,10 +1,6 @@
 /*VideosPage:*/
-.VP {
-    animation: fadeIn 0.3s;
-    width: 100%;
-}
-
 .VideosPageContainer {
+    animation: fadeIn 0.3s;
     max-width: 1244px;
     width: 100%;
     border: 0.1px solid grey;

@@ -1,18 +1,12 @@
-import Header from "/src/Components/Header/Header.jsx";
-import Footer from "/src/Components/Footer/Footer.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.css";
 
 function VideosPage() {
     return (
-        <div className="VP">
-            <Header />
-            <div className="VideosPageContainer">
-                <VideosPageTitle />
-                <AboutMyVideos />
-            </div>
-            <Footer />
+        <div className="VideosPageContainer">
+            <VideosPageTitle />
+            <AboutMyVideos />
         </div>
     );
 }

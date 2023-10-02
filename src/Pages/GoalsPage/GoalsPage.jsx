@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "/src/Components/Header/Header.jsx";
-import Footer from "/src/Components/Footer/Footer.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./GoalsPage.css";
 
@@ -12,13 +10,9 @@ function GoalsPage() {
     }, []);
 
     return (
-        <div className="GP">
-            <Header />
-            <div className="GoalsPageContainer">
-                <GoalsPageTitle />
-                <GoalsPageContent goals={goals} />
-            </div>
-            <Footer />
+        <div className="GoalsPageContainer">
+            <GoalsPageTitle />
+            <GoalsPageContent goals={goals} />
         </div>
     );
 }

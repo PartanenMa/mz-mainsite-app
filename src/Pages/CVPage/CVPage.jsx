@@ -1,18 +1,12 @@
-import Header from "/src/Components/Header/Header.jsx";
-import Footer from "/src/Components/Footer/Footer.jsx";
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./CVPage.css";
 
 function CVPage() {
     return (
-        <div className="CVP">
-            <Header />
-            <div className="CVPageContainer">
-                <CVPageTitle />
-                <CVPageContent />
-            </div>
-            <Footer />
+        <div className="CVPageContainer">
+            <CVPageTitle />
+            <CVPageContent />
         </div>
     );
 }

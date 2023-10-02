@@ -3,6 +3,8 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import DarkBG from "./Components/BGAnimation/DarkBG.jsx";
 import MatrixBG from "./Components/BGAnimation/MatrixBG.jsx";
 import AdminMatrixBG from "./Components/BGAnimation/AdminMatrixBG.jsx";
+import Header from "/src/Components/Header/Header.jsx";
+import Footer from "/src/Components/Footer/Footer.jsx";
 import FrontPage from "./Pages/FrontPage/FrontPage.jsx";
 import LoginPage from "./Pages/LoginPage/LoginPage.jsx";
 import HomePage from "./Pages/HomePage/HomePage.jsx";
@@ -25,6 +27,13 @@ function App() {
     const location = useLocation();
 
     useEffect(() => {
+        if (location.pathname === info.routes.loginPage || location.pathname.includes("admin")) {
+            document.body.style.display = "flex";
+            document.body.style.justifyContent = "center";
+        } else {
+            document.body.style.display = "";
+            document.body.style.justifyContent = "";
+        }
         window.scrollTo(0, 0);
     }, [navigate]);
 
@@ -35,6 +44,9 @@ function App() {
             {location.pathname.includes("admin") && <AdminMatrixBG />}
             {
                 <div className="AppContainer">
+                    {location.pathname !== info.routes.frontPage &&
+                        location.pathname !== info.routes.loginPage &&
+                        !location.pathname.includes("admin") && <Header />}
                     <Routes>
                         <Route path={info.routes.frontPage} element={<FrontPage />} />
                         <Route path={info.routes.loginPage} element={<LoginPage />} />
@@ -51,6 +63,9 @@ function App() {
                         <Route path={info.routes.cvPage} element={<CVPage />} />
                         <Route path={info.routes.cvPageAdmin} element={<CVPageAdmin />} />
                     </Routes>
+                    {location.pathname !== info.routes.frontPage &&
+                        location.pathname !== info.routes.loginPage &&
+                        !location.pathname.includes("admin") && <Footer />}
                 </div>
             }
         </>

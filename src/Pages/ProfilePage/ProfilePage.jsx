@@ -1,26 +1,20 @@
 import { useState } from "react";
-import Header from "/src/Components/Header/Header.jsx";
-import Footer from "/src/Components/Footer/Footer.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.css";
 
 function ProfilePage() {
     return (
-        <div className="PP">
-            <Header />
-            <div className="ProfilePageContainer">
-                <ProfilePageTitle />
-                <AboutMe />
-                <Languages />
-                <Education />
-                <Skills />
-                <Experience />
-                <Interests />
-                <Hobbies />
-                <ContactMe />
-            </div>
-            <Footer />
+        <div className="ProfilePageContainer">
+            <ProfilePageTitle />
+            <AboutMe />
+            <Languages />
+            <Education />
+            <Skills />
+            <Experience />
+            <Interests />
+            <Hobbies />
+            <ContactMe />
         </div>
     );
 }

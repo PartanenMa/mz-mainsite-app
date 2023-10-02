@@ -1,18 +1,12 @@
-import Header from "/src/Components/Header/Header.jsx";
-import Footer from "/src/Components/Footer/Footer.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.css";
 
 function ProjectsPage() {
     return (
-        <div className="ProjP">
-            <Header />
-            <div className="ProjectsPageContainer">
-                <ProjectsPageTitle />
-                <AboutMyProjects />
-            </div>
-            <Footer />
+        <div className="ProjectsPageContainer">
+            <ProjectsPageTitle />
+            <AboutMyProjects />
         </div>
     );
 }

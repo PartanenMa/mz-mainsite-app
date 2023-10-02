@@ -1,21 +1,15 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Carousel } from "antd";
-import Header from "/src/Components/Header/Header.jsx";
-import Footer from "/src/Components/Footer/Footer.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./HomePage.css";
 
 function HomePage() {
     return (
-        <div className="HP">
-            <Header />
-            <div className="HomePageContainer">
-                <HomePageTitle />
-                <FirstSection />
-            </div>
-            <Footer />
+        <div className="HomePageContainer">
+            <HomePageTitle />
+            <FirstSection />
         </div>
     );
 }
@@ -56,12 +50,12 @@ function FirstSection() {
                         </div>
                         <div>
                             <div className="CarouselSlide2" style={contentStyle}>
-                                <div className="CarouselItem2"></div>
+                                <div className="CarouselItem2" />
                             </div>
                         </div>
                         <div>
                             <div className="CarouselSlide3" style={contentStyle}>
-                                <div className="CarouselItem3"></div>
+                                <div className="CarouselItem3" />
                             </div>
                         </div>
                     </Carousel>
