@@ -1,6 +1,7 @@
 /*ProjectsPage:*/
 .ProjectsPageContainer {
     animation: fadeIn 0.3s;
+    background-color: #111;
     max-width: 1244px;
     width: 100%;
     border: 0.1px solid grey;
@@ -45,6 +46,7 @@
     left: 10px;
 }
 
+/*Both:*/
 .ProjectsPageTitleContainer {
     background-color: black;
     height: 120px;
@@ -69,7 +71,6 @@
     width: 100%;
     overflow: hidden;
     border-top: 1px solid white;
-    border-bottom: 1px solid white;
 }
 
 .AboutMyProjectsTitle {
@@ -172,13 +173,210 @@
 }
 
 .AboutMyProjectsText p {
+    max-width: 975px;
     color: white;
     font-size: 16px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     line-height: 1.2;
-    max-width: 975px;
     position: relative;
     left: 6px;
     bottom: 13px;
+}
+
+.ProjectsContainer {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+}
+
+.ProjectsTitle {
+    background-color: black;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+}
+
+.ProjectsTitle h3 {
+    color: white;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 23px;
+    left: 10px;
+}
+
+.ProjectsContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Project {
+    height: 300px;
+    width: 90%;
+    border: 1px solid #03a062;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms;
+    transition: filter 300ms;
+}
+
+.Project:hover {
+    border: 1px solid lightgreen;
+    filter: drop-shadow(0 0 2em #03a062);
+}
+
+.ProjectTitle {
+    background-color: #111;
+    height: 20%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ProjectTitle h4 {
+    color: #03a062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 28px;
+    left: 10px;
+}
+
+.ProjectContent {
+    height: 80%;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    display: flex;
+}
+
+.ProjectContentDescription {
+    background-color: #333;
+    height: 100%;
+    width: 70%;
+    border-right: 1px solid #03a062;
+    overflow: hidden;
+}
+
+.PCDBox1 {
+    height: 20%;
+    width: 100%;
+    border-bottom: 1px solid #03a062;
+    overflow: hidden;
+}
+
+.PCDBox1 p {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 8px;
+    left: 10px;
+}
+
+.PCDBox2 {
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.PCDBox2Title {
+    height: 20%;
+    width: 100%;
+    text-decoration: underline;
+    text-decoration-color: #03a062;
+    overflow: hidden;
+}
+
+.PCDBox2Title p {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 18px;
+    left: 10px;
+}
+
+.PCDBox2Content {
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.PCDBox2Content p {
+    color: green;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+}
+
+.PCDBox3 {
+    height: 20%;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+}
+
+.PCDBox3 p {
+    color: #03a062;
+    font-size: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 8px;
+    left: 10px;
+}
+
+/*.ProjectContentDescription p {
+    max-width: 770px;
+    color: #03a062;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    line-height: 1.2;
+    position: relative;
+    bottom: 13px;
+    overflow: hidden;
+}*/
+
+.ProjectContentPhoto {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 30%;
+}
+
+.NoProjectsData {
+    height: 300px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.NoProjectsData h4 {
+    width: fit-content;
+    color: red;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border: 1px solid red;
+    border-radius: 48%;
+    padding: 20px;
+    position: relative;
+    top: 10px;
+    left: 430px;
 }

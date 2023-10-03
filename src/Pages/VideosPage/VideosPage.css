@@ -45,7 +45,7 @@
     left: 10px;
 }
 
-/*Title:*/
+/*Both:*/
 .VideosPageTitleContainer {
     background-color: #c4302b;
     height: 120px;
@@ -65,7 +65,6 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-/*Content:*/
 .AboutMyVideosContainer {
     height: 300px;
     width: 100%;

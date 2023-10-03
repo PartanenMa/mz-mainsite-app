@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.3",
+    version: "Alpha 0.3.4",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -99,6 +99,16 @@ export const info = {
         description3: "",
         link: "https://github.com/PartanenMa",
     },
+    projectsData: [
+        {
+            title: "Example project",
+            type: "Front-end web application",
+            description: "blablabla",
+            tech: "React",
+            image: "/src/Assets/Images/AdminBG.jpg",
+        },
+    ],
+    videosData: [],
     goalsData: [
         {
             title: "Learn basic programming",
@@ -184,15 +194,15 @@ export const info = {
             title: "Learn full-stack development",
             status: "notyetstarted",
             step1: {
-                step: "Learn to connect the front-end to the back-end.",
-                status: "notyetstarted",
-            },
-            step2: {
                 step: "Learn sensible web design.",
                 status: "notyetstarted",
             },
-            step3: {
+            step2: {
                 step: "Learn project management.",
+                status: "notyetstarted",
+            },
+            step3: {
+                step: "Pick a tech stack.",
                 status: "notyetstarted",
             },
         },

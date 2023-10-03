@@ -44,7 +44,7 @@
     left: 10px;
 }
 
-/*Title:*/
+/*Both:*/
 .GoalsPageTitleContainer {
     background-color: #111;
     height: 120px;
@@ -64,7 +64,6 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-/*Content:*/
 .GoalsPageContentContainer {
     background-color: #111;
     height: 80%;
@@ -104,4 +103,24 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
     left: 30px;
+}
+
+.NoGoalsData {
+    height: 300px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.NoGoalsData h4 {
+    width: fit-content;
+    color: red;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border: 1px solid red;
+    border-radius: 48%;
+    padding: 20px;
+    position: relative;
+    top: 10px;
+    left: 430px;
 }
