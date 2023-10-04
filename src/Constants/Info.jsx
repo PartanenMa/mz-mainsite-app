@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.4",
+    version: "Alpha 0.3.5",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -100,15 +100,23 @@ export const info = {
         link: "https://github.com/PartanenMa",
     },
     projectsData: [
-        {
+        /*{
             title: "Example project",
-            type: "Front-end web application",
-            description: "blablabla",
-            tech: "React",
+            type: "Example type...",
+            description: "blablabla...",
+            tech: "Example tech...",
             image: "/src/Assets/Images/AdminBG.jpg",
-        },
+        },*/
     ],
-    videosData: [],
+    videosData: [
+        /*{
+            title: "Example video",
+            category: "Example category...",
+            description: "blablabla...",
+            tags: "Example tags...",
+            image: "/src/Assets/Images/AdminBG.jpg",
+        },*/
+    ],
     goalsData: [
         {
             title: "Learn basic programming",

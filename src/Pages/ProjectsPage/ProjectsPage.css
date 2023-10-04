@@ -314,7 +314,7 @@
 }
 
 .PCDBox2Content p {
-    color: green;
+    color: white;
     font-size: 15px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -339,18 +339,6 @@
     bottom: 8px;
     left: 10px;
 }
-
-/*.ProjectContentDescription p {
-    max-width: 770px;
-    color: #03a062;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    line-height: 1.2;
-    position: relative;
-    bottom: 13px;
-    overflow: hidden;
-}*/
 
 .ProjectContentPhoto {
     background-color: white;

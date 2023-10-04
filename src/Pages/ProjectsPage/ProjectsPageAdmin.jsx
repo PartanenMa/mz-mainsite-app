@@ -131,39 +131,49 @@ function Projects({ projects }) {
             <div className="ProjectsContent">
                 {projects.length > 0 ? (
                     projects.map((project, index) => (
-                        <div className="Project" key={index}>
-                            <div className="ProjectTitle">
-                                <h4>{project.title}</h4>
-                            </div>
-                            <div className="ProjectContent">
-                                <div className="ProjectContentDescription">
-                                    <div className="PCDBox1">
-                                        <p>
-                                            Project type:{" "}
-                                            <span style={{ color: "green", fontSize: "15px" }}>{project.type}</span>
-                                        </p>
-                                    </div>
-                                    <div className="PCDBox2">
-                                        <div className="PCDBox2Title">
-                                            <p>Project description:</p>
-                                        </div>
-                                        <div className="PCDBox2Content">
-                                            <p>{project.description}</p>
-                                        </div>
-                                    </div>
-                                    <div className="PCDBox3">
-                                        <p>
-                                            Technologies used:{" "}
-                                            <span style={{ color: "green", fontSize: "15px" }}>{project.tech}</span>
-                                        </p>
-                                    </div>
+                        <AnimatePresence>
+                            <motion.div
+                                className="Project"
+                                key={index}
+                                whileHover={{
+                                    scale: 1.03,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="ProjectTitle">
+                                    <h4>{project.title}</h4>
                                 </div>
-                                <div
-                                    className="ProjectContentPhoto"
-                                    style={{ backgroundImage: `url(${project.image})` }}
-                                />
-                            </div>
-                        </div>
+                                <div className="ProjectContent">
+                                    <div className="ProjectContentDescription">
+                                        <div className="PCDBox1">
+                                            <p>
+                                                Project type:{" "}
+                                                <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
+                                            </p>
+                                        </div>
+                                        <div className="PCDBox2">
+                                            <div className="PCDBox2Title">
+                                                <p>Project description:</p>
+                                            </div>
+                                            <div className="PCDBox2Content">
+                                                <p>{project.description}</p>
+                                            </div>
+                                        </div>
+                                        <div className="PCDBox3">
+                                            <p>
+                                                Technologies used:{" "}
+                                                <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="ProjectContentPhoto"
+                                        style={{ backgroundImage: `url(${project.image})` }}
+                                    />
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
                     ))
                 ) : (
                     <div className="NoProjectsData">
