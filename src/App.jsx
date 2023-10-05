@@ -44,9 +44,8 @@ function App() {
             {location.pathname.includes("admin") && <AdminMatrixBG />}
             {
                 <div className="AppContainer">
-                    {location.pathname !== info.routes.frontPage &&
-                        location.pathname !== info.routes.loginPage &&
-                        !location.pathname.includes("admin") && <Header />}
+                    {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Header />}
+
                     <Routes>
                         <Route path={info.routes.frontPage} element={<FrontPage />} />
                         <Route path={info.routes.loginPage} element={<LoginPage />} />
@@ -63,9 +62,7 @@ function App() {
                         <Route path={info.routes.cvPage} element={<CVPage />} />
                         <Route path={info.routes.cvPageAdmin} element={<CVPageAdmin />} />
                     </Routes>
-                    {location.pathname !== info.routes.frontPage &&
-                        location.pathname !== info.routes.loginPage &&
-                        !location.pathname.includes("admin") && <Footer />}
+                    {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Footer />}
                 </div>
             }
         </>
