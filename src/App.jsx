@@ -45,7 +45,6 @@ function App() {
             {
                 <div className="AppContainer">
                     {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Header />}
-
                     <Routes>
                         <Route path={info.routes.frontPage} element={<FrontPage />} />
                         <Route path={info.routes.loginPage} element={<LoginPage />} />

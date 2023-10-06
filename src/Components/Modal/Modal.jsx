@@ -1,8 +1,43 @@
+import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Modal.css";
 
 function Modal({ isModalOpen, setIsModalOpen }) {
+    const [modalStyle, setModalStyle] = useState({
+        top: "",
+        left: "",
+    });
+
+    useEffect(() => {
+        const updateModalPosition = () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            console.log("screenHeight: ", screenHeight, " screenWidth: ", screenWidth);
+
+            const newTop = `${screenHeight / 2 - 298}px`;
+            const newLeft = `${screenWidth / 2 - 400}px`;
+            console.log("newTop: ", newTop, " newLeft: ", newLeft);
+
+            setModalStyle({
+                top: newTop,
+                left: newLeft,
+                transform: "translate(-50%, -50%)",
+            });
+        };
+
+        //Add an event listener to update the modal position when the window is resized:
+        window.addEventListener("resize", updateModalPosition);
+
+        //Call the updateModalPosition function once to set the initial position:
+        updateModalPosition();
+
+        //Remove the event listener when the component unmounts:
+        return () => {
+            window.removeEventListener("resize", updateModalPosition);
+        };
+    }, [isModalOpen]);
+
     return ReactDOM.createPortal(
         <>
             {isModalOpen && (
@@ -11,6 +46,7 @@ function Modal({ isModalOpen, setIsModalOpen }) {
                     <AnimatePresence>
                         <motion.div
                             className="Modal"
+                            style={modalStyle}
                             key="modal"
                             initial={{ opacity: 0, y: -100 }}
                             animate={{ opacity: 1, y: 0 }}

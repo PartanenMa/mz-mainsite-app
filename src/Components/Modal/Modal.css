@@ -18,17 +18,14 @@
     border-radius: 10px;
     box-shadow: 0 0 30px 5px #03a062;
     position: fixed;
-    top: 4px;
-    left: 20%;
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: hidden;
 }
 
 .ModalAboutTitle {
-    height: 5%;
+    height: 10%;
     width: 100%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -39,9 +36,10 @@
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    margin-bottom: 10px;
     text-decoration-line: underline;
     text-shadow: 0.5px 0.5px 0 lightgreen;
+    position: relative;
+    bottom: 10px;
 }
 
 .ModalTitleX-button {
