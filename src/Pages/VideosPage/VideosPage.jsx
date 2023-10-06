@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
+import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.css";
 
@@ -7,7 +8,7 @@ function VideosPage() {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        setVideos(info.videosData);
+        setVideos(data.videosData);
     }, []);
 
     return (

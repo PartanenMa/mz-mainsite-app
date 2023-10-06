@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Modal from "/src/Components/Modal/Modal.jsx";
+import ModalFP from "/src/Components/ModalFP/ModalFP.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import Nav from "/src/Components/Nav/Nav.jsx";
@@ -46,7 +46,7 @@ function Header() {
                 </motion.div>
                 <Nav />
             </AnimatePresence>
-            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <ModalFP isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
         </header>
     );
 }

@@ -6,6 +6,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.css";
 
@@ -16,7 +17,7 @@ function ProjectsPageAdmin() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setProjects(info.projectsData);
+        setProjects(data.projectsData);
     }, []);
 
     useEffect(() => {

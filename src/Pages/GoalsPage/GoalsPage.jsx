@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
+import { data } from "/src/Constants/Data.jsx";
 import "./GoalsPage.css";
 
 function GoalsPage() {
     const [goals, setGoals] = useState([]);
 
     useEffect(() => {
-        setGoals(info.goalsData);
+        setGoals(data.goalsData);
     }, []);
 
     return (

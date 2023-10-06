@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Modal.css";
+import "./ModalFP.css";
 
-function Modal({ isModalOpen, setIsModalOpen }) {
+function ModalFP({ isModalOpen, setIsModalOpen }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
@@ -13,11 +13,9 @@ function Modal({ isModalOpen, setIsModalOpen }) {
         const updateModalPosition = () => {
             const screenWidth = window.innerWidth;
             const screenHeight = window.innerHeight;
-            console.log("screenHeight: ", screenHeight, " screenWidth: ", screenWidth);
 
             const newTop = `${screenHeight / 2 - 298}px`;
             const newLeft = `${screenWidth / 2 - 400}px`;
-            console.log("newTop: ", newTop, " newLeft: ", newLeft);
 
             setModalStyle({
                 top: newTop,
@@ -114,4 +112,4 @@ function Modal({ isModalOpen, setIsModalOpen }) {
     );
 }
 
-export default Modal;
+export default ModalFP;

@@ -6,6 +6,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { data } from "/src/Constants/Data.jsx";
 import "./GoalsPage.css";
 
 function GoalsPageAdmin() {
@@ -15,7 +16,7 @@ function GoalsPageAdmin() {
     const [goals, setGoals] = useState([]);
 
     useEffect(() => {
-        setGoals(info.goalsData);
+        setGoals(data.goalsData);
     }, []);
 
     useEffect(() => {

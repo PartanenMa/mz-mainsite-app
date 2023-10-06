@@ -363,29 +363,46 @@ function FirstSection() {
                         </div>
                     </Carousel>
                 </div>
-                <button
-                    className="CarouselButtonLeft"
-                    onClick={() => {
-                        ref.current.prev();
-                    }}
-                >
-                    <p
-                        title="Previous"
-                        style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}
+                <AnimatePresence>
+                    <motion.button
+                        className="CarouselButtonLeft"
+                        onClick={() => {
+                            ref.current.prev();
+                        }}
+                        key="carouselbuttonleftA"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        {"<"}
-                    </p>
-                </button>
-                <button
-                    className="CarouselButtonRight"
-                    onClick={() => {
-                        ref.current.next();
-                    }}
-                >
-                    <p title="Next" style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}>
-                        {">"}
-                    </p>
-                </button>
+                        <p
+                            title="Previous"
+                            style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}
+                        >
+                            {"<"}
+                        </p>
+                    </motion.button>
+                    <motion.button
+                        className="CarouselButtonRight"
+                        onClick={() => {
+                            ref.current.next();
+                        }}
+                        key="carouselbuttonrightA"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <p
+                            title="Next"
+                            style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}
+                        >
+                            {">"}
+                        </p>
+                    </motion.button>
+                </AnimatePresence>
             </section>
             <section className="HomeFirstSection1">
                 <div className="CheckMyProfile">
