@@ -438,7 +438,10 @@
 
 .HC2-2 {
     display: none;
-    background-color: #333;
+    background-image: url("/src/Assets/Images/Admin.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 100%;
     width: 40%;
     border-left: 1px solid gray;
@@ -541,7 +544,10 @@
 
 .HC3-2 {
     display: none;
-    background-color: #333;
+    background-image: url("/src/Assets/Images/YouTubeUser.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 100%;
     width: 40%;
     border-left: 1px solid lightcoral;

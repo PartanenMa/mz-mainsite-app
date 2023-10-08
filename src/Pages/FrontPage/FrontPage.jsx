@@ -112,7 +112,8 @@ function Main() {
                                     <div className="LogoProjects" />
                                 </div>
                                 <div className="ContentProjects">
-                                    <p>NOT YET AVAILABLE</p>
+                                    <p>- About my projects.</p>
+                                    <p>- My projects.</p>
                                 </div>
                             </div>
                             <div className="HC2-2" />
@@ -134,7 +135,8 @@ function Main() {
                                     <div className="LogoVideos" />
                                 </div>
                                 <div className="ContentVideos">
-                                    <p>NOT YET AVAILABLE</p>
+                                    <p>- About my videos.</p>
+                                    <p>- My videos.</p>
                                 </div>
                             </div>
                             <div className="HC3-2" />

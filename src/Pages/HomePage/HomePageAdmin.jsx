@@ -438,7 +438,11 @@ function FirstSection() {
                             />
                             <h3>LinkedIn</h3>
                             <p>{info.LinkedIn.user}</p>
-                            <p>{info.LinkedIn.jobTitle}</p>
+                            <p>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                    ? info.LinkedIn.jobTitle
+                                    : info.LinkedIn.profession}
+                            </p>
                             <motion.button
                                 className="GoToProfile"
                                 onClick={() => navigate(info.routes.profilePageAdmin)}

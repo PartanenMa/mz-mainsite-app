@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.8",
+    version: "Alpha 0.3.9",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -26,7 +26,7 @@ export const info = {
         name: "Manu Partanen",
         profession: "Front-end Web Developer",
         jobTitle: "Junior Software Developer",
-        company: "at Visma Real Estate Oy",
+        company: "Visma Real Estate Oy",
         description1:
             "As a web developer, I have a strong foundation in HTML, CSS, and JavaScript. I'm also comfortable with C++, Java, C# and python, which I've been working with in several of my school and personal projects.",
         description2:
@@ -42,14 +42,14 @@ export const info = {
         language3: "Limited working proficiency - B1",
         //Education:
         schoolName1: "PSYL",
-        degreeName1: "High School Diploma",
-        timeAndPlace1: "11.08.2014 - 05.12.2017 (3 years and 4 months), Pori, Finland",
         schoolName2: "Finnish Defence Forces",
+        schoolName3: "Satakunta University of Applied Sciences",
+        degreeName1: "High School Diploma",
         degreeName2:
             "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
-        timeAndPlace2: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
-        schoolName3: "Satakunta University of Applied Sciences",
         degreeName3: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
+        timeAndPlace1: "11.08.2014 - 05.12.2017 (3 years and 4 months), Pori, Finland",
+        timeAndPlace2: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
         timeAndPlace3: "16.08.2021 - present, Pori, Finland",
         educationDescription1:
             "3 and a half year high school education. Studied regular school subjects in addition to psychology and philosophy.",
@@ -66,10 +66,10 @@ export const info = {
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",
         skillsTitle3: "Back-end development",
-        skillsLevel1: "Beginner",
-        skillsLevel2: "Intermediate",
-        skillsLevel3: "Advanced",
-        skillsLevel4: "Professional",
+        skillLevelTitle1: "Beginner",
+        skillLevelTitle2: "Intermediate",
+        skillLevelTitle3: "Advanced",
+        skillLevelTitle4: "Professional",
         //Experience:
         companyName1: "Visma Real Estate Oy",
         workTitle1: "Intern - Internship",

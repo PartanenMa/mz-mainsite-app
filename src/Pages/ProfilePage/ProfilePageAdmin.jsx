@@ -104,7 +104,11 @@ function AboutMe() {
                 <div className="AboutMeTextContainer">
                     <div className="AboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
-                        <h4 className="h4_2">{info.LinkedIn.jobTitle + " " + info.LinkedIn.company}</h4>
+                        <h4 className="h4_2">
+                            {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company
+                                : info.LinkedIn.profession}
+                        </h4>
                     </div>
                     <div className="AboutMeText">
                         <p>
@@ -267,10 +271,50 @@ function Education() {
 }
 
 function Skills() {
+    const getSkillLevelTitle = (skillLevel) => {
+        if (skillLevel === "beginner") {
+            return "Beginner";
+        } else if (skillLevel === "intermediate") {
+            return "Intermediate";
+        } else if (skillLevel === "advanced") {
+            return "Advanced";
+        } else if (skillLevel === "professional") {
+            return "Professional";
+        }
+    };
+
+    const getSkillLevel = (skillLevel) => {
+        if (skillLevel === "beginner") {
+            return (
+                <div>
+                    <span style={{ color: "lightgreen" }}>*</span>***
+                </div>
+            );
+        } else if (skillLevel === "intermediate") {
+            return (
+                <div>
+                    <span style={{ color: "lightgreen" }}>**</span>**
+                </div>
+            );
+        } else if (skillLevel === "advanced") {
+            return (
+                <div>
+                    <span style={{ color: "lightgreen" }}>***</span>*
+                </div>
+            );
+        } else if (skillLevel === "professional") {
+            return (
+                <div>
+                    <span style={{ color: "lightgreen" }}>****</span>
+                </div>
+            );
+        }
+    };
+
     return (
         <div className="SkillsContainer">
             <div className="SkillsTitle">
-                <h3>MY SKILLS</h3>
+                <h3>SKILLS</h3>
             </div>
             <div className="SkillsContent">
                 <div className="ProgrammingLanguages">
@@ -282,100 +326,80 @@ function Skills() {
                             <div className="PL1Logo"></div>
                             <div className="PL1Content">
                                 <h4>C++</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                         <div className="PL2">
                             <div className="PL2Logo"></div>
                             <div className="PL2Content">
                                 <h4>Java</h4>
-                                <p>{info.LinkedIn.skillsLevel2}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>**</span>**
-                                </div>
+                                <p>{getSkillLevelTitle("intermediate")}</p>
+                                {getSkillLevel("intermediate")}
                             </div>
                         </div>
                         <div className="PL3">
                             <div className="PL3Logo"></div>
                             <div className="PL3Content">
                                 <h4>C#</h4>
-                                <p>{info.LinkedIn.skillsLevel2}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>**</span>**
-                                </div>
+                                <p>{getSkillLevelTitle("intermediate")}</p>
+                                {getSkillLevel("intermediate")}
                             </div>
                         </div>
                         <div className="PL4">
                             <div className="PL4Logo"></div>
                             <div className="PL4Content">
                                 <h4>HTML</h4>
-                                <p>{info.LinkedIn.skillsLevel3}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>***</span>*
-                                </div>
+                                <p>{getSkillLevelTitle("advanced")}</p>
+                                {getSkillLevel("advanced")}
                             </div>
                         </div>
                         <div className="PL5">
                             <div className="PL5Logo"></div>
                             <div className="PL5Content">
                                 <h4>CSS</h4>
-                                <p>{info.LinkedIn.skillsLevel3}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>***</span>*
-                                </div>
+                                <p>{getSkillLevelTitle("advanced")}</p>
+                                {getSkillLevel("advanced")}
                             </div>
                         </div>
                         <div className="PL6">
                             <div className="PL6Logo"></div>
                             <div className="PL6Content">
                                 <h4>JavaScript</h4>
-                                <p>{info.LinkedIn.skillsLevel3}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>***</span>*
-                                </div>
+                                <p>{getSkillLevelTitle("advanced")}</p>
+                                {getSkillLevel("advanced")}
                             </div>
                         </div>
                         <div className="PL7">
                             <div className="PL7Logo"></div>
                             <div className="PL7Content">
                                 <h4>TypeScript</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                         <div className="PL8">
                             <div className="PL8Logo"></div>
                             <div className="PL8Content">
                                 <h4>Python</h4>
-                                <p>{info.LinkedIn.skillsLevel2}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>**</span>**
-                                </div>
+                                <p>{getSkillLevelTitle("intermediate")}</p>
+                                {getSkillLevel("intermediate")}
                             </div>
                         </div>
                         <div className="PL9">
                             <div className="PL9Logo"></div>
                             <div className="PL9Content">
                                 <h4>Go</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                         <div className="PL10">
                             <div className="PL10Logo"></div>
                             <div className="PL10Content">
                                 <h4>PHP</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                         <div className="PL11">
@@ -385,10 +409,8 @@ function Skills() {
                             </div>
                             <div className="PL11Content">
                                 <h4>SQL</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                         <div className="PL12">
@@ -398,10 +420,8 @@ function Skills() {
                             </div>
                             <div className="PL12Content">
                                 <h4>NoSQL</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                     </div>
@@ -415,10 +435,8 @@ function Skills() {
                             <div className="FED1Logo"></div>
                             <div className="FED1Content">
                                 <h4>React</h4>
-                                <p>{info.LinkedIn.skillsLevel3}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>***</span>*
-                                </div>
+                                <p>{getSkillLevelTitle("advanced")}</p>
+                                {getSkillLevel("advanced")}
                             </div>
                         </div>
                     </div>
@@ -432,10 +450,8 @@ function Skills() {
                             <div className="BED1Logo"></div>
                             <div className="BED1Content">
                                 <h4>Node.js with Express.js</h4>
-                                <p>{info.LinkedIn.skillsLevel1}</p>
-                                <div>
-                                    <span style={{ color: "lightgreen" }}>*</span>***
-                                </div>
+                                <p>{getSkillLevelTitle("beginner")}</p>
+                                {getSkillLevel("beginner")}
                             </div>
                         </div>
                     </div>
