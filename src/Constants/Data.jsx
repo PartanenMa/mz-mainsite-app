@@ -1,5 +1,25 @@
 export const data = {
     profileData: {
+        languages: [
+            {
+                name: "Finnish",
+                proficiency: "Native proficiency",
+                color: "white",
+                image: "/src/Assets/Images/FinnishFlag.svg",
+            },
+            {
+                name: "English",
+                proficiency: "Professional working proficiency - C1",
+                color: "#012169",
+                image: "/src/Assets/Images/UKFlag.svg",
+            },
+            {
+                name: "Swedish",
+                proficiency: "Limited working proficiency - B1",
+                color: "#006aa7",
+                image: "/src/Assets/Images/SwedishFlag.svg",
+            },
+        ],
         educations: [
             {
                 schoolName: "PSYL",
@@ -44,6 +64,7 @@ export const data = {
                 workDescription:
                     "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
                 workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
+                color: "#b11226",
                 image: "/src/Assets/Images/VismaLogo.svg",
             },
             {
@@ -53,6 +74,7 @@ export const data = {
                 workDescription:
                     "My first real front-end developer job at Visma Real Estate Oy after my internship there. I worked part-time (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React.",
                 workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
+                color: "#b11226",
                 image: "/src/Assets/Images/VismaLogo.svg",
             },
         ],
@@ -64,6 +86,7 @@ export const data = {
             description: "blablabla...",
             tech: "Example tech...",
             image: "/src/Assets/Images/AdminBG.jpg",
+            link: "https://github.com/PartanenMa",
         },*/
     ],
     videosData: [
@@ -73,6 +96,7 @@ export const data = {
             description: "blablabla...",
             tags: "Example tags...",
             image: "/src/Assets/Images/AdminBG.jpg",
+            link: "https://github.com/PartanenMa",
         },*/
     ],
     goalsData: [
@@ -84,11 +108,11 @@ export const data = {
                 status: "completed",
             },
             step2: {
-                step: "Learn to use PowerShell.",
+                step: "Learn data structures, algorithms and heuristics.",
                 status: "completed",
             },
             step3: {
-                step: "Learn to use Bash.",
+                step: "Learn to use PowerShell and Bash.",
                 status: "completed",
             },
         },
@@ -96,11 +120,11 @@ export const data = {
             title: "Learn utility software",
             status: "completed",
             step1: {
-                step: "Learn to use office software.",
+                step: "Learn to use code editing software.",
                 status: "completed",
             },
             step2: {
-                step: "Learn to use UI design software.",
+                step: "Learn to use office software.",
                 status: "completed",
             },
             step3: {
@@ -112,15 +136,15 @@ export const data = {
             title: "Learn software engineering",
             status: "completed",
             step1: {
-                step: "Learn data structures, algorithms and heuristics.",
+                step: "Learn to design software.",
                 status: "completed",
             },
             step2: {
-                step: "Learn software design.",
+                step: "Learn develop software.",
                 status: "completed",
             },
             step3: {
-                step: "Learn software development.",
+                step: "Learn to test software.",
                 status: "completed",
             },
         },

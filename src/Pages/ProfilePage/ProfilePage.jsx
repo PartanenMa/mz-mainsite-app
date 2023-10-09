@@ -5,10 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.css";
 
 function ProfilePage() {
+    const [languages, setLanguages] = useState([]);
     const [educations, setEducations] = useState([]);
     const [experiences, setExperiences] = useState([]);
 
     useEffect(() => {
+        setLanguages(data.profileData.languages);
         setEducations(data.profileData.educations);
         setExperiences(data.profileData.experiences);
     }, []);
@@ -17,7 +19,7 @@ function ProfilePage() {
         <div className="ProfilePageContainer">
             <ProfilePageTitle />
             <AboutMe />
-            <Languages />
+            <Languages languages={languages} />
             <Education educations={educations} />
             <Skills />
             <Experience experiences={experiences} />
@@ -83,34 +85,28 @@ function AboutMe() {
     );
 }
 
-function Languages() {
+function Languages({ languages }) {
     return (
         <div className="LanguagesContainer">
             <div className="LanguagesTitle">
                 <h3>LANGUAGES</h3>
             </div>
             <div className="LanguagesContent">
-                <div className="Lang1">
-                    <div className="Lang1Logo"></div>
-                    <div className="Lang1Content">
-                        <h4>Finnish</h4>
-                        <p>{info.LinkedIn.language1}</p>
+                {languages.length > 0 ? (
+                    languages.map((language, index) => (
+                        <div className="Language" key={index} style={{ backgroundColor: language.color }}>
+                            <div className="LanguageLogo" style={{ backgroundImage: `url(${language.image})` }} />
+                            <div className="LanguageContent">
+                                <h4>{language.name}</h4>
+                                <p>{language.proficiency}</p>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="NoProfileData">
+                        <h4>NO DATA!</h4>
                     </div>
-                </div>
-                <div className="Lang2">
-                    <div className="Lang2Logo"></div>
-                    <div className="Lang2Content">
-                        <h4>English</h4>
-                        <p>{info.LinkedIn.language2}</p>
-                    </div>
-                </div>
-                <div className="Lang3">
-                    <div className="Lang3Logo"></div>
-                    <div className="Lang3Content">
-                        <h4>Swedish</h4>
-                        <p>{info.LinkedIn.language3}</p>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     );
@@ -405,7 +401,7 @@ function Experience({ experiences }) {
                                 <div className="ExperienceTitle">
                                     <h4>{experience.companyName}</h4>
                                 </div>
-                                <div className="ExperienceContent1">
+                                <div className="ExperienceContent1" style={{ backgroundColor: experience.color }}>
                                     <p>{experience.workTitle}</p>
                                     <p>{experience.workTimeAndPlace}</p>
                                     <div

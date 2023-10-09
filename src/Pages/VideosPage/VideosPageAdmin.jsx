@@ -133,8 +133,10 @@ function Videos({ videos }) {
                 {videos.length > 0 ? (
                     videos.map((video, index) => (
                         <AnimatePresence>
-                            <motion.div
+                            <motion.a
                                 className="Video"
+                                href={video.link}
+                                target="_blank"
                                 key={index}
                                 whileHover={{
                                     scale: 1.03,
@@ -175,7 +177,7 @@ function Videos({ videos }) {
                                         style={{ backgroundImage: `url(${video.image})` }}
                                     />
                                 </div>
-                            </motion.div>
+                            </motion.a>
                         </AnimatePresence>
                     ))
                 ) : (

@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.10",
+    version: "Alpha 0.3.11",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -36,10 +36,6 @@ export const info = {
         phoneNumber: "0440602810",
         emailAddress: "manu111.partanen@gmail.com",
         link: "https://www.linkedin.com/in/manu-partanen-7864b4265/",
-        //Languages:
-        language1: "Native proficiency",
-        language2: "Professional working proficiency - C1",
-        language3: "Limited working proficiency - B1",
         //Skills:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",

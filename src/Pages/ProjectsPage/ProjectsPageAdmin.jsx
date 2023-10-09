@@ -133,8 +133,10 @@ function Projects({ projects }) {
                 {projects.length > 0 ? (
                     projects.map((project, index) => (
                         <AnimatePresence>
-                            <motion.div
+                            <motion.a
                                 className="Project"
+                                href={project.link}
+                                target="_blank"
                                 key={index}
                                 whileHover={{
                                     scale: 1.03,
@@ -173,7 +175,7 @@ function Projects({ projects }) {
                                         style={{ backgroundImage: `url(${project.image})` }}
                                     />
                                 </div>
-                            </motion.div>
+                            </motion.a>
                         </AnimatePresence>
                     ))
                 ) : (

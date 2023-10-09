@@ -224,17 +224,15 @@
     padding-right: 2%;
 }
 
-.Lang1 {
-    background-color: white;
+.Language {
     height: 40px;
     width: 96%;
     border: 1px solid #03a062;
     border-radius: 10px;
 }
 
-.Lang1Logo {
+.LanguageLogo {
     background-color: black;
-    background-image: url("/src/Assets/Images/FinnishFlag.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
@@ -246,7 +244,7 @@
     border-bottom-left-radius: 10px;
 }
 
-.Lang1Content {
+.LanguageContent {
     height: 100%;
     width: 96%;
     float: right;
@@ -255,7 +253,7 @@
     display: flex;
 }
 
-.Lang1Content h4 {
+.LanguageContent h4 {
     color: black;
     font-size: 25px;
     font-style: italic;
@@ -269,125 +267,7 @@
     bottom: 68px;
 }
 
-.Lang1Content p {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 gray;
-    height: 100%;
-    width: 40%;
-    float: left;
-    position: relative;
-    bottom: 61px;
-    left: 40px;
-}
-
-.Lang2 {
-    background-color: #012169;
-    height: 40px;
-    width: 96%;
-    border: 1px solid #03a062;
-    border-radius: 10px;
-}
-
-.Lang2Logo {
-    background-color: black;
-    background-image: url("/src/Assets/Images/UKFlag.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 80%;
-    height: 100%;
-    width: 4%;
-    float: left;
-    border-right: 1px solid black;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.Lang2Content {
-    height: 100%;
-    width: 96%;
-    float: right;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-}
-
-.Lang2Content h4 {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 gray;
-    height: 100%;
-    width: 60%;
-    float: left;
-    position: relative;
-    left: 10px;
-    bottom: 68px;
-}
-
-.Lang2Content p {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 gray;
-    height: 100%;
-    width: 40%;
-    float: left;
-    position: relative;
-    bottom: 61px;
-    left: 40px;
-}
-
-.Lang3 {
-    background-color: #006aa7;
-    height: 40px;
-    width: 96%;
-    border: 1px solid #03a062;
-    border-radius: 10px;
-}
-
-.Lang3Logo {
-    background-color: black;
-    background-image: url("/src/Assets/Images/SwedishFlag.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 80%;
-    height: 100%;
-    width: 4%;
-    float: left;
-    border-right: 1px solid black;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.Lang3Content {
-    height: 100%;
-    width: 96%;
-    float: right;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-}
-
-.Lang3Content h4 {
-    color: black;
-    font-size: 25px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 gray;
-    height: 100%;
-    width: 60%;
-    float: left;
-    position: relative;
-    left: 10px;
-    bottom: 68px;
-}
-
-.Lang3Content p {
+.LanguageContent p {
     color: black;
     font-size: 25px;
     font-style: italic;
@@ -451,7 +331,7 @@
 
 .Education:hover {
     border: 1px solid white;
-    filter: drop-shadow(0 0 2em #03a062);
+    filter: drop-shadow(0 0 2em #0072b1);
 }
 
 .EducationTitle {
@@ -1753,7 +1633,7 @@
 
 .Experience:hover {
     border: 1px solid white;
-    filter: drop-shadow(0 0 2em #03a062);
+    filter: drop-shadow(0 0 2em #0072b1);
 }
 
 .ExperienceTitle {
@@ -1778,7 +1658,6 @@
 }
 
 .ExperienceContent1 {
-    background-color: #b11226;
     height: 100px;
     width: 100%;
     padding-left: 10px;
