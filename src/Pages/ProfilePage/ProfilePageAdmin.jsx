@@ -6,6 +6,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.css";
 
@@ -13,6 +14,13 @@ function AboutMePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [educations, setEducations] = useState([]);
+    const [experiences, setExperiences] = useState([]);
+
+    useEffect(() => {
+        setEducations(data.profileData.educations);
+        setExperiences(data.profileData.experiences);
+    }, []);
 
     useEffect(() => {
         if (isLoggedIn === "true") {
@@ -55,9 +63,9 @@ function AboutMePageAdmin() {
                             <ProfileAdminPageTitle />
                             <AboutMe />
                             <Languages />
-                            <Education />
+                            <Education educations={educations} />
                             <Skills />
-                            <Experience />
+                            <Experience experiences={experiences} />
                             <Interests />
                             <Hobbies />
                             <ContactMe />
@@ -160,111 +168,68 @@ function Languages() {
     );
 }
 
-function Education() {
-    const [isVisible1e, setIsVisible1e] = useState(false);
-    const [isVisible2e, setIsVisible2e] = useState(false);
-    const [isVisible3e, setIsVisible3e] = useState(false);
+function Education({ educations }) {
+    const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
 
-    const showEducationDescription1 = () => {
-        if (isVisible1e === false) {
-            setIsVisible1e(true);
-        } else {
-            setIsVisible1e(false);
-        }
-    };
-
-    const showEducationDescription2 = () => {
-        if (isVisible2e === false) {
-            setIsVisible2e(true);
-        } else {
-            setIsVisible2e(false);
-        }
-    };
-
-    const showEducationDescription3 = () => {
-        if (isVisible3e === false) {
-            setIsVisible3e(true);
-        } else {
-            setIsVisible3e(false);
-        }
+    const openOrCloseEducation = (index) => {
+        const updatedVisibility = [...isVisibleEd];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setIsVisibleEd(updatedVisibility);
     };
 
     return (
-        <div className="EducationContainer">
-            <div className="EducationTitle">
-                <h3>MY EDUCATION</h3>
+        <div className="EducationsContainer">
+            <div className="EducationsTitle">
+                <h3>EDUCATION</h3>
             </div>
-            <div className="EducationContent">
-                <AnimatePresence>
-                    <motion.div
-                        className="EducationHighSchool"
-                        onClick={() => showEducationDescription1()}
-                        key="educationhighschoolA"
-                        whileHover={{
-                            scale: 1.01,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.99 }}
-                    >
-                        <div className="EHSTitle">
-                            <h4>{info.LinkedIn.schoolName1}</h4>
-                        </div>
-                        <div className="EHSContent1">
-                            <p>{info.LinkedIn.degreeName1}</p>
-                            <p>{info.LinkedIn.timeAndPlace1}</p>
-                        </div>
-                        <div className="EHSContent2" style={{ display: isVisible1e ? "block" : "none" }}>
-                            <p>{info.LinkedIn.educationDescription1}</p>
-                            <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects1}</p>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        className="EducationMilitaryService"
-                        onClick={() => showEducationDescription2()}
-                        key="educationmilitaryserviceA"
-                        whileHover={{
-                            scale: 1.01,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.99 }}
-                    >
-                        <div className="EMSTitle">
-                            <h4>{info.LinkedIn.schoolName2}</h4>
-                        </div>
-                        <div className="EMSContent1">
-                            <p>{info.LinkedIn.degreeName2}</p>
-                            <p>{info.LinkedIn.timeAndPlace2}</p>
-                            <div className="MilitaryLogo" />
-                        </div>
-                        <div className="EMSContent2" style={{ display: isVisible2e ? "block" : "none" }}>
-                            <p>{info.LinkedIn.educationDescription2}</p>
-                            <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects2}</p>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        className="EducationUniversityOfAppliedSciences"
-                        onClick={() => showEducationDescription3()}
-                        key="educationuniversityofappliedsciencesA"
-                        whileHover={{
-                            scale: 1.01,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.99 }}
-                    >
-                        <div className="EUOASTitle">
-                            <h4>{info.LinkedIn.schoolName3}</h4>
-                        </div>
-                        <div className="EUOASContent1">
-                            <p>{info.LinkedIn.degreeName3}</p>
-                            <p>{info.LinkedIn.timeAndPlace3}</p>
-                            <div className="SchoolLogo" />
-                        </div>
-                        <div className="EUOASContent2" style={{ display: isVisible3e ? "block" : "none" }}>
-                            <p>{info.LinkedIn.educationDescription3}</p>
-                            <p className="Tech">Education subjects: {info.LinkedIn.educationSubjects3}</p>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
+            <div className="EducationsContent">
+                {educations.length > 0 ? (
+                    educations.map((education, index) => (
+                        <AnimatePresence>
+                            <motion.div
+                                className="Education"
+                                onClick={() => openOrCloseEducation(index)}
+                                key={index}
+                                whileHover={{
+                                    scale: 1.01,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="EducationTitle">
+                                    <h4>{education.schoolName}</h4>
+                                </div>
+                                <div className="EducationContent1" style={{ backgroundColor: education.color }}>
+                                    <p>{education.degreeName}</p>
+                                    <p>{education.timeAndPlace}</p>
+                                    <div
+                                        className="SchoolLogo"
+                                        style={{
+                                            backgroundImage: `url(${education.image})`,
+                                            backgroundColor: !education.image && education.color,
+                                            backgroundPosition: index === 1 && "45% 50%",
+                                            backgroundSize: index === 1 && "40%",
+                                        }}
+                                    />
+                                </div>
+                                <div
+                                    className="EducationContent2"
+                                    style={{ display: isVisibleEd[index] ? "block" : "none" }}
+                                >
+                                    <p>{education.educationDescription}</p>
+                                    <p className="Subjects">
+                                        Education subjects:{" "}
+                                        <span style={{ color: "white" }}>{education.educationSubjects}</span>
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    ))
+                ) : (
+                    <div className="NoProfileData">
+                        <h4>NO DATA!</h4>
+                    </div>
+                )}
             </div>
         </div>
     );
@@ -461,80 +426,62 @@ function Skills() {
     );
 }
 
-function Experience() {
-    const [isVisible1, setIsVisible1] = useState(false);
-    const [isVisible2, setIsVisible2] = useState(false);
+function Experience({ experiences }) {
+    const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
 
-    const showWorkDescription1 = () => {
-        if (isVisible1 === false) {
-            setIsVisible1(true);
-        } else {
-            setIsVisible1(false);
-        }
-    };
-
-    const showWorkDescription2 = () => {
-        if (isVisible2 === false) {
-            setIsVisible2(true);
-        } else {
-            setIsVisible2(false);
-        }
+    const openOrCloseExperience = (index) => {
+        const updatedVisibility = [...isVisibleEx];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setIsVisibleEx(updatedVisibility);
     };
 
     return (
-        <div className="ExperienceContainer">
-            <div className="ExperienceTitle">
-                <h3>MY EXPERIENCE</h3>
+        <div className="ExperiencesContainer">
+            <div className="ExperiencesTitle">
+                <h3>EXPERIENCE</h3>
             </div>
-            <div className="ExperienceContent">
-                <AnimatePresence>
-                    <motion.div
-                        className="ExperienceInternship"
-                        onClick={() => showWorkDescription1()}
-                        key="experienceinternshipA"
-                        whileHover={{
-                            scale: 1.01,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.99 }}
-                    >
-                        <div className="EITitle">
-                            <h4>{info.LinkedIn.companyName1}</h4>
-                        </div>
-                        <div className="EIContent1">
-                            <p>{info.LinkedIn.workTitle1}</p>
-                            <p>{info.LinkedIn.workTimeAndPlace1}</p>
-                            <div className="CompanyLogo1"></div>
-                        </div>
-                        <div className="EIContent2" style={{ display: isVisible1 ? "block" : "none" }}>
-                            <p>{info.LinkedIn.workDescription1}</p>
-                            <p className="Tech">Technologies used: {info.LinkedIn.workTech1}</p>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        className="ExperienceJob1"
-                        onClick={() => showWorkDescription2()}
-                        key="experiencejob1A"
-                        whileHover={{
-                            scale: 1.01,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.99 }}
-                    >
-                        <div className="EJ1Title">
-                            <h4>{info.LinkedIn.companyName1}</h4>
-                        </div>
-                        <div className="EJ1Content1">
-                            <p>{info.LinkedIn.workTitle2}</p>
-                            <p>{info.LinkedIn.workTimeAndPlace2}</p>
-                            <div className="CompanyLogo2"></div>
-                        </div>
-                        <div className="EJ1Content2" style={{ display: isVisible2 ? "block" : "none" }}>
-                            <p>{info.LinkedIn.workDescription2}</p>
-                            <p className="Tech">Technologies used: {info.LinkedIn.workTech2}</p>
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
+            <div className="ExperiencesContent">
+                {experiences.length > 0 ? (
+                    experiences.map((experience, index) => (
+                        <AnimatePresence>
+                            <motion.div
+                                className="Experience"
+                                onClick={() => openOrCloseExperience(index)}
+                                key={index}
+                                whileHover={{
+                                    scale: 1.01,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="ExperienceTitle">
+                                    <h4>{experience.companyName}</h4>
+                                </div>
+                                <div className="ExperienceContent1">
+                                    <p>{experience.workTitle}</p>
+                                    <p>{experience.workTimeAndPlace}</p>
+                                    <div
+                                        className="CompanyLogo"
+                                        style={{ backgroundImage: `url(${experience.image})` }}
+                                    />
+                                </div>
+                                <div
+                                    className="ExperienceContent2"
+                                    style={{ display: isVisibleEx[index] ? "block" : "none" }}
+                                >
+                                    <p>{experience.workDescription}</p>
+                                    <p className="Tech">
+                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}</span>
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    ))
+                ) : (
+                    <div className="NoProfileData">
+                        <h4>NO DATA!</h4>
+                    </div>
+                )}
             </div>
         </div>
     );

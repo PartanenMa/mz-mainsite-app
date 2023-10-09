@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.9",
+    version: "Alpha 0.3.10",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -40,28 +40,6 @@ export const info = {
         language1: "Native proficiency",
         language2: "Professional working proficiency - C1",
         language3: "Limited working proficiency - B1",
-        //Education:
-        schoolName1: "PSYL",
-        schoolName2: "Finnish Defence Forces",
-        schoolName3: "Satakunta University of Applied Sciences",
-        degreeName1: "High School Diploma",
-        degreeName2:
-            "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
-        degreeName3: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
-        timeAndPlace1: "11.08.2014 - 05.12.2017 (3 years and 4 months), Pori, Finland",
-        timeAndPlace2: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
-        timeAndPlace3: "16.08.2021 - present, Pori, Finland",
-        educationDescription1:
-            "3 and a half year high school education. Studied regular school subjects in addition to psychology and philosophy.",
-        educationDescription2:
-            "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
-        educationDescription3:
-            "Studied information technology and automation, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
-        educationSubjects1:
-            "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
-        educationSubjects2: "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
-        educationSubjects3:
-            "IT infrastructure, software development, software engineering, automation, 3D technology, robotics",
         //Skills:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",
@@ -70,18 +48,6 @@ export const info = {
         skillLevelTitle2: "Intermediate",
         skillLevelTitle3: "Advanced",
         skillLevelTitle4: "Professional",
-        //Experience:
-        companyName1: "Visma Real Estate Oy",
-        workTitle1: "Intern - Internship",
-        workTitle2: "Junior Software Developer - Part-time (4 days / 30 hours per week)",
-        workTimeAndPlace1: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
-        workTimeAndPlace2: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
-        workDescription1:
-            "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
-        workDescription2:
-            "My first real front-end developer job at Visma Real Estate Oy after my internship there. I worked part-time (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React.",
-        workTech1: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
-        workTech2: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
     },
     GitHub: {
         //Account data:

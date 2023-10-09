@@ -1,6 +1,7 @@
 /*ProfilePage:*/
 .ProfilePageContainer {
     animation: fadeIn 0.3s;
+    background-color: #111;
     max-width: 1244px;
     width: 100%;
     border: 0.1px solid grey;
@@ -400,13 +401,13 @@
     left: 40px;
 }
 
-.EducationContainer {
+.EducationsContainer {
     width: 100%;
     overflow: hidden;
     border-bottom: 1px solid white;
 }
 
-.EducationTitle {
+.EducationsTitle {
     background-color: #0072b1;
     height: 30px;
     width: 100%;
@@ -414,7 +415,7 @@
     border-bottom: 1px solid white;
 }
 
-.EducationTitle h3 {
+.EducationsTitle h3 {
     color: white;
     font-size: 25px;
     font-style: italic;
@@ -424,7 +425,7 @@
     left: 10px;
 }
 
-.EducationContent {
+.EducationsContent {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -439,7 +440,7 @@
     padding-right: 1%;
 }
 
-.EducationHighSchool {
+.Education {
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
@@ -448,12 +449,12 @@
     transition: filter 300ms;
 }
 
-.EducationHighSchool:hover {
+.Education:hover {
     border: 1px solid white;
-    filter: drop-shadow(0 0 2em gray);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
-.EHSTitle {
+.EducationTitle {
     background-color: #111;
     height: 30px;
     width: 100%;
@@ -464,7 +465,7 @@
     overflow: hidden;
 }
 
-.EHSTitle h4 {
+.EducationTitle h4 {
     color: #03a062;
     font-size: 20px;
     font-style: italic;
@@ -474,181 +475,14 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EHSContent1 {
-    background-color: gray;
+.EducationContent1 {
     height: 100px;
     width: 100%;
     padding-left: 10px;
     overflow: hidden;
 }
 
-.EHSContent1 p {
-    color: white;
-    font-size: 18px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.EHSContent2 {
-    background-color: #333;
-    width: 100%;
-    border-top: 1px solid #03a062;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    overflow: hidden;
-}
-
-.EHSContent2 p {
-    color: white;
-    font-size: 15px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    line-height: 1.5;
-    max-width: 1200px;
-}
-
-.EHSContent2 .Tech {
-    color: white;
-    font-size: 15px;
-    font-style: italic;
-    font-family: "DejaVu Sans Mono, monospace";
-}
-
-.EducationMilitaryService {
-    width: 98%;
-    border: 1px solid #03a062;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: filter 300ms;
-}
-
-.EducationMilitaryService:hover {
-    border: 1px solid white;
-    filter: drop-shadow(0 0 2em red);
-}
-
-.EMSTitle {
-    background-color: #111;
-    height: 30px;
-    width: 100%;
-    border-bottom: 1px solid #03a062;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-left: 10px;
-    overflow: hidden;
-}
-
-.EMSTitle h4 {
-    color: #03a062;
-    font-size: 20px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    bottom: 22px;
-    text-shadow: 0.3px 0.3px 0 lightgreen;
-}
-
-.EMSContent1 {
-    background-color: red;
-    height: 100px;
-    width: 100%;
-    padding-left: 10px;
-    overflow: hidden;
-}
-
-.EMSContent1 p {
-    color: white;
-    font-size: 18px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.EMSContent2 {
-    background-color: #333;
-    width: 100%;
-    border-top: 1px solid #03a062;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    overflow: hidden;
-}
-
-.EMSContent2 p {
-    color: white;
-    font-size: 15px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    line-height: 1.5;
-    max-width: 1200px;
-}
-
-.EMSContent2 .Tech {
-    color: white;
-    font-size: 15px;
-    font-style: italic;
-    font-family: "DejaVu Sans Mono, monospace";
-}
-
-.MilitaryLogo {
-    background-color: white;
-    background-image: url("/src/Assets/Images/FDFLogo.svg");
-    background-repeat: no-repeat;
-    background-position: 45% 50%;
-    background-size: 40%;
-    height: 100%;
-    width: 15%;
-    border-bottom-right-radius: 10px;
-    float: right;
-    position: relative;
-    bottom: 96px;
-}
-
-.EducationUniversityOfAppliedSciences {
-    width: 98%;
-    border: 1px solid #03a062;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: filter 300ms;
-}
-
-.EducationUniversityOfAppliedSciences:hover {
-    border: 1px solid white;
-    filter: drop-shadow(0 0 2em #00a5cd);
-}
-
-.EUOASTitle {
-    background-color: #111;
-    height: 30px;
-    width: 100%;
-    border-bottom: 1px solid #03a062;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-left: 10px;
-    overflow: hidden;
-}
-
-.EUOASTitle h4 {
-    color: #03a062;
-    font-size: 20px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    bottom: 22px;
-    text-shadow: 0.3px 0.3px 0 lightgreen;
-}
-
-.EUOASContent1 {
-    background-color: #00a5cd;
-    height: 100px;
-    width: 100%;
-    padding-left: 10px;
-    overflow: hidden;
-}
-
-.EUOASContent1 p {
+.EducationContent1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
@@ -657,7 +491,6 @@
 
 .SchoolLogo {
     background-color: white;
-    background-image: url("/src/Assets/Images/SAMKLogo.png");
     background-repeat: no-repeat;
     background-position: 30% 50%;
     background-size: 90%;
@@ -669,7 +502,7 @@
     bottom: 96px;
 }
 
-.EUOASContent2 {
+.EducationContent2 {
     background-color: #333;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -679,7 +512,7 @@
     overflow: hidden;
 }
 
-.EUOASContent2 p {
+.EducationContent2 p {
     color: white;
     font-size: 15px;
     font-style: italic;
@@ -688,11 +521,12 @@
     max-width: 1200px;
 }
 
-.EUOASContent2 .Tech {
-    color: white;
+.EducationContent2 .Subjects {
+    color: #03a062;
     font-size: 15px;
     font-style: italic;
-    font-family: "DejaVu Sans Mono, monospace";
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    max-width: 1200px;
 }
 
 .SkillsContainer {
@@ -1869,13 +1703,13 @@
     bottom: 41px;
 }
 
-.ExperienceContainer {
+.ExperiencesContainer {
     width: 100%;
     overflow: hidden;
     border-bottom: 1px solid white;
 }
 
-.ExperienceTitle {
+.ExperiencesTitle {
     background-color: #0072b1;
     height: 30px;
     width: 100%;
@@ -1883,7 +1717,7 @@
     border-bottom: 1px solid white;
 }
 
-.ExperienceTitle h3 {
+.ExperiencesTitle h3 {
     color: white;
     font-size: 25px;
     font-style: italic;
@@ -1893,7 +1727,7 @@
     left: 10px;
 }
 
-.ExperienceContent {
+.ExperiencesContent {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1908,7 +1742,7 @@
     padding-right: 1%;
 }
 
-.ExperienceInternship {
+.Experience {
     width: 98%;
     border: 1px solid #03a062;
     border-radius: 10px;
@@ -1917,12 +1751,12 @@
     transition: filter 300ms;
 }
 
-.ExperienceInternship:hover {
+.Experience:hover {
     border: 1px solid white;
-    filter: drop-shadow(0 0 2em #b11226);
+    filter: drop-shadow(0 0 2em #03a062);
 }
 
-.EITitle {
+.ExperienceTitle {
     background-color: #111;
     height: 30px;
     width: 100%;
@@ -1933,7 +1767,7 @@
     overflow: hidden;
 }
 
-.EITitle h4 {
+.ExperienceTitle h4 {
     color: #03a062;
     font-size: 20px;
     font-style: italic;
@@ -1943,7 +1777,7 @@
     text-shadow: 0.3px 0.3px 0 lightgreen;
 }
 
-.EIContent1 {
+.ExperienceContent1 {
     background-color: #b11226;
     height: 100px;
     width: 100%;
@@ -1951,104 +1785,14 @@
     overflow: hidden;
 }
 
-.EIContent1 p {
+.ExperienceContent1 p {
     color: white;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.EIContent2 {
-    background-color: #333;
-    width: 100%;
-    border-top: 1px solid #03a062;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    overflow: hidden;
-}
-
-.EIContent2 p {
-    color: white;
-    font-size: 15px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    line-height: 1.5;
-    max-width: 1200px;
-}
-
-.EIContent2 .Tech {
-    color: white;
-    font-size: 15px;
-    font-style: italic;
-    font-family: "DejaVu Sans Mono, monospace";
-}
-
-.CompanyLogo1 {
-    background-color: white;
-    background-image: url("/src/Assets/Images/VismaLogo.svg");
-    background-repeat: no-repeat;
-    background-position: 20% 50%;
-    background-size: 90%;
-    height: 100%;
-    width: 15%;
-    border-bottom-right-radius: 10px;
-    float: right;
-    position: relative;
-    bottom: 96px;
-}
-
-.ExperienceJob1 {
-    width: 98%;
-    border: 1px solid #03a062;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: filter 300ms;
-}
-
-.ExperienceJob1:hover {
-    border: 1px solid white;
-    filter: drop-shadow(0 0 2em #b11226);
-}
-
-.EJ1Title {
-    background-color: #111;
-    height: 30px;
-    width: 100%;
-    border-bottom: 1px solid #03a062;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-left: 10px;
-    overflow: hidden;
-}
-
-.EJ1Title h4 {
-    color: #03a062;
-    font-size: 20px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    position: relative;
-    bottom: 22px;
-    text-shadow: 0.3px 0.3px 0 lightgreen;
-}
-
-.EJ1Content1 {
-    background-color: #b11226;
-    height: 100px;
-    width: 100%;
-    padding-left: 10px;
-    overflow: hidden;
-}
-
-.EJ1Content1 p {
-    color: white;
-    font-size: 18px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.EJ1Content2 {
+.ExperienceContent2 {
     background-color: #333;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -2058,7 +1802,7 @@
     overflow: hidden;
 }
 
-.EJ1Content2 p {
+.ExperienceContent2 p {
     color: white;
     font-size: 15px;
     font-style: italic;
@@ -2067,16 +1811,16 @@
     max-width: 1200px;
 }
 
-.EJ1Content2 .Tech {
-    color: white;
+.ExperienceContent2 .Tech {
+    color: #03a062;
     font-size: 15px;
     font-style: italic;
-    font-family: "DejaVu Sans Mono, monospace";
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    max-width: 1200px;
 }
 
-.CompanyLogo2 {
+.CompanyLogo {
     background-color: white;
-    background-image: url("/src/Assets/Images/VismaLogo.svg");
     background-repeat: no-repeat;
     background-position: 20% 50%;
     background-size: 90%;
@@ -2085,6 +1829,26 @@
     float: right;
     position: relative;
     bottom: 96px;
+}
+
+.NoProfileData {
+    height: 300px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.NoProfileData h4 {
+    width: fit-content;
+    color: red;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border: 1px solid red;
+    border-radius: 48%;
+    padding: 20px;
+    position: relative;
+    top: 10px;
+    left: 430px;
 }
 
 .InterestsContainer {
