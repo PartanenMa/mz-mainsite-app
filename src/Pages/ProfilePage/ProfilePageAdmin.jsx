@@ -16,11 +16,13 @@ function AboutMePageAdmin() {
     const [loading, setLoading] = useState(true);
     const [languages, setLanguages] = useState([]);
     const [educations, setEducations] = useState([]);
+    const [skills, setSkills] = useState([]);
     const [experiences, setExperiences] = useState([]);
 
     useEffect(() => {
         setLanguages(data.profileData.languages);
         setEducations(data.profileData.educations);
+        setSkills(data.profileData.skills);
         setExperiences(data.profileData.experiences);
     }, []);
 
@@ -66,7 +68,7 @@ function AboutMePageAdmin() {
                             <AboutMe />
                             <Languages languages={languages} />
                             <Education educations={educations} />
-                            <Skills />
+                            <Skills skills={skills} />
                             <Experience experiences={experiences} />
                             <Interests />
                             <Hobbies />
@@ -141,7 +143,7 @@ function Languages({ languages }) {
     return (
         <div className="LanguagesContainer">
             <div className="LanguagesTitle">
-                <h3>LANGUAGES</h3>
+                <h3>MY LANGUAGES</h3>
             </div>
             <div className="LanguagesContent">
                 {languages.length > 0 ? (
@@ -176,7 +178,7 @@ function Education({ educations }) {
     return (
         <div className="EducationsContainer">
             <div className="EducationsTitle">
-                <h3>EDUCATION</h3>
+                <h3>MY EDUCATION</h3>
             </div>
             <div className="EducationsContent">
                 {educations.length > 0 ? (
@@ -231,7 +233,7 @@ function Education({ educations }) {
     );
 }
 
-function Skills() {
+function Skills({ skills }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -275,7 +277,7 @@ function Skills() {
     return (
         <div className="SkillsContainer">
             <div className="SkillsTitle">
-                <h3>SKILLS</h3>
+                <h3>MY SKILLS</h3>
             </div>
             <div className="SkillsContent">
                 <div className="ProgrammingLanguages">
@@ -283,108 +285,44 @@ function Skills() {
                         <h4>{info.LinkedIn.skillsTitle1}</h4>
                     </div>
                     <div className="PLContent">
-                        <div className="PL1">
-                            <div className="PL1Logo"></div>
-                            <div className="PL1Content">
-                                <h4>C++</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
+                        {skills.programmingLanguages?.length > 0 ? (
+                            skills.programmingLanguages.map((skill, index) => (
+                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                    <div
+                                        className="SkillLogo"
+                                        style={{
+                                            backgroundImage: `url(${skill.image})`,
+                                            backgroundSize: skill.backgroundSize,
+                                        }}
+                                    />
+                                    {index === 10 && (
+                                        <div className="PL11LogoBG">
+                                            <div
+                                                className="PL11LogoL"
+                                                style={{ backgroundImage: `url(${skill.image})` }}
+                                            />
+                                        </div>
+                                    )}
+                                    {index === 11 && (
+                                        <div className="PL12LogoBG">
+                                            <div
+                                                className="PL12LogoL"
+                                                style={{ backgroundImage: `url(${skill.image})` }}
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="SkillContent">
+                                        <h4>{skill.name}</h4>
+                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                        {getSkillLevel(skill.skillLevel)}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="NoProfileData">
+                                <h4>NO DATA!</h4>
                             </div>
-                        </div>
-                        <div className="PL2">
-                            <div className="PL2Logo"></div>
-                            <div className="PL2Content">
-                                <h4>Java</h4>
-                                <p>{getSkillLevelTitle("intermediate")}</p>
-                                {getSkillLevel("intermediate")}
-                            </div>
-                        </div>
-                        <div className="PL3">
-                            <div className="PL3Logo"></div>
-                            <div className="PL3Content">
-                                <h4>C#</h4>
-                                <p>{getSkillLevelTitle("intermediate")}</p>
-                                {getSkillLevel("intermediate")}
-                            </div>
-                        </div>
-                        <div className="PL4">
-                            <div className="PL4Logo"></div>
-                            <div className="PL4Content">
-                                <h4>HTML</h4>
-                                <p>{getSkillLevelTitle("advanced")}</p>
-                                {getSkillLevel("advanced")}
-                            </div>
-                        </div>
-                        <div className="PL5">
-                            <div className="PL5Logo"></div>
-                            <div className="PL5Content">
-                                <h4>CSS</h4>
-                                <p>{getSkillLevelTitle("advanced")}</p>
-                                {getSkillLevel("advanced")}
-                            </div>
-                        </div>
-                        <div className="PL6">
-                            <div className="PL6Logo"></div>
-                            <div className="PL6Content">
-                                <h4>JavaScript</h4>
-                                <p>{getSkillLevelTitle("advanced")}</p>
-                                {getSkillLevel("advanced")}
-                            </div>
-                        </div>
-                        <div className="PL7">
-                            <div className="PL7Logo"></div>
-                            <div className="PL7Content">
-                                <h4>TypeScript</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
-                            </div>
-                        </div>
-                        <div className="PL8">
-                            <div className="PL8Logo"></div>
-                            <div className="PL8Content">
-                                <h4>Python</h4>
-                                <p>{getSkillLevelTitle("intermediate")}</p>
-                                {getSkillLevel("intermediate")}
-                            </div>
-                        </div>
-                        <div className="PL9">
-                            <div className="PL9Logo"></div>
-                            <div className="PL9Content">
-                                <h4>Go</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
-                            </div>
-                        </div>
-                        <div className="PL10">
-                            <div className="PL10Logo"></div>
-                            <div className="PL10Content">
-                                <h4>PHP</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
-                            </div>
-                        </div>
-                        <div className="PL11">
-                            <div className="PL11Logo"></div>
-                            <div className="PL11LogoBG">
-                                <div className="PL11LogoL"></div>
-                            </div>
-                            <div className="PL11Content">
-                                <h4>SQL</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
-                            </div>
-                        </div>
-                        <div className="PL12">
-                            <div className="PL12Logo"></div>
-                            <div className="PL12LogoBG">
-                                <div className="PL12LogoL"></div>
-                            </div>
-                            <div className="PL12Content">
-                                <h4>NoSQL</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
                 <div className="Front-endDevelopment">
@@ -392,14 +330,28 @@ function Skills() {
                         <h4>{info.LinkedIn.skillsTitle2}</h4>
                     </div>
                     <div className="FEDContent">
-                        <div className="FED1">
-                            <div className="FED1Logo"></div>
-                            <div className="FED1Content">
-                                <h4>React</h4>
-                                <p>{getSkillLevelTitle("advanced")}</p>
-                                {getSkillLevel("advanced")}
+                        {skills.frontEndDevelopment?.length > 0 ? (
+                            skills.frontEndDevelopment.map((skill, index) => (
+                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                    <div
+                                        className="SkillLogo"
+                                        style={{
+                                            backgroundImage: `url(${skill.image})`,
+                                            backgroundSize: skill.backgroundSize,
+                                        }}
+                                    />
+                                    <div className="SkillContent">
+                                        <h4>{skill.name}</h4>
+                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                        {getSkillLevel(skill.skillLevel)}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="NoProfileData">
+                                <h4>NO DATA!</h4>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
                 <div className="Back-endDevelopment">
@@ -407,14 +359,28 @@ function Skills() {
                         <h4>{info.LinkedIn.skillsTitle3}</h4>
                     </div>
                     <div className="BEDContent">
-                        <div className="BED1">
-                            <div className="BED1Logo"></div>
-                            <div className="BED1Content">
-                                <h4>Node.js with Express.js</h4>
-                                <p>{getSkillLevelTitle("beginner")}</p>
-                                {getSkillLevel("beginner")}
+                        {skills.backEndDevelopment?.length > 0 ? (
+                            skills.backEndDevelopment.map((skill, index) => (
+                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                    <div
+                                        className="SkillLogo"
+                                        style={{
+                                            backgroundImage: `url(${skill.image})`,
+                                            backgroundSize: skill.backgroundSize,
+                                        }}
+                                    />
+                                    <div className="SkillContent">
+                                        <h4>{skill.name}</h4>
+                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                        {getSkillLevel(skill.skillLevel)}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="NoProfileData">
+                                <h4>NO DATA!</h4>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -434,7 +400,7 @@ function Experience({ experiences }) {
     return (
         <div className="ExperiencesContainer">
             <div className="ExperiencesTitle">
-                <h3>EXPERIENCE</h3>
+                <h3>MY EXPERIENCE</h3>
             </div>
             <div className="ExperiencesContent">
                 {experiences.length > 0 ? (
