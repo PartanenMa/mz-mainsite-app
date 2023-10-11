@@ -63,7 +63,6 @@
     color: red;
     border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em lightcoral);
 }
 
 .ModalAbout {
@@ -87,7 +86,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    overflow: hidden;
 }
 
 .ModalBackButton {
@@ -108,5 +106,4 @@
     color: red;
     border: 1px solid red;
     transition: background-color 500ms ease-in-out;
-    filter: drop-shadow(0 0 2em lightcoral);
 }

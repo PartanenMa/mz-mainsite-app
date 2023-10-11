@@ -38,62 +38,138 @@ function FooterInfoBox() {
                 <h3>MatrixZone</h3>
             </div>
             <div className="FooterInfoBoxContent">
-                <div className="FooterNav1">
+                <AnimatePresence>
                     <div className="FooterNav1">
-                        <div className="FooterNav1-1">
-                            <h3 onClick={() => navigate(info.routes.profilePageAdmin)}>Profile</h3>
-                        </div>
-                        <div className="FooterNav1-2">
-                            <h3 onClick={() => navigate(info.routes.projectsPageAdmin)}>Projects</h3>
-                        </div>
-                        <div className="FooterNav1-3">
-                            <h3 onClick={() => navigate(info.routes.videosPageAdmin)}>Videos</h3>
-                        </div>
-                        <div className="FooterNav1-4">
-                            <h3 onClick={() => navigate(info.routes.goalsPageAdmin)}>Goals</h3>
-                        </div>
-                        <div className="FooterNav1-5">
-                            <h3 onClick={() => navigate(info.routes.cvPageAdmin)}>CV</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className="FooterNav2">
-                    <a href={info.LinkedIn.link} target="_blank">
-                        <div className="FooterNav2-1">
-                            <div className="LinkedInLogoContainer">
-                                <div className="LinkedInLogo"></div>
+                        <div className="FooterNav1">
+                            <div className="FooterNav1-1">
+                                <motion.h3
+                                    onClick={() => navigate(info.routes.profilePageAdmin)}
+                                    key="FN1-1A"
+                                    whileHover={{
+                                        scale: 1.2,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    Profile
+                                </motion.h3>
                             </div>
-                            <h3>LinkedIn</h3>
-                        </div>
-                    </a>
-                    <a href={info.GitHub.link} target="_blank">
-                        <div className="FooterNav2-2">
-                            <div className="GitHubLogoContainer">
-                                <div className="GitHubLogo"></div>
+                            <div className="FooterNav1-2">
+                                <motion.h3
+                                    onClick={() => navigate(info.routes.projectsPageAdmin)}
+                                    key="FN1-2A"
+                                    whileHover={{
+                                        scale: 1.2,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    Projects
+                                </motion.h3>
                             </div>
-                            <h3>GitHub</h3>
-                        </div>
-                    </a>
-                    <a href="" target="_blank">
-                        <div className="FooterNav2-3">
-                            <div className="YouTubeLogoContainer">
-                                <div className="YouTubeLogo"></div>
+                            <div className="FooterNav1-3">
+                                <motion.h3
+                                    onClick={() => navigate(info.routes.videosPageAdmin)}
+                                    key="FN1-3A"
+                                    whileHover={{
+                                        scale: 1.2,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    Videos
+                                </motion.h3>
                             </div>
-                            <h3>YouTube</h3>
+                            <div className="FooterNav1-4">
+                                <motion.h3
+                                    onClick={() => navigate(info.routes.goalsPageAdmin)}
+                                    key="FN1-4A"
+                                    whileHover={{
+                                        scale: 1.2,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    Goals
+                                </motion.h3>
+                            </div>
+                            <div className="FooterNav1-5">
+                                <motion.h3
+                                    onClick={() => navigate(info.routes.cvPageAdmin)}
+                                    key="FN1-5A"
+                                    whileHover={{
+                                        scale: 1.2,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    CV
+                                </motion.h3>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <div className="FooterNav3">
-                    <div className="FooterNav3-1">
-                        <h3></h3>
                     </div>
-                    <div className="FooterNav3-2">
-                        <h3></h3>
+                    <div className="FooterNav2">
+                        <a style={{ textDecoration: "none" }} href={info.LinkedIn.link} target="_blank">
+                            <motion.div
+                                className="FooterNav2-1"
+                                key="FN2-1A"
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <div className="LinkedInLogoContainer">
+                                    <div className="LinkedInLogo" />
+                                </div>
+                                <h3>LinkedIn</h3>
+                            </motion.div>
+                        </a>
+                        <a style={{ textDecoration: "none" }} href={info.GitHub.link} target="_blank">
+                            <motion.div
+                                className="FooterNav2-2"
+                                key="FN2-2A"
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <div className="GitHubLogoContainer">
+                                    <div className="GitHubLogo" />
+                                </div>
+                                <h3>GitHub</h3>
+                            </motion.div>
+                        </a>
+                        <a style={{ textDecoration: "none" }} href={info.YouTube.link} target="_blank">
+                            <motion.div
+                                className="FooterNav2-3"
+                                key="FN2-3A"
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <div className="YouTubeLogoContainer">
+                                    <div className="YouTubeLogo" />
+                                </div>
+                                <h3>YouTube</h3>
+                            </motion.div>
+                        </a>
                     </div>
-                    <div className="FooterNav3-3">
-                        <h3></h3>
+                    <div className="FooterNav3">
+                        <div className="FooterNav3-1">
+                            <h3></h3>
+                        </div>
+                        <div className="FooterNav3-2">
+                            <h3></h3>
+                        </div>
+                        <div className="FooterNav3-3">
+                            <h3></h3>
+                        </div>
                     </div>
-                </div>
+                </AnimatePresence>
             </div>
         </div>
     );

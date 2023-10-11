@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.3.12",
+    version: "Alpha 0.4",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -40,10 +40,6 @@ export const info = {
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",
         skillsTitle3: "Back-end development",
-        skillLevelTitle1: "Beginner",
-        skillLevelTitle2: "Intermediate",
-        skillLevelTitle3: "Advanced",
-        skillLevelTitle4: "Professional",
     },
     GitHub: {
         //Account data:

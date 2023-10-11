@@ -11,6 +11,33 @@
     margin-top: 30px;
 }
 
+.FooterInfoBoxContainerCenter {
+    width: 1244px;
+    margin: auto;
+}
+
+.FooterNav1-home {
+    height: 15px;
+}
+
+.FooterNav1-home h3 {
+    color: #03a062;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    left: 20px;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
+    transition: background-color 300ms;
+}
+
+.FooterNav1-home h3:hover {
+    background-color: lightgreen;
+    border: 1px solid #03a062;
+    border-radius: 5px;
+}
+
 /*FooterAdmin:*/
 .FooterContainer {
     background-color: #111;
@@ -23,7 +50,6 @@
 }
 
 .FooterInfoBoxContainer {
-    height: 270px;
     width: 100%;
     gap: 10px;
     padding-top: 20px;
@@ -53,7 +79,7 @@
 
 .FooterInfoBoxTitleLogo:hover {
     border: 1px solid lightgreen;
-    filter: drop-shadow(0 0 2em #03a062);
+    filter: drop-shadow(0 0 0.6em #03a062);
 }
 
 .FooterInfoBoxTitle h3 {
@@ -68,7 +94,7 @@
 }
 
 .FooterInfoBoxContent {
-    height: 200px;
+    height: 220px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -77,7 +103,7 @@
 }
 
 .FooterNav1 {
-    height: 200px;
+    height: 100%;
     width: 400px;
     border-radius: 10px;
     overflow: hidden;
