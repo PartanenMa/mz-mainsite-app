@@ -17,7 +17,7 @@ function FooterInfoBox() {
     return (
         <div className="FooterInfoBoxContainerCenter">
             <div className="FooterInfoBoxContainer">
-                <div className="FooterInfoBoxTitle">
+                <div className="FooterInfoBoxTitle" style={{ marginBottom: "10px" }}>
                     <AnimatePresence>
                         <motion.div
                             className="FooterInfoBoxTitleLogo"
@@ -35,7 +35,10 @@ function FooterInfoBox() {
                 </div>
                 <div className="FooterInfoBoxContent">
                     <AnimatePresence>
-                        <div className="FooterNav1">
+                        <div
+                            className="FooterNav1"
+                            style={{ borderLeft: "1px solid #03a062", borderRight: "1px solid #03a062" }}
+                        >
                             <div className="FooterNav1">
                                 <div className="FooterNav1-home">
                                     <motion.h3
@@ -117,7 +120,7 @@ function FooterInfoBox() {
                                 </div>
                             </div>
                         </div>
-                        <div className="FooterNav2">
+                        <div className="FooterNav2" style={{ borderRight: "1px solid #03a062" }}>
                             <a style={{ textDecoration: "none" }} href={info.LinkedIn.link} target="_blank">
                                 <motion.div
                                     className="FooterNav2-1"
@@ -167,7 +170,7 @@ function FooterInfoBox() {
                                 </motion.div>
                             </a>
                         </div>
-                        <div className="FooterNav3">
+                        <div className="FooterNav3" style={{ borderRight: "1px solid #03a062" }}>
                             <div className="FooterNav3-1">
                                 <h3></h3>
                             </div>
