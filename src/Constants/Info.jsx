@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.4.1",
+    version: "Alpha 0.4.2",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -24,7 +24,10 @@ export const info = {
         //Account data:
         user: "Manu Partanen",
         name: "Manu Partanen",
-        profession: "Front-end Web Developer",
+        profession: "Software Developer",
+        professionDetailed: "Front-end Web Developer",
+        professionTechStack: "React Developer",
+        professionTechStack: "React Developer",
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
         description1:

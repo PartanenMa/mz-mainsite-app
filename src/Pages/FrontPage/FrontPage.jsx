@@ -49,10 +49,10 @@ function Main() {
                                     <div>{info.LinkedIn.profession}</div>
                                 </div>
                                 <div className="HTW2second">
-                                    <div>Software Developer</div>
+                                    <div>{info.LinkedIn.professionDetailed}</div>
                                 </div>
                                 <div className="HTW2third">
-                                    <div>IT Engineer</div>
+                                    <div>{info.LinkedIn.professionTechStack}</div>
                                 </div>
                             </div>
                         </div>
