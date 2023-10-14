@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.4.2",
+    version: "Alpha 0.4.3",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -26,7 +26,6 @@ export const info = {
         name: "Manu Partanen",
         profession: "Software Developer",
         professionDetailed: "Front-end Web Developer",
-        professionTechStack: "React Developer",
         professionTechStack: "React Developer",
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
@@ -59,5 +58,8 @@ export const info = {
         description2: "",
         description3: "",
         link: "https://github.com/PartanenMa",
+    },
+    CV: {
+        isDisabled: true,
     },
 };

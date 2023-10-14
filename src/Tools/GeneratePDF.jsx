@@ -1,11 +1,17 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import jsPDF from "jspdf";
 import PDF from "/src/Assets/Templates/PDF.jsx";
+import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 
 function GeneratePDF() {
+    const [isDisabled, setIsDisabled] = useState(info.CV.isDisabled);
     const [isHovered, setIsHovered] = useState(false);
     const pdfRef = useRef(null);
+
+    useEffect(() => {
+        setIsDisabled(info.CV.isDisabled);
+    }, []);
 
     const downloadPDF = () => {
         const pdf = new jsPDF({
@@ -17,7 +23,7 @@ function GeneratePDF() {
 
         pdf.html(pdfRef.current, {
             async callback(pdf) {
-                pdf.save("CV Manu Partanen.pdf");
+                pdf.save("CV_Manu_Partanen.pdf");
             },
         });
     };
@@ -61,6 +67,13 @@ function GeneratePDF() {
         filter: "drop-shadow(0 0 2em #03a062)",
     };
 
+    const buttonDisabledStyles = {
+        backgroundColor: "lightgray",
+        color: "gray",
+        border: "1px solid gray",
+        cursor: "default",
+    };
+
     return (
         <div style={componentStyles}>
             <AnimatePresence>
@@ -68,16 +81,22 @@ function GeneratePDF() {
                     style={{
                         ...buttonStyles,
                         ...(isHovered && buttonHoverStyles),
+                        ...(isDisabled && buttonDisabledStyles),
                     }}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     onClick={downloadPDF}
                     key="pdfbtn"
-                    whileHover={{
-                        scale: 1.05,
-                        transition: { duration: 0.1 },
-                    }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={
+                        !isDisabled
+                            ? {
+                                  scale: 1.05,
+                                  transition: { duration: 0.1 },
+                              }
+                            : ""
+                    }
+                    whileTap={!isDisabled ? { scale: 0.9 } : ""}
+                    disabled={isDisabled}
                 >
                     Download CV
                 </motion.button>
