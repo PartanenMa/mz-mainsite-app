@@ -602,6 +602,20 @@
     bottom: 80px;
 }
 
+.CarouselItem1 .PersonalPhoto {
+    background-image: url("/src/Assets/Images/Photo.jpeg");
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+    background-size: cover;
+    height: 260px;
+    width: 260px;
+    border: 1px solid #03a062;
+    border-radius: 100%;
+    position: relative;
+    top: 20px;
+    left: 420px;
+}
+
 .CarouselSlide2 {
     height: 100%;
     width: 100%;

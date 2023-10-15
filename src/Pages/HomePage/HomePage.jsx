@@ -45,6 +45,7 @@ function FirstSection() {
                                         <h2 className="Name">{info.LinkedIn.name}</h2>
                                         <h2 className="JobTitle">{info.LinkedIn.profession}</h2>
                                     </div>
+                                    <div className="PersonalPhoto" />
                                 </div>
                             </div>
                         </div>
