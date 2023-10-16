@@ -186,8 +186,9 @@ function Education({ educations }) {
                         <AnimatePresence>
                             <motion.div
                                 className="Education"
-                                onClick={() => openOrCloseEducation(index)}
                                 key={index}
+                                style={{ "--education-color": education.color }}
+                                onClick={() => openOrCloseEducation(index)}
                                 whileHover={{
                                     scale: 1.01,
                                     transition: { duration: 0.1 },
@@ -408,8 +409,9 @@ function Experience({ experiences }) {
                         <AnimatePresence>
                             <motion.div
                                 className="Experience"
-                                onClick={() => openOrCloseExperience(index)}
                                 key={index}
+                                style={{ "--experience-color": experience.color }}
+                                onClick={() => openOrCloseExperience(index)}
                                 whileHover={{
                                     scale: 1.01,
                                     transition: { duration: 0.1 },
@@ -468,7 +470,7 @@ function Interests() {
                 </div>
                 <div className="Interest2">
                     <div className="Interest2Title">
-                        <h4>Programming</h4>
+                        <h4>Software Development</h4>
                     </div>
                     <div className="Interest2Content">
                         <div className="Interest2ContentCover">
