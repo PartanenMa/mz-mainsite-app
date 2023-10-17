@@ -1,10 +1,65 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Nav.css";
 
 function Nav() {
+    const [showBtnHoverEffect1, setShowBtnHoverEffect1] = useState(false);
+    const [showBtnHoverEffect2, setShowBtnHoverEffect2] = useState(false);
+    const [showBtnHoverEffect3, setShowBtnHoverEffect3] = useState(false);
+    const [showBtnHoverEffect4, setShowBtnHoverEffect4] = useState(false);
+    const [showBtnHoverEffect5, setShowBtnHoverEffect5] = useState(false);
+    const [showBtnHoverEffect6, setShowBtnHoverEffect6] = useState(false);
     const navigate = useNavigate();
+
+    const enableHoverEffect1 = () => {
+        setShowBtnHoverEffect1(true);
+    };
+
+    const enableHoverEffect2 = () => {
+        setShowBtnHoverEffect2(true);
+    };
+
+    const enableHoverEffect3 = () => {
+        setShowBtnHoverEffect3(true);
+    };
+
+    const enableHoverEffect4 = () => {
+        setShowBtnHoverEffect4(true);
+    };
+
+    const enableHoverEffect5 = () => {
+        setShowBtnHoverEffect5(true);
+    };
+
+    const enableHoverEffect6 = () => {
+        setShowBtnHoverEffect6(true);
+    };
+
+    const disableHoverEffect1 = () => {
+        setShowBtnHoverEffect1(false);
+    };
+
+    const disableHoverEffect2 = () => {
+        setShowBtnHoverEffect2(false);
+    };
+
+    const disableHoverEffect3 = () => {
+        setShowBtnHoverEffect3(false);
+    };
+
+    const disableHoverEffect4 = () => {
+        setShowBtnHoverEffect4(false);
+    };
+
+    const disableHoverEffect5 = () => {
+        setShowBtnHoverEffect5(false);
+    };
+
+    const disableHoverEffect6 = () => {
+        setShowBtnHoverEffect6(false);
+    };
 
     const handleNavClick = (page) => {
         if (page === "home") {
@@ -45,8 +100,18 @@ function Nav() {
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
+                        onMouseEnter={() => enableHoverEffect1()}
+                        onMouseLeave={() => disableHoverEffect1()}
                     >
-                        Home
+                        {showBtnHoverEffect1 ? (
+                            <>
+                                &lt;
+                                <span className="NB">Home</span>
+                                &gt;
+                            </>
+                        ) : (
+                            <span>Home</span>
+                        )}
                     </motion.button>
                     <motion.button
                         className="NavOBtn"
@@ -57,11 +122,22 @@ function Nav() {
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
+                        onMouseEnter={() => enableHoverEffect2()}
+                        onMouseLeave={() => disableHoverEffect2()}
                     >
-                        Profile
+                        {showBtnHoverEffect2 ? (
+                            <>
+                                &lt;
+                                <span className="NB">Profile</span>
+                                &gt;
+                            </>
+                        ) : (
+                            <span>Profile</span>
+                        )}
                     </motion.button>
                     <motion.button
                         className="NavOBtn"
+                        id="NBtn3"
                         onClick={() => handleNavClick("projects")}
                         key="navBtn3"
                         whileHover={{
@@ -69,8 +145,18 @@ function Nav() {
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
+                        onMouseEnter={() => enableHoverEffect3()}
+                        onMouseLeave={() => disableHoverEffect3()}
                     >
-                        Projects
+                        {showBtnHoverEffect3 ? (
+                            <>
+                                &lt;
+                                <span className="NB">Projects</span>
+                                &gt;
+                            </>
+                        ) : (
+                            <span>Projects</span>
+                        )}
                     </motion.button>
                     <motion.button
                         className="NavOBtn"
@@ -81,8 +167,18 @@ function Nav() {
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
+                        onMouseEnter={() => enableHoverEffect4()}
+                        onMouseLeave={() => disableHoverEffect4()}
                     >
-                        Videos
+                        {showBtnHoverEffect4 ? (
+                            <>
+                                &lt;
+                                <span className="NB">Videos</span>
+                                &gt;
+                            </>
+                        ) : (
+                            <span>Videos</span>
+                        )}
                     </motion.button>
                     <motion.button
                         className="NavOBtn"
@@ -93,8 +189,18 @@ function Nav() {
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
+                        onMouseEnter={() => enableHoverEffect5()}
+                        onMouseLeave={() => disableHoverEffect5()}
                     >
-                        Goals
+                        {showBtnHoverEffect5 ? (
+                            <>
+                                &lt;
+                                <span className="NB">Goals</span>
+                                &gt;
+                            </>
+                        ) : (
+                            <span>Goals</span>
+                        )}
                     </motion.button>
                     <motion.button
                         className="NavOBtn"
@@ -105,8 +211,18 @@ function Nav() {
                             transition: { duration: 0.1 },
                         }}
                         whileTap={{ scale: 0.9 }}
+                        onMouseEnter={() => enableHoverEffect6()}
+                        onMouseLeave={() => disableHoverEffect6()}
                     >
-                        CV
+                        {showBtnHoverEffect6 ? (
+                            <>
+                                &lt;
+                                <span className="NB">CV</span>
+                                &gt;
+                            </>
+                        ) : (
+                            <span>CV</span>
+                        )}
                     </motion.button>
                 </div>
                 <motion.button

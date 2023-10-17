@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.4.5",
+    version: "Alpha 0.4.6",
     routes: {
         frontPage: "/",
         loginPage: "/login",
