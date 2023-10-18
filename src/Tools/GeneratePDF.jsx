@@ -78,6 +78,7 @@ function GeneratePDF() {
         <div style={componentStyles}>
             <AnimatePresence>
                 <motion.button
+                    title={isDisabled ? "Currently not available" : ""}
                     style={{
                         ...buttonStyles,
                         ...(isHovered && buttonHoverStyles),
