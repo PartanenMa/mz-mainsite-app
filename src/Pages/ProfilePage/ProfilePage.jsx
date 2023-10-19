@@ -18,16 +18,18 @@ function ProfilePage() {
     }, []);
 
     return (
-        <div className="ProfilePageContainer">
-            <ProfilePageTitle />
-            <AboutMe />
-            <Languages languages={languages} />
-            <Education educations={educations} />
-            <Skills skills={skills} />
-            <Experience experiences={experiences} />
-            <Interests />
-            <Hobbies />
-            <ContactMe />
+        <div className="PFP">
+            <div className="ProfilePageContainer">
+                <ProfilePageTitle />
+                <AboutMe />
+                <Languages languages={languages} />
+                <Education educations={educations} />
+                <Skills skills={skills} />
+                <Experience experiences={experiences} />
+                <Interests />
+                <Hobbies />
+                <ContactMe />
+            </div>
         </div>
     );
 }

@@ -11,9 +11,11 @@ function GoalsPage() {
     }, []);
 
     return (
-        <div className="GoalsPageContainer">
-            <GoalsPageTitle />
-            <GoalsPageContent goals={goals} />
+        <div className="GP">
+            <div className="GoalsPageContainer">
+                <GoalsPageTitle />
+                <GoalsPageContent goals={goals} />
+            </div>
         </div>
     );
 }

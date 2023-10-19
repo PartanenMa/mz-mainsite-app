@@ -7,9 +7,11 @@ import "./HomePage.css";
 
 function HomePage() {
     return (
-        <div className="HomePageContainer">
-            <HomePageTitle />
-            <FirstSection />
+        <div className="HP">
+            <div className="HomePageContainer">
+                <HomePageTitle />
+                <FirstSection />
+            </div>
         </div>
     );
 }

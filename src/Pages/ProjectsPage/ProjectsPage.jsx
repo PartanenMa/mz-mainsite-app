@@ -12,10 +12,12 @@ function ProjectsPage() {
     }, []);
 
     return (
-        <div className="ProjectsPageContainer">
-            <ProjectsPageTitle />
-            <AboutMyProjects />
-            <Projects projects={projects} />
+        <div className="PJP">
+            <div className="ProjectsPageContainer">
+                <ProjectsPageTitle />
+                <AboutMyProjects />
+                <Projects projects={projects} />
+            </div>
         </div>
     );
 }

@@ -12,10 +12,12 @@ function VideosPage() {
     }, []);
 
     return (
-        <div className="VideosPageContainer">
-            <VideosPageTitle />
-            <AboutMyVideos />
-            <Videos videos={videos} />
+        <div className="VP">
+            <div className="VideosPageContainer">
+                <VideosPageTitle />
+                <AboutMyVideos />
+                <Videos videos={videos} />
+            </div>
         </div>
     );
 }

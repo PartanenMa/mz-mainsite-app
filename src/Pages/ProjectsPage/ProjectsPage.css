@@ -1,4 +1,17 @@
 /*ProjectsPage:*/
+.PJP {
+    animation: fadeIn 0.3s;
+    background-image: url("/src/Assets/Images/PageBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:
+        0 0 30px 20px black,
+        inset 0 0 30px 20px black;
+}
+
 .ProjectsPageContainer {
     animation: fadeIn 0.3s;
     background-color: #111;

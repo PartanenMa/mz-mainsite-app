@@ -4,9 +4,11 @@ import "./CVPage.css";
 
 function CVPage() {
     return (
-        <div className="CVPageContainer">
-            <CVPageTitle />
-            <CVPageContent />
+        <div className="CVP">
+            <div className="CVPageContainer">
+                <CVPageTitle />
+                <CVPageContent />
+            </div>
         </div>
     );
 }
