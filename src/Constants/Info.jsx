@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.4.8",
+    version: "Alpha 0.4.9",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -17,6 +17,7 @@ export const info = {
         cvPageAdmin: "/admin/cv",
     },
     loginInfo: {
+        enabled: true,
         adminUserName: "Admin",
         adminPassword: "ManuAdminReact123",
     },

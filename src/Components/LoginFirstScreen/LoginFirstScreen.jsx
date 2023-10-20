@@ -50,15 +50,28 @@ function LoginSection() {
         togglePassword;
         const username = userValue;
         const password = passwordValue;
-        if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
-            sessionStorage.setItem("load", "true");
-            sessionStorage.setItem("isLoggedIn", "true");
-            navigate(location.pathname);
+        if (info.loginInfo.enabled) {
+            if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
+                sessionStorage.setItem("isLoggedIn", "true");
+                sessionStorage.setItem("load", "true");
+                navigate(info.routes.homePageAdmin);
+            } else {
+                event.preventDefault();
+                notification.error({
+                    message: "LOG IN FAILED!",
+                    description: "Incorrect username or password.",
+                    placement: "bottomLeft",
+                    style: {
+                        backgroundColor: "lightcoral",
+                        border: "3px solid red",
+                    },
+                });
+            }
         } else {
             event.preventDefault();
             notification.error({
                 message: "LOG IN FAILED!",
-                description: "Incorrect username or password.",
+                description: "Logging in is currently disabled.",
                 placement: "bottomLeft",
                 style: {
                     backgroundColor: "lightcoral",
