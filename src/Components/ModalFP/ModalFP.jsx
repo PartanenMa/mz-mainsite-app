@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ModalFP.css";
 
@@ -67,26 +68,16 @@ function ModalFP({ isModalOpen, setIsModalOpen }) {
                             </div>
                             <div className="ModalAbout">
                                 <p>
-                                    Welcome to the MatrixZone! Here, I invite you to delve into my
-                                    <br />
-                                    world of passion and creativity. As an enthusiast in the realm of software
-                                    development, this platform serves as a window into my
-                                    <br />
-                                    programming journey.
+                                    {info.fpModalText.introduction}
                                     <br />
                                     <br />
-                                    Explore my profile to discover the mind behind the projects that
-                                    <br />
-                                    blend imagination with ingenuity, and immerse yourself in my
-                                    <br />
-                                    diverse project portfolio, where innovation meets determination.
+                                    {info.fpModalText.profile}
                                     <br />
                                     <br />
-                                    From coding marvels to ingenious experiments, MatrixZone is a
+                                    {info.fpModalText.projects}
                                     <br />
-                                    testament to my journey of growth and exploration as a fellow
                                     <br />
-                                    software developer.
+                                    {info.fpModalText.videos}
                                 </p>
                             </div>
                             <div className="ModalBack">

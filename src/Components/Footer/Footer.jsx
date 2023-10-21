@@ -34,13 +34,13 @@ function FooterInfoBox() {
                     <h3>MatrixZone</h3>
                 </div>
                 <div className="FooterInfoBoxContent">
-                    <AnimatePresence>
-                        <div
-                            className="FooterNav1"
-                            style={{ borderLeft: "1px solid #03a062", borderRight: "1px solid #03a062" }}
-                        >
-                            <div className="FooterNav1">
-                                <div className="FooterNav1-home">
+                    <div
+                        className="FooterNav1"
+                        style={{ borderLeft: "1px solid #03a062", borderRight: "1px solid #03a062" }}
+                    >
+                        <div className="FooterNav1">
+                            <div className="FooterNav1-home">
+                                <AnimatePresence>
                                     <motion.h3
                                         onClick={() => navigate(info.routes.homePage)}
                                         key="FN1-home"
@@ -52,8 +52,10 @@ function FooterInfoBox() {
                                     >
                                         Home
                                     </motion.h3>
-                                </div>
-                                <div className="FooterNav1-1">
+                                </AnimatePresence>
+                            </div>
+                            <div className="FooterNav1-1">
+                                <AnimatePresence>
                                     <motion.h3
                                         onClick={() => navigate(info.routes.profilePage)}
                                         key="FN1-1"
@@ -65,8 +67,10 @@ function FooterInfoBox() {
                                     >
                                         Profile
                                     </motion.h3>
-                                </div>
-                                <div className="FooterNav1-2">
+                                </AnimatePresence>
+                            </div>
+                            <div className="FooterNav1-2">
+                                <AnimatePresence>
                                     <motion.h3
                                         onClick={() => navigate(info.routes.projectsPage)}
                                         key="FN1-2"
@@ -78,8 +82,10 @@ function FooterInfoBox() {
                                     >
                                         Projects
                                     </motion.h3>
-                                </div>
-                                <div className="FooterNav1-3">
+                                </AnimatePresence>
+                            </div>
+                            <div className="FooterNav1-3">
+                                <AnimatePresence>
                                     <motion.h3
                                         onClick={() => navigate(info.routes.videosPage)}
                                         key="FN1-3"
@@ -91,8 +97,10 @@ function FooterInfoBox() {
                                     >
                                         Videos
                                     </motion.h3>
-                                </div>
-                                <div className="FooterNav1-4">
+                                </AnimatePresence>
+                            </div>
+                            <div className="FooterNav1-4">
+                                <AnimatePresence>
                                     <motion.h3
                                         onClick={() => navigate(info.routes.goalsPage)}
                                         key="FN1-4"
@@ -104,8 +112,10 @@ function FooterInfoBox() {
                                     >
                                         Goals
                                     </motion.h3>
-                                </div>
-                                <div className="FooterNav1-5">
+                                </AnimatePresence>
+                            </div>
+                            <div className="FooterNav1-5">
+                                <AnimatePresence>
                                     <motion.h3
                                         onClick={() => navigate(info.routes.cvPage)}
                                         key="FN1-5"
@@ -117,11 +127,13 @@ function FooterInfoBox() {
                                     >
                                         CV
                                     </motion.h3>
-                                </div>
+                                </AnimatePresence>
                             </div>
                         </div>
-                        <div className="FooterNav2" style={{ borderRight: "1px solid #03a062" }}>
-                            <a style={{ textDecoration: "none" }} href={info.LinkedIn.link} target="_blank">
+                    </div>
+                    <div className="FooterNav2" style={{ borderRight: "1px solid #03a062" }}>
+                        <a style={{ textDecoration: "none" }} href={info.LinkedIn.link} target="_blank">
+                            <AnimatePresence>
                                 <motion.div
                                     className="FooterNav2-1"
                                     key="FN2-1"
@@ -136,8 +148,10 @@ function FooterInfoBox() {
                                     </div>
                                     <h3>LinkedIn</h3>
                                 </motion.div>
-                            </a>
-                            <a style={{ textDecoration: "none" }} href={info.GitHub.link} target="_blank">
+                            </AnimatePresence>
+                        </a>
+                        <a style={{ textDecoration: "none" }} href={info.GitHub.link} target="_blank">
+                            <AnimatePresence>
                                 <motion.div
                                     className="FooterNav2-2"
                                     key="FN2-2"
@@ -152,8 +166,10 @@ function FooterInfoBox() {
                                     </div>
                                     <h3>GitHub</h3>
                                 </motion.div>
-                            </a>
-                            <a style={{ textDecoration: "none" }} href={info.YouTube.link} target="_blank">
+                            </AnimatePresence>
+                        </a>
+                        <a style={{ textDecoration: "none" }} href={info.YouTube.link} target="_blank">
+                            <AnimatePresence>
                                 <motion.div
                                     className="FooterNav2-3"
                                     key="FN2-3"
@@ -168,20 +184,20 @@ function FooterInfoBox() {
                                     </div>
                                     <h3>YouTube</h3>
                                 </motion.div>
-                            </a>
+                            </AnimatePresence>
+                        </a>
+                    </div>
+                    <div className="FooterNav3" style={{ borderRight: "1px solid #03a062" }}>
+                        <div className="FooterNav3-1">
+                            <h3></h3>
                         </div>
-                        <div className="FooterNav3" style={{ borderRight: "1px solid #03a062" }}>
-                            <div className="FooterNav3-1">
-                                <h3></h3>
-                            </div>
-                            <div className="FooterNav3-2">
-                                <h3></h3>
-                            </div>
-                            <div className="FooterNav3-3">
-                                <h3></h3>
-                            </div>
+                        <div className="FooterNav3-2">
+                            <h3></h3>
                         </div>
-                    </AnimatePresence>
+                        <div className="FooterNav3-3">
+                            <h3></h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -75,10 +75,11 @@
 
 .ModalAbout p {
     color: #03a062;
-    font-size: 25px;
+    font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-shadow: 0.3px 0.3px 0 lightgreen;
+    max-width: 98%;
 }
 
 .ModalBack {

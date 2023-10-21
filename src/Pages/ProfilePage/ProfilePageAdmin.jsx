@@ -10,7 +10,7 @@ import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.css";
 
-function AboutMePageAdmin() {
+function ProfilePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
@@ -569,4 +569,4 @@ function ContactMe() {
     );
 }
 
-export default AboutMePageAdmin;
+export default ProfilePageAdmin;

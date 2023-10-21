@@ -205,6 +205,8 @@ function FirstSection() {
                         >
                             X
                         </motion.button>
+                    </AnimatePresence>
+                    <AnimatePresence>
                         <motion.div
                             className="LogoAdmin2"
                             onClick={() => navigate(info.routes.profilePageAdmin)}
@@ -215,6 +217,8 @@ function FirstSection() {
                             }}
                             whileTap={{ scale: 0.9 }}
                         />
+                    </AnimatePresence>
+                    <AnimatePresence>
                         <motion.button
                             className="SettingsButtonAdmin"
                             onClick={() => displayUser3()}
@@ -227,6 +231,8 @@ function FirstSection() {
                         >
                             Settings
                         </motion.button>
+                    </AnimatePresence>
+                    <AnimatePresence>
                         <motion.button
                             className="LogOutButtonAdmin"
                             onClick={() => displayUser4()}
@@ -256,10 +262,12 @@ function FirstSection() {
                         >
                             X
                         </motion.button>
-                        <p className="OptionText">BG GIF: {BGoption}</p>
-                        <div className="OptionBG" onClick={() => option()}>
-                            <div className="OptionBall"></div>
-                        </div>
+                    </AnimatePresence>
+                    <p className="OptionText">BG GIF: {BGoption}</p>
+                    <div className="OptionBG" onClick={() => option()}>
+                        <div className="OptionBall"></div>
+                    </div>
+                    <AnimatePresence>
                         <motion.button
                             className="SettingsBackButton"
                             onClick={() => displayUser2()}
@@ -289,7 +297,9 @@ function FirstSection() {
                         >
                             X
                         </motion.button>
-                        <div className="LOC4Buttons">
+                    </AnimatePresence>
+                    <div className="LOC4Buttons">
+                        <AnimatePresence>
                             <motion.button
                                 className="LogOutButton"
                                 onClick={() => logOut()}
@@ -302,6 +312,8 @@ function FirstSection() {
                             >
                                 Log out
                             </motion.button>
+                        </AnimatePresence>
+                        <AnimatePresence>
                             <motion.button
                                 className="LogOutBackButton"
                                 onClick={() => displayUser2()}
@@ -314,8 +326,8 @@ function FirstSection() {
                             >
                                 Back
                             </motion.button>
-                        </div>
-                    </AnimatePresence>
+                        </AnimatePresence>
+                    </div>
                 </div>
                 <AnimatePresence>
                     <motion.div
@@ -327,6 +339,8 @@ function FirstSection() {
                     >
                         <TimeAndDate />
                     </motion.div>
+                </AnimatePresence>
+                <AnimatePresence>
                     <motion.h2
                         className="Welcome"
                         style={{ display: isVisibleY ? "block" : "none" }}
@@ -384,6 +398,8 @@ function FirstSection() {
                             {"<"}
                         </p>
                     </motion.button>
+                </AnimatePresence>
+                <AnimatePresence>
                     <motion.button
                         className="CarouselButtonRight"
                         onClick={() => {
@@ -437,13 +453,15 @@ function FirstSection() {
                                 }}
                                 whileTap={{ scale: 0.9 }}
                             />
-                            <h3>LinkedIn</h3>
-                            <p>{info.LinkedIn.user}</p>
-                            <p>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                    ? info.LinkedIn.jobTitle
-                                    : info.LinkedIn.profession}
-                            </p>
+                        </AnimatePresence>
+                        <h3>LinkedIn</h3>
+                        <p>{info.LinkedIn.user}</p>
+                        <p>
+                            {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                ? info.LinkedIn.jobTitle
+                                : info.LinkedIn.profession}
+                        </p>
+                        <AnimatePresence>
                             <motion.button
                                 className="GoToProfile"
                                 onClick={() => navigate(info.routes.profilePageAdmin)}
@@ -458,7 +476,7 @@ function FirstSection() {
                             </motion.button>
                         </AnimatePresence>
                     </div>
-                    <div className="Box1"></div>
+                    <div className="Box1" />
                 </div>
             </section>
             <section className="HomeFirstSection2">
@@ -493,9 +511,11 @@ function FirstSection() {
                                 }}
                                 whileTap={{ scale: 0.9 }}
                             />
-                            <h3>GitHub</h3>
-                            <p>{info.GitHub.user}</p>
-                            <p>{info.LinkedIn.name}</p>
+                        </AnimatePresence>
+                        <h3>GitHub</h3>
+                        <p>{info.GitHub.user}</p>
+                        <p>{info.LinkedIn.name}</p>
+                        <AnimatePresence>
                             <motion.button
                                 className="GoToProjects"
                                 onClick={() => navigate(info.routes.projectsPageAdmin)}
@@ -510,7 +530,7 @@ function FirstSection() {
                             </motion.button>
                         </AnimatePresence>
                     </div>
-                    <div className="Box2"></div>
+                    <div className="Box2" />
                 </div>
             </section>
             <section className="HomeFirstSection3">
@@ -545,9 +565,11 @@ function FirstSection() {
                                 }}
                                 whileTap={{ scale: 0.9 }}
                             />
-                            <h3>YouTube</h3>
-                            <p>{info.YouTube.user}</p>
-                            <p>{info.LinkedIn.name}</p>
+                        </AnimatePresence>
+                        <h3>YouTube</h3>
+                        <p>{info.YouTube.user}</p>
+                        <p>{info.LinkedIn.name}</p>
+                        <AnimatePresence>
                             <motion.button
                                 className="GoToVideos"
                                 onClick={() => navigate(info.routes.videosPageAdmin)}
@@ -562,7 +584,7 @@ function FirstSection() {
                             </motion.button>
                         </AnimatePresence>
                     </div>
-                    <div className="Box3"></div>
+                    <div className="Box3" />
                 </div>
             </section>
         </div>
