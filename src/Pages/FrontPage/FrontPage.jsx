@@ -52,7 +52,7 @@ function Main() {
                                     <div>{info.LinkedIn.professionDetailed}</div>
                                 </div>
                                 <div className="HTW2third">
-                                    <div>{info.LinkedIn.professionTechStack}</div>
+                                    <div>{info.LinkedIn.professionTech}</div>
                                 </div>
                             </div>
                         </div>
@@ -143,6 +143,42 @@ function Main() {
                         </motion.div>
                     </motion.div>
                 </AnimatePresence>
+            </section>
+            <section className="ProfessionSection">
+                <div className="Profession">
+                    <h3 className="ProfessionTitle">
+                        {info.LinkedIn.jobTitle && info.LinkedIn.company
+                            ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company
+                            : info.LinkedIn.profession}
+                    </h3>
+                    <div className="ProfessionContent">
+                        <p>
+                            {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                ? "Currently working as a " +
+                                  info.LinkedIn.jobTitle +
+                                  " at " +
+                                  info.LinkedIn.company +
+                                  "."
+                                : "Currently looking for a " + info.LinkedIn.profession + " job."}
+                            <br />
+                            <br />I use technologies such as{" "}
+                            <span style={{ color: "green" }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                    ? info.LinkedIn.jobTechStack
+                                    : info.LinkedIn.professionTechStack}
+                            </span>
+                            .
+                            <br />
+                            <br />I also use tools such as{" "}
+                            <span style={{ color: "green" }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                    ? info.LinkedIn.jobAdditionalTech
+                                    : info.LinkedIn.professionAdditionalTech}
+                            </span>
+                            .
+                        </p>
+                    </div>
+                </div>
             </section>
         </main>
     );
