@@ -49,7 +49,7 @@ export const data = {
                 degreeName: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
                 timeAndPlace: "16.08.2021 - present, Pori, Finland",
                 educationDescription:
-                    "Studied information technology and automation, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
+                    "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
                 educationSubjects:
                     "IT infrastructure, software development, software engineering, automation, 3D technology, robotics",
                 color: "#00a5cd",

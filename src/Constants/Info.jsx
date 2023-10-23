@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.5",
+    version: "Alpha 0.5.1",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -48,13 +48,13 @@ export const info = {
         profession: "Software Developer",
         professionDetailed: "Web Developer",
         professionTech: "Front-end Developer",
-        professionTechStack: "HTML, CSS, JavaScript and React",
-        professionAdditionalTech: "Git",
+        professionTechStack: "React",
+        professionAdditionalTech: "Visual Studio Code, Office and Git",
         //Job:
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
-        jobTechStack: "HTML, CSS, JavaScript, React and Sass",
-        jobAdditionalTech: "Git and Docker",
+        jobTechStack: "React and Sass",
+        jobAdditionalTech: "Git",
         //Skills titles:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",
