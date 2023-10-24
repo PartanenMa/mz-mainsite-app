@@ -146,42 +146,85 @@ function Main() {
             </section>
             <section className="ProfessionSection">
                 <div className="Profession">
-                    <h3 className="ProfessionTitle">
-                        {info.LinkedIn.jobTitle && info.LinkedIn.company
-                            ? info.LinkedIn.jobTitle + " at "
-                            : info.LinkedIn.profession}
-                        <span style={{ color: "green" }}>
-                            {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
-                        </span>
-                    </h3>
-                    <div className="ProfessionContent">
-                        <p>
+                    <div className="ProfessionTitle">
+                        <h3>
                             {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                ? "Currently working as a " + info.LinkedIn.jobTitle + " at "
-                                : "Currently looking for a job as a "}
-                            <span style={{ color: "green" }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                    ? info.LinkedIn.company
-                                    : info.LinkedIn.profession}
+                                ? info.LinkedIn.jobTitle + " at "
+                                : info.LinkedIn.profession}
+                            <span
+                                style={{
+                                    color:
+                                        info.LinkedIn.jobTitle && info.LinkedIn.company
+                                            ? info.LinkedIn.companyColor
+                                            : "green",
+                                }}
+                            >
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
                             </span>
-                            .
-                            <br />
-                            <br />I use technologies such as{" "}
-                            <span style={{ color: "green" }}>
+                        </h3>
+                    </div>
+                    <div lassName="ProfessionContent">
+                        <div className="ProfessionContentBox1">
+                            <p>
                                 {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                    ? info.LinkedIn.jobTechStack
-                                    : info.LinkedIn.professionTechStack}
-                            </span>
-                            .
-                            <br />
-                            <br />I also use tools such as{" "}
-                            <span style={{ color: "green" }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                    ? info.LinkedIn.jobAdditionalTech
-                                    : info.LinkedIn.professionAdditionalTech}
-                            </span>
-                            .
-                        </p>
+                                    ? "Currently working as a " + info.LinkedIn.jobTitle + " at "
+                                    : "Currently looking for a job as a "}
+                                <span
+                                    style={{
+                                        color:
+                                            info.LinkedIn.jobTitle && info.LinkedIn.company
+                                                ? info.LinkedIn.companyColor
+                                                : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                        ? info.LinkedIn.company
+                                        : info.LinkedIn.profession}
+                                </span>
+                                .
+                                <br />
+                                <br />I use technologies such as{" "}
+                                <span
+                                    style={{
+                                        color:
+                                            info.LinkedIn.jobTitle && info.LinkedIn.company
+                                                ? info.LinkedIn.companyColor
+                                                : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                        ? info.LinkedIn.jobTechStack
+                                        : info.LinkedIn.professionTechStack}
+                                </span>
+                                .
+                                <br />
+                                <br />I also use tools such as{" "}
+                                <span
+                                    style={{
+                                        color:
+                                            info.LinkedIn.jobTitle && info.LinkedIn.company
+                                                ? info.LinkedIn.companyColor
+                                                : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company
+                                        ? info.LinkedIn.jobAdditionalTech
+                                        : info.LinkedIn.professionAdditionalTech}
+                                </span>
+                                .
+                            </p>
+                        </div>
+                        {info.LinkedIn.jobTitle && info.LinkedIn.company && (
+                            <div
+                                className="ProfessionContentBox2"
+                                style={{
+                                    "--company-color": info.LinkedIn.companyColor,
+                                    backgroundImage: `url(${info.LinkedIn.companyLogo})`,
+                                    height: info.LinkedIn.companyLogoH,
+                                    width: info.LinkedIn.companyLogoW,
+                                }}
+                            />
+                        )}
                     </div>
                 </div>
             </section>

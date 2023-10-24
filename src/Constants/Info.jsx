@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.5.1",
+    version: "Alpha 0.5.2",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -53,8 +53,12 @@ export const info = {
         //Job:
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
+        companyColor: "#b11226",
+        companyLogo: "/src/Assets/Images/VismaLogo.svg",
+        companyLogoH: "73px",
+        companyLogoW: "420px",
         jobTechStack: "React and Sass",
-        jobAdditionalTech: "Git",
+        jobAdditionalTech: "Visual Studio Code and Git",
         //Skills titles:
         skillsTitle1: "Programming languages",
         skillsTitle2: "Front-end development",

@@ -576,11 +576,17 @@
 }
 
 .Profession {
-    width: fit-content;
+    height: 100%;
+    width: 1194px;
     margin-left: 50px;
 }
 
 .ProfessionTitle {
+    height: 10%;
+    width: 100%;
+}
+
+.ProfessionTitle h3 {
     animation: fadeIn 0.3s;
     color: #03a062;
     font-size: 45px;
@@ -592,6 +598,11 @@
 }
 
 .ProfessionContent {
+    height: 90%;
+    width: 100%;
+}
+
+.ProfessionContentBox1 {
     animation: fadeIn 0.3s;
     background-color: transparent;
     backdrop-filter: blur(15px);
@@ -599,9 +610,11 @@
     border: 1px inset #03a062;
     border-radius: 10px;
     box-shadow: 10px 5px 5px #111;
+    position: relative;
+    top: 30px;
 }
 
-.ProfessionContent p {
+.ProfessionContentBox1 p {
     color: #03a062;
     font-size: 30px;
     font-style: italic;
@@ -612,4 +625,29 @@
     max-width: 515px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.ProfessionContentBox2 {
+    animation: fadeIn 0.3s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: drop-shadow(0 0 2em var(--company-color));
+    border-radius: 10px;
+    position: relative;
+    bottom: 200px;
+    left: 650px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 5px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
 }
