@@ -41,11 +41,11 @@ function GoalsPageContent({ goals }) {
 
     const getStatus = (status) => {
         if (status === "completed") {
-            return "COMPLETED";
+            return "COMPLETED ✔️";
         } else if (status === "inprogress") {
-            return "IN PROGRESS";
+            return "IN PROGRESS 🟡";
         } else if (status === "notyetstarted") {
-            return "NOT YET STARTED";
+            return "NOT YET STARTED ❌";
         }
     };
 

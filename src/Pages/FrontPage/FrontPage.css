@@ -144,6 +144,8 @@
     text-shadow:
         0 0 7px black,
         0 0 3px black;
+    position: relative;
+    bottom: 6px;
 }
 
 .HTW2second div {
@@ -151,6 +153,8 @@
     text-shadow:
         0 0 7px black,
         0 0 3px black;
+    position: relative;
+    top: 6px;
 }
 
 .HTW2third div {
@@ -159,7 +163,7 @@
         0 0 7px black,
         0 0 3px black;
     position: relative;
-    bottom: 4px;
+    top: 9px;
 }
 
 @keyframes text-animation {

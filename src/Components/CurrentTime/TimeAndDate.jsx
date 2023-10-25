@@ -14,10 +14,10 @@ function TimeAndDate() {
     return (
         <div className="TimeAndDateContainer">
             <h2 className="Time">
-                Time: <span style={{ color: "lightgreen" }}>{clock.toLocaleTimeString()}</span>
+                ⌚ <span style={{ color: "lightgreen", fontStyle: "italic" }}>{clock.toLocaleTimeString()}</span>
             </h2>
             <h2 className="Date">
-                Date: <span style={{ color: "green" }}>{clock.toLocaleDateString()}</span>
+                📅 <span style={{ color: "green", fontStyle: "italic" }}>{clock.toLocaleDateString()}</span>
             </h2>
         </div>
     );
