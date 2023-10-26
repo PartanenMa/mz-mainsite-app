@@ -30,13 +30,7 @@ function Main() {
         <main className="Main">
             <section className="HeroSection">
                 <AnimatePresence>
-                    <motion.div
-                        className="HeroTitle"
-                        key="heroT"
-                        initial={{ opacity: 0, x: -1000 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 1000 }}
-                    >
+                    <motion.div className="HeroTitle" key="heroT" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
                         <div className="HTWelcome1">
                             <h3 className="HTW1text">
                                 Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
@@ -60,13 +54,7 @@ function Main() {
                             <h3>Welcome to the MatrixZone</h3>
                         </div>
                     </motion.div>
-                    <motion.div
-                        className="HeroContent"
-                        key="heroC"
-                        initial={{ opacity: 0, x: 1000 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -1000 }}
-                    >
+                    <motion.div className="HeroContent" key="heroC" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
                         <motion.div
                             className="HeroContent1"
                             onClick={() => handleNavigation("profile")}
@@ -148,68 +136,49 @@ function Main() {
                 <div className="Profession">
                     <div className="ProfessionTitle">
                         <h3>
-                            {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                ? info.LinkedIn.jobTitle + " at "
-                                : info.LinkedIn.profession}
+                            {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
                             <span
                                 style={{
-                                    color:
-                                        info.LinkedIn.jobTitle && info.LinkedIn.company
-                                            ? info.LinkedIn.companyColor
-                                            : "green",
+                                    color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
                                 }}
                             >
                                 {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                            </span>
+                            <span title={"Currently employed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : ""}
                             </span>
                         </h3>
                     </div>
                     <div lassName="ProfessionContent">
                         <div className="ProfessionContentBox1">
                             <p>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                    ? "Currently working as a " + info.LinkedIn.jobTitle + " at "
-                                    : "Currently looking for a job as a "}
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for a job as a "}
                                 <span
                                     style={{
-                                        color:
-                                            info.LinkedIn.jobTitle && info.LinkedIn.company
-                                                ? info.LinkedIn.companyColor
-                                                : "green",
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
                                     }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                        ? info.LinkedIn.company
-                                        : info.LinkedIn.profession}
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : info.LinkedIn.profession}
                                 </span>
                                 .
                                 <br />
                                 <br />I use technologies such as{" "}
                                 <span
                                     style={{
-                                        color:
-                                            info.LinkedIn.jobTitle && info.LinkedIn.company
-                                                ? info.LinkedIn.companyColor
-                                                : "green",
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
                                     }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                        ? info.LinkedIn.jobTechStack
-                                        : info.LinkedIn.professionTechStack}
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
                                 </span>
                                 .
                                 <br />
                                 <br />I also use tools such as{" "}
                                 <span
                                     style={{
-                                        color:
-                                            info.LinkedIn.jobTitle && info.LinkedIn.company
-                                                ? info.LinkedIn.companyColor
-                                                : "green",
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
                                     }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                        ? info.LinkedIn.jobAdditionalTech
-                                        : info.LinkedIn.professionAdditionalTech}
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
                                 </span>
                                 .
                             </p>

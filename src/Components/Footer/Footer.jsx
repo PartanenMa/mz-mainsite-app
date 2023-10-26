@@ -34,10 +34,7 @@ function FooterInfoBox() {
                     <h3>MatrixZone</h3>
                 </div>
                 <div className="FooterInfoBoxContent">
-                    <div
-                        className="FooterNav1"
-                        style={{ borderLeft: "1px solid #03a062", borderRight: "1px solid #03a062" }}
-                    >
+                    <div className="FooterNav1" style={{ borderLeft: "1px solid #03a062", borderRight: "1px solid #03a062" }}>
                         <div className="FooterNav1">
                             <div className="FooterNav1-home">
                                 <AnimatePresence>

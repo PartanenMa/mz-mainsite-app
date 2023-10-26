@@ -398,7 +398,7 @@
 .EducationContent2 {
     background-color: #333;
     width: 100%;
-    border-top: 1px solid #03a062;
+    border-top: 1px solid white;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 5px;
@@ -1395,7 +1395,7 @@
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
-    bottom: 18px;
+    bottom: 22px;
     text-shadow: 0.5px 0.5px 0 lightgreen;
 }
 
@@ -1456,7 +1456,7 @@
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     position: relative;
-    bottom: 18px;
+    bottom: 22px;
     text-shadow: 0.5px 0.5px 0 lightgreen;
 }
 

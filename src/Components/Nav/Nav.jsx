@@ -84,12 +84,7 @@ function Nav() {
 
     return (
         <AnimatePresence>
-            <motion.div
-                className="NavOptions"
-                key="navO"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-            >
+            <motion.div className="NavOptions" key="navO" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
                 <div className="NavOptionsBar">
                     <motion.button
                         className="NavOBtn"

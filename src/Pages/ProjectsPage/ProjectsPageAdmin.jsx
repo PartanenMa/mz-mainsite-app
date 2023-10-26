@@ -151,8 +151,7 @@ function Projects({ projects }) {
                                     <div className="ProjectContentDescription">
                                         <div className="PCDBox1">
                                             <p>
-                                                Project type:{" "}
-                                                <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
+                                                Project type: <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
                                             </p>
                                         </div>
                                         <div className="PCDBox2">
@@ -165,15 +164,11 @@ function Projects({ projects }) {
                                         </div>
                                         <div className="PCDBox3">
                                             <p>
-                                                Technologies used:{" "}
-                                                <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
+                                                Technologies used: <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
                                             </p>
                                         </div>
                                     </div>
-                                    <div
-                                        className="ProjectContentPhoto"
-                                        style={{ backgroundImage: `url(${project.image})` }}
-                                    />
+                                    <div className="ProjectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
                                 </div>
                             </motion.a>
                         </AnimatePresence>

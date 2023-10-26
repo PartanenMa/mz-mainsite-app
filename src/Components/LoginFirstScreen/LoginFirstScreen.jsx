@@ -87,24 +87,11 @@ function LoginSection() {
                 <h2>MatrixZone</h2>
                 <div className="User">
                     <h3>Username:</h3>
-                    <TextField
-                        className="UsernameField"
-                        value={userValue}
-                        label="Enter username"
-                        variant="outlined"
-                        onChange={handleUserChange}
-                    />
+                    <TextField className="UsernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
                 </div>
                 <div className="Password">
                     <h3>Password:</h3>
-                    <TextField
-                        className="PasswordField"
-                        type={passwordType}
-                        value={passwordValue}
-                        label="Enter password"
-                        variant="outlined"
-                        onChange={handlePasswordChange}
-                    />
+                    <TextField className="PasswordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
                 </div>
                 <AnimatePresence>
                     <motion.button

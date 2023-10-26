@@ -330,13 +330,7 @@ function FirstSection() {
                     </div>
                 </div>
                 <AnimatePresence>
-                    <motion.div
-                        className="Clock"
-                        style={{ display: isVisibleY ? "block" : "none" }}
-                        key="clockA"
-                        initial={{ opacity: 0, x: 300 }}
-                        animate={isVisibleY ? { opacity: 1, x: 0 } : {}}
-                    >
+                    <motion.div className="Clock" style={{ display: isVisibleY ? "block" : "none" }} key="clockA" initial={{ opacity: 0, x: 300 }} animate={isVisibleY ? { opacity: 1, x: 0 } : {}}>
                         <TimeAndDate />
                     </motion.div>
                 </AnimatePresence>
@@ -391,10 +385,7 @@ function FirstSection() {
                         }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <p
-                            title="Previous"
-                            style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}
-                        >
+                        <p title="Previous" style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}>
                             {"<"}
                         </p>
                     </motion.button>
@@ -412,10 +403,7 @@ function FirstSection() {
                         }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <p
-                            title="Next"
-                            style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}
-                        >
+                        <p title="Next" style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}>
                             {">"}
                         </p>
                     </motion.button>
@@ -456,11 +444,7 @@ function FirstSection() {
                         </AnimatePresence>
                         <h3>LinkedIn</h3>
                         <p>{info.LinkedIn.user}</p>
-                        <p>
-                            {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                ? info.LinkedIn.jobTitle
-                                : info.LinkedIn.profession}
-                        </p>
+                        <p>{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="GoToProfile"

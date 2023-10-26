@@ -25,13 +25,7 @@ function LoadingTitleContainer() {
                 <g id="Artboard" transform="translate(-9.000000, -7.000000)">
                     <g id="Group-2" transform="translate(9.000000, 7.000000)">
                         <rect id="Rectangle" x="0" y="0" width="74" height="14" rx="4"></rect>
-                        <g
-                            id="Group"
-                            transform="translate(4.000000, 3.500000)"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                        >
+                        <g id="Group" transform="translate(4.000000, 3.500000)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                             <polyline
                                 className="Path"
                                 id="m"
@@ -45,12 +39,7 @@ function LoadingTitleContainer() {
                                 id="a"
                                 stroke="lightgreen"
                             ></path>
-                            <polyline
-                                className="Path"
-                                id="t"
-                                stroke="#03a062"
-                                points="22 0.5 18 0.5 20 0.5 20 6.5"
-                            ></polyline>
+                            <polyline className="Path" id="t" stroke="#03a062" points="22 0.5 18 0.5 20 0.5 20 6.5"></polyline>
                             <path
                                 className="Path"
                                 d="M26,6.5 L26,0.5 L28,0.5 C29.1045695,0.5 30,1.3954305 30,2.5 C30,3.6045695 29.1045695,4.5 28,4.5 L26,4.5 L26,4.5 L28,4.5 L30,6.5"

@@ -25,22 +25,18 @@ export const data = {
                 schoolName: "PSYL",
                 degreeName: "High School Diploma",
                 timeAndPlace: "11.08.2014 - 05.12.2017 (3 years and 4 months), Pori, Finland",
-                educationDescription:
-                    "3 and a half year high school education. Studied regular school subjects in addition to psychology and philosophy.",
-                educationSubjects:
-                    "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
+                educationDescription: "3 and a half year high school education. Studied regular school subjects in addition to psychology and philosophy.",
+                educationSubjects: "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
                 color: "gray",
                 image: "",
             },
             {
                 schoolName: "Finnish Defence Forces",
-                degreeName:
-                    "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
+                degreeName: "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
                 timeAndPlace: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
                 educationDescription:
                     "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
-                educationSubjects:
-                    "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
+                educationSubjects: "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
                 color: "red",
                 image: "/src/Assets/Images/FDFLogo.svg",
             },
@@ -50,8 +46,7 @@ export const data = {
                 timeAndPlace: "16.08.2021 - present, Pori, Finland",
                 educationDescription:
                     "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
-                educationSubjects:
-                    "IT infrastructure, software development, software engineering, automation, 3D technology, robotics",
+                educationSubjects: "IT infrastructure, software development, software engineering, automation, 3D technology, robotics",
                 color: "#00a5cd",
                 image: "/src/Assets/Images/SAMKLogo.png",
             },
@@ -167,8 +162,7 @@ export const data = {
                 companyName: "Visma Real Estate Oy",
                 workTitle: "Intern - Internship",
                 workTimeAndPlace: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
-                workDescription:
-                    "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
+                workDescription: "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
                 workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
                 color: "#b11226",
                 image: "/src/Assets/Images/VismaLogo.svg",

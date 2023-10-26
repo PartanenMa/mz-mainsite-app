@@ -66,11 +66,7 @@ function AboutMe() {
                 <div className="AboutMeTextContainer">
                     <div className="AboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
-                        <h4 className="h4_2">
-                            {info.LinkedIn.jobTitle && info.LinkedIn.company
-                                ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company
-                                : info.LinkedIn.profession}
-                        </h4>
+                        <h4 className="h4_2">{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}</h4>
                     </div>
                     <div className="AboutMeText">
                         <p>
@@ -161,14 +157,10 @@ function Education({ educations }) {
                                         }}
                                     />
                                 </div>
-                                <div
-                                    className="EducationContent2"
-                                    style={{ display: isVisibleEd[index] ? "block" : "none" }}
-                                >
+                                <div className="EducationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
                                     <p>{education.educationDescription}</p>
                                     <p className="Subjects">
-                                        Education subjects:{" "}
-                                        <span style={{ color: "white" }}>{education.educationSubjects}</span>
+                                        Education subjects: <span style={{ color: "white" }}>{education.educationSubjects}</span>
                                     </p>
                                 </div>
                             </motion.div>
@@ -248,18 +240,12 @@ function Skills({ skills }) {
                                     />
                                     {index === 10 && (
                                         <div className="PL11LogoBG">
-                                            <div
-                                                className="PL11LogoL"
-                                                style={{ backgroundImage: `url(${skill.image})` }}
-                                            />
+                                            <div className="PL11LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
                                         </div>
                                     )}
                                     {index === 11 && (
                                         <div className="PL12LogoBG">
-                                            <div
-                                                className="PL12LogoL"
-                                                style={{ backgroundImage: `url(${skill.image})` }}
-                                            />
+                                            <div className="PL12LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
                                         </div>
                                     )}
                                     <div className="SkillContent">
@@ -374,15 +360,9 @@ function Experience({ experiences }) {
                                 <div className="ExperienceContent1" style={{ backgroundColor: experience.color }}>
                                     <p>{experience.workTitle}</p>
                                     <p>{experience.workTimeAndPlace}</p>
-                                    <div
-                                        className="CompanyLogo"
-                                        style={{ backgroundImage: `url(${experience.image})` }}
-                                    />
+                                    <div className="CompanyLogo" style={{ backgroundImage: `url(${experience.image})` }} />
                                 </div>
-                                <div
-                                    className="ExperienceContent2"
-                                    style={{ display: isVisibleEx[index] ? "block" : "none" }}
-                                >
+                                <div className="ExperienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     <p>{experience.workDescription}</p>
                                     <p className="Tech">
                                         Technologies used: <span style={{ color: "white" }}>{experience.workTech}</span>
@@ -494,7 +474,9 @@ function ContactMe() {
             <div className="ContactContent">
                 <div className="PhoneContainer">
                     <div className="PhoneContainerTitle">
-                        <h3>PHONE</h3>
+                        <h3>
+                            PHONE<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>☎️</span>
+                        </h3>
                     </div>
                     <div className="PhoneContainerContent">
                         <div className="Phone1">
@@ -505,7 +487,9 @@ function ContactMe() {
                 </div>
                 <div className="EmailContainer">
                     <div className="EmailContainerTitle">
-                        <h3>EMAIL</h3>
+                        <h3>
+                            EMAIL<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>📧</span>
+                        </h3>
                     </div>
                     <div className="EmailContainerContent">
                         <div className="Email1">

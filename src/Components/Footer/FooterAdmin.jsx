@@ -240,10 +240,7 @@ function FooterBoxMiddle() {
 function FooterBoxRight() {
     return (
         <div className="RightBox">
-            <a
-                href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(%2F%CB%88d%CA%92%C9%91%CB%90v,often%20incorporating%20third-party%20librarie"
-                target="_blank"
-            >
+            <a href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(%2F%CB%88d%CA%92%C9%91%CB%90v,often%20incorporating%20third-party%20librarie" target="_blank">
                 <AnimatePresence>
                     <motion.div
                         className="JSLogo"

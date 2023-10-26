@@ -151,10 +151,7 @@ function Videos({ videos }) {
                                     <div className="VideoContentDescription">
                                         <div className="VCDBox1">
                                             <p>
-                                                Video category:{" "}
-                                                <span style={{ color: "white", fontSize: "15px" }}>
-                                                    {video.category}
-                                                </span>
+                                                Video category: <span style={{ color: "white", fontSize: "15px" }}>{video.category}</span>
                                             </p>
                                         </div>
                                         <div className="VCDBox2">
@@ -167,15 +164,11 @@ function Videos({ videos }) {
                                         </div>
                                         <div className="VCDBox3">
                                             <p>
-                                                Video tags:{" "}
-                                                <span style={{ color: "white", fontSize: "15px" }}>{video.tags}</span>
+                                                Video tags: <span style={{ color: "white", fontSize: "15px" }}>{video.tags}</span>
                                             </p>
                                         </div>
                                     </div>
-                                    <div
-                                        className="VideoContentPhoto"
-                                        style={{ backgroundImage: `url(${video.image})` }}
-                                    />
+                                    <div className="VideoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
                                 </div>
                             </motion.a>
                         </AnimatePresence>
