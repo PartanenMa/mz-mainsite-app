@@ -77,6 +77,27 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.GoalsCountContainer {
+    background-color: #111;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.GoalsCountContainer p {
+    color: #03a062;
+    font-size: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    position: relative;
+    bottom: 20px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 .GoalsPageContentContainer {
     background-color: #111;
     height: 80%;

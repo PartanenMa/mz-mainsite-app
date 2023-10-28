@@ -144,8 +144,11 @@ function Main() {
                             >
                                 {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
                             </span>
-                            <span title={"Currently employed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : ""}
+                            <span
+                                title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
+                            >
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
                             </span>
                         </h3>
                     </div>

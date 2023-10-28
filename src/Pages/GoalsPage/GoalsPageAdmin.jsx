@@ -58,6 +58,7 @@ function GoalsPageAdmin() {
                                 <h2>Admin / goals</h2>
                             </div>
                             <GoalsPageTitle />
+                            <GoalsCount goals={goals} />
                             <GoalsPageContent goals={goals} />
                         </div>
                         <FooterAdmin />
@@ -74,6 +75,58 @@ function GoalsPageTitle() {
     return (
         <div className="GoalsPageTitleContainer">
             <h2>MY GOALS</h2>
+        </div>
+    );
+}
+
+function GoalsCount({ goals }) {
+    const getCompletedGoals = () => {
+        let completedCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "completed") {
+                completedCount++;
+            }
+        });
+
+        return completedCount;
+    };
+
+    const getInProgressGoals = () => {
+        let inProgressCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "inprogress") {
+                inProgressCount++;
+            }
+        });
+
+        return inProgressCount;
+    };
+
+    const getNotYetStartedGoals = () => {
+        let notYetStartedCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "notyetstarted") {
+                notYetStartedCount++;
+            }
+        });
+
+        return notYetStartedCount;
+    };
+
+    return (
+        <div className="GoalsCountContainer">
+            <p>
+                COMPLETED: <span style={{ color: "green" }}>{getCompletedGoals()}</span>
+            </p>
+            <p>
+                IN PROGRESS: <span style={{ color: "yellow" }}>{getInProgressGoals()}</span>
+            </p>
+            <p>
+                NOT YET STARTED: <span style={{ color: "red" }}>{getNotYetStartedGoals()}</span>
+            </p>
         </div>
     );
 }
