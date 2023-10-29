@@ -52,6 +52,38 @@ export const data = {
             },
         ],
         skills: {
+            scripting: [
+                {
+                    name: "PowerShell",
+                    skillLevel: "intermediate",
+                    color: "#044f88",
+                    image: "/src/Assets/Images/PowerShellLogo.png",
+                    backgroundSize: "80%",
+                },
+                {
+                    name: "Bash",
+                    skillLevel: "intermediate",
+                    color: "darkgreen",
+                    image: "/src/Assets/Images/BashLogo.svg",
+                    backgroundSize: "80%",
+                },
+            ],
+            utilitySoftware: [
+                {
+                    name: "Visual Studio Code",
+                    skillLevel: "advanced",
+                    color: "#0078d7",
+                    image: "/src/Assets/Images/VisualStudioCodeLogo.svg",
+                    backgroundSize: "70%",
+                },
+                {
+                    name: "Git",
+                    skillLevel: "advanced",
+                    color: "#F1502F",
+                    image: "/src/Assets/Images/GitLogo.svg",
+                    backgroundSize: "70%",
+                },
+            ],
             programmingLanguages: [
                 {
                     name: "C++",

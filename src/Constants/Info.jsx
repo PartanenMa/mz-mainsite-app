@@ -1,5 +1,5 @@
 export const info = {
-    version: "Alpha 0.5.5",
+    version: "Alpha 0.5.6",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -60,9 +60,11 @@ export const info = {
         jobTechStack: "React and Sass",
         jobAdditionalTech: "Visual Studio Code and Git",
         //Skills titles:
-        skillsTitle1: "Programming languages",
-        skillsTitle2: "Front-end development",
-        skillsTitle3: "Back-end development",
+        skillsTitle1: "Scripting",
+        skillsTitle2: "Utility software",
+        skillsTitle3: "Programming languages",
+        skillsTitle4: "Front-end development",
+        skillsTitle5: "Back-end development",
     },
     GitHub: {
         //Account data:

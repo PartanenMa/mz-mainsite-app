@@ -158,16 +158,16 @@ function GoalsPageContent({ goals }) {
                 goals.map((goal, index) => (
                     <div className="Goal" key={index}>
                         <h3>
-                            {goal.title}: <span style={{ color: getColor(goal.status) }}>{getStatus(goal.status)}</span>
+                            {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
                         </h3>
                         <p>
-                            - {goal.step1.step} <span style={{ color: getColor(goal.step1.status) }}>{getStatus(goal.step1.status)}</span>
+                            - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
                         </p>
                         <p>
-                            - {goal.step2.step} <span style={{ color: getColor(goal.step2.status) }}>{getStatus(goal.step2.status)}</span>
+                            - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
                         </p>
                         <p>
-                            - {goal.step3.step} <span style={{ color: getColor(goal.step3.status) }}>{getStatus(goal.step3.status)}</span>
+                            - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
                         </p>
                     </div>
                 ))
