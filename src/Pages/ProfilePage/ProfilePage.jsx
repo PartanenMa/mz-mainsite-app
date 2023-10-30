@@ -378,6 +378,35 @@ function Skills({ skills }) {
                         )}
                     </div>
                 </div>
+                <div className="Full-stackDevelopment">
+                    <div className="FSDTitle">
+                        <h4>{info.LinkedIn.skillsTitle6}</h4>
+                    </div>
+                    <div className="FSDContent">
+                        {skills.fullStackDevelopment?.length > 0 ? (
+                            skills.fullStackDevelopment.map((skill, index) => (
+                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                    <div
+                                        className="SkillLogo"
+                                        style={{
+                                            backgroundImage: `url(${skill.image})`,
+                                            backgroundSize: skill.backgroundSize,
+                                        }}
+                                    />
+                                    <div className="SkillContent">
+                                        <h4>{skill.name}</h4>
+                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                        {getSkillLevel(skill.skillLevel)}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="NoProfileData">
+                                <h4>NO DATA!</h4>
+                            </div>
+                        )}
+                    </div>
+                </div>
             </div>
         </div>
     );

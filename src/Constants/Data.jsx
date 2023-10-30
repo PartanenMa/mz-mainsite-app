@@ -56,7 +56,7 @@ export const data = {
                 {
                     name: "PowerShell",
                     skillLevel: "intermediate",
-                    color: "#044f88",
+                    color: "#012456",
                     image: "/src/Assets/Images/PowerShellLogo.png",
                     backgroundSize: "80%",
                 },
@@ -186,6 +186,15 @@ export const data = {
                     color: "#215732",
                     image: "/src/Assets/Images/Node.jsLogo.svg",
                     backgroundSize: "90%",
+                },
+            ],
+            fullStackDevelopment: [
+                {
+                    name: "Docker",
+                    skillLevel: "beginner",
+                    color: "#0db7ed",
+                    image: "/src/Assets/Images/DockerLogo.svg",
+                    backgroundSize: "80%",
                 },
             ],
         },
