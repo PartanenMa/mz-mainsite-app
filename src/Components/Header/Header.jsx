@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import ModalFP from "/src/Components/ModalFP/ModalFP.jsx";
+import Terminal from "/src/Components/Terminal/Terminal.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import Nav from "/src/Components/Nav/Nav.jsx";
@@ -8,6 +9,7 @@ import "./Header.css";
 
 function Header() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isTerminalOpen, setIsTerminalOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -16,6 +18,12 @@ function Header() {
             setIsModalOpen(true);
         } else {
             navigate(info.routes.frontPage);
+        }
+    };
+
+    const handleTerminalClick = () => {
+        if (!location.pathname.includes("admin") && !isModalOpen) {
+            setIsTerminalOpen(true);
         }
     };
 
@@ -42,6 +50,7 @@ function Header() {
                 <Nav />
             </AnimatePresence>
             <ModalFP isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <Terminal isTerminalOpen={isTerminalOpen} setIsTerminalOpen={setIsTerminalOpen} />
         </header>
     );
 }

@@ -265,7 +265,7 @@ export const data = {
                 status: "completed",
             },
             step2: {
-                step: "Learn to use office software.",
+                step: "Learn to use design software.",
                 status: "completed",
             },
             step3: {
@@ -281,7 +281,7 @@ export const data = {
                 status: "completed",
             },
             step2: {
-                step: "Learn develop software.",
+                step: "Learn to develop software.",
                 status: "completed",
             },
             step3: {
@@ -323,17 +323,17 @@ export const data = {
         },
         {
             title: "Learn full-stack development",
-            status: "notyetstarted",
+            status: "inprogress",
             step1: {
-                step: "Learn sensible web design.",
-                status: "notyetstarted",
+                step: "Learn app containerization.",
+                status: "inprogress",
             },
             step2: {
                 step: "Learn project management.",
                 status: "notyetstarted",
             },
             step3: {
-                step: "Pick a tech stack.",
+                step: "Pick and learn a tech stack.",
                 status: "notyetstarted",
             },
         },

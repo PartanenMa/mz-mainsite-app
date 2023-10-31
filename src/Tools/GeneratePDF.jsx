@@ -71,7 +71,7 @@ function GeneratePDF() {
         backgroundColor: "lightgray",
         color: "gray",
         border: "1px solid gray",
-        cursor: "default",
+        cursor: "not-allowed",
     };
 
     return (

@@ -1,0 +1,118 @@
+.TerminalOverlay {
+    background-color: green;
+    opacity: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.Terminal {
+    background-color: #111;
+    height: 580px;
+    width: 746px;
+    padding-bottom: 10px;
+    border: 3px solid #03a062;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #03a062;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.TerminalTitle {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.TerminalTitle h2 {
+    color: #03a062;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.5px 0.5px 0 lightgreen;
+    position: relative;
+    bottom: 10px;
+}
+
+.TerminalTitleX-button {
+    animation: fadeIn 0.3s;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-style: italic;
+    position: relative;
+    top: 7px;
+    left: 282px;
+}
+
+.TerminalTitleX-button:hover {
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
+    transition: background-color 500ms ease-in-out;
+}
+
+.TerminalInput {
+    height: 80%;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+}
+
+.TerminalInput p {
+    color: #03a062;
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
+    max-width: 98%;
+}
+
+.TerminalInputField {
+    background-color: lightgreen;
+    height: 96%;
+    width: 96%;
+    border: 1px solid #03a062;
+    border-radius: 5px;
+}
+
+.TerminalClose {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.TerminalCloseButton {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    height: 48px;
+    width: 207px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 30px;
+    font-style: italic;
+    transition: filter 300ms;
+}
+
+.TerminalCloseButton:hover {
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
+    transition: background-color 500ms ease-in-out;
+}
