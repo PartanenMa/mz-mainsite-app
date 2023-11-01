@@ -44,6 +44,19 @@ function Header() {
                     />
                     <h1>MatrixZone</h1>
                     <div className="Version">
+                        <AnimatePresence>
+                            <motion.div
+                                className="TerminalLogo"
+                                title="Open terminal"
+                                onClick={() => handleTerminalClick()}
+                                key="headerT"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
                         <p>{info.version}</p>
                     </div>
                 </motion.div>

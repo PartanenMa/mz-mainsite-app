@@ -81,6 +81,19 @@
     right: 0px;
 }
 
+.TerminalLogo {
+    background-image: url("/src/Assets/Images/Terminal.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 19px;
+    cursor: pointer;
+}
+
 .Version p {
     color: #03a062;
     font-size: 15px;
