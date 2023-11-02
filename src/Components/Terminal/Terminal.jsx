@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Terminal.css";
 
 function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
+    const [terminalCommands, setTerminalCommands] = useState([]);
+    const [currentCommand, setCurrentCommand] = useState("");
     const [terminalStyle, setTerminalStyle] = useState({
         top: "",
         left: "",
@@ -25,10 +27,10 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
             });
         };
 
-        //Add an event listener to update the modal position when the window is resized:
+        //Add an event listener to update the terminal position when the window is resized:
         window.addEventListener("resize", updateTerminalPosition);
 
-        //Call the updateModalPosition function once to set the initial position:
+        //Call the updateTerminalPosition function once to set the initial position:
         updateTerminalPosition();
 
         //Remove the event listener when the component unmounts:
@@ -36,6 +38,22 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
             window.removeEventListener("resize", updateTerminalPosition);
         };
     }, [isTerminalOpen]);
+
+    const handleCommandSubmit = () => {
+        if (currentCommand.trim() !== "") {
+            if (currentCommand.trim().toLowerCase() === "clear") {
+                setTerminalCommands([]);
+            } else {
+                setTerminalCommands((prevCommands) => [...prevCommands, currentCommand]);
+            }
+            setCurrentCommand("");
+        }
+    };
+
+    const closeTerminal = () => {
+        setTerminalCommands([]);
+        setIsTerminalOpen(false);
+    };
 
     return ReactDOM.createPortal(
         <>
@@ -48,7 +66,7 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
                                 <h2>TERMINAL</h2>
                                 <motion.button
                                     className="TerminalTitleX-button"
-                                    onClick={() => setIsTerminalOpen(false)}
+                                    onClick={() => closeTerminal()}
                                     key="terminaltitlex-button"
                                     whileHover={{
                                         scale: 1.05,
@@ -60,12 +78,32 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
                                 </motion.button>
                             </div>
                             <div className="TerminalInput">
-                                <textarea className="TerminalInputField" rows="4" cols="50" />
+                                <div className="TerminalInputField">
+                                    {terminalCommands.map((command, index) => (
+                                        <div key={index}>
+                                            <p>$</p>
+                                            <h3>{command}</h3>
+                                        </div>
+                                    ))}
+                                    <div>
+                                        <p>$</p>
+                                        <input
+                                            type="text"
+                                            value={currentCommand}
+                                            onChange={(e) => setCurrentCommand(e.target.value)}
+                                            onKeyPress={(e) => {
+                                                if (e.key === "Enter") {
+                                                    handleCommandSubmit();
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <div className="TerminalClose">
                                 <motion.button
                                     className="TerminalCloseButton"
-                                    onClick={() => setIsTerminalOpen(false)}
+                                    onClick={() => closeTerminal()}
                                     key="terminalclosebutton"
                                     whileHover={{
                                         scale: 1.05,

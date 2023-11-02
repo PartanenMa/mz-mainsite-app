@@ -73,21 +73,51 @@
     overflow: hidden;
 }
 
-.TerminalInput p {
-    color: #03a062;
-    font-size: 18px;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.3px 0.3px 0 lightgreen;
-    max-width: 98%;
-}
-
 .TerminalInputField {
     background-color: lightgreen;
     height: 96%;
     width: 96%;
     border: 1px solid #03a062;
     border-radius: 5px;
+    overflow: hidden;
+}
+
+.TerminalInputField div {
+    height: 6%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.TerminalInputField p {
+    color: #03a062;
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
+}
+
+.TerminalInputField h3 {
+    color: #03a062;
+    width: 90%;
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
+    margin-left: 5px;
+}
+
+.TerminalInputField input {
+    background: transparent;
+    color: green;
+    width: 90%;
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 0.3px 0.3px 0 lightgreen;
+    border: none;
+    outline: none;
+    margin-left: 5px;
 }
 
 .TerminalClose {
