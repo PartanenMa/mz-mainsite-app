@@ -39,12 +39,21 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
         };
     }, [isTerminalOpen]);
 
+    const getUnknown = (command) => {
+        return (
+            <p>
+                {command}
+                <span style={{ color: "red" }}>{" UNKNOWN COMMAND!"}</span>
+            </p>
+        );
+    };
+
     const handleCommandSubmit = () => {
         if (currentCommand.trim() !== "") {
             if (currentCommand.trim().toLowerCase() === "clear") {
                 setTerminalCommands([]);
             } else {
-                setTerminalCommands((prevCommands) => [...prevCommands, currentCommand]);
+                setTerminalCommands((prevCommands) => [...prevCommands, getUnknown(currentCommand)]);
             }
             setCurrentCommand("");
         }
