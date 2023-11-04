@@ -223,13 +223,13 @@ function Skills({ skills }) {
                 <h3>SKILLS</h3>
             </div>
             <div className="SkillsContent">
-                <div className="Scripting">
-                    <div className="STitle">
-                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                <div className="UtilitySoftware">
+                    <div className="USTitle">
+                        <h4>{info.LinkedIn.skillsTitle2}</h4>
                     </div>
-                    <div className="SContent">
-                        {skills.scripting?.length > 0 ? (
-                            skills.scripting.map((skill, index) => (
+                    <div className="USContent">
+                        {skills.utilitySoftware?.length > 0 ? (
+                            skills.utilitySoftware.map((skill, index) => (
                                 <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
                                         className="SkillLogo"
@@ -252,13 +252,13 @@ function Skills({ skills }) {
                         )}
                     </div>
                 </div>
-                <div className="UtilitySoftware">
-                    <div className="USTitle">
-                        <h4>{info.LinkedIn.skillsTitle2}</h4>
+                <div className="Scripting">
+                    <div className="STitle">
+                        <h4>{info.LinkedIn.skillsTitle1}</h4>
                     </div>
-                    <div className="USContent">
-                        {skills.utilitySoftware?.length > 0 ? (
-                            skills.utilitySoftware.map((skill, index) => (
+                    <div className="SContent">
+                        {skills.scripting?.length > 0 ? (
+                            skills.scripting.map((skill, index) => (
                                 <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
                                         className="SkillLogo"

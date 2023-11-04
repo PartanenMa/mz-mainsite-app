@@ -52,22 +52,6 @@ export const data = {
             },
         ],
         skills: {
-            scripting: [
-                {
-                    name: "PowerShell",
-                    skillLevel: "intermediate",
-                    color: "#012456",
-                    image: "/src/Assets/Images/PowerShellLogo.png",
-                    backgroundSize: "80%",
-                },
-                {
-                    name: "Bash",
-                    skillLevel: "intermediate",
-                    color: "darkgreen",
-                    image: "/src/Assets/Images/BashLogo.svg",
-                    backgroundSize: "80%",
-                },
-            ],
             utilitySoftware: [
                 {
                     name: "Visual Studio Code",
@@ -77,11 +61,41 @@ export const data = {
                     backgroundSize: "70%",
                 },
                 {
+                    name: "Figma",
+                    skillLevel: "intermediate",
+                    color: "#a259ff",
+                    image: "/src/Assets/Images/FigmaLogo.svg",
+                    backgroundSize: "45%",
+                },
+                {
                     name: "Git",
                     skillLevel: "advanced",
                     color: "#F1502F",
                     image: "/src/Assets/Images/GitLogo.svg",
                     backgroundSize: "70%",
+                },
+            ],
+            scripting: [
+                {
+                    name: "PowerShell",
+                    skillLevel: "intermediate",
+                    color: "#012456",
+                    image: "/src/Assets/Images/PowerShellLogo.png",
+                    backgroundSize: "80%",
+                },
+                {
+                    name: "Mac Terminal",
+                    skillLevel: "beginner",
+                    color: "#222",
+                    image: "/src/Assets/Images/MacTerminalLogo.png",
+                    backgroundSize: "80%",
+                },
+                {
+                    name: "Bash",
+                    skillLevel: "intermediate",
+                    color: "darkgreen",
+                    image: "/src/Assets/Images/BashLogo.svg",
+                    backgroundSize: "80%",
                 },
             ],
             programmingLanguages: [
@@ -245,7 +259,7 @@ export const data = {
             title: "Learn basic programming",
             status: "completed",
             step1: {
-                step: "Learn languages such as C++, Java, and C#.",
+                step: "Learn programming languages such as C++, Java, and C#.",
                 status: "completed",
             },
             step2: {
@@ -253,7 +267,7 @@ export const data = {
                 status: "completed",
             },
             step3: {
-                step: "Learn to use PowerShell and Bash.",
+                step: "Learn to design, develop and test software.",
                 status: "completed",
             },
         },
@@ -274,18 +288,18 @@ export const data = {
             },
         },
         {
-            title: "Learn software engineering",
+            title: "Learn scripting",
             status: "completed",
             step1: {
-                step: "Learn to design software.",
+                step: "Learn PowerShell scripting.",
                 status: "completed",
             },
             step2: {
-                step: "Learn to develop software.",
+                step: "Learn Mac Terminal scripting.",
                 status: "completed",
             },
             step3: {
-                step: "Learn to test software.",
+                step: "Learn Bash scripting.",
                 status: "completed",
             },
         },
@@ -293,7 +307,7 @@ export const data = {
             title: "Learn front-end development",
             status: "inprogress",
             step1: {
-                step: "Learn languages such as HTML, CSS, JavaScript and TypeScript.",
+                step: "Learn programming languages such as HTML, CSS, JavaScript and TypeScript.",
                 status: "completed",
             },
             step2: {
@@ -309,7 +323,7 @@ export const data = {
             title: "Learn back-end development",
             status: "inprogress",
             step1: {
-                step: "Learn languages such as Python, Go and PHP.",
+                step: "Learn programming languages such as Python, Go, PHP, SQL and NoSQL.",
                 status: "inprogress",
             },
             step2: {
@@ -317,7 +331,7 @@ export const data = {
                 status: "inprogress",
             },
             step3: {
-                step: "Learn SQL- and NoSQL databases.",
+                step: "Learn to use SQL- and NoSQL databases.",
                 status: "notyetstarted",
             },
         },
