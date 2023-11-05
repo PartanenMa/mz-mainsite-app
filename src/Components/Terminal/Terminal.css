@@ -10,11 +10,11 @@
 }
 
 .Terminal {
-    background-color: #111;
+    background-color: forestgreen;
     height: 580px;
     width: 746px;
     padding-bottom: 10px;
-    border: 3px solid #03a062;
+    border: 3px solid #111;
     border-radius: 10px;
     box-shadow: 0 0 30px 5px #03a062;
     position: fixed;
@@ -32,36 +32,13 @@
 }
 
 .TerminalTitle h2 {
-    color: #03a062;
+    color: #111;
     font-size: 30px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    text-shadow: 0.5px 0.5px 0 lightgreen;
+    text-shadow: 0.5px 0.5px 0 white;
     position: relative;
     bottom: 10px;
-}
-
-.TerminalTitleX-button {
-    animation: fadeIn 0.3s;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    border: 1px solid white;
-    border-radius: 5px;
-    font-size: 20px;
-    font-style: italic;
-    position: relative;
-    top: 7px;
-    left: 282px;
-}
-
-.TerminalTitleX-button:hover {
-    background-color: lightcoral;
-    color: red;
-    border: 1px solid red;
-    transition: background-color 500ms ease-in-out;
 }
 
 .TerminalInput {
@@ -77,7 +54,7 @@
     background-color: lightgreen;
     height: 96%;
     width: 96%;
-    border: 1px solid #03a062;
+    border: 1px solid #111;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -90,7 +67,7 @@
 }
 
 .TerminalInputField p {
-    color: #03a062;
+    color: green;
     font-size: 18px;
     font-style: italic;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;

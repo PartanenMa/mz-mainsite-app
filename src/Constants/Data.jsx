@@ -36,7 +36,7 @@ export const data = {
                 timeAndPlace: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
                 educationDescription:
                     "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
-                educationSubjects: "Basic infantryman tactics and skills, , mortar tactics and skills, leadership skills",
+                educationSubjects: "Basic infantryman tactics and skills, mortar tactics and skills, leadership skills",
                 color: "red",
                 image: "/src/Assets/Images/FDFLogo.svg",
             },

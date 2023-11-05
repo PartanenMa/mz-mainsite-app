@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Terminal.css";
 
@@ -41,8 +40,8 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
 
     const getUnknown = (command) => {
         return (
-            <p>
-                {command}
+            <p style={{ color: "#03a062" }}>
+                $ {command}
                 <span style={{ color: "red" }}>{" UNKNOWN COMMAND!"}</span>
             </p>
         );
@@ -73,29 +72,16 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
                         <motion.div className="Terminal" style={terminalStyle} key="terminal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                             <div className="TerminalTitle">
                                 <h2>TERMINAL</h2>
-                                <motion.button
-                                    className="TerminalTitleX-button"
-                                    onClick={() => closeTerminal()}
-                                    key="terminaltitlex-button"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { duration: 0.1 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    X
-                                </motion.button>
                             </div>
                             <div className="TerminalInput">
                                 <div className="TerminalInputField">
                                     {terminalCommands.map((command, index) => (
                                         <div key={index}>
-                                            <p>$</p>
                                             <h3>{command}</h3>
                                         </div>
                                     ))}
                                     <div>
-                                        <p>$</p>
+                                        <p style={{ paddingLeft: "5px" }}>$</p>
                                         <input
                                             type="text"
                                             value={currentCommand}
