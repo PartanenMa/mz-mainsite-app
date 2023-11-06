@@ -568,7 +568,7 @@
 }
 
 .ProfessionSection {
-    background-image: url("/src/Assets/Images/ProfessionSectionBG.jpg");
+    background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -654,4 +654,116 @@
     100% {
         transform: translate(0, -0px);
     }
+}
+
+.TechnologySection {
+    background-image: url("/src/Assets/Images/TechnologySectionBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    height: 650px;
+    width: 100%;
+    box-shadow: inset 0 0 30px 20px #222;
+    overflow: hidden;
+}
+
+.Technology {
+    height: 100%;
+    width: 1194px;
+    margin-left: 50px;
+}
+
+.TechnologyTitle {
+    height: 10%;
+    width: 100%;
+}
+
+.TechnologyTitle h3 {
+    animation: fadeIn 0.3s;
+    color: #03a062;
+    font-size: 45px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow:
+        0 0 7px black,
+        0 0 3px black;
+}
+
+.TechnologyContent {
+    height: 90%;
+    width: 100%;
+}
+
+.TechnologyContentBox1 {
+    animation: fadeIn 0.3s;
+    background-color: darkblue;
+    backdrop-filter: blur(15px);
+    min-height: 335px;
+    width: 535px;
+    border: 1px inset white;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px lightblue;
+    position: relative;
+    top: 30px;
+    overflow: hidden;
+}
+
+.TCB1Title {
+    background-color: #111;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.TCB1Title h4 {
+    color: darkblue;
+    font-size: 40px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 48px;
+}
+
+.TCB1Content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.TechnologyContentBox2 {
+    animation: fadeIn 0.3s;
+    background-color: darkred;
+    backdrop-filter: blur(15px);
+    min-height: 335px;
+    width: 535px;
+    border: 1px inset white;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px lightcoral;
+    position: relative;
+    overflow: hidden;
+}
+
+.TCB2Title {
+    background-color: #111;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.TCB2Title h4 {
+    color: darkred;
+    font-size: 40px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: relative;
+    bottom: 48px;
+}
+
+.TCB2Content {
+    width: 100%;
+    overflow: hidden;
 }

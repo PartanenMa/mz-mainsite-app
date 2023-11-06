@@ -1,19 +1,36 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./FrontPage.css";
 
 function FrontPage() {
+    const [showFrontEnd, setShowFrontEnd] = useState(false);
+    const [showBackEnd, setShowBackEnd] = useState(false);
+
+    useEffect(() => {
+        if (info.LinkedIn.professionTech.includes("Front-end")) {
+            setShowFrontEnd(true);
+            setShowBackEnd(false);
+        } else if (info.LinkedIn.professionTech.includes("Back-end")) {
+            setShowFrontEnd(false);
+            setShowBackEnd(true);
+        } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
+            setShowFrontEnd(true);
+            setShowBackEnd(true);
+        }
+    }, []);
+
     return (
         <div className="FP">
             <div className="FrontPageContainer">
-                <Main />
+                <Main showFrontEnd={showFrontEnd} showBackEnd={showBackEnd} />
             </div>
         </div>
     );
 }
 
-function Main() {
+function Main({ showFrontEnd, showBackEnd }) {
     const navigate = useNavigate();
 
     const handleNavigation = (page) => {
@@ -196,6 +213,40 @@ function Main() {
                                     width: info.LinkedIn.companyLogoW,
                                 }}
                             />
+                        )}
+                    </div>
+                </div>
+            </section>
+            <section className="TechnologySection">
+                <div className="Technology">
+                    <div className="TechnologyTitle">
+                        <h3>
+                            {info.LinkedIn.professionTech}
+                            {info.LinkedIn.professionDetailed && (
+                                <>
+                                    <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                    <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                    <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                </>
+                            )}
+                        </h3>
+                    </div>
+                    <div lassName="TechnologyContent">
+                        {showFrontEnd && (
+                            <div className="TechnologyContentBox1">
+                                <div className="TCB1Title">
+                                    <h4>Front-end tech stack</h4>
+                                </div>
+                                <div className="TCB1Content"></div>
+                            </div>
+                        )}
+                        {showBackEnd && (
+                            <div className="TechnologyContentBox2" style={showFrontEnd && showBackEnd ? { bottom: "364px", left: "600px" } : { top: "30px" }}>
+                                <div className="TCB2Title">
+                                    <h4>Back-end tech stack</h4>
+                                </div>
+                                <div className="TCB2Content"></div>
+                            </div>
                         )}
                     </div>
                 </div>
