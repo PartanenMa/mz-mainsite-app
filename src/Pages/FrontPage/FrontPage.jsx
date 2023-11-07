@@ -149,6 +149,40 @@ function Main({ showFrontEnd, showBackEnd }) {
                     </motion.div>
                 </AnimatePresence>
             </section>
+            <section className="TechnologySection">
+                <div className="Technology">
+                    <div className="TechnologyTitle">
+                        <h3>
+                            {info.LinkedIn.professionTech}
+                            {info.LinkedIn.professionDetailed && (
+                                <>
+                                    <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                    <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                    <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                </>
+                            )}
+                        </h3>
+                    </div>
+                    <div lassName="TechnologyContent">
+                        {showFrontEnd && (
+                            <div className="TechnologyContentBox1">
+                                <div className="TCB1Title">
+                                    <h4>Front-end tech stack</h4>
+                                </div>
+                                <div className="TCB1Content"></div>
+                            </div>
+                        )}
+                        {showBackEnd && (
+                            <div className="TechnologyContentBox2" style={showFrontEnd && showBackEnd ? { bottom: "308px", left: "600px" } : { top: "30px" }}>
+                                <div className="TCB2Title">
+                                    <h4>Back-end tech stack</h4>
+                                </div>
+                                <div className="TCB2Content"></div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </section>
             <section className="ProfessionSection">
                 <div className="Profession">
                     <div className="ProfessionTitle">
@@ -161,6 +195,15 @@ function Main({ showFrontEnd, showBackEnd }) {
                             >
                                 {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
                             </span>
+                            {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                <>
+                                    <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                    <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                    <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                </>
+                            ) : (
+                                ""
+                            )}
                             <span
                                 title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
                                 style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
@@ -172,7 +215,7 @@ function Main({ showFrontEnd, showBackEnd }) {
                     <div lassName="ProfessionContent">
                         <div className="ProfessionContentBox1">
                             <p>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for a job as a "}
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
                                 <span
                                     style={{
                                         color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
@@ -213,40 +256,6 @@ function Main({ showFrontEnd, showBackEnd }) {
                                     width: info.LinkedIn.companyLogoW,
                                 }}
                             />
-                        )}
-                    </div>
-                </div>
-            </section>
-            <section className="TechnologySection">
-                <div className="Technology">
-                    <div className="TechnologyTitle">
-                        <h3>
-                            {info.LinkedIn.professionTech}
-                            {info.LinkedIn.professionDetailed && (
-                                <>
-                                    <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                    <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
-                                    <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
-                                </>
-                            )}
-                        </h3>
-                    </div>
-                    <div lassName="TechnologyContent">
-                        {showFrontEnd && (
-                            <div className="TechnologyContentBox1">
-                                <div className="TCB1Title">
-                                    <h4>Front-end tech stack</h4>
-                                </div>
-                                <div className="TCB1Content"></div>
-                            </div>
-                        )}
-                        {showBackEnd && (
-                            <div className="TechnologyContentBox2" style={showFrontEnd && showBackEnd ? { bottom: "364px", left: "600px" } : { top: "30px" }}>
-                                <div className="TCB2Title">
-                                    <h4>Back-end tech stack</h4>
-                                </div>
-                                <div className="TCB2Content"></div>
-                            </div>
                         )}
                     </div>
                 </div>
