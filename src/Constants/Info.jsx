@@ -1,5 +1,7 @@
+import { data } from "./Data.jsx";
+
 export const info = {
-    version: "Alpha 0.7.1",
+    version: "Alpha 0.7.2",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -44,21 +46,6 @@ export const info = {
             "My expertise lies in front-end web development, where I enjoy creating visually appealing and user-friendly interfaces. I have a passion for using tools like React to create high-quality web applications, and have some experience working with Node.js and FastAPI on the backend. I've also used Figma for UI design, Git for version control and WordPress for creation of some websites.",
         description3:
             "While my knowledge of databases is basic, I have studied SQL and NoSQL, which gives me a solid foundation for working with data. I've also studied some data analysis using Python.",
-        //Profession:
-        profession: "Software Developer",
-        professionDetailed: "Web Developer",
-        professionTech: "Front-end Developer",
-        professionTechStack: "React",
-        professionAdditionalTech: "Visual Studio Code, Figma and Git",
-        //Job:
-        jobTitle: "Junior Software Developer",
-        company: "Visma Real Estate Oy",
-        companyColor: "#b11226",
-        companyLogo: "/src/Assets/Images/VismaLogo.svg",
-        companyLogoH: "73px",
-        companyLogoW: "420px",
-        jobTechStack: "React and Sass",
-        jobAdditionalTech: "Visual Studio Code and Git",
         //Skills titles:
         skillsTitle1: "Scripting",
         skillsTitle2: "Utility software",
@@ -66,6 +53,22 @@ export const info = {
         skillsTitle4: "Front-end development",
         skillsTitle5: "Back-end development",
         skillsTitle6: "Full-stack development",
+        //Profession:
+        profession: data.professionStatus.profession,
+        professionDetailed: data.professionStatus.professionDetailed,
+        professionTech: data.professionStatus.professionTech,
+        professionTechStack: data.professionStatus.professionTechStack,
+        professionAdditionalTech: data.professionStatus.professionAdditionalTech,
+        //Job:
+        jobTitle: data.jobStatus.jobTitle,
+        company: data.jobStatus.company,
+        companyInfoLink: data.jobStatus.companyInfoLink,
+        jobTechStack: data.jobStatus.jobTechStack,
+        jobAdditionalTech: data.jobStatus.jobAdditionalTech,
+        companyColor: data.jobStatus.companyColor,
+        companyLogo: data.jobStatus.companyLogo,
+        companyLogoH: data.jobStatus.companyLogoH,
+        companyLogoW: data.jobStatus.companyLogoW,
     },
     GitHub: {
         //Account data:

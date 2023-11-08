@@ -608,13 +608,13 @@
 
 .TechnologyContentBox1 {
     animation: fadeIn 0.3s;
-    background-color: darkblue;
+    background-color: transparent;
     backdrop-filter: blur(15px);
     min-height: 335px;
     width: 535px;
     border: 1px inset white;
     border-radius: 10px;
-    box-shadow: 10px 5px 5px lightblue;
+    box-shadow: 10px 5px 5px #111;
     position: relative;
     top: 30px;
     overflow: hidden;
@@ -640,18 +640,83 @@
 
 .TCB1Content {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.Tech {
+    background-color: #111;
+    height: 150px;
+    width: 150px;
+    border: 1px solid var(--tech-color);
+    border-radius: 10px;
+    margin-top: 60px;
     overflow: hidden;
+    transition: filter 300ms;
+}
+
+.Tech:hover {
+    filter: drop-shadow(0 0 2em var(--tech-color));
+}
+
+.TechTitle {
+    height: 30px;
+    width: 100%;
+    border-bottom: 0.5px solid var(--tech-color);
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.TechTitle h5 {
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    position: relative;
+    bottom: 30px;
+}
+
+.TechLogo {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.NoTechData {
+    height: 90%;
+    width: 90%;
+    position: relative;
+    right: 340px;
+    bottom: 20px;
+}
+
+.NoTechData h4 {
+    width: fit-content;
+    color: red;
+    font-size: 60px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border: 1px solid red;
+    border-radius: 48%;
+    padding: 20px;
+    position: relative;
+    top: 10px;
+    left: 430px;
 }
 
 .TechnologyContentBox2 {
     animation: fadeIn 0.3s;
-    background-color: darkred;
+    background-color: transparent;
     backdrop-filter: blur(15px);
     min-height: 335px;
     width: 535px;
     border: 1px inset white;
     border-radius: 10px;
-    box-shadow: 10px 5px 5px lightcoral;
+    box-shadow: 10px 5px 5px #111;
     position: relative;
     overflow: hidden;
 }
@@ -676,7 +741,11 @@
 
 .TCB2Content {
     width: 100%;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .ProfessionSection {

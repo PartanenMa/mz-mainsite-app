@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
+import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./FrontPage.css";
 
 function FrontPage() {
     const [showFrontEnd, setShowFrontEnd] = useState(false);
     const [showBackEnd, setShowBackEnd] = useState(false);
+    const [technologiesFe, setTechnologiesFe] = useState([]);
+    const [technologiesBe, setTechnologiesBe] = useState([]);
 
     useEffect(() => {
+        setTechnologiesFe(data.technologiesData.technologiesFe);
+        setTechnologiesBe(data.technologiesData.technologiesBe);
         if (info.LinkedIn.professionTech.includes("Front-end")) {
             setShowFrontEnd(true);
             setShowBackEnd(false);
@@ -24,13 +29,13 @@ function FrontPage() {
     return (
         <div className="FP">
             <div className="FrontPageContainer">
-                <Main showFrontEnd={showFrontEnd} showBackEnd={showBackEnd} />
+                <Main showFrontEnd={showFrontEnd} showBackEnd={showBackEnd} techFe={technologiesFe} techBe={technologiesBe} />
             </div>
         </div>
     );
 }
 
-function Main({ showFrontEnd, showBackEnd }) {
+function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
     const navigate = useNavigate();
 
     const handleNavigation = (page) => {
@@ -163,13 +168,41 @@ function Main({ showFrontEnd, showBackEnd }) {
                             )}
                         </h3>
                     </div>
-                    <div lassName="TechnologyContent">
+                    <div className="TechnologyContent">
                         {showFrontEnd && (
                             <div className="TechnologyContentBox1">
                                 <div className="TCB1Title">
                                     <h4>Front-end tech stack</h4>
                                 </div>
-                                <div className="TCB1Content"></div>
+                                <div className="TCB1Content">
+                                    {techFe.length > 0 ? (
+                                        techFe.map((tech, index) => (
+                                            <AnimatePresence>
+                                                <motion.a
+                                                    className="Tech"
+                                                    key={index}
+                                                    style={{ "--tech-color": tech.color, textDecoration: "none" }}
+                                                    href={tech.infoLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    <div className="TechTitle">
+                                                        <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                                    </div>
+                                                    <div className="TechLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                </motion.a>
+                                            </AnimatePresence>
+                                        ))
+                                    ) : (
+                                        <div className="NoTechData">
+                                            <h4>NO DATA!</h4>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         )}
                         {showBackEnd && (
@@ -177,7 +210,35 @@ function Main({ showFrontEnd, showBackEnd }) {
                                 <div className="TCB2Title">
                                     <h4>Back-end tech stack</h4>
                                 </div>
-                                <div className="TCB2Content"></div>
+                                <div className="TCB2Content">
+                                    {techBe.length > 0 ? (
+                                        techBe.map((tech, index) => (
+                                            <AnimatePresence>
+                                                <motion.a
+                                                    className="Tech"
+                                                    key={index}
+                                                    style={{ "--tech-color": tech.color, textDecoration: "none" }}
+                                                    href={tech.infoLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    <div className="TechTitle">
+                                                        <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                                    </div>
+                                                    <div className="TechLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                </motion.a>
+                                            </AnimatePresence>
+                                        ))
+                                    ) : (
+                                        <div className="NoTechData">
+                                            <h4>NO DATA!</h4>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -212,7 +273,7 @@ function Main({ showFrontEnd, showBackEnd }) {
                             </span>
                         </h3>
                     </div>
-                    <div lassName="ProfessionContent">
+                    <div className="ProfessionContent">
                         <div className="ProfessionContentBox1">
                             <p>
                                 {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
@@ -254,7 +315,9 @@ function Main({ showFrontEnd, showBackEnd }) {
                                     backgroundImage: `url(${info.LinkedIn.companyLogo})`,
                                     height: info.LinkedIn.companyLogoH,
                                     width: info.LinkedIn.companyLogoW,
+                                    cursor: "pointer",
                                 }}
+                                onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
                             />
                         )}
                     </div>

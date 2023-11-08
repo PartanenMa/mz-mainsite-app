@@ -1,4 +1,42 @@
 export const data = {
+    professionStatus: {
+        profession: "Software Developer",
+        professionDetailed: "Web Developer",
+        professionTech: "Front-end Developer",
+        professionTechStack: "React",
+        professionAdditionalTech: "Visual Studio Code, Figma and Git",
+    },
+    jobStatus: {
+        jobTitle: "Junior Software Developer",
+        company: "Visma Real Estate Oy",
+        companyInfoLink: "https://vismarealestate.fi/",
+        jobTechStack: "React and Sass",
+        jobAdditionalTech: "Visual Studio Code and Git",
+        companyColor: "#b11226",
+        companyLogo: "/src/Assets/Images/VismaLogo.svg",
+        companyLogoH: "73px",
+        companyLogoW: "420px",
+    },
+    technologiesData: {
+        technologiesFe: [
+            {
+                name: "React",
+                color: "#61DBFB",
+                image: "src/Assets/Images/ReactLogo.svg",
+                size: "80%",
+                infoLink: "https://react.dev/",
+            },
+        ],
+        technologiesBe: [
+            {
+                name: "Node.js",
+                color: "#3c873a",
+                image: "src/Assets/Images/Node.jsLogo.svg",
+                size: "80%",
+                infoLink: "https://nodejs.org/en/",
+            },
+        ],
+    },
     profileData: {
         languages: [
             {
@@ -197,7 +235,7 @@ export const data = {
                 {
                     name: "Node.js with Express.js",
                     skillLevel: "beginner",
-                    color: "#215732",
+                    color: "#3c873a",
                     image: "/src/Assets/Images/Node.jsLogo.svg",
                     backgroundSize: "90%",
                 },
