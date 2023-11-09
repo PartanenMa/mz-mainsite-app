@@ -89,7 +89,7 @@ function GoalsCount({ goals }) {
             }
         });
 
-        return completedCount;
+        return <span style={{ fontStyle: "normal" }}>{completedCount + " ✔️"}</span>;
     };
 
     const getInProgressGoals = () => {
@@ -101,7 +101,7 @@ function GoalsCount({ goals }) {
             }
         });
 
-        return inProgressCount;
+        return <span style={{ fontStyle: "normal" }}>{inProgressCount + " 🟡"}</span>;
     };
 
     const getNotYetStartedGoals = () => {
@@ -113,7 +113,7 @@ function GoalsCount({ goals }) {
             }
         });
 
-        return notYetStartedCount;
+        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount + " ❌"}</span>;
     };
 
     return (

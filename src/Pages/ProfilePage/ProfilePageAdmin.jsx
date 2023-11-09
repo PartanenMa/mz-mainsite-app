@@ -501,7 +501,7 @@ function Experience({ experiences }) {
                                 </div>
                                 <div className="ExperienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     <p>{experience.workDescription}</p>
-                                    <p className="Tech">
+                                    <p className="UsedTech">
                                         Technologies used: <span style={{ color: "white" }}>{experience.workTech}</span>
                                     </p>
                                 </div>

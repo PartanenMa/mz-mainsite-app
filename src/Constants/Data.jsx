@@ -115,21 +115,21 @@ export const data = {
             ],
             scripting: [
                 {
-                    name: "PowerShell",
+                    name: "PowerShell (Windows)",
                     skillLevel: "intermediate",
                     color: "#012456",
                     image: "/src/Assets/Images/PowerShellLogo.png",
                     backgroundSize: "80%",
                 },
                 {
-                    name: "Mac Terminal",
+                    name: "Mac Terminal (macOS)",
                     skillLevel: "beginner",
                     color: "#222",
                     image: "/src/Assets/Images/MacTerminalLogo.png",
                     backgroundSize: "80%",
                 },
                 {
-                    name: "Bash",
+                    name: "Bash (Linux)",
                     skillLevel: "intermediate",
                     color: "darkgreen",
                     image: "/src/Assets/Images/BashLogo.svg",
@@ -369,7 +369,7 @@ export const data = {
                 status: "inprogress",
             },
             step3: {
-                step: "Learn to use SQL- and NoSQL databases.",
+                step: "Learn to use relational (SQL) - and non-relational (NoSQL) databases.",
                 status: "notyetstarted",
             },
         },
