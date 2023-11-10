@@ -38,6 +38,20 @@ function FrontPage() {
 function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
     const navigate = useNavigate();
 
+    const getProfessionTech = () => {
+        let professionT;
+
+        if (showFrontEnd && showBackEnd) {
+            professionT = " 🖥️+🖥";
+        } else if (showFrontEnd) {
+            professionT = " 🖥️";
+        } else if (showBackEnd) {
+            professionT = " 🖥";
+        }
+
+        return professionT;
+    };
+
     const handleNavigation = (page) => {
         if (page === "profile") {
             navigate(info.routes.profilePage);
@@ -62,13 +76,16 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             <p>I'm a</p>
                             <div className="HTW2animation">
                                 <div className="HTW2first">
-                                    <div>{info.LinkedIn.profession}👨‍💻</div>
+                                    <div>{info.LinkedIn.profession + " 👨‍💻"}</div>
                                 </div>
                                 <div className="HTW2second">
-                                    <div>{info.LinkedIn.professionDetailed}💻</div>
+                                    <div>{info.LinkedIn.professionDetailed + " 💻"}</div>
                                 </div>
                                 <div className="HTW2third">
-                                    <div>{info.LinkedIn.professionTech}🖥️</div>
+                                    <div>
+                                        {info.LinkedIn.professionTech}
+                                        <span>{getProfessionTech()}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

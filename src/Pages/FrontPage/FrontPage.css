@@ -608,11 +608,11 @@
 
 .TechnologyContentBox1 {
     animation: fadeIn 0.3s;
-    background-color: transparent;
+    background-color: #333;
     backdrop-filter: blur(15px);
     min-height: 335px;
     width: 535px;
-    border: 1px inset white;
+    border: 1px inset darkblue;
     border-radius: 10px;
     box-shadow: 10px 5px 5px #111;
     position: relative;
@@ -624,7 +624,7 @@
     background-color: #111;
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid darkblue;
     padding-left: 20px;
     overflow: hidden;
 }
@@ -710,11 +710,11 @@
 
 .TechnologyContentBox2 {
     animation: fadeIn 0.3s;
-    background-color: transparent;
+    background-color: #333;
     backdrop-filter: blur(15px);
     min-height: 335px;
     width: 535px;
-    border: 1px inset white;
+    border: 1px inset darkred;
     border-radius: 10px;
     box-shadow: 10px 5px 5px #111;
     position: relative;
@@ -725,7 +725,7 @@
     background-color: #111;
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid darkred;
     padding-left: 20px;
     overflow: hidden;
 }
