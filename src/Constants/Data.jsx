@@ -92,18 +92,18 @@ export const data = {
         skills: {
             utilitySoftware: [
                 {
-                    name: "Visual Studio Code",
-                    skillLevel: "advanced",
-                    color: "#0078d7",
-                    image: "/src/Assets/Images/VisualStudioCodeLogo.svg",
-                    backgroundSize: "70%",
-                },
-                {
                     name: "Figma",
                     skillLevel: "intermediate",
                     color: "#a259ff",
                     image: "/src/Assets/Images/FigmaLogo.svg",
                     backgroundSize: "45%",
+                },
+                {
+                    name: "Visual Studio Code",
+                    skillLevel: "advanced",
+                    color: "#0078d7",
+                    image: "/src/Assets/Images/VisualStudioCodeLogo.svg",
+                    backgroundSize: "70%",
                 },
                 {
                     name: "Git",
@@ -313,11 +313,11 @@ export const data = {
             title: "Learn utility software",
             status: "completed",
             step1: {
-                step: "Learn to use code editing software.",
+                step: "Learn to use design software.",
                 status: "completed",
             },
             step2: {
-                step: "Learn to use design software.",
+                step: "Learn to use code editing software.",
                 status: "completed",
             },
             step3: {
