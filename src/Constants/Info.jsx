@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Alpha 0.7.5",
+    version: "Alpha 0.8",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -40,12 +40,11 @@ export const info = {
         emailAddress: "manu111.partanen@gmail.com",
         link: "https://www.linkedin.com/in/manu-partanen-7864b4265/",
         //Profile description:
-        description1:
-            "As a web developer, I have a strong foundation in HTML, CSS, and JavaScript. I'm also comfortable with C++, Java, C# and python, which I've been working with in several of my school and personal projects.",
+        description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.",
         description2:
-            "My expertise lies in front-end web development, where I enjoy creating visually appealing and user-friendly interfaces. I have a passion for using tools like React to create high-quality web applications, and have some experience working with Node.js and FastAPI on the backend. I've also used Figma for UI design, Git for version control and WordPress for creation of some websites.",
+            "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like React and Sass. On the back-end, I have experience working with Go, as well as Node.js (with Express.js). I enjoy building robust and scalable web applications, leveraging the power of these technologies to create efficient and performant server-side solutions.",
         description3:
-            "While my knowledge of databases is basic, I have studied SQL and NoSQL, which gives me a solid foundation for working with data. I've also studied some data analysis using Python.",
+            "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.",
         //Skills titles:
         skillsTitle1: "Scripting",
         skillsTitle2: "Utility software",
@@ -75,14 +74,14 @@ export const info = {
         user: "PartanenMa",
         link: "https://github.com/PartanenMa",
         //Profile description:
-        description1: "NOT YET AVAILABLE",
+        description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development. Feel free to explore some my projects.",
         description2: "",
         description3: "",
     },
     YouTube: {
         //Account data:
-        user: "YTUser",
-        link: "https://github.com/PartanenMa",
+        user: "ManuDev",
+        link: "https://www.youtube.com/channel/UCsEePl0jBNlnqYYnyjdQW5g",
         //Profile description:
         description1: "NOT YET AVAILABLE",
         description2: "",
