@@ -1,0 +1,384 @@
+/*ProjectsPage:*/
+.pJP {
+    animation: fadeIn 0.3s;
+    background-image: url("/src/Assets/Images/PageBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:
+        0 0 30px 20px black,
+        inset 0 0 30px 20px black;
+
+    .projectsPageContainer {
+        animation: fadeIn 0.3s;
+        background-color: #111;
+        max-width: 1244px;
+        width: 100%;
+        border: 0.1px solid grey;
+        border-radius: 2px;
+        margin: auto;
+        box-shadow: 0 0 30px 5px #03a062;
+        overflow: hidden;
+    }
+}
+
+/*ProjectsPageAdmin:*/
+.projectsPageContainerAdmin {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 1244px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumb {
+        background-color: lightgreen;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both:*/
+.projectsPageTitleContainer {
+    background-color: black;
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        color: white;
+        font-size: 70px;
+        position: relative;
+        bottom: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.aboutMyProjectsContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+
+    .aboutMyProjectsTitle {
+        background-color: black;
+        height: 10%;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .aboutMyProjectsContent {
+        background-image: url("/src/Assets/Images/ProjectsBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding-top: 12px;
+
+        .aboutMyProjectsPhoto {
+            background-image: url("/src/Assets/Images/Admin.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 70%;
+            width: 15%;
+            border-radius: 100%;
+            border: 1px solid #03a062;
+            position: relative;
+            top: 20px;
+            transition: filter 300ms;
+        }
+
+        .aboutMyProjectsPhoto:hover {
+            border: 1px solid white;
+            filter: drop-shadow(0 0 2em black);
+        }
+
+        .aboutMyProjectsTextContainer {
+            height: 90%;
+            width: 80%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            overflow: hidden;
+
+            .aboutMyProjectsTextTitle {
+                background-color: #111;
+                height: 20%;
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+
+                .h4_1 {
+                    color: #03a062;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 15px;
+                    left: 10px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+
+                .h4_2 {
+                    color: #03a062;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 32px;
+                    left: 10px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .aboutMyProjectsText {
+                background-color: #333;
+                height: 80%;
+                width: 100%;
+                overflow: hidden;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding-top: 5px;
+                padding-left: 5px;
+
+                p {
+                    max-width: 975px;
+                    color: white;
+                    font-size: 16px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    line-height: 1.2;
+                    position: relative;
+                    left: 6px;
+                    bottom: 13px;
+                }
+            }
+        }
+    }
+}
+
+.projectsContainer {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+
+    .projectsTitle {
+        background-color: black;
+        height: 30px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .projectsContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .project {
+            height: 300px;
+            width: 90%;
+            border: 1px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            overflow: hidden;
+            transition: border 300ms;
+            transition: filter 300ms;
+
+            .projectTitle {
+                background-color: black;
+                height: 20%;
+                width: 100%;
+                overflow: hidden;
+
+                h4 {
+                    color: white;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 28px;
+                    left: 10px;
+                }
+            }
+
+            .projectContent {
+                height: 80%;
+                width: 100%;
+                border-top: 1px solid gray;
+                display: flex;
+
+                .projectContentDescription {
+                    background-color: #333;
+                    height: 100%;
+                    width: 70%;
+                    border-right: 1px solid gray;
+                    overflow: hidden;
+
+                    .pCDBox1 {
+                        height: 20%;
+                        width: 100%;
+                        border-bottom: 1px solid gray;
+                        overflow: hidden;
+
+                        p {
+                            color: #03a062;
+                            font-size: 20px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            bottom: 8px;
+                            left: 10px;
+                        }
+                    }
+
+                    .pCDBox2 {
+                        height: 60%;
+                        width: 100%;
+                        overflow: hidden;
+
+                        .pCDBox2Title {
+                            height: 20%;
+                            width: 100%;
+                            text-decoration: underline;
+                            text-decoration-color: #03a062;
+                            overflow: hidden;
+
+                            p {
+                                color: #03a062;
+                                font-size: 20px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                position: relative;
+                                bottom: 18px;
+                                left: 10px;
+                            }
+                        }
+
+                        .pCDBox2Content {
+                            height: 80%;
+                            width: 100%;
+                            overflow: hidden;
+
+                            p {
+                                color: white;
+                                font-size: 15px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                position: relative;
+                                bottom: 10px;
+                                left: 10px;
+                            }
+                        }
+                    }
+
+                    .pCDBox3 {
+                        height: 20%;
+                        width: 100%;
+                        border-top: 1px solid gray;
+                        overflow: hidden;
+
+                        p {
+                            color: #03a062;
+                            font-size: 20px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            bottom: 8px;
+                            left: 10px;
+                        }
+                    }
+                }
+
+                .projectContentPhoto {
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 100%;
+                    width: 30%;
+                }
+            }
+        }
+
+        .project:hover {
+            border: 1px solid gray;
+            filter: drop-shadow(0 0 2em black);
+        }
+
+        .noProjectsData {
+            height: 300px;
+            width: 90%;
+            overflow: hidden;
+        }
+
+        .noProjectsData h4 {
+            width: fit-content;
+            color: red;
+            font-size: 60px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            border: 1px solid red;
+            border-radius: 48%;
+            padding: 20px;
+            position: relative;
+            top: 10px;
+            left: 430px;
+        }
+    }
+}

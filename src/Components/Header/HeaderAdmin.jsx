@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Header.css";
+import "./header.scss";
 
 function HeaderAdmin() {
     return (
-        <header className="HeaderContainer">
+        <header className="headerContainer">
             <Logo />
             <Title />
             <Matrix />
@@ -18,7 +18,7 @@ function Logo() {
     return (
         <AnimatePresence>
             <motion.div
-                className="LogoContainer"
+                className="logoContainer"
                 title="Go to home page"
                 onClick={() => navigate(info.routes.homePageAdmin)}
                 key="logocontainerA"
@@ -34,14 +34,14 @@ function Logo() {
 
 function Title() {
     return (
-        <div className="TitleContainer">
+        <div className="titleContainer">
             <h1>MatrixZone</h1>
         </div>
     );
 }
 
 function Matrix() {
-    return <div className="MatrixContainer" />;
+    return <div className="matrixContainer" />;
 }
 
 export default HeaderAdmin;

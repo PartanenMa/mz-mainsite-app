@@ -1,8 +1,8 @@
-import "./LoadingScreen.css";
+import "./loadingScreen.scss";
 
 function LoadingScreen() {
     return (
-        <div className="LoadingScreenContainer">
+        <div className="loadingScreenContainer">
             <LoadingLogo />
             <LoadingTitleContainer />
             <LoadingSection />
@@ -12,15 +12,15 @@ function LoadingScreen() {
 
 function LoadingLogo() {
     return (
-        <div className="LoadingLogoContainer">
-            <div className="MatrixLogo"></div>
+        <div className="loadingLogoContainer">
+            <div className="matrixLogo"></div>
         </div>
     );
 }
 
 function LoadingTitleContainer() {
     return (
-        <div className="LoadingTitleContainer">
+        <div className="loadingTitleContainer">
             <h1>MatrixZone</h1>
         </div>
     );
@@ -28,9 +28,9 @@ function LoadingTitleContainer() {
 
 function LoadingSection() {
     return (
-        <div className="LoadingContainer">
+        <div className="loadingContainer">
             <h2>LOADING...</h2>
-            <div className="Logo_reactL" alt="React logo L" />
+            <div className="logo_reactL" alt="React logo L" />
         </div>
     );
 }

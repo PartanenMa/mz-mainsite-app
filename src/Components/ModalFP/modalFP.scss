@@ -1,0 +1,110 @@
+.modalOverlay {
+    background-color: gray;
+    opacity: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #111;
+    height: 580px;
+    width: 746px;
+    padding-bottom: 10px;
+    border: 3px solid #03a062;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #03a062;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: hidden;
+
+    .modalAboutTitle {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        h2 {
+            color: #03a062;
+            font-size: 30px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-decoration-line: underline;
+            text-shadow: 0.5px 0.5px 0 lightgreen;
+            position: relative;
+            bottom: 10px;
+        }
+
+        .modalTitleX-button {
+            animation: fadeIn 0.3s;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 20px;
+            font-style: italic;
+            position: relative;
+            top: 7px;
+            left: 190px;
+        }
+
+        .modalTitleX-button:hover {
+            background-color: lightcoral;
+            color: red;
+            border: 1px solid red;
+            transition: background-color 500ms ease-in-out;
+        }
+    }
+
+    .modalAbout {
+        height: 80%;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow: hidden;
+
+        p {
+            color: #03a062;
+            font-size: 18px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.3px 0.3px 0 lightgreen;
+            max-width: 98%;
+        }
+    }
+
+    .modalBack {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .modalBackButton {
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            height: 48px;
+            width: 207px;
+            border-radius: 10px;
+            border: 1px solid white;
+            font-size: 30px;
+            font-style: italic;
+            transition: filter 300ms;
+        }
+
+        .modalBackButton:hover {
+            background-color: lightcoral;
+            color: red;
+            border: 1px solid red;
+            transition: background-color 500ms ease-in-out;
+        }
+    }
+}

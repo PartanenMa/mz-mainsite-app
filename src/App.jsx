@@ -20,7 +20,7 @@ import GoalsPageAdmin from "./Pages/GoalsPage/GoalsPageAdmin.jsx";
 import CVPage from "./Pages/CVPage/CVPage.jsx";
 import CVPageAdmin from "./Pages/CVPage/CVPageAdmin.jsx";
 import { info } from "./Constants/Info.jsx";
-import "./App.css";
+import "./app.scss";
 
 function App() {
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ function App() {
             {location.pathname === info.routes.loginPage && <MatrixBG />}
             {location.pathname.includes("admin") && <AdminMatrixBG />}
             {
-                <div className="AppContainer">
+                <div className="appContainer">
                     {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Header />}
                     <Routes>
                         <Route path={info.routes.frontPage} element={<FrontPage />} />

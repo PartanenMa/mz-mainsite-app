@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./FrontPage.css";
+import "./frontPage.scss";
 
 function FrontPage() {
     const [showFrontEnd, setShowFrontEnd] = useState(false);
@@ -27,8 +27,8 @@ function FrontPage() {
     }, []);
 
     return (
-        <div className="FP">
-            <div className="FrontPageContainer">
+        <div className="fP">
+            <div className="frontPageContainer">
                 <Main showFrontEnd={showFrontEnd} showBackEnd={showBackEnd} techFe={technologiesFe} techBe={technologiesBe} />
             </div>
         </div>
@@ -63,25 +63,25 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
     };
 
     return (
-        <main className="Main">
-            <section className="HeroSection">
+        <main className="main">
+            <section className="heroSection">
                 <AnimatePresence>
-                    <motion.div className="HeroTitle" key="heroT" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
-                        <div className="HTWelcome1">
-                            <h3 className="HTW1text">
+                    <motion.div className="heroTitle" key="heroT" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
+                        <div className="hTWelcome1">
+                            <h3 className="hTW1text">
                                 Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
                             </h3>
                         </div>
-                        <div className="HTWelcome2">
+                        <div className="hTWelcome2">
                             <p>I'm a</p>
-                            <div className="HTW2animation">
-                                <div className="HTW2first">
+                            <div className="hTW2animation">
+                                <div className="hTW2first">
                                     <div>{info.LinkedIn.profession + " 👨‍💻"}</div>
                                 </div>
-                                <div className="HTW2second">
+                                <div className="hTW2second">
                                     <div>{info.LinkedIn.professionDetailed + " 💻"}</div>
                                 </div>
-                                <div className="HTW2third">
+                                <div className="hTW2third">
                                     <div>
                                         {info.LinkedIn.professionTech}
                                         <span>{getProfessionTech()}</span>
@@ -89,13 +89,13 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="HTWelcome3">
+                        <div className="hTWelcome3">
                             <h3>Welcome to the MatrixZone</h3>
                         </div>
                     </motion.div>
-                    <motion.div className="HeroContent" key="heroC" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
+                    <motion.div className="heroContent" key="heroC" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
                         <motion.div
-                            className="HeroContent1"
+                            className="heroContent1"
                             onClick={() => handleNavigation("profile")}
                             key="heroC1"
                             whileHover={{
@@ -104,13 +104,13 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             }}
                             whileTap={{ scale: 0.9 }}
                         >
-                            <h2 className="HC-1T">PROFILE</h2>
-                            <div className="HC1-1">
-                                <div className="TitleProfile">
+                            <h2 className="hC-1T">PROFILE</h2>
+                            <div className="hC1-1">
+                                <div className="titleProfile">
                                     <h3>View my profile</h3>
-                                    <div className="LogoProfile" />
+                                    <div className="logoProfile" />
                                 </div>
-                                <div className="ContentProfile">
+                                <div className="contentProfile">
                                     <p>- About me.</p>
                                     <p>- My educational background.</p>
                                     <p>- My programming skills.</p>
@@ -120,10 +120,10 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                     </p>
                                 </div>
                             </div>
-                            <div className="HC1-2" />
+                            <div className="hC1-2" />
                         </motion.div>
                         <motion.div
-                            className="HeroContent2"
+                            className="heroContent2"
                             onClick={() => handleNavigation("projects")}
                             key="heroC2"
                             whileHover={{
@@ -132,21 +132,21 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             }}
                             whileTap={{ scale: 0.9 }}
                         >
-                            <h2 className="HC-2T">PROJECTS</h2>
-                            <div className="HC2-1">
-                                <div className="TitleProjects">
+                            <h2 className="hC-2T">PROJECTS</h2>
+                            <div className="hC2-1">
+                                <div className="titleProjects">
                                     <h3>View my projects</h3>
-                                    <div className="LogoProjects" />
+                                    <div className="logoProjects" />
                                 </div>
-                                <div className="ContentProjects">
+                                <div className="contentProjects">
                                     <p>- About my projects.</p>
                                     <p>- My projects.</p>
                                 </div>
                             </div>
-                            <div className="HC2-2" />
+                            <div className="hC2-2" />
                         </motion.div>
                         <motion.div
-                            className="HeroContent3"
+                            className="heroContent3"
                             onClick={() => handleNavigation("videos")}
                             key="heroC3"
                             whileHover={{
@@ -155,25 +155,25 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             }}
                             whileTap={{ scale: 0.9 }}
                         >
-                            <h2 className="HC-3T">VIDEOS</h2>
-                            <div className="HC3-1">
-                                <div className="TitleVideos">
+                            <h2 className="hC-3T">VIDEOS</h2>
+                            <div className="hC3-1">
+                                <div className="titleVideos">
                                     <h3>View my videos</h3>
-                                    <div className="LogoVideos" />
+                                    <div className="logoVideos" />
                                 </div>
-                                <div className="ContentVideos">
+                                <div className="contentVideos">
                                     <p>- About my videos.</p>
                                     <p>- My videos.</p>
                                 </div>
                             </div>
-                            <div className="HC3-2" />
+                            <div className="hC3-2" />
                         </motion.div>
                     </motion.div>
                 </AnimatePresence>
             </section>
-            <section className="TechnologySection">
-                <div className="Technology">
-                    <div className="TechnologyTitle">
+            <section className="technologySection">
+                <div className="technology">
+                    <div className="technologyTitle">
                         <h3>
                             {info.LinkedIn.professionTech}
                             {info.LinkedIn.professionDetailed && (
@@ -185,18 +185,18 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             )}
                         </h3>
                     </div>
-                    <div className="TechnologyContent">
+                    <div className="technologyContent">
                         {showFrontEnd && (
-                            <div className="TechnologyContentBox1">
-                                <div className="TCB1Title">
+                            <div className="technologyContentBox1">
+                                <div className="tCB1Title">
                                     <h4>Front-end tech stack</h4>
                                 </div>
-                                <div className="TCB1Content">
+                                <div className="tCB1Content">
                                     {techFe.length > 0 ? (
                                         techFe.map((tech, index) => (
                                             <AnimatePresence>
                                                 <motion.a
-                                                    className="Tech"
+                                                    className="tech"
                                                     key={index}
                                                     style={{ "--tech-color": tech.color, textDecoration: "none" }}
                                                     href={tech.infoLink}
@@ -207,15 +207,15 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                                     }}
                                                     whileTap={{ scale: 0.9 }}
                                                 >
-                                                    <div className="TechTitle">
+                                                    <div className="techTitle">
                                                         <h5 style={{ color: tech.color }}>{tech.name}</h5>
                                                     </div>
-                                                    <div className="TechLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                    <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
                                             </AnimatePresence>
                                         ))
                                     ) : (
-                                        <div className="NoTechData">
+                                        <div className="noTechData">
                                             <h4>NO DATA!</h4>
                                         </div>
                                     )}
@@ -223,16 +223,16 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             </div>
                         )}
                         {showBackEnd && (
-                            <div className="TechnologyContentBox2" style={showFrontEnd && showBackEnd ? { bottom: "308px", left: "600px" } : { top: "30px" }}>
-                                <div className="TCB2Title">
+                            <div className="technologyContentBox2" style={showFrontEnd && showBackEnd ? { bottom: "308px", left: "600px" } : { top: "30px" }}>
+                                <div className="tCB2Title">
                                     <h4>Back-end tech stack</h4>
                                 </div>
-                                <div className="TCB2Content">
+                                <div className="tCB2Content">
                                     {techBe.length > 0 ? (
                                         techBe.map((tech, index) => (
                                             <AnimatePresence>
                                                 <motion.a
-                                                    className="Tech"
+                                                    className="tech"
                                                     key={index}
                                                     style={{ "--tech-color": tech.color, textDecoration: "none" }}
                                                     href={tech.infoLink}
@@ -243,15 +243,15 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                                     }}
                                                     whileTap={{ scale: 0.9 }}
                                                 >
-                                                    <div className="TechTitle">
+                                                    <div className="techTitle">
                                                         <h5 style={{ color: tech.color }}>{tech.name}</h5>
                                                     </div>
-                                                    <div className="TechLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                    <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
                                             </AnimatePresence>
                                         ))
                                     ) : (
-                                        <div className="NoTechData">
+                                        <div className="noTechData">
                                             <h4>NO DATA!</h4>
                                         </div>
                                     )}
@@ -261,9 +261,9 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                     </div>
                 </div>
             </section>
-            <section className="ProfessionSection">
-                <div className="Profession">
-                    <div className="ProfessionTitle">
+            <section className="professionSection">
+                <div className="profession">
+                    <div className="professionTitle">
                         <h3>
                             {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
                             <span
@@ -290,8 +290,8 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             </span>
                         </h3>
                     </div>
-                    <div className="ProfessionContent">
-                        <div className="ProfessionContentBox1">
+                    <div className="professionContent">
+                        <div className="professionContentBox1">
                             <p>
                                 {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
                                 <span
@@ -326,7 +326,7 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                         </div>
                         {info.LinkedIn.jobTitle && info.LinkedIn.company && (
                             <div
-                                className="ProfessionContentBox2"
+                                className="professionContentBox2"
                                 style={{
                                     "--company-color": info.LinkedIn.companyColor,
                                     backgroundImage: `url(${info.LinkedIn.companyLogo})`,

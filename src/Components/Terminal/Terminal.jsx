@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Terminal.css";
+import "./terminal.scss";
 
 function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
     const [terminalCommands, setTerminalCommands] = useState([]);
@@ -67,14 +67,14 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
         <>
             {isTerminalOpen && (
                 <>
-                    <div className="TerminalOverlay" />
+                    <div className="terminalOverlay" />
                     <AnimatePresence>
-                        <motion.div className="Terminal" style={terminalStyle} key="terminal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                            <div className="TerminalTitle">
+                        <motion.div className="terminal" style={terminalStyle} key="terminal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            <div className="terminalTitle">
                                 <h2>TERMINAL</h2>
                             </div>
-                            <div className="TerminalInput">
-                                <div className="TerminalInputField">
+                            <div className="terminalInput">
+                                <div className="terminalInputField">
                                     {terminalCommands.map((command, index) => (
                                         <div key={index}>
                                             <h3>{command}</h3>
@@ -95,9 +95,9 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="TerminalClose">
+                            <div className="terminalClose">
                                 <motion.button
-                                    className="TerminalCloseButton"
+                                    className="terminalCloseButton"
                                     onClick={() => closeTerminal()}
                                     key="terminalclosebutton"
                                     whileHover={{

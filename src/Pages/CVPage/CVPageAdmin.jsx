@@ -7,7 +7,7 @@ import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./CVPage.css";
+import "./cvPage.scss";
 
 function CVPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
@@ -48,8 +48,8 @@ function CVPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="CVPageContainerAdmin">
-                            <div className="Breadcrumb">
+                        <div className="cvPageContainerAdmin">
+                            <div className="breadcrumb">
                                 <h2>Admin / cv</h2>
                             </div>
                             <CVPageTitle />
@@ -67,7 +67,7 @@ function CVPageAdmin() {
 
 function CVPageTitle() {
     return (
-        <div className="CVPageTitleContainer">
+        <div className="cvPageTitleContainer">
             <h2>MY CV</h2>
         </div>
     );
@@ -75,8 +75,8 @@ function CVPageTitle() {
 
 function CVPageContent() {
     return (
-        <div className="CVPageContentContainer">
-            <div className="CVContent">
+        <div className="cvPageContentContainer">
+            <div className="cvContent">
                 <h1>{info.LinkedIn.name}</h1>
                 <h2>{info.LinkedIn.profession}</h2>
                 <div />

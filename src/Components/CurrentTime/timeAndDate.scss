@@ -1,0 +1,25 @@
+.timeAndDateContainer {
+    background-color: #111;
+    height: 85px;
+    width: 235px;
+    border: 1px solid #03a062;
+    border-radius: 10px;
+
+    .time {
+        color: #03a062;
+        font-size: 30px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        left: 10px;
+        bottom: 23px;
+    }
+
+    .date {
+        color: #03a062;
+        font-size: 30px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        bottom: 50px;
+        left: 10px;
+    }
+}

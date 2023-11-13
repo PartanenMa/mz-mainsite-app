@@ -5,7 +5,7 @@ import { notification } from "antd";
 import LogoutLoadingScreen from "/src/Components/LogoutLoadingScreen/LogoutLoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./LoginPage.css";
+import "./loginPage.scss";
 
 function LoginPage() {
     const load = sessionStorage.getItem("logoutLoad");
@@ -39,7 +39,7 @@ function LoginPage() {
                 //Loading component here:
                 <LogoutLoadingScreen />
             ) : (
-                <div className="LoginPageContainer">
+                <div className="loginPageContainer">
                     <BackToFrontPage />
                     <LogoSection />
                     <LoginSection />
@@ -55,7 +55,7 @@ function BackToFrontPage() {
     return (
         <AnimatePresence>
             <motion.button
-                className="BackToFrontPage1"
+                className="backToFrontPage1"
                 title="Back to the front page"
                 onClick={() => navigate(info.routes.frontPage)}
                 key="backtofrontpage1"
@@ -75,8 +75,8 @@ function LogoSection() {
     const navigate = useNavigate();
 
     return (
-        <div className="LogoRGContainer">
-            <div className="LogoRG" title="Back to the front page" onClick={() => navigate(info.routes.frontPage)} />
+        <div className="logoRGContainer">
+            <div className="logoRG" title="Back to the front page" onClick={() => navigate(info.routes.frontPage)} />
         </div>
     );
 }
@@ -139,20 +139,20 @@ function LoginSection() {
     }
 
     return (
-        <div className="LPLoginContainer">
-            <form className="LPLogin">
+        <div className="lPLoginContainer">
+            <form className="lPLogin">
                 <h2>MatrixZone</h2>
-                <div className="User">
+                <div className="user">
                     <h3>Username:</h3>
-                    <TextField className="UsernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
+                    <TextField className="usernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
                 </div>
-                <div className="Password">
+                <div className="password">
                     <h3>Password:</h3>
-                    <TextField className="PasswordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
+                    <TextField className="passwordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
                 </div>
                 <AnimatePresence>
                     <motion.button
-                        className="LoginButton"
+                        className="loginButton"
                         onClick={() => handleLogin()}
                         key="loginbutton"
                         whileHover={{
@@ -164,7 +164,7 @@ function LoginSection() {
                         Log in
                     </motion.button>
                     <motion.button
-                        className="BackToFrontPage2"
+                        className="backToFrontPage2"
                         onClick={() => navigate(info.routes.frontPage)}
                         key="backtofrontpage2"
                         whileHover={{

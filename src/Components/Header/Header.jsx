@@ -5,7 +5,7 @@ import Terminal from "/src/Components/Terminal/Terminal.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import Nav from "/src/Components/Nav/Nav.jsx";
-import "./Header.css";
+import "./header.scss";
 
 function Header() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,11 +28,11 @@ function Header() {
     };
 
     return (
-        <header className="Header">
+        <header className="header">
             <AnimatePresence>
-                <motion.div className="HeaderTitle" key="headerT" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                <motion.div className="headerTitle" key="headerT" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                     <motion.div
-                        className="HeaderLogo"
+                        className="headerLogo"
                         title={location.pathname === info.routes.frontPage ? "Info" : "Go to front page"}
                         onClick={() => handleLogoClick()}
                         key="headerL"
@@ -43,10 +43,10 @@ function Header() {
                         whileTap={{ scale: 0.9 }}
                     />
                     <h1>MatrixZone</h1>
-                    <div className="Version">
+                    <div className="version">
                         <AnimatePresence>
                             <motion.div
-                                className="TerminalLogo"
+                                className="terminalLogo"
                                 title="Open terminal"
                                 onClick={() => handleTerminalClick()}
                                 key="headerT"

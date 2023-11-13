@@ -1,0 +1,1616 @@
+/*ProfilePage:*/
+.pFP {
+    animation: fadeIn 0.3s;
+    background-image: url("/src/Assets/Images/PageBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:
+        0 0 30px 20px black,
+        inset 0 0 30px 20px black;
+
+    .profilePageContainer {
+        animation: fadeIn 0.3s;
+        background-color: #111;
+        max-width: 1244px;
+        width: 100%;
+        border: 0.1px solid grey;
+        border-radius: 2px;
+        margin: auto;
+        box-shadow: 0 0 30px 5px #03a062;
+        overflow: hidden;
+    }
+}
+
+/*ProfilePageAdmin:*/
+.profilePageContainerAdmin {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 1244px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumb {
+        background-color: lightgreen;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both:*/
+.profilePageTitleContainer {
+    background-color: #0072b1;
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        color: white;
+        font-size: 70px;
+        position: relative;
+        bottom: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.aboutMeContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.aboutMeTitle {
+    background-color: #0072b1;
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    h3 {
+        color: white;
+        font-size: 25px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        bottom: 23px;
+        left: 10px;
+    }
+}
+
+.aboutMeContent {
+    background-image: url("/src/Assets/Images/ProfileBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 12px;
+
+    .aboutMePhoto {
+        background-image: url("/src/Assets/Images/Photo.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 10%;
+        height: 70%;
+        width: 15%;
+        border-radius: 100%;
+        border: 1px solid #03a062;
+        position: relative;
+        top: 20px;
+        transition: filter 300ms;
+    }
+
+    .aboutMePhoto:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em #0072b1);
+    }
+
+    .aboutMeTextContainer {
+        height: 90%;
+        width: 80%;
+        border-radius: 10px;
+        border: 1px solid #03a062;
+        overflow: hidden;
+
+        .aboutMeTextTitle {
+            background-color: #111;
+            height: 20%;
+            width: 100%;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom: 1px solid #03a062;
+
+            .h4_1 {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 15px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+
+            .h4_2 {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 32px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+
+        .aboutMeText {
+            background-color: #333;
+            height: 80%;
+            width: 100%;
+            overflow: hidden;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding-top: 5px;
+            padding-left: 5px;
+
+            p {
+                color: white;
+                font-size: 16px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                line-height: 1.2;
+                max-width: 975px;
+                position: relative;
+                left: 6px;
+                bottom: 13px;
+            }
+        }
+    }
+}
+
+.languagesContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .languagesTitle {
+        background-color: #0072b1;
+        height: 30px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .languagesContent {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 2%;
+        padding-right: 2%;
+
+        .language {
+            height: 40px;
+            width: 96%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+
+            .languageLogo {
+                background-color: black;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 80%;
+                height: 100%;
+                width: 4%;
+                float: left;
+                border-right: 1px solid black;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .languageContent {
+                height: 100%;
+                width: 96%;
+                float: right;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+
+                h4 {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 60%;
+                    float: left;
+                    position: relative;
+                    left: 10px;
+                    bottom: 68px;
+                }
+
+                p {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 40%;
+                    float: left;
+                    position: relative;
+                    bottom: 61px;
+                    left: 40px;
+                }
+            }
+        }
+    }
+}
+
+.educationsContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .educationsTitle {
+        background-color: #0072b1;
+        height: 30px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .educationsContent {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 1%;
+        padding-right: 1%;
+
+        .education {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: filter 300ms;
+
+            .educationTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .educationContent1 {
+                height: 100px;
+                width: 100%;
+                padding-left: 10px;
+                overflow: hidden;
+
+                p {
+                    color: white;
+                    font-size: 18px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                .schoolLogo {
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-position: 30% 50%;
+                    background-size: 90%;
+                    height: 100%;
+                    width: 15%;
+                    border-bottom-right-radius: 10px;
+                    float: right;
+                    position: relative;
+                    bottom: 96px;
+                }
+            }
+
+            .educationContent2 {
+                background-color: #333;
+                width: 100%;
+                border-top: 1px solid white;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 5px;
+                overflow: hidden;
+
+                p {
+                    color: white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    line-height: 1.5;
+                    max-width: 1200px;
+                }
+
+                .educationContent2 .subjects {
+                    color: #03a062;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    max-width: 1200px;
+                }
+            }
+        }
+
+        .education:hover {
+            border: 1px solid white;
+            filter: drop-shadow(0 0 2em var(--education-color));
+        }
+    }
+}
+
+.skillsContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .skillsTitle {
+        background-color: #0072b1;
+        height: 30px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .skillsContent {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 1%;
+        padding-right: 1%;
+
+        .utilitySoftware {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .uSTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .uSContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .scripting {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .sTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .sContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .programmingLanguages {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .pLTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .pLContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+
+                .pL11LogoBG {
+                    background-color: white;
+                    height: 32px;
+                    width: 23px;
+                    border-radius: 10px;
+                    position: relative;
+                    left: 12px;
+                    top: 5px;
+
+                    .pL11LogoL {
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .pL12LogoBG {
+                    background-color: white;
+                    height: 32px;
+                    width: 23px;
+                    border-radius: 9px;
+                    position: relative;
+                    left: 12px;
+                    top: 4px;
+
+                    .pL12LogoL {
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 103%;
+                        width: 100%;
+                        position: relative;
+                        bottom: 1px;
+                    }
+                }
+            }
+        }
+
+        .front-endDevelopment {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .fEDTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .fEDContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .back-endDevelopment {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .bEDTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .bEDContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .full-stackDevelopment {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .fSDTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .fSDContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .skill {
+            height: 40px;
+            width: 96%;
+            border: 1px solid black;
+            border-radius: 10px;
+
+            .skillLogo {
+                background-color: black;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100%;
+                width: 4%;
+                float: left;
+                border-right: 1px solid black;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .skillContent {
+                height: 100%;
+                width: 96%;
+                float: right;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+
+                h4 {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 70%;
+                    float: left;
+                    position: relative;
+                    left: 10px;
+                    bottom: 68px;
+                }
+
+                p {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 20%;
+                    float: left;
+                    position: relative;
+                    bottom: 61px;
+                    left: 60px;
+                }
+
+                div {
+                    color: gray;
+                    font-size: 50px;
+                    text-shadow: 1px 1px 0 black;
+                    height: 100%;
+                    width: 10%;
+                    float: right;
+                    position: relative;
+                    bottom: 41px;
+                }
+            }
+        }
+    }
+}
+
+.experiencesContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+}
+
+.experiencesTitle {
+    background-color: #0072b1;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    h3 {
+        color: white;
+        font-size: 25px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        bottom: 23px;
+        left: 10px;
+    }
+}
+
+.experiencesContent {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    .experience {
+        width: 98%;
+        border: 1px solid #03a062;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: filter 300ms;
+
+        .experienceTitle {
+            background-color: #111;
+            height: 30px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-left: 10px;
+            overflow: hidden;
+
+            h4 {
+                color: #03a062;
+                font-size: 20px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 22px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+
+        .experienceContent1 {
+            height: 100px;
+            width: 100%;
+            padding-left: 10px;
+            overflow: hidden;
+
+            p {
+                color: white;
+                font-size: 18px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+        }
+
+        .experienceContent2 {
+            background-color: #333;
+            width: 100%;
+            border-top: 1px solid white;
+            padding-left: 10px;
+            padding-right: 100px;
+            padding-bottom: 5px;
+            overflow: hidden;
+
+            p {
+                color: white;
+                font-size: 15px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                line-height: 1.5;
+                max-width: 1200px;
+            }
+
+            .usedTech {
+                color: #03a062;
+                font-size: 15px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                max-width: 1200px;
+            }
+
+            .companyLogo {
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: 20% 50%;
+                background-size: 90%;
+                height: 100px;
+                width: 15%;
+                float: right;
+                position: relative;
+                bottom: 96px;
+            }
+        }
+    }
+
+    .experience:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em var(--experience-color));
+    }
+}
+
+.noProfileData {
+    height: 300px;
+    width: 90%;
+    overflow: hidden;
+
+    h4 {
+        width: fit-content;
+        color: red;
+        font-size: 60px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        border: 1px solid red;
+        border-radius: 48%;
+        padding: 20px;
+        position: relative;
+        top: 10px;
+        left: 430px;
+    }
+}
+
+.interestsContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .interestsTitle {
+        background-color: #0072b1;
+        height: 10%;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .interestsContent {
+        background-image: url("/src/Assets/Images/InterestsBG.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding-top: 12px;
+
+        .interest1 {
+            height: 90%;
+            width: 25%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .interest1Title {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 30px;
+                    left: 10px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .interest1Content {
+                background-image: url("/src/Assets/Images/ITInfraBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                overflow: hidden;
+
+                .interest1ContentCover {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .interest1ContentCoverLogo {
+                        background-image: url("/src/Assets/Images/ITInfra.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 20%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .interest1:hover {
+            filter: drop-shadow(0 0 2em white);
+        }
+
+        .interest1:hover .interest1ContentCover {
+            display: block;
+        }
+
+        .interest2 {
+            height: 90%;
+            width: 25%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .interest2Title {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 30px;
+                    left: 5px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .interest2Content {
+                background-image: url("/src/Assets/Images/ProgrammingIBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                overflow: hidden;
+
+                .interest2ContentCover {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .interest2ContentCoverLogo {
+                        background-image: url("/src/Assets/Images/ProgrammingI.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .interest2:hover {
+            filter: drop-shadow(0 0 2em white);
+        }
+
+        .interest2:hover .interest2ContentCover {
+            display: block;
+        }
+
+        .interest3 {
+            height: 90%;
+            width: 25%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .interest3Title {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 30px;
+                    left: 10px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .interest3Content {
+                background-image: url("/src/Assets/Images/RoboticsBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                overflow: hidden;
+
+                .interest3ContentCover {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .interest3ContentCoverLogo {
+                        background-image: url("/src/Assets/Images/Robotics.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 80%;
+                        width: 30%;
+                        position: relative;
+                        top: 10%;
+                        left: 33%;
+                    }
+                }
+            }
+        }
+
+        .interest3:hover {
+            filter: drop-shadow(0 0 2em white);
+        }
+
+        .interest3:hover .interest3ContentCover {
+            display: block;
+        }
+    }
+}
+
+.hobbiesContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .hobbiesTitle {
+        background-color: #0072b1;
+        height: 10%;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .hobbiesContent {
+        background-image: url("/src/Assets/Images/HobbiesBG.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding-top: 12px;
+
+        .hobby1 {
+            height: 90%;
+            width: 25%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .hobby1Title {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 30px;
+                    left: 10px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .hobby1Content {
+                background-image: url("/src/Assets/Images/GamingBG.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                overflow: hidden;
+
+                .hobby1ContentCover {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .hobby1ContentCoverLogo {
+                        background-image: url("/src/Assets/Images/OpenRA.svg");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .hobby1:hover {
+            filter: drop-shadow(0 0 2em red);
+        }
+
+        .hobby1:hover .hobby1ContentCover {
+            display: block;
+        }
+
+        .hobby2 {
+            height: 90%;
+            width: 25%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .hobby2Title {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 30px;
+                    left: 10px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .hobby2Content {
+                background-image: url("/src/Assets/Images/ProgrammingBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                overflow: hidden;
+
+                .hobby2ContentCover {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .hobby2ContentCoverLogo {
+                        background-image: url("/src/Assets/Images/Programming.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .hobby2:hover {
+            filter: drop-shadow(0 0 2em blue);
+        }
+
+        .hobby2:hover .hobby2ContentCover {
+            display: block;
+        }
+
+        .hobby3 {
+            height: 90%;
+            width: 25%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .hobby3Title {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 30px;
+                    left: 10px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .hobby3Content {
+                background-image: url("/src/Assets/Images/CampingBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                overflow: hidden;
+
+                .hobby3ContentCover {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .hobby3ContentCoverLogo {
+                        background-image: url("/src/Assets/Images/Camping.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .hobby3:hover {
+            filter: drop-shadow(0 0 2em green);
+        }
+
+        .hobby3:hover .hobby3ContentCover {
+            display: block;
+        }
+    }
+}
+
+.contactContainer {
+    height: 510px;
+    width: 100%;
+    overflow: hidden;
+
+    .contactTitle {
+        background-color: #0072b1;
+        height: 30px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .contactContent {
+        background-image: url("/src/Assets/Images/ContactBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 480px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 160px;
+        gap: 80px;
+
+        .phoneContainer {
+            background-color: #111;
+            height: 90%;
+            width: 30%;
+            border: 1px solid #03a062;
+            box-shadow: 10px 5px 5px red;
+            border-radius: 10px;
+            position: relative;
+            top: 20px;
+
+            .phoneContainerTitle {
+                height: 10%;
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .phoneContainerContent {
+                height: 90%;
+                width: 100%;
+                border-top: 1px solid #03a062;
+
+                .phone1 {
+                    height: 25%;
+                    width: 100%;
+                    overflow: hidden;
+                    border-bottom: 1px solid #03a062;
+                    display: flex;
+                    justify-content: center;
+
+                    h4 {
+                        color: #03a062;
+                        font-size: 26px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow: 0.5px 0.5px 0 lightgreen;
+                    }
+                }
+
+                .phone2 {
+                    background-image: url("/src/Assets/Images/PhoneLogo.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 70%;
+                    height: 75%;
+                    width: 100%;
+                }
+            }
+        }
+
+        .emailContainer {
+            background-color: #111;
+            height: 90%;
+            width: 30%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            box-shadow: 10px 5px 5px blue;
+            position: relative;
+            top: 20px;
+
+            .emailContainerTitle {
+                height: 10%;
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .emailContainerContent {
+                height: 90%;
+                width: 100%;
+                border-top: 1px solid #03a062;
+
+                .email1 {
+                    height: 25%;
+                    width: 100%;
+                    overflow: hidden;
+                    border-bottom: 1px solid #03a062;
+                    display: flex;
+                    justify-content: center;
+
+                    h4 {
+                        color: #03a062;
+                        font-size: 26px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow: 0.5px 0.5px 0 lightgreen;
+                    }
+                }
+
+                .email2 {
+                    background-image: url("/src/Assets/Images/EmailLogo.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 70%;
+                    height: 75%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

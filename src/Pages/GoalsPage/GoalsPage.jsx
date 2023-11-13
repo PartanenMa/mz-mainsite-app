@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
-import "./GoalsPage.css";
+import "./goalsPage.scss";
 
 function GoalsPage() {
     const [goals, setGoals] = useState([]);
@@ -11,8 +11,8 @@ function GoalsPage() {
     }, []);
 
     return (
-        <div className="GP">
-            <div className="GoalsPageContainer">
+        <div className="gP">
+            <div className="goalsPageContainer">
                 <GoalsPageTitle />
                 <GoalsCount goals={goals} />
                 <GoalsPageContent goals={goals} />
@@ -23,7 +23,7 @@ function GoalsPage() {
 
 function GoalsPageTitle() {
     return (
-        <div className="GoalsPageTitleContainer">
+        <div className="goalsPageTitleContainer">
             <h2>GOALS</h2>
         </div>
     );
@@ -67,7 +67,7 @@ function GoalsCount({ goals }) {
     };
 
     return (
-        <div className="GoalsCountContainer">
+        <div className="goalsCountContainer">
             <p>
                 COMPLETED: <span style={{ color: "green" }}>{getCompletedGoals()}</span>
             </p>
@@ -103,10 +103,10 @@ function GoalsPageContent({ goals }) {
     };
 
     return (
-        <div className="GoalsPageContentContainer">
+        <div className="goalsPageContentContainer">
             {goals.length > 0 ? (
                 goals.map((goal, index) => (
-                    <div className="Goal" key={index}>
+                    <div className="goal" key={index}>
                         <h3>
                             {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
                         </h3>
@@ -122,7 +122,7 @@ function GoalsPageContent({ goals }) {
                     </div>
                 ))
             ) : (
-                <div className="NoGoalsData">
+                <div className="noGoalsData">
                     <h4>NO DATA!</h4>
                 </div>
             )}

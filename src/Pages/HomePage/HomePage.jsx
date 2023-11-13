@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Carousel } from "antd";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./HomePage.css";
+import "./homePage.scss";
 
 function HomePage() {
     return (
-        <div className="HP">
-            <div className="HomePageContainer">
+        <div className="hP">
+            <div className="homePageContainer">
                 <HomePageTitle />
                 <FirstSection />
             </div>
@@ -18,7 +18,7 @@ function HomePage() {
 
 function HomePageTitle() {
     return (
-        <div className="HomePageTitleContainer">
+        <div className="homePageTitleContainer">
             <h2>HOME</h2>
         </div>
     );
@@ -36,36 +36,36 @@ function FirstSection() {
     };
 
     return (
-        <div className="FirstSectionContainer">
-            <section className="HomeFirstSectionCarousel">
-                <div className="CarouselContainer">
+        <div className="firstSectionContainer">
+            <section className="homeFirstSectionCarousel">
+                <div className="carouselContainer">
                     <Carousel autoplay dots={false} effect="scroll" ref={ref}>
                         <div>
-                            <div className="CarouselSlide1" style={contentStyle}>
-                                <div className="CarouselItem1">
-                                    <div className="NameAndJob">
-                                        <h2 className="Name">{info.LinkedIn.name}</h2>
-                                        <h2 className="JobTitle">{info.LinkedIn.profession}</h2>
+                            <div className="carouselSlide1" style={contentStyle}>
+                                <div className="carouselItem1">
+                                    <div className="nameAndJob">
+                                        <h2 className="name">{info.LinkedIn.name}</h2>
+                                        <h2 className="jobTitle">{info.LinkedIn.profession}</h2>
                                     </div>
-                                    <div className="PersonalPhoto" />
+                                    <div className="personalPhoto" />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div className="CarouselSlide2" style={contentStyle}>
-                                <div className="CarouselItem2" />
+                            <div className="carouselSlide2" style={contentStyle}>
+                                <div className="carouselItem2" />
                             </div>
                         </div>
                         <div>
-                            <div className="CarouselSlide3" style={contentStyle}>
-                                <div className="CarouselItem3" />
+                            <div className="carouselSlide3" style={contentStyle}>
+                                <div className="carouselItem3" />
                             </div>
                         </div>
                     </Carousel>
                 </div>
                 <AnimatePresence>
                     <motion.button
-                        className="CarouselButtonLeft"
+                        className="carouselButtonLeft"
                         onClick={() => {
                             ref.current.prev();
                         }}
@@ -83,7 +83,7 @@ function FirstSection() {
                 </AnimatePresence>
                 <AnimatePresence>
                     <motion.button
-                        className="CarouselButtonRight"
+                        className="carouselButtonRight"
                         onClick={() => {
                             ref.current.next();
                         }}
@@ -100,14 +100,14 @@ function FirstSection() {
                     </motion.button>
                 </AnimatePresence>
             </section>
-            <section className="HomeFirstSection1">
-                <div className="CheckMyProfile">
+            <section className="homeFirstSection1">
+                <div className="checkMyProfile">
                     <h2>CHECK OUT MY PROFILE!</h2>
                 </div>
-                <div className="GoToMyProfile">
+                <div className="goToMyProfile">
                     <AnimatePresence>
                         <motion.a
-                            className="Photo"
+                            className="photo"
                             title="My LinkedIn"
                             href={info.LinkedIn.link}
                             target="_blank"
@@ -119,7 +119,7 @@ function FirstSection() {
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="ProfileTextBox">
+                    <div className="profileTextBox">
                         <AnimatePresence>
                             <motion.a
                                 title="My LinkedIn"
@@ -138,7 +138,7 @@ function FirstSection() {
                         <p>{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}</p>
                         <AnimatePresence>
                             <motion.button
-                                className="GoToProfile"
+                                className="goToProfile"
                                 onClick={() => navigate(info.routes.profilePage)}
                                 key="gotoprofile"
                                 whileHover={{
@@ -151,17 +151,17 @@ function FirstSection() {
                             </motion.button>
                         </AnimatePresence>
                     </div>
-                    <div className="Box1" />
+                    <div className="box1" />
                 </div>
             </section>
-            <section className="HomeFirstSection2">
-                <div className="CheckMyProjects">
+            <section className="homeFirstSection2">
+                <div className="checkMyProjects">
                     <h2>CHECK OUT MY PROJECTS!</h2>
                 </div>
-                <div className="GoToMyProjects">
+                <div className="goToMyProjects">
                     <AnimatePresence>
                         <motion.a
-                            className="GHLogo"
+                            className="gHLogo"
                             title="My GitHub"
                             href={info.GitHub.link}
                             target="_blank"
@@ -173,7 +173,7 @@ function FirstSection() {
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="ProjectsTextBox">
+                    <div className="projectsTextBox">
                         <AnimatePresence>
                             <motion.a
                                 title="My GitHub"
@@ -192,7 +192,7 @@ function FirstSection() {
                         <p>{info.LinkedIn.name}</p>
                         <AnimatePresence>
                             <motion.button
-                                className="GoToProjects"
+                                className="goToProjects"
                                 onClick={() => navigate(info.routes.projectsPage)}
                                 key="gotoprojects"
                                 whileHover={{
@@ -205,17 +205,17 @@ function FirstSection() {
                             </motion.button>
                         </AnimatePresence>
                     </div>
-                    <div className="Box2" />
+                    <div className="box2" />
                 </div>
             </section>
-            <section className="HomeFirstSection3">
-                <div className="CheckMyVideos">
+            <section className="homeFirstSection3">
+                <div className="checkMyVideos">
                     <h2>CHECK OUT MY VIDEOS!</h2>
                 </div>
-                <div className="GoToMyVideos">
+                <div className="goToMyVideos">
                     <AnimatePresence>
                         <motion.a
-                            className="YTLogo"
+                            className="yTLogo"
                             title="My YouTube"
                             href={info.YouTube.link}
                             target="_blank"
@@ -227,7 +227,7 @@ function FirstSection() {
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="VideosTextBox">
+                    <div className="videosTextBox">
                         <AnimatePresence>
                             <motion.a
                                 title="My YouTube"
@@ -246,7 +246,7 @@ function FirstSection() {
                         <p>{info.LinkedIn.name}</p>
                         <AnimatePresence>
                             <motion.button
-                                className="GoToVideos"
+                                className="goToVideos"
                                 onClick={() => navigate(info.routes.videosPage)}
                                 key="gotovideos"
                                 whileHover={{
@@ -259,7 +259,7 @@ function FirstSection() {
                             </motion.button>
                         </AnimatePresence>
                     </div>
-                    <div className="Box3" />
+                    <div className="box3" />
                 </div>
             </section>
         </div>

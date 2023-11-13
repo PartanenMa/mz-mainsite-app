@@ -1,11 +1,11 @@
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./CVPage.css";
+import "./cvPage.scss";
 
 function CVPage() {
     return (
-        <div className="CVP">
-            <div className="CVPageContainer">
+        <div className="cvP">
+            <div className="cvPageContainer">
                 <CVPageTitle />
                 <CVPageContent />
             </div>
@@ -15,7 +15,7 @@ function CVPage() {
 
 function CVPageTitle() {
     return (
-        <div className="CVPageTitleContainer">
+        <div className="cvPageTitleContainer">
             <h2>CV</h2>
         </div>
     );
@@ -23,8 +23,8 @@ function CVPageTitle() {
 
 function CVPageContent() {
     return (
-        <div className="CVPageContentContainer">
-            <div className="CVContent">
+        <div className="cvPageContentContainer">
+            <div className="cvContent">
                 <h1>{info.LinkedIn.name}</h1>
                 <h2>{info.LinkedIn.profession}</h2>
                 <div />

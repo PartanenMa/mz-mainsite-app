@@ -1,0 +1,197 @@
+/*Nav:*/
+.navOptions {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+
+    .navOptionsBar {
+        display: flex;
+        flex-direction: row;
+
+        .navOBtn {
+            animation: fadeIn 0.3s;
+            background: none;
+            border: none;
+            color: #03a062;
+            height: 44px;
+            width: 100px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            transition: filter 300ms;
+        }
+
+        .navOBtn:hover {
+            filter: drop-shadow(0 0 2em #03a062);
+        }
+
+        .navOBtn:hover .nB {
+            color: lightgreen;
+        }
+
+        #nBtn3 {
+            width: 120px;
+        }
+    }
+
+    .loginButtonFP {
+        animation: fadeIn 0.3s;
+        background-color: #111;
+        color: #03a062;
+        height: 44px;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid #03a062;
+        font-size: 25px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        transition: filter 300ms;
+    }
+
+    .loginButtonFP:hover {
+        background-color: lightgreen;
+        transition: background-color 500ms ease-in-out;
+        filter: drop-shadow(0 0 2em #03a062);
+    }
+}
+
+/*NavAdmin:*/
+.navContainer {
+    background-color: #03a062;
+    height: 50px;
+    width: 1242px;
+    padding-top: 2px;
+    padding-left: 2px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 1;
+
+    button {
+        background-color: #111;
+        color: #03a062;
+        height: 48px;
+        width: 207px;
+        cursor: pointer;
+        float: left;
+        border-radius: 10px;
+        border: 1px solid #03a062;
+        font-size: 28px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        transition: filter 300ms;
+
+        .homeIcon {
+            background-image: url("/src/Assets/Images/Home.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            height: 100%;
+            width: 24%;
+        }
+
+        .homeText {
+            height: 100%;
+            width: 80%;
+            position: relative;
+            bottom: 74px;
+            left: 20px;
+        }
+
+        .profileIcon {
+            background-image: url("/src/Assets/Images/Profile.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            height: 100%;
+            width: 24%;
+        }
+
+        .profileText {
+            height: 100%;
+            width: 80%;
+            position: relative;
+            bottom: 74px;
+            left: 25px;
+        }
+
+        .projectsIcon {
+            background-image: url("/src/Assets/Images/Projects.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            height: 100%;
+            width: 20%;
+        }
+
+        .projectsText {
+            height: 100%;
+            width: 80%;
+            position: relative;
+            bottom: 74px;
+            left: 30px;
+        }
+
+        .videosIcon {
+            background-image: url("/src/Assets/Images/Videos.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            height: 100%;
+            width: 20%;
+        }
+
+        .videosText {
+            height: 100%;
+            width: 80%;
+            position: relative;
+            bottom: 74px;
+            left: 25px;
+        }
+
+        .goalsIcon {
+            background-image: url("/src/Assets/Images/Goals.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            height: 100%;
+            width: 20%;
+        }
+
+        .goalsText {
+            height: 100%;
+            width: 80%;
+            position: relative;
+            bottom: 74px;
+            left: 25px;
+        }
+
+        .cvIcon {
+            background-image: url("/src/Assets/Images/CV.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            height: 100%;
+            width: 20%;
+        }
+
+        .cvText {
+            height: 100%;
+            width: 80%;
+            position: relative;
+            bottom: 74px;
+            left: 20px;
+        }
+    }
+
+    button:hover {
+        background-color: lightgreen;
+        transition: background-color 500ms ease-in-out;
+        filter: drop-shadow(0 0 2em #03a062);
+    }
+}

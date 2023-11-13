@@ -8,7 +8,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./ProjectsPage.css";
+import "./projectsPage.scss";
 
 function ProjectsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
@@ -54,8 +54,8 @@ function ProjectsPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="ProjectsPageContainerAdmin">
-                            <div className="Breadcrumb">
+                        <div className="projectsPageContainerAdmin">
+                            <div className="breadcrumb">
                                 <h2>Admin / projects</h2>
                             </div>
                             <ProjectsPageTitle />
@@ -74,7 +74,7 @@ function ProjectsPageAdmin() {
 
 function ProjectsPageTitle() {
     return (
-        <div className="ProjectsPageTitleContainer">
+        <div className="projectsPageTitleContainer">
             <h2>MY PROJECTS</h2>
         </div>
     );
@@ -82,14 +82,14 @@ function ProjectsPageTitle() {
 
 function AboutMyProjects() {
     return (
-        <div className="AboutMyProjectsContainer">
-            <div className="AboutMyProjectsTitle">
+        <div className="aboutMyProjectsContainer">
+            <div className="aboutMyProjectsTitle">
                 <h3>ABOUT MY PROJECTS</h3>
             </div>
-            <div className="AboutMyProjectsContent">
+            <div className="aboutMyProjectsContent">
                 <AnimatePresence>
                     <motion.a
-                        className="AboutMyProjectsPhoto"
+                        className="aboutMyProjectsPhoto"
                         title="My GitHub"
                         href={info.GitHub.link}
                         target="_blank"
@@ -101,12 +101,12 @@ function AboutMyProjects() {
                         whileTap={{ scale: 0.9 }}
                     />
                 </AnimatePresence>
-                <div className="AboutMyProjectsTextContainer">
-                    <div className="AboutMyProjectsTextTitle">
+                <div className="aboutMyProjectsTextContainer">
+                    <div className="aboutMyProjectsTextTitle">
                         <h4 className="h4_1">{info.GitHub.user}</h4>
                         <h4 className="h4_2">{info.LinkedIn.name}</h4>
                     </div>
-                    <div className="AboutMyProjectsText">
+                    <div className="aboutMyProjectsText">
                         <p>
                             {info.GitHub.description1}
                             <br />
@@ -125,16 +125,16 @@ function AboutMyProjects() {
 
 function Projects({ projects }) {
     return (
-        <div className="ProjectsContainer">
-            <div className="ProjectsTitle">
+        <div className="projectsContainer">
+            <div className="projectsTitle">
                 <h3>PROJECTS</h3>
             </div>
-            <div className="ProjectsContent">
+            <div className="projectsContent">
                 {projects.length > 0 ? (
                     projects.map((project, index) => (
                         <AnimatePresence>
                             <motion.a
-                                className="Project"
+                                className="project"
                                 href={project.link}
                                 target="_blank"
                                 key={index}
@@ -144,37 +144,37 @@ function Projects({ projects }) {
                                 }}
                                 whileTap={{ scale: 0.99 }}
                             >
-                                <div className="ProjectTitle">
+                                <div className="projectTitle">
                                     <h4>{project.title}</h4>
                                 </div>
-                                <div className="ProjectContent">
-                                    <div className="ProjectContentDescription">
-                                        <div className="PCDBox1">
+                                <div className="projectContent">
+                                    <div className="projectContentDescription">
+                                        <div className="pCDBox1">
                                             <p>
                                                 Project type: <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
                                             </p>
                                         </div>
-                                        <div className="PCDBox2">
-                                            <div className="PCDBox2Title">
+                                        <div className="pCDBox2">
+                                            <div className="pCDBox2Title">
                                                 <p>Project description:</p>
                                             </div>
-                                            <div className="PCDBox2Content">
+                                            <div className="pCDBox2Content">
                                                 <p>{project.description}</p>
                                             </div>
                                         </div>
-                                        <div className="PCDBox3">
+                                        <div className="pCDBox3">
                                             <p>
                                                 Technologies used: <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="ProjectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
+                                    <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
                                 </div>
                             </motion.a>
                         </AnimatePresence>
                     ))
                 ) : (
-                    <div className="NoProjectsData">
+                    <div className="noProjectsData">
                         <h4>NO DATA!</h4>
                     </div>
                 )}

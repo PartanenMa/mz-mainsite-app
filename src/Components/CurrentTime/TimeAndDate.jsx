@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./TimeAndDate.css";
+import "./timeAndDate.scss";
 
 function TimeAndDate() {
     const [clock, setClock] = useState(new Date());
@@ -12,11 +12,11 @@ function TimeAndDate() {
     });
 
     return (
-        <div className="TimeAndDateContainer">
-            <h2 className="Time">
+        <div className="timeAndDateContainer">
+            <h2 className="time">
                 ⌚ <span style={{ color: "lightgreen", fontStyle: "italic" }}>{clock.toLocaleTimeString()}</span>
             </h2>
-            <h2 className="Date">
+            <h2 className="date">
                 📅 <span style={{ color: "green", fontStyle: "italic" }}>{clock.toLocaleDateString()}</span>
             </h2>
         </div>

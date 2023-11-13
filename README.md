@@ -1,6 +1,7 @@
 # 1. Install NPM packages (SKIP THIS STEP IF NPM PACKAGES ALREADY INSTALLED):
 
 **npm i**  
+**npm add -D sass**  
 **npm i --save-dev --save-exact prettier**  
 **npm i react-router-dom**  
 **npm i antd**  

@@ -8,7 +8,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./VideosPage.css";
+import "./videosPage.scss";
 
 function VideosPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
@@ -54,8 +54,8 @@ function VideosPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="VideosPageContainerAdmin">
-                            <div className="Breadcrumb">
+                        <div className="videosPageContainerAdmin">
+                            <div className="breadcrumb">
                                 <h2>Admin / videos</h2>
                             </div>
                             <VideosPageTitle />
@@ -74,7 +74,7 @@ function VideosPageAdmin() {
 
 function VideosPageTitle() {
     return (
-        <div className="VideosPageTitleContainer">
+        <div className="videosPageTitleContainer">
             <h2>MY VIDEOS</h2>
         </div>
     );
@@ -82,14 +82,14 @@ function VideosPageTitle() {
 
 function AboutMyVideos() {
     return (
-        <div className="AboutMyVideosContainer">
-            <div className="AboutMyVideosTitle">
+        <div className="aboutMyVideosContainer">
+            <div className="aboutMyVideosTitle">
                 <h3>ABOUT MY VIDEOS</h3>
             </div>
-            <div className="AboutMyVideosContent">
+            <div className="aboutMyVideosContent">
                 <AnimatePresence>
                     <motion.a
-                        className="AboutMyVideosPhoto"
+                        className="aboutMyVideosPhoto"
                         title="My YouTube"
                         href={info.YouTube.link}
                         target="_blank"
@@ -101,12 +101,12 @@ function AboutMyVideos() {
                         whileTap={{ scale: 0.9 }}
                     />
                 </AnimatePresence>
-                <div className="AboutMyVideosTextContainer">
-                    <div className="AboutMyVideosTextTitle">
+                <div className="aboutMyVideosTextContainer">
+                    <div className="aboutMyVideosTextTitle">
                         <h4 className="h4_1">{info.YouTube.user}</h4>
                         <h4 className="h4_2">{info.LinkedIn.name}</h4>
                     </div>
-                    <div className="AboutMyVideosText">
+                    <div className="aboutMyVideosText">
                         <p>
                             {info.YouTube.description1}
                             <br />
@@ -125,16 +125,16 @@ function AboutMyVideos() {
 
 function Videos({ videos }) {
     return (
-        <div className="VideosContainer">
-            <div className="VideosTitle">
+        <div className="videosContainer">
+            <div className="videosTitle">
                 <h3>VIDEOS</h3>
             </div>
-            <div className="VideosContent">
+            <div className="videosContent">
                 {videos.length > 0 ? (
                     videos.map((video, index) => (
                         <AnimatePresence>
                             <motion.a
-                                className="Video"
+                                className="video"
                                 href={video.link}
                                 target="_blank"
                                 key={index}
@@ -144,37 +144,37 @@ function Videos({ videos }) {
                                 }}
                                 whileTap={{ scale: 0.99 }}
                             >
-                                <div className="VideoTitle">
+                                <div className="videoTitle">
                                     <h4>{video.title}</h4>
                                 </div>
-                                <div className="VideoContent">
-                                    <div className="VideoContentDescription">
-                                        <div className="VCDBox1">
+                                <div className="videoContent">
+                                    <div className="videoContentDescription">
+                                        <div className="vCDBox1">
                                             <p>
                                                 Video category: <span style={{ color: "white", fontSize: "15px" }}>{video.category}</span>
                                             </p>
                                         </div>
-                                        <div className="VCDBox2">
-                                            <div className="VCDBox2Title">
+                                        <div className="vCDBox2">
+                                            <div className="vCDBox2Title">
                                                 <p>Video description:</p>
                                             </div>
-                                            <div className="VCDBox2Content">
+                                            <div className="vCDBox2Content">
                                                 <p>{video.description}</p>
                                             </div>
                                         </div>
-                                        <div className="VCDBox3">
+                                        <div className="vCDBox3">
                                             <p>
                                                 Video tags: <span style={{ color: "white", fontSize: "15px" }}>{video.tags}</span>
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="VideoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
+                                    <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
                                 </div>
                             </motion.a>
                         </AnimatePresence>
                     ))
                 ) : (
-                    <div className="NoVideosData">
+                    <div className="noVideosData">
                         <h4>NO DATA!</h4>
                     </div>
                 )}

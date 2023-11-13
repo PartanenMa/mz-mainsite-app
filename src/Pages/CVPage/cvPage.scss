@@ -1,0 +1,155 @@
+/*CVPage:*/
+.cvP {
+    animation: fadeIn 0.3s;
+    background-image: url("/src/Assets/Images/PageBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:
+        0 0 30px 20px black,
+        inset 0 0 30px 20px black;
+
+    .cvPageContainer {
+        animation: fadeIn 0.3s;
+        max-width: 1244px;
+        width: 100%;
+        border: 0.1px solid grey;
+        border-radius: 2px;
+        margin: auto;
+        box-shadow: 0 0 30px 5px #03a062;
+        overflow: hidden;
+    }
+}
+
+/*CVPageAdmin:*/
+.cvPageContainerAdmin {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 1244px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumb {
+        background-color: lightgreen;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both:*/
+.cvPageTitleContainer {
+    background-color: #111;
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    h2 {
+        color: #03a062;
+        font-size: 70px;
+        position: relative;
+        bottom: 50px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.cvPageContentContainer {
+    background-image: url("/src/Assets/Images/CVBG.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80%;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    padding-top: 23px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    .cvContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+
+        h1 {
+            color: #03a062;
+            font-size: 60px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow:
+                0 0 10px black,
+                0 0 20px black;
+            position: relative;
+            bottom: 30px;
+        }
+
+        h2 {
+            color: #03a062;
+            font-size: 30px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow:
+                0 0 10px black,
+                0 0 20px black;
+            position: relative;
+            bottom: 60px;
+        }
+
+        div {
+            background-image: url("/src/Assets/Images/Photo.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 300px;
+            width: 240px;
+            border: 3px solid #03a062;
+            border-radius: 10px;
+            box-shadow:
+                10px 10px 10px black,
+                0 0 20px black;
+            position: relative;
+            bottom: 40px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+            50% {
+                transform: translate(0, 5px);
+            }
+            100% {
+                transform: translate(0, -0px);
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./ModalFP.css";
+import "./modalFP.scss";
 
 function ModalFP({ isModalOpen, setIsModalOpen }) {
     const [modalStyle, setModalStyle] = useState({
@@ -41,13 +41,13 @@ function ModalFP({ isModalOpen, setIsModalOpen }) {
         <>
             {isModalOpen && (
                 <>
-                    <div className="ModalOverlay" />
+                    <div className="modalOverlay" />
                     <AnimatePresence>
-                        <motion.div className="Modal" style={modalStyle} key="modal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                            <div className="ModalAboutTitle">
+                        <motion.div className="modal" style={modalStyle} key="modal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            <div className="modalAboutTitle">
                                 <h2>What is the MatrixZone?</h2>
                                 <motion.button
-                                    className="ModalTitleX-button"
+                                    className="modalTitleX-button"
                                     onClick={() => setIsModalOpen(false)}
                                     key="modaltitlex-button"
                                     whileHover={{
@@ -59,7 +59,7 @@ function ModalFP({ isModalOpen, setIsModalOpen }) {
                                     X
                                 </motion.button>
                             </div>
-                            <div className="ModalAbout">
+                            <div className="modalAbout">
                                 <p>
                                     {info.fpModalText.introduction}
                                     <br />
@@ -73,9 +73,9 @@ function ModalFP({ isModalOpen, setIsModalOpen }) {
                                     {info.fpModalText.videos}
                                 </p>
                             </div>
-                            <div className="ModalBack">
+                            <div className="modalBack">
                                 <motion.button
-                                    className="ModalBackButton"
+                                    className="modalBackButton"
                                     onClick={() => setIsModalOpen(false)}
                                     key="modalbackbutton"
                                     whileHover={{

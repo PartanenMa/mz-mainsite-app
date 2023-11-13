@@ -1,0 +1,210 @@
+/*LoginPage:*/
+.loginPageContainer {
+    animation: fadeIn 0.3s;
+    height: 580px;
+    width: 1244px;
+    border-radius: 10px;
+
+    /*Back button:*/
+    .backToFrontPage1 {
+        background-color: #111;
+        color: #03a062;
+        height: 44px;
+        width: 44px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-radius: 100%;
+        border: 1px solid #03a062;
+        font-size: 25px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        transition: filter 300ms;
+        transition: background-color 500ms ease-in-out;
+    }
+
+    .backToFrontPage1:hover {
+        background-color: lightgreen;
+        filter: drop-shadow(0 0 2em #03a062);
+    }
+
+    .logoRGContainer {
+        height: 50%;
+        width: 1244px;
+
+        .logoRG {
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
+            background-repeat: no-repeat;
+            background-position: 49% 60%;
+            background-size: 260%;
+            height: 140px;
+            width: 140px;
+            border: 1px solid #03a062;
+            cursor: pointer;
+            position: relative;
+            top: 5px;
+            left: 534px;
+            border-radius: 100%;
+            transition: filter 300ms;
+            transition: background-color 500ms ease-in-out;
+        }
+
+        .logoRG:hover {
+            background-color: lightgreen;
+            filter: drop-shadow(0 0 2em #03a062);
+            animation: logo-spin infinite 20s linear;
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    .lPLoginContainer {
+        height: 50%;
+        width: 1244px;
+
+        .lPLogin {
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            height: 380px;
+            width: 300px;
+            position: relative;
+            bottom: 95px;
+            left: 455px;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+
+            h2 {
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 lightgreen;
+                position: relative;
+                bottom: 15px;
+                left: 80px;
+            }
+
+            .user {
+                position: relative;
+                bottom: 40px;
+                left: 40px;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    top: 10px;
+                }
+
+                .usernameField {
+                    background-color: #03a062;
+                    border-radius: 50px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                .usernameField:hover {
+                    background-color: lightgreen;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .password {
+                position: relative;
+                bottom: 60px;
+                left: 40px;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    top: 10px;
+                }
+
+                .passwordField {
+                    background-color: #03a062;
+                    border-radius: 50px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                .passwordField:hover {
+                    background-color: lightgreen;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .loginButton {
+                background-color: #111;
+                color: #03a062;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 40px;
+                left: 47px;
+            }
+
+            .loginButton:hover {
+                background-color: lightgreen;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            .backToFrontPage2 {
+                background-color: #111;
+                color: #03a062;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 30px;
+                left: 47px;
+            }
+
+            .backToFrontPage2:hover {
+                background-color: lightgreen;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -8,7 +8,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./ProfilePage.css";
+import "./profilePage.scss";
 
 function ProfilePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
@@ -60,8 +60,8 @@ function ProfilePageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="ProfilePageContainerAdmin">
-                            <div className="Breadcrumb">
+                        <div className="profilePageContainerAdmin">
+                            <div className="breadcrumb">
                                 <h2>Admin / profile</h2>
                             </div>
                             <ProfileAdminPageTitle />
@@ -86,7 +86,7 @@ function ProfilePageAdmin() {
 
 function ProfileAdminPageTitle() {
     return (
-        <div className="ProfilePageTitleContainer">
+        <div className="profilePageTitleContainer">
             <h2>MY PROFILE</h2>
         </div>
     );
@@ -94,14 +94,14 @@ function ProfileAdminPageTitle() {
 
 function AboutMe() {
     return (
-        <div className="AboutMeContainer">
-            <div className="AboutMeTitle">
+        <div className="aboutMeContainer">
+            <div className="aboutMeTitle">
                 <h3>ABOUT ME</h3>
             </div>
-            <div className="AboutMeContent">
+            <div className="aboutMeContent">
                 <AnimatePresence>
                     <motion.a
-                        className="AboutMePhoto"
+                        className="aboutMePhoto"
                         title="My LinkedIn"
                         href={info.LinkedIn.link}
                         target="_blank"
@@ -113,12 +113,12 @@ function AboutMe() {
                         whileTap={{ scale: 0.9 }}
                     />
                 </AnimatePresence>
-                <div className="AboutMeTextContainer">
-                    <div className="AboutMeTextTitle">
+                <div className="aboutMeTextContainer">
+                    <div className="aboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
                         <h4 className="h4_2">{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}</h4>
                     </div>
-                    <div className="AboutMeText">
+                    <div className="aboutMeText">
                         <p>
                             {info.LinkedIn.description1}
                             <br />
@@ -137,23 +137,23 @@ function AboutMe() {
 
 function Languages({ languages }) {
     return (
-        <div className="LanguagesContainer">
-            <div className="LanguagesTitle">
+        <div className="languagesContainer">
+            <div className="languagesTitle">
                 <h3>MY LANGUAGES</h3>
             </div>
-            <div className="LanguagesContent">
+            <div className="languagesContent">
                 {languages.length > 0 ? (
                     languages.map((language, index) => (
-                        <div className="Language" key={index} style={{ backgroundColor: language.color }}>
-                            <div className="LanguageLogo" style={{ backgroundImage: `url(${language.image})` }} />
-                            <div className="LanguageContent">
+                        <div className="language" key={index} style={{ backgroundColor: language.color }}>
+                            <div className="languageLogo" style={{ backgroundImage: `url(${language.image})` }} />
+                            <div className="languageContent">
                                 <h4>{language.name}</h4>
                                 <p>{language.proficiency}</p>
                             </div>
                         </div>
                     ))
                 ) : (
-                    <div className="NoProfileData">
+                    <div className="noProfileData">
                         <h4>NO DATA!</h4>
                     </div>
                 )}
@@ -172,16 +172,16 @@ function Education({ educations }) {
     };
 
     return (
-        <div className="EducationsContainer">
-            <div className="EducationsTitle">
+        <div className="educationsContainer">
+            <div className="educationsTitle">
                 <h3>MY EDUCATION</h3>
             </div>
-            <div className="EducationsContent">
+            <div className="educationsContent">
                 {educations.length > 0 ? (
                     educations.map((education, index) => (
                         <AnimatePresence>
                             <motion.div
-                                className="Education"
+                                className="education"
                                 key={index}
                                 style={{ "--education-color": education.color }}
                                 onClick={() => openOrCloseEducation(index)}
@@ -191,14 +191,14 @@ function Education({ educations }) {
                                 }}
                                 whileTap={{ scale: 0.99 }}
                             >
-                                <div className="EducationTitle">
+                                <div className="educationTitle">
                                     <h4>{education.schoolName}</h4>
                                 </div>
-                                <div className="EducationContent1" style={{ backgroundColor: education.color }}>
+                                <div className="educationContent1" style={{ backgroundColor: education.color }}>
                                     <p>{education.degreeName}</p>
                                     <p>{education.timeAndPlace}</p>
                                     <div
-                                        className="SchoolLogo"
+                                        className="schoolLogo"
                                         style={{
                                             backgroundImage: `url(${education.image})`,
                                             backgroundColor: !education.image && education.color,
@@ -207,9 +207,9 @@ function Education({ educations }) {
                                         }}
                                     />
                                 </div>
-                                <div className="EducationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
+                                <div className="educationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
                                     <p>{education.educationDescription}</p>
-                                    <p className="Subjects">
+                                    <p className="subjects">
                                         Education subjects: <span style={{ color: "white" }}>{education.educationSubjects}</span>
                                     </p>
                                 </div>
@@ -217,7 +217,7 @@ function Education({ educations }) {
                         </AnimatePresence>
                     ))
                 ) : (
-                    <div className="NoProfileData">
+                    <div className="noProfileData">
                         <h4>NO DATA!</h4>
                     </div>
                 )}
@@ -268,27 +268,27 @@ function Skills({ skills }) {
     };
 
     return (
-        <div className="SkillsContainer">
-            <div className="SkillsTitle">
+        <div className="skillsContainer">
+            <div className="skillsTitle">
                 <h3>MY SKILLS</h3>
             </div>
-            <div className="SkillsContent">
-                <div className="UtilitySoftware">
-                    <div className="USTitle">
+            <div className="skillsContent">
+                <div className="utilitySoftware">
+                    <div className="uSTitle">
                         <h4>{info.LinkedIn.skillsTitle2}</h4>
                     </div>
-                    <div className="USContent">
+                    <div className="uSContent">
                         {skills.utilitySoftware?.length > 0 ? (
                             skills.utilitySoftware.map((skill, index) => (
-                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
-                                        className="SkillLogo"
+                                        className="skillLogo"
                                         style={{
                                             backgroundImage: `url(${skill.image})`,
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="SkillContent">
+                                    <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
                                         {getSkillLevel(skill.skillLevel)}
@@ -296,28 +296,28 @@ function Skills({ skills }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="NoProfileData">
+                            <div className="noProfileData">
                                 <h4>NO DATA!</h4>
                             </div>
                         )}
                     </div>
                 </div>
-                <div className="Scripting">
-                    <div className="STitle">
+                <div className="scripting">
+                    <div className="sTitle">
                         <h4>{info.LinkedIn.skillsTitle1}</h4>
                     </div>
-                    <div className="SContent">
+                    <div className="sContent">
                         {skills.scripting?.length > 0 ? (
                             skills.scripting.map((skill, index) => (
-                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
-                                        className="SkillLogo"
+                                        className="skillLogo"
                                         style={{
                                             backgroundImage: `url(${skill.image})`,
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="SkillContent">
+                                    <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
                                         {getSkillLevel(skill.skillLevel)}
@@ -325,38 +325,38 @@ function Skills({ skills }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="NoProfileData">
+                            <div className="noProfileData">
                                 <h4>NO DATA!</h4>
                             </div>
                         )}
                     </div>
                 </div>
-                <div className="ProgrammingLanguages">
-                    <div className="PLTitle">
+                <div className="programmingLanguages">
+                    <div className="pLTitle">
                         <h4>{info.LinkedIn.skillsTitle3}</h4>
                     </div>
-                    <div className="PLContent">
+                    <div className="pLContent">
                         {skills.programmingLanguages?.length > 0 ? (
                             skills.programmingLanguages.map((skill, index) => (
-                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
-                                        className="SkillLogo"
+                                        className="skillLogo"
                                         style={{
                                             backgroundImage: `url(${skill.image})`,
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
                                     {index === 10 && (
-                                        <div className="PL11LogoBG">
-                                            <div className="PL11LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
+                                        <div className="pL11LogoBG">
+                                            <div className="pL11LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
                                         </div>
                                     )}
                                     {index === 11 && (
-                                        <div className="PL12LogoBG">
-                                            <div className="PL12LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
+                                        <div className="pL12LogoBG">
+                                            <div className="pL12LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
                                         </div>
                                     )}
-                                    <div className="SkillContent">
+                                    <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
                                         {getSkillLevel(skill.skillLevel)}
@@ -364,28 +364,28 @@ function Skills({ skills }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="NoProfileData">
+                            <div className="noProfileData">
                                 <h4>NO DATA!</h4>
                             </div>
                         )}
                     </div>
                 </div>
-                <div className="Front-endDevelopment">
-                    <div className="FEDTitle">
+                <div className="front-endDevelopment">
+                    <div className="fEDTitle">
                         <h4>{info.LinkedIn.skillsTitle4}</h4>
                     </div>
-                    <div className="FEDContent">
+                    <div className="fEDContent">
                         {skills.frontEndDevelopment?.length > 0 ? (
                             skills.frontEndDevelopment.map((skill, index) => (
-                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
-                                        className="SkillLogo"
+                                        className="skillLogo"
                                         style={{
                                             backgroundImage: `url(${skill.image})`,
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="SkillContent">
+                                    <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
                                         {getSkillLevel(skill.skillLevel)}
@@ -393,28 +393,28 @@ function Skills({ skills }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="NoProfileData">
+                            <div className="noProfileData">
                                 <h4>NO DATA!</h4>
                             </div>
                         )}
                     </div>
                 </div>
-                <div className="Back-endDevelopment">
-                    <div className="BEDTitle">
+                <div className="back-endDevelopment">
+                    <div className="bEDTitle">
                         <h4>{info.LinkedIn.skillsTitle5}</h4>
                     </div>
-                    <div className="BEDContent">
+                    <div className="bEDContent">
                         {skills.backEndDevelopment?.length > 0 ? (
                             skills.backEndDevelopment.map((skill, index) => (
-                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
-                                        className="SkillLogo"
+                                        className="skillLogo"
                                         style={{
                                             backgroundImage: `url(${skill.image})`,
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="SkillContent">
+                                    <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
                                         {getSkillLevel(skill.skillLevel)}
@@ -422,28 +422,28 @@ function Skills({ skills }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="NoProfileData">
+                            <div className="noProfileData">
                                 <h4>NO DATA!</h4>
                             </div>
                         )}
                     </div>
                 </div>
-                <div className="Full-stackDevelopment">
-                    <div className="FSDTitle">
+                <div className="full-stackDevelopment">
+                    <div className="fSDTitle">
                         <h4>{info.LinkedIn.skillsTitle6}</h4>
                     </div>
-                    <div className="FSDContent">
+                    <div className="fSDContent">
                         {skills.fullStackDevelopment?.length > 0 ? (
                             skills.fullStackDevelopment.map((skill, index) => (
-                                <div className="Skill" key={index} style={{ backgroundColor: skill.color }}>
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
-                                        className="SkillLogo"
+                                        className="skillLogo"
                                         style={{
                                             backgroundImage: `url(${skill.image})`,
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="SkillContent">
+                                    <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
                                         {getSkillLevel(skill.skillLevel)}
@@ -451,7 +451,7 @@ function Skills({ skills }) {
                                 </div>
                             ))
                         ) : (
-                            <div className="NoProfileData">
+                            <div className="noProfileData">
                                 <h4>NO DATA!</h4>
                             </div>
                         )}
@@ -472,16 +472,16 @@ function Experience({ experiences }) {
     };
 
     return (
-        <div className="ExperiencesContainer">
-            <div className="ExperiencesTitle">
+        <div className="experiencesContainer">
+            <div className="experiencesTitle">
                 <h3>MY EXPERIENCE</h3>
             </div>
-            <div className="ExperiencesContent">
+            <div className="experiencesContent">
                 {experiences.length > 0 ? (
                     experiences.map((experience, index) => (
                         <AnimatePresence>
                             <motion.div
-                                className="Experience"
+                                className="experience"
                                 key={index}
                                 style={{ "--experience-color": experience.color }}
                                 onClick={() => openOrCloseExperience(index)}
@@ -491,17 +491,17 @@ function Experience({ experiences }) {
                                 }}
                                 whileTap={{ scale: 0.99 }}
                             >
-                                <div className="ExperienceTitle">
+                                <div className="experienceTitle">
                                     <h4>{experience.companyName}</h4>
                                 </div>
-                                <div className="ExperienceContent1" style={{ backgroundColor: experience.color }}>
+                                <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
                                     <p>{experience.workTitle}</p>
                                     <p>{experience.workTimeAndPlace}</p>
-                                    <div className="CompanyLogo" style={{ backgroundImage: `url(${experience.image})` }} />
+                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})` }} />
                                 </div>
-                                <div className="ExperienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
+                                <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     <p>{experience.workDescription}</p>
-                                    <p className="UsedTech">
+                                    <p className="usedTech">
                                         Technologies used: <span style={{ color: "white" }}>{experience.workTech}</span>
                                     </p>
                                 </div>
@@ -509,7 +509,7 @@ function Experience({ experiences }) {
                         </AnimatePresence>
                     ))
                 ) : (
-                    <div className="NoProfileData">
+                    <div className="noProfileData">
                         <h4>NO DATA!</h4>
                     </div>
                 )}
@@ -520,38 +520,38 @@ function Experience({ experiences }) {
 
 function Interests() {
     return (
-        <div className="InterestsContainer">
-            <div className="InterestsTitle">
+        <div className="interestsContainer">
+            <div className="interestsTitle">
                 <h3>MY INTERESTS</h3>
             </div>
-            <div className="InterestsContent">
-                <div className="Interest1">
-                    <div className="Interest1Title">
+            <div className="interestsContent">
+                <div className="interest1">
+                    <div className="interest1Title">
                         <h4>IT infrastructure</h4>
                     </div>
-                    <div className="Interest1Content">
-                        <div className="Interest1ContentCover">
-                            <div className="Interest1ContentCoverLogo"></div>
+                    <div className="interest1Content">
+                        <div className="interest1ContentCover">
+                            <div className="interest1ContentCoverLogo"></div>
                         </div>
                     </div>
                 </div>
-                <div className="Interest2">
-                    <div className="Interest2Title">
+                <div className="interest2">
+                    <div className="interest2Title">
                         <h4>Software Development</h4>
                     </div>
-                    <div className="Interest2Content">
-                        <div className="Interest2ContentCover">
-                            <div className="Interest2ContentCoverLogo"></div>
+                    <div className="interest2Content">
+                        <div className="interest2ContentCover">
+                            <div className="interest2ContentCoverLogo"></div>
                         </div>
                     </div>
                 </div>
-                <div className="Interest3">
-                    <div className="Interest3Title">
+                <div className="interest3">
+                    <div className="interest3Title">
                         <h4>Robotics</h4>
                     </div>
-                    <div className="Interest3Content">
-                        <div className="Interest3ContentCover">
-                            <div className="Interest3ContentCoverLogo"></div>
+                    <div className="interest3Content">
+                        <div className="interest3ContentCover">
+                            <div className="interest3ContentCoverLogo"></div>
                         </div>
                     </div>
                 </div>
@@ -562,38 +562,38 @@ function Interests() {
 
 function Hobbies() {
     return (
-        <div className="HobbiesContainer">
-            <div className="HobbiesTitle">
+        <div className="hobbiesContainer">
+            <div className="hobbiesTitle">
                 <h3>MY HOBBIES</h3>
             </div>
-            <div className="HobbiesContent">
-                <div className="Hobby1">
-                    <div className="Hobby1Title">
+            <div className="hobbiesContent">
+                <div className="hobby1">
+                    <div className="hobby1Title">
                         <h4>Gaming</h4>
                     </div>
-                    <div className="Hobby1Content">
-                        <div className="Hobby1ContentCover">
-                            <div className="Hobby1ContentCoverLogo"></div>
+                    <div className="hobby1Content">
+                        <div className="hobby1ContentCover">
+                            <div className="hobby1ContentCoverLogo"></div>
                         </div>
                     </div>
                 </div>
-                <div className="Hobby2">
-                    <div className="Hobby2Title">
+                <div className="hobby2">
+                    <div className="hobby2Title">
                         <h4>Web development</h4>
                     </div>
-                    <div className="Hobby2Content">
-                        <div className="Hobby2ContentCover">
-                            <div className="Hobby2ContentCoverLogo"></div>
+                    <div className="hobby2Content">
+                        <div className="hobby2ContentCover">
+                            <div className="hobby2ContentCoverLogo"></div>
                         </div>
                     </div>
                 </div>
-                <div className="Hobby3">
-                    <div className="Hobby3Title">
+                <div className="hobby3">
+                    <div className="hobby3Title">
                         <h4>Camping</h4>
                     </div>
-                    <div className="Hobby3Content">
-                        <div className="Hobby3ContentCover">
-                            <div className="Hobby3ContentCoverLogo"></div>
+                    <div className="hobby3Content">
+                        <div className="hobby3ContentCover">
+                            <div className="hobby3ContentCoverLogo"></div>
                         </div>
                     </div>
                 </div>
@@ -604,35 +604,35 @@ function Hobbies() {
 
 function ContactMe() {
     return (
-        <div className="ContactContainer">
-            <div className="ContactTitle">
+        <div className="contactContainer">
+            <div className="contactTitle">
                 <h3>MY CONTACT INFO</h3>
             </div>
-            <div className="ContactContent">
-                <div className="PhoneContainer">
-                    <div className="PhoneContainerTitle">
+            <div className="contactContent">
+                <div className="phoneContainer">
+                    <div className="phoneContainerTitle">
                         <h3>
                             PHONE<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>☎️</span>
                         </h3>
                     </div>
-                    <div className="PhoneContainerContent">
-                        <div className="Phone1">
+                    <div className="phoneContainerContent">
+                        <div className="phone1">
                             <h4>{info.LinkedIn.phoneNumber}</h4>
                         </div>
-                        <div className="Phone2"></div>
+                        <div className="phone2"></div>
                     </div>
                 </div>
-                <div className="EmailContainer">
-                    <div className="EmailContainerTitle">
+                <div className="emailContainer">
+                    <div className="emailContainerTitle">
                         <h3>
                             EMAIL<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>📧</span>
                         </h3>
                     </div>
-                    <div className="EmailContainerContent">
-                        <div className="Email1">
+                    <div className="emailContainerContent">
+                        <div className="email1">
                             <h4>{info.LinkedIn.emailAddress}</h4>
                         </div>
-                        <div className="Email2"></div>
+                        <div className="email2"></div>
                     </div>
                 </div>
             </div>

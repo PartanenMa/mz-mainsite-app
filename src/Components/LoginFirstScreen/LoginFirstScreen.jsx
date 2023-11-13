@@ -4,11 +4,11 @@ import { TextField } from "@mui/material";
 import { notification } from "antd";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./LoginFirstScreen.css";
+import "./loginFirstScreen.scss";
 
 function LoginFirstScreen() {
     return (
-        <div className="LoginScreenContainer">
+        <div className="loginScreenContainer">
             <LoginTitleContainer />
             <LoginSection />
         </div>
@@ -17,7 +17,7 @@ function LoginFirstScreen() {
 
 function LoginTitleContainer() {
     return (
-        <div className="LoginTitleContainer">
+        <div className="loginTitleContainer">
             <h1>YOU MUST LOG IN FIRST!</h1>
         </div>
     );
@@ -82,20 +82,20 @@ function LoginSection() {
     }
 
     return (
-        <div className="LoginContainer">
-            <form className="Login">
+        <div className="loginContainer">
+            <form className="login">
                 <h2>MatrixZone</h2>
-                <div className="User">
+                <div className="user">
                     <h3>Username:</h3>
-                    <TextField className="UsernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
+                    <TextField className="usernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
                 </div>
-                <div className="Password">
+                <div className="password">
                     <h3>Password:</h3>
-                    <TextField className="PasswordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
+                    <TextField className="passwordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
                 </div>
                 <AnimatePresence>
                     <motion.button
-                        className="LoginFButton"
+                        className="loginFButton"
                         onClick={() => handleLogin()}
                         key="loginfbutton"
                         whileHover={{
@@ -107,7 +107,7 @@ function LoginSection() {
                         Log in
                     </motion.button>
                     <motion.button
-                        className="BackToFPButton"
+                        className="backToFPButton"
                         onClick={() => navigate(info.routes.frontPage)}
                         key="backtofpbutton"
                         whileHover={{

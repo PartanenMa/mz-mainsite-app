@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Nav.css";
+import "./nav.scss";
 
 function Nav() {
     const [showBtnHoverEffect1, setShowBtnHoverEffect1] = useState(false);
@@ -84,10 +84,10 @@ function Nav() {
 
     return (
         <AnimatePresence>
-            <motion.div className="NavOptions" key="navO" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
-                <div className="NavOptionsBar">
+            <motion.div className="navOptions" key="navO" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
+                <div className="navOptionsBar">
                     <motion.button
-                        className="NavOBtn"
+                        className="navOBtn"
                         onClick={() => handleNavClick("home")}
                         key="navBtn1"
                         whileHover={{
@@ -101,7 +101,7 @@ function Nav() {
                         {showBtnHoverEffect1 ? (
                             <>
                                 &lt;
-                                <span className="NB">Home</span>
+                                <span className="nB">Home</span>
                                 &gt;
                             </>
                         ) : (
@@ -109,7 +109,7 @@ function Nav() {
                         )}
                     </motion.button>
                     <motion.button
-                        className="NavOBtn"
+                        className="navOBtn"
                         onClick={() => handleNavClick("profile")}
                         key="navBtn2"
                         whileHover={{
@@ -123,7 +123,7 @@ function Nav() {
                         {showBtnHoverEffect2 ? (
                             <>
                                 &lt;
-                                <span className="NB">Profile</span>
+                                <span className="nB">Profile</span>
                                 &gt;
                             </>
                         ) : (
@@ -131,8 +131,8 @@ function Nav() {
                         )}
                     </motion.button>
                     <motion.button
-                        className="NavOBtn"
-                        id="NBtn3"
+                        className="navOBtn"
+                        id="nBtn3"
                         onClick={() => handleNavClick("projects")}
                         key="navBtn3"
                         whileHover={{
@@ -146,7 +146,7 @@ function Nav() {
                         {showBtnHoverEffect3 ? (
                             <>
                                 &lt;
-                                <span className="NB">Projects</span>
+                                <span className="nB">Projects</span>
                                 &gt;
                             </>
                         ) : (
@@ -154,7 +154,7 @@ function Nav() {
                         )}
                     </motion.button>
                     <motion.button
-                        className="NavOBtn"
+                        className="navOBtn"
                         onClick={() => handleNavClick("videos")}
                         key="navBtn4"
                         whileHover={{
@@ -168,7 +168,7 @@ function Nav() {
                         {showBtnHoverEffect4 ? (
                             <>
                                 &lt;
-                                <span className="NB">Videos</span>
+                                <span className="nB">Videos</span>
                                 &gt;
                             </>
                         ) : (
@@ -176,7 +176,7 @@ function Nav() {
                         )}
                     </motion.button>
                     <motion.button
-                        className="NavOBtn"
+                        className="navOBtn"
                         onClick={() => handleNavClick("goals")}
                         key="navBtn5"
                         whileHover={{
@@ -190,7 +190,7 @@ function Nav() {
                         {showBtnHoverEffect5 ? (
                             <>
                                 &lt;
-                                <span className="NB">Goals</span>
+                                <span className="nB">Goals</span>
                                 &gt;
                             </>
                         ) : (
@@ -198,7 +198,7 @@ function Nav() {
                         )}
                     </motion.button>
                     <motion.button
-                        className="NavOBtn"
+                        className="navOBtn"
                         onClick={() => handleNavClick("cv")}
                         key="navBtn6"
                         whileHover={{
@@ -212,7 +212,7 @@ function Nav() {
                         {showBtnHoverEffect6 ? (
                             <>
                                 &lt;
-                                <span className="NB">CV</span>
+                                <span className="nB">CV</span>
                                 &gt;
                             </>
                         ) : (
@@ -221,7 +221,7 @@ function Nav() {
                     </motion.button>
                 </div>
                 <motion.button
-                    className="LoginButtonFP"
+                    className="loginButtonFP"
                     onClick={() => handleLoginClick()}
                     key="navB"
                     whileHover={{
