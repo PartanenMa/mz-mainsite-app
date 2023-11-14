@@ -26,6 +26,13 @@ export const data = {
                 size: "80%",
                 infoLink: "https://react.dev/",
             },
+            {
+                name: "Sass",
+                color: "#cc6699",
+                image: "src/Assets/Images/SassLogo.svg",
+                size: "80%",
+                infoLink: "https://sass-lang.com/",
+            },
         ],
         technologiesBe: [
             {
@@ -229,6 +236,13 @@ export const data = {
                     color: "#61dbfb",
                     image: "/src/Assets/Images/React.svg",
                     backgroundSize: "65%",
+                },
+                {
+                    name: "Sass",
+                    skillLevel: "advanced",
+                    color: "#cc6699",
+                    image: "/src/Assets/Images/SassLogo.svg",
+                    backgroundSize: "70%",
                 },
             ],
             backEndDevelopment: [
