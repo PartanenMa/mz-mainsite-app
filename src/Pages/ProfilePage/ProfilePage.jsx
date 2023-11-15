@@ -160,7 +160,7 @@ function Education({ educations }) {
                                 <div className="educationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
                                     <p>{education.educationDescription}</p>
                                     <p className="subjects">
-                                        Education subjects: <span style={{ color: "white" }}>{education.educationSubjects}</span>
+                                        Education subjects: <span style={{ color: "white" }}>{education.educationSubjects}.</span>
                                     </p>
                                 </div>
                             </motion.div>
@@ -452,7 +452,7 @@ function Experience({ experiences }) {
                                 <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     <p>{experience.workDescription}</p>
                                     <p className="usedTech">
-                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}</span>
+                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}.</span>
                                     </p>
                                 </div>
                             </motion.div>

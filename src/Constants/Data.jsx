@@ -91,7 +91,7 @@ export const data = {
                 timeAndPlace: "16.08.2021 - present, Pori, Finland",
                 educationDescription:
                     "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
-                educationSubjects: "IT infrastructure, software development, software engineering, automation, 3D technology, robotics",
+                educationSubjects: "IT infrastructure, software development, automation, 3D technology, robotics",
                 color: "#00a5cd",
                 image: "/src/Assets/Images/SAMKLogo.png",
             },
@@ -270,7 +270,7 @@ export const data = {
                 workTitle: "Intern - Internship",
                 workTimeAndPlace: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
                 workDescription: "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
-                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
+                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
                 color: "#b11226",
                 image: "/src/Assets/Images/VismaLogo.svg",
             },
@@ -280,7 +280,7 @@ export const data = {
                 workTimeAndPlace: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
                 workDescription:
                     "My first real front-end developer job at Visma Real Estate Oy after my internship there. I worked part-time (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React.",
-                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js",
+                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
                 color: "#b11226",
                 image: "/src/Assets/Images/VismaLogo.svg",
             },
@@ -357,7 +357,7 @@ export const data = {
         },
         {
             title: "Learn front-end development",
-            status: "inprogress",
+            status: "completed",
             step1: {
                 step: "Learn programming languages such as HTML, CSS, JavaScript and TypeScript.",
                 status: "completed",
@@ -368,7 +368,7 @@ export const data = {
             },
             step3: {
                 step: "Learn a CSS framework.",
-                status: "inprogress",
+                status: "completed",
             },
         },
         {
