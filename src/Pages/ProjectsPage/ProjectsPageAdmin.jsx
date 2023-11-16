@@ -131,48 +131,56 @@ function Projects({ projects }) {
             </div>
             <div className="projectsContent">
                 {projects.length > 0 ? (
-                    projects.map((project, index) => (
-                        <AnimatePresence>
-                            <motion.a
-                                className="project"
-                                href={project.link}
-                                target="_blank"
-                                key={index}
-                                whileHover={{
-                                    scale: 1.03,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.99 }}
-                            >
-                                <div className="projectTitle">
-                                    <h4>{project.title}</h4>
-                                </div>
-                                <div className="projectContent">
-                                    <div className="projectContentDescription">
-                                        <div className="pCDBox1">
-                                            <p>
-                                                Project type: <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
-                                            </p>
+                    projects[0].title !== 0 ? (
+                        projects.map((project, index) =>
+                            projects.map((project, index) => (
+                                <AnimatePresence>
+                                    <motion.a
+                                        className="project"
+                                        href={project.link}
+                                        target="_blank"
+                                        key={index}
+                                        whileHover={{
+                                            scale: 1.03,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.99 }}
+                                    >
+                                        <div className="projectTitle">
+                                            <h4>{project.title}</h4>
                                         </div>
-                                        <div className="pCDBox2">
-                                            <div className="pCDBox2Title">
-                                                <p>Project description:</p>
+                                        <div className="projectContent">
+                                            <div className="projectContentDescription">
+                                                <div className="pCDBox1">
+                                                    <p>
+                                                        Project type: <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
+                                                    </p>
+                                                </div>
+                                                <div className="pCDBox2">
+                                                    <div className="pCDBox2Title">
+                                                        <p>Project description:</p>
+                                                    </div>
+                                                    <div className="pCDBox2Content">
+                                                        <p>{project.description}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="pCDBox3">
+                                                    <p>
+                                                        Technologies used: <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div className="pCDBox2Content">
-                                                <p>{project.description}</p>
-                                            </div>
+                                            <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
                                         </div>
-                                        <div className="pCDBox3">
-                                            <p>
-                                                Technologies used: <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
-                                </div>
-                            </motion.a>
-                        </AnimatePresence>
-                    ))
+                                    </motion.a>
+                                </AnimatePresence>
+                            ))
+                        )
+                    ) : (
+                        <div className="noProjectsYet">
+                            <h4>NO PROJECTS YET!</h4>
+                        </div>
+                    )
                 ) : (
                     <div className="noProjectsData">
                         <h4>NO DATA!</h4>

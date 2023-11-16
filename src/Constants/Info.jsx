@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Beta 0.9.2",
+    version: "Beta 0.9.3",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -25,7 +25,7 @@ export const info = {
             "As a seasoned developer with a passion for innovation, I invite you to explore my profile and witness my skills and experience in the software development field. From developing cutting-edge software solutions to architecting robust systems, I have a proven track record of delivering exceptional results.",
         projects:
             "MatrixZone is not just a showcase of my skills; it's a testament to my dedication and commitment to excellence. Through a carefully curated collection of projects, you'll gain insight into my problem-solving abilities, attention to detail, and ability to tackle complex challenges head-on.",
-        videos: "But that's not all. MatrixZone also offers a glimpse into my journey as a software developer through captivating videos. From behind-the-scenes looks at my projects to thought-provoking discussions on industry trends, these videos provide a window into my world and the passion that drives me.",
+        //videos: "But that's not all. MatrixZone also offers a glimpse into my journey as a software developer through captivating videos. From behind-the-scenes looks at my projects to thought-provoking discussions on industry trends, these videos provide a window into my world and the passion that drives me.",
     },
     loginInfo: {
         enabled: true,

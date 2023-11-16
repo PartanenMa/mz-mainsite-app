@@ -287,6 +287,14 @@ export const data = {
         ],
     },
     projectsData: [
+        {
+            title: 0,
+            type: "",
+            description: "",
+            tech: "",
+            image: "",
+            link: "",
+        },
         /*{
             title: "Example project",
             type: "Example type...",
@@ -297,6 +305,14 @@ export const data = {
         },*/
     ],
     videosData: [
+        {
+            title: 0,
+            category: "",
+            description: "",
+            tags: "",
+            image: "",
+            link: "",
+        },
         /*{
             title: "Example video",
             category: "Example category...",

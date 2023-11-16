@@ -361,24 +361,44 @@
             filter: drop-shadow(0 0 2em black);
         }
 
+        .noProjectsYet {
+            height: 300px;
+            width: 90%;
+            overflow: hidden;
+
+            h4 {
+                width: fit-content;
+                color: yellow;
+                font-size: 60px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                border: 1px solid yellow;
+                border-radius: 48%;
+                padding: 20px;
+                position: relative;
+                top: 10px;
+                left: 300px;
+            }
+        }
+
         .noProjectsData {
             height: 300px;
             width: 90%;
             overflow: hidden;
-        }
 
-        .noProjectsData h4 {
-            width: fit-content;
-            color: red;
-            font-size: 60px;
-            font-style: italic;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            border: 1px solid red;
-            border-radius: 48%;
-            padding: 20px;
-            position: relative;
-            top: 10px;
-            left: 430px;
+            h4 {
+                width: fit-content;
+                color: red;
+                font-size: 60px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                border: 1px solid red;
+                border-radius: 48%;
+                padding: 20px;
+                position: relative;
+                top: 10px;
+                left: 430px;
+            }
         }
     }
 }

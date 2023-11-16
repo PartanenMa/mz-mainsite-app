@@ -81,48 +81,54 @@ function Videos({ videos }) {
             </div>
             <div className="videosContent">
                 {videos.length > 0 ? (
-                    videos.map((video, index) => (
-                        <AnimatePresence>
-                            <motion.a
-                                className="video"
-                                href={video.link}
-                                target="_blank"
-                                key={index}
-                                whileHover={{
-                                    scale: 1.03,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.99 }}
-                            >
-                                <div className="videoTitle">
-                                    <h4>{video.title}</h4>
-                                </div>
-                                <div className="videoContent">
-                                    <div className="videoContentDescription">
-                                        <div className="vCDBox1">
-                                            <p>
-                                                Video category: <span style={{ color: "white", fontSize: "15px" }}>{video.category}</span>
-                                            </p>
-                                        </div>
-                                        <div className="vCDBox2">
-                                            <div className="vCDBox2Title">
-                                                <p>Video description:</p>
-                                            </div>
-                                            <div className="vCDBox2Content">
-                                                <p>{video.description}</p>
-                                            </div>
-                                        </div>
-                                        <div className="vCDBox3">
-                                            <p>
-                                                Video tags: <span style={{ color: "white", fontSize: "15px" }}>{video.tags}</span>
-                                            </p>
-                                        </div>
+                    videos[0].title !== 0 ? (
+                        videos.map((video, index) => (
+                            <AnimatePresence>
+                                <motion.a
+                                    className="video"
+                                    href={video.link}
+                                    target="_blank"
+                                    key={index}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.99 }}
+                                >
+                                    <div className="videoTitle">
+                                        <h4>{video.title}</h4>
                                     </div>
-                                    <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
-                                </div>
-                            </motion.a>
-                        </AnimatePresence>
-                    ))
+                                    <div className="videoContent">
+                                        <div className="videoContentDescription">
+                                            <div className="vCDBox1">
+                                                <p>
+                                                    Video category: <span style={{ color: "white", fontSize: "15px" }}>{video.category}</span>
+                                                </p>
+                                            </div>
+                                            <div className="vCDBox2">
+                                                <div className="vCDBox2Title">
+                                                    <p>Video description:</p>
+                                                </div>
+                                                <div className="vCDBox2Content">
+                                                    <p>{video.description}</p>
+                                                </div>
+                                            </div>
+                                            <div className="vCDBox3">
+                                                <p>
+                                                    Video tags: <span style={{ color: "white", fontSize: "15px" }}>{video.tags}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
+                                    </div>
+                                </motion.a>
+                            </AnimatePresence>
+                        ))
+                    ) : (
+                        <div className="noVideosYet">
+                            <h4>NO VIDEOS YET!</h4>
+                        </div>
+                    )
                 ) : (
                     <div className="noVideosData">
                         <h4>NO DATA!</h4>
