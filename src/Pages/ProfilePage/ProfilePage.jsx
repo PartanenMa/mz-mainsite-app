@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./profilePage.scss";
+import "./ProfilePage.scss";
 
 function ProfilePage() {
     const [languages, setLanguages] = useState([]);

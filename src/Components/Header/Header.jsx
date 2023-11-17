@@ -5,7 +5,7 @@ import Terminal from "/src/Components/Terminal/Terminal.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import Nav from "/src/Components/Nav/Nav.jsx";
-import "./header.scss";
+import "./Header.scss";
 
 function Header() {
     const [isModalOpen, setIsModalOpen] = useState(false);

@@ -10,7 +10,7 @@ import TimeAndDate from "/src/Components/CurrentTime/TimeAndDate.jsx";
 import reactLogo from "/src/Assets/Images/React.svg";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./homePage.scss";
+import "./HomePage.scss";
 
 function HomePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");

@@ -20,7 +20,7 @@ import GoalsPageAdmin from "./Pages/GoalsPage/GoalsPageAdmin.jsx";
 import CVPage from "./Pages/CVPage/CVPage.jsx";
 import CVPageAdmin from "./Pages/CVPage/CVPageAdmin.jsx";
 import { info } from "./Constants/Info.jsx";
-import "./app.scss";
+import "./App.scss";
 
 function App() {
     const navigate = useNavigate();

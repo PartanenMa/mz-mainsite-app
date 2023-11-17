@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { notification } from "antd";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./loginFirstScreen.scss";
+import "./LoginFirstScreen.scss";
 
 function LoginFirstScreen() {
     return (

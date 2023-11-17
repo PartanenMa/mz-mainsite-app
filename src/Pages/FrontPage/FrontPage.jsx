@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./frontPage.scss";
+import "./FrontPage.scss";
 
 function FrontPage() {
     const [showFrontEnd, setShowFrontEnd] = useState(false);

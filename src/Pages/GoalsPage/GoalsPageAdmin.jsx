@@ -7,7 +7,7 @@ import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
-import "./goalsPage.scss";
+import "./GoalsPage.scss";
 
 function GoalsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");

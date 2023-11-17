@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./modalFP.scss";
+import "./ModalFP.scss";
 
 function ModalFP({ isModalOpen, setIsModalOpen }) {
     const [modalStyle, setModalStyle] = useState({

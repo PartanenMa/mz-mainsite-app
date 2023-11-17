@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./header.scss";
+import "./Header.scss";
 
 function HeaderAdmin() {
     return (

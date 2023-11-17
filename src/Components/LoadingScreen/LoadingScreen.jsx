@@ -1,4 +1,4 @@
-import "./loadingScreen.scss";
+import "./LoadingScreen.scss";
 
 function LoadingScreen() {
     return (

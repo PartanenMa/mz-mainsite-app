@@ -7,7 +7,7 @@ import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./cvPage.scss";
+import "./CVPage.scss";
 
 function CVPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");

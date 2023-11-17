@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
-import "./goalsPage.scss";
+import "./GoalsPage.scss";
 
 function GoalsPage() {
     const [goals, setGoals] = useState([]);

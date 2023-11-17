@@ -8,7 +8,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./videosPage.scss";
+import "./VideosPage.scss";
 
 function VideosPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");

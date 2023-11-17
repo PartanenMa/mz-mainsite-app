@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./nav.scss";
+import "./Nav.scss";
 
 function Nav() {
     const [showBtnHoverEffect1, setShowBtnHoverEffect1] = useState(false);

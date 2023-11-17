@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Carousel } from "antd";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./homePage.scss";
+import "./HomePage.scss";
 
 function HomePage() {
     return (

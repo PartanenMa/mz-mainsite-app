@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./footer.scss";
+import "./Footer.scss";
 
 function FooterAdmin() {
     return (

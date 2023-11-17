@@ -1,6 +1,6 @@
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import "./cvPage.scss";
+import "./CVPage.scss";
 
 function CVPage() {
     return (

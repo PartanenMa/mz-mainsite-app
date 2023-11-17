@@ -5,7 +5,7 @@ import { notification } from "antd";
 import LogoutLoadingScreen from "/src/Components/LogoutLoadingScreen/LogoutLoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./loginPage.scss";
+import "./LoginPage.scss";
 
 function LoginPage() {
     const load = sessionStorage.getItem("logoutLoad");

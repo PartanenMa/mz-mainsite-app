@@ -1,4 +1,4 @@
-import "./logoutLoadingScreen.scss";
+import "./LogoutLoadingScreen.scss";
 
 function LogoutLoadingScreen() {
     return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import "./terminal.scss";
+import "./Terminal.scss";
 
 function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
     const [terminalCommands, setTerminalCommands] = useState([]);
