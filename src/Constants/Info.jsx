@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Beta 0.9.4",
+    version: "Beta 0.9.5",
     routes: {
         frontPage: "/",
         loginPage: "/login",
