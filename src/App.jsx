@@ -27,7 +27,7 @@ function App() {
     const navigate = useNavigate();
     const location = useLocation();
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
-    const [isIntroScreenOpen, setIsIntroScreenOpen] = useState(false /*!hasSeenIntro*/);
+    const [isIntroScreenOpen, setIsIntroScreenOpen] = useState(!hasSeenIntro);
 
     useEffect(() => {
         if (location.pathname === info.routes.loginPage || location.pathname.includes("admin")) {

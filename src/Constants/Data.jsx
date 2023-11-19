@@ -1,4 +1,18 @@
 export const data = {
+    technologiesUsed: [
+        {
+            name: "React",
+            color: "#61DBFB",
+            image: "src/Assets/Images/ReactLogo.svg",
+            size: "80%",
+        },
+        {
+            name: "Sass",
+            color: "#cc6699",
+            image: "src/Assets/Images/SassLogo.svg",
+            size: "80%",
+        },
+    ],
     professionStatus: {
         profession: "Software Developer",
         professionDetailed: "Web Developer",

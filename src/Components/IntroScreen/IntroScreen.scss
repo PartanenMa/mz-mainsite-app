@@ -1,13 +1,3 @@
-.introScreenOverlay {
-    background-color: #111;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-}
-
 .introScreen {
     background-color: #111;
     height: 580px;
@@ -21,39 +11,146 @@
     z-index: 1000;
     overflow: hidden;
 
-    .introScreenAboutTitle {
+    .introScreenWelcomeTitle {
         height: 10%;
         width: 100%;
         display: flex;
         justify-content: center;
-        overflow: hidden;
 
         h2 {
             color: #03a062;
-            font-size: 30px;
+            font-size: 50px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            text-decoration-line: underline;
             text-shadow: 0.5px 0.5px 0 lightgreen;
             position: relative;
-            bottom: 10px;
+            bottom: 35px;
+
+            .iSWTName {
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+
+            @keyframes glow {
+                from {
+                    text-shadow:
+                        0 0 2px #fff,
+                        0 0 5px #fff,
+                        0 0 7px #03a062,
+                        0 0 10px #03a062,
+                        0 0 12px #03a062,
+                        0 0 15px #03a062,
+                        0 0 17px #03a062;
+                }
+
+                to {
+                    text-shadow:
+                        0 0 5px #fff,
+                        0 0 7px lightgreen,
+                        0 0 10px lightgreen,
+                        0 0 12px lightgreen,
+                        0 0 15px lightgreen,
+                        0 0 17px lightgreen,
+                        0 0 20px lightgreen;
+                }
+            }
         }
     }
 
     .introScreenAbout {
         height: 80%;
         width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         overflow: hidden;
 
-        p {
+        h3 {
             color: #03a062;
-            font-size: 18px;
+            font-size: 30px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             text-shadow: 0.3px 0.3px 0 lightgreen;
             max-width: 98%;
+        }
+
+        p {
+            color: #03a062;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.3px 0.3px 0 lightgreen;
+            max-width: 98%;
+        }
+
+        .madeWith {
+            height: 60%;
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            bottom: 20px;
+
+            .techUsed {
+                height: 150px;
+                width: 150px;
+                border-radius: 10px;
+                margin-top: 60px;
+                position: relative;
+                bottom: 30px;
+                overflow: hidden;
+                filter: drop-shadow(0 0 2em var(--techUsed-color));
+
+                .techUsedTitle {
+                    height: 30px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    overflow: hidden;
+
+                    h5 {
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        font-size: 20px;
+                        position: relative;
+                        bottom: 30px;
+                        right: 2px;
+                    }
+                }
+
+                .techUsedLogo {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 120px;
+                    width: 100%;
+                    overflow: hidden;
+                }
+            }
+
+            .noTechUsedData {
+                height: 90%;
+                width: 90%;
+                position: relative;
+                right: 340px;
+                bottom: 20px;
+
+                h4 {
+                    width: fit-content;
+                    color: red;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid red;
+                    border-radius: 48%;
+                    padding: 20px;
+                    position: relative;
+                    top: 10px;
+                    left: 513px;
+                }
+            }
         }
     }
 
