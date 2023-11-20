@@ -258,6 +258,13 @@ export const data = {
                     image: "/src/Assets/Images/SassLogo.svg",
                     backgroundSize: "70%",
                 },
+                {
+                    name: "Tailwind CSS",
+                    skillLevel: "beginner",
+                    color: "#06b6d4",
+                    image: "/src/Assets/Images/TailwindCSSLogo.svg",
+                    backgroundSize: "80%",
+                },
             ],
             backEndDevelopment: [
                 {
