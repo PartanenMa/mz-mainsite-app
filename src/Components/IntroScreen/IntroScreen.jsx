@@ -46,6 +46,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
 
     const closeIntroScreen = () => {
         setIsIntroScreenOpen(false);
+        sessionStorage.setItem("afterIntroLoading", "true");
         sessionStorage.setItem("hasSeenIntro", "true");
     };
 

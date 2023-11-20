@@ -4,6 +4,7 @@ import DarkBG from "./Components/BGAnimation/DarkBG.jsx";
 import MatrixBG from "./Components/BGAnimation/MatrixBG.jsx";
 import AdminMatrixBG from "./Components/BGAnimation/AdminMatrixBG.jsx";
 import IntroScreen from "./Components/IntroScreen/IntroScreen.jsx";
+import LoadingScreen from "./Components/LoadingScreen/LoadingScreen.jsx";
 import Header from "/src/Components/Header/Header.jsx";
 import Footer from "/src/Components/Footer/Footer.jsx";
 import FrontPage from "./Pages/FrontPage/FrontPage.jsx";
@@ -27,7 +28,24 @@ function App() {
     const navigate = useNavigate();
     const location = useLocation();
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
+    const afterIntroLoad = sessionStorage.getItem("afterIntroLoading");
     const [isIntroScreenOpen, setIsIntroScreenOpen] = useState(!hasSeenIntro);
+    const [isAfterIntroLoad, setIsAfterIntroLoad] = useState(!afterIntroLoad);
+
+    useEffect(() => {
+        if (!hasSeenIntro) {
+            // If the intro screen hasn't been seen, keep it open
+            setIsIntroScreenOpen(true);
+        } else {
+            // Intro screen has been seen, start the loading process
+            const timer = setTimeout(() => {
+                setIsAfterIntroLoad(false);
+                sessionStorage.setItem("afterIntroLoading", "false");
+            }, 1000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [hasSeenIntro]);
 
     useEffect(() => {
         if (location.pathname === info.routes.loginPage || location.pathname.includes("admin")) {
@@ -49,6 +67,8 @@ function App() {
                 <div className="appContainer">
                     {isIntroScreenOpen ? (
                         <IntroScreen isIntroScreenOpen={isIntroScreenOpen} setIsIntroScreenOpen={setIsIntroScreenOpen} />
+                    ) : isAfterIntroLoad ? (
+                        <LoadingScreen />
                     ) : (
                         <>
                             {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Header />}
