@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { notification, Carousel } from "antd";
+import { Carousel } from "antd";
+import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
@@ -16,6 +17,12 @@ function HomePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
 
     useEffect(() => {
         if (isLoggedIn === "true") {
@@ -24,15 +31,7 @@ function HomePageAdmin() {
                 setLoading(false);
                 if (load === "true") {
                     sessionStorage.setItem("load", "false");
-                    notification.success({
-                        message: "LOGGED IN AS ADMIN",
-                        description: "Welcome back!",
-                        placement: "bottomLeft",
-                        style: {
-                            backgroundColor: "lightgreen",
-                            border: "3px solid green",
-                        },
-                    });
+                    triggerNotification("LOGGED IN AS ADMIN", "Welcome back!", "success");
                 }
             }, 2000);
 
@@ -40,6 +39,16 @@ function HomePageAdmin() {
             return () => clearTimeout(timer);
         }
     }, [isLoggedIn, load]);
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        // Close the notification after 5 seconds
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
+    };
 
     if (isLoggedIn === "true") {
         return (
@@ -57,6 +66,13 @@ function HomePageAdmin() {
                             </div>
                             <HomePageTitle />
                             <FirstSection />
+                            <Notification
+                                isNotificationOpen={isNotificationOpen}
+                                setIsNotificationOpen={setIsNotificationOpen}
+                                title={notificationContent.title}
+                                description={notificationContent.description}
+                                type={notificationContent.type}
+                            />
                         </div>
                         <FooterAdmin />
                     </div>

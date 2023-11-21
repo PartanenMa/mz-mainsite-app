@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import MatrixBG from "/src/Components/BGAnimation/MatrixBG.jsx";
-import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./IntroScreen.scss";

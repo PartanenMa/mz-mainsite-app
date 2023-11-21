@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { notification } from "antd";
+import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
@@ -15,6 +15,12 @@ function ProjectsPageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [projects, setProjects] = useState([]);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
 
     useEffect(() => {
         setProjects(data.projectsData);
@@ -27,15 +33,7 @@ function ProjectsPageAdmin() {
                 setLoading(false);
                 if (load === "true") {
                     sessionStorage.setItem("load", "false");
-                    notification.success({
-                        message: "LOGGED IN AS ADMIN",
-                        description: "Welcome back!",
-                        placement: "bottomLeft",
-                        style: {
-                            backgroundColor: "lightgreen",
-                            border: "3px solid green",
-                        },
-                    });
+                    triggerNotification("LOGGED IN AS ADMIN", "Welcome back!", "success");
                 }
             }, 1000);
 
@@ -43,6 +41,16 @@ function ProjectsPageAdmin() {
             return () => clearTimeout(timer);
         }
     }, [isLoggedIn, load]);
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        // Close the notification after 5 seconds
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
+    };
 
     if (isLoggedIn === "true") {
         return (
@@ -61,6 +69,13 @@ function ProjectsPageAdmin() {
                             <ProjectsPageTitle />
                             <AboutMyProjects />
                             <Projects projects={projects} />
+                            <Notification
+                                isNotificationOpen={isNotificationOpen}
+                                setIsNotificationOpen={setIsNotificationOpen}
+                                title={notificationContent.title}
+                                description={notificationContent.description}
+                                type={notificationContent.type}
+                            />
                         </div>
                         <FooterAdmin />
                     </div>

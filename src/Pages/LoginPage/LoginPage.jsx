@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
-import { notification } from "antd";
+import Notification from "/src/Components/Notification/Notification.jsx";
 import LogoutLoadingScreen from "/src/Components/LogoutLoadingScreen/LogoutLoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,21 +10,19 @@ import "./LoginPage.scss";
 function LoginPage() {
     const load = sessionStorage.getItem("logoutLoad");
     const [loading, setLoading] = useState(true);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
 
     useEffect(() => {
         //Simulate loading for 1 second:
         const timer = setTimeout(() => {
             setLoading(false);
             if (load === "true") {
-                notification.warning({
-                    message: "LOGGED OUT!",
-                    description: "You've logged out of the MatrixZone.",
-                    placement: "bottomLeft",
-                    style: {
-                        backgroundColor: "yellow",
-                        border: "3px solid orange",
-                    },
-                });
+                triggerNotification("LOGGED OUT!", "You've logged out of the MatrixZone.", "danger");
             }
             sessionStorage.setItem("load", "false");
         }, 4000);
@@ -32,6 +30,16 @@ function LoginPage() {
         //Clean up the timer to prevent memory leaks:
         return () => clearTimeout(timer);
     }, []);
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        // Close the notification after 5 seconds
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
+    };
 
     return (
         <div>
@@ -43,6 +51,13 @@ function LoginPage() {
                     <BackToFrontPage />
                     <LogoSection />
                     <LoginSection />
+                    <Notification
+                        isNotificationOpen={isNotificationOpen}
+                        setIsNotificationOpen={setIsNotificationOpen}
+                        title={notificationContent.title}
+                        description={notificationContent.description}
+                        type={notificationContent.type}
+                    />
                 </div>
             )}
         </div>
@@ -85,6 +100,12 @@ function LoginSection() {
     const [userValue, setUserValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
     const [passwordType, setPasswordType] = useState("password");
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
     const navigate = useNavigate();
 
     const handleUserChange = (event) => {
@@ -114,29 +135,23 @@ function LoginSection() {
                 navigate(info.routes.homePageAdmin);
             } else {
                 event.preventDefault();
-                notification.error({
-                    message: "LOG IN FAILED!",
-                    description: "Incorrect username or password.",
-                    placement: "bottomLeft",
-                    style: {
-                        backgroundColor: "lightcoral",
-                        border: "3px solid red",
-                    },
-                });
+                triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
             }
         } else {
             event.preventDefault();
-            notification.error({
-                message: "LOG IN FAILED!",
-                description: "Logging in is currently disabled.",
-                placement: "bottomLeft",
-                style: {
-                    backgroundColor: "lightcoral",
-                    border: "3px solid red",
-                },
-            });
+            triggerNotification("LOG IN FAILED!", "Logging in is currently disabled.", "error");
         }
     }
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        // Close the notification after 5 seconds
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
+    };
 
     return (
         <div className="lPLoginContainer">
@@ -177,6 +192,13 @@ function LoginSection() {
                     </motion.button>
                 </AnimatePresence>
             </form>
+            <Notification
+                isNotificationOpen={isNotificationOpen}
+                setIsNotificationOpen={setIsNotificationOpen}
+                title={notificationContent.title}
+                description={notificationContent.description}
+                type={notificationContent.type}
+            />
         </div>
     );
 }

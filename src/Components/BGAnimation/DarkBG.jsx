@@ -1,4 +1,4 @@
-import "./DarkBG.css";
+import "./DarkBG.scss";
 
 const DarkBG = () => {
     const AnimatedBGStyle = {

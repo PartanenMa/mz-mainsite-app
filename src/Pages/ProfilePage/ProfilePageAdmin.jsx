@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { notification } from "antd";
+import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
@@ -18,6 +18,12 @@ function ProfilePageAdmin() {
     const [educations, setEducations] = useState([]);
     const [skills, setSkills] = useState([]);
     const [experiences, setExperiences] = useState([]);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
 
     useEffect(() => {
         setLanguages(data.profileData.languages);
@@ -33,15 +39,7 @@ function ProfilePageAdmin() {
                 setLoading(false);
                 if (load === "true") {
                     sessionStorage.setItem("load", "false");
-                    notification.success({
-                        message: "LOGGED IN AS ADMIN",
-                        description: "Welcome back!",
-                        placement: "bottomLeft",
-                        style: {
-                            backgroundColor: "lightgreen",
-                            border: "3px solid green",
-                        },
-                    });
+                    triggerNotification("LOGGED IN AS ADMIN", "Welcome back!", "success");
                 }
             }, 1000);
 
@@ -49,6 +47,16 @@ function ProfilePageAdmin() {
             return () => clearTimeout(timer);
         }
     }, [isLoggedIn, load]);
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        // Close the notification after 5 seconds
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
+    };
 
     if (isLoggedIn === "true") {
         return (
@@ -73,6 +81,13 @@ function ProfilePageAdmin() {
                             <Interests />
                             <Hobbies />
                             <ContactMe />
+                            <Notification
+                                isNotificationOpen={isNotificationOpen}
+                                setIsNotificationOpen={setIsNotificationOpen}
+                                title={notificationContent.title}
+                                description={notificationContent.description}
+                                type={notificationContent.type}
+                            />
                         </div>
                         <FooterAdmin />
                     </div>

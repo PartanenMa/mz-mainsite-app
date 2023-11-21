@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { notification } from "antd";
+import Notification from "/src/Components/Notification/Notification.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
@@ -14,6 +14,12 @@ function GoalsPageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [goals, setGoals] = useState([]);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
 
     useEffect(() => {
         setGoals(data.goalsData);
@@ -26,15 +32,7 @@ function GoalsPageAdmin() {
                 setLoading(false);
                 if (load === "true") {
                     sessionStorage.setItem("load", "false");
-                    notification.success({
-                        message: "LOGGED IN AS ADMIN",
-                        description: "Welcome back!",
-                        placement: "bottomLeft",
-                        style: {
-                            backgroundColor: "lightgreen",
-                            border: "3px solid green",
-                        },
-                    });
+                    triggerNotification("LOGGED IN AS ADMIN", "Welcome back!", "success");
                 }
             }, 1000);
 
@@ -42,6 +40,16 @@ function GoalsPageAdmin() {
             return () => clearTimeout(timer);
         }
     }, [isLoggedIn, load]);
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        // Close the notification after 5 seconds
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
+    };
 
     if (isLoggedIn === "true") {
         return (
@@ -60,6 +68,13 @@ function GoalsPageAdmin() {
                             <GoalsPageTitle />
                             <GoalsCount goals={goals} />
                             <GoalsPageContent goals={goals} />
+                            <Notification
+                                isNotificationOpen={isNotificationOpen}
+                                setIsNotificationOpen={setIsNotificationOpen}
+                                title={notificationContent.title}
+                                description={notificationContent.description}
+                                type={notificationContent.type}
+                            />
                         </div>
                         <FooterAdmin />
                     </div>

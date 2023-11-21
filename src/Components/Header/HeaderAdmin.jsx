@@ -35,7 +35,9 @@ function Logo() {
 function Title() {
     return (
         <div className="titleContainer">
-            <h1>MatrixZone</h1>
+            <h1>
+                MatrixZone<span style={{ fontSize: "20px", textShadow: "none" }}> Admin panel</span>
+            </h1>
         </div>
     );
 }

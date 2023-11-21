@@ -34,10 +34,10 @@ function App() {
 
     useEffect(() => {
         if (!hasSeenIntro) {
-            // If the intro screen hasn't been seen, keep it open
+            //If the intro screen hasn't been seen, keep it open:
             setIsIntroScreenOpen(true);
         } else {
-            // Intro screen has been seen, start the loading process
+            //Intro screen has been seen, start the loading process:
             const timer = setTimeout(() => {
                 setIsAfterIntroLoad(false);
                 sessionStorage.setItem("afterIntroLoading", "false");
