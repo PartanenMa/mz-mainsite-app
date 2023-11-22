@@ -1,0 +1,113 @@
+/*IntroLoadingScreen:*/
+.introLoadingScreenOverlay {
+    background-color: green;
+    opacity: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.introLoadingScreen {
+    height: 580px;
+    width: 746px;
+    padding-bottom: 10px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: hidden;
+
+    .introLoadingScreenLogoContainer {
+        height: 70%;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        .iLSLCLogo {
+            background-image: url("/src/Assets/Images/Logo.PNG");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 210px;
+            width: 300px;
+            border: 3px solid #03a062;
+            border-radius: 10px;
+            box-shadow: 0 0 30px 5px #03a062;
+            position: relative;
+            top: 100px;
+        }
+    }
+
+    .introLoadingScreenLoadingBar {
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        overflow: hidden;
+
+        .iLSLBLogo {
+            background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 280%;
+            height: 70px;
+            width: 70px;
+            position: relative;
+            bottom: 30px;
+            animation: logo-spin infinite 3s linear;
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        h2 {
+            color: #03a062;
+            font-size: 70px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.5px 0.5px 0 lightgreen;
+            position: relative;
+            bottom: 30px;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 7px #03a062,
+                    0 0 10px #03a062,
+                    0 0 12px #03a062,
+                    0 0 15px #03a062,
+                    0 0 17px #03a062;
+            }
+
+            to {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 7px lightgreen,
+                    0 0 10px lightgreen,
+                    0 0 12px lightgreen,
+                    0 0 15px lightgreen,
+                    0 0 17px lightgreen,
+                    0 0 20px lightgreen;
+            }
+        }
+    }
+}

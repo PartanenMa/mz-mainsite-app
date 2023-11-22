@@ -4,7 +4,7 @@ import DarkBG from "./Components/BGAnimation/DarkBG.jsx";
 import MatrixBG from "./Components/BGAnimation/MatrixBG.jsx";
 import AdminMatrixBG from "./Components/BGAnimation/AdminMatrixBG.jsx";
 import IntroScreen from "./Components/IntroScreen/IntroScreen.jsx";
-import LoadingScreen from "./Components/LoadingScreen/LoadingScreen.jsx";
+import IntroLoadingScreen from "./Components/IntroLoadingScreen/IntroLoadingScreen.jsx";
 import Header from "/src/Components/Header/Header.jsx";
 import Footer from "/src/Components/Footer/Footer.jsx";
 import FrontPage from "./Pages/FrontPage/FrontPage.jsx";
@@ -68,7 +68,7 @@ function App() {
                     {isIntroScreenOpen ? (
                         <IntroScreen isIntroScreenOpen={isIntroScreenOpen} setIsIntroScreenOpen={setIsIntroScreenOpen} />
                     ) : isAfterIntroLoad ? (
-                        <LoadingScreen />
+                        <IntroLoadingScreen />
                     ) : (
                         <>
                             {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Header />}

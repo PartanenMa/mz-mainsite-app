@@ -268,8 +268,8 @@ export const data = {
             ],
             backEndDevelopment: [
                 {
-                    name: "Node.js with Express.js",
-                    skillLevel: "beginner",
+                    name: "Node.js",
+                    skillLevel: "intermediate",
                     color: "#3c873a",
                     image: "/src/Assets/Images/Node.jsLogo.svg",
                     backgroundSize: "90%",
@@ -278,7 +278,7 @@ export const data = {
             fullStackDevelopment: [
                 {
                     name: "Docker",
-                    skillLevel: "beginner",
+                    skillLevel: "intermediate",
                     color: "#0db7ed",
                     image: "/src/Assets/Images/DockerLogo.svg",
                     backgroundSize: "80%",

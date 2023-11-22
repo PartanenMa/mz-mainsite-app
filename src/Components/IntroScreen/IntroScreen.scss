@@ -1,5 +1,6 @@
 .introScreen {
-    background-color: #111;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     height: 580px;
     width: 746px;
     padding-bottom: 10px;
