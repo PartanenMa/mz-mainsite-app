@@ -57,14 +57,21 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                     <AnimatePresence>
                         <motion.div className="introScreen" style={introScreenStyle} key="introScreen" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                             <div className="introScreenWelcomeTitle">
-                                <h2>
-                                    Welcome to the <span className="iSWTName">MatrixZone</span>
-                                </h2>
+                                <motion.h2 key="iswt-h2" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0, transition: { duration: 1 } }} exit={{ opacity: 0, x: 1000 }}>
+                                    Welcome to the{" "}
+                                    <motion.span className="iSWTName" key="iswtname" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 4 } }} exit={{ opacity: 0 }}>
+                                        MatrixZone
+                                    </motion.span>
+                                </motion.h2>
                             </div>
                             <div className="introScreenAbout">
-                                <h3>My personal website</h3>
-                                <p>MADE USING:</p>
-                                <div className="madeWith">
+                                <motion.h3 key="isa-h3" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0, transition: { duration: 1 } }} exit={{ opacity: 0, y: 100 }}>
+                                    My personal website
+                                </motion.h3>
+                                <motion.p key="isa-p" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0, transition: { duration: 1 } }} exit={{ opacity: 0, y: 100 }}>
+                                    MADE USING:
+                                </motion.p>
+                                <motion.div className="madeWith" key="madewith" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 3 } }} exit={{ opacity: 0 }}>
                                     {technologiesUsed.length > 0 ? (
                                         technologiesUsed.map((tech, index) => (
                                             <div className="techUsed" key={index} style={{ "--techUsed-color": tech.color, textDecoration: "none" }}>
@@ -79,13 +86,16 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                             <h4>NO DATA!</h4>
                                         </div>
                                     )}
-                                </div>
+                                </motion.div>
                             </div>
                             <div className="introScreenBack">
                                 <motion.button
                                     className="introScreenBackButton"
                                     onClick={() => closeIntroScreen()}
                                     key="introscreenbackbutton"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+                                    exit={{ opacity: 0, y: -100 }}
                                     whileHover={{
                                         scale: 1.05,
                                         transition: { duration: 0.1 },

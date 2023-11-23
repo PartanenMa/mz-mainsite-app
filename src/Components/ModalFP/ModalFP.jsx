@@ -43,7 +43,7 @@ function ModalFP({ isModalOpen, setIsModalOpen }) {
                 <>
                     <div className="modalOverlay" />
                     <AnimatePresence>
-                        <motion.div className="modal" style={modalStyle} key="modal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                        <motion.div className="modalFP" style={modalStyle} key="modalfp" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                             <div className="modalAboutTitle">
                                 <h2>What is the MatrixZone?</h2>
                                 <motion.button

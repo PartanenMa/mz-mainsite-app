@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Beta 0.9.10",
+    version: "Beta 0.9.11",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -74,7 +74,7 @@ export const info = {
         user: "PartanenMa",
         link: "https://github.com/PartanenMa",
         //Profile description:
-        description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development. Feel free to explore some my projects.",
+        description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development. Feel free to explore my projects.",
         description2: "",
         description3: "",
     },
