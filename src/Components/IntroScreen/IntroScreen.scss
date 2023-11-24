@@ -1,12 +1,25 @@
+/*IntroScreen:*/
+.introScreenOverlay {
+    background-color: black;
+    opacity: 80%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
 .introScreen {
     background-color: transparent;
     backdrop-filter: blur(15px);
     height: 580px;
     width: 746px;
     padding-bottom: 10px;
-    border: 3px solid #03a062;
     border-radius: 10px;
-    box-shadow: 0 0 30px 5px #03a062;
+    box-shadow:
+        inset 0 0 10px 5px #03a062,
+        0 0 30px 5px #03a062;
     position: fixed;
     transform: translate(-50%, -50%);
     z-index: 1000;

@@ -54,6 +54,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
             {isIntroScreenOpen && (
                 <>
                     <MatrixBG />
+                    <div className="introScreenOverlay" />
                     <AnimatePresence>
                         <motion.div className="introScreen" style={introScreenStyle} key="introScreen" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                             <div className="introScreenWelcomeTitle">
