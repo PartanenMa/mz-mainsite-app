@@ -29,6 +29,36 @@
         justify-content: center;
         overflow: hidden;
 
+        .terminalTitleSiteName {
+            color: #03a062;
+            text-shadow: 0.5px 0.5px 0 lightgreen;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 7px #03a062,
+                    0 0 10px #03a062,
+                    0 0 12px #03a062,
+                    0 0 15px #03a062,
+                    0 0 17px #03a062;
+            }
+
+            to {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 7px lightgreen,
+                    0 0 10px lightgreen,
+                    0 0 12px lightgreen,
+                    0 0 15px lightgreen,
+                    0 0 17px lightgreen,
+                    0 0 20px lightgreen;
+            }
+        }
+
         h2 {
             color: #111;
             font-size: 30px;

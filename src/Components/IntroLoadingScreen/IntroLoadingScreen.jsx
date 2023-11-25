@@ -38,6 +38,7 @@ function IntroLoadingScreen() {
 
     return ReactDOM.createPortal(
         <>
+            <div className="introLoadingScreenOverlay" />
             <AnimatePresence>
                 <motion.div
                     className="introLoadingScreen"

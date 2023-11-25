@@ -1,7 +1,7 @@
 /*IntroLoadingScreen:*/
 .introLoadingScreenOverlay {
-    background-color: green;
-    opacity: 50%;
+    background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
+    opacity: 40%;
     position: fixed;
     top: 0;
     left: 0;
@@ -51,15 +51,15 @@
         align-items: center;
         justify-content: center;
         gap: 30px;
-        overflow: hidden;
 
         .iLSLBLogo {
             background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: 49% 60%;
             background-size: 280%;
             height: 70px;
             width: 70px;
+            filter: drop-shadow(0 0 2em black);
             position: relative;
             bottom: 30px;
             animation: logo-spin infinite 3s linear;

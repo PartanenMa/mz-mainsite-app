@@ -71,7 +71,9 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
                     <AnimatePresence>
                         <motion.div className="terminal" style={terminalStyle} key="terminal" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                             <div className="terminalTitle">
-                                <h2>TERMINAL</h2>
+                                <h2>
+                                    <span className="terminalTitleSiteName">MatrixZone</span> terminal
+                                </h2>
                             </div>
                             <div className="terminalInput">
                                 <div className="terminalInputField">
