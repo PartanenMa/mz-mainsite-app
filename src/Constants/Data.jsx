@@ -12,6 +12,18 @@ export const data = {
             image: "src/Assets/Images/SassLogo.svg",
             size: "80%",
         },
+        /*{
+            name: "Node.js",
+            color: "#3c873a",
+            image: "src/Assets/Images/Node.jsLogo.svg",
+            size: "80%",
+        },
+        {
+            name: "DB",
+            color: "#3c873a",
+            image: "src/Assets/Images/Node.jsLogo.svg",
+            size: "80%",
+        },*/
     ],
     professionStatus: {
         profession: "Software Developer",

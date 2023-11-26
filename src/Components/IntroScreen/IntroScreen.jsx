@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import MatrixBG from "/src/Components/BGAnimation/MatrixBG.jsx";
+import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./IntroScreen.scss";
@@ -67,7 +68,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                             </div>
                             <div className="introScreenAbout">
                                 <motion.h3 key="isa-h3" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0, transition: { duration: 1 } }} exit={{ opacity: 0, y: 100 }}>
-                                    My personal website
+                                    My personal website <span style={{ color: "green", fontStyle: "normal" }}>{"(" + info.version + ")"}</span>
                                 </motion.h3>
                                 <motion.p key="isa-p" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0, transition: { duration: 1 } }} exit={{ opacity: 0, y: 100 }}>
                                     MADE USING:

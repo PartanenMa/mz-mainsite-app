@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Beta 0.9.13",
+    version: "Beta 0.9.14",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -28,7 +28,7 @@ export const info = {
         //videos: "But that's not all. MatrixZone also offers a glimpse into my journey as a software developer through captivating videos. From behind-the-scenes looks at my projects to thought-provoking discussions on industry trends, these videos provide a window into my world and the passion that drives me.",
     },
     loginInfo: {
-        enabled: true,
+        enabled: false,
         adminUserName: "Admin",
         adminPassword: "ManuAdminReact123",
     },
