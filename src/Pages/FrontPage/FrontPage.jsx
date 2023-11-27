@@ -193,8 +193,8 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                 </div>
                                 <div className="tCB1Content">
                                     {techFe.length > 0 ? (
-                                        techFe.map((tech, index) => (
-                                            <AnimatePresence>
+                                        <AnimatePresence>
+                                            {techFe.map((tech, index) => (
                                                 <motion.a
                                                     className="tech"
                                                     key={index}
@@ -212,8 +212,8 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                                     </div>
                                                     <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
-                                            </AnimatePresence>
-                                        ))
+                                            ))}
+                                        </AnimatePresence>
                                     ) : (
                                         <div className="noTechData">
                                             <h4>NO DATA!</h4>
@@ -229,8 +229,8 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                 </div>
                                 <div className="tCB2Content">
                                     {techBe.length > 0 ? (
-                                        techBe.map((tech, index) => (
-                                            <AnimatePresence>
+                                        <AnimatePresence>
+                                            {techBe.map((tech, index) => (
                                                 <motion.a
                                                     className="tech"
                                                     key={index}
@@ -248,8 +248,8 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                                     </div>
                                                     <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
-                                            </AnimatePresence>
-                                        ))
+                                            ))}
+                                        </AnimatePresence>
                                     ) : (
                                         <div className="noTechData">
                                             <h4>NO DATA!</h4>

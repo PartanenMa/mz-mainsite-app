@@ -128,8 +128,8 @@ function Education({ educations }) {
             </div>
             <div className="educationsContent">
                 {educations.length > 0 ? (
-                    educations.map((education, index) => (
-                        <AnimatePresence>
+                    <AnimatePresence>
+                        {educations.map((education, index) => (
                             <motion.div
                                 className="education"
                                 key={index}
@@ -164,8 +164,8 @@ function Education({ educations }) {
                                     </p>
                                 </div>
                             </motion.div>
-                        </AnimatePresence>
-                    ))
+                        ))}
+                    </AnimatePresence>
                 ) : (
                     <div className="noProfileData">
                         <h4>NO DATA!</h4>
@@ -428,8 +428,8 @@ function Experience({ experiences }) {
             </div>
             <div className="experiencesContent">
                 {experiences.length > 0 ? (
-                    experiences.map((experience, index) => (
-                        <AnimatePresence>
+                    <AnimatePresence>
+                        {experiences.map((experience, index) => (
                             <motion.div
                                 className="experience"
                                 key={index}
@@ -456,8 +456,8 @@ function Experience({ experiences }) {
                                     </p>
                                 </div>
                             </motion.div>
-                        </AnimatePresence>
-                    ))
+                        ))}
+                    </AnimatePresence>
                 ) : (
                     <div className="noProfileData">
                         <h4>NO DATA!</h4>
