@@ -1,6 +1,5 @@
-import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Carousel } from "antd";
+import Carousel from "/src/Components/Carousel/Carousel.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./HomePage.scss";
@@ -25,80 +24,13 @@ function HomePageTitle() {
 }
 
 function FirstSection() {
-    const ref = useRef();
     const navigate = useNavigate();
-
-    const contentStyle = {
-        height: "600px",
-        lineHeight: "160px",
-        textAlign: "center",
-        overflow: "hidden",
-    };
+    const carouselImages = ["/src/Assets/Images/Carousel1.jpg", "/src/Assets/Images/Carousel2.jpg", "/src/Assets/Images/Carousel3.jpg"];
 
     return (
         <div className="firstSectionContainer">
             <section className="homeFirstSectionCarousel">
-                <div className="carouselContainer">
-                    <Carousel autoplay dots={false} effect="scroll" ref={ref}>
-                        <div>
-                            <div className="carouselSlide1" style={contentStyle}>
-                                <div className="carouselItem1">
-                                    <div className="nameAndJob">
-                                        <h2 className="name">{info.LinkedIn.name}</h2>
-                                        <h2 className="jobTitle">{info.LinkedIn.profession}</h2>
-                                    </div>
-                                    <div className="personalPhoto" />
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="carouselSlide2" style={contentStyle}>
-                                <div className="carouselItem2" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="carouselSlide3" style={contentStyle}>
-                                <div className="carouselItem3" />
-                            </div>
-                        </div>
-                    </Carousel>
-                </div>
-                <AnimatePresence>
-                    <motion.button
-                        className="carouselButtonLeft"
-                        onClick={() => {
-                            ref.current.prev();
-                        }}
-                        key="carouselbuttonleft"
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.9 }}
-                    >
-                        <p title="Previous" style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}>
-                            {"<"}
-                        </p>
-                    </motion.button>
-                </AnimatePresence>
-                <AnimatePresence>
-                    <motion.button
-                        className="carouselButtonRight"
-                        onClick={() => {
-                            ref.current.next();
-                        }}
-                        key="carouselbuttonright"
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.9 }}
-                    >
-                        <p title="Next" style={{ color: "#03A062", fontSize: 60, position: "relative", bottom: "45px" }}>
-                            {">"}
-                        </p>
-                    </motion.button>
-                </AnimatePresence>
+                <Carousel images={carouselImages} height={"550px"} width={"900px"} />
             </section>
             <section className="homeFirstSection1">
                 <div className="checkMyProfile">
