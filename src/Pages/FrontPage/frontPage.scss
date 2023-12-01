@@ -260,7 +260,7 @@
 
                     .hC1-1 {
                         display: none;
-                        background-color: #333;
+                        background-color: lightblue;
                         height: 100%;
                         width: 60%;
 
@@ -275,11 +275,10 @@
                             overflow: hidden;
 
                             h3 {
-                                color: #03a062;
+                                color: #0072b1;
                                 font-size: 20px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                text-shadow: 0.3px 0.3px 0 lightgreen;
                                 position: relative;
                                 bottom: 13px;
                             }
@@ -366,7 +365,7 @@
 
                     .hC2-1 {
                         display: none;
-                        background-color: #333;
+                        background-color: gray;
                         height: 100%;
                         width: 60%;
 
@@ -381,11 +380,10 @@
                             overflow: hidden;
 
                             h3 {
-                                color: #03a062;
+                                color: black;
                                 font-size: 20px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                text-shadow: 0.3px 0.3px 0 lightgreen;
                                 position: relative;
                                 bottom: 13px;
                             }
@@ -472,7 +470,7 @@
 
                     .hC3-1 {
                         display: none;
-                        background-color: #333;
+                        background-color: lightcoral;
                         height: 100%;
                         width: 60%;
 
@@ -487,11 +485,10 @@
                             overflow: hidden;
 
                             h3 {
-                                color: #03a062;
+                                color: #c4302b;
                                 font-size: 20px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                text-shadow: 0.3px 0.3px 0 lightgreen;
                                 position: relative;
                                 bottom: 13px;
                             }
@@ -524,10 +521,10 @@
 
                     .hC3-2 {
                         display: none;
-                        background-image: url("/src/Assets/Images/YouTubeUser.jpg");
+                        background-image: url("/src/Assets/Images/Carousel3.jpg");
                         background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: cover;
+                        background-size: 420%;
+                        background-position: 64% 53%;
                         height: 100%;
                         width: 40%;
                         border-left: 1px solid lightcoral;

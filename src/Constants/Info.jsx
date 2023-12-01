@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Beta 0.9.16",
+    version: "Release 1.0",
     routes: {
         frontPage: "/",
         loginPage: "/login",
@@ -22,7 +22,7 @@ export const info = {
         introduction:
             "Welcome to the MatrixZone, my personal website, and your gateway to discovering the world of software development through my unique perspective. Whether you're a potential client, collaborator, or simply curious about the possibilities of programming, MatrixZone is your one-stop destination to discover the power of my expertise.",
         profile:
-            "As a seasoned developer with a passion for innovation, I invite you to explore my profile and witness my skills and experience in the software development field. From developing cutting-edge software solutions to architecting robust systems, I have a proven track record of delivering exceptional results.",
+            "As someone who deeply values innovation in software development, I welcome you to take a glimpse at my profile to see the skills and experiences I've acquired over time. I've had the opportunity to work on various software solutions, and to improve my programming skills doing so.",
         projects:
             "MatrixZone is not just a showcase of my skills; it's a testament to my dedication and commitment to excellence. Through a carefully curated collection of projects, you'll gain insight into my problem-solving abilities, attention to detail, and ability to tackle complex challenges head-on.",
         //videos: "But that's not all. MatrixZone also offers a glimpse into my journey as a software developer through captivating videos. From behind-the-scenes looks at my projects to thought-provoking discussions on industry trends, these videos provide a window into my world and the passion that drives me.",
