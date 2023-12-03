@@ -1,5 +1,32 @@
+import FinnishFlag from "/src/Assets/Images/FinnishFlag.svg";
+import UKFlag from "/src/Assets/Images/UKFlag.svg";
+import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
+import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
+import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
+import FigmaLogo from "/src/Assets/Images/FigmaLogo.svg";
+import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
+import GitLogo from "/src/Assets/Images/GitLogo.svg";
+import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
+import MacTerminalLogo from "/src/Assets/Images/MacTerminalLogo.png";
+import BashLogo from "/src/Assets/Images/BashLogo.svg";
+import CppLogo from "/src/Assets/Images/CppLogo.svg";
+import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
+import CsLogo from "/src/Assets/Images/CsLogo.svg";
+import HTMLLogo from "/src/Assets/Images/HTMLLogo.svg";
+import CSSLogo from "/src/Assets/Images/CSSLogo.svg";
+import JavaScriptLogo from "/src/Assets/Images/JavaScriptLogo.svg";
+import TypeScriptLogo from "/src/Assets/Images/TypeScriptLogo.svg";
+import PythonLogo from "/src/Assets/Images/PythonLogo.svg";
+import GoLogo from "/src/Assets/Images/GoLogo.svg";
+import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
+import SQLLogo from "/src/Assets/Images/SQLLogo.svg";
+import NoSQLLogo from "/src/Assets/Images/NoSQLLogo.png";
 import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
+import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
+import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
+import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
+import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
 export const data = {
     technologiesUsed: [
@@ -18,13 +45,13 @@ export const data = {
         /*{
             name: "Node.js",
             color: "#3c873a",
-            image: "src/Assets/Images/Node.jsLogo.svg",
+            image: NodejsLogo,
             size: "80%",
         },
         {
             name: "DB",
             color: "#3c873a",
-            image: "src/Assets/Images/Node.jsLogo.svg",
+            image: NodejsLogo,
             size: "80%",
         },*/
     ],
@@ -51,14 +78,14 @@ export const data = {
             {
                 name: "React",
                 color: "#61DBFB",
-                image: "src/Assets/Images/ReactLogo.svg",
+                image: ReactLogo,
                 size: "80%",
                 infoLink: "https://react.dev/",
             },
             {
                 name: "Sass",
                 color: "#cc6699",
-                image: "src/Assets/Images/SassLogo.svg",
+                image: SassLogo,
                 size: "80%",
                 infoLink: "https://sass-lang.com/",
             },
@@ -67,7 +94,7 @@ export const data = {
             {
                 name: "Node.js",
                 color: "#3c873a",
-                image: "src/Assets/Images/Node.jsLogo.svg",
+                image: NodejsLogo,
                 size: "80%",
                 infoLink: "https://nodejs.org/en/",
             },
@@ -79,19 +106,19 @@ export const data = {
                 name: "Finnish",
                 proficiency: "Native proficiency",
                 color: "white",
-                image: "/src/Assets/Images/FinnishFlag.svg",
+                image: FinnishFlag,
             },
             {
                 name: "English",
                 proficiency: "Professional working proficiency - C1",
                 color: "#012169",
-                image: "/src/Assets/Images/UKFlag.svg",
+                image: UKFlag,
             },
             {
                 name: "Swedish",
                 proficiency: "Limited working proficiency - B1",
                 color: "#006aa7",
-                image: "/src/Assets/Images/SwedishFlag.svg",
+                image: SwedishFlag,
             },
         ],
         educations: [
@@ -112,7 +139,7 @@ export const data = {
                     "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
                 educationSubjects: "Basic infantryman tactics and skills, mortar tactics and skills, leadership skills",
                 color: "red",
-                image: "/src/Assets/Images/FDFLogo.svg",
+                image: FDFLogo,
             },
             {
                 schoolName: "Satakunta University of Applied Sciences",
@@ -122,7 +149,7 @@ export const data = {
                     "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
                 educationSubjects: "IT infrastructure, software development, automation, 3D technology, robotics",
                 color: "#00a5cd",
-                image: "/src/Assets/Images/SAMKLogo.png",
+                image: SAMKLogo,
             },
         ],
         skills: {
@@ -131,21 +158,21 @@ export const data = {
                     name: "Figma",
                     skillLevel: "intermediate",
                     color: "#a259ff",
-                    image: "/src/Assets/Images/FigmaLogo.svg",
+                    image: FigmaLogo,
                     backgroundSize: "45%",
                 },
                 {
                     name: "Visual Studio Code",
                     skillLevel: "advanced",
                     color: "#0078d7",
-                    image: "/src/Assets/Images/VisualStudioCodeLogo.svg",
+                    image: VisualStudioCodeLogo,
                     backgroundSize: "70%",
                 },
                 {
                     name: "Git",
                     skillLevel: "advanced",
                     color: "#F1502F",
-                    image: "/src/Assets/Images/GitLogo.svg",
+                    image: GitLogo,
                     backgroundSize: "70%",
                 },
             ],
@@ -154,21 +181,21 @@ export const data = {
                     name: "PowerShell (Windows)",
                     skillLevel: "intermediate",
                     color: "#012456",
-                    image: "/src/Assets/Images/PowerShellLogo.png",
+                    image: PowerShellLogo,
                     backgroundSize: "80%",
                 },
-                {
+                /*{
                     name: "Mac Terminal (macOS)",
                     skillLevel: "beginner",
                     color: "#222",
-                    image: "/src/Assets/Images/MacTerminalLogo.png",
+                    image: MacTerminalLogo,
                     backgroundSize: "80%",
-                },
+                },*/
                 {
                     name: "Bash (Linux)",
                     skillLevel: "intermediate",
                     color: "darkgreen",
-                    image: "/src/Assets/Images/BashLogo.svg",
+                    image: BashLogo,
                     backgroundSize: "80%",
                 },
             ],
@@ -177,84 +204,84 @@ export const data = {
                     name: "C++",
                     skillLevel: "beginner",
                     color: "#044f88",
-                    image: "/src/Assets/Images/CppLogo.svg",
+                    image: CppLogo,
                     backgroundSize: "65%",
                 },
                 {
                     name: "Java",
                     skillLevel: "intermediate",
                     color: "#f89820",
-                    image: "/src/Assets/Images/JavaLogo.svg",
+                    image: JavaLogo,
                     backgroundSize: "100%",
                 },
                 {
                     name: "C#",
                     skillLevel: "intermediate",
                     color: "#682876",
-                    image: "/src/Assets/Images/CsLogo.svg",
+                    image: CsLogo,
                     backgroundSize: "65%",
                 },
                 {
                     name: "HTML",
                     skillLevel: "advanced",
                     color: "#e34c26",
-                    image: "/src/Assets/Images/HTMLLogo.svg",
+                    image: HTMLLogo,
                     backgroundSize: "75%",
                 },
                 {
                     name: "CSS",
                     skillLevel: "advanced",
                     color: "#264de4",
-                    image: "/src/Assets/Images/CSSLogo.svg",
+                    image: CSSLogo,
                     backgroundSize: "55%",
                 },
                 {
                     name: "JavaScript",
                     skillLevel: "advanced",
                     color: "#f0db4f",
-                    image: "/src/Assets/Images/JavaScriptLogo.svg",
+                    image: JavaScriptLogo,
                     backgroundSize: "65%",
                 },
                 {
                     name: "TypeScript",
                     skillLevel: "beginner",
                     color: "#007acc",
-                    image: "/src/Assets/Images/TypeScriptLogo.svg",
+                    image: TypeScriptLogo,
                     backgroundSize: "65%",
                 },
                 {
                     name: "Python",
                     skillLevel: "intermediate",
                     color: "#4b8bbe",
-                    image: "/src/Assets/Images/PythonLogo.svg",
+                    image: PythonLogo,
                     backgroundSize: "60%",
                 },
                 {
                     name: "Go",
                     skillLevel: "beginner",
                     color: "#00add8",
-                    image: "/src/Assets/Images/GoLogo.svg",
+                    image: GoLogo,
                     backgroundSize: "90%",
                 },
                 {
                     name: "PHP",
                     skillLevel: "beginner",
                     color: "#8993be",
-                    image: "/src/Assets/Images/PHPLogo.svg",
+                    image: PHPLogo,
                     backgroundSize: "90%",
                 },
                 {
                     name: "SQL",
                     skillLevel: "beginner",
                     color: "#00a5cd",
-                    image: "/src/Assets/Images/SQLLogo.svg",
+                    image: SQLLogo,
                     backgroundSize: "60%",
                 },
                 {
                     name: "NoSQL",
                     skillLevel: "beginner",
                     color: "#0072b1",
-                    image: "/src/Assets/Images/NoSQLLogo.png",
+                    image: NoSQLLogo,
                     backgroundSize: "60%",
                 },
             ],
@@ -263,21 +290,21 @@ export const data = {
                     name: "React",
                     skillLevel: "advanced",
                     color: "#61dbfb",
-                    image: "/src/Assets/Images/React.svg",
+                    image: ReactLogo,
                     backgroundSize: "65%",
                 },
                 {
                     name: "Sass",
                     skillLevel: "advanced",
                     color: "#cc6699",
-                    image: "/src/Assets/Images/SassLogo.svg",
+                    image: SassLogo,
                     backgroundSize: "70%",
                 },
                 {
                     name: "Tailwind CSS",
                     skillLevel: "beginner",
                     color: "#06b6d4",
-                    image: "/src/Assets/Images/TailwindCSSLogo.svg",
+                    image: TailwindCSSLogo,
                     backgroundSize: "80%",
                 },
             ],
@@ -286,7 +313,7 @@ export const data = {
                     name: "Node.js",
                     skillLevel: "intermediate",
                     color: "#3c873a",
-                    image: "/src/Assets/Images/Node.jsLogo.svg",
+                    image: NodejsLogo,
                     backgroundSize: "90%",
                 },
             ],
@@ -295,7 +322,7 @@ export const data = {
                     name: "Docker",
                     skillLevel: "intermediate",
                     color: "#0db7ed",
-                    image: "/src/Assets/Images/DockerLogo.svg",
+                    image: DockerLogo,
                     backgroundSize: "80%",
                 },
             ],
@@ -308,7 +335,7 @@ export const data = {
                 workDescription: "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React.",
                 workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
                 color: "#b11226",
-                image: "/src/Assets/Images/VismaLogo.svg",
+                image: VismaLogo,
             },
             {
                 companyName: "Visma Real Estate Oy",
@@ -318,7 +345,7 @@ export const data = {
                     "My first real front-end developer job at Visma Real Estate Oy after my internship there. I worked part-time (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React.",
                 workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
                 color: "#b11226",
-                image: "/src/Assets/Images/VismaLogo.svg",
+                image: VismaLogo,
             },
         ],
     },
@@ -336,7 +363,7 @@ export const data = {
             type: "Example type...",
             description: "blablabla...",
             tech: "Example tech...",
-            image: "/src/Assets/Images/AdminBG.jpg",
+            image: "",
             link: "https://github.com/PartanenMa",
         },*/
     ],
@@ -354,7 +381,7 @@ export const data = {
             category: "Example category...",
             description: "blablabla...",
             tags: "Example tags...",
-            image: "/src/Assets/Images/AdminBG.jpg",
+            image: "",
             link: "https://github.com/PartanenMa",
         },*/
     ],

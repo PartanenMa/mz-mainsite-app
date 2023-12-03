@@ -891,6 +891,18 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             }
+
+            .companyLogo {
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: 20% 50%;
+                background-size: 90%;
+                height: 100px;
+                width: 15%;
+                float: right;
+                position: relative;
+                bottom: 96px;
+            }
         }
 
         .experienceContent2 {
@@ -917,18 +929,6 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 max-width: 1200px;
-            }
-
-            .companyLogo {
-                background-color: white;
-                background-repeat: no-repeat;
-                background-position: 20% 50%;
-                background-size: 90%;
-                height: 100px;
-                width: 15%;
-                float: right;
-                position: relative;
-                bottom: 96px;
             }
         }
     }
