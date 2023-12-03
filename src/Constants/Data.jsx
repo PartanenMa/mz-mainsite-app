@@ -1,15 +1,18 @@
+import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
+import SassLogo from "/src/Assets/Images/SassLogo.svg";
+
 export const data = {
     technologiesUsed: [
         {
             name: "React",
             color: "#61DBFB",
-            image: "src/Assets/Images/ReactLogo.svg",
+            image: ReactLogo,
             size: "80%",
         },
         {
             name: "Sass",
             color: "#cc6699",
-            image: "src/Assets/Images/SassLogo.svg",
+            image: SassLogo,
             size: "80%",
         },
         /*{
