@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 import Carousel from "/src/Components/Carousel/Carousel.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
+import Carousel1 from "/src/Assets/Images/Carousel1.jpg";
+import Carousel2 from "/src/Assets/Images/Carousel2.jpg";
+import Carousel3 from "/src/Assets/Images/Carousel3.jpg";
 import "./HomePage.scss";
 
 function HomePage() {
@@ -25,7 +28,7 @@ function HomePageTitle() {
 
 function FirstSection() {
     const navigate = useNavigate();
-    const carouselImages = ["/src/Assets/Images/Carousel1.jpg", "/src/Assets/Images/Carousel2.jpg", "/src/Assets/Images/Carousel3.jpg"];
+    const carouselImages = [Carousel1, Carousel2, Carousel3];
 
     return (
         <div className="firstSectionContainer">

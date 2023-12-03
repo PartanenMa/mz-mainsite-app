@@ -11,6 +11,9 @@ import TimeAndDate from "/src/Components/CurrentTime/TimeAndDate.jsx";
 import reactLogo from "/src/Assets/Images/React.svg";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
+import Carousel1 from "/src/Assets/Images/Carousel1.jpg";
+import Carousel2 from "/src/Assets/Images/Carousel2.jpg";
+import Carousel3 from "/src/Assets/Images/Carousel3.jpg";
 import "./HomePage.scss";
 
 function HomePageAdmin() {
@@ -101,7 +104,7 @@ function FirstSection() {
     const [BGoption, setBGoption] = useState("OFF");
     const [isGIFVisible, setIsGIFVisible] = useState(true);
     const navigate = useNavigate();
-    const carouselImages = ["/src/Assets/Images/Carousel1.jpg", "/src/Assets/Images/Carousel2.jpg", "/src/Assets/Images/Carousel3.jpg"];
+    const carouselImages = [Carousel1, Carousel2, Carousel3];
 
     useEffect(() => {
         let option = document.getElementsByClassName("optionBall")[0];
