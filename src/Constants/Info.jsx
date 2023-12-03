@@ -1,22 +1,22 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Release 1.0",
+    version: "Release 1.0.1",
     routes: {
-        frontPage: "/",
-        loginPage: "/login",
-        homePage: "/home",
-        homePageAdmin: "/admin/home",
-        profilePage: "/profile",
-        profilePageAdmin: "/admin/profile",
-        projectsPage: "/projects",
-        projectsPageAdmin: "/admin/projects",
-        videosPage: "/videos",
-        videosPageAdmin: "/admin/videos",
-        goalsPage: "/goals",
-        goalsPageAdmin: "/admin/goals",
-        cvPage: "/cv",
-        cvPageAdmin: "/admin/cv",
+        frontPage: "/MatrixZone-UI/",
+        loginPage: "/MatrixZone-UI/login",
+        homePage: "/MatrixZone-UI/home",
+        homePageAdmin: "/MatrixZone-UI/admin/home",
+        profilePage: "/MatrixZone-UI/profile",
+        profilePageAdmin: "/MatrixZone-UI/admin/profile",
+        projectsPage: "/MatrixZone-UI/projects",
+        projectsPageAdmin: "/MatrixZone-UI/admin/projects",
+        videosPage: "/MatrixZone-UI/videos",
+        videosPageAdmin: "/MatrixZone-UI/admin/videos",
+        goalsPage: "/MatrixZone-UI/goals",
+        goalsPageAdmin: "/MatrixZone-UI/admin/goals",
+        cvPage: "/MatrixZone-UI/cv",
+        cvPageAdmin: "/MatrixZone-UI/admin/cv",
     },
     fpModalText: {
         introduction:
