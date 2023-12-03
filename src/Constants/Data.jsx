@@ -69,7 +69,7 @@ export const data = {
         jobTechStack: "React and Sass",
         jobAdditionalTech: "Visual Studio Code and Git",
         companyColor: "#b11226",
-        companyLogo: "/src/Assets/Images/VismaLogo.svg",
+        companyLogo: VismaLogo,
         companyLogoH: "73px",
         companyLogoW: "420px",
     },
