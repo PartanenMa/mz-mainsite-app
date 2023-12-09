@@ -65,6 +65,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                         MatrixZone
                                     </motion.span>
                                 </motion.h2>
+                                <div className="iswtLogo" />
                             </div>
                             <div className="introScreenAbout">
                                 <motion.h3 key="isa-h3" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0, transition: { duration: 1 } }} exit={{ opacity: 0, y: 100 }}>
