@@ -1,6 +1,7 @@
 /*HomePage:*/
 .hP {
     animation: fadeIn 0.3s;
+    background-color: black;
     background-image: url("/src/Assets/Images/PageBG.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -540,6 +541,7 @@
 }
 
 .firstSectionContainer {
+    background-color: #111;
     width: 1244px;
     overflow: hidden;
 

@@ -1,6 +1,7 @@
 /*FrontPage:*/
 .fP {
     animation: fadeIn 0.3s;
+    background-color: black;
     background-image: url("/src/Assets/Images/PageBG.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -20,6 +21,7 @@
 
         /*Main:*/
         .main {
+            background-color: #111;
             min-height: 580px;
             max-width: 1244px;
             width: 100%;
