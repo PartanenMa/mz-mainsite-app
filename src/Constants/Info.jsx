@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Release 1.0.7",
+    version: "Release 1.0.8",
     routes: {
         frontPage: "/MatrixZone-UI/",
         loginPage: "/MatrixZone-UI/login",
@@ -42,7 +42,7 @@ export const info = {
         //Profile description:
         description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.",
         description2:
-            "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like React and Sass. On the back-end, I have experience working with Go, as well as Node.js (with Express.js). I enjoy building robust and scalable web applications, leveraging the power of these technologies to create efficient and performant server-side solutions.",
+            "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like React and Sass. On the back-end, I have experience working with Go, as well as Node.js (with Express.js). Besides my job, I love working on my own projects during my free time using the skills that I've gained, and enjoy learning new tools and technologies while doing so.",
         description3:
             "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.",
         //Skills titles:
@@ -80,7 +80,7 @@ export const info = {
     },
     YouTube: {
         //Account data:
-        user: "ManuDev",
+        user: "Manunaama",
         link: "https://www.youtube.com/channel/UCsEePl0jBNlnqYYnyjdQW5g",
         //Profile description:
         description1: "NOT YET AVAILABLE",
