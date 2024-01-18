@@ -197,6 +197,112 @@ function FirstSection() {
                     <div className="box3" />
                 </div>
             </section>
+            <section className="homeFirstSection4">
+                <div className="checkMyGoals">
+                    <h2>CHECK OUT MY GOALS!</h2>
+                </div>
+                <div className="goToMyGoals">
+                    <AnimatePresence>
+                        <motion.div
+                            className="goalsLogo"
+                            title="My goals"
+                            onClick={() => navigate(info.routes.goalsPage)}
+                            key="goalslogo1"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="goalsTextBox">
+                        <AnimatePresence>
+                            <motion.div
+                                className="myGoalsLogo"
+                                title="My goals"
+                                onClick={() => navigate(info.routes.goalsPage)}
+                                key="goalslogo2"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>My goals</h3>
+                        <p>All of my goals.</p>
+                        <p>Can be viewed.</p>
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToGoals"
+                                onClick={() => navigate(info.routes.goalsPage)}
+                                key="gotogoals"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Goals
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
+                    <div className="box4" />
+                </div>
+            </section>
+            <section className="homeFirstSection5">
+                <div className="checkMyCV">
+                    <h2>CHECK OUT MY CV!</h2>
+                </div>
+                <div className="goToMyCV">
+                    <AnimatePresence>
+                        <motion.div
+                            className="cvLogo"
+                            title="My CV"
+                            onClick={() => navigate(info.routes.cvPage)}
+                            key="cvlogo1"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="cvTextBox">
+                        <AnimatePresence>
+                            <motion.div
+                                className="myCVLogo"
+                                title="My CV"
+                                onClick={() => navigate(info.routes.cvPage)}
+                                key="cvlogo2"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>My CV</h3>
+                        <p>My experience summed up.</p>
+                        <p>Can be downloaded.</p>
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToCV"
+                                onClick={() => navigate(info.routes.cvPage)}
+                                key="gotocv"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                CV
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
+                    <div className="box5" />
+                </div>
+            </section>
         </div>
     );
 }

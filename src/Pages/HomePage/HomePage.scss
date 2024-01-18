@@ -959,4 +959,272 @@
             }
         }
     }
+
+    .homeFirstSection4 {
+        height: 360px;
+        width: 100%;
+
+        .checkMyGoals {
+            background-color: #111;
+            height: 10%;
+            width: 100%;
+            border-top: 1px solid #03a062;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+
+            h2 {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 15px;
+                left: 10px;
+            }
+        }
+
+        .goToMyGoals {
+            background-color: #111;
+            height: 90%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: 50px;
+
+            .goalsLogo {
+                background-image: url("/src/Assets/Images/Checkmark.png");
+                background-color: white;
+                border: 5px solid #03a062;
+                background-size: cover;
+                background-position: center;
+                height: 78%;
+                width: 20%;
+                border-radius: 100%;
+                margin-top: 30px;
+                cursor: pointer;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .goalsLogo:hover {
+                border: 5px solid white;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            .goalsTextBox {
+                background-color: #111;
+                height: 60%;
+                width: 18%;
+                border-radius: 10px;
+                margin-top: 30px;
+                border: 1px solid #03a062;
+                padding-left: 15px;
+
+                .myGoalsLogo {
+                    background-image: url("/src/Assets/Images/Checkmark.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 100%;
+                    height: 45px;
+                    width: 45px;
+                    float: right;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 10px;
+                    cursor: pointer;
+                    transition: filter 300ms;
+                }
+
+                .myGoalsLogo:hover {
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+
+                h3 {
+                    background-color: #111;
+                    color: #03a062;
+                    border: 1px solid #03a062;
+                    height: 20px;
+                    width: 73px;
+                    border-radius: 10px;
+                    padding: 7px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: #03a062;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .goToGoals {
+                    background-color: #111;
+                    color: #03a062;
+                    cursor: pointer;
+                    height: 48px;
+                    width: 207px;
+                    float: left;
+                    border-radius: 10px;
+                    border: 1px solid #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToGoals:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .box4 {
+                height: 80%;
+                width: 45%;
+                border-radius: 10px;
+                margin-top: 30px;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .homeFirstSection5 {
+        height: 360px;
+        width: 100%;
+
+        .checkMyCV {
+            background-color: #111;
+            height: 10%;
+            width: 100%;
+            border-top: 1px solid #03a062;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+
+            h2 {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 15px;
+                left: 10px;
+            }
+        }
+
+        .goToMyCV {
+            background-color: #111;
+            height: 90%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: 50px;
+
+            .cvLogo {
+                background-image: url("/src/Assets/Images/CV2.png");
+                background-color: white;
+                border: 5px solid #03a062;
+                background-size: cover;
+                background-position: center;
+                height: 78%;
+                width: 20%;
+                border-radius: 100%;
+                margin-top: 30px;
+                cursor: pointer;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .cvLogo:hover {
+                border: 5px solid white;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            .cvTextBox {
+                background-color: #111;
+                height: 60%;
+                width: 18%;
+                border-radius: 10px;
+                margin-top: 30px;
+                border: 1px solid #03a062;
+                padding-left: 15px;
+
+                .myCVLogo {
+                    background-image: url("/src/Assets/Images/CV2.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 100%;
+                    height: 45px;
+                    width: 45px;
+                    float: right;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 10px;
+                    cursor: pointer;
+                    transition: filter 300ms;
+                }
+
+                .myCVLogo:hover {
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+
+                h3 {
+                    background-color: #111;
+                    color: #03a062;
+                    border: 1px solid #03a062;
+                    height: 20px;
+                    width: 52px;
+                    border-radius: 10px;
+                    padding: 7px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: #03a062;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .goToCV {
+                    background-color: #111;
+                    color: #03a062;
+                    cursor: pointer;
+                    height: 48px;
+                    width: 207px;
+                    float: left;
+                    border-radius: 10px;
+                    border: 1px solid #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToCV:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .box5 {
+                height: 80%;
+                width: 45%;
+                border-radius: 10px;
+                margin-top: 30px;
+                padding-left: 10px;
+            }
+        }
+    }
 }

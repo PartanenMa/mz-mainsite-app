@@ -1,14 +1,19 @@
+//Languages:
 import FinnishFlag from "/src/Assets/Images/FinnishFlag.svg";
 import UKFlag from "/src/Assets/Images/UKFlag.svg";
 import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
+//Education:
 import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
+//Skills (utility software):
 import FigmaLogo from "/src/Assets/Images/FigmaLogo.svg";
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
+//Skills (scripting):
+import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
 import MacTerminalLogo from "/src/Assets/Images/MacTerminalLogo.png";
-import BashLogo from "/src/Assets/Images/BashLogo.svg";
+//Skills (programming languages):
 import CppLogo from "/src/Assets/Images/CppLogo.svg";
 import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
 import CsLogo from "/src/Assets/Images/CsLogo.svg";
@@ -21,11 +26,15 @@ import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
 import SQLLogo from "/src/Assets/Images/SQLLogo.svg";
 import NoSQLLogo from "/src/Assets/Images/NoSQLLogo.png";
+//Skills (front-end development):
 import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
+//Skills (back-end development):
 import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
+//Skills (full-stack development):
 import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
+//Experience:
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
 export const data = {
@@ -137,6 +146,7 @@ export const data = {
                 timeAndPlace: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
                 educationDescription:
                     "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
+                extra: "Military rank: Corporal",
                 educationSubjects: "Basic infantryman tactics and skills, mortar tactics and skills, leadership skills",
                 color: "red",
                 image: FDFLogo,
@@ -147,6 +157,7 @@ export const data = {
                 timeAndPlace: "16.08.2021 - present, Pori, Finland",
                 educationDescription:
                     "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
+                extra: "Total credits earned: 279",
                 educationSubjects: "IT infrastructure, software development, automation, 3D technology, robotics",
                 color: "#00a5cd",
                 image: SAMKLogo,
@@ -178,6 +189,13 @@ export const data = {
             ],
             scripting: [
                 {
+                    name: "Bash (Linux)",
+                    skillLevel: "intermediate",
+                    color: "darkgreen",
+                    image: BashLogo,
+                    backgroundSize: "80%",
+                },
+                {
                     name: "PowerShell (Windows)",
                     skillLevel: "intermediate",
                     color: "#012456",
@@ -191,13 +209,6 @@ export const data = {
                     image: MacTerminalLogo,
                     backgroundSize: "80%",
                 },*/
-                {
-                    name: "Bash (Linux)",
-                    skillLevel: "intermediate",
-                    color: "darkgreen",
-                    image: BashLogo,
-                    backgroundSize: "80%",
-                },
             ],
             programmingLanguages: [
                 {
@@ -480,16 +491,16 @@ export const data = {
             title: "Learn full-stack development",
             status: "inprogress",
             step1: {
-                step: "Learn app containerization.",
+                step: "Learn project management.",
                 status: "inprogress",
             },
             step2: {
-                step: "Learn project management.",
-                status: "notyetstarted",
+                step: "Pick and learn a tech stack.",
+                status: "inprogress",
             },
             step3: {
-                step: "Pick and learn a tech stack.",
-                status: "notyetstarted",
+                step: "Learn app containerization.",
+                status: "inprogress",
             },
         },
     ],

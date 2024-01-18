@@ -224,6 +224,7 @@ function Education({ educations }) {
                                 </div>
                                 <div className="educationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
                                     <p>{education.educationDescription}</p>
+                                    <p>{education.extra}</p>
                                     <p className="subjects">
                                         Education subjects: <span style={{ color: "white" }}>{education.educationSubjects}.</span>
                                     </p>
