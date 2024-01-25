@@ -6,34 +6,32 @@ import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
 import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
 //Skills (utility software):
-import FigmaLogo from "/src/Assets/Images/FigmaLogo.svg";
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
+import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
 //Skills (scripting):
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
 import MacTerminalLogo from "/src/Assets/Images/MacTerminalLogo.png";
-//Skills (programming languages):
+//Skills (basic programming languages):
 import CppLogo from "/src/Assets/Images/CppLogo.svg";
 import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
 import CsLogo from "/src/Assets/Images/CsLogo.svg";
+//Skills (front-end development):
 import HTMLLogo from "/src/Assets/Images/HTMLLogo.svg";
 import CSSLogo from "/src/Assets/Images/CSSLogo.svg";
 import JavaScriptLogo from "/src/Assets/Images/JavaScriptLogo.svg";
 import TypeScriptLogo from "/src/Assets/Images/TypeScriptLogo.svg";
+import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
+import SassLogo from "/src/Assets/Images/SassLogo.svg";
+import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
+//Skills (back-end development):
 import PythonLogo from "/src/Assets/Images/PythonLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
 import SQLLogo from "/src/Assets/Images/SQLLogo.svg";
 import NoSQLLogo from "/src/Assets/Images/NoSQLLogo.png";
-//Skills (front-end development):
-import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
-import SassLogo from "/src/Assets/Images/SassLogo.svg";
-import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
-//Skills (back-end development):
 import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
-//Skills (full-stack development):
-import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
 //Experience:
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
@@ -69,14 +67,14 @@ export const data = {
         professionDetailed: "Web Developer",
         professionTech: "Front-end Developer",
         professionTechStack: "React",
-        professionAdditionalTech: "Visual Studio Code, Figma and Git",
+        professionAdditionalTech: "Visual Studio Code, Docker and Git",
     },
     jobStatus: {
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
         companyInfoLink: "https://vismarealestate.fi/",
         jobTechStack: "React and Sass",
-        jobAdditionalTech: "Visual Studio Code and Git",
+        jobAdditionalTech: "Visual Studio Code, Docker and Git",
         companyColor: "#b11226",
         companyLogo: VismaLogo,
         companyLogoH: "73px",
@@ -164,20 +162,43 @@ export const data = {
             },
         ],
         skills: {
-            utilitySoftware: [
+            basicProgrammingLanguages: [
                 {
-                    name: "Figma",
-                    skillLevel: "intermediate",
-                    color: "#a259ff",
-                    image: FigmaLogo,
-                    backgroundSize: "45%",
+                    name: "C++",
+                    skillLevel: "beginner",
+                    color: "#044f88",
+                    image: CppLogo,
+                    backgroundSize: "65%",
                 },
+                {
+                    name: "Java",
+                    skillLevel: "experienced",
+                    color: "#f89820",
+                    image: JavaLogo,
+                    backgroundSize: "100%",
+                },
+                {
+                    name: "C#",
+                    skillLevel: "experienced",
+                    color: "#682876",
+                    image: CsLogo,
+                    backgroundSize: "65%",
+                },
+            ],
+            utilitySoftware: [
                 {
                     name: "Visual Studio Code",
                     skillLevel: "advanced",
                     color: "#0078d7",
                     image: VisualStudioCodeLogo,
                     backgroundSize: "70%",
+                },
+                {
+                    name: "Docker",
+                    skillLevel: "advanced",
+                    color: "#0db7ed",
+                    image: DockerLogo,
+                    backgroundSize: "80%",
                 },
                 {
                     name: "Git",
@@ -190,14 +211,14 @@ export const data = {
             scripting: [
                 {
                     name: "Bash (Linux)",
-                    skillLevel: "intermediate",
+                    skillLevel: "experienced",
                     color: "darkgreen",
                     image: BashLogo,
                     backgroundSize: "80%",
                 },
                 {
                     name: "PowerShell (Windows)",
-                    skillLevel: "intermediate",
+                    skillLevel: "experienced",
                     color: "#012456",
                     image: PowerShellLogo,
                     backgroundSize: "80%",
@@ -210,28 +231,7 @@ export const data = {
                     backgroundSize: "80%",
                 },*/
             ],
-            programmingLanguages: [
-                {
-                    name: "C++",
-                    skillLevel: "beginner",
-                    color: "#044f88",
-                    image: CppLogo,
-                    backgroundSize: "65%",
-                },
-                {
-                    name: "Java",
-                    skillLevel: "intermediate",
-                    color: "#f89820",
-                    image: JavaLogo,
-                    backgroundSize: "100%",
-                },
-                {
-                    name: "C#",
-                    skillLevel: "intermediate",
-                    color: "#682876",
-                    image: CsLogo,
-                    backgroundSize: "65%",
-                },
+            frontEndDevelopment: [
                 {
                     name: "HTML",
                     skillLevel: "advanced",
@@ -260,6 +260,29 @@ export const data = {
                     image: TypeScriptLogo,
                     backgroundSize: "65%",
                 },
+                {
+                    name: "React",
+                    skillLevel: "advanced",
+                    color: "#61dbfb",
+                    image: ReactLogo,
+                    backgroundSize: "65%",
+                },
+                {
+                    name: "Sass",
+                    skillLevel: "advanced",
+                    color: "#cc6699",
+                    image: SassLogo,
+                    backgroundSize: "70%",
+                },
+                {
+                    name: "Tailwind CSS",
+                    skillLevel: "beginner",
+                    color: "#06b6d4",
+                    image: TailwindCSSLogo,
+                    backgroundSize: "80%",
+                },
+            ],
+            backEndDevelopment: [
                 {
                     name: "Python",
                     skillLevel: "intermediate",
@@ -295,46 +318,12 @@ export const data = {
                     image: NoSQLLogo,
                     backgroundSize: "60%",
                 },
-            ],
-            frontEndDevelopment: [
                 {
-                    name: "React",
-                    skillLevel: "advanced",
-                    color: "#61dbfb",
-                    image: ReactLogo,
-                    backgroundSize: "65%",
-                },
-                {
-                    name: "Sass",
-                    skillLevel: "advanced",
-                    color: "#cc6699",
-                    image: SassLogo,
-                    backgroundSize: "70%",
-                },
-                {
-                    name: "Tailwind CSS",
-                    skillLevel: "beginner",
-                    color: "#06b6d4",
-                    image: TailwindCSSLogo,
-                    backgroundSize: "80%",
-                },
-            ],
-            backEndDevelopment: [
-                {
-                    name: "Node.js",
+                    name: "Node.js (with Express.js)",
                     skillLevel: "intermediate",
                     color: "#3c873a",
                     image: NodejsLogo,
                     backgroundSize: "90%",
-                },
-            ],
-            fullStackDevelopment: [
-                {
-                    name: "Docker",
-                    skillLevel: "intermediate",
-                    color: "#0db7ed",
-                    image: DockerLogo,
-                    backgroundSize: "80%",
                 },
             ],
         },
@@ -427,11 +416,11 @@ export const data = {
             title: "Learn utility software",
             status: "completed",
             step1: {
-                step: "Learn to use design software.",
+                step: "Learn to use code editing software.",
                 status: "completed",
             },
             step2: {
-                step: "Learn to use code editing software.",
+                step: "Learn to use app containerization software.",
                 status: "completed",
             },
             step3: {
@@ -443,15 +432,15 @@ export const data = {
             title: "Learn scripting",
             status: "completed",
             step1: {
-                step: "Learn PowerShell scripting.",
+                step: "Learn Bash scripting.",
                 status: "completed",
             },
             step2: {
-                step: "Learn Mac Terminal scripting.",
+                step: "Learn PowerShell scripting.",
                 status: "completed",
             },
             step3: {
-                step: "Learn Bash scripting.",
+                step: "Learn Mac Terminal scripting.",
                 status: "completed",
             },
         },
@@ -459,7 +448,7 @@ export const data = {
             title: "Learn front-end development",
             status: "completed",
             step1: {
-                step: "Learn programming languages such as HTML, CSS, JavaScript and TypeScript.",
+                step: "Learn front-end programming languages such as HTML, CSS, JavaScript and TypeScript.",
                 status: "completed",
             },
             step2: {
@@ -475,7 +464,7 @@ export const data = {
             title: "Learn back-end development",
             status: "inprogress",
             step1: {
-                step: "Learn programming languages such as Python, Go, PHP, SQL and NoSQL.",
+                step: "Learn back-end programming languages such as Python, Go, PHP, SQL and NoSQL.",
                 status: "inprogress",
             },
             step2: {
@@ -484,22 +473,22 @@ export const data = {
             },
             step3: {
                 step: "Learn to use relational (SQL) - and non-relational (NoSQL) databases.",
-                status: "notyetstarted",
+                status: "inprogress",
             },
         },
         {
             title: "Learn full-stack development",
             status: "inprogress",
             step1: {
-                step: "Learn project management.",
+                step: "Learn networking.",
                 status: "inprogress",
             },
             step2: {
-                step: "Pick and learn a tech stack.",
+                step: "Learn system security principles.",
                 status: "inprogress",
             },
             step3: {
-                step: "Learn app containerization.",
+                step: "Pick and learn a tech stack.",
                 status: "inprogress",
             },
         },

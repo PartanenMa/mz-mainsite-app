@@ -103,80 +103,28 @@
                     bottom: 80px;
                     left: 5px;
 
-                    p {
+                    .hTW2text {
+                        width: 22ch;
+                        animation:
+                            typing 2s steps(22),
+                            blink 0.5s step-end infinite alternate;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow:
                             0 0 7px black,
                             0 0 3px black;
                     }
 
-                    .hTW2animation {
-                        height: 50px;
-                        overflow: hidden;
-
-                        .hTW2first div {
-                            color: green;
-                            text-shadow:
-                                0 0 7px black,
-                                0 0 3px black;
-                            position: relative;
-                            bottom: 6px;
-                        }
-
-                        .hTW2second div {
-                            color: green;
-                            text-shadow:
-                                0 0 7px black,
-                                0 0 3px black;
-                            position: relative;
-                            top: 6px;
-                        }
-
-                        .hTW2third div {
-                            color: green;
-                            text-shadow:
-                                0 0 7px black,
-                                0 0 3px black;
-                            position: relative;
-                            top: 9px;
+                    @keyframes typing {
+                        from {
+                            width: 0;
                         }
                     }
 
-                    .hTW2animation > div > div {
-                        padding: 0.25rem 0.75rem;
-                        height: 2.81rem;
-                        margin-bottom: 2.81rem;
-                        display: inline-block;
-                    }
-
-                    .hTW2animation div:first-child {
-                        animation: text-animation 8s infinite;
-                        animation-delay: 3s;
-                    }
-
-                    @keyframes text-animation {
-                        0% {
-                            margin-top: 0;
-                        }
-                        10% {
-                            margin-top: 0;
-                        }
-                        20% {
-                            margin-top: -5.62rem;
-                        }
-                        30% {
-                            margin-top: -5.62rem;
-                        }
-                        40% {
-                            margin-top: -11.24rem;
-                        }
-                        60% {
-                            margin-top: -11.24rem;
-                        }
-                        70% {
-                            margin-top: 0;
-                        }
-                        80% {
-                            margin-top: 0;
+                    @keyframes blink {
+                        50% {
+                            border-color: transparent;
                         }
                     }
                 }

@@ -181,6 +181,8 @@ function Skills({ skills }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
+        } else if (skillLevel === "experienced") {
+            return "Experienced";
         } else if (skillLevel === "intermediate") {
             return "Intermediate";
         } else if (skillLevel === "advanced") {
@@ -193,26 +195,32 @@ function Skills({ skills }) {
     const getSkillLevel = (skillLevel) => {
         if (skillLevel === "beginner") {
             return (
-                <div>
-                    <span style={{ color: "lightgreen" }}>*</span>***
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>*</span>****
+                </div>
+            );
+        } else if (skillLevel === "experienced") {
+            return (
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>**</span>***
                 </div>
             );
         } else if (skillLevel === "intermediate") {
             return (
-                <div>
-                    <span style={{ color: "lightgreen" }}>**</span>**
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>***</span>**
                 </div>
             );
         } else if (skillLevel === "advanced") {
             return (
-                <div>
-                    <span style={{ color: "lightgreen" }}>***</span>*
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>****</span>*
                 </div>
             );
         } else if (skillLevel === "professional") {
             return (
-                <div>
-                    <span style={{ color: "lightgreen" }}>****</span>
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>*****</span>
                 </div>
             );
         }
@@ -224,6 +232,35 @@ function Skills({ skills }) {
                 <h3>SKILLS</h3>
             </div>
             <div className="skillsContent">
+                <div className="programmingLanguages">
+                    <div className="pLTitle">
+                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                    </div>
+                    <div className="pLContent">
+                        {skills.basicProgrammingLanguages?.length > 0 ? (
+                            skills.basicProgrammingLanguages.map((skill, index) => (
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
+                                    <div
+                                        className="skillLogo"
+                                        style={{
+                                            backgroundImage: `url(${skill.image})`,
+                                            backgroundSize: skill.backgroundSize,
+                                        }}
+                                    />
+                                    <div className="skillContent">
+                                        <h4>{skill.name}</h4>
+                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                        {getSkillLevel(skill.skillLevel)}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="noProfileData">
+                                <h4>NO DATA!</h4>
+                            </div>
+                        )}
+                    </div>
+                </div>
                 <div className="utilitySoftware">
                     <div className="uSTitle">
                         <h4>{info.LinkedIn.skillsTitle2}</h4>
@@ -255,7 +292,7 @@ function Skills({ skills }) {
                 </div>
                 <div className="scripting">
                     <div className="sTitle">
-                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                        <h4>{info.LinkedIn.skillsTitle3}</h4>
                     </div>
                     <div className="sContent">
                         {skills.scripting?.length > 0 ? (
@@ -268,45 +305,6 @@ function Skills({ skills }) {
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="skillContent">
-                                        <h4>{skill.name}</h4>
-                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                        {getSkillLevel(skill.skillLevel)}
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <div className="noProfileData">
-                                <h4>NO DATA!</h4>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <div className="programmingLanguages">
-                    <div className="pLTitle">
-                        <h4>{info.LinkedIn.skillsTitle3}</h4>
-                    </div>
-                    <div className="pLContent">
-                        {skills.programmingLanguages?.length > 0 ? (
-                            skills.programmingLanguages.map((skill, index) => (
-                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
-                                    <div
-                                        className="skillLogo"
-                                        style={{
-                                            backgroundImage: `url(${skill.image})`,
-                                            backgroundSize: skill.backgroundSize,
-                                        }}
-                                    />
-                                    {index === 10 && (
-                                        <div className="pL11LogoBG">
-                                            <div className="pL11LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
-                                        </div>
-                                    )}
-                                    {index === 11 && (
-                                        <div className="pL12LogoBG">
-                                            <div className="pL12LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
-                                        </div>
-                                    )}
                                     <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>
@@ -365,35 +363,16 @@ function Skills({ skills }) {
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    <div className="skillContent">
-                                        <h4>{skill.name}</h4>
-                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                        {getSkillLevel(skill.skillLevel)}
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <div className="noProfileData">
-                                <h4>NO DATA!</h4>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <div className="full-stackDevelopment">
-                    <div className="fSDTitle">
-                        <h4>{info.LinkedIn.skillsTitle6}</h4>
-                    </div>
-                    <div className="fSDContent">
-                        {skills.fullStackDevelopment?.length > 0 ? (
-                            skills.fullStackDevelopment.map((skill, index) => (
-                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
-                                    <div
-                                        className="skillLogo"
-                                        style={{
-                                            backgroundImage: `url(${skill.image})`,
-                                            backgroundSize: skill.backgroundSize,
-                                        }}
-                                    />
+                                    {index === 3 && (
+                                        <div className="pL11LogoBG">
+                                            <div className="pL11LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
+                                        </div>
+                                    )}
+                                    {index === 4 && (
+                                        <div className="pL12LogoBG">
+                                            <div className="pL12LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
+                                        </div>
+                                    )}
                                     <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>

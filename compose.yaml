@@ -1,0 +1,18 @@
+services:
+    ui:
+        build: .
+        container_name: MatrixZone-UI-container
+        ports:
+            - 5173:5173
+        develop:
+            watch:
+                - action: rebuild
+                  path: ./package.json
+                - action: rebuild
+                  path: ./package-lock.json
+                - action: sync
+                  path: ./src
+                  target: /app/src
+        volumes:
+            - .:/app
+            - /app/node_modules

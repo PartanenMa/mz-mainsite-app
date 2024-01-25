@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Release 1.0.10",
+    version: "Release 1.0.11",
     routes: {
         frontPage: "/MatrixZone-UI/",
         loginPage: "/MatrixZone-UI/login",
@@ -46,9 +46,9 @@ export const info = {
         description3:
             "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.",
         //Skills titles:
-        skillsTitle1: "Scripting",
+        skillsTitle1: "Basic programming languages",
         skillsTitle2: "Utility software",
-        skillsTitle3: "Programming languages",
+        skillsTitle3: "Scripting",
         skillsTitle4: "Front-end development",
         skillsTitle5: "Back-end development",
         skillsTitle6: "Full-stack development",

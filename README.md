@@ -13,4 +13,4 @@
 # 2. Run program:
 
 **cd MatrixZone-UI**  
-**npm run dev**
+**npm run dev / docker compose up**

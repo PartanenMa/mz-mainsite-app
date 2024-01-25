@@ -73,21 +73,9 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             </h3>
                         </div>
                         <div className="hTWelcome2">
-                            <p>I'm a</p>
-                            <div className="hTW2animation">
-                                <div className="hTW2first">
-                                    <div>{info.LinkedIn.profession + " 👨‍💻"}</div>
-                                </div>
-                                <div className="hTW2second">
-                                    <div>{info.LinkedIn.professionDetailed + " 💻"}</div>
-                                </div>
-                                <div className="hTW2third">
-                                    <div>
-                                        {info.LinkedIn.professionTech}
-                                        <span>{getProfessionTech()}</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <p className="hTW2text">
+                                I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession + " 👨‍💻"}</span>
+                            </p>
                         </div>
                         <div className="hTWelcome3">
                             <h3>Welcome to the MatrixZone</h3>
