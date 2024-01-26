@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Release 1.0.11",
+    version: "Release 1.0.12",
     routes: {
         frontPage: "/MatrixZone-UI/",
         loginPage: "/MatrixZone-UI/login",

@@ -1,6 +1,6 @@
 # Site live at: https://partanenma.github.io/MatrixZone-UI/
 
-# 1. Install NPM packages (SKIP THIS STEP IF NPM PACKAGES ALREADY INSTALLED):
+# 1. Install NPM packages (SKIP THIS STEP IF ALREADY INSTALLED):
 
 **npm i**  
 **npm add -D sass**  
@@ -10,7 +10,13 @@
 **npm i framer-motion**  
 **npm i jspdf**
 
-# 2. Run program:
+# 2. Run program (Vite):
 
 **cd MatrixZone-UI**  
-**npm run dev / docker compose up**
+**npm run dev**
+
+# 3. Run program (Docker):
+
+**cd MatrixZone-UI**  
+**docker compose up -d**  
+**docker compose watch**

@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
     ui:
         build: .
@@ -6,13 +8,10 @@ services:
             - 5173:5173
         develop:
             watch:
-                - action: rebuild
-                  path: ./package.json
-                - action: rebuild
-                  path: ./package-lock.json
-                - action: sync
-                  path: ./src
-                  target: /app/src
-        volumes:
-            - .:/app
-            - /app/node_modules
+                - path: ./package.json
+                  action: rebuild
+                - path: ./package-lock.json
+                  action: rebuild
+                - path: .
+                  target: /app
+                  action: sync
