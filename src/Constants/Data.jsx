@@ -8,14 +8,12 @@ import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
 //Skills (scripting):
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
-import MacTerminalLogo from "/src/Assets/Images/MacTerminalLogo.png";
 //Skills (utility software):
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
 //Skills (basic programming languages):
 import CppLogo from "/src/Assets/Images/CppLogo.svg";
 import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
-import CsLogo from "/src/Assets/Images/CsLogo.svg";
 //Skills (front-end development):
 import HTMLLogo from "/src/Assets/Images/HTMLLogo.svg";
 import CSSLogo from "/src/Assets/Images/CSSLogo.svg";
@@ -27,6 +25,7 @@ import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 //Skills (back-end development):
 import PythonLogo from "/src/Assets/Images/PythonLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
+import CsLogo from "/src/Assets/Images/CsLogo.svg";
 import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
@@ -69,14 +68,19 @@ export const data = {
         profession: "Software Developer",
         professionDetailed: "Web Developer",
         professionTech: "Front-end Developer",
-        professionTechStack: "React and Sass",
+        professionTechStack: "React, Sass, Express.js and MongoDB",
+        professionTechStackFe: "React and Sass",
+        professionTechStackBe: "Express.js and MongoDB",
         professionAdditionalTech: "Visual Studio Code and Git",
     },
     jobStatus: {
+        employed: true,
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
         companyInfoLink: "https://vismarealestate.fi/",
         jobTechStack: "React, Sass and Go",
+        jobTechStackFe: "React and Sass",
+        jobTechStackBe: "Go",
         jobAdditionalTech: "Visual Studio Code and Git",
         companyColor: "#b11226",
         companyLogo: VismaLogo,
@@ -187,36 +191,22 @@ export const data = {
                     image: JavaLogo,
                     backgroundSize: "100%",
                 },
-                {
-                    name: "C#",
-                    skillLevel: "experienced",
-                    color: "#682876",
-                    image: CsLogo,
-                    backgroundSize: "65%",
-                },
             ],
             scripting: [
                 {
-                    name: "Bash (Linux)",
+                    name: "Bash",
                     skillLevel: "experienced",
                     color: "darkgreen",
                     image: BashLogo,
                     backgroundSize: "80%",
                 },
                 {
-                    name: "PowerShell (Windows)",
+                    name: "PowerShell",
                     skillLevel: "experienced",
                     color: "#012456",
                     image: PowerShellLogo,
                     backgroundSize: "80%",
                 },
-                /*{
-                    name: "Mac Terminal (macOS)",
-                    skillLevel: "beginner",
-                    color: "#222",
-                    image: MacTerminalLogo,
-                    backgroundSize: "80%",
-                },*/
             ],
             utilitySoftware: [
                 {
@@ -288,7 +278,7 @@ export const data = {
             backEndDevelopment: [
                 {
                     name: "Python",
-                    skillLevel: "intermediate",
+                    skillLevel: "experienced",
                     color: "#4b8bbe",
                     image: PythonLogo,
                     backgroundSize: "60%",
@@ -299,6 +289,13 @@ export const data = {
                     color: "#00add8",
                     image: GoLogo,
                     backgroundSize: "90%",
+                },
+                {
+                    name: "C#",
+                    skillLevel: "experienced",
+                    color: "#682876",
+                    image: CsLogo,
+                    backgroundSize: "65%",
                 },
                 {
                     name: "PHP",
@@ -426,7 +423,7 @@ export const data = {
             title: "Learn basic programming",
             status: "completed",
             step1: {
-                step: "Learn programming languages such as C++, Java, and C#.",
+                step: "Learn programming languages such as C++ and Java.",
                 status: "completed",
             },
             step2: {
@@ -439,18 +436,18 @@ export const data = {
             },
         },
         {
-            title: "Learn scripting",
+            title: "Learn CLI software",
             status: "completed",
             step1: {
-                step: "Learn Bash scripting.",
+                step: "Learn basic commands.",
                 status: "completed",
             },
             step2: {
-                step: "Learn PowerShell scripting.",
+                step: "Learn advanced commands.",
                 status: "completed",
             },
             step3: {
-                step: "Learn Mac Terminal scripting.",
+                step: "Learn scripting.",
                 status: "completed",
             },
         },
@@ -458,15 +455,15 @@ export const data = {
             title: "Learn utility software",
             status: "completed",
             step1: {
-                step: "Learn to use code editing software.",
+                step: "Learn to use code editing - and version control software.",
                 status: "completed",
             },
             step2: {
-                step: "",
+                step: "Learn to use notepad - and screenshot tools.",
                 status: "completed",
             },
             step3: {
-                step: "Learn to use version control software.",
+                step: "Learn to use browser dev tools.",
                 status: "completed",
             },
         },
@@ -490,7 +487,7 @@ export const data = {
             title: "Learn back-end development",
             status: "inprogress",
             step1: {
-                step: "Learn back-end programming languages such as Python, Go, and PHP.",
+                step: "Learn back-end programming languages such as Python, Go, C# and PHP.",
                 status: "inprogress",
             },
             step2: {
@@ -503,10 +500,10 @@ export const data = {
             },
         },
         {
-            title: "Learn web development tools",
+            title: "Learn web development software",
             status: "inprogress",
             step1: {
-                step: "Learn to use browser dev tools.",
+                step: "Learn to use JavaScript runtime environment software.",
                 status: "completed",
             },
             step2: {
