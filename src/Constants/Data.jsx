@@ -5,14 +5,13 @@ import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
 //Education:
 import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
-//Skills (utility software):
-import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
-import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
-import GitLogo from "/src/Assets/Images/GitLogo.svg";
 //Skills (scripting):
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
 import MacTerminalLogo from "/src/Assets/Images/MacTerminalLogo.png";
+//Skills (utility software):
+import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
+import GitLogo from "/src/Assets/Images/GitLogo.svg";
 //Skills (basic programming languages):
 import CppLogo from "/src/Assets/Images/CppLogo.svg";
 import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
@@ -29,9 +28,13 @@ import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 import PythonLogo from "/src/Assets/Images/PythonLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
-import SQLLogo from "/src/Assets/Images/SQLLogo.svg";
-import NoSQLLogo from "/src/Assets/Images/NoSQLLogo.png";
+import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
+import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
+import MySQLLogo from "/src/Assets/Images/MySQLLogo.png";
+//Skills (web development software):
 import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
+import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
+import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 //Experience:
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
@@ -50,31 +53,31 @@ export const data = {
             size: "80%",
         },
         /*{
-            name: "Node.js",
-            color: "#3c873a",
-            image: NodejsLogo,
-            size: "80%",
+            name: "Express.js",
+            color: "#808080",
+            image: ExpressjsLogo,
+            size: "70%",
         },
         {
-            name: "DB",
-            color: "#3c873a",
-            image: NodejsLogo,
-            size: "80%",
+            name: "MongoDB",
+            color: "#4DB33D",
+            image: MongoDBLogo,
+            size: "60%",
         },*/
     ],
     professionStatus: {
         profession: "Software Developer",
         professionDetailed: "Web Developer",
         professionTech: "Front-end Developer",
-        professionTechStack: "React",
-        professionAdditionalTech: "Visual Studio Code, Docker and Git",
+        professionTechStack: "React and Sass",
+        professionAdditionalTech: "Visual Studio Code and Git",
     },
     jobStatus: {
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
         companyInfoLink: "https://vismarealestate.fi/",
-        jobTechStack: "React and Sass",
-        jobAdditionalTech: "Visual Studio Code, Docker and Git",
+        jobTechStack: "React, Sass and Go",
+        jobAdditionalTech: "Visual Studio Code and Git",
         companyColor: "#b11226",
         companyLogo: VismaLogo,
         companyLogoH: "73px",
@@ -99,11 +102,18 @@ export const data = {
         ],
         technologiesBe: [
             {
-                name: "Node.js",
-                color: "#3c873a",
-                image: NodejsLogo,
-                size: "80%",
-                infoLink: "https://nodejs.org/en/",
+                name: "Express.js",
+                color: "#808080",
+                image: ExpressjsLogo,
+                size: "70%",
+                infoLink: "https://expressjs.com/",
+            },
+            {
+                name: "MongoDB",
+                color: "#4DB33D",
+                image: MongoDBLogo,
+                size: "60%",
+                infoLink: "https://www.mongodb.com/",
             },
         ],
     },
@@ -185,29 +195,6 @@ export const data = {
                     backgroundSize: "65%",
                 },
             ],
-            utilitySoftware: [
-                {
-                    name: "Visual Studio Code",
-                    skillLevel: "advanced",
-                    color: "#0078d7",
-                    image: VisualStudioCodeLogo,
-                    backgroundSize: "70%",
-                },
-                {
-                    name: "Docker",
-                    skillLevel: "advanced",
-                    color: "#0db7ed",
-                    image: DockerLogo,
-                    backgroundSize: "80%",
-                },
-                {
-                    name: "Git",
-                    skillLevel: "advanced",
-                    color: "#F1502F",
-                    image: GitLogo,
-                    backgroundSize: "70%",
-                },
-            ],
             scripting: [
                 {
                     name: "Bash (Linux)",
@@ -230,6 +217,22 @@ export const data = {
                     image: MacTerminalLogo,
                     backgroundSize: "80%",
                 },*/
+            ],
+            utilitySoftware: [
+                {
+                    name: "Visual Studio Code",
+                    skillLevel: "advanced",
+                    color: "#0078d7",
+                    image: VisualStudioCodeLogo,
+                    backgroundSize: "70%",
+                },
+                {
+                    name: "Git",
+                    skillLevel: "advanced",
+                    color: "#F1502F",
+                    image: GitLogo,
+                    backgroundSize: "70%",
+                },
             ],
             frontEndDevelopment: [
                 {
@@ -305,25 +308,48 @@ export const data = {
                     backgroundSize: "90%",
                 },
                 {
-                    name: "SQL",
+                    name: "Express.js",
                     skillLevel: "beginner",
-                    color: "#00a5cd",
-                    image: SQLLogo,
+                    color: "#808080",
+                    image: ExpressjsLogo,
+                    backgroundSize: "70%",
+                },
+                {
+                    name: "MongoDB",
+                    skillLevel: "beginner",
+                    color: "#4DB33D",
+                    image: MongoDBLogo,
                     backgroundSize: "60%",
                 },
                 {
-                    name: "NoSQL",
+                    name: "MySQL",
                     skillLevel: "beginner",
-                    color: "#0072b1",
-                    image: NoSQLLogo,
-                    backgroundSize: "60%",
+                    color: "#00758F",
+                    image: MySQLLogo,
+                    backgroundSize: "70%",
                 },
+            ],
+            webDevelopmentSoftware: [
                 {
-                    name: "Node.js (with Express.js)",
-                    skillLevel: "intermediate",
+                    name: "Node.js",
+                    skillLevel: "advanced",
                     color: "#3c873a",
                     image: NodejsLogo,
-                    backgroundSize: "90%",
+                    backgroundSize: "80%",
+                },
+                {
+                    name: "Docker",
+                    skillLevel: "advanced",
+                    color: "#0db7ed",
+                    image: DockerLogo,
+                    backgroundSize: "80%",
+                },
+                {
+                    name: "Kubernetes",
+                    skillLevel: "beginner",
+                    color: "#3970e4",
+                    image: KubernetesLogo,
+                    backgroundSize: "70%",
                 },
             ],
         },
@@ -413,22 +439,6 @@ export const data = {
             },
         },
         {
-            title: "Learn utility software",
-            status: "completed",
-            step1: {
-                step: "Learn to use code editing software.",
-                status: "completed",
-            },
-            step2: {
-                step: "Learn to use app containerization software.",
-                status: "completed",
-            },
-            step3: {
-                step: "Learn to use version control software.",
-                status: "completed",
-            },
-        },
-        {
             title: "Learn scripting",
             status: "completed",
             step1: {
@@ -441,6 +451,22 @@ export const data = {
             },
             step3: {
                 step: "Learn Mac Terminal scripting.",
+                status: "completed",
+            },
+        },
+        {
+            title: "Learn utility software",
+            status: "completed",
+            step1: {
+                step: "Learn to use code editing software.",
+                status: "completed",
+            },
+            step2: {
+                step: "",
+                status: "completed",
+            },
+            step3: {
+                step: "Learn to use version control software.",
                 status: "completed",
             },
         },
@@ -464,7 +490,7 @@ export const data = {
             title: "Learn back-end development",
             status: "inprogress",
             step1: {
-                step: "Learn back-end programming languages such as Python, Go, PHP, SQL and NoSQL.",
+                step: "Learn back-end programming languages such as Python, Go, and PHP.",
                 status: "inprogress",
             },
             step2: {
@@ -472,23 +498,23 @@ export const data = {
                 status: "inprogress",
             },
             step3: {
-                step: "Learn to use relational (SQL) - and non-relational (NoSQL) databases.",
+                step: "Learn to use non-relational (NoSQL) - and relational (SQL) databases.",
                 status: "inprogress",
             },
         },
         {
-            title: "Learn full-stack development",
+            title: "Learn web development tools",
             status: "inprogress",
             step1: {
-                step: "Learn networking.",
-                status: "inprogress",
+                step: "Learn to use browser dev tools.",
+                status: "completed",
             },
             step2: {
-                step: "Learn system security principles.",
-                status: "inprogress",
+                step: "Learn to use app containerization software.",
+                status: "completed",
             },
             step3: {
-                step: "Pick and learn a tech stack.",
+                step: "Learn to use container orchestration software.",
                 status: "inprogress",
             },
         },

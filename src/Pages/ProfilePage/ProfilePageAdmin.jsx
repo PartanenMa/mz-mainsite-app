@@ -326,13 +326,13 @@ function Skills({ skills }) {
                         )}
                     </div>
                 </div>
-                <div className="utilitySoftware">
-                    <div className="uSTitle">
+                <div className="scripting">
+                    <div className="sTitle">
                         <h4>{info.LinkedIn.skillsTitle2}</h4>
                     </div>
-                    <div className="uSContent">
-                        {skills.utilitySoftware?.length > 0 ? (
-                            skills.utilitySoftware.map((skill, index) => (
+                    <div className="sContent">
+                        {skills.scripting?.length > 0 ? (
+                            skills.scripting.map((skill, index) => (
                                 <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
                                         className="skillLogo"
@@ -355,13 +355,13 @@ function Skills({ skills }) {
                         )}
                     </div>
                 </div>
-                <div className="scripting">
-                    <div className="sTitle">
+                <div className="utilitySoftware">
+                    <div className="uSTitle">
                         <h4>{info.LinkedIn.skillsTitle3}</h4>
                     </div>
-                    <div className="sContent">
-                        {skills.scripting?.length > 0 ? (
-                            skills.scripting.map((skill, index) => (
+                    <div className="uSContent">
+                        {skills.utilitySoftware?.length > 0 ? (
+                            skills.utilitySoftware.map((skill, index) => (
                                 <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
                                     <div
                                         className="skillLogo"
@@ -428,16 +428,35 @@ function Skills({ skills }) {
                                             backgroundSize: skill.backgroundSize,
                                         }}
                                     />
-                                    {index === 3 && (
-                                        <div className="pL11LogoBG">
-                                            <div className="pL11LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
-                                        </div>
-                                    )}
-                                    {index === 4 && (
-                                        <div className="pL12LogoBG">
-                                            <div className="pL12LogoL" style={{ backgroundImage: `url(${skill.image})` }} />
-                                        </div>
-                                    )}
+                                    <div className="skillContent">
+                                        <h4>{skill.name}</h4>
+                                        <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                        {getSkillLevel(skill.skillLevel)}
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="noProfileData">
+                                <h4>NO DATA!</h4>
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div className="webDevelopmentSoftware">
+                    <div className="wDSTitle">
+                        <h4>{info.LinkedIn.skillsTitle6}</h4>
+                    </div>
+                    <div className="wDSContent">
+                        {skills.webDevelopmentSoftware?.length > 0 ? (
+                            skills.webDevelopmentSoftware.map((skill, index) => (
+                                <div className="skill" key={index} style={{ backgroundColor: skill.color }}>
+                                    <div
+                                        className="skillLogo"
+                                        style={{
+                                            backgroundImage: `url(${skill.image})`,
+                                            backgroundSize: skill.backgroundSize,
+                                        }}
+                                    />
                                     <div className="skillContent">
                                         <h4>{skill.name}</h4>
                                         <p>{getSkillLevelTitle(skill.skillLevel)}</p>

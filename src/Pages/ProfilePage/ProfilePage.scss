@@ -501,47 +501,6 @@
             }
         }
 
-        .utilitySoftware {
-            width: 98%;
-            border: 1px solid #03a062;
-            border-radius: 10px;
-            overflow: hidden;
-
-            .uSTitle {
-                background-color: #111;
-                height: 30px;
-                width: 100%;
-                border-bottom: 1px solid #03a062;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                padding-left: 10px;
-                overflow: hidden;
-
-                h4 {
-                    color: #03a062;
-                    font-size: 20px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
-                    text-shadow: 0.3px 0.3px 0 lightgreen;
-                }
-            }
-
-            .uSContent {
-                background-color: #333;
-                width: 100%;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                padding: 2%;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
         .scripting {
             width: 98%;
             border: 1px solid #03a062;
@@ -570,6 +529,47 @@
             }
 
             .sContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .utilitySoftware {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .uSTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .uSContent {
                 background-color: #333;
                 width: 100%;
                 border-bottom-left-radius: 10px;
@@ -662,44 +662,47 @@
                 justify-content: center;
                 flex-direction: column;
                 gap: 10px;
+            }
+        }
 
-                .pL11LogoBG {
-                    background-color: white;
-                    height: 32px;
-                    width: 23px;
-                    border-radius: 10px;
+        .webDevelopmentSoftware {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .wDSTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 12px;
-                    top: 5px;
-
-                    .pL11LogoL {
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: cover;
-                        height: 100%;
-                        width: 100%;
-                    }
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
                 }
+            }
 
-                .pL12LogoBG {
-                    background-color: white;
-                    height: 32px;
-                    width: 23px;
-                    border-radius: 9px;
-                    position: relative;
-                    left: 12px;
-                    top: 4px;
-
-                    .pL12LogoL {
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: cover;
-                        height: 103%;
-                        width: 100%;
-                        position: relative;
-                        bottom: 1px;
-                    }
-                }
+            .wDSContent {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 2%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
             }
         }
 
