@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
+import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.scss";
 
 function VideosPage() {
+    const [loadingData, setLoadingData] = useState(true);
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        setVideos(data.videosData);
+        setTimeout(() => {
+            setVideos(data.videosData);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     return (
         <div className="vP">
             <div className="videosPageContainer">
                 <VideosPageTitle />
-                <AboutMyVideos />
-                <Videos videos={videos} />
+                <AboutMyVideos loadingData={loadingData} />
+                <Videos loadingData={loadingData} videos={videos} />
             </div>
         </div>
     );
@@ -30,11 +35,14 @@ function VideosPageTitle() {
     );
 }
 
-function AboutMyVideos() {
+function AboutMyVideos({ loadingData }) {
     return (
         <div className="aboutMyVideosContainer">
             <div className="aboutMyVideosTitle">
-                <h3>ABOUT MY VIDEOS</h3>
+                <h3>
+                    ABOUT MY VIDEOS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="aboutMyVideosContent">
                 <AnimatePresence>
@@ -73,11 +81,14 @@ function AboutMyVideos() {
     );
 }
 
-function Videos({ videos }) {
+function Videos({ loadingData, videos }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
-                <h3>VIDEOS</h3>
+                <h3>
+                    VIDEOS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="videosContent">
                 {videos.length > 0 ? (
@@ -129,6 +140,10 @@ function Videos({ videos }) {
                             <h4>NO VIDEOS YET!</h4>
                         </div>
                     )
+                ) : loadingData ? (
+                    <div className="loadingVideosData">
+                        <div className="loaderVideos" />
+                    </div>
                 ) : (
                     <div className="noVideosData">
                         <h4>NO DATA!</h4>

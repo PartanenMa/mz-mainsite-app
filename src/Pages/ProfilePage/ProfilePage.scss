@@ -902,6 +902,42 @@
     }
 }
 
+.loadingProfileData {
+    height: 300px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loaderProfile {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #0072b1;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
 .noProfileData {
     height: 300px;
     width: 90%;
@@ -947,10 +983,6 @@
     }
 
     .interestsContent {
-        background-image: url("/src/Assets/Images/InterestsBG.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
         height: 90%;
         width: 100%;
         display: flex;
@@ -964,6 +996,7 @@
             border-radius: 10px;
             border: 1px solid #03a062;
             transition: filter 300ms;
+            overflow: hidden;
 
             .interest1Title {
                 background-color: #111;
@@ -1034,6 +1067,7 @@
             border-radius: 10px;
             border: 1px solid #03a062;
             transition: filter 300ms;
+            overflow: hidden;
 
             .interest2Title {
                 background-color: #111;
@@ -1104,6 +1138,7 @@
             border-radius: 10px;
             border: 1px solid #03a062;
             transition: filter 300ms;
+            overflow: hidden;
 
             .interest3Title {
                 background-color: #111;
@@ -1195,10 +1230,6 @@
     }
 
     .hobbiesContent {
-        background-image: url("/src/Assets/Images/HobbiesBG.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
         height: 90%;
         width: 100%;
         display: flex;
@@ -1212,6 +1243,7 @@
             border-radius: 10px;
             border: 1px solid #03a062;
             transition: filter 300ms;
+            overflow: hidden;
 
             .hobby1Title {
                 background-color: #111;
@@ -1282,6 +1314,7 @@
             border-radius: 10px;
             border: 1px solid #03a062;
             transition: filter 300ms;
+            overflow: hidden;
 
             .hobby2Title {
                 background-color: #111;
@@ -1352,6 +1385,7 @@
             border-radius: 10px;
             border: 1px solid #03a062;
             transition: filter 300ms;
+            overflow: hidden;
 
             .hobby3Title {
                 background-color: #111;
@@ -1442,10 +1476,6 @@
     }
 
     .contactContent {
-        background-image: url("/src/Assets/Images/ContactBG.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
         height: 480px;
         width: 100%;
         display: flex;

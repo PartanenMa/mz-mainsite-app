@@ -1,31 +1,36 @@
 import { useState, useEffect } from "react";
+import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.scss";
 
 function ProfilePage() {
+    const [loadingData, setLoadingData] = useState(true);
     const [languages, setLanguages] = useState([]);
     const [educations, setEducations] = useState([]);
     const [skills, setSkills] = useState([]);
     const [experiences, setExperiences] = useState([]);
 
     useEffect(() => {
-        setLanguages(data.profileData.languages);
-        setEducations(data.profileData.educations);
-        setSkills(data.profileData.skills);
-        setExperiences(data.profileData.experiences);
+        setTimeout(() => {
+            setLanguages(data.profileData.languages);
+            setEducations(data.profileData.educations);
+            setSkills(data.profileData.skills);
+            setExperiences(data.profileData.experiences);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     return (
         <div className="pFP">
             <div className="profilePageContainer">
                 <ProfilePageTitle />
-                <AboutMe />
-                <Languages languages={languages} />
-                <Education educations={educations} />
-                <Skills skills={skills} />
-                <Experience experiences={experiences} />
+                <AboutMe loadingData={loadingData} />
+                <Languages loadingData={loadingData} languages={languages} />
+                <Education loadingData={loadingData} educations={educations} />
+                <Skills loadingData={loadingData} skills={skills} />
+                <Experience loadingData={loadingData} experiences={experiences} />
                 <Interests />
                 <Hobbies />
                 <ContactMe />
@@ -42,11 +47,14 @@ function ProfilePageTitle() {
     );
 }
 
-function AboutMe() {
+function AboutMe({ loadingData }) {
     return (
         <div className="aboutMeContainer">
             <div className="aboutMeTitle">
-                <h3>ABOUT ME</h3>
+                <h3>
+                    ABOUT ME
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="aboutMeContent">
                 <AnimatePresence>
@@ -85,11 +93,14 @@ function AboutMe() {
     );
 }
 
-function Languages({ languages }) {
+function Languages({ loadingData, languages }) {
     return (
         <div className="languagesContainer">
             <div className="languagesTitle">
-                <h3>LANGUAGES</h3>
+                <h3>
+                    LANGUAGES
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="languagesContent">
                 {languages.length > 0 ? (
@@ -102,6 +113,10 @@ function Languages({ languages }) {
                             </div>
                         </div>
                     ))
+                ) : loadingData ? (
+                    <div className="loadingProfileData">
+                        <div className="loaderProfile" />
+                    </div>
                 ) : (
                     <div className="noProfileData">
                         <h4>NO DATA!</h4>
@@ -112,7 +127,7 @@ function Languages({ languages }) {
     );
 }
 
-function Education({ educations }) {
+function Education({ loadingData, educations }) {
     const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
 
     const openOrCloseEducation = (index) => {
@@ -124,7 +139,10 @@ function Education({ educations }) {
     return (
         <div className="educationsContainer">
             <div className="educationsTitle">
-                <h3>EDUCATION</h3>
+                <h3>
+                    EDUCATION
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="educationsContent">
                 {educations.length > 0 ? (
@@ -167,6 +185,10 @@ function Education({ educations }) {
                             </motion.div>
                         ))}
                     </AnimatePresence>
+                ) : loadingData ? (
+                    <div className="loadingProfileData">
+                        <div className="loaderProfile" />
+                    </div>
                 ) : (
                     <div className="noProfileData">
                         <h4>NO DATA!</h4>
@@ -177,7 +199,7 @@ function Education({ educations }) {
     );
 }
 
-function Skills({ skills }) {
+function Skills({ loadingData, skills }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -229,7 +251,10 @@ function Skills({ skills }) {
     return (
         <div className="skillsContainer">
             <div className="skillsTitle">
-                <h3>SKILLS</h3>
+                <h3>
+                    SKILLS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="skillsContent">
                 <div className="programmingLanguages">
@@ -254,6 +279,10 @@ function Skills({ skills }) {
                                     </div>
                                 </div>
                             ))
+                        ) : loadingData ? (
+                            <div className="loadingProfileData">
+                                <div className="loaderProfile" />
+                            </div>
                         ) : (
                             <div className="noProfileData">
                                 <h4>NO DATA!</h4>
@@ -283,6 +312,10 @@ function Skills({ skills }) {
                                     </div>
                                 </div>
                             ))
+                        ) : loadingData ? (
+                            <div className="loadingProfileData">
+                                <div className="loaderProfile" />
+                            </div>
                         ) : (
                             <div className="noProfileData">
                                 <h4>NO DATA!</h4>
@@ -312,6 +345,10 @@ function Skills({ skills }) {
                                     </div>
                                 </div>
                             ))
+                        ) : loadingData ? (
+                            <div className="loadingProfileData">
+                                <div className="loaderProfile" />
+                            </div>
                         ) : (
                             <div className="noProfileData">
                                 <h4>NO DATA!</h4>
@@ -341,6 +378,10 @@ function Skills({ skills }) {
                                     </div>
                                 </div>
                             ))
+                        ) : loadingData ? (
+                            <div className="loadingProfileData">
+                                <div className="loaderProfile" />
+                            </div>
                         ) : (
                             <div className="noProfileData">
                                 <h4>NO DATA!</h4>
@@ -370,6 +411,10 @@ function Skills({ skills }) {
                                     </div>
                                 </div>
                             ))
+                        ) : loadingData ? (
+                            <div className="loadingProfileData">
+                                <div className="loaderProfile" />
+                            </div>
                         ) : (
                             <div className="noProfileData">
                                 <h4>NO DATA!</h4>
@@ -399,6 +444,10 @@ function Skills({ skills }) {
                                     </div>
                                 </div>
                             ))
+                        ) : loadingData ? (
+                            <div className="loadingProfileData">
+                                <div className="loaderProfile" />
+                            </div>
                         ) : (
                             <div className="noProfileData">
                                 <h4>NO DATA!</h4>
@@ -411,7 +460,7 @@ function Skills({ skills }) {
     );
 }
 
-function Experience({ experiences }) {
+function Experience({ loadingData, experiences }) {
     const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
 
     const openOrCloseExperience = (index) => {
@@ -423,7 +472,10 @@ function Experience({ experiences }) {
     return (
         <div className="experiencesContainer">
             <div className="experiencesTitle">
-                <h3>EXPERIENCE</h3>
+                <h3>
+                    EXPERIENCE
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="experiencesContent">
                 {experiences.length > 0 ? (
@@ -457,6 +509,10 @@ function Experience({ experiences }) {
                             </motion.div>
                         ))}
                     </AnimatePresence>
+                ) : loadingData ? (
+                    <div className="loadingProfileData">
+                        <div className="loaderProfile" />
+                    </div>
                 ) : (
                     <div className="noProfileData">
                         <h4>NO DATA!</h4>

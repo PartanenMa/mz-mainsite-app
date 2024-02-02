@@ -30,31 +30,47 @@
         justify-content: center;
         overflow: hidden;
 
-        h2 {
-            color: #03a062;
-            font-size: 30px;
-            font-style: italic;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            text-decoration-line: underline;
-            text-shadow: 0.5px 0.5px 0 lightgreen;
-            position: relative;
-            bottom: 10px;
+        .mAT-titleC {
+            height: 100%;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration-line: underline;
+                text-shadow: 0.5px 0.5px 0 lightgreen;
+                position: relative;
+                left: 30px;
+            }
         }
 
-        .modalTitleX-button {
-            animation: fadeIn 0.3s;
-            background-color: red;
-            color: white;
-            cursor: pointer;
-            height: 30px;
-            width: 30px;
-            border: 1px solid white;
-            border-radius: 5px;
-            font-size: 20px;
-            font-style: italic;
-            position: relative;
-            top: 7px;
-            left: 190px;
+        .mAT-buttonC {
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .modalTitleX-button {
+                animation: fadeIn 0.3s;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-size: 20px;
+                font-style: italic;
+                position: relative;
+                bottom: 8px;
+                left: 16px;
+            }
         }
 
         .modalTitleX-button:hover {

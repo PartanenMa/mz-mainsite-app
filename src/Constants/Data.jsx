@@ -38,6 +38,7 @@ import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
 export const data = {
+    statusDB: "disabled",
     technologiesUsed: [
         {
             name: "React",

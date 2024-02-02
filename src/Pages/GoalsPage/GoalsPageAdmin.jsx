@@ -13,6 +13,7 @@ function GoalsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [loadingData, setLoadingData] = useState(true);
     const [goals, setGoals] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -22,7 +23,10 @@ function GoalsPageAdmin() {
     });
 
     useEffect(() => {
-        setGoals(data.goalsData);
+        setTimeout(() => {
+            setGoals(data.goalsData);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     useEffect(() => {
@@ -66,8 +70,9 @@ function GoalsPageAdmin() {
                                 <h2>Admin / goals</h2>
                             </div>
                             <GoalsPageTitle />
-                            <GoalsCount goals={goals} />
-                            <GoalsPageContent goals={goals} />
+                            <GoalsCount loadingData={loadingData} goals={goals} />
+                            {data.statusDB !== "disabled" && <GoalsStatus loadingData={loadingData} />}
+                            <GoalsPageContent loadingData={loadingData} goals={goals} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -94,7 +99,11 @@ function GoalsPageTitle() {
     );
 }
 
-function GoalsCount({ goals }) {
+function GoalsCount({ loadingData, goals }) {
+    const getLoader = () => {
+        return <span style={{ fontStyle: "normal" }}>...</span>;
+    };
+
     const getCompletedGoals = () => {
         let completedCount = 0;
 
@@ -134,19 +143,23 @@ function GoalsCount({ goals }) {
     return (
         <div className="goalsCountContainer">
             <p>
-                COMPLETED: <span style={{ color: "green" }}>{getCompletedGoals()}</span>
+                COMPLETED: <span style={{ color: "green" }}>{loadingData ? getLoader() : getCompletedGoals()}</span>
             </p>
             <p>
-                IN PROGRESS: <span style={{ color: "yellow" }}>{getInProgressGoals()}</span>
+                IN PROGRESS: <span style={{ color: "yellow" }}>{loadingData ? getLoader() : getInProgressGoals()}</span>
             </p>
             <p>
-                NOT YET STARTED: <span style={{ color: "red" }}>{getNotYetStartedGoals()}</span>
+                NOT YET STARTED: <span style={{ color: "red" }}>{loadingData ? getLoader() : getNotYetStartedGoals()}</span>
             </p>
         </div>
     );
 }
 
-function GoalsPageContent({ goals }) {
+function GoalsStatus({ loadingData }) {
+    return !loadingData && <div className="goalsStatusContainer">{data?.statusDB ? <p className="gStatus1">FROM: DB MAIN</p> : <p className="gStatus2">FROM: DB BACKUP</p>}</div>;
+}
+
+function GoalsPageContent({ loadingData, goals }) {
     const getColor = (status) => {
         if (status === "completed") {
             return "green";
@@ -186,6 +199,10 @@ function GoalsPageContent({ goals }) {
                         </p>
                     </div>
                 ))
+            ) : loadingData ? (
+                <div className="loadingGoalsData">
+                    <div className="loaderGoals" />
+                </div>
             ) : (
                 <div className="noGoalsData">
                     <h4>NO DATA!</h4>

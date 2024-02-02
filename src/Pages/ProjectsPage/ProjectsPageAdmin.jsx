@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
@@ -14,6 +15,7 @@ function ProjectsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [loadingData, setLoadingData] = useState(true);
     const [projects, setProjects] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -23,7 +25,10 @@ function ProjectsPageAdmin() {
     });
 
     useEffect(() => {
-        setProjects(data.projectsData);
+        setTimeout(() => {
+            setProjects(data.projectsData);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     useEffect(() => {
@@ -67,8 +72,8 @@ function ProjectsPageAdmin() {
                                 <h2>Admin / projects</h2>
                             </div>
                             <ProjectsPageTitle />
-                            <AboutMyProjects />
-                            <Projects projects={projects} />
+                            <AboutMyProjects loadingData={loadingData} />
+                            <MyProjects loadingData={loadingData} projects={projects} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -95,11 +100,14 @@ function ProjectsPageTitle() {
     );
 }
 
-function AboutMyProjects() {
+function AboutMyProjects({ loadingData }) {
     return (
         <div className="aboutMyProjectsContainer">
             <div className="aboutMyProjectsTitle">
-                <h3>ABOUT MY PROJECTS</h3>
+                <h3>
+                    ABOUT MY PROJECTS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="aboutMyProjectsContent">
                 <AnimatePresence>
@@ -138,11 +146,14 @@ function AboutMyProjects() {
     );
 }
 
-function Projects({ projects }) {
+function MyProjects({ loadingData, projects }) {
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
-                <h3>PROJECTS</h3>
+                <h3>
+                    MY PROJECTS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="projectsContent">
                 {projects.length > 0 ? (
@@ -196,6 +207,10 @@ function Projects({ projects }) {
                             <h4>NO PROJECTS YET!</h4>
                         </div>
                     )
+                ) : loadingData ? (
+                    <div className="loadingProjectsData">
+                        <div className="loaderProjects" />
+                    </div>
                 ) : (
                     <div className="noProjectsData">
                         <h4>NO DATA!</h4>

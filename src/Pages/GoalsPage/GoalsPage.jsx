@@ -4,18 +4,23 @@ import { data } from "/src/Constants/Data.jsx";
 import "./GoalsPage.scss";
 
 function GoalsPage() {
+    const [loadingData, setLoadingData] = useState(true);
     const [goals, setGoals] = useState([]);
 
     useEffect(() => {
-        setGoals(data.goalsData);
+        setTimeout(() => {
+            setGoals(data.goalsData);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     return (
         <div className="gP">
             <div className="goalsPageContainer">
                 <GoalsPageTitle />
-                <GoalsCount goals={goals} />
-                <GoalsPageContent goals={goals} />
+                <GoalsCount loadingData={loadingData} goals={goals} />
+                {data.statusDB !== "disabled" && <GoalsStatus loadingData={loadingData} />}
+                <GoalsPageContent loadingData={loadingData} goals={goals} />
             </div>
         </div>
     );
@@ -29,7 +34,11 @@ function GoalsPageTitle() {
     );
 }
 
-function GoalsCount({ goals }) {
+function GoalsCount({ loadingData, goals }) {
+    const getLoader = () => {
+        return <span style={{ fontStyle: "normal" }}>...</span>;
+    };
+
     const getCompletedGoals = () => {
         let completedCount = 0;
 
@@ -69,19 +78,23 @@ function GoalsCount({ goals }) {
     return (
         <div className="goalsCountContainer">
             <p>
-                COMPLETED: <span style={{ color: "green" }}>{getCompletedGoals()}</span>
+                COMPLETED: <span style={{ color: "green" }}>{loadingData ? getLoader() : getCompletedGoals()}</span>
             </p>
             <p>
-                IN PROGRESS: <span style={{ color: "yellow" }}>{getInProgressGoals()}</span>
+                IN PROGRESS: <span style={{ color: "yellow" }}>{loadingData ? getLoader() : getInProgressGoals()}</span>
             </p>
             <p>
-                NOT YET STARTED: <span style={{ color: "red" }}>{getNotYetStartedGoals()}</span>
+                NOT YET STARTED: <span style={{ color: "red" }}>{loadingData ? getLoader() : getNotYetStartedGoals()}</span>
             </p>
         </div>
     );
 }
 
-function GoalsPageContent({ goals }) {
+function GoalsStatus({ loadingData }) {
+    return !loadingData && <div className="goalsStatusContainer">{data?.statusDB ? <p className="gStatus1">FROM: DB MAIN</p> : <p className="gStatus2">FROM: DB BACKUP</p>}</div>;
+}
+
+function GoalsPageContent({ loadingData, goals }) {
     const getColor = (status) => {
         if (status === "completed") {
             return "green";
@@ -121,6 +134,10 @@ function GoalsPageContent({ goals }) {
                         </p>
                     </div>
                 ))
+            ) : loadingData ? (
+                <div className="loadingGoalsData">
+                    <div className="loaderGoals" />
+                </div>
             ) : (
                 <div className="noGoalsData">
                     <h4>NO DATA!</h4>

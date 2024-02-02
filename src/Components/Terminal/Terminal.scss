@@ -10,11 +10,11 @@
 }
 
 .terminal {
-    background-color: forestgreen;
+    background-color: black;
     height: 580px;
     width: 746px;
     padding-bottom: 10px;
-    border: 3px solid #111;
+    border: 3px solid green;
     border-radius: 10px;
     box-shadow: 0 0 30px 5px #03a062;
     position: fixed;
@@ -60,7 +60,7 @@
         }
 
         h2 {
-            color: #111;
+            color: green;
             font-size: 30px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -79,10 +79,10 @@
         overflow: hidden;
 
         .terminalInputField {
-            background-color: lightgreen;
+            background-color: #111;
             height: 96%;
             width: 96%;
-            border: 1px solid #111;
+            border: 1px solid green;
             border-radius: 5px;
             overflow: hidden;
 

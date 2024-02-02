@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
@@ -14,6 +15,7 @@ function VideosPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [loadingData, setLoadingData] = useState(true);
     const [videos, setVideos] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -23,7 +25,10 @@ function VideosPageAdmin() {
     });
 
     useEffect(() => {
-        setVideos(data.videosData);
+        setTimeout(() => {
+            setVideos(data.videosData);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     useEffect(() => {
@@ -67,8 +72,8 @@ function VideosPageAdmin() {
                                 <h2>Admin / videos</h2>
                             </div>
                             <VideosPageTitle />
-                            <AboutMyVideos />
-                            <Videos videos={videos} />
+                            <AboutMyVideos loadingData={loadingData} />
+                            <MyVideos loadingData={loadingData} videos={videos} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -95,11 +100,14 @@ function VideosPageTitle() {
     );
 }
 
-function AboutMyVideos() {
+function AboutMyVideos({ loadingData }) {
     return (
         <div className="aboutMyVideosContainer">
             <div className="aboutMyVideosTitle">
-                <h3>ABOUT MY VIDEOS</h3>
+                <h3>
+                    ABOUT MY VIDEOS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="aboutMyVideosContent">
                 <AnimatePresence>
@@ -138,11 +146,14 @@ function AboutMyVideos() {
     );
 }
 
-function Videos({ videos }) {
+function MyVideos({ loadingData, videos }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
-                <h3>VIDEOS</h3>
+                <h3>
+                    MY VIDEOS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="videosContent">
                 {videos.length > 0 ? (
@@ -194,6 +205,10 @@ function Videos({ videos }) {
                             <h4>NO VIDEOS YET!</h4>
                         </div>
                     )
+                ) : loadingData ? (
+                    <div className="loadingVideosData">
+                        <div className="loaderVideos" />
+                    </div>
                 ) : (
                     <div className="noVideosData">
                         <h4>NO DATA!</h4>

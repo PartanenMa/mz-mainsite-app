@@ -45,19 +45,23 @@ function ModalFP({ isModalOpen, setIsModalOpen }) {
                     <AnimatePresence>
                         <motion.div className="modalFP" style={modalStyle} key="modalfp" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                             <div className="modalAboutTitle">
-                                <h2>What is the MatrixZone?</h2>
-                                <motion.button
-                                    className="modalTitleX-button"
-                                    onClick={() => setIsModalOpen(false)}
-                                    key="modaltitlex-button"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { duration: 0.1 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    X
-                                </motion.button>
+                                <div className="mAT-titleC">
+                                    <h2>What is the MatrixZone?</h2>
+                                </div>
+                                <div className="mAT-buttonC">
+                                    <motion.button
+                                        className="modalTitleX-button"
+                                        onClick={() => setIsModalOpen(false)}
+                                        key="modaltitlex-button"
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        X
+                                    </motion.button>
+                                </div>
                             </div>
                             <div className="modalAbout">
                                 <p>

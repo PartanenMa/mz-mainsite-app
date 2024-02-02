@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
+import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.scss";
 
 function ProjectsPage() {
+    const [loadingData, setLoadingData] = useState(true);
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setProjects(data.projectsData);
+        setTimeout(() => {
+            setProjects(data.projectsData);
+            setLoadingData(false);
+        }, [1000]);
     }, []);
 
     return (
         <div className="pJP">
             <div className="projectsPageContainer">
                 <ProjectsPageTitle />
-                <AboutMyProjects />
-                <Projects projects={projects} />
+                <AboutMyProjects loadingData={loadingData} />
+                <Projects loadingData={loadingData} projects={projects} />
             </div>
         </div>
     );
@@ -30,11 +35,14 @@ function ProjectsPageTitle() {
     );
 }
 
-function AboutMyProjects() {
+function AboutMyProjects({ loadingData }) {
     return (
         <div className="aboutMyProjectsContainer">
             <div className="aboutMyProjectsTitle">
-                <h3>ABOUT MY PROJECTS</h3>
+                <h3>
+                    ABOUT MY PROJECTS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="aboutMyProjectsContent">
                 <AnimatePresence>
@@ -73,11 +81,14 @@ function AboutMyProjects() {
     );
 }
 
-function Projects({ projects }) {
+function Projects({ loadingData, projects }) {
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
-                <h3>PROJECTS</h3>
+                <h3>
+                    PROJECTS
+                    <DBstate loading={loadingData} />
+                </h3>
             </div>
             <div className="projectsContent">
                 {projects.length > 0 ? (
@@ -129,6 +140,10 @@ function Projects({ projects }) {
                             <h4>NO PROJECTS YET!</h4>
                         </div>
                     )
+                ) : loadingData ? (
+                    <div className="loadingProjectsData">
+                        <div className="loaderProjects" />
+                    </div>
                 ) : (
                     <div className="noProjectsData">
                         <h4>NO DATA!</h4>
