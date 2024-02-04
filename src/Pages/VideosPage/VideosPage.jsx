@@ -91,15 +91,18 @@ function Videos({ loadingData, videos }) {
                 </h3>
             </div>
             <div className="videosContent">
-                {videos.length > 0 ? (
-                    videos[0].title !== 0 ? (
-                        videos.map((video, index) => (
-                            <AnimatePresence>
+                <AnimatePresence>
+                    {videos.length > 0 ? (
+                        videos[0].title !== 0 ? (
+                            videos.map((video, index) => (
                                 <motion.a
                                     className="video"
                                     href={video.link}
                                     target="_blank"
                                     key={index}
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
                                     whileHover={{
                                         scale: 1.03,
                                         transition: { duration: 0.1 },
@@ -133,22 +136,22 @@ function Videos({ loadingData, videos }) {
                                         <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
                                     </div>
                                 </motion.a>
-                            </AnimatePresence>
-                        ))
+                            ))
+                        ) : (
+                            <motion.div className="noVideosYet" key="novideosyet" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO VIDEOS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingData ? (
+                        <motion.div className="loadingVideosData" key="loadingvideosdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderVideos" />
+                        </motion.div>
                     ) : (
-                        <div className="noVideosYet">
-                            <h4>NO VIDEOS YET!</h4>
-                        </div>
-                    )
-                ) : loadingData ? (
-                    <div className="loadingVideosData">
-                        <div className="loaderVideos" />
-                    </div>
-                ) : (
-                    <div className="noVideosData">
-                        <h4>NO DATA!</h4>
-                    </div>
-                )}
+                        <motion.div className="noVideosData" key="novideosdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

@@ -91,15 +91,18 @@ function Projects({ loadingData, projects }) {
                 </h3>
             </div>
             <div className="projectsContent">
-                {projects.length > 0 ? (
-                    projects[0].title !== 0 ? (
-                        projects.map((project, index) => (
-                            <AnimatePresence>
+                <AnimatePresence>
+                    {projects.length > 0 ? (
+                        projects[0].title !== 0 ? (
+                            projects.map((project, index) => (
                                 <motion.a
                                     className="project"
                                     href={project.link}
                                     target="_blank"
                                     key={index}
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
                                     whileHover={{
                                         scale: 1.03,
                                         transition: { duration: 0.1 },
@@ -133,22 +136,22 @@ function Projects({ loadingData, projects }) {
                                         <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
                                     </div>
                                 </motion.a>
-                            </AnimatePresence>
-                        ))
+                            ))
+                        ) : (
+                            <motion.div className="noProjectsYet" key="noprojectsyet" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingData ? (
+                        <motion.div className="loadingProjectsData" key="loadingprojectsdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProjects" />
+                        </motion.div>
                     ) : (
-                        <div className="noProjectsYet">
-                            <h4>NO PROJECTS YET!</h4>
-                        </div>
-                    )
-                ) : loadingData ? (
-                    <div className="loadingProjectsData">
-                        <div className="loaderProjects" />
-                    </div>
-                ) : (
-                    <div className="noProjectsData">
-                        <h4>NO DATA!</h4>
-                    </div>
-                )}
+                        <motion.div className="noProjectsData" key="noprojectsdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

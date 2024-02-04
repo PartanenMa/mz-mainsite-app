@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./GoalsPage.scss";
 
 function GoalsPage() {
@@ -36,7 +37,13 @@ function GoalsPageTitle() {
 
 function GoalsCount({ loadingData, goals }) {
     const getLoader = () => {
-        return <span style={{ fontStyle: "normal" }}>...</span>;
+        return (
+            <AnimatePresence>
+                <motion.span style={{ fontStyle: "normal" }} key="goalloader" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    ...
+                </motion.span>
+            </AnimatePresence>
+        );
     };
 
     const getCompletedGoals = () => {
@@ -77,21 +84,39 @@ function GoalsCount({ loadingData, goals }) {
 
     return (
         <div className="goalsCountContainer">
-            <p>
-                COMPLETED: <span style={{ color: "green" }}>{loadingData ? getLoader() : getCompletedGoals()}</span>
-            </p>
-            <p>
-                IN PROGRESS: <span style={{ color: "yellow" }}>{loadingData ? getLoader() : getInProgressGoals()}</span>
-            </p>
-            <p>
-                NOT YET STARTED: <span style={{ color: "red" }}>{loadingData ? getLoader() : getNotYetStartedGoals()}</span>
-            </p>
+            <AnimatePresence>
+                <motion.p key="goalcount1" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    COMPLETED: <span style={{ color: "green" }}>{loadingData ? getLoader() : getCompletedGoals()}</span>
+                </motion.p>
+                <motion.p key="goalcount2" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingData ? getLoader() : getInProgressGoals()}</span>
+                </motion.p>
+                <motion.p key="goalcount3" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingData ? getLoader() : getNotYetStartedGoals()}</span>
+                </motion.p>
+            </AnimatePresence>
         </div>
     );
 }
 
 function GoalsStatus({ loadingData }) {
-    return !loadingData && <div className="goalsStatusContainer">{data?.statusDB ? <p className="gStatus1">FROM: DB MAIN</p> : <p className="gStatus2">FROM: DB BACKUP</p>}</div>;
+    return (
+        !loadingData && (
+            <AnimatePresence>
+                <motion.div className="goalsStatusContainer" key="gstatuscont" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    {data?.statusDB ? (
+                        <motion.p className="gStatus1" key="goalstatus1" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            FROM: DB MAIN
+                        </motion.p>
+                    ) : (
+                        <motion.p className="gStatus2" key="goalstatus2" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            FROM: DB BACKUP
+                        </motion.p>
+                    )}
+                </motion.div>
+            </AnimatePresence>
+        )
+    );
 }
 
 function GoalsPageContent({ loadingData, goals }) {
@@ -117,32 +142,34 @@ function GoalsPageContent({ loadingData, goals }) {
 
     return (
         <div className="goalsPageContentContainer">
-            {goals.length > 0 ? (
-                goals.map((goal, index) => (
-                    <div className="goal" key={index}>
-                        <h3>
-                            {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
-                        </h3>
-                        <p>
-                            - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
-                        </p>
-                        <p>
-                            - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
-                        </p>
-                        <p>
-                            - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
-                        </p>
-                    </div>
-                ))
-            ) : loadingData ? (
-                <div className="loadingGoalsData">
-                    <div className="loaderGoals" />
-                </div>
-            ) : (
-                <div className="noGoalsData">
-                    <h4>NO DATA!</h4>
-                </div>
-            )}
+            <AnimatePresence>
+                {goals.length > 0 ? (
+                    goals.map((goal, index) => (
+                        <motion.div className="goal" key={index} transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h3>
+                                {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
+                            </h3>
+                            <p>
+                                - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
+                            </p>
+                            <p>
+                                - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
+                            </p>
+                            <p>
+                                - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
+                            </p>
+                        </motion.div>
+                    ))
+                ) : loadingData ? (
+                    <motion.div className="loadingGoalsData" key="loadinggoalsdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                        <div className="loaderGoals" />
+                    </motion.div>
+                ) : (
+                    <motion.div className="noGoalsData" key="nogoalsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                        <h4>NO DATA!</h4>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
