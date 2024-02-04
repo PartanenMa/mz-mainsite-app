@@ -1,0 +1,146 @@
+/*VideoPage:*/
+.vPV {
+    animation: fadeIn 0.3s;
+    background-color: black;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:
+        0 0 30px 20px black,
+        inset 0 0 30px 20px black;
+
+    .videoPageContainer {
+        animation: fadeIn 0.3s;
+        background-color: #111;
+        max-width: 1244px;
+        width: 100%;
+        border: 0.1px solid grey;
+        border-radius: 2px;
+        margin: auto;
+        box-shadow: 0 0 30px 5px #03a062;
+        overflow: hidden;
+    }
+}
+
+/*VideoPageAdmin:*/
+.videoPageContainerAdmin {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 1244px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumb {
+        background-color: lightgreen;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both:*/
+.videoPageTitleContainer {
+    background-color: #c4302b;
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        color: white;
+        font-size: 70px;
+        position: relative;
+        bottom: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.videoDescriptionContainer {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.videoDescriptionTitle {
+    background-color: #c4302b;
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    h3 {
+        color: white;
+        font-size: 25px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        bottom: 23px;
+        left: 10px;
+    }
+}
+
+.videoDescriptionContent {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 12px;
+}
+
+.videoContainer {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+
+    .videoTitle {
+        background-color: #c4302b;
+        height: 30px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
+
+    .videoContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

@@ -357,7 +357,7 @@ export const data = {
                 workTitle: "Intern - Internship",
                 workTimeAndPlace: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
                 workDescription: "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React and Sass.",
-                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
+                workTech: "Bash, Visual Studio Code, Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
                 color: "#b11226",
                 image: VismaLogo,
             },
@@ -367,7 +367,7 @@ export const data = {
                 workTimeAndPlace: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
                 workDescription:
                     "My first real front-end developer job at Visma Real Estate Oy after my internship there. I worked part-time (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React and Sass.",
-                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
+                workTech: "Bash, Visual Studio Code, Git, HTML, CSS, JavaScript, React, Sass, Node.js, Docker",
                 color: "#b11226",
                 image: VismaLogo,
             },
@@ -377,7 +377,7 @@ export const data = {
                 workTimeAndPlace: "1.1.2024 - present, Pori, Finland",
                 workDescription:
                     "My full-stack developer job at Visma Real Estate Oy after my internship and part-time job there. My tasks now include developing the UI, and the API of the Hausvise housing management system using React, Sass and Go.",
-                workTech: "Git, HTML, CSS, JavaScript, React, Sass, Go, Node.js, Docker",
+                workTech: "Bash, Visual Studio Code, Git, HTML, CSS, JavaScript, React, Sass, Go, Node.js, Docker",
                 color: "#b11226",
                 image: VismaLogo,
             },

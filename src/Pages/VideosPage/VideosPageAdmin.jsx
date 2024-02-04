@@ -160,19 +160,15 @@ function MyVideos({ loadingData, videos }) {
                     {videos.length > 0 ? (
                         videos[0].title !== 0 ? (
                             videos.map((video, index) => (
-                                <motion.a
+                                <motion.div
                                     className="video"
-                                    href={video.link}
-                                    target="_blank"
                                     key={index}
-                                    transition={{ delay: 0.5 }}
                                     initial={{ opacity: 0, y: -100 }}
-                                    animate={{ opacity: 1, y: 0 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     whileHover={{
                                         scale: 1.03,
                                         transition: { duration: 0.1 },
                                     }}
-                                    whileTap={{ scale: 0.99 }}
                                 >
                                     <div className="videoTitle">
                                         <h4>{video.title}</h4>
@@ -200,7 +196,7 @@ function MyVideos({ loadingData, videos }) {
                                         </div>
                                         <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
                                     </div>
-                                </motion.a>
+                                </motion.div>
                             ))
                         ) : (
                             <motion.div className="noVideosYet" key="novideosyetA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>

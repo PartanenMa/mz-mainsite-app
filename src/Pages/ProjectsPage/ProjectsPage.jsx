@@ -95,19 +95,15 @@ function Projects({ loadingData, projects }) {
                     {projects.length > 0 ? (
                         projects[0].title !== 0 ? (
                             projects.map((project, index) => (
-                                <motion.a
+                                <motion.div
                                     className="project"
-                                    href={project.link}
-                                    target="_blank"
                                     key={index}
-                                    transition={{ delay: 0.5 }}
                                     initial={{ opacity: 0, y: -100 }}
-                                    animate={{ opacity: 1, y: 0 }}
+                                    animate={{ opacity: 1, y: 0, delay: 0.5, transition: { delay: 0.5 } }}
                                     whileHover={{
                                         scale: 1.03,
                                         transition: { duration: 0.1 },
                                     }}
-                                    whileTap={{ scale: 0.99 }}
                                 >
                                     <div className="projectTitle">
                                         <h4>{project.title}</h4>
@@ -135,7 +131,7 @@ function Projects({ loadingData, projects }) {
                                         </div>
                                         <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
                                     </div>
-                                </motion.a>
+                                </motion.div>
                             ))
                         ) : (
                             <motion.div className="noProjectsYet" key="noprojectsyet" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>

@@ -110,9 +110,8 @@ function Languages({ loadingData, languages }) {
                                 className="language"
                                 style={{ backgroundColor: language.color }}
                                 key={index}
-                                transition={{ delay: 0.5 }}
                                 initial={{ opacity: 0, y: -100 }}
-                                animate={{ opacity: 1, y: 0 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                             >
                                 <div className="languageLogo" style={{ backgroundImage: `url(${language.image})` }} />
                                 <div className="languageContent">
@@ -161,9 +160,8 @@ function Education({ loadingData, educations }) {
                                 className="education"
                                 style={{ "--education-color": education.color }}
                                 key={index}
-                                transition={{ delay: 0.5 }}
                                 initial={{ opacity: 0, y: -100 }}
-                                animate={{ opacity: 1, y: 0 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                 onClick={() => openOrCloseEducation(index)}
                                 whileHover={{
                                     scale: 1.01,
@@ -281,9 +279,8 @@ function Skills({ loadingData, skills }) {
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
                                         key={index}
-                                        transition={{ delay: 0.5 }}
                                         initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     >
                                         <div
                                             className="skillLogo"
@@ -323,9 +320,8 @@ function Skills({ loadingData, skills }) {
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
                                         key={index}
-                                        transition={{ delay: 0.5 }}
                                         initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     >
                                         <div
                                             className="skillLogo"
@@ -365,9 +361,8 @@ function Skills({ loadingData, skills }) {
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
                                         key={index}
-                                        transition={{ delay: 0.5 }}
                                         initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     >
                                         <div
                                             className="skillLogo"
@@ -407,9 +402,8 @@ function Skills({ loadingData, skills }) {
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
                                         key={index}
-                                        transition={{ delay: 0.5 }}
                                         initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     >
                                         <div
                                             className="skillLogo"
@@ -449,9 +443,8 @@ function Skills({ loadingData, skills }) {
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
                                         key={index}
-                                        transition={{ delay: 0.5 }}
                                         initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     >
                                         <div
                                             className="skillLogo"
@@ -491,9 +484,8 @@ function Skills({ loadingData, skills }) {
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
                                         key={index}
-                                        transition={{ delay: 0.5 }}
                                         initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     >
                                         <div
                                             className="skillLogo"
@@ -551,9 +543,8 @@ function Experience({ loadingData, experiences }) {
                                 className="experience"
                                 style={{ "--experience-color": experience.color }}
                                 key={index}
-                                transition={{ delay: 0.5 }}
                                 initial={{ opacity: 0, y: -100 }}
-                                animate={{ opacity: 1, y: 0 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                 onClick={() => openOrCloseExperience(index)}
                                 whileHover={{
                                     scale: 1.01,

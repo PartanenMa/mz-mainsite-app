@@ -1,7 +1,7 @@
 import { data } from "./Data.jsx";
 
 export const info = {
-    version: "Release 1.0.16",
+    version: "Release 1.0.17",
     routes: {
         frontPage: "/MatrixZone-UI/",
         loginPage: "/MatrixZone-UI/login",
@@ -11,8 +11,12 @@ export const info = {
         profilePageAdmin: "/MatrixZone-UI/admin/profile",
         projectsPage: "/MatrixZone-UI/projects",
         projectsPageAdmin: "/MatrixZone-UI/admin/projects",
+        projectPage: "/MatrixZone-UI/projects/view",
+        projectPageAdmin: "/MatrixZone-UI/admin/projects/view",
         videosPage: "/MatrixZone-UI/videos",
         videosPageAdmin: "/MatrixZone-UI/admin/videos",
+        videoPage: "/MatrixZone-UI/videos/view",
+        videoPageAdmin: "/MatrixZone-UI/admin/videos/view",
         goalsPage: "/MatrixZone-UI/goals",
         goalsPageAdmin: "/MatrixZone-UI/admin/goals",
         cvPage: "/MatrixZone-UI/cv",
@@ -29,8 +33,8 @@ export const info = {
     },
     loginInfo: {
         enabled: false,
-        adminUserName: "Admin",
-        adminPassword: "ManuAdminReact123",
+        adminUserName: "AdminDev",
+        adminPassword: "admindev",
     },
     LinkedIn: {
         //Account data:
