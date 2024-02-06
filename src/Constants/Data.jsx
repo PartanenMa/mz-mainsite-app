@@ -38,33 +38,6 @@ import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
 export const data = {
-    statusDB: "disabled",
-    technologiesUsed: [
-        {
-            name: "React",
-            color: "#61DBFB",
-            image: ReactLogo,
-            size: "80%",
-        },
-        {
-            name: "Sass",
-            color: "#cc6699",
-            image: SassLogo,
-            size: "80%",
-        },
-        /*{
-            name: "Express.js",
-            color: "#808080",
-            image: ExpressjsLogo,
-            size: "70%",
-        },
-        {
-            name: "MongoDB",
-            color: "#4DB33D",
-            image: MongoDBLogo,
-            size: "60%",
-        },*/
-    ],
     professionStatus: {
         profession: "Software Developer",
         professionDetailed: "Web Developer",

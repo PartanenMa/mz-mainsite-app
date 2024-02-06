@@ -14,7 +14,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
     const [technologiesUsed, setTechnologiesUsed] = useState([]);
 
     useEffect(() => {
-        setTechnologiesUsed(data.technologiesUsed);
+        setTechnologiesUsed(info.technologiesUsed);
     }, []);
 
     useEffect(() => {

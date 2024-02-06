@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Carousel from "/src/Components/Carousel/Carousel.jsx";
 import { info } from "/src/Constants/Info.jsx";
@@ -8,11 +9,57 @@ import Carousel3 from "/src/Assets/Images/Carousel3.jpg";
 import "./HomePage.scss";
 
 function HomePage() {
+    const [professionData, setProfessionData] = useState([]);
+    const [jobData, setJobData] = useState([]);
+
+    const getProfession = () => {
+        let statusCode;
+
+        try {
+            fetch("/profession")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setProfessionData(data);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
+
+    const getJob = () => {
+        let statusCode;
+
+        try {
+            fetch("/job")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setJobData(data);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProfession();
+            getJob();
+        }
+    }, []);
+
     return (
         <div className="hP">
             <div className="homePageContainer">
                 <HomePageTitle />
-                <FirstSection />
+                <FirstSection professionData={professionData} jobData={jobData} />
             </div>
         </div>
     );
@@ -26,7 +73,7 @@ function HomePageTitle() {
     );
 }
 
-function FirstSection() {
+function FirstSection({ professionData, jobData }) {
     const navigate = useNavigate();
     const carouselImages = [Carousel1, Carousel2, Carousel3];
 
@@ -70,7 +117,17 @@ function FirstSection() {
                         </AnimatePresence>
                         <h3>LinkedIn</h3>
                         <p>{info.LinkedIn.user}</p>
-                        <p>{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}</p>
+                        {info.api.enabled ? (
+                            professionData?.professionStatus || jobData?.jobStatus ? (
+                                <p>{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}</p>
+                            ) : (
+                                <p style={{ color: "red" }}>
+                                    API DISCONNECTED!{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </p>
+                            )
+                        ) : (
+                            <p>{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}</p>
+                        )}
                         <AnimatePresence>
                             <motion.button
                                 className="goToProfile"

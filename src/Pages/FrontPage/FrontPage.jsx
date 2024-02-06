@@ -3,54 +3,136 @@ import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
+import SassLogo from "/src/Assets/Images/SassLogo.svg";
+import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
+import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
+import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 import "./FrontPage.scss";
 
 function FrontPage() {
-    const [showFrontEnd, setShowFrontEnd] = useState(false);
-    const [showBackEnd, setShowBackEnd] = useState(false);
+    const [loadingData, setLoadingData] = useState(true);
+    const [professionData, setProfessionData] = useState([]);
+    const [jobData, setJobData] = useState([]);
     const [technologiesFe, setTechnologiesFe] = useState([]);
     const [technologiesBe, setTechnologiesBe] = useState([]);
+    const [showFrontEnd, setShowFrontEnd] = useState(false);
+    const [showBackEnd, setShowBackEnd] = useState(false);
+
+    const getProfession = () => {
+        let statusCode;
+
+        try {
+            fetch("/profession")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setProfessionData(data);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
+
+    const getJob = () => {
+        let statusCode;
+
+        try {
+            fetch("/job")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setJobData(data);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
+
+    const getTechnologies = () => {
+        let statusCode;
+
+        try {
+            fetch("/technologies")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setTimeout(() => {
+                        setTechnologiesFe(data.technologiesData.technologiesFe);
+                        setTechnologiesBe(data.technologiesData.technologiesBe);
+                        setLoadingData(false);
+                    }, 1000);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
 
     useEffect(() => {
-        setTechnologiesFe(data.technologiesData.technologiesFe);
-        setTechnologiesBe(data.technologiesData.technologiesBe);
-        if (info.LinkedIn.professionTech.includes("Front-end")) {
+        if (info.api.enabled) {
+            getProfession();
+            getJob();
+            getTechnologies();
+        } else {
+            if (info.LinkedIn.professionTech.includes("Front-end")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(false);
+            } else if (info.LinkedIn.professionTech.includes("Back-end")) {
+                setShowFrontEnd(false);
+                setShowBackEnd(true);
+            } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(true);
+            }
+            setTechnologiesFe(data.technologiesData.technologiesFe);
+            setTechnologiesBe(data.technologiesData.technologiesBe);
+            setTimeout(() => {
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (professionData?.professionStatus?.professionTech.includes("Front-end")) {
             setShowFrontEnd(true);
             setShowBackEnd(false);
-        } else if (info.LinkedIn.professionTech.includes("Back-end")) {
+        } else if (professionData?.professionStatus?.professionTech.includes("Back-end")) {
             setShowFrontEnd(false);
             setShowBackEnd(true);
-        } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
+        } else if (professionData?.professionStatus?.professionTech.includes("Full-stack")) {
             setShowFrontEnd(true);
             setShowBackEnd(true);
         }
-    }, []);
+    }, [professionData]);
 
     return (
         <div className="fP">
             <div className="frontPageContainer">
-                <Main showFrontEnd={showFrontEnd} showBackEnd={showBackEnd} techFe={technologiesFe} techBe={technologiesBe} />
+                <Main
+                    loadingData={loadingData}
+                    showFrontEnd={showFrontEnd}
+                    showBackEnd={showBackEnd}
+                    professionData={professionData}
+                    jobData={jobData}
+                    techFe={technologiesFe}
+                    techBe={technologiesBe}
+                />
             </div>
         </div>
     );
 }
 
-function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
+function Main({ loadingData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
     const navigate = useNavigate();
-
-    const getProfessionTech = () => {
-        let professionT;
-
-        if (showFrontEnd && showBackEnd) {
-            professionT = " 🖥️+🖥";
-        } else if (showFrontEnd) {
-            professionT = " 🖥️";
-        } else if (showBackEnd) {
-            professionT = " 🖥";
-        }
-
-        return professionT;
-    };
 
     const handleNavigation = (page) => {
         if (page === "profile") {
@@ -73,9 +155,34 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                             </h3>
                         </div>
                         <div className="hTWelcome2">
-                            <p className="hTW2text">
-                                I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession + " 👨‍💻"}</span>
-                            </p>
+                            {info.api.enabled ? (
+                                professionData?.professionStatus?.profession ? (
+                                    <p className="hTW2text">
+                                        I'm a <span style={{ color: "green" }}>{professionData?.professionStatus?.profession + " 👨‍💻"}</span>
+                                    </p>
+                                ) : (
+                                    <p
+                                        className="hTW2text"
+                                        style={{
+                                            backgroundColor: "transparent",
+                                            backdropFilter: "blur(15px)",
+                                            color: "red",
+                                            height: "fit-content",
+                                            width: "fit-content",
+                                            border: "1px solid red",
+                                            borderRadius: "5px",
+                                            padding: "5px",
+                                            animation: "none",
+                                        }}
+                                    >
+                                        API DISCONNECTED!
+                                    </p>
+                                )
+                            ) : (
+                                <p className="hTW2text">
+                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession + " 👨‍💻"}</span>
+                                </p>
+                            )}
                         </div>
                         <div className="hTWelcome3">
                             <h3>Welcome to the MatrixZone</h3>
@@ -162,16 +269,47 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
             <section className="technologySection">
                 <div className="technology">
                     <div className="technologyTitle">
-                        <h3>
-                            {info.LinkedIn.professionTech}
-                            {info.LinkedIn.professionDetailed && (
-                                <>
-                                    <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                    <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
-                                    <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
-                                </>
-                            )}
-                        </h3>
+                        {info.api.enabled ? (
+                            professionData?.professionStatus ? (
+                                <h3>
+                                    {professionData?.professionStatus?.professionTech}
+                                    {professionData?.professionStatus?.professionDetailed && (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{professionData?.professionStatus?.professionDetailed}</span>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                        </>
+                                    )}
+                                </h3>
+                            ) : (
+                                <h3
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        backdropFilter: "blur(15px)",
+                                        color: "red",
+                                        height: "fit-content",
+                                        width: "fit-content",
+                                        border: "1px solid red",
+                                        borderRadius: "5px",
+                                        padding: "5px",
+                                        animation: "none",
+                                    }}
+                                >
+                                    API DISCONNECTED!
+                                </h3>
+                            )
+                        ) : (
+                            <h3>
+                                {info.LinkedIn.professionTech}
+                                {info.LinkedIn.professionDetailed && (
+                                    <>
+                                        <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                        <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                        <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                    </>
+                                )}
+                            </h3>
+                        )}
                     </div>
                     <div className="technologyContent">
                         {showFrontEnd && (
@@ -180,15 +318,17 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                     <h4>Front-end tech stack</h4>
                                 </div>
                                 <div className="tCB1Content">
-                                    {techFe.length > 0 ? (
-                                        <AnimatePresence>
-                                            {techFe.map((tech, index) => (
+                                    <AnimatePresence>
+                                        {techFe.length > 0 && !loadingData ? (
+                                            techFe.map((tech, index) => (
                                                 <motion.a
                                                     className="tech"
                                                     key={index}
                                                     style={{ "--tech-color": tech.color, textDecoration: "none" }}
                                                     href={tech.infoLink}
                                                     target="_blank"
+                                                    initial={{ opacity: 0, y: -100 }}
+                                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -200,31 +340,40 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                                     </div>
                                                     <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
-                                            ))}
-                                        </AnimatePresence>
-                                    ) : (
-                                        <div className="noTechData">
-                                            <h4>NO DATA!</h4>
-                                        </div>
-                                    )}
+                                            ))
+                                        ) : loadingData ? (
+                                            <motion.div className="loadingTechData" key="loadingtechdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <div className="loaderTech" />
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div className="noTechData" key="notechdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <h4>NO DATA!</h4>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             </div>
                         )}
                         {showBackEnd && (
-                            <div className="technologyContentBox2" style={showFrontEnd && showBackEnd ? { bottom: "308px", left: "600px" } : { top: "30px" }}>
+                            <div
+                                className="technologyContentBox2"
+                                style={showFrontEnd && showBackEnd ? (loadingData ? { bottom: "332px", left: "600px" } : { bottom: "308px", left: "600px" }) : { top: "30px" }}
+                            >
                                 <div className="tCB2Title">
                                     <h4>Back-end tech stack</h4>
                                 </div>
                                 <div className="tCB2Content">
-                                    {techBe.length > 0 ? (
-                                        <AnimatePresence>
-                                            {techBe.map((tech, index) => (
+                                    <AnimatePresence>
+                                        {techBe.length > 0 && !loadingData ? (
+                                            techBe.map((tech, index) => (
                                                 <motion.a
                                                     className="tech"
                                                     key={index}
                                                     style={{ "--tech-color": tech.color, textDecoration: "none" }}
                                                     href={tech.infoLink}
                                                     target="_blank"
+                                                    initial={{ opacity: 0, y: -100 }}
+                                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -236,13 +385,17 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
                                                     </div>
                                                     <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
-                                            ))}
-                                        </AnimatePresence>
-                                    ) : (
-                                        <div className="noTechData">
-                                            <h4>NO DATA!</h4>
-                                        </div>
-                                    )}
+                                            ))
+                                        ) : loadingData ? (
+                                            <motion.div className="loadingTechData" key="loadingtechdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <div className="loaderTech" />
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div className="noTechData" key="notechdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <h4>NO DATA!</h4>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             </div>
                         )}
@@ -252,79 +405,181 @@ function Main({ showFrontEnd, showBackEnd, techFe, techBe }) {
             <section className="professionSection">
                 <div className="profession">
                     <div className="professionTitle">
-                        <h3>
-                            {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
-                            <span
-                                style={{
-                                    color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
-                                }}
-                            >
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
-                            </span>
-                            {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
-                                <>
-                                    <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
-                                    <span style={{ color: "green" }}>{"Looking for work"}</span>
-                                    <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
-                                </>
+                        {info.api.enabled ? (
+                            professionData?.professionStatus || jobData?.jobStatus ? (
+                                <h3>
+                                    {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle + " at " : professionData?.professionStatus?.profession}
+                                    <span
+                                        style={{
+                                            color: jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.companyColor : "green",
+                                        }}
+                                    >
+                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.company : ""}
+                                    </span>
+                                    {!jobData?.jobStatus?.jobTitle || !jobData?.jobStatus?.company ? (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                        </>
+                                    ) : (
+                                        ""
+                                    )}
+                                    <span
+                                        title={jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? "Currently employed" : "Currently unemployed"}
+                                        style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
+                                    >
+                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? " 💼" : " 📋"}
+                                    </span>
+                                </h3>
                             ) : (
-                                ""
-                            )}
-                            <span
-                                title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
-                                style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
-                            >
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
-                            </span>
-                        </h3>
+                                <h3
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        backdropFilter: "blur(15px)",
+                                        color: "red",
+                                        height: "fit-content",
+                                        width: "fit-content",
+                                        border: "1px solid red",
+                                        borderRadius: "5px",
+                                        padding: "5px",
+                                        animation: "none",
+                                    }}
+                                >
+                                    API DISCONNECTED!
+                                </h3>
+                            )
+                        ) : (
+                            <h3>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
+                                <span
+                                    style={{
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                                </span>
+                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                    <>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                        <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                    </>
+                                ) : (
+                                    ""
+                                )}
+                                <span
+                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                    style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
+                                </span>
+                            </h3>
+                        )}
                     </div>
                     <div className="professionContent">
-                        <div className="professionContentBox1">
-                            <p>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
-                                <span
-                                    style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
-                                    }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : info.LinkedIn.profession}
-                                </span>
-                                .
-                                <br />
-                                <br />I use technologies such as{" "}
-                                <span
-                                    style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
-                                    }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
-                                </span>
-                                .
-                                <br />
-                                <br />I also use tools such as{" "}
-                                <span
-                                    style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
-                                    }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
-                                </span>
-                                .
-                            </p>
+                        <div className="professionContentBox1" style={{ display: info.api.enabled && !professionData?.professionStatus && "none" }}>
+                            {info.api.enabled ? (
+                                professionData?.professionStatus && (
+                                    <p>
+                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                            ? "Currently working as a " + jobData?.jobStatus?.jobTitle + " at "
+                                            : "Currently looking for work as a "}
+                                        <span
+                                            style={{
+                                                color: jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.companyColor : "green",
+                                            }}
+                                        >
+                                            {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.company : professionData?.professionStatus?.profession}
+                                        </span>
+                                        .
+                                        <br />
+                                        <br />I use technologies such as{" "}
+                                        <span
+                                            style={{
+                                                color: jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.companyColor : "green",
+                                            }}
+                                        >
+                                            {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTechStack : professionData?.professionStatus?.professionTechStack}
+                                        </span>
+                                        .
+                                        <br />
+                                        <br />I also use tools such as{" "}
+                                        <span
+                                            style={{
+                                                color: jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.companyColor : "green",
+                                            }}
+                                        >
+                                            {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                                ? jobData?.jobStatus?.jobAdditionalTech
+                                                : professionData?.professionStatus?.professionAdditionalTech}
+                                        </span>
+                                        .
+                                    </p>
+                                )
+                            ) : (
+                                <p>
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
+                                    <span
+                                        style={{
+                                            color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                        }}
+                                    >
+                                        {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : info.LinkedIn.profession}
+                                    </span>
+                                    .
+                                    <br />
+                                    <br />I use technologies such as{" "}
+                                    <span
+                                        style={{
+                                            color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                        }}
+                                    >
+                                        {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
+                                    </span>
+                                    .
+                                    <br />
+                                    <br />I also use tools such as{" "}
+                                    <span
+                                        style={{
+                                            color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                        }}
+                                    >
+                                        {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
+                                    </span>
+                                    .
+                                </p>
+                            )}
                         </div>
-                        {info.LinkedIn.jobTitle && info.LinkedIn.company && (
-                            <div
-                                className="professionContentBox2"
-                                style={{
-                                    "--company-color": info.LinkedIn.companyColor,
-                                    backgroundImage: `url(${info.LinkedIn.companyLogo})`,
-                                    height: info.LinkedIn.companyLogoH,
-                                    width: info.LinkedIn.companyLogoW,
-                                    cursor: "pointer",
-                                }}
-                                onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
-                            />
-                        )}
+                        {info.api.enabled
+                            ? jobData?.jobStatus?.jobTitle &&
+                              jobData?.jobStatus?.company && (
+                                  <div
+                                      className="professionContentBox2"
+                                      style={{
+                                          "--company-color": jobData?.jobStatus?.companyColor,
+                                          backgroundImage: `url(${jobData?.jobStatus?.companyLogo})`,
+                                          height: jobData?.jobStatus?.companyLogoH,
+                                          width: jobData?.jobStatus?.companyLogoW,
+                                          cursor: "pointer",
+                                      }}
+                                      onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
+                                  />
+                              )
+                            : info.LinkedIn.jobTitle &&
+                              info.LinkedIn.company && (
+                                  <div
+                                      className="professionContentBox2"
+                                      style={{
+                                          "--company-color": info.LinkedIn.companyColor,
+                                          backgroundImage: `url(${info.LinkedIn.companyLogo})`,
+                                          height: info.LinkedIn.companyLogoH,
+                                          width: info.LinkedIn.companyLogoW,
+                                          cursor: "pointer",
+                                      }}
+                                      onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
+                                  />
+                              )}
                     </div>
                 </div>
             </section>

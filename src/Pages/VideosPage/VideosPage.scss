@@ -237,6 +237,25 @@
             transition: border 300ms;
             transition: filter 300ms;
 
+            .videoCoverTitle {
+                animation: fadeIn 0.3s;
+                background-color: #c4302b;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                h2 {
+                    display: block;
+                    color: white;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+
             .videoTitle {
                 background-color: #c4302b;
                 height: 20%;
@@ -356,6 +375,21 @@
         .video:hover {
             border: 1px solid lightcoral;
             filter: drop-shadow(0 0 2em #c4302b);
+        }
+
+        .video:hover .videoCoverTitle {
+            animation: fadeIn 0.3s;
+            display: none;
+        }
+
+        .video:hover .videoTitle {
+            animation: fadeIn 0.3s;
+            display: block;
+        }
+
+        .video:hover .videoContent {
+            animation: fadeIn 0.3s;
+            display: block;
         }
 
         .noVideosYet {

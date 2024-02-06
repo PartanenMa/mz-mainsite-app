@@ -16,6 +16,7 @@ function VideosPageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [loadingData, setLoadingData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -24,11 +25,38 @@ function VideosPageAdmin() {
         type: "",
     });
 
-    useEffect(() => {
-        setTimeout(() => {
-            setVideos(data.videosData);
+    const getVideos = async () => {
+        let statusCode;
+
+        try {
+            await fetch("/videos")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setTimeout(() => {
+                        setVideos(data.videosData);
+                        setStatusDB(true);
+                        setLoadingData(false);
+                    }, 1000);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
             setLoadingData(false);
-        }, [1000]);
+        }
+    };
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            getVideos();
+        } else {
+            setTimeout(() => {
+                setVideos(data.videosData);
+                setLoadingData(false);
+            }, 1000);
+        }
     }, []);
 
     useEffect(() => {
@@ -72,8 +100,8 @@ function VideosPageAdmin() {
                                 <h2>Admin / videos</h2>
                             </div>
                             <VideosPageTitle />
-                            <AboutMyVideos loadingData={loadingData} />
-                            <MyVideos loadingData={loadingData} videos={videos} />
+                            <AboutMyVideos />
+                            <MyVideos loadingData={loadingData} statusDB={statusDB} videos={videos} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -100,14 +128,11 @@ function VideosPageTitle() {
     );
 }
 
-function AboutMyVideos({ loadingData }) {
+function AboutMyVideos() {
     return (
         <div className="aboutMyVideosContainer">
             <div className="aboutMyVideosTitle">
-                <h3>
-                    ABOUT MY VIDEOS
-                    <DBstate loading={loadingData} />
-                </h3>
+                <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="aboutMyVideosContent">
                 <AnimatePresence>
@@ -146,13 +171,13 @@ function AboutMyVideos({ loadingData }) {
     );
 }
 
-function MyVideos({ loadingData, videos }) {
+function MyVideos({ loadingData, statusDB, videos }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
                 <h3>
                     MY VIDEOS
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="videosContent">
@@ -170,6 +195,9 @@ function MyVideos({ loadingData, videos }) {
                                         transition: { duration: 0.1 },
                                     }}
                                 >
+                                    <div className="videoCoverTitle">
+                                        <h2>{video.title}</h2>
+                                    </div>
                                     <div className="videoTitle">
                                         <h4>{video.title}</h4>
                                     </div>

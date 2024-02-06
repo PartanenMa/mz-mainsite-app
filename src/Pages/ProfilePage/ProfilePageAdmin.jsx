@@ -16,6 +16,9 @@ function ProfilePageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [loadingData, setLoadingData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
+    const [professionData, setProfessionData] = useState([]);
+    const [jobData, setJobData] = useState([]);
     const [languages, setLanguages] = useState([]);
     const [educations, setEducations] = useState([]);
     const [skills, setSkills] = useState([]);
@@ -27,14 +30,82 @@ function ProfilePageAdmin() {
         type: "",
     });
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLanguages(data.profileData.languages);
-            setEducations(data.profileData.educations);
-            setSkills(data.profileData.skills);
-            setExperiences(data.profileData.experiences);
+    const getProfession = () => {
+        let statusCode;
+
+        try {
+            fetch("/profession")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setProfessionData(data);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
+
+    const getJob = () => {
+        let statusCode;
+
+        try {
+            fetch("/job")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setJobData(data);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
+        }
+    };
+
+    const getProfile = async () => {
+        let statusCode;
+
+        try {
+            await fetch("/profile")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setTimeout(() => {
+                        setLanguages(data.profileData.languages);
+                        setEducations(data.profileData.educations);
+                        setSkills(data.profileData.skills);
+                        setExperiences(data.profileData.experiences);
+                        setStatusDB(true);
+                        setLoadingData(false);
+                    }, 1000);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
             setLoadingData(false);
-        }, [1000]);
+        }
+    };
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProfession();
+            getJob();
+            getProfile();
+        } else {
+            setTimeout(() => {
+                setLanguages(data.profileData.languages);
+                setEducations(data.profileData.educations);
+                setSkills(data.profileData.skills);
+                setExperiences(data.profileData.experiences);
+                setLoadingData(false);
+            }, 1000);
+        }
     }, []);
 
     useEffect(() => {
@@ -78,11 +149,11 @@ function ProfilePageAdmin() {
                                 <h2>Admin / profile</h2>
                             </div>
                             <ProfileAdminPageTitle />
-                            <AboutMe loadingData={loadingData} />
-                            <Languages loadingData={loadingData} languages={languages} />
-                            <Education loadingData={loadingData} educations={educations} />
-                            <Skills loadingData={loadingData} skills={skills} />
-                            <Experience loadingData={loadingData} experiences={experiences} />
+                            <AboutMe professionData={professionData} jobData={jobData} />
+                            <Languages loadingData={loadingData} statusDB={statusDB} languages={languages} />
+                            <Education loadingData={loadingData} statusDB={statusDB} educations={educations} />
+                            <Skills loadingData={loadingData} statusDB={statusDB} skills={skills} />
+                            <Experience loadingData={loadingData} statusDB={statusDB} experiences={experiences} />
                             <Interests />
                             <Hobbies />
                             <ContactMe />
@@ -112,14 +183,23 @@ function ProfileAdminPageTitle() {
     );
 }
 
-function AboutMe({ loadingData }) {
+function AboutMe({ professionData, jobData }) {
+    let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
+    let description2 =
+        "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
+        (jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStackFe : professionData?.professionStatus?.professionTechStackFe) +
+        ". On the back-end, I'm currently working with " +
+        (jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStackBe : professionData?.professionStatus?.professionTechStackBe) +
+        ". " +
+        (jobData?.jobStatus?.employed ? "Besides my job, " : "") +
+        "I love working on my own projects during my free time using the skills that I've gained, and enjoy learning new tools and technologies while doing so.";
+    let description3 =
+        "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.";
+
     return (
         <div className="aboutMeContainer">
             <div className="aboutMeTitle">
-                <h3>
-                    ABOUT ME
-                    <DBstate loading={loadingData} />
-                </h3>
+                <h3>ABOUT ME</h3>
             </div>
             <div className="aboutMeContent">
                 <AnimatePresence>
@@ -139,18 +219,42 @@ function AboutMe({ loadingData }) {
                 <div className="aboutMeTextContainer">
                     <div className="aboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
-                        <h4 className="h4_2">{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}</h4>
+                        {info.api.enabled ? (
+                            <h4 className="h4_2">
+                                {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                    ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                    : professionData?.professionStatus?.profession}
+                            </h4>
+                        ) : (
+                            <h4 className="h4_2">
+                                {data.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
+                            </h4>
+                        )}
                     </div>
                     <div className="aboutMeText">
-                        <p>
-                            {info.LinkedIn.description1}
-                            <br />
-                            <br />
-                            {info.LinkedIn.description2}
-                            <br />
-                            <br />
-                            {info.LinkedIn.description3}
-                        </p>
+                        {info.api.enabled ? (
+                            professionData?.professionStatus && (
+                                <p>
+                                    {description1}
+                                    <br />
+                                    <br />
+                                    {description2}
+                                    <br />
+                                    <br />
+                                    {description3}
+                                </p>
+                            )
+                        ) : (
+                            <p>
+                                {info.LinkedIn.description1}
+                                <br />
+                                <br />
+                                {info.LinkedIn.description2}
+                                <br />
+                                <br />
+                                {info.LinkedIn.description3}
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>
@@ -158,13 +262,13 @@ function AboutMe({ loadingData }) {
     );
 }
 
-function Languages({ loadingData, languages }) {
+function Languages({ loadingData, statusDB, languages }) {
     return (
         <div className="languagesContainer">
             <div className="languagesTitle">
                 <h3>
                     MY LANGUAGES
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="languagesContent">
@@ -200,7 +304,7 @@ function Languages({ loadingData, languages }) {
     );
 }
 
-function Education({ loadingData, educations }) {
+function Education({ loadingData, statusDB, educations }) {
     const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
 
     const openOrCloseEducation = (index) => {
@@ -214,7 +318,7 @@ function Education({ loadingData, educations }) {
             <div className="educationsTitle">
                 <h3>
                     MY EDUCATION
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="educationsContent">
@@ -274,7 +378,7 @@ function Education({ loadingData, educations }) {
     );
 }
 
-function Skills({ loadingData, skills }) {
+function Skills({ loadingData, statusDB, skills }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -328,7 +432,7 @@ function Skills({ loadingData, skills }) {
             <div className="skillsTitle">
                 <h3>
                     SKILLS
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="skillsContent">
@@ -583,7 +687,7 @@ function Skills({ loadingData, skills }) {
     );
 }
 
-function Experience({ loadingData, experiences }) {
+function Experience({ loadingData, statusDB, experiences }) {
     const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
 
     const openOrCloseExperience = (index) => {
@@ -597,7 +701,7 @@ function Experience({ loadingData, experiences }) {
             <div className="experiencesTitle">
                 <h3>
                     MY EXPERIENCE
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="experiencesContent">
@@ -623,7 +727,7 @@ function Experience({ loadingData, experiences }) {
                                 <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
                                     <p>{experience.workTitle}</p>
                                     <p>{experience.workTimeAndPlace}</p>
-                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})` }} />
+                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})`, backgroundColor: !experience.image && experience.color }} />
                                 </div>
                                 <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     <p>{experience.workDescription}</p>

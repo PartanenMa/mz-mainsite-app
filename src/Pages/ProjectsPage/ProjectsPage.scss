@@ -236,7 +236,27 @@
             transition: border 300ms;
             transition: filter 300ms;
 
+            .projectCoverTitle {
+                animation: fadeIn 0.3s;
+                background-color: black;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                h2 {
+                    display: block;
+                    color: white;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+
             .projectTitle {
+                display: none;
                 background-color: black;
                 height: 20%;
                 width: 100%;
@@ -254,6 +274,7 @@
             }
 
             .projectContent {
+                display: none;
                 height: 80%;
                 width: 100%;
                 border-top: 1px solid gray;
@@ -355,6 +376,21 @@
         .project:hover {
             border: 1px solid gray;
             filter: drop-shadow(0 0 2em black);
+        }
+
+        .project:hover .projectCoverTitle {
+            animation: fadeIn 0.3s;
+            display: none;
+        }
+
+        .project:hover .projectTitle {
+            animation: fadeIn 0.3s;
+            display: block;
+        }
+
+        .project:hover .projectContent {
+            animation: fadeIn 0.3s;
+            display: block;
         }
 
         .noProjectsYet {

@@ -1,7 +1,11 @@
 import { data } from "./Data.jsx";
+import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
+import SassLogo from "/src/Assets/Images/SassLogo.svg";
+import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
+import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
 export const info = {
-    version: "Release 1.0.17",
+    version: "Release 1.0.18",
     routes: {
         frontPage: "/MatrixZone-UI/",
         loginPage: "/MatrixZone-UI/login",
@@ -22,6 +26,40 @@ export const info = {
         cvPage: "/MatrixZone-UI/cv",
         cvPageAdmin: "/MatrixZone-UI/admin/cv",
     },
+    devLogin: {
+        enabled: false,
+        adminUserName: "AdminDev",
+        adminPassword: "admindev",
+    },
+    api: {
+        enabled: false,
+    },
+    technologiesUsed: [
+        {
+            name: "React",
+            color: "#61DBFB",
+            image: ReactLogo,
+            size: "80%",
+        },
+        {
+            name: "Sass",
+            color: "#cc6699",
+            image: SassLogo,
+            size: "80%",
+        },
+        /*{
+            name: "Express.js",
+            color: "#808080",
+            image: ExpressjsLogo,
+            size: "70%",
+        },
+        {
+            name: "MongoDB",
+            color: "#4DB33D",
+            image: MongoDBLogo,
+            size: "60%",
+        },*/
+    ],
     fpModalText: {
         introduction:
             "Welcome to the MatrixZone, my personal website, and your gateway to discovering the world of software development through my unique perspective. Whether you're a potential client, collaborator, or simply curious about the possibilities of programming, MatrixZone is your one-stop destination to discover the power of my expertise.",
@@ -30,11 +68,6 @@ export const info = {
         projects:
             "MatrixZone is not just a showcase of my skills; it's a testament to my dedication and commitment to excellence. Through a carefully curated collection of projects, you'll gain insight into my problem-solving abilities, attention to detail, and ability to tackle complex challenges head-on.",
         //videos: "But that's not all. MatrixZone also offers a glimpse into my journey as a software developer through captivating videos. From behind-the-scenes looks at my projects to thought-provoking discussions on industry trends, these videos provide a window into my world and the passion that drives me.",
-    },
-    loginInfo: {
-        enabled: false,
-        adminUserName: "AdminDev",
-        adminPassword: "admindev",
     },
     LinkedIn: {
         //Account data:

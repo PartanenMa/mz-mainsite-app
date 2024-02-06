@@ -1,9 +1,9 @@
-import { data } from "/src/Constants/Data.jsx";
+import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./DBstate.scss";
 
 function DBstate(props) {
-    return data.statusDB !== "disabled" && <Status props={props} />;
+    return info.api.enabled && <Status props={props} />;
 }
 
 function Status({ props }) {
@@ -11,8 +11,8 @@ function Status({ props }) {
         <div className="loader"></div>
     ) : (
         <AnimatePresence>
-            <motion.span className={data?.statusDB ? "titleDBstateMain" : "titleDBstateBackup"} key="titledb" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                FROM: {data?.statusDB ? "DB MAIN" : "DB BACKUP"}
+            <motion.span className={props.statusDB ? "titleDBstateMain" : "titleDBstateBackup"} key="titledb" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                DATA FETCH {props.statusDB ? "SUCCESS" : "FAILED"}
             </motion.span>
         </AnimatePresence>
     );

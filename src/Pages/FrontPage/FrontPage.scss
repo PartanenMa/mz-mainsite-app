@@ -616,6 +616,42 @@
                                 filter: drop-shadow(0 0 2em var(--tech-color));
                             }
 
+                            .loadingTechData {
+                                height: 300px;
+                                width: 95%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .loaderTech {
+                                    border: 16px solid #f3f3f3;
+                                    border-radius: 50%;
+                                    border-top: 16px solid darkblue;
+                                    width: 120px;
+                                    height: 120px;
+                                    -webkit-animation: spin 2s linear infinite;
+                                    animation: spin 2s linear infinite;
+                                }
+
+                                @-webkit-keyframes spin {
+                                    0% {
+                                        -webkit-transform: rotate(0deg);
+                                    }
+                                    100% {
+                                        -webkit-transform: rotate(360deg);
+                                    }
+                                }
+
+                                @keyframes spin {
+                                    0% {
+                                        transform: rotate(0deg);
+                                    }
+                                    100% {
+                                        transform: rotate(360deg);
+                                    }
+                                }
+                            }
+
                             .noTechData {
                                 height: 90%;
                                 width: 90%;
@@ -715,6 +751,42 @@
 
                             .tech:hover {
                                 filter: drop-shadow(0 0 2em var(--tech-color));
+                            }
+
+                            .loadingTechData {
+                                height: 300px;
+                                width: 95%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .loaderTech {
+                                    border: 16px solid #f3f3f3;
+                                    border-radius: 50%;
+                                    border-top: 16px solid darkred;
+                                    width: 120px;
+                                    height: 120px;
+                                    -webkit-animation: spin 2s linear infinite;
+                                    animation: spin 2s linear infinite;
+                                }
+
+                                @-webkit-keyframes spin {
+                                    0% {
+                                        -webkit-transform: rotate(0deg);
+                                    }
+                                    100% {
+                                        -webkit-transform: rotate(360deg);
+                                    }
+                                }
+
+                                @keyframes spin {
+                                    0% {
+                                        transform: rotate(0deg);
+                                    }
+                                    100% {
+                                        transform: rotate(360deg);
+                                    }
+                                }
                             }
 
                             .noTechData {

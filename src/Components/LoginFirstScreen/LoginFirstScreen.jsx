@@ -56,8 +56,8 @@ function LoginSection() {
         togglePassword;
         const username = userValue;
         const password = passwordValue;
-        if (info.loginInfo.enabled) {
-            if (username === info.loginInfo.adminUserName && password === info.loginInfo.adminPassword) {
+        if (info.devLogin.enabled) {
+            if (username === info.devLogin.adminUserName && password === info.devLogin.adminPassword) {
                 sessionStorage.setItem("isLoggedIn", "true");
                 sessionStorage.setItem("load", "true");
                 navigate(location.pathname);

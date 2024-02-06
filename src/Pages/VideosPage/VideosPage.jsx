@@ -7,21 +7,49 @@ import "./VideosPage.scss";
 
 function VideosPage() {
     const [loadingData, setLoadingData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setVideos(data.videosData);
+    const getVideos = async () => {
+        let statusCode;
+
+        try {
+            await fetch("/videos")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setTimeout(() => {
+                        setVideos(data.videosData);
+                        setStatusDB(true);
+                        setLoadingData(false);
+                    }, 1000);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
             setLoadingData(false);
-        }, [1000]);
+        }
+    };
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            getVideos();
+        } else {
+            setTimeout(() => {
+                setVideos(data.videosData);
+                setLoadingData(false);
+            }, 1000);
+        }
     }, []);
 
     return (
         <div className="vP">
             <div className="videosPageContainer">
                 <VideosPageTitle />
-                <AboutMyVideos loadingData={loadingData} />
-                <Videos loadingData={loadingData} videos={videos} />
+                <AboutMyVideos />
+                <Videos loadingData={loadingData} statusDB={statusDB} videos={videos} />
             </div>
         </div>
     );
@@ -35,14 +63,11 @@ function VideosPageTitle() {
     );
 }
 
-function AboutMyVideos({ loadingData }) {
+function AboutMyVideos() {
     return (
         <div className="aboutMyVideosContainer">
             <div className="aboutMyVideosTitle">
-                <h3>
-                    ABOUT MY VIDEOS
-                    <DBstate loading={loadingData} />
-                </h3>
+                <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="aboutMyVideosContent">
                 <AnimatePresence>
@@ -81,13 +106,13 @@ function AboutMyVideos({ loadingData }) {
     );
 }
 
-function Videos({ loadingData, videos }) {
+function Videos({ loadingData, statusDB, videos }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
                 <h3>
                     VIDEOS
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="videosContent">
@@ -105,6 +130,9 @@ function Videos({ loadingData, videos }) {
                                         transition: { duration: 0.1 },
                                     }}
                                 >
+                                    <div className="videoCoverTitle">
+                                        <h2>{video.title}</h2>
+                                    </div>
                                     <div className="videoTitle">
                                         <h4>{video.title}</h4>
                                     </div>

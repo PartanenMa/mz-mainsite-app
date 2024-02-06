@@ -7,21 +7,49 @@ import "./ProjectsPage.scss";
 
 function ProjectsPage() {
     const [loadingData, setLoadingData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setProjects(data.projectsData);
+    const getProjects = async () => {
+        let statusCode;
+
+        try {
+            await fetch("/projects")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setTimeout(() => {
+                        setProjects(data.projectsData);
+                        setStatusDB(true);
+                        setLoadingData(false);
+                    }, 1000);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
             setLoadingData(false);
-        }, [1000]);
+        }
+    };
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProjects();
+        } else {
+            setTimeout(() => {
+                setProjects(data.projectsData);
+                setLoadingData(false);
+            }, 1000);
+        }
     }, []);
 
     return (
         <div className="pJP">
             <div className="projectsPageContainer">
                 <ProjectsPageTitle />
-                <AboutMyProjects loadingData={loadingData} />
-                <Projects loadingData={loadingData} projects={projects} />
+                <AboutMyProjects />
+                <Projects loadingData={loadingData} statusDB={statusDB} projects={projects} />
             </div>
         </div>
     );
@@ -35,14 +63,11 @@ function ProjectsPageTitle() {
     );
 }
 
-function AboutMyProjects({ loadingData }) {
+function AboutMyProjects() {
     return (
         <div className="aboutMyProjectsContainer">
             <div className="aboutMyProjectsTitle">
-                <h3>
-                    ABOUT MY PROJECTS
-                    <DBstate loading={loadingData} />
-                </h3>
+                <h3>ABOUT MY PROJECTS</h3>
             </div>
             <div className="aboutMyProjectsContent">
                 <AnimatePresence>
@@ -81,13 +106,13 @@ function AboutMyProjects({ loadingData }) {
     );
 }
 
-function Projects({ loadingData, projects }) {
+function Projects({ loadingData, statusDB, projects }) {
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
                 <h3>
                     PROJECTS
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="projectsContent">
@@ -105,6 +130,9 @@ function Projects({ loadingData, projects }) {
                                         transition: { duration: 0.1 },
                                     }}
                                 >
+                                    <div className="projectCoverTitle">
+                                        <h2>{project.title}</h2>
+                                    </div>
                                     <div className="projectTitle">
                                         <h4>{project.title}</h4>
                                     </div>

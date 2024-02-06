@@ -6,13 +6,41 @@ import "./GoalsPage.scss";
 
 function GoalsPage() {
     const [loadingData, setLoadingData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setGoals(data.goalsData);
+    const getGoals = async () => {
+        let statusCode;
+
+        try {
+            await fetch("/goals")
+                .then((res) => {
+                    statusCode = res.status;
+                    return res.json();
+                })
+                .then((data) => {
+                    setTimeout(() => {
+                        setGoals(data.goalsData);
+                        setStatusDB(true);
+                        setLoadingData(false);
+                    }, 1000);
+                });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            console.error("Status code:", statusCode);
             setLoadingData(false);
-        }, [1000]);
+        }
+    };
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            getGoals();
+        } else {
+            setTimeout(() => {
+                setGoals(data.goalsData);
+                setLoadingData(false);
+            }, 1000);
+        }
     }, []);
 
     return (
@@ -20,7 +48,7 @@ function GoalsPage() {
             <div className="goalsPageContainer">
                 <GoalsPageTitle />
                 <GoalsCount loadingData={loadingData} goals={goals} />
-                {data.statusDB !== "disabled" && <GoalsStatus loadingData={loadingData} />}
+                <GoalsStatus loadingData={loadingData} statusDB={statusDB} />
                 <GoalsPageContent loadingData={loadingData} goals={goals} />
             </div>
         </div>
@@ -99,18 +127,19 @@ function GoalsCount({ loadingData, goals }) {
     );
 }
 
-function GoalsStatus({ loadingData }) {
+function GoalsStatus({ loadingData, statusDB }) {
     return (
-        !loadingData && (
+        !loadingData &&
+        info.api.enabled && (
             <AnimatePresence>
                 <motion.div className="goalsStatusContainer" key="gstatuscont" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    {data?.statusDB ? (
+                    {statusDB ? (
                         <motion.p className="gStatus1" key="goalstatus1" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                            FROM: DB MAIN
+                            DATA FETCH SUCCESS
                         </motion.p>
                     ) : (
                         <motion.p className="gStatus2" key="goalstatus2" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                            FROM: DB BACKUP
+                            DATA FETCH FAILED
                         </motion.p>
                     )}
                 </motion.div>
@@ -165,7 +194,7 @@ function GoalsPageContent({ loadingData, goals }) {
                         <div className="loaderGoals" />
                     </motion.div>
                 ) : (
-                    <motion.div className="noGoalsData" key="nogoalsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                    <motion.div className="noGoalsData" key="nogoalsdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                         <h4>NO DATA!</h4>
                     </motion.div>
                 )}
