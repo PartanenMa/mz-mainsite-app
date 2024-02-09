@@ -25,6 +25,17 @@ function VideosPageAdmin() {
         type: "",
     });
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getVideos();
+        } else {
+            setTimeout(() => {
+                setVideos(data.videosData);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getVideos = async () => {
         let statusCode;
 
@@ -47,17 +58,6 @@ function VideosPageAdmin() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getVideos();
-        } else {
-            setTimeout(() => {
-                setVideos(data.videosData);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     useEffect(() => {
         if (isLoggedIn === "true") {

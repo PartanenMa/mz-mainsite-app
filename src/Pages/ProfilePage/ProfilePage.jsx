@@ -15,6 +15,22 @@ function ProfilePage() {
     const [skills, setSkills] = useState([]);
     const [experiences, setExperiences] = useState([]);
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProfession();
+            getJob();
+            getProfile();
+        } else {
+            setTimeout(() => {
+                setLanguages(data.profileData.languages);
+                setEducations(data.profileData.educations);
+                setSkills(data.profileData.skills);
+                setExperiences(data.profileData.experiences);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getProfession = () => {
         let statusCode;
 
@@ -76,22 +92,6 @@ function ProfilePage() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getProfession();
-            getJob();
-            getProfile();
-        } else {
-            setTimeout(() => {
-                setLanguages(data.profileData.languages);
-                setEducations(data.profileData.educations);
-                setSkills(data.profileData.skills);
-                setExperiences(data.profileData.experiences);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     return (
         <div className="pFP">

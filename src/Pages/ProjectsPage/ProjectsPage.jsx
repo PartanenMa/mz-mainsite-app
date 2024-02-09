@@ -10,6 +10,17 @@ function ProjectsPage() {
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProjects();
+        } else {
+            setTimeout(() => {
+                setProjects(data.projectsData);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getProjects = async () => {
         let statusCode;
 
@@ -32,17 +43,6 @@ function ProjectsPage() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getProjects();
-        } else {
-            setTimeout(() => {
-                setProjects(data.projectsData);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     return (
         <div className="pJP">

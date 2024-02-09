@@ -25,6 +25,17 @@ function ProjectsPageAdmin() {
         type: "",
     });
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProjects();
+        } else {
+            setTimeout(() => {
+                setProjects(data.projectsData);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getProjects = async () => {
         let statusCode;
 
@@ -47,17 +58,6 @@ function ProjectsPageAdmin() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getProjects();
-        } else {
-            setTimeout(() => {
-                setProjects(data.projectsData);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     useEffect(() => {
         if (isLoggedIn === "true") {

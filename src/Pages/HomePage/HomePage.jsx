@@ -12,6 +12,13 @@ function HomePage() {
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProfession();
+            getJob();
+        }
+    }, []);
+
     const getProfession = () => {
         let statusCode;
 
@@ -47,13 +54,6 @@ function HomePage() {
             console.error("Status code:", statusCode);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getProfession();
-            getJob();
-        }
-    }, []);
 
     return (
         <div className="hP">

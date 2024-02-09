@@ -9,6 +9,17 @@ function GoalsPage() {
     const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getGoals();
+        } else {
+            setTimeout(() => {
+                setGoals(data.goalsData);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getGoals = async () => {
         let statusCode;
 
@@ -31,17 +42,6 @@ function GoalsPage() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getGoals();
-        } else {
-            setTimeout(() => {
-                setGoals(data.goalsData);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     return (
         <div className="gP">

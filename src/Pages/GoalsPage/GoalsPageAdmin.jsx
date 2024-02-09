@@ -24,6 +24,17 @@ function GoalsPageAdmin() {
         type: "",
     });
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getGoals();
+        } else {
+            setTimeout(() => {
+                setGoals(data.goalsData);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getGoals = async () => {
         let statusCode;
 
@@ -46,17 +57,6 @@ function GoalsPageAdmin() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getGoals();
-        } else {
-            setTimeout(() => {
-                setGoals(data.goalsData);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     useEffect(() => {
         if (isLoggedIn === "true") {

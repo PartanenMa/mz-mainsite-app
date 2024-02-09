@@ -5,15 +5,15 @@ import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
 //Education:
 import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
+//Skills (basic programming languages):
+import CppLogo from "/src/Assets/Images/CppLogo.svg";
+import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
 //Skills (scripting):
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
 //Skills (utility software):
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
-//Skills (basic programming languages):
-import CppLogo from "/src/Assets/Images/CppLogo.svg";
-import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
 //Skills (front-end development):
 import HTMLLogo from "/src/Assets/Images/HTMLLogo.svg";
 import CSSLogo from "/src/Assets/Images/CSSLogo.svg";

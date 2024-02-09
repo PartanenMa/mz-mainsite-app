@@ -3,11 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { data } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
-import SassLogo from "/src/Assets/Images/SassLogo.svg";
-import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
-import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
-import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 import "./FrontPage.scss";
 
 function FrontPage() {

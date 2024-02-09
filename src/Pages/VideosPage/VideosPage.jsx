@@ -10,6 +10,17 @@ function VideosPage() {
     const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getVideos();
+        } else {
+            setTimeout(() => {
+                setVideos(data.videosData);
+                setLoadingData(false);
+            }, 1000);
+        }
+    }, []);
+
     const getVideos = async () => {
         let statusCode;
 
@@ -32,17 +43,6 @@ function VideosPage() {
             setLoadingData(false);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getVideos();
-        } else {
-            setTimeout(() => {
-                setVideos(data.videosData);
-                setLoadingData(false);
-            }, 1000);
-        }
-    }, []);
 
     return (
         <div className="vP">

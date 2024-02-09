@@ -29,6 +29,13 @@ function HomePageAdmin() {
         type: "",
     });
 
+    useEffect(() => {
+        if (info.api.enabled) {
+            getProfession();
+            getJob();
+        }
+    }, []);
+
     const getProfession = () => {
         let statusCode;
 
@@ -64,13 +71,6 @@ function HomePageAdmin() {
             console.error("Status code:", statusCode);
         }
     };
-
-    useEffect(() => {
-        if (info.api.enabled) {
-            getProfession();
-            getJob();
-        }
-    }, []);
 
     useEffect(() => {
         if (isLoggedIn === "true") {
