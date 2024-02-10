@@ -37,7 +37,7 @@ import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 //Experience:
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
-export const data = {
+export const dataFe = {
     professionStatus: {
         profession: "Software Developer",
         professionDetailed: "Web Developer",

@@ -7,7 +7,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.scss";
 
@@ -15,7 +15,7 @@ function ProfilePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingProfessionData, setLoadingProfessionData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
@@ -37,20 +37,20 @@ function ProfilePageAdmin() {
             getProfile();
         } else {
             setTimeout(() => {
-                setLanguages(data.profileData.languages);
-                setEducations(data.profileData.educations);
-                setSkills(data.profileData.skills);
-                setExperiences(data.profileData.experiences);
-                setLoadingData(false);
+                setLanguages(dataFe.profileData.languages);
+                setEducations(dataFe.profileData.educations);
+                setSkills(dataFe.profileData.skills);
+                setExperiences(dataFe.profileData.experiences);
+                setLoadingProfessionData(false);
             }, 1000);
         }
     }, []);
 
-    const getProfession = () => {
+    const getProfession = async () => {
         let statusCode;
 
         try {
-            fetch("/profession")
+            await fetch("/profession")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -59,16 +59,16 @@ function ProfilePageAdmin() {
                     setProfessionData(data);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching profession data:", error);
             console.error("Status code:", statusCode);
         }
     };
 
-    const getJob = () => {
+    const getJob = async () => {
         let statusCode;
 
         try {
-            fetch("/job")
+            await fetch("/job")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -77,7 +77,7 @@ function ProfilePageAdmin() {
                     setJobData(data);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching job data:", error);
             console.error("Status code:", statusCode);
         }
     };
@@ -98,13 +98,13 @@ function ProfilePageAdmin() {
                         setSkills(data.profileData.skills);
                         setExperiences(data.profileData.experiences);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingProfessionData(false);
                     }, 1000);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching profile data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingProfessionData(false);
         }
     };
 
@@ -150,10 +150,10 @@ function ProfilePageAdmin() {
                             </div>
                             <ProfileAdminPageTitle />
                             <AboutMe professionData={professionData} jobData={jobData} />
-                            <Languages loadingData={loadingData} statusDB={statusDB} languages={languages} />
-                            <Education loadingData={loadingData} statusDB={statusDB} educations={educations} />
-                            <Skills loadingData={loadingData} statusDB={statusDB} skills={skills} />
-                            <Experience loadingData={loadingData} statusDB={statusDB} experiences={experiences} />
+                            <Languages loadingProfessionData={loadingProfessionData} statusDB={statusDB} languages={languages} />
+                            <Education loadingProfessionData={loadingProfessionData} statusDB={statusDB} educations={educations} />
+                            <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
+                            <Experience loadingProfessionData={loadingProfessionData} statusDB={statusDB} experiences={experiences} />
                             <Interests />
                             <Hobbies />
                             <ContactMe />
@@ -220,14 +220,20 @@ function AboutMe({ professionData, jobData }) {
                     <div className="aboutMeTextTitle">
                         <h4 className="h4_1">{info.LinkedIn.name}</h4>
                         {info.api.enabled ? (
-                            <h4 className="h4_2">
-                                {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
-                                    ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
-                                    : professionData?.professionStatus?.profession}
-                            </h4>
+                            professionData?.professionStatus || jobData?.jobStatus ? (
+                                <h4 className="h4_2">
+                                    {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                        ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                        : professionData?.professionStatus?.profession}
+                                </h4>
+                            ) : (
+                                <h4 className="h4_2" style={{ color: "red", textShadow: "none" }}>
+                                    API DISCONNECTED!
+                                </h4>
+                            )
                         ) : (
                             <h4 className="h4_2">
-                                {data.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
+                                {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
                             </h4>
                         )}
                     </div>
@@ -262,13 +268,13 @@ function AboutMe({ professionData, jobData }) {
     );
 }
 
-function Languages({ loadingData, statusDB, languages }) {
+function Languages({ loadingProfessionData, statusDB, languages }) {
     return (
         <div className="languagesContainer">
             <div className="languagesTitle">
                 <h3>
                     MY LANGUAGES
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="languagesContent">
@@ -289,7 +295,7 @@ function Languages({ loadingData, statusDB, languages }) {
                                 </div>
                             </motion.div>
                         ))
-                    ) : loadingData ? (
+                    ) : loadingProfessionData ? (
                         <motion.div className="loadingProfileData" key="loadinglangprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProfile" />
                         </motion.div>
@@ -304,7 +310,7 @@ function Languages({ loadingData, statusDB, languages }) {
     );
 }
 
-function Education({ loadingData, statusDB, educations }) {
+function Education({ loadingProfessionData, statusDB, educations }) {
     const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
 
     const openOrCloseEducation = (index) => {
@@ -318,7 +324,7 @@ function Education({ loadingData, statusDB, educations }) {
             <div className="educationsTitle">
                 <h3>
                     MY EDUCATION
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="educationsContent">
@@ -363,7 +369,7 @@ function Education({ loadingData, statusDB, educations }) {
                                 </div>
                             </motion.div>
                         ))
-                    ) : loadingData ? (
+                    ) : loadingProfessionData ? (
                         <motion.div className="loadingProfileData" key="loadingedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProfile" />
                         </motion.div>
@@ -378,7 +384,7 @@ function Education({ loadingData, statusDB, educations }) {
     );
 }
 
-function Skills({ loadingData, statusDB, skills }) {
+function Skills({ loadingProfessionData, statusDB, skills }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -432,7 +438,7 @@ function Skills({ loadingData, statusDB, skills }) {
             <div className="skillsTitle">
                 <h3>
                     SKILLS
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="skillsContent">
@@ -465,7 +471,7 @@ function Skills({ loadingData, statusDB, skills }) {
                                         </div>
                                     </motion.div>
                                 ))
-                            ) : loadingData ? (
+                            ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingbplprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -506,7 +512,7 @@ function Skills({ loadingData, statusDB, skills }) {
                                         </div>
                                     </motion.div>
                                 ))
-                            ) : loadingData ? (
+                            ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingscrprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -547,7 +553,7 @@ function Skills({ loadingData, statusDB, skills }) {
                                         </div>
                                     </motion.div>
                                 ))
-                            ) : loadingData ? (
+                            ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingutilsofprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -588,7 +594,7 @@ function Skills({ loadingData, statusDB, skills }) {
                                         </div>
                                     </motion.div>
                                 ))
-                            ) : loadingData ? (
+                            ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingfedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -629,7 +635,7 @@ function Skills({ loadingData, statusDB, skills }) {
                                         </div>
                                     </motion.div>
                                 ))
-                            ) : loadingData ? (
+                            ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingbedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -670,7 +676,7 @@ function Skills({ loadingData, statusDB, skills }) {
                                         </div>
                                     </motion.div>
                                 ))
-                            ) : loadingData ? (
+                            ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingwdsprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -687,7 +693,7 @@ function Skills({ loadingData, statusDB, skills }) {
     );
 }
 
-function Experience({ loadingData, statusDB, experiences }) {
+function Experience({ loadingProfessionData, statusDB, experiences }) {
     const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
 
     const openOrCloseExperience = (index) => {
@@ -701,7 +707,7 @@ function Experience({ loadingData, statusDB, experiences }) {
             <div className="experiencesTitle">
                 <h3>
                     MY EXPERIENCE
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="experiencesContent">
@@ -737,7 +743,7 @@ function Experience({ loadingData, statusDB, experiences }) {
                                 </div>
                             </motion.div>
                         ))
-                    ) : loadingData ? (
+                    ) : loadingProfessionData ? (
                         <motion.div className="loadingProfileData" key="loadingexpprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProfile" />
                         </motion.div>

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./FrontPage.scss";
 
 function FrontPage() {
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingTechnologiesData, setLoadingTechnologiesData] = useState(true);
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
     const [technologiesFe, setTechnologiesFe] = useState([]);
@@ -14,11 +14,11 @@ function FrontPage() {
     const [showFrontEnd, setShowFrontEnd] = useState(false);
     const [showBackEnd, setShowBackEnd] = useState(false);
 
-    const getProfession = () => {
+    const getProfession = async () => {
         let statusCode;
 
         try {
-            fetch("/profession")
+            await fetch("/profession")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -27,16 +27,16 @@ function FrontPage() {
                     setProfessionData(data);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching profession data:", error);
             console.error("Status code:", statusCode);
         }
     };
 
-    const getJob = () => {
+    const getJob = async () => {
         let statusCode;
 
         try {
-            fetch("/job")
+            await fetch("/job")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -45,16 +45,16 @@ function FrontPage() {
                     setJobData(data);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching job data:", error);
             console.error("Status code:", statusCode);
         }
     };
 
-    const getTechnologies = () => {
+    const getTechnologies = async () => {
         let statusCode;
 
         try {
-            fetch("/technologies")
+            await fetch("/technologies")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -63,11 +63,11 @@ function FrontPage() {
                     setTimeout(() => {
                         setTechnologiesFe(data.technologiesData.technologiesFe);
                         setTechnologiesBe(data.technologiesData.technologiesBe);
-                        setLoadingData(false);
+                        setLoadingTechnologiesData(false);
                     }, 1000);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching technologies data:", error);
             console.error("Status code:", statusCode);
         }
     };
@@ -88,10 +88,10 @@ function FrontPage() {
                 setShowFrontEnd(true);
                 setShowBackEnd(true);
             }
-            setTechnologiesFe(data.technologiesData.technologiesFe);
-            setTechnologiesBe(data.technologiesData.technologiesBe);
+            setTechnologiesFe(dataFe.technologiesData.technologiesFe);
+            setTechnologiesBe(dataFe.technologiesData.technologiesBe);
             setTimeout(() => {
-                setLoadingData(false);
+                setLoadingTechnologiesData(false);
             }, 1000);
         }
     }, []);
@@ -113,7 +113,7 @@ function FrontPage() {
         <div className="fP">
             <div className="frontPageContainer">
                 <Main
-                    loadingData={loadingData}
+                    loadingTechnologiesData={loadingTechnologiesData}
                     showFrontEnd={showFrontEnd}
                     showBackEnd={showBackEnd}
                     professionData={professionData}
@@ -126,7 +126,7 @@ function FrontPage() {
     );
 }
 
-function Main({ loadingData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
+function Main({ loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
     const navigate = useNavigate();
 
     const handleNavigation = (page) => {
@@ -314,7 +314,7 @@ function Main({ loadingData, showFrontEnd, showBackEnd, professionData, jobData,
                                 </div>
                                 <div className="tCB1Content">
                                     <AnimatePresence>
-                                        {techFe.length > 0 && !loadingData ? (
+                                        {techFe.length > 0 && !loadingTechnologiesData ? (
                                             techFe.map((tech, index) => (
                                                 <motion.a
                                                     className="tech"
@@ -336,7 +336,7 @@ function Main({ loadingData, showFrontEnd, showBackEnd, professionData, jobData,
                                                     <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
                                             ))
-                                        ) : loadingData ? (
+                                        ) : loadingTechnologiesData ? (
                                             <motion.div className="loadingTechData" key="loadingtechdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                                 <div className="loaderTech" />
                                             </motion.div>
@@ -352,14 +352,14 @@ function Main({ loadingData, showFrontEnd, showBackEnd, professionData, jobData,
                         {showBackEnd && (
                             <div
                                 className="technologyContentBox2"
-                                style={showFrontEnd && showBackEnd ? (loadingData ? { bottom: "332px", left: "600px" } : { bottom: "308px", left: "600px" }) : { top: "30px" }}
+                                style={showFrontEnd && showBackEnd ? (loadingTechnologiesData ? { bottom: "332px", left: "600px" } : { bottom: "308px", left: "600px" }) : { top: "30px" }}
                             >
                                 <div className="tCB2Title">
                                     <h4>Back-end tech stack</h4>
                                 </div>
                                 <div className="tCB2Content">
                                     <AnimatePresence>
-                                        {techBe.length > 0 && !loadingData ? (
+                                        {techBe.length > 0 && !loadingTechnologiesData ? (
                                             techBe.map((tech, index) => (
                                                 <motion.a
                                                     className="tech"
@@ -381,7 +381,7 @@ function Main({ loadingData, showFrontEnd, showBackEnd, professionData, jobData,
                                                     <div className="techLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </motion.a>
                                             ))
-                                        ) : loadingData ? (
+                                        ) : loadingTechnologiesData ? (
                                             <motion.div className="loadingTechData" key="loadingtechdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                                 <div className="loaderTech" />
                                             </motion.div>

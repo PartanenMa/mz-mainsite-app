@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./GoalsPage.scss";
 
 function GoalsPage() {
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
 
@@ -14,8 +14,8 @@ function GoalsPage() {
             getGoals();
         } else {
             setTimeout(() => {
-                setGoals(data.goalsData);
-                setLoadingData(false);
+                setGoals(dataFe.goalsData);
+                setLoadingGoalsData(false);
             }, 1000);
         }
     }, []);
@@ -27,19 +27,20 @@ function GoalsPage() {
             await fetch("/goals")
                 .then((res) => {
                     statusCode = res.status;
+                    console.log(res);
                     return res.json();
                 })
                 .then((data) => {
                     setTimeout(() => {
                         setGoals(data.goalsData);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingGoalsData(false);
                     }, 1000);
                 });
         } catch (error) {
             console.error("Error fetching data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingGoalsData(false);
         }
     };
 
@@ -47,9 +48,9 @@ function GoalsPage() {
         <div className="gP">
             <div className="goalsPageContainer">
                 <GoalsPageTitle />
-                <GoalsCount loadingData={loadingData} goals={goals} />
-                <GoalsStatus loadingData={loadingData} statusDB={statusDB} />
-                <GoalsPageContent loadingData={loadingData} goals={goals} />
+                <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
+                <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
             </div>
         </div>
     );
@@ -63,7 +64,7 @@ function GoalsPageTitle() {
     );
 }
 
-function GoalsCount({ loadingData, goals }) {
+function GoalsCount({ loadingGoalsData, goals }) {
     const getLoader = () => {
         return (
             <AnimatePresence>
@@ -114,22 +115,22 @@ function GoalsCount({ loadingData, goals }) {
         <div className="goalsCountContainer">
             <AnimatePresence>
                 <motion.p key="goalcount1" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                    COMPLETED: <span style={{ color: "green" }}>{loadingData ? getLoader() : getCompletedGoals()}</span>
+                    COMPLETED: <span style={{ color: "green" }}>{loadingGoalsData ? getLoader() : getCompletedGoals()}</span>
                 </motion.p>
                 <motion.p key="goalcount2" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingData ? getLoader() : getInProgressGoals()}</span>
+                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingGoalsData ? getLoader() : getInProgressGoals()}</span>
                 </motion.p>
                 <motion.p key="goalcount3" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingData ? getLoader() : getNotYetStartedGoals()}</span>
+                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingGoalsData ? getLoader() : getNotYetStartedGoals()}</span>
                 </motion.p>
             </AnimatePresence>
         </div>
     );
 }
 
-function GoalsStatus({ loadingData, statusDB }) {
+function GoalsStatus({ loadingGoalsData, statusDB }) {
     return (
-        !loadingData &&
+        !loadingGoalsData &&
         info.api.enabled && (
             <AnimatePresence>
                 <motion.div className="goalsStatusContainer" key="gstatuscont" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -148,7 +149,7 @@ function GoalsStatus({ loadingData, statusDB }) {
     );
 }
 
-function GoalsPageContent({ loadingData, goals }) {
+function GoalsPageContent({ loadingGoalsData, goals }) {
     const getColor = (status) => {
         if (status === "completed") {
             return "green";
@@ -189,7 +190,7 @@ function GoalsPageContent({ loadingData, goals }) {
                             </p>
                         </motion.div>
                     ))
-                ) : loadingData ? (
+                ) : loadingGoalsData ? (
                     <motion.div className="loadingGoalsData" key="loadinggoalsdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                         <div className="loaderGoals" />
                     </motion.div>

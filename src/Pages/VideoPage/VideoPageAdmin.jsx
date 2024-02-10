@@ -7,7 +7,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./VideoPage.scss";
 
@@ -15,7 +15,7 @@ function VideoPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingVideoData, setLoadingVideoData] = useState(true);
     const [videoData, setVideoData] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -26,8 +26,8 @@ function VideoPageAdmin() {
 
     useEffect(() => {
         setTimeout(() => {
-            //setVideoData(data.videosData);
-            setLoadingData(false);
+            //setVideoData(dataFe.videosData);
+            setLoadingVideoData(false);
         }, [1000]);
     }, []);
 
@@ -72,8 +72,8 @@ function VideoPageAdmin() {
                                 <h2>Admin / videos</h2>
                             </div>
                             <VideoPageTitle />
-                            <Description loadingData={loadingData} />
-                            <Video loadingData={loadingData} />
+                            <Description loadingVideoData={loadingVideoData} />
+                            <Video loadingVideoData={loadingVideoData} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -100,13 +100,13 @@ function VideoPageTitle() {
     );
 }
 
-function Description({ loadingData }) {
+function Description({ loadingVideoData }) {
     return (
         <div className="videoDescriptionContainer">
             <div className="videoDescriptionTitle">
                 <h3>
                     DESCRIPTION
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingVideoData} />
                 </h3>
             </div>
             <div className="videoDescriptionContent"></div>
@@ -114,13 +114,13 @@ function Description({ loadingData }) {
     );
 }
 
-function Video({ loadingData }) {
+function Video({ loadingVideoData }) {
     return (
         <div className="videoContainer">
             <div className="videoTitle">
                 <h3>
                     VIDEO
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingVideoData} />
                 </h3>
             </div>
             <div className="videoContent"></div>

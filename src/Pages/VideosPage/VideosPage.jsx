@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.scss";
 
 function VideosPage() {
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingVideosData, setLoadingVideosData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
 
@@ -15,8 +15,8 @@ function VideosPage() {
             getVideos();
         } else {
             setTimeout(() => {
-                setVideos(data.videosData);
-                setLoadingData(false);
+                setVideos(dataFe.videosData);
+                setLoadingVideosData(false);
             }, 1000);
         }
     }, []);
@@ -34,13 +34,13 @@ function VideosPage() {
                     setTimeout(() => {
                         setVideos(data.videosData);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingVideosData(false);
                     }, 1000);
                 });
         } catch (error) {
             console.error("Error fetching data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingVideosData(false);
         }
     };
 
@@ -49,7 +49,7 @@ function VideosPage() {
             <div className="videosPageContainer">
                 <VideosPageTitle />
                 <AboutMyVideos />
-                <Videos loadingData={loadingData} statusDB={statusDB} videos={videos} />
+                <Videos loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
             </div>
         </div>
     );
@@ -106,13 +106,13 @@ function AboutMyVideos() {
     );
 }
 
-function Videos({ loadingData, statusDB, videos }) {
+function Videos({ loadingVideosData, statusDB, videos }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
                 <h3>
                     VIDEOS
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingVideosData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="videosContent">
@@ -166,7 +166,7 @@ function Videos({ loadingData, statusDB, videos }) {
                                 <h4>NO VIDEOS YET!</h4>
                             </motion.div>
                         )
-                    ) : loadingData ? (
+                    ) : loadingVideosData ? (
                         <motion.div className="loadingVideosData" key="loadingvideosdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderVideos" />
                         </motion.div>

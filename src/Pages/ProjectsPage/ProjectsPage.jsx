@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.scss";
 
 function ProjectsPage() {
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingProjectsData, setLoadingProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
 
@@ -15,8 +15,8 @@ function ProjectsPage() {
             getProjects();
         } else {
             setTimeout(() => {
-                setProjects(data.projectsData);
-                setLoadingData(false);
+                setProjects(dataFe.projectsData);
+                setLoadingProjectsData(false);
             }, 1000);
         }
     }, []);
@@ -34,13 +34,13 @@ function ProjectsPage() {
                     setTimeout(() => {
                         setProjects(data.projectsData);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingProjectsData(false);
                     }, 1000);
                 });
         } catch (error) {
             console.error("Error fetching data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingProjectsData(false);
         }
     };
 
@@ -49,7 +49,7 @@ function ProjectsPage() {
             <div className="projectsPageContainer">
                 <ProjectsPageTitle />
                 <AboutMyProjects />
-                <Projects loadingData={loadingData} statusDB={statusDB} projects={projects} />
+                <Projects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
             </div>
         </div>
     );
@@ -106,13 +106,13 @@ function AboutMyProjects() {
     );
 }
 
-function Projects({ loadingData, statusDB, projects }) {
+function Projects({ loadingProjectsData, statusDB, projects }) {
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
                 <h3>
                     PROJECTS
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingProjectsData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="projectsContent">
@@ -166,7 +166,7 @@ function Projects({ loadingData, statusDB, projects }) {
                                 <h4>NO PROJECTS YET!</h4>
                             </motion.div>
                         )
-                    ) : loadingData ? (
+                    ) : loadingProjectsData ? (
                         <motion.div className="loadingProjectsData" key="loadingprojectsdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProjects" />
                         </motion.div>

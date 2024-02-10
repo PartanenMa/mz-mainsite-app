@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectPage.scss";
 
 function ProjectPage() {
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingProjectData, setLoadingProjectData] = useState(true);
     const [projectData, setProjectData] = useState([]);
 
     useEffect(() => {
         setTimeout(() => {
-            //setProjectData(data.projectsData);
-            setLoadingData(false);
+            //setProjectData(dataFe.projectsData);
+            setLoadingProjectData(false);
         }, [1000]);
     }, []);
 
@@ -20,8 +20,8 @@ function ProjectPage() {
         <div className="pJPV">
             <div className="projectPageContainer">
                 <ProjectPageTitle />
-                <Description loadingData={loadingData} />
-                <Project loadingData={loadingData} />
+                <Description loadingProjectData={loadingProjectData} />
+                <Project loadingProjectData={loadingProjectData} />
             </div>
         </div>
     );
@@ -35,13 +35,13 @@ function ProjectPageTitle() {
     );
 }
 
-function Description({ loadingData }) {
+function Description({ loadingProjectData }) {
     return (
         <div className="projectDescriptionContainer">
             <div className="projectDescriptionTitle">
                 <h3>
                     DESCRIPTION
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingProjectData} />
                 </h3>
             </div>
             <div className="projectDescriptionContent"></div>
@@ -49,13 +49,13 @@ function Description({ loadingData }) {
     );
 }
 
-function Project({ loadingData }) {
+function Project({ loadingProjectData }) {
     return (
         <div className="projectContainer">
             <div className="projectTitle">
                 <h3>
                     PROJECT
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingProjectData} />
                 </h3>
             </div>
             <div className="projectContent"></div>

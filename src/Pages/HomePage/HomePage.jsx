@@ -19,11 +19,11 @@ function HomePage() {
         }
     }, []);
 
-    const getProfession = () => {
+    const getProfession = async () => {
         let statusCode;
 
         try {
-            fetch("/profession")
+            await fetch("/profession")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -32,16 +32,16 @@ function HomePage() {
                     setProfessionData(data);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching profession data:", error);
             console.error("Status code:", statusCode);
         }
     };
 
-    const getJob = () => {
+    const getJob = async () => {
         let statusCode;
 
         try {
-            fetch("/job")
+            await fetch("/job")
                 .then((res) => {
                     statusCode = res.status;
                     return res.json();
@@ -50,7 +50,7 @@ function HomePage() {
                     setJobData(data);
                 });
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("Error fetching job data:", error);
             console.error("Status code:", statusCode);
         }
     };

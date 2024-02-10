@@ -52,24 +52,53 @@ function LoginSection() {
         setPasswordType("password");
     };
 
-    function handleLogin() {
-        togglePassword;
+    const handleLogin = () => {
+        //togglePassword();
         const username = userValue;
         const password = passwordValue;
-        if (info.devLogin.enabled) {
-            if (username === info.devLogin.adminUserName && password === info.devLogin.adminPassword) {
-                sessionStorage.setItem("isLoggedIn", "true");
-                sessionStorage.setItem("load", "true");
-                navigate(location.pathname);
+
+        if (username !== "" && password !== "") {
+            if (info.api.enabled) {
+                login(username, password);
             } else {
-                event.preventDefault();
-                triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
+                if (info.testLoginFe.enabled) {
+                    if (username === info.testLoginFe.adminUserName && password === info.testLoginFe.adminPassword) {
+                        sessionStorage.setItem("isLoggedIn", "true");
+                        sessionStorage.setItem("load", "true");
+                        navigate(info.routes.homePageAdmin);
+                    } else {
+                        event.preventDefault();
+                        triggerNotification("TEST LOG IN FAILED!", "Incorrect username or password.", "error");
+                    }
+                } else {
+                    event.preventDefault();
+                    triggerNotification("TEST LOG IN FAILED!", "Test log in is currently disabled.", "error");
+                }
             }
         } else {
             event.preventDefault();
-            triggerNotification("LOG IN FAILED!", "Logging in is currently disabled.", "error");
+            triggerNotification("LOG IN FAILED!", "Empty username or password field.", "error");
         }
-    }
+    };
+
+    const login = (username, password) => {
+        event.preventDefault();
+        try {
+            fetch("/login", {
+                method: POST,
+                credentials: "include",
+                headers: {
+                    "Content type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+            })
+                .then((res) => res.text())
+                .then((data) => console.log(data));
+        } catch (error) {
+            console.error("Login failed: ", error);
+            triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
+        }
+    };
 
     const triggerNotification = (title, description, type) => {
         setNotificationContent({ title, description, type });

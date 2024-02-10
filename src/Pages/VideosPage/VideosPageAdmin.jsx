@@ -7,7 +7,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.scss";
 
@@ -15,7 +15,7 @@ function VideosPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingVideosData, setLoadingVideosData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -30,8 +30,8 @@ function VideosPageAdmin() {
             getVideos();
         } else {
             setTimeout(() => {
-                setVideos(data.videosData);
-                setLoadingData(false);
+                setVideos(dataFe.videosData);
+                setLoadingVideosData(false);
             }, 1000);
         }
     }, []);
@@ -49,13 +49,13 @@ function VideosPageAdmin() {
                     setTimeout(() => {
                         setVideos(data.videosData);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingVideosData(false);
                     }, 1000);
                 });
         } catch (error) {
             console.error("Error fetching data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingVideosData(false);
         }
     };
 
@@ -101,7 +101,7 @@ function VideosPageAdmin() {
                             </div>
                             <VideosPageTitle />
                             <AboutMyVideos />
-                            <MyVideos loadingData={loadingData} statusDB={statusDB} videos={videos} />
+                            <MyVideos loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -171,13 +171,13 @@ function AboutMyVideos() {
     );
 }
 
-function MyVideos({ loadingData, statusDB, videos }) {
+function MyVideos({ loadingVideosData, statusDB, videos }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
                 <h3>
                     MY VIDEOS
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingVideosData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="videosContent">
@@ -231,7 +231,7 @@ function MyVideos({ loadingData, statusDB, videos }) {
                                 <h4>NO VIDEOS YET!</h4>
                             </motion.div>
                         )
-                    ) : loadingData ? (
+                    ) : loadingVideosData ? (
                         <motion.div className="loadingVideosData" key="loadingvideosdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderVideos" />
                         </motion.div>

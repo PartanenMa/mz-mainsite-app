@@ -7,7 +7,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.scss";
 
@@ -15,7 +15,7 @@ function ProjectsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingProjectsData, setLoadingProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -30,8 +30,8 @@ function ProjectsPageAdmin() {
             getProjects();
         } else {
             setTimeout(() => {
-                setProjects(data.projectsData);
-                setLoadingData(false);
+                setProjects(dataFe.projectsData);
+                setLoadingProjectsData(false);
             }, 1000);
         }
     }, []);
@@ -49,13 +49,13 @@ function ProjectsPageAdmin() {
                     setTimeout(() => {
                         setProjects(data.projectsData);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingProjectsData(false);
                     }, 1000);
                 });
         } catch (error) {
             console.error("Error fetching data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingProjectsData(false);
         }
     };
 
@@ -101,7 +101,7 @@ function ProjectsPageAdmin() {
                             </div>
                             <ProjectsPageTitle />
                             <AboutMyProjects />
-                            <MyProjects loadingData={loadingData} statusDB={statusDB} projects={projects} />
+                            <MyProjects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -171,13 +171,13 @@ function AboutMyProjects() {
     );
 }
 
-function MyProjects({ loadingData, statusDB, projects }) {
+function MyProjects({ loadingProjectsData, statusDB, projects }) {
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
                 <h3>
                     MY PROJECTS
-                    <DBstate loading={loadingData} statusDB={statusDB} />
+                    <DBstate loading={loadingProjectsData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="projectsContent">
@@ -233,7 +233,7 @@ function MyProjects({ loadingData, statusDB, projects }) {
                                 <h4>NO PROJECTS YET!</h4>
                             </motion.div>
                         )
-                    ) : loadingData ? (
+                    ) : loadingProjectsData ? (
                         <motion.div className="loadingProjectsData" key="loadingprojectsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProjects" />
                         </motion.div>

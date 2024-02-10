@@ -7,7 +7,7 @@ import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectPage.scss";
 
@@ -15,7 +15,7 @@ function ProjectPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingProjectData, setLoadingProjectData] = useState(true);
     const [projectData, setProjectData] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -26,8 +26,8 @@ function ProjectPageAdmin() {
 
     useEffect(() => {
         setTimeout(() => {
-            //setProjectData(data.projectsData);
-            setLoadingData(false);
+            //setProjectData(dataFe.projectsData);
+            setLoadingProjectData(false);
         }, [1000]);
     }, []);
 
@@ -72,8 +72,8 @@ function ProjectPageAdmin() {
                                 <h2>Admin / projects / view</h2>
                             </div>
                             <ProjectPageTitle />
-                            <Description loadingData={loadingData} />
-                            <Project loadingData={loadingData} />
+                            <Description loadingProjectData={loadingProjectData} />
+                            <Project loadingProjectData={loadingProjectData} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -100,13 +100,13 @@ function ProjectPageTitle() {
     );
 }
 
-function Description({ loadingData }) {
+function Description({ loadingProjectData }) {
     return (
         <div className="descriptionContainer">
             <div className="descriptionTitle">
                 <h3>
                     DESCRIPTION
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingProjectData} />
                 </h3>
             </div>
             <div className="descriptionContent"></div>
@@ -114,13 +114,13 @@ function Description({ loadingData }) {
     );
 }
 
-function Project({ loadingData }) {
+function Project({ loadingProjectData }) {
     return (
         <div className="projectContainer">
             <div className="projectTitle">
                 <h3>
                     PROJECT
-                    <DBstate loading={loadingData} />
+                    <DBstate loading={loadingProjectData} />
                 </h3>
             </div>
             <div className="projectContent"></div>

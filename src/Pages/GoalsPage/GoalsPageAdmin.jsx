@@ -6,7 +6,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import { info } from "/src/Constants/Info.jsx";
-import { data } from "/src/Constants/Data.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./GoalsPage.scss";
 
@@ -14,7 +14,7 @@ function GoalsPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -29,8 +29,8 @@ function GoalsPageAdmin() {
             getGoals();
         } else {
             setTimeout(() => {
-                setGoals(data.goalsData);
-                setLoadingData(false);
+                setGoals(dataFe.goalsData);
+                setLoadingGoalsData(false);
             }, 1000);
         }
     }, []);
@@ -48,13 +48,13 @@ function GoalsPageAdmin() {
                     setTimeout(() => {
                         setGoals(data.goalsData);
                         setStatusDB(true);
-                        setLoadingData(false);
+                        setLoadingGoalsData(false);
                     }, 1000);
                 });
         } catch (error) {
             console.error("Error fetching data:", error);
             console.error("Status code:", statusCode);
-            setLoadingData(false);
+            setLoadingGoalsData(false);
         }
     };
 
@@ -99,9 +99,9 @@ function GoalsPageAdmin() {
                                 <h2>Admin / goals</h2>
                             </div>
                             <GoalsPageTitle />
-                            <GoalsCount loadingData={loadingData} goals={goals} />
-                            <GoalsStatus loadingData={loadingData} statusDB={statusDB} />
-                            <GoalsPageContent loadingData={loadingData} goals={goals} />
+                            <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
+                            <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                            <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -128,7 +128,7 @@ function GoalsPageTitle() {
     );
 }
 
-function GoalsCount({ loadingData, goals }) {
+function GoalsCount({ loadingGoalsData, goals }) {
     const getLoader = () => {
         return (
             <AnimatePresence>
@@ -179,22 +179,22 @@ function GoalsCount({ loadingData, goals }) {
         <div className="goalsCountContainer">
             <AnimatePresence>
                 <motion.p key="goalcount1A" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                    COMPLETED: <span style={{ color: "green" }}>{loadingData ? getLoader() : getCompletedGoals()}</span>
+                    COMPLETED: <span style={{ color: "green" }}>{loadingGoalsData ? getLoader() : getCompletedGoals()}</span>
                 </motion.p>
                 <motion.p key="goalcount2A" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingData ? getLoader() : getInProgressGoals()}</span>
+                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingGoalsData ? getLoader() : getInProgressGoals()}</span>
                 </motion.p>
                 <motion.p key="goalcount3A" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingData ? getLoader() : getNotYetStartedGoals()}</span>
+                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingGoalsData ? getLoader() : getNotYetStartedGoals()}</span>
                 </motion.p>
             </AnimatePresence>
         </div>
     );
 }
 
-function GoalsStatus({ loadingData, statusDB }) {
+function GoalsStatus({ loadingGoalsData, statusDB }) {
     return (
-        !loadingData &&
+        !loadingGoalsData &&
         info.api.enabled && (
             <AnimatePresence>
                 <motion.div className="goalsStatusContainer" key="gstatuscontA" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -213,7 +213,7 @@ function GoalsStatus({ loadingData, statusDB }) {
     );
 }
 
-function GoalsPageContent({ loadingData, goals }) {
+function GoalsPageContent({ loadingGoalsData, goals }) {
     const getColor = (status) => {
         if (status === "completed") {
             return "green";
@@ -254,7 +254,7 @@ function GoalsPageContent({ loadingData, goals }) {
                             </p>
                         </motion.div>
                     ))
-                ) : loadingData ? (
+                ) : loadingGoalsData ? (
                     <motion.div className="loadingGoalsData" key="loadinggoalsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                         <div className="loaderGoals" />
                     </motion.div>

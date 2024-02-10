@@ -1,11 +1,11 @@
-import { data } from "./Data.jsx";
+import { dataFe } from "./Data.jsx";
 import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
 export const info = {
-    version: "Release 1.0.19",
+    version: "Release 1.0.20",
     routes: {
         frontPage: "/MatrixZone-APP/",
         loginPage: "/MatrixZone-APP/login",
@@ -26,10 +26,10 @@ export const info = {
         cvPage: "/MatrixZone-APP/cv",
         cvPageAdmin: "/MatrixZone-APP/admin/cv",
     },
-    devLogin: {
+    testLoginFe: {
         enabled: false,
-        adminUserName: "AdminDev",
-        adminPassword: "admindev",
+        adminUserName: "AdminTest",
+        adminPassword: "admintest",
     },
     api: {
         enabled: false,
@@ -80,11 +80,11 @@ export const info = {
         description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.",
         description2:
             "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
-            (data.jobStatus.employed ? data.jobStatus.jobTechStackFe : data.professionStatus.professionTechStackFe) +
+            (dataFe.jobStatus.employed ? dataFe.jobStatus.jobTechStackFe : dataFe.professionStatus.professionTechStackFe) +
             ". On the back-end, I'm currently working with " +
-            (data.jobStatus.employed ? data.jobStatus.jobTechStackBe : data.professionStatus.professionTechStackBe) +
+            (dataFe.jobStatus.employed ? dataFe.jobStatus.jobTechStackBe : dataFe.professionStatus.professionTechStackBe) +
             ". " +
-            (data.jobStatus.employed ? "Besides my job, " : "") +
+            (dataFe.jobStatus.employed ? "Besides my job, " : "") +
             "I love working on my own projects during my free time using the skills that I've gained, and enjoy learning new tools and technologies while doing so.",
         description3:
             "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.",
@@ -96,21 +96,21 @@ export const info = {
         skillsTitle5: "Back-end development",
         skillsTitle6: "Web development software",
         //Profession:
-        profession: data.professionStatus.profession,
-        professionDetailed: data.professionStatus.professionDetailed,
-        professionTech: data.professionStatus.professionTech,
-        professionTechStack: data.professionStatus.professionTechStack,
-        professionAdditionalTech: data.professionStatus.professionAdditionalTech,
+        profession: dataFe.professionStatus.profession,
+        professionDetailed: dataFe.professionStatus.professionDetailed,
+        professionTech: dataFe.professionStatus.professionTech,
+        professionTechStack: dataFe.professionStatus.professionTechStack,
+        professionAdditionalTech: dataFe.professionStatus.professionAdditionalTech,
         //Job:
-        jobTitle: data.jobStatus.employed ? data.jobStatus.jobTitle : "",
-        company: data.jobStatus.employed ? data.jobStatus.company : "",
-        companyInfoLink: data.jobStatus.employed ? data.jobStatus.companyInfoLink : "",
-        jobTechStack: data.jobStatus.employed ? data.jobStatus.jobTechStack : "",
-        jobAdditionalTech: data.jobStatus.employed ? data.jobStatus.jobAdditionalTech : "",
-        companyColor: data.jobStatus.employed ? data.jobStatus.companyColor : "",
-        companyLogo: data.jobStatus.employed ? data.jobStatus.companyLogo : "",
-        companyLogoH: data.jobStatus.employed ? data.jobStatus.companyLogoH : "",
-        companyLogoW: data.jobStatus.employed ? data.jobStatus.companyLogoW : "",
+        jobTitle: dataFe.jobStatus.employed ? dataFe.jobStatus.jobTitle : "",
+        company: dataFe.jobStatus.employed ? dataFe.jobStatus.company : "",
+        companyInfoLink: dataFe.jobStatus.employed ? dataFe.jobStatus.companyInfoLink : "",
+        jobTechStack: dataFe.jobStatus.employed ? dataFe.jobStatus.jobTechStack : "",
+        jobAdditionalTech: dataFe.jobStatus.employed ? dataFe.jobStatus.jobAdditionalTech : "",
+        companyColor: dataFe.jobStatus.employed ? dataFe.jobStatus.companyColor : "",
+        companyLogo: dataFe.jobStatus.employed ? dataFe.jobStatus.companyLogo : "",
+        companyLogoH: dataFe.jobStatus.employed ? dataFe.jobStatus.companyLogoH : "",
+        companyLogoW: dataFe.jobStatus.employed ? dataFe.jobStatus.companyLogoW : "",
     },
     GitHub: {
         //Account data:
