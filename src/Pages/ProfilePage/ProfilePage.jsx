@@ -377,14 +377,14 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                 </h3>
             </div>
             <div className="skillsContent">
-                <div className="programmingLanguages">
-                    <div className="pLTitle">
-                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                <div className="webDevelopmentSoftware">
+                    <div className="wDSTitle">
+                        <h4>{info.LinkedIn.skillsTitle6}</h4>
                     </div>
-                    <div className="pLContent">
+                    <div className="wDSContent">
                         <AnimatePresence>
-                            {skills.basicProgrammingLanguages?.length > 0 ? (
-                                skills.basicProgrammingLanguages.map((skill, index) => (
+                            {skills.webDevelopmentSoftware?.length > 0 ? (
+                                skills.webDevelopmentSoftware.map((skill, index) => (
                                     <motion.div
                                         className="skill"
                                         style={{ backgroundColor: skill.color }}
@@ -407,93 +407,11 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                     </motion.div>
                                 ))
                             ) : loadingProfessionData ? (
-                                <motion.div className="loadingProfileData" key="loadingbplprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.div className="loadingProfileData" key="loadingwdsprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
                             ) : (
-                                <motion.div className="noProfileData" key="nobplprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <h4>NO DATA!</h4>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </div>
-                <div className="scripting">
-                    <div className="sTitle">
-                        <h4>{info.LinkedIn.skillsTitle2}</h4>
-                    </div>
-                    <div className="sContent">
-                        <AnimatePresence>
-                            {skills.scripting?.length > 0 ? (
-                                skills.scripting.map((skill, index) => (
-                                    <motion.div
-                                        className="skill"
-                                        style={{ backgroundColor: skill.color }}
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                    >
-                                        <div
-                                            className="skillLogo"
-                                            style={{
-                                                backgroundImage: `url(${skill.image})`,
-                                                backgroundSize: skill.backgroundSize,
-                                            }}
-                                        />
-                                        <div className="skillContent">
-                                            <h4>{skill.name}</h4>
-                                            <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                            {getSkillLevel(skill.skillLevel)}
-                                        </div>
-                                    </motion.div>
-                                ))
-                            ) : loadingProfessionData ? (
-                                <motion.div className="loadingProfileData" key="loadingscrprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfile" />
-                                </motion.div>
-                            ) : (
-                                <motion.div className="noProfileData" key="noscrprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <h4>NO DATA!</h4>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </div>
-                <div className="utilitySoftware">
-                    <div className="uSTitle">
-                        <h4>{info.LinkedIn.skillsTitle3}</h4>
-                    </div>
-                    <div className="uSContent">
-                        <AnimatePresence>
-                            {skills.utilitySoftware?.length > 0 ? (
-                                skills.utilitySoftware.map((skill, index) => (
-                                    <motion.div
-                                        className="skill"
-                                        style={{ backgroundColor: skill.color }}
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                    >
-                                        <div
-                                            className="skillLogo"
-                                            style={{
-                                                backgroundImage: `url(${skill.image})`,
-                                                backgroundSize: skill.backgroundSize,
-                                            }}
-                                        />
-                                        <div className="skillContent">
-                                            <h4>{skill.name}</h4>
-                                            <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                            {getSkillLevel(skill.skillLevel)}
-                                        </div>
-                                    </motion.div>
-                                ))
-                            ) : loadingProfessionData ? (
-                                <motion.div className="loadingProfileData" key="loadingutilsofprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfile" />
-                                </motion.div>
-                            ) : (
-                                <motion.div className="noProfileData" key="noutilsofprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.div className="noProfileData" key="noutilwdsprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                     <h4>NO DATA!</h4>
                                 </motion.div>
                             )}
@@ -576,47 +494,6 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileData" key="noutilbedprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <h4>NO DATA!</h4>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </div>
-                <div className="webDevelopmentSoftware">
-                    <div className="wDSTitle">
-                        <h4>{info.LinkedIn.skillsTitle6}</h4>
-                    </div>
-                    <div className="wDSContent">
-                        <AnimatePresence>
-                            {skills.webDevelopmentSoftware?.length > 0 ? (
-                                skills.webDevelopmentSoftware.map((skill, index) => (
-                                    <motion.div
-                                        className="skill"
-                                        style={{ backgroundColor: skill.color }}
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                    >
-                                        <div
-                                            className="skillLogo"
-                                            style={{
-                                                backgroundImage: `url(${skill.image})`,
-                                                backgroundSize: skill.backgroundSize,
-                                            }}
-                                        />
-                                        <div className="skillContent">
-                                            <h4>{skill.name}</h4>
-                                            <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                            {getSkillLevel(skill.skillLevel)}
-                                        </div>
-                                    </motion.div>
-                                ))
-                            ) : loadingProfessionData ? (
-                                <motion.div className="loadingProfileData" key="loadingwdsprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfile" />
-                                </motion.div>
-                            ) : (
-                                <motion.div className="noProfileData" key="noutilwdsprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                     <h4>NO DATA!</h4>
                                 </motion.div>
                             )}

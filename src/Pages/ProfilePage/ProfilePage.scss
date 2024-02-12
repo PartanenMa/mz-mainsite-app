@@ -456,13 +456,13 @@
         padding-left: 1%;
         padding-right: 1%;
 
-        .programmingLanguages {
+        .webDevelopmentSoftware {
             width: 98%;
             border: 1px solid #03a062;
             border-radius: 10px;
             overflow: hidden;
 
-            .pLTitle {
+            .wDSTitle {
                 background-color: #111;
                 height: 30px;
                 width: 100%;
@@ -483,89 +483,7 @@
                 }
             }
 
-            .pLContent {
-                background-color: #333;
-                width: 100%;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                padding: 2%;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        .scripting {
-            width: 98%;
-            border: 1px solid #03a062;
-            border-radius: 10px;
-            overflow: hidden;
-
-            .sTitle {
-                background-color: #111;
-                height: 30px;
-                width: 100%;
-                border-bottom: 1px solid #03a062;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                padding-left: 10px;
-                overflow: hidden;
-
-                h4 {
-                    color: #03a062;
-                    font-size: 20px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
-                    text-shadow: 0.3px 0.3px 0 lightgreen;
-                }
-            }
-
-            .sContent {
-                background-color: #333;
-                width: 100%;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                padding: 2%;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        .utilitySoftware {
-            width: 98%;
-            border: 1px solid #03a062;
-            border-radius: 10px;
-            overflow: hidden;
-
-            .uSTitle {
-                background-color: #111;
-                height: 30px;
-                width: 100%;
-                border-bottom: 1px solid #03a062;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                padding-left: 10px;
-                overflow: hidden;
-
-                h4 {
-                    color: #03a062;
-                    font-size: 20px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
-                    text-shadow: 0.3px 0.3px 0 lightgreen;
-                }
-            }
-
-            .uSContent {
+            .wDSContent {
                 background-color: #333;
                 width: 100%;
                 border-bottom-left-radius: 10px;
@@ -648,47 +566,6 @@
             }
 
             .bEDContent {
-                background-color: #333;
-                width: 100%;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                padding: 2%;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        .webDevelopmentSoftware {
-            width: 98%;
-            border: 1px solid #03a062;
-            border-radius: 10px;
-            overflow: hidden;
-
-            .wDSTitle {
-                background-color: #111;
-                height: 30px;
-                width: 100%;
-                border-bottom: 1px solid #03a062;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                padding-left: 10px;
-                overflow: hidden;
-
-                h4 {
-                    color: #03a062;
-                    font-size: 20px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
-                    text-shadow: 0.3px 0.3px 0 lightgreen;
-                }
-            }
-
-            .wDSContent {
                 background-color: #333;
                 width: 100%;
                 border-bottom-left-radius: 10px;

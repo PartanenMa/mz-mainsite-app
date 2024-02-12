@@ -1,4 +1,4 @@
-# Site live at: https://partanenma.github.io/MatrixZone-UI/
+# Site live at: https://partanenma.github.io/MatrixZone-APP/
 
 # 1. Install NPM packages (SKIP THIS STEP IF ALREADY INSTALLED):
 

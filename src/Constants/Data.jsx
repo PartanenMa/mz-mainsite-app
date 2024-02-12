@@ -5,15 +5,14 @@ import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
 //Education:
 import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
-//Skills (basic programming languages):
-import CppLogo from "/src/Assets/Images/CppLogo.svg";
-import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
-//Skills (scripting):
+//Skills (web development software):
+import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
+import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
+import GitLogo from "/src/Assets/Images/GitLogo.svg";
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
-//Skills (utility software):
-import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
-import GitLogo from "/src/Assets/Images/GitLogo.svg";
+import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
+import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 //Skills (front-end development):
 import HTMLLogo from "/src/Assets/Images/HTMLLogo.svg";
 import CSSLogo from "/src/Assets/Images/CSSLogo.svg";
@@ -30,10 +29,6 @@ import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 import MySQLLogo from "/src/Assets/Images/MySQLLogo.png";
-//Skills (web development software):
-import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
-import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
-import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 //Experience:
 import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
@@ -150,23 +145,28 @@ export const dataFe = {
             },
         ],
         skills: {
-            basicProgrammingLanguages: [
+            webDevelopmentSoftware: [
                 {
-                    name: "C++",
-                    skillLevel: "beginner",
-                    color: "#044f88",
-                    image: CppLogo,
-                    backgroundSize: "65%",
+                    name: "Visual Studio Code",
+                    skillLevel: "advanced",
+                    color: "#0078d7",
+                    image: VisualStudioCodeLogo,
+                    backgroundSize: "70%",
                 },
                 {
-                    name: "Java",
-                    skillLevel: "experienced",
-                    color: "#f89820",
-                    image: JavaLogo,
-                    backgroundSize: "100%",
+                    name: "Node.js",
+                    skillLevel: "advanced",
+                    color: "#3c873a",
+                    image: NodejsLogo,
+                    backgroundSize: "80%",
                 },
-            ],
-            scripting: [
+                {
+                    name: "Git",
+                    skillLevel: "advanced",
+                    color: "#F1502F",
+                    image: GitLogo,
+                    backgroundSize: "70%",
+                },
                 {
                     name: "Bash",
                     skillLevel: "experienced",
@@ -181,20 +181,18 @@ export const dataFe = {
                     image: PowerShellLogo,
                     backgroundSize: "80%",
                 },
-            ],
-            utilitySoftware: [
                 {
-                    name: "Visual Studio Code",
+                    name: "Docker",
                     skillLevel: "advanced",
-                    color: "#0078d7",
-                    image: VisualStudioCodeLogo,
-                    backgroundSize: "70%",
+                    color: "#0db7ed",
+                    image: DockerLogo,
+                    backgroundSize: "80%",
                 },
                 {
-                    name: "Git",
-                    skillLevel: "advanced",
-                    color: "#F1502F",
-                    image: GitLogo,
+                    name: "Kubernetes",
+                    skillLevel: "beginner",
+                    color: "#3970e4",
+                    image: KubernetesLogo,
                     backgroundSize: "70%",
                 },
             ],
@@ -297,29 +295,6 @@ export const dataFe = {
                     skillLevel: "beginner",
                     color: "#00758F",
                     image: MySQLLogo,
-                    backgroundSize: "70%",
-                },
-            ],
-            webDevelopmentSoftware: [
-                {
-                    name: "Node.js",
-                    skillLevel: "advanced",
-                    color: "#3c873a",
-                    image: NodejsLogo,
-                    backgroundSize: "80%",
-                },
-                {
-                    name: "Docker",
-                    skillLevel: "advanced",
-                    color: "#0db7ed",
-                    image: DockerLogo,
-                    backgroundSize: "80%",
-                },
-                {
-                    name: "Kubernetes",
-                    skillLevel: "beginner",
-                    color: "#3970e4",
-                    image: KubernetesLogo,
                     backgroundSize: "70%",
                 },
             ],
