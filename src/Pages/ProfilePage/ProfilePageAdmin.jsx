@@ -448,35 +448,92 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                     </div>
                     <div className="wDSContent">
                         <AnimatePresence>
-                            {skills.webDevelopmentSoftware?.length > 0 ? (
-                                skills.webDevelopmentSoftware.map((skill, index) => (
-                                    <motion.div
-                                        className="skill"
-                                        style={{ backgroundColor: skill.color }}
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                    >
-                                        <div
-                                            className="skillLogo"
-                                            style={{
-                                                backgroundImage: `url(${skill.image})`,
-                                                backgroundSize: skill.backgroundSize,
-                                            }}
-                                        />
-                                        <div className="skillContent">
-                                            <h4>{skill.name}</h4>
-                                            <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                            {getSkillLevel(skill.skillLevel)}
-                                        </div>
-                                    </motion.div>
-                                ))
+                            {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
+                                <>
+                                    <div className="software">
+                                        <h5>Utility software:</h5>
+                                        {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="software">
+                                        <h5>CLI software:</h5>
+                                        {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="software">
+                                        <h5>Containerization software:</h5>
+                                        {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
                             ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingwdsprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
                             ) : (
-                                <motion.div className="noProfileData" key="noutilwdsprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.div className="noProfileData" key="nowdsprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                     <h4>NO DATA!</h4>
                                 </motion.div>
                             )}
@@ -489,35 +546,92 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                     </div>
                     <div className="fEDContent">
                         <AnimatePresence>
-                            {skills.frontEndDevelopment?.length > 0 ? (
-                                skills.frontEndDevelopment.map((skill, index) => (
-                                    <motion.div
-                                        className="skill"
-                                        style={{ backgroundColor: skill.color }}
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                    >
-                                        <div
-                                            className="skillLogo"
-                                            style={{
-                                                backgroundImage: `url(${skill.image})`,
-                                                backgroundSize: skill.backgroundSize,
-                                            }}
-                                        />
-                                        <div className="skillContent">
-                                            <h4>{skill.name}</h4>
-                                            <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                            {getSkillLevel(skill.skillLevel)}
-                                        </div>
-                                    </motion.div>
-                                ))
+                            {skills.frontEndDevelopment?.frontEndProgrammingLanguages?.length > 0 &&
+                            skills.frontEndDevelopment?.frontEndFrameworks?.length > 0 &&
+                            skills.frontEndDevelopment?.cSSFrameworks?.length > 0 ? (
+                                <>
+                                    <div className="frontEndSoftware">
+                                        <h5>Front-end programming languages:</h5>
+                                        {skills.frontEndDevelopment.frontEndProgrammingLanguages.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="frontEndSoftware">
+                                        <h5>Front-end frameworks:</h5>
+                                        {skills.frontEndDevelopment.frontEndFrameworks.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="frontEndSoftware">
+                                        <h5>CSS frameworks:</h5>
+                                        {skills.frontEndDevelopment.cSSFrameworks.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
                             ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingfedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
                             ) : (
-                                <motion.div className="noProfileData" key="noutilfedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.div className="noProfileData" key="nofedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                     <h4>NO DATA!</h4>
                                 </motion.div>
                             )}
@@ -530,35 +644,92 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                     </div>
                     <div className="bEDContent">
                         <AnimatePresence>
-                            {skills.backEndDevelopment?.length > 0 ? (
-                                skills.backEndDevelopment.map((skill, index) => (
-                                    <motion.div
-                                        className="skill"
-                                        style={{ backgroundColor: skill.color }}
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                    >
-                                        <div
-                                            className="skillLogo"
-                                            style={{
-                                                backgroundImage: `url(${skill.image})`,
-                                                backgroundSize: skill.backgroundSize,
-                                            }}
-                                        />
-                                        <div className="skillContent">
-                                            <h4>{skill.name}</h4>
-                                            <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                            {getSkillLevel(skill.skillLevel)}
-                                        </div>
-                                    </motion.div>
-                                ))
+                            {skills.backEndDevelopment?.backEndProgrammingLanguages?.length > 0 &&
+                            skills.backEndDevelopment?.backEndFrameworks?.length > 0 &&
+                            skills.backEndDevelopment?.databases?.length > 0 ? (
+                                <>
+                                    <div className="backEndSoftware">
+                                        <h5>Back-end programming languages:</h5>
+                                        {skills.backEndDevelopment.backEndProgrammingLanguages.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="backEndSoftware">
+                                        <h5>Back-end frameworks:</h5>
+                                        {skills.backEndDevelopment.backEndFrameworks.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="backEndSoftware">
+                                        <h5>Databases:</h5>
+                                        {skills.backEndDevelopment.databases.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <h4>{skill.name}</h4>
+                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                    {getSkillLevel(skill.skillLevel)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
                             ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfileData" key="loadingbedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
                             ) : (
-                                <motion.div className="noProfileData" key="noutilbedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.div className="noProfileData" key="nobedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                     <h4>NO DATA!</h4>
                                 </motion.div>
                             )}
