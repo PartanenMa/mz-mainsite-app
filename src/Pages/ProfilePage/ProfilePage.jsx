@@ -379,7 +379,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
             <div className="skillsContent">
                 <div className="webDevelopmentSoftware">
                     <div className="wDSTitle">
-                        <h4>{info.LinkedIn.skillsTitle6}</h4>
+                        <h4>{info.LinkedIn.skillsTitle1}</h4>
                     </div>
                     <div className="wDSContent">
                         <AnimatePresence>
@@ -388,7 +388,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                             skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
                                 <>
                                     <div className="software">
-                                        <h5>Utility software:</h5>
+                                        <h5>{info.LinkedIn.skills1SubTitle1}</h5>
                                         {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -413,7 +413,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="software">
-                                        <h5>CLI software:</h5>
+                                        <h5>{info.LinkedIn.skills1SubTitle2}</h5>
                                         {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -438,7 +438,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="software">
-                                        <h5>Containerization software:</h5>
+                                        <h5>{info.LinkedIn.skills1SubTitle3}</h5>
                                         {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -477,7 +477,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                 </div>
                 <div className="front-endDevelopment">
                     <div className="fEDTitle">
-                        <h4>{info.LinkedIn.skillsTitle4}</h4>
+                        <h4>{info.LinkedIn.skillsTitle2}</h4>
                     </div>
                     <div className="fEDContent">
                         <AnimatePresence>
@@ -486,7 +486,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                             skills.frontEndDevelopment?.cSSFrameworks?.length > 0 ? (
                                 <>
                                     <div className="frontEndSoftware">
-                                        <h5>Front-end programming languages:</h5>
+                                        <h5>{info.LinkedIn.skills2SubTitle1}</h5>
                                         {skills.frontEndDevelopment.frontEndProgrammingLanguages.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -511,7 +511,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="frontEndSoftware">
-                                        <h5>Front-end frameworks:</h5>
+                                        <h5>{info.LinkedIn.skills2SubTitle2}</h5>
                                         {skills.frontEndDevelopment.frontEndFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -536,7 +536,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="frontEndSoftware">
-                                        <h5>CSS frameworks:</h5>
+                                        <h5>{info.LinkedIn.skills2SubTitle3}</h5>
                                         {skills.frontEndDevelopment.cSSFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -575,7 +575,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                 </div>
                 <div className="back-endDevelopment">
                     <div className="bEDTitle">
-                        <h4>{info.LinkedIn.skillsTitle5}</h4>
+                        <h4>{info.LinkedIn.skillsTitle3}</h4>
                     </div>
                     <div className="bEDContent">
                         <AnimatePresence>
@@ -584,7 +584,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                             skills.backEndDevelopment?.databases?.length > 0 ? (
                                 <>
                                     <div className="backEndSoftware">
-                                        <h5>Back-end programming languages:</h5>
+                                        <h5>{info.LinkedIn.skills3SubTitle1}</h5>
                                         {skills.backEndDevelopment.backEndProgrammingLanguages.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -609,7 +609,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="backEndSoftware">
-                                        <h5>Back-end frameworks:</h5>
+                                        <h5>{info.LinkedIn.skills3SubTitle2}</h5>
                                         {skills.backEndDevelopment.backEndFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -634,7 +634,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="backEndSoftware">
-                                        <h5>Databases:</h5>
+                                        <h5>{info.LinkedIn.skills3SubTitle3}</h5>
                                         {skills.backEndDevelopment.databases.map((skill, index) => (
                                             <motion.div
                                                 className="skill"

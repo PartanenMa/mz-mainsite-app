@@ -5,7 +5,7 @@ import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
 export const info = {
-    version: "Release 1.0.22",
+    version: "Release 1.0.23",
     routes: {
         frontPage: "/MatrixZone-APP/",
         loginPage: "/MatrixZone-APP/login",
@@ -32,7 +32,7 @@ export const info = {
         adminPassword: "admintest",
     },
     api: {
-        enabled: false,
+        enabled: true,
     },
     technologiesUsed: [
         {
@@ -89,12 +89,18 @@ export const info = {
         description3:
             "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.",
         //Skills titles:
-        skillsTitle1: "Basic programming languages",
-        skillsTitle2: "CLI software",
-        skillsTitle3: "Utility software",
-        skillsTitle4: "Front-end development",
-        skillsTitle5: "Back-end development",
-        skillsTitle6: "Web development software",
+        skillsTitle1: "Web development software",
+        skillsTitle2: "Front-end development",
+        skillsTitle3: "Back-end development",
+        skills1SubTitle1: "Utility software",
+        skills1SubTitle2: "CLI software",
+        skills1SubTitle3: "Containerization software",
+        skills2SubTitle1: "Front-end programming languages",
+        skills2SubTitle2: "Front-end frameworks",
+        skills2SubTitle3: "CSS frameworks",
+        skills3SubTitle1: "Back-end programming languages",
+        skills3SubTitle2: "Back-end frameworks",
+        skills3SubTitle3: "Databases",
         //Profession:
         profession: dataFe.professionStatus.profession,
         professionDetailed: dataFe.professionStatus.professionDetailed,

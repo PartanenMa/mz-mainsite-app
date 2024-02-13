@@ -380,15 +380,15 @@ export const dataFe = {
             title: "Learn web development software",
             status: "completed",
             step1: {
-                step: "Learn to use utility software suchn as Visual Studio Code, Node.js and Git.",
+                step: "Learn to use utility software such as Visual Studio Code, Node.js and Git.",
                 status: "completed",
             },
             step2: {
-                step: "Learn to use CLI software suchn as Bash and PowerShell.",
+                step: "Learn to use CLI software such as Bash and PowerShell.",
                 status: "completed",
             },
             step3: {
-                step: "Learn to use containerization software suchn as Docker and Kubernetes.",
+                step: "Learn to use containerization software such as Docker and Kubernetes.",
                 status: "completed",
             },
         },

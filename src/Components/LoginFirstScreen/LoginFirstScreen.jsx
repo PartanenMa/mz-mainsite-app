@@ -65,7 +65,7 @@ function LoginSection() {
                     if (username === info.testLoginFe.adminUserName && password === info.testLoginFe.adminPassword) {
                         sessionStorage.setItem("isLoggedIn", "true");
                         sessionStorage.setItem("load", "true");
-                        navigate(info.routes.homePageAdmin);
+                        navigate(location.pathname);
                     } else {
                         event.preventDefault();
                         triggerNotification("TEST LOG IN FAILED!", "Incorrect username or password.", "error");
@@ -83,21 +83,36 @@ function LoginSection() {
 
     const login = (username, password) => {
         event.preventDefault();
-        try {
-            fetch("/login", {
-                method: POST,
-                credentials: "include",
-                headers: {
-                    "Content type": "application/json",
-                },
-                body: JSON.stringify({ username, password }),
+
+        fetch("/login", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+        })
+            .then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode === 200) {
+                    navigate(location.pathname);
+                    return res.text().then((data) => ({ statusCode, data }));
+                } else {
+                    return res.text().then((data) => ({ statusCode, data }));
+                }
             })
-                .then((res) => res.text())
-                .then((data) => console.log(data));
-        } catch (error) {
-            console.error("Login failed: ", error);
-            triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
-        }
+            .then(({ statusCode, data }) => {
+                if (statusCode !== 200) {
+                    console.log("Status Code: ", statusCode, data);
+                }
+
+                if (statusCode === 500) {
+                    triggerNotification("LOG IN FAILED!", "API disconnected!", "error");
+                } else if (statusCode === 401) {
+                    triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
+                }
+            });
     };
 
     const triggerNotification = (title, description, type) => {
