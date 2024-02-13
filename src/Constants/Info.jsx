@@ -32,7 +32,7 @@ export const info = {
         adminPassword: "admintest",
     },
     api: {
-        enabled: true,
+        enabled: false,
     },
     technologiesUsed: [
         {
