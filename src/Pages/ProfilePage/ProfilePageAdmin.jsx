@@ -437,7 +437,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
         <div className="skillsContainer">
             <div className="skillsTitle">
                 <h3>
-                    SKILLS
+                    MY SKILLS
                     <DBstate loading={loadingProfessionData} statusDB={statusDB} />
                 </h3>
             </div>

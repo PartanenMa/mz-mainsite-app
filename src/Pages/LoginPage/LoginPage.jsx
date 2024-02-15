@@ -164,25 +164,30 @@ function LoginSection() {
             },
             body: JSON.stringify({ username, password }),
         })
-            .then((res) => {
+            .then(async (res) => {
                 const statusCode = res.status;
 
                 if (statusCode === 200) {
-                    navigate(info.routes.homePageAdmin);
-                    return res.text().then((data) => ({ statusCode, data }));
+                    const data = await res.json();
+                    return { statusCode, data };
                 } else {
-                    return res.text().then((data) => ({ statusCode, data }));
+                    const data = await res.text();
+                    return { statusCode, data };
                 }
             })
             .then(({ statusCode, data }) => {
-                if (statusCode !== 200) {
-                    console.log("Status Code: ", statusCode, data);
-                }
-
-                if (statusCode === 500) {
-                    triggerNotification("LOG IN FAILED!", "API disconnected!", "error");
+                if (statusCode === 200) {
+                    const csrfToken = data.csrfToken;
+                    const message = data.message;
+                    console.log(statusCode, message);
+                    sessionStorage.setItem("isLoggedIn", "true");
+                    sessionStorage.setItem("load", "true");
+                    navigate(info.routes.homePageAdmin);
                 } else if (statusCode === 401) {
+                    console.log(statusCode, data);
                     triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
+                } else if (statusCode === 500) {
+                    triggerNotification("LOG IN FAILED!", "API disconnected!", "error");
                 }
             });
     };

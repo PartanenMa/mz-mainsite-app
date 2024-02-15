@@ -5,7 +5,7 @@ import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
 export const info = {
-    version: "Release 1.0.23",
+    version: "Release 1.0.24",
     routes: {
         frontPage: "/MatrixZone-APP/",
         loginPage: "/MatrixZone-APP/login",
