@@ -14,62 +14,62 @@ function FrontPage() {
     const [showFrontEnd, setShowFrontEnd] = useState(false);
     const [showBackEnd, setShowBackEnd] = useState(false);
 
-    const getProfession = async () => {
-        let statusCode;
+    const getProfession = () => {
+        fetch("/profession")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/profession")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setProfessionData(data);
-                });
-        } catch (error) {
-            console.error("Error fetching profession data:", error);
-            console.error("Status code:", statusCode);
-        }
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setProfessionData(data);
+            });
     };
 
-    const getJob = async () => {
-        let statusCode;
+    const getJob = () => {
+        fetch("/job")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/job")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setJobData(data);
-                });
-        } catch (error) {
-            console.error("Error fetching job data:", error);
-            console.error("Status code:", statusCode);
-        }
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setJobData(data);
+            });
     };
 
-    const getTechnologies = async () => {
-        let statusCode;
+    const getTechnologies = () => {
+        fetch("/technologies")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/technologies")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setTechnologiesFe(data.technologiesData.technologiesFe);
-                        setTechnologiesBe(data.technologiesData.technologiesBe);
-                        setLoadingTechnologiesData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching technologies data:", error);
-            console.error("Status code:", statusCode);
-        }
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setTechnologiesFe(data.technologiesData.technologiesFe);
+                    setTechnologiesBe(data.technologiesData.technologiesBe);
+                    setLoadingTechnologiesData(false);
+                }, 1000);
+            });
     };
 
     useEffect(() => {

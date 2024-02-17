@@ -6,6 +6,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/login": "http://localhost:8000",
+            "/login/session": "http://localhost:8000",
             "/profession": "http://localhost:8000",
             "/job": "http://localhost:8000",
             "/technologies": "http://localhost:8000",

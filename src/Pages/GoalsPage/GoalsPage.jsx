@@ -20,28 +20,26 @@ function GoalsPage() {
         }
     }, []);
 
-    const getGoals = async () => {
-        let statusCode;
+    const getGoals = () => {
+        fetch("/goals")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/goals")
-                .then((res) => {
-                    statusCode = res.status;
-                    console.log(res);
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setGoals(data.goalsData);
-                        setStatusDB(true);
-                        setLoadingGoalsData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            console.error("Status code:", statusCode);
-            setLoadingGoalsData(false);
-        }
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setLoadingGoalsData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setGoals(data.goalsData);
+                    setStatusDB(true);
+                    setLoadingGoalsData(false);
+                }, 1000);
+            });
     };
 
     return (

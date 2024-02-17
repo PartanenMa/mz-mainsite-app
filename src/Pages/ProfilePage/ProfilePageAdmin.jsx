@@ -32,6 +32,7 @@ function ProfilePageAdmin() {
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkSession();
             getProfession();
             getJob();
             getProfile();
@@ -46,66 +47,93 @@ function ProfilePageAdmin() {
         }
     }, []);
 
-    const getProfession = async () => {
-        let statusCode;
+    const checkSession = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
 
-        try {
-            await fetch("/profession")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setProfessionData(data);
-                });
-        } catch (error) {
-            console.error("Error fetching profession data:", error);
-            console.error("Status code:", statusCode);
-        }
+        fetch("/login/session", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ csrfToken }),
+        })
+            .then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode === 200) {
+                    return { statusCode };
+                } else {
+                    return { statusCode };
+                }
+            })
+            .then(({ statusCode }) => {
+                if (statusCode !== 200) {
+                    sessionStorage.setItem("isLoggedIn", "false");
+                }
+            });
     };
 
-    const getJob = async () => {
-        let statusCode;
+    const getProfession = () => {
+        fetch("/profession")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/job")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setJobData(data);
-                });
-        } catch (error) {
-            console.error("Error fetching job data:", error);
-            console.error("Status code:", statusCode);
-        }
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setProfessionData(data);
+            });
     };
 
-    const getProfile = async () => {
-        let statusCode;
+    const getJob = () => {
+        fetch("/job")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/profile")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setLanguages(data.profileData.languages);
-                        setEducations(data.profileData.educations);
-                        setSkills(data.profileData.skills);
-                        setExperiences(data.profileData.experiences);
-                        setStatusDB(true);
-                        setLoadingProfessionData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching profile data:", error);
-            console.error("Status code:", statusCode);
-            setLoadingProfessionData(false);
-        }
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setJobData(data);
+            });
+    };
+
+    const getProfile = () => {
+        fetch("/profile")
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    setLoadingProfessionData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setLanguages(data.profileData.languages);
+                    setEducations(data.profileData.educations);
+                    setSkills(data.profileData.skills);
+                    setExperiences(data.profileData.experiences);
+                    setStatusDB(true);
+                    setLoadingProfessionData(false);
+                }, 1000);
+            });
     };
 
     useEffect(() => {

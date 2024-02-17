@@ -27,6 +27,7 @@ function VideosPageAdmin() {
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkSession();
             getVideos();
         } else {
             setTimeout(() => {
@@ -36,27 +37,53 @@ function VideosPageAdmin() {
         }
     }, []);
 
-    const getVideos = async () => {
-        let statusCode;
+    const checkSession = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
 
-        try {
-            await fetch("/videos")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setVideos(data.videosData);
-                        setStatusDB(true);
-                        setLoadingVideosData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            console.error("Status code:", statusCode);
-            setLoadingVideosData(false);
-        }
+        fetch("/login/session", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ csrfToken }),
+        })
+            .then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode === 200) {
+                    return { statusCode };
+                } else {
+                    return { statusCode };
+                }
+            })
+            .then(({ statusCode }) => {
+                if (statusCode !== 200) {
+                    sessionStorage.setItem("isLoggedIn", "false");
+                }
+            });
+    };
+
+    const getVideos = () => {
+        fetch("/videos")
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setLoadingVideosData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setVideos(data.videosData);
+                    setStatusDB(true);
+                    setLoadingVideosData(false);
+                }, 1000);
+            });
     };
 
     useEffect(() => {

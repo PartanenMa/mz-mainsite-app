@@ -22,26 +22,25 @@ function ProjectsPage() {
     }, []);
 
     const getProjects = async () => {
-        let statusCode;
+        fetch("/projects")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/projects")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setProjects(data.projectsData);
-                        setStatusDB(true);
-                        setLoadingProjectsData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            console.error("Status code:", statusCode);
-            setLoadingProjectsData(false);
-        }
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setLoadingProjectsData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setProjects(data.projectsData);
+                    setStatusDB(true);
+                    setLoadingProjectsData(false);
+                }, 1000);
+            });
     };
 
     return (

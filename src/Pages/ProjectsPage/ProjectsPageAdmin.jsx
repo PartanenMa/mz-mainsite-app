@@ -27,6 +27,7 @@ function ProjectsPageAdmin() {
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkSession();
             getProjects();
         } else {
             setTimeout(() => {
@@ -36,27 +37,53 @@ function ProjectsPageAdmin() {
         }
     }, []);
 
-    const getProjects = async () => {
-        let statusCode;
+    const checkSession = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
 
-        try {
-            await fetch("/projects")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setProjects(data.projectsData);
-                        setStatusDB(true);
-                        setLoadingProjectsData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            console.error("Status code:", statusCode);
-            setLoadingProjectsData(false);
-        }
+        fetch("/login/session", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ csrfToken }),
+        })
+            .then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode === 200) {
+                    return { statusCode };
+                } else {
+                    return { statusCode };
+                }
+            })
+            .then(({ statusCode }) => {
+                if (statusCode !== 200) {
+                    sessionStorage.setItem("isLoggedIn", "false");
+                }
+            });
+    };
+
+    const getProjects = async () => {
+        fetch("/projects")
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setLoadingProjectsData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setProjects(data.projectsData);
+                    setStatusDB(true);
+                    setLoadingProjectsData(false);
+                }, 1000);
+            });
     };
 
     useEffect(() => {

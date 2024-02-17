@@ -21,27 +21,26 @@ function VideosPage() {
         }
     }, []);
 
-    const getVideos = async () => {
-        let statusCode;
+    const getVideos = () => {
+        fetch("/videos")
+            .then(async (res) => {
+                const statusCode = res.status;
 
-        try {
-            await fetch("/videos")
-                .then((res) => {
-                    statusCode = res.status;
-                    return res.json();
-                })
-                .then((data) => {
-                    setTimeout(() => {
-                        setVideos(data.videosData);
-                        setStatusDB(true);
-                        setLoadingVideosData(false);
-                    }, 1000);
-                });
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            console.error("Status code:", statusCode);
-            setLoadingVideosData(false);
-        }
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setLoadingVideosData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setVideos(data.videosData);
+                    setStatusDB(true);
+                    setLoadingVideosData(false);
+                }, 1000);
+            });
     };
 
     return (

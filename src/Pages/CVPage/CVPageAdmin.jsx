@@ -21,6 +21,39 @@ function CVPageAdmin() {
     });
 
     useEffect(() => {
+        if (info.api.enabled) {
+            checkSession();
+        }
+    }, []);
+
+    const checkSession = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
+        fetch("/login/session", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ csrfToken }),
+        })
+            .then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode === 200) {
+                    return { statusCode };
+                } else {
+                    return { statusCode };
+                }
+            })
+            .then(({ statusCode }) => {
+                if (statusCode !== 200) {
+                    sessionStorage.setItem("isLoggedIn", "false");
+                }
+            });
+    };
+
+    useEffect(() => {
         if (isLoggedIn === "true") {
             //Simulate loading for 1 second:
             const timer = setTimeout(() => {

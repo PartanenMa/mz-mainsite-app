@@ -106,13 +106,11 @@ function LoginSection() {
             .then(({ statusCode, data }) => {
                 if (statusCode === 200) {
                     const csrfToken = data.csrfToken;
-                    const message = data.message;
-                    console.log(statusCode, message);
+                    sessionStorage.setItem("csrfToken", csrfToken);
                     sessionStorage.setItem("isLoggedIn", "true");
                     sessionStorage.setItem("load", "true");
                     navigate(location.pathname);
                 } else if (statusCode === 401) {
-                    console.log(statusCode, data);
                     triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
                 } else if (statusCode === 500) {
                     triggerNotification("LOG IN FAILED!", "API disconnected!", "error");
