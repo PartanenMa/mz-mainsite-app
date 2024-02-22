@@ -169,14 +169,14 @@ export const dataFe = {
                 cLISoftware: [
                     {
                         name: "Bash",
-                        skillLevel: "experienced",
+                        skillLevel: "intermediate",
                         color: "darkgreen",
                         image: BashLogo,
                         backgroundSize: "80%",
                     },
                     {
                         name: "PowerShell",
-                        skillLevel: "experienced",
+                        skillLevel: "intermediate",
                         color: "#012456",
                         image: PowerShellLogo,
                         backgroundSize: "80%",
@@ -283,7 +283,7 @@ export const dataFe = {
                 backEndFrameworks: [
                     {
                         name: "Express.js",
-                        skillLevel: "beginner",
+                        skillLevel: "experienced",
                         color: "#808080",
                         image: ExpressjsLogo,
                         backgroundSize: "70%",
