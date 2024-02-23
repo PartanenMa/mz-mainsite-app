@@ -37,7 +37,7 @@ export const dataFe = {
         professionTechStack: "React, Sass, Express.js and MongoDB",
         professionTechStackFe: "React and Sass",
         professionTechStackBe: "Express.js and MongoDB",
-        professionAdditionalTech: "Visual Studio Code and Git",
+        professionAdditionalTech: "Visual Studio Code, Node.js and Git",
     },
     jobStatus: {
         employed: true,
@@ -47,7 +47,7 @@ export const dataFe = {
         jobTechStack: "React, Sass and Go",
         jobTechStackFe: "React and Sass",
         jobTechStackBe: "Go",
-        jobAdditionalTech: "Visual Studio Code and Git",
+        jobAdditionalTech: "Visual Studio Code, Node.js and Git",
         companyColor: "#b11226",
         companyLogo: VismaLogo,
         companyLogoH: "73px",

@@ -5,7 +5,7 @@ import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
 export const info = {
-    version: "Release 1.0.26",
+    version: "Release 1.0.27",
     routes: {
         frontPage: "/MatrixZone-APP/",
         loginPage: "/MatrixZone-APP/login",
@@ -108,6 +108,7 @@ export const info = {
         professionTechStack: dataFe.professionStatus.professionTechStack,
         professionAdditionalTech: dataFe.professionStatus.professionAdditionalTech,
         //Job:
+        employed: dataFe.jobStatus.employed ? dataFe.jobStatus.employed : false,
         jobTitle: dataFe.jobStatus.employed ? dataFe.jobStatus.jobTitle : "",
         company: dataFe.jobStatus.employed ? dataFe.jobStatus.company : "",
         companyInfoLink: dataFe.jobStatus.employed ? dataFe.jobStatus.companyInfoLink : "",
