@@ -20,6 +20,8 @@ function HomePageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [loadingProfessionData, setLoadingProfessionData] = useState(true);
+    const [loadingJobData, setLoadingJobData] = useState(true);
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -34,6 +36,11 @@ function HomePageAdmin() {
             checkSession();
             getProfession();
             getJob();
+        } else {
+            setTimeout(() => {
+                setLoadingProfessionData(false);
+                setLoadingJobData(false);
+            }, 1000);
         }
     }, []);
 
@@ -78,7 +85,10 @@ function HomePageAdmin() {
                 }
             })
             .then((data) => {
-                setProfessionData(data);
+                setTimeout(() => {
+                    setProfessionData(data);
+                    setLoadingProfessionData(false);
+                }, 1000);
             });
     };
 
@@ -96,7 +106,10 @@ function HomePageAdmin() {
                 }
             })
             .then((data) => {
-                setJobData(data);
+                setTimeout(() => {
+                    setJobData(data);
+                    setLoadingJobData(false);
+                }, 1000);
             });
     };
 
@@ -141,7 +154,7 @@ function HomePageAdmin() {
                                 <h2>Admin / home</h2>
                             </div>
                             <HomePageTitle />
-                            <FirstSection professionData={professionData} jobData={jobData} />
+                            <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -168,7 +181,7 @@ function HomePageTitle() {
     );
 }
 
-function FirstSection({ professionData, jobData }) {
+function FirstSection({ loadingProfessionData, loadingJobData, professionData, jobData }) {
     const [isVisible1, setIsVisible1] = useState(true);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
@@ -471,15 +484,27 @@ function FirstSection({ professionData, jobData }) {
                         <h3>LinkedIn</h3>
                         <p>{info.LinkedIn.user}</p>
                         {info.api.enabled ? (
-                            professionData?.professionStatus || jobData?.jobStatus ? (
-                                <p>{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}</p>
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                <motion.p key="professionorjobdatasuccessA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </motion.p>
+                            ) : loadingProfessionData ? (
+                                <motion.div className="loadingProfessionData" key="loadingprofessiondataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionData" />
+                                </motion.div>
                             ) : (
-                                <p style={{ color: "red" }}>
-                                    API DISCONNECTED!{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
-                                </p>
+                                <motion.p style={{ color: "red" }} key="professionorjobdatafailA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    NO DATA!{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </motion.p>
                             )
+                        ) : loadingProfessionData ? (
+                            <motion.div className="loadingProfessionData" key="loadingprofessiondataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionData" />
+                            </motion.div>
                         ) : (
-                            <p>{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}</p>
+                            <motion.p key="professionorjobdatasuccessA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
+                            </motion.p>
                         )}
                         <AnimatePresence>
                             <motion.button

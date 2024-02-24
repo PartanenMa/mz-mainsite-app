@@ -190,7 +190,7 @@ function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, 
                                         initial={{ opacity: 0, y: 100 }}
                                         animate={{ opacity: 1, y: 0 }}
                                     >
-                                        API DISCONNECTED!
+                                        NO DATA!
                                     </motion.p>
                                 )
                             ) : !loadingProfessionData ? (
@@ -322,7 +322,7 @@ function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, 
                                     initial={{ opacity: 0, y: 100 }}
                                     animate={{ opacity: 1, y: 0 }}
                                 >
-                                    API DISCONNECTED!
+                                    NO DATA!
                                 </motion.h3>
                             )
                         ) : loadingProfessionData ? (
@@ -482,7 +482,7 @@ function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, 
                                     initial={{ opacity: 0, y: 100 }}
                                     animate={{ opacity: 1, y: 0 }}
                                 >
-                                    API DISCONNECTED!
+                                    NO DATA!
                                 </motion.h3>
                             )
                         ) : loadingProfessionData || loadingJobData ? (

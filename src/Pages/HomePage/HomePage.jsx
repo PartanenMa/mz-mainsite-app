@@ -9,6 +9,8 @@ import Carousel3 from "/src/Assets/Images/Carousel3.jpg";
 import "./HomePage.scss";
 
 function HomePage() {
+    const [loadingProfessionData, setLoadingProfessionData] = useState(true);
+    const [loadingJobData, setLoadingJobData] = useState(true);
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
 
@@ -16,6 +18,11 @@ function HomePage() {
         if (info.api.enabled) {
             getProfession();
             getJob();
+        } else {
+            setTimeout(() => {
+                setLoadingProfessionData(false);
+                setLoadingJobData(false);
+            }, 1000);
         }
     }, []);
 
@@ -33,7 +40,10 @@ function HomePage() {
                 }
             })
             .then((data) => {
-                setProfessionData(data);
+                setTimeout(() => {
+                    setProfessionData(data);
+                    setLoadingProfessionData(false);
+                }, 1000);
             });
     };
 
@@ -51,7 +61,10 @@ function HomePage() {
                 }
             })
             .then((data) => {
-                setJobData(data);
+                setTimeout(() => {
+                    setJobData(data);
+                    setLoadingJobData(false);
+                }, 1000);
             });
     };
 
@@ -59,7 +72,7 @@ function HomePage() {
         <div className="hP">
             <div className="homePageContainer">
                 <HomePageTitle />
-                <FirstSection professionData={professionData} jobData={jobData} />
+                <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
             </div>
         </div>
     );
@@ -73,7 +86,7 @@ function HomePageTitle() {
     );
 }
 
-function FirstSection({ professionData, jobData }) {
+function FirstSection({ loadingProfessionData, loadingJobData, professionData, jobData }) {
     const navigate = useNavigate();
     const carouselImages = [Carousel1, Carousel2, Carousel3];
 
@@ -118,15 +131,27 @@ function FirstSection({ professionData, jobData }) {
                         <h3>LinkedIn</h3>
                         <p>{info.LinkedIn.user}</p>
                         {info.api.enabled ? (
-                            professionData?.professionStatus || jobData?.jobStatus ? (
-                                <p>{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}</p>
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                <motion.p key="professionorjobdatasuccess" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </motion.p>
+                            ) : loadingProfessionData ? (
+                                <motion.div className="loadingProfessionData" key="loadingprofessiondata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionData" />
+                                </motion.div>
                             ) : (
-                                <p style={{ color: "red" }}>
-                                    API DISCONNECTED!{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
-                                </p>
+                                <motion.p style={{ color: "red" }} key="professionorjobdatafail" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    NO DATA!{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </motion.p>
                             )
+                        ) : loadingProfessionData ? (
+                            <motion.div className="loadingProfessionData" key="loadingprofessiondata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionData" />
+                            </motion.div>
                         ) : (
-                            <p>{info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}</p>
+                            <motion.p key="professionorjobdatasuccess" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
+                            </motion.p>
                         )}
                         <AnimatePresence>
                             <motion.button

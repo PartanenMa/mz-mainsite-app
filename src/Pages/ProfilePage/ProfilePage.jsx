@@ -163,7 +163,7 @@ function AboutMe({ professionData, jobData }) {
                                 </h4>
                             ) : (
                                 <h4 className="h4_2" style={{ color: "red", textShadow: "none" }}>
-                                    API DISCONNECTED!
+                                    NO DATA!
                                 </h4>
                             )
                         ) : (
