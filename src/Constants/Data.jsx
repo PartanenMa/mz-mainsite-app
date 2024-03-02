@@ -169,7 +169,7 @@ export const dataFe = {
                 cLISoftware: [
                     {
                         name: "Bash",
-                        skillLevel: "intermediate",
+                        skillLevel: "advanced",
                         color: "darkgreen",
                         image: BashLogo,
                         backgroundSize: "80%",
@@ -260,7 +260,7 @@ export const dataFe = {
                 backEndProgrammingLanguages: [
                     {
                         name: "JavaScript",
-                        skillLevel: "advanced",
+                        skillLevel: "experienced",
                         color: "#f0db4f",
                         image: JavaScriptLogo,
                         backgroundSize: "65%",

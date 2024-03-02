@@ -4,27 +4,29 @@ import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
+const deployToGitHubPages = true;
+
 export const info = {
-    version: "Release 1.0.28",
+    version: "Release 1.0.29",
     routes: {
-        frontPage: "/MatrixZone-APP/",
-        loginPage: "/MatrixZone-APP/login",
-        homePage: "/MatrixZone-APP/home",
-        homePageAdmin: "/MatrixZone-APP/admin/home",
-        profilePage: "/MatrixZone-APP/profile",
-        profilePageAdmin: "/MatrixZone-APP/admin/profile",
-        projectsPage: "/MatrixZone-APP/projects",
-        projectsPageAdmin: "/MatrixZone-APP/admin/projects",
-        projectPage: "/MatrixZone-APP/projects/view",
-        projectPageAdmin: "/MatrixZone-APP/admin/projects/view",
-        videosPage: "/MatrixZone-APP/videos",
-        videosPageAdmin: "/MatrixZone-APP/admin/videos",
-        videoPage: "/MatrixZone-APP/videos/view",
-        videoPageAdmin: "/MatrixZone-APP/admin/videos/view",
-        goalsPage: "/MatrixZone-APP/goals",
-        goalsPageAdmin: "/MatrixZone-APP/admin/goals",
-        cvPage: "/MatrixZone-APP/cv",
-        cvPageAdmin: "/MatrixZone-APP/admin/cv",
+        frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
+        loginPage: deployToGitHubPages ? "/MatrixZone-APP/login" : "/login",
+        homePage: deployToGitHubPages ? "/MatrixZone-APP/home" : "/home",
+        homePageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/home" : "/admin/home",
+        profilePage: deployToGitHubPages ? "/MatrixZone-APP/profile" : "/profile",
+        profilePageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/profile" : "/admin/profile",
+        projectsPage: deployToGitHubPages ? "/MatrixZone-APP/projects" : "/projects",
+        projectsPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/projects" : "/admin/projects",
+        projectPage: deployToGitHubPages ? "/MatrixZone-APP/projects/view" : "/projects/view",
+        projectPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/projects/view" : "/admin/projects/view",
+        videosPage: deployToGitHubPages ? "/MatrixZone-APP/videos" : "/videos",
+        videosPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/videos" : "/admin/videos",
+        videoPage: deployToGitHubPages ? "/MatrixZone-APP/videos/view" : "/videos/view",
+        videoPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/videos/view" : "/admin/videos/view",
+        goalsPage: deployToGitHubPages ? "/MatrixZone-APP/goals" : "/goals",
+        goalsPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/goals" : "/admin/goals",
+        cvPage: deployToGitHubPages ? "/MatrixZone-APP/cv" : "/cv",
+        cvPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/cv" : "/admin/cv",
     },
     testLoginFe: {
         enabled: false,
