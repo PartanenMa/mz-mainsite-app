@@ -120,8 +120,10 @@ function ProfilePageAdmin() {
                     const data = res.json();
                     return data;
                 } else {
-                    setLoadingProfessionData(false);
-                    return;
+                    setTimeout(() => {
+                        setLoadingProfessionData(false);
+                        return;
+                    }, 1000);
                 }
             })
             .then((data) => {
@@ -177,7 +179,7 @@ function ProfilePageAdmin() {
                                 <h2>Admin / profile</h2>
                             </div>
                             <ProfileAdminPageTitle />
-                            <AboutMe professionData={professionData} jobData={jobData} />
+                            <AboutMe loadingProfessionData={loadingProfessionData} professionData={professionData} jobData={jobData} />
                             <Languages loadingProfessionData={loadingProfessionData} statusDB={statusDB} languages={languages} />
                             <Education loadingProfessionData={loadingProfessionData} statusDB={statusDB} educations={educations} />
                             <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
@@ -211,7 +213,7 @@ function ProfileAdminPageTitle() {
     );
 }
 
-function AboutMe({ professionData, jobData }) {
+function AboutMe({ loadingProfessionData, professionData, jobData }) {
     let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
     let description2 =
         "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
@@ -243,54 +245,74 @@ function AboutMe({ professionData, jobData }) {
                         }}
                         whileTap={{ scale: 0.9 }}
                     />
-                </AnimatePresence>
-                <div className="aboutMeTextContainer">
-                    <div className="aboutMeTextTitle">
-                        <h4 className="h4_1">{info.LinkedIn.name}</h4>
-                        {info.api.enabled ? (
-                            professionData?.professionStatus || jobData?.jobStatus ? (
-                                <h4 className="h4_2">
-                                    {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
-                                        ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
-                                        : professionData?.professionStatus?.profession}
-                                </h4>
+                    <div className="aboutMeTextContainer">
+                        <div className="aboutMeTextTitle">
+                            <h4 className="h4_1">{info.LinkedIn.name}</h4>
+                            {info.api.enabled ? (
+                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingProfessionData) ? (
+                                    <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                            ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                            : professionData?.professionStatus?.profession}
+                                    </motion.h4>
+                                ) : loadingProfessionData ? (
+                                    <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        LOADING...
+                                    </motion.h4>
+                                ) : (
+                                    <motion.h4 className="h4_2" style={{ color: "red", textShadow: "none" }} key="h4_2failA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        NO DATA!
+                                    </motion.h4>
+                                )
+                            ) : loadingProfessionData ? (
+                                <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                    LOADING...
+                                </motion.h4>
                             ) : (
-                                <h4 className="h4_2" style={{ color: "red", textShadow: "none" }}>
-                                    NO DATA!
-                                </h4>
-                            )
-                        ) : (
-                            <h4 className="h4_2">
-                                {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
-                            </h4>
-                        )}
+                                <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                    {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
+                                </motion.h4>
+                            )}
+                        </div>
+                        <div className="aboutMeText">
+                            {info.api.enabled ? (
+                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingProfessionData) ? (
+                                    <motion.p key="aboutmedescriptionsuccessA" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        {description1}
+                                        <br />
+                                        <br />
+                                        {description2}
+                                        <br />
+                                        <br />
+                                        {description3}
+                                    </motion.p>
+                                ) : loadingProfessionData ? (
+                                    <motion.div className="loadingProfileDataAboutMe" key="loadinglangprofiledataaboutmeA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                        <div className="loaderProfileAboutMe" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.p style={{ color: "red", textShadow: "none" }} key="aboutmedescriptionfailA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        NO DATA!
+                                    </motion.p>
+                                )
+                            ) : loadingProfessionData ? (
+                                <motion.div className="loadingProfileDataAboutMe" key="loadinglangprofiledataaboutmeA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfileAboutMe" />
+                                </motion.div>
+                            ) : (
+                                <motion.p key="aboutmedescriptionsuccessA" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                    {info.LinkedIn.description1}
+                                    <br />
+                                    <br />
+                                    {info.LinkedIn.description2}
+                                    <br />
+                                    <br />
+                                    {info.LinkedIn.description3}
+                                </motion.p>
+                            )}
+                        </div>
                     </div>
-                    <div className="aboutMeText">
-                        {info.api.enabled ? (
-                            professionData?.professionStatus && (
-                                <p>
-                                    {description1}
-                                    <br />
-                                    <br />
-                                    {description2}
-                                    <br />
-                                    <br />
-                                    {description3}
-                                </p>
-                            )
-                        ) : (
-                            <p>
-                                {info.LinkedIn.description1}
-                                <br />
-                                <br />
-                                {info.LinkedIn.description2}
-                                <br />
-                                <br />
-                                {info.LinkedIn.description3}
-                            </p>
-                        )}
-                    </div>
-                </div>
+                </AnimatePresence>
             </div>
         </div>
     );
@@ -383,8 +405,8 @@ function Education({ loadingProfessionData, statusDB, educations }) {
                                         style={{
                                             backgroundImage: `url(${education.image})`,
                                             backgroundColor: !education.image && education.color,
-                                            backgroundPosition: index === 1 && "45% 50%",
-                                            backgroundSize: index === 1 && "40%",
+                                            backgroundPosition: education.backgroundPosition,
+                                            backgroundSize: education.backgroundSize,
                                         }}
                                     />
                                 </div>
@@ -804,7 +826,12 @@ function Experience({ loadingProfessionData, statusDB, experiences }) {
                                 whileTap={{ scale: 0.99 }}
                             >
                                 <div className="experienceTitle">
-                                    <h4>{experience.companyName}</h4>
+                                    <h4>
+                                        {experience.companyName}
+                                        {experience.current && (
+                                            <span style={{ color: "lightgreen", fontSize: "15px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENTLY WORKING IN THIS ROLE)"}</span>
+                                        )}
+                                    </h4>
                                 </div>
                                 <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
                                     <p>{experience.workTitle}</p>

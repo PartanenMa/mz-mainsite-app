@@ -3,7 +3,6 @@ import FinnishFlag from "/src/Assets/Images/FinnishFlag.svg";
 import UKFlag from "/src/Assets/Images/UKFlag.svg";
 import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
 //Education:
-import FDFLogo from "/src/Assets/Images/FDFLogo.svg";
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
 //Skills (web development software):
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
@@ -117,17 +116,8 @@ export const dataFe = {
                 educationSubjects: "Biology, psychology, philosophy, geography, history, math, physics, chemistry, finnish, english, swedish, arts, music, IT, PE",
                 color: "gray",
                 image: "",
-            },
-            {
-                schoolName: "Finnish Defence Forces",
-                degreeName: "Military Service, Pori Brigade / Satakunta Artillery Regiment / Mortar Company - Mortar Squad Leader",
-                timeAndPlace: "09.07.2018 - 20.06.2019 (1 year), Niinisalo, Finland",
-                educationDescription:
-                    "Learned basic infantryman skills and tactics in basic training, specialized mortar skills and tactics in specialized training, and leadership skills in NCO school.",
-                extra: "Military rank: Corporal",
-                educationSubjects: "Basic infantryman tactics and skills, mortar tactics and skills, leadership skills",
-                color: "red",
-                image: FDFLogo,
+                backgroundPosition: "",
+                backgroundSize: "",
             },
             {
                 schoolName: "Satakunta University of Applied Sciences",
@@ -136,9 +126,11 @@ export const dataFe = {
                 educationDescription:
                     "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
                 extra: "Total credits earned: 279",
-                educationSubjects: "IT infrastructure, software development, automation, 3D technology, robotics",
+                educationSubjects: "IT infrastructure, software development, data science, automation, 3D technology, robotics, math, finnish, english, swedish, entrepreneurship",
                 color: "#00a5cd",
                 image: SAMKLogo,
+                backgroundPosition: "",
+                backgroundSize: "",
             },
         ],
         skills: {
@@ -309,30 +301,33 @@ export const dataFe = {
         },
         experiences: [
             {
+                current: false,
                 companyName: "Visma Real Estate Oy",
                 workTitle: "Intern - Internship",
                 workTimeAndPlace: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
-                workDescription: "4-month front-end developer internship at Visma Real Estate Oy. My tasks included developing the UI of the Hausvise housing management system using React and Sass.",
+                workDescription: "4-month front-end developer internship. My tasks included developing the UI of the Hausvise housing management system using React and Sass.",
                 workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
                 color: "#b11226",
                 image: VismaLogo,
             },
             {
+                current: false,
                 companyName: "Visma Real Estate Oy",
                 workTitle: "Junior Software Developer - Part-time (4 days / 30 hours per week)",
                 workTimeAndPlace: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
                 workDescription:
-                    "My first real front-end developer job at Visma Real Estate Oy after my internship there. I worked part-time (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React and Sass.",
+                    "My part-time front-end developer job after my internship. I worked (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React and Sass.",
                 workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
                 color: "#b11226",
                 image: VismaLogo,
             },
             {
+                current: true,
                 companyName: "Visma Real Estate Oy",
                 workTitle: "Junior Software Developer - Full-time",
                 workTimeAndPlace: "1.1.2024 - present, Pori, Finland",
                 workDescription:
-                    "My full-stack developer job at Visma Real Estate Oy after my internship and part-time job there. My tasks now include developing the UI, and the API of the Hausvise housing management system using React, Sass and Go.",
+                    "My full-stack developer job after my internship and part-time jobs. My tasks included developing the UI, and the API of the Hausvise housing management system using React, Sass and Go.",
                 workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass, Go",
                 color: "#b11226",
                 image: VismaLogo,

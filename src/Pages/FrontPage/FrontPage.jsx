@@ -227,11 +227,8 @@ function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, 
                                 <div className="contentProfile">
                                     <p>- About me.</p>
                                     <p>- My educational background.</p>
-                                    <p>- My programming skills.</p>
-                                    <p>
-                                        - My experience as a <br />
-                                        software developer.
-                                    </p>
+                                    <p>- My skills.</p>
+                                    <p>- My experience.</p>
                                 </div>
                             </div>
                             <div className="hC1-2" />
