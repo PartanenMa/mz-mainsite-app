@@ -1,0 +1,18 @@
+.CRUDProfileBtnLoading {
+    color: orange;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.profileBtn {
+    animation: fadeIn 0.3s;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

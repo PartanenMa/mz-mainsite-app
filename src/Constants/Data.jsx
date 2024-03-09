@@ -4,6 +4,8 @@ import UKFlag from "/src/Assets/Images/UKFlag.svg";
 import SwedishFlag from "/src/Assets/Images/SwedishFlag.svg";
 //Education:
 import SAMKLogo from "/src/Assets/Images/SAMKLogo.png";
+//Experience:
+import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 //Skills (web development software):
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
 import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
@@ -25,8 +27,6 @@ import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 import MySQLLogo from "/src/Assets/Images/MySQLLogo.png";
-//Experience:
-import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 
 export const dataFe = {
     professionStatus: {
@@ -131,6 +131,40 @@ export const dataFe = {
                 image: SAMKLogo,
                 backgroundPosition: "",
                 backgroundSize: "",
+            },
+        ],
+        experiences: [
+            {
+                current: false,
+                companyName: "Visma Real Estate Oy",
+                workTitle: "Intern - Internship",
+                workTimeAndPlace: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
+                workDescription: "4-month front-end developer internship. My tasks included developing the UI of the Hausvise housing management system using React and Sass.",
+                workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
+                color: "#b11226",
+                image: VismaLogo,
+            },
+            {
+                current: false,
+                companyName: "Visma Real Estate Oy",
+                workTitle: "Junior Software Developer - Part-time (4 days / 30 hours per week)",
+                workTimeAndPlace: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
+                workDescription:
+                    "My part-time front-end developer job after my internship. I worked (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React and Sass.",
+                workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
+                color: "#b11226",
+                image: VismaLogo,
+            },
+            {
+                current: true,
+                companyName: "Visma Real Estate Oy",
+                workTitle: "Junior Software Developer - Full-time",
+                workTimeAndPlace: "1.1.2024 - present, Pori, Finland",
+                workDescription:
+                    "My full-stack developer job after my internship and part-time jobs. My tasks included developing the UI, and the API of the Hausvise housing management system using React, Sass and Go.",
+                workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass, Go",
+                color: "#b11226",
+                image: VismaLogo,
             },
         ],
         skills: {
@@ -299,40 +333,6 @@ export const dataFe = {
                 ],
             },
         },
-        experiences: [
-            {
-                current: false,
-                companyName: "Visma Real Estate Oy",
-                workTitle: "Intern - Internship",
-                workTimeAndPlace: "11.5.2023 - 31.8.2023 (4 months), Pori, Finland",
-                workDescription: "4-month front-end developer internship. My tasks included developing the UI of the Hausvise housing management system using React and Sass.",
-                workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
-                color: "#b11226",
-                image: VismaLogo,
-            },
-            {
-                current: false,
-                companyName: "Visma Real Estate Oy",
-                workTitle: "Junior Software Developer - Part-time (4 days / 30 hours per week)",
-                workTimeAndPlace: "1.9.2023 - 31.12.2023 (4 months), Pori, Finland",
-                workDescription:
-                    "My part-time front-end developer job after my internship. I worked (4 days / 30 hours per week). My tasks once again included developing the UI of the Hausvise housing management system using React and Sass.",
-                workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
-                color: "#b11226",
-                image: VismaLogo,
-            },
-            {
-                current: true,
-                companyName: "Visma Real Estate Oy",
-                workTitle: "Junior Software Developer - Full-time",
-                workTimeAndPlace: "1.1.2024 - present, Pori, Finland",
-                workDescription:
-                    "My full-stack developer job after my internship and part-time jobs. My tasks included developing the UI, and the API of the Hausvise housing management system using React, Sass and Go.",
-                workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass, Go",
-                color: "#b11226",
-                image: VismaLogo,
-            },
-        ],
     },
     projectsData: [
         {

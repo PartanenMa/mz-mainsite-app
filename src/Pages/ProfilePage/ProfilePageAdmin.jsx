@@ -6,6 +6,10 @@ import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
+import CRUDTechnologiesButton from "/src/Components/CRUDTechnologiesButton/CRUDTechnologiesButton.jsx";
+import CRUDProfessionButton from "/src/Components/CRUDProfessionButton/CRUDProfessionButton.jsx";
+import CRUDJobButton from "/src/Components/CRUDJobButton/CRUDJobButton.jsx";
+import CRUDProfileButton from "/src/Components/CRUDProfileButton/CRUDProfileButton.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -182,8 +186,8 @@ function ProfilePageAdmin() {
                             <AboutMe loadingProfessionData={loadingProfessionData} professionData={professionData} jobData={jobData} />
                             <Languages loadingProfessionData={loadingProfessionData} statusDB={statusDB} languages={languages} />
                             <Education loadingProfessionData={loadingProfessionData} statusDB={statusDB} educations={educations} />
-                            <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
                             <Experience loadingProfessionData={loadingProfessionData} statusDB={statusDB} experiences={experiences} />
+                            <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
                             <Interests />
                             <Hobbies />
                             <ContactMe />
@@ -247,32 +251,45 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
                     />
                     <div className="aboutMeTextContainer">
                         <div className="aboutMeTextTitle">
-                            <h4 className="h4_1">{info.LinkedIn.name}</h4>
-                            {info.api.enabled ? (
-                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingProfessionData) ? (
-                                    <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                        {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
-                                            ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
-                                            : professionData?.professionStatus?.profession}
-                                    </motion.h4>
+                            <div className="aboutMeTextTitle1">
+                                <h4 className="h4_1">{info.LinkedIn.name}</h4>
+                                {info.api.enabled ? (
+                                    (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingProfessionData) ? (
+                                        <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                                ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                                : professionData?.professionStatus?.profession}
+                                        </motion.h4>
+                                    ) : loadingProfessionData ? (
+                                        <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            LOADING...
+                                        </motion.h4>
+                                    ) : (
+                                        <motion.h4 className="h4_2" style={{ color: "red", textShadow: "none" }} key="h4_2failA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            NO DATA!
+                                        </motion.h4>
+                                    )
                                 ) : loadingProfessionData ? (
                                     <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                         LOADING...
                                     </motion.h4>
                                 ) : (
-                                    <motion.h4 className="h4_2" style={{ color: "red", textShadow: "none" }} key="h4_2failA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                        NO DATA!
+                                    <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company
+                                            ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company
+                                            : info.LinkedIn.profession}
                                     </motion.h4>
-                                )
-                            ) : loadingProfessionData ? (
-                                <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                    LOADING...
-                                </motion.h4>
-                            ) : (
-                                <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                    {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
-                                </motion.h4>
-                            )}
+                                )}
+                            </div>
+                            <div className="aboutMeTextTitle2">
+                                {info.api.enabled && professionData?.professionStatus && (
+                                    <>
+                                        <CRUDProfessionButton loading={loadingProfessionData} />
+                                        <CRUDJobButton loading={loadingProfessionData} />
+                                        <CRUDTechnologiesButton loading={loadingProfessionData} />
+                                    </>
+                                )}
+                            </div>
                         </div>
                         <div className="aboutMeText">
                             {info.api.enabled ? (
@@ -425,6 +442,76 @@ function Education({ loadingProfessionData, statusDB, educations }) {
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileData" key="noedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function Experience({ loadingProfessionData, statusDB, experiences }) {
+    const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
+
+    const openOrCloseExperience = (index) => {
+        const updatedVisibility = [...isVisibleEx];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setIsVisibleEx(updatedVisibility);
+    };
+
+    return (
+        <div className="experiencesContainer">
+            <div className="experiencesTitle">
+                <h3>
+                    MY EXPERIENCE
+                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="experiencesContent">
+                <AnimatePresence>
+                    {experiences.length > 0 ? (
+                        experiences.map((experience, index) => (
+                            <motion.div
+                                className="experience"
+                                style={{ "--experience-color": experience.color }}
+                                key={index}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                onClick={() => openOrCloseExperience(index)}
+                                whileHover={{
+                                    scale: 1.01,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="experienceTitle">
+                                    <h4>
+                                        {experience.companyName}
+                                        {experience.current && (
+                                            <span style={{ color: "lightgreen", fontSize: "15px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENTLY WORKING IN THIS ROLE)"}</span>
+                                        )}
+                                    </h4>
+                                </div>
+                                <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
+                                    <p>{experience.workTitle}</p>
+                                    <p>{experience.workTimeAndPlace}</p>
+                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})`, backgroundColor: !experience.image && experience.color }} />
+                                </div>
+                                <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
+                                    <p>{experience.workDescription}</p>
+                                    <p className="usedTech">
+                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}.</span>
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))
+                    ) : loadingProfessionData ? (
+                        <motion.div className="loadingProfileData" key="loadingexpprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProfile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProfileData" key="noutilexpprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                             <h4>NO DATA!</h4>
                         </motion.div>
                     )}
@@ -786,76 +873,6 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                         </AnimatePresence>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
-}
-
-function Experience({ loadingProfessionData, statusDB, experiences }) {
-    const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
-
-    const openOrCloseExperience = (index) => {
-        const updatedVisibility = [...isVisibleEx];
-        updatedVisibility[index] = !updatedVisibility[index];
-        setIsVisibleEx(updatedVisibility);
-    };
-
-    return (
-        <div className="experiencesContainer">
-            <div className="experiencesTitle">
-                <h3>
-                    MY EXPERIENCE
-                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
-                </h3>
-            </div>
-            <div className="experiencesContent">
-                <AnimatePresence>
-                    {experiences.length > 0 ? (
-                        experiences.map((experience, index) => (
-                            <motion.div
-                                className="experience"
-                                style={{ "--experience-color": experience.color }}
-                                key={index}
-                                initial={{ opacity: 0, y: -100 }}
-                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                onClick={() => openOrCloseExperience(index)}
-                                whileHover={{
-                                    scale: 1.01,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.99 }}
-                            >
-                                <div className="experienceTitle">
-                                    <h4>
-                                        {experience.companyName}
-                                        {experience.current && (
-                                            <span style={{ color: "lightgreen", fontSize: "15px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENTLY WORKING IN THIS ROLE)"}</span>
-                                        )}
-                                    </h4>
-                                </div>
-                                <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
-                                    <p>{experience.workTitle}</p>
-                                    <p>{experience.workTimeAndPlace}</p>
-                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})`, backgroundColor: !experience.image && experience.color }} />
-                                </div>
-                                <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
-                                    <p>{experience.workDescription}</p>
-                                    <p className="usedTech">
-                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}.</span>
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))
-                    ) : loadingProfessionData ? (
-                        <motion.div className="loadingProfileData" key="loadingexpprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfile" />
-                        </motion.div>
-                    ) : (
-                        <motion.div className="noProfileData" key="noutilexpprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-                            <h4>NO DATA!</h4>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </div>
         </div>
     );

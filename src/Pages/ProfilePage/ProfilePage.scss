@@ -45,6 +45,53 @@
             left: 10px;
         }
     }
+
+    .aboutMeTextTitle {
+        background-color: #111;
+        height: 20%;
+        width: 100%;
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid #03a062;
+        display: flex;
+
+        .aboutMeTextTitle1 {
+            height: 100%;
+            width: 60%;
+
+            .h4_1 {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 15px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+
+            .h4_2 {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 32px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+    }
+
+    .aboutMeTextTitle2 {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        gap: 20px;
+        padding-right: 20px;
+    }
 }
 
 @keyframes fadeIn {

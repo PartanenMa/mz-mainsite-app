@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import Carousel from "/src/Components/Carousel/Carousel.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,6 +10,7 @@ import Carousel3 from "/src/Assets/Images/Carousel3.jpg";
 import "./HomePage.scss";
 
 function HomePage() {
+    const [connection, setConnection] = useState(false);
     const [loadingProfessionData, setLoadingProfessionData] = useState(true);
     const [loadingJobData, setLoadingJobData] = useState(true);
     const [professionData, setProfessionData] = useState([]);
@@ -16,6 +18,7 @@ function HomePage() {
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkConnection();
             getProfession();
             getJob();
         } else {
@@ -25,6 +28,18 @@ function HomePage() {
             }, 1000);
         }
     }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
 
     const getProfession = () => {
         fetch("/profession")
@@ -72,6 +87,7 @@ function HomePage() {
         <div className="hP">
             <div className="homePageContainer">
                 <HomePageTitle />
+                {info.api.enabled && <ServerState connected={connection} />}
                 <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
             </div>
         </div>

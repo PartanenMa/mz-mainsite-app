@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
@@ -6,12 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.scss";
 
 function ProjectsPage() {
+    const [connection, setConnection] = useState(false);
     const [loadingProjectsData, setLoadingProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkConnection();
             getProjects();
         } else {
             setTimeout(() => {
@@ -20,6 +23,18 @@ function ProjectsPage() {
             }, 1000);
         }
     }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
 
     const getProjects = async () => {
         fetch("/projects")
@@ -47,6 +62,7 @@ function ProjectsPage() {
         <div className="pJP">
             <div className="projectsPageContainer">
                 <ProjectsPageTitle />
+                {info.api.enabled && <ServerState connected={connection} />}
                 <AboutMyProjects />
                 <Projects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
             </div>

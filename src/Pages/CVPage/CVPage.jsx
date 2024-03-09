@@ -1,12 +1,35 @@
+import { useState, useEffect } from "react";
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import "./CVPage.scss";
 
 function CVPage() {
+    const [connection, setConnection] = useState(false);
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            checkConnection();
+        }
+    }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
+
     return (
         <div className="cvP">
             <div className="cvPageContainer">
                 <CVPageTitle />
+                {info.api.enabled && <ServerState connected={connection} />}
                 <CVPageContent />
             </div>
         </div>

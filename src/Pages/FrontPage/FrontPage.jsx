@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./FrontPage.scss";
 
 function FrontPage() {
+    const [connection, setConnection] = useState(false);
     const [loadingProfessionData, setLoadingProfessionData] = useState(true);
     const [loadingJobData, setLoadingJobData] = useState(true);
     const [loadingTechnologiesData, setLoadingTechnologiesData] = useState(true);
@@ -15,6 +17,45 @@ function FrontPage() {
     const [technologiesBe, setTechnologiesBe] = useState([]);
     const [showFrontEnd, setShowFrontEnd] = useState(false);
     const [showBackEnd, setShowBackEnd] = useState(false);
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            checkConnection();
+            getProfession();
+            getJob();
+            getTechnologies();
+        } else {
+            if (info.LinkedIn.professionTech.includes("Front-end")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(false);
+            } else if (info.LinkedIn.professionTech.includes("Back-end")) {
+                setShowFrontEnd(false);
+                setShowBackEnd(true);
+            } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(true);
+            }
+            setTechnologiesFe(dataFe.technologiesData.technologiesFe);
+            setTechnologiesBe(dataFe.technologiesData.technologiesBe);
+            setTimeout(() => {
+                setLoadingProfessionData(false);
+                setLoadingJobData(false);
+                setLoadingTechnologiesData(false);
+            }, 1000);
+        }
+    }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
 
     const getProfession = () => {
         fetch("/profession")
@@ -81,32 +122,6 @@ function FrontPage() {
     };
 
     useEffect(() => {
-        if (info.api.enabled) {
-            getProfession();
-            getJob();
-            getTechnologies();
-        } else {
-            if (info.LinkedIn.professionTech.includes("Front-end")) {
-                setShowFrontEnd(true);
-                setShowBackEnd(false);
-            } else if (info.LinkedIn.professionTech.includes("Back-end")) {
-                setShowFrontEnd(false);
-                setShowBackEnd(true);
-            } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
-                setShowFrontEnd(true);
-                setShowBackEnd(true);
-            }
-            setTechnologiesFe(dataFe.technologiesData.technologiesFe);
-            setTechnologiesBe(dataFe.technologiesData.technologiesBe);
-            setTimeout(() => {
-                setLoadingProfessionData(false);
-                setLoadingJobData(false);
-                setLoadingTechnologiesData(false);
-            }, 1000);
-        }
-    }, []);
-
-    useEffect(() => {
         if (professionData?.professionStatus?.professionTech.includes("Front-end")) {
             setShowFrontEnd(true);
             setShowBackEnd(false);
@@ -123,6 +138,7 @@ function FrontPage() {
         <div className="fP">
             <div className="frontPageContainer">
                 <Main
+                    connection={connection}
                     loadingProfessionData={loadingProfessionData}
                     loadingJobData={loadingJobData}
                     loadingTechnologiesData={loadingTechnologiesData}
@@ -138,7 +154,7 @@ function FrontPage() {
     );
 }
 
-function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
+function Main({ connection, loadingProfessionData, loadingJobData, loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
     const navigate = useNavigate();
 
     const handleNavigation = (page) => {
@@ -153,6 +169,7 @@ function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, 
 
     return (
         <main className="main">
+            {info.api.enabled && <ServerState connected={connection} />}
             <section className="heroSection">
                 <AnimatePresence>
                     <motion.div className="heroTitle" key="heroT" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
@@ -227,8 +244,8 @@ function Main({ loadingProfessionData, loadingJobData, loadingTechnologiesData, 
                                 <div className="contentProfile">
                                     <p>- About me.</p>
                                     <p>- My educational background.</p>
-                                    <p>- My skills.</p>
                                     <p>- My experience.</p>
+                                    <p>- My skills.</p>
                                 </div>
                             </div>
                             <div className="hC1-2" />

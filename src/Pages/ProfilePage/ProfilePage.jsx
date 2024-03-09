@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
@@ -6,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.scss";
 
 function ProfilePage() {
+    const [connection, setConnection] = useState(false);
     const [loadingProfessionData, setLoadingProfessionData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [professionData, setProfessionData] = useState([]);
@@ -17,6 +19,7 @@ function ProfilePage() {
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkConnection();
             getProfession();
             getJob();
             getProfile();
@@ -30,6 +33,18 @@ function ProfilePage() {
             }, 1000);
         }
     }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
 
     const getProfession = () => {
         fetch("/profession")
@@ -99,11 +114,12 @@ function ProfilePage() {
         <div className="pFP">
             <div className="profilePageContainer">
                 <ProfilePageTitle />
+                {info.api.enabled && <ServerState connected={connection} />}
                 <AboutMe loadingProfessionData={loadingProfessionData} professionData={professionData} jobData={jobData} />
                 <Languages loadingProfessionData={loadingProfessionData} statusDB={statusDB} languages={languages} />
                 <Education loadingProfessionData={loadingProfessionData} statusDB={statusDB} educations={educations} />
-                <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
                 <Experience loadingProfessionData={loadingProfessionData} statusDB={statusDB} experiences={experiences} />
+                <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
                 <Interests />
                 <Hobbies />
                 <ContactMe />
@@ -332,6 +348,76 @@ function Education({ loadingProfessionData, statusDB, educations }) {
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileData" key="noedprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function Experience({ loadingProfessionData, statusDB, experiences }) {
+    const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
+
+    const openOrCloseExperience = (index) => {
+        const updatedVisibility = [...isVisibleEx];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setIsVisibleEx(updatedVisibility);
+    };
+
+    return (
+        <div className="experiencesContainer">
+            <div className="experiencesTitle">
+                <h3>
+                    EXPERIENCE
+                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="experiencesContent">
+                <AnimatePresence>
+                    {experiences.length > 0 ? (
+                        experiences.map((experience, index) => (
+                            <motion.div
+                                className="experience"
+                                style={{ "--experience-color": experience.color }}
+                                key={index}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                onClick={() => openOrCloseExperience(index)}
+                                whileHover={{
+                                    scale: 1.01,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="experienceTitle">
+                                    <h4>
+                                        {experience.companyName}
+                                        {experience.current && (
+                                            <span style={{ color: "lightgreen", fontSize: "15px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENTLY WORKING IN THIS ROLE)"}</span>
+                                        )}
+                                    </h4>
+                                </div>
+                                <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
+                                    <p>{experience.workTitle}</p>
+                                    <p>{experience.workTimeAndPlace}</p>
+                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})`, backgroundColor: !experience.image && experience.color }} />
+                                </div>
+                                <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
+                                    <p>{experience.workDescription}</p>
+                                    <p className="usedTech">
+                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}.</span>
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))
+                    ) : loadingProfessionData ? (
+                        <motion.div className="loadingProfileData" key="loadingexpprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProfile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProfileData" key="noutilexpprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                             <h4>NO DATA!</h4>
                         </motion.div>
                     )}
@@ -693,76 +779,6 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                         </AnimatePresence>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
-}
-
-function Experience({ loadingProfessionData, statusDB, experiences }) {
-    const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
-
-    const openOrCloseExperience = (index) => {
-        const updatedVisibility = [...isVisibleEx];
-        updatedVisibility[index] = !updatedVisibility[index];
-        setIsVisibleEx(updatedVisibility);
-    };
-
-    return (
-        <div className="experiencesContainer">
-            <div className="experiencesTitle">
-                <h3>
-                    EXPERIENCE
-                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
-                </h3>
-            </div>
-            <div className="experiencesContent">
-                <AnimatePresence>
-                    {experiences.length > 0 ? (
-                        experiences.map((experience, index) => (
-                            <motion.div
-                                className="experience"
-                                style={{ "--experience-color": experience.color }}
-                                key={index}
-                                initial={{ opacity: 0, y: -100 }}
-                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                onClick={() => openOrCloseExperience(index)}
-                                whileHover={{
-                                    scale: 1.01,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.99 }}
-                            >
-                                <div className="experienceTitle">
-                                    <h4>
-                                        {experience.companyName}
-                                        {experience.current && (
-                                            <span style={{ color: "lightgreen", fontSize: "15px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENTLY WORKING IN THIS ROLE)"}</span>
-                                        )}
-                                    </h4>
-                                </div>
-                                <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
-                                    <p>{experience.workTitle}</p>
-                                    <p>{experience.workTimeAndPlace}</p>
-                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})`, backgroundColor: !experience.image && experience.color }} />
-                                </div>
-                                <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
-                                    <p>{experience.workDescription}</p>
-                                    <p className="usedTech">
-                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}.</span>
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))
-                    ) : loadingProfessionData ? (
-                        <motion.div className="loadingProfileData" key="loadingexpprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfile" />
-                        </motion.div>
-                    ) : (
-                        <motion.div className="noProfileData" key="noutilexpprofiledata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-                            <h4>NO DATA!</h4>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
@@ -6,12 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.scss";
 
 function VideosPage() {
+    const [connection, setConnection] = useState(false);
     const [loadingVideosData, setLoadingVideosData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkConnection();
             getVideos();
         } else {
             setTimeout(() => {
@@ -20,6 +23,18 @@ function VideosPage() {
             }, 1000);
         }
     }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
 
     const getVideos = () => {
         fetch("/videos")
@@ -47,6 +62,7 @@ function VideosPage() {
         <div className="vP">
             <div className="videosPageContainer">
                 <VideosPageTitle />
+                {info.api.enabled && <ServerState connected={connection} />}
                 <AboutMyVideos />
                 <Videos loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
             </div>

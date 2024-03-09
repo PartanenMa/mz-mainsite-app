@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
+import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./GoalsPage.scss";
 
 function GoalsPage() {
+    const [connection, setConnection] = useState(false);
     const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
 
     useEffect(() => {
         if (info.api.enabled) {
+            checkConnection();
             getGoals();
         } else {
             setTimeout(() => {
@@ -19,6 +22,18 @@ function GoalsPage() {
             }, 1000);
         }
     }, []);
+
+    const checkConnection = () => {
+        fetch("/connection").then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                const statusCode = res.status;
+                const data = res.text();
+                setConnection(true);
+            }
+        });
+    };
 
     const getGoals = () => {
         fetch("/goals")
@@ -46,6 +61,7 @@ function GoalsPage() {
         <div className="gP">
             <div className="goalsPageContainer">
                 <GoalsPageTitle />
+                {info.api.enabled && <ServerState connected={connection} />}
                 <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
                 <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
                 <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
