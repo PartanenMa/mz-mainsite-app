@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectsPage.scss";
 
 function ProjectsPage() {
+    const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
     const [loadingProjectsData, setLoadingProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
@@ -25,19 +26,31 @@ function ProjectsPage() {
     }, []);
 
     const checkConnection = () => {
-        fetch("/connection").then(async (res) => {
+        fetch("/connection", {
+            method: "GET",
+            credentials: "include",
+        }).then(async (res) => {
             const statusCode = res.status;
 
             if (statusCode === 200) {
-                const statusCode = res.status;
-                const data = res.text();
                 setConnection(true);
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
             }
         });
     };
 
     const getProjects = async () => {
-        fetch("/projects")
+        fetch("/projects", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -62,7 +75,7 @@ function ProjectsPage() {
         <div className="pJP">
             <div className="projectsPageContainer">
                 <ProjectsPageTitle />
-                {info.api.enabled && <ServerState connected={connection} />}
+                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
                 <AboutMyProjects />
                 <Projects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
             </div>

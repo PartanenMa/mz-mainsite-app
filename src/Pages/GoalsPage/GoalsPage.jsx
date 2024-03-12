@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./GoalsPage.scss";
 
 function GoalsPage() {
+    const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
     const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
@@ -24,19 +25,31 @@ function GoalsPage() {
     }, []);
 
     const checkConnection = () => {
-        fetch("/connection").then(async (res) => {
+        fetch("/connection", {
+            method: "GET",
+            credentials: "include",
+        }).then(async (res) => {
             const statusCode = res.status;
 
             if (statusCode === 200) {
-                const statusCode = res.status;
-                const data = res.text();
                 setConnection(true);
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
             }
         });
     };
 
     const getGoals = () => {
-        fetch("/goals")
+        fetch("/goals", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -61,7 +74,7 @@ function GoalsPage() {
         <div className="gP">
             <div className="goalsPageContainer">
                 <GoalsPageTitle />
-                {info.api.enabled && <ServerState connected={connection} />}
+                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
                 <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
                 <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
                 <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />

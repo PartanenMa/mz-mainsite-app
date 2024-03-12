@@ -50,9 +50,7 @@ function HomePageAdmin() {
         fetch("/login/session", {
             method: "POST",
             credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ csrfToken }),
         })
             .then((res) => {
@@ -72,7 +70,11 @@ function HomePageAdmin() {
     };
 
     const getProfession = () => {
-        fetch("/profession")
+        fetch("/profession", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -93,7 +95,11 @@ function HomePageAdmin() {
     };
 
     const getJob = () => {
-        fetch("/job")
+        fetch("/job", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 

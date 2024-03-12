@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./VideosPage.scss";
 
 function VideosPage() {
+    const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
     const [loadingVideosData, setLoadingVideosData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
@@ -25,19 +26,31 @@ function VideosPage() {
     }, []);
 
     const checkConnection = () => {
-        fetch("/connection").then(async (res) => {
+        fetch("/connection", {
+            method: "GET",
+            credentials: "include",
+        }).then(async (res) => {
             const statusCode = res.status;
 
             if (statusCode === 200) {
-                const statusCode = res.status;
-                const data = res.text();
                 setConnection(true);
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
             }
         });
     };
 
     const getVideos = () => {
-        fetch("/videos")
+        fetch("/videos", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -62,7 +75,7 @@ function VideosPage() {
         <div className="vP">
             <div className="videosPageContainer">
                 <VideosPageTitle />
-                {info.api.enabled && <ServerState connected={connection} />}
+                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
                 <AboutMyVideos />
                 <Videos loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
             </div>

@@ -43,9 +43,7 @@ function ProjectsPageAdmin() {
         fetch("/login/session", {
             method: "POST",
             credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ csrfToken }),
         })
             .then((res) => {
@@ -65,7 +63,11 @@ function ProjectsPageAdmin() {
     };
 
     const getProjects = async () => {
-        fetch("/projects")
+        fetch("/projects", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 

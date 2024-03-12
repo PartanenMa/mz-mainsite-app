@@ -32,9 +32,7 @@ function CVPageAdmin() {
         fetch("/login/session", {
             method: "POST",
             credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ csrfToken }),
         })
             .then((res) => {

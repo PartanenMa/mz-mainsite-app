@@ -43,9 +43,7 @@ function VideosPageAdmin() {
         fetch("/login/session", {
             method: "POST",
             credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ csrfToken }),
         })
             .then((res) => {
@@ -65,7 +63,11 @@ function VideosPageAdmin() {
     };
 
     const getVideos = () => {
-        fetch("/videos")
+        fetch("/videos", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 

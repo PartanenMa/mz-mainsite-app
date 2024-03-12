@@ -37,9 +37,11 @@ function CRUDProfessionButton(props) {
     };
 
     return props.loading ? (
-        <motion.p className="CRUDProfessionBtnLoading" key="crudprofessionbtnloading" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
-            LOADING...
-        </motion.p>
+        <AnimatePresence>
+            <motion.p className="CRUDProfessionBtnLoading" key="crudprofessionbtnloading" initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
+                LOADING...
+            </motion.p>
+        </AnimatePresence>
     ) : (
         <>
             <AnimatePresence>

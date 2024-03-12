@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProfilePage.scss";
 
 function ProfilePage() {
+    const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
     const [loadingProfessionData, setLoadingProfessionData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
@@ -35,19 +36,31 @@ function ProfilePage() {
     }, []);
 
     const checkConnection = () => {
-        fetch("/connection").then(async (res) => {
+        fetch("/connection", {
+            method: "GET",
+            credentials: "include",
+        }).then(async (res) => {
             const statusCode = res.status;
 
             if (statusCode === 200) {
-                const statusCode = res.status;
-                const data = res.text();
                 setConnection(true);
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
             }
         });
     };
 
     const getProfession = () => {
-        fetch("/profession")
+        fetch("/profession", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -65,7 +78,11 @@ function ProfilePage() {
     };
 
     const getJob = () => {
-        fetch("/job")
+        fetch("/job", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -83,7 +100,11 @@ function ProfilePage() {
     };
 
     const getProfile = () => {
-        fetch("/profile")
+        fetch("/profile", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -114,7 +135,7 @@ function ProfilePage() {
         <div className="pFP">
             <div className="profilePageContainer">
                 <ProfilePageTitle />
-                {info.api.enabled && <ServerState connected={connection} />}
+                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
                 <AboutMe loadingProfessionData={loadingProfessionData} professionData={professionData} jobData={jobData} />
                 <Languages loadingProfessionData={loadingProfessionData} statusDB={statusDB} languages={languages} />
                 <Education loadingProfessionData={loadingProfessionData} statusDB={statusDB} educations={educations} />

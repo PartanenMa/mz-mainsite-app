@@ -57,9 +57,7 @@ function ProfilePageAdmin() {
         fetch("/login/session", {
             method: "POST",
             credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ csrfToken }),
         })
             .then((res) => {
@@ -79,7 +77,11 @@ function ProfilePageAdmin() {
     };
 
     const getProfession = () => {
-        fetch("/profession")
+        fetch("/profession", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -97,7 +99,11 @@ function ProfilePageAdmin() {
     };
 
     const getJob = () => {
-        fetch("/job")
+        fetch("/job", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -115,7 +121,11 @@ function ProfilePageAdmin() {
     };
 
     const getProfile = () => {
-        fetch("/profile")
+        fetch("/profile", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 

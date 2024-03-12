@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./FrontPage.scss";
 
 function FrontPage() {
+    const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
     const [loadingProfessionData, setLoadingProfessionData] = useState(true);
     const [loadingJobData, setLoadingJobData] = useState(true);
@@ -46,19 +47,31 @@ function FrontPage() {
     }, []);
 
     const checkConnection = () => {
-        fetch("/connection").then(async (res) => {
+        fetch("/connection", {
+            method: "GET",
+            credentials: "include",
+        }).then(async (res) => {
             const statusCode = res.status;
 
             if (statusCode === 200) {
-                const statusCode = res.status;
-                const data = res.text();
                 setConnection(true);
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
             }
         });
     };
 
     const getProfession = () => {
-        fetch("/profession")
+        fetch("/profession", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -79,7 +92,11 @@ function FrontPage() {
     };
 
     const getJob = () => {
-        fetch("/job")
+        fetch("/job", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -100,7 +117,11 @@ function FrontPage() {
     };
 
     const getTechnologies = () => {
-        fetch("/technologies")
+        fetch("/technologies", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -138,6 +159,7 @@ function FrontPage() {
         <div className="fP">
             <div className="frontPageContainer">
                 <Main
+                    connectionLoading={connectionLoading}
                     connection={connection}
                     loadingProfessionData={loadingProfessionData}
                     loadingJobData={loadingJobData}
@@ -154,7 +176,7 @@ function FrontPage() {
     );
 }
 
-function Main({ connection, loadingProfessionData, loadingJobData, loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
+function Main({ connectionLoading, connection, loadingProfessionData, loadingJobData, loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
     const navigate = useNavigate();
 
     const handleNavigation = (page) => {
@@ -169,7 +191,7 @@ function Main({ connection, loadingProfessionData, loadingJobData, loadingTechno
 
     return (
         <main className="main">
-            {info.api.enabled && <ServerState connected={connection} />}
+            {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
             <section className="heroSection">
                 <AnimatePresence>
                     <motion.div className="heroTitle" key="heroT" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
