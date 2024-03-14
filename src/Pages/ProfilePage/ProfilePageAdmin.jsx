@@ -470,11 +470,110 @@ function Experience({ loadingProfessionData, statusDB, experiences }) {
         setIsVisibleEx(updatedVisibility);
     };
 
+    const formatDate = (date) => {
+        const day = date.getDate().toString().padStart(2, "0");
+        const month = (date.getMonth() + 1).toString().padStart(2, "0");
+        const year = date.getFullYear().toString();
+
+        return `${day}.${month}.${year}`;
+    };
+
+    const getExperienceTime = (e) => {
+        let startDate = new Date(e.startDate);
+        startDate = formatDate(startDate);
+        let endDate;
+        let time;
+
+        if (e.endDate === "") {
+            endDate = "present";
+            return startDate + " - " + endDate;
+        } else {
+            endDate = new Date(e.endDate);
+            endDate = formatDate(endDate);
+            time = e.time;
+
+            const years = Math.floor(time / 12);
+            const remainingMonths = time % 12;
+
+            if (years < 1) {
+                if (remainingMonths === 0) {
+                    time = "0 months";
+                } else if (remainingMonths === 1) {
+                    time = remainingMonths + " month";
+                } else {
+                    time = remainingMonths + " months";
+                }
+            } else if (years === 1 && remainingMonths === 0) {
+                time = "1 year";
+            } else if (years === 1 && remainingMonths > 0) {
+                if (remainingMonths === 1) {
+                    time = `1 year and ${remainingMonths} month`;
+                } else {
+                    time = `1 year and ${remainingMonths} months`;
+                }
+            } else if (years > 1 && remainingMonths === 0) {
+                if (years === 1) {
+                    time = `${years} year`;
+                } else {
+                    time = `${years} years`;
+                }
+            } else {
+                time = `${years} years and ${remainingMonths} months`;
+            }
+
+            return startDate + " - " + endDate + " (" + time + ")";
+        }
+    };
+
+    const getTotalExperience = (index) => {
+        let totalMonths = 0;
+
+        experiences[index].experiences.map((e) => {
+            if (e.time === 0) {
+                const start = new Date(e.startDate);
+                const end = new Date();
+                const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+                totalMonths += diffInMonths;
+            } else {
+                totalMonths += e.time;
+            }
+        });
+
+        const years = Math.floor(totalMonths / 12);
+        const remainingMonths = totalMonths % 12;
+
+        if (years < 1) {
+            if (remainingMonths === 0) {
+                return "NO EXPERIENCE YET!";
+            } else if (remainingMonths === 1) {
+                return remainingMonths + " month";
+            } else {
+                return remainingMonths + " months";
+            }
+        } else if (years === 1 && remainingMonths === 0) {
+            return "1 year";
+        } else if (years === 1 && remainingMonths > 0) {
+            if (remainingMonths === 1) {
+                return `1 year and ${remainingMonths} month`;
+            } else {
+                return `1 year and ${remainingMonths} months`;
+            }
+        } else if (years > 1 && remainingMonths === 0) {
+            if (years === 1) {
+                return `${years} year`;
+            } else {
+                return `${years} years`;
+            }
+        } else {
+            return `${years} years and ${remainingMonths} months`;
+        }
+    };
+
     return (
         <div className="experiencesContainer">
             <div className="experiencesTitle">
                 <h3>
-                    MY EXPERIENCE
+                    EXPERIENCE
                     <DBstate loading={loadingProfessionData} statusDB={statusDB} />
                 </h3>
             </div>
@@ -495,24 +594,68 @@ function Experience({ loadingProfessionData, statusDB, experiences }) {
                                 }}
                                 whileTap={{ scale: 0.99 }}
                             >
-                                <div className="experienceTitle">
-                                    <h4>
-                                        {experience.companyName}
-                                        {experience.current && (
-                                            <span style={{ color: "lightgreen", fontSize: "15px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENTLY WORKING IN THIS ROLE)"}</span>
-                                        )}
-                                    </h4>
+                                <div className="experienceTitle" style={{ backgroundColor: experience.color }}>
+                                    <div className="experienceTitleContainer">
+                                        <h4>
+                                            {experience.companyName}
+                                            <span title="Currently employed" style={{ fontStyle: "normal" }}>
+                                                {experience.current ? " 💼" : ""}
+                                            </span>
+                                        </h4>
+                                    </div>
+                                    <div
+                                        className="companyLogo"
+                                        style={{
+                                            backgroundImage: `url(${experience.image})`,
+                                            backgroundPosition: experience.backgroundPosition,
+                                            backgroundSize: experience.backgroundSize,
+                                            backgroundColor: !experience.image && experience.color,
+                                        }}
+                                    />
                                 </div>
-                                <div className="experienceContent1" style={{ backgroundColor: experience.color }}>
-                                    <p>{experience.workTitle}</p>
-                                    <p>{experience.workTimeAndPlace}</p>
-                                    <div className="companyLogo" style={{ backgroundImage: `url(${experience.image})`, backgroundColor: !experience.image && experience.color }} />
-                                </div>
-                                <div className="experienceContent2" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
-                                    <p>{experience.workDescription}</p>
-                                    <p className="usedTech">
-                                        Technologies used: <span style={{ color: "white" }}>{experience.workTech}.</span>
-                                    </p>
+                                <div className="experienceContentContainer" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
+                                    {experience.experiences.map((e, i) => (
+                                        <div className="experienceContent">
+                                            <>
+                                                <div className="companyTitle">
+                                                    <p>
+                                                        {e.workTitle + " at "}
+                                                        {e.companyName}
+                                                        {e.current && (
+                                                            <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>
+                                                                {" (CURRENTLY WORKING IN THIS ROLE)"}
+                                                            </span>
+                                                        )}
+                                                    </p>
+                                                </div>
+                                                <div className="workTitle">
+                                                    <p>
+                                                        Type: <span style={{ color: "white" }}>{e.workType}</span>
+                                                    </p>
+                                                    <p>
+                                                        Time: <span style={{ color: "white" }}>{getExperienceTime(e)}</span>
+                                                    </p>
+                                                    <p>
+                                                        Place: <span style={{ color: "white" }}>{e.place}</span>
+                                                    </p>
+                                                </div>
+                                                <div className="description">
+                                                    <p>Description:</p>
+                                                    <p style={{ color: "white" }}>{e.workDescription}</p>
+                                                </div>
+                                                <div className="technologiesUsed">
+                                                    <p>Technologies used:</p>
+                                                    <p style={{ color: "white" }}>{e.workTech}.</p>
+                                                </div>
+                                            </>
+                                            ;
+                                        </div>
+                                    ))}
+                                    <div className="totalExperience" style={{ backgroundColor: experience.color }}>
+                                        <h5>
+                                            Total experience at {experience.companyName} {"(" + getTotalExperience(index) + ")"}
+                                        </h5>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))

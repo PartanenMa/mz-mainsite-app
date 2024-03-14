@@ -5,6 +5,7 @@ import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
+import CRUDGoalsButton from "/src/Components/CRUDGoalsButton/CRUDGoalsButton.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -130,6 +131,7 @@ function GoalsPageAdmin() {
                             <GoalsPageTitle />
                             <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
                             <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                            {info.api.enabled && <CRUDGoalsButton loading={loadingGoalsData} action={"Create"} />}
                             <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
@@ -269,18 +271,28 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
                 {goals.length > 0 ? (
                     goals.map((goal, index) => (
                         <motion.div className="goal" key={index} transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <h3>
-                                {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
-                            </h3>
-                            <p>
-                                - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
-                            </p>
-                            <p>
-                                - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
-                            </p>
-                            <p>
-                                - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
-                            </p>
+                            <div className="goalSection1">
+                                <h3>
+                                    {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
+                                </h3>
+                                <p>
+                                    - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
+                                </p>
+                                <p>
+                                    - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
+                                </p>
+                                <p>
+                                    - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
+                                </p>
+                            </div>
+                            <div className="goalSection2">
+                                {info.api.enabled && (
+                                    <>
+                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Update"} />
+                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Delete"} />
+                                    </>
+                                )}
+                            </div>
                         </motion.div>
                     ))
                 ) : loadingGoalsData ? (

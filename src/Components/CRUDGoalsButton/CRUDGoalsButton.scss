@@ -1,30 +1,96 @@
-.CRUDProfessionBtnLoading {
-    color: orange;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.goalsBtnContainer {
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 20px;
+
+    .CRUDGoalsCreateBtnLoading {
+        color: green;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-right: 10px;
+    }
+
+    .goalsCreateBtn {
+        animation: fadeIn 0.3s;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        height: 40px;
+        width: 100px;
+        border-radius: 5px;
+        border: 1px solid white;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-right: 10px;
+    }
+
+    .goalsCreateBtn:hover {
+        background-color: lightgreen;
+        color: green;
+        border: 1px solid green;
+        transition: background-color 500ms ease-in-out;
+    }
 }
 
-.professionBtn {
-    animation: fadeIn 0.3s;
-    background-color: orange;
-    color: white;
-    cursor: pointer;
-    height: 40px;
-    width: 100px;
-    border-radius: 5px;
-    border: 1px solid white;
-    font-style: italic;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.goalsBtnContainerMod {
+    .CRUDGoalsUpdateBtnLoading {
+        color: orange;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    .goalsUpdateBtn {
+        animation: fadeIn 0.3s;
+        background-color: orange;
+        color: white;
+        cursor: pointer;
+        height: 40px;
+        width: 100px;
+        border-radius: 5px;
+        border: 1px solid white;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    .goalsUpdateBtn:hover {
+        background-color: yellow;
+        color: orange;
+        border: 1px solid orange;
+        transition: background-color 500ms ease-in-out;
+    }
+
+    .CRUDGoalsDeleteBtnLoading {
+        color: red;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    .goalsDeleteBtn {
+        animation: fadeIn 0.3s;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        height: 40px;
+        width: 100px;
+        border-radius: 5px;
+        border: 1px solid white;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    .goalsDeleteBtn:hover {
+        background-color: lightcoral;
+        color: red;
+        border: 1px solid red;
+        transition: background-color 500ms ease-in-out;
+    }
 }
 
-.professionBtn:hover {
-    background-color: yellow;
-    color: orange;
-    border: 1px solid orange;
-    transition: background-color 500ms ease-in-out;
-}
-
-.modalProfessionOverlay {
+.modalGoalsOverlay {
     background-color: gray;
     opacity: 50%;
     position: fixed;
@@ -35,7 +101,7 @@
     z-index: 1000;
 }
 
-.modalProfession {
+.modalGoals {
     background-color: #111;
     height: 580px;
     width: 746px;
@@ -48,7 +114,7 @@
     z-index: 1000;
     overflow: hidden;
 
-    .modalProfessionHeader {
+    .modalGoalsHeader {
         height: 10%;
         width: 100%;
         border-bottom: 3px solid #03a062;
@@ -56,7 +122,7 @@
         justify-content: center;
         overflow: hidden;
 
-        .mPH-titleC {
+        .mGH-titleC {
             height: 100%;
             width: 90%;
             display: flex;
@@ -74,14 +140,14 @@
             }
         }
 
-        .mPH-buttonC {
+        .mGH-buttonC {
             height: 100%;
             width: 10%;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            .modalProfessionHeaderX-button {
+            .modalGoalsHeaderX-button {
                 animation: fadeIn 0.3s;
                 background-color: red;
                 color: white;
@@ -98,7 +164,7 @@
             }
         }
 
-        .modalProfessionHeaderX-button:hover {
+        .modalGoalsHeaderX-button:hover {
             background-color: lightcoral;
             color: red;
             border: 1px solid red;
@@ -106,13 +172,13 @@
         }
     }
 
-    .modalProfessionContent {
+    .modalGoalsContent {
         height: 80%;
         width: 100%;
         overflow: hidden;
     }
 
-    .modalProfessionFooter {
+    .modalGoalsFooter {
         height: 10%;
         width: 100%;
         border-top: 3px solid #03a062;
@@ -121,7 +187,7 @@
         align-items: center;
         gap: 30px;
 
-        .modalProfessionBackButton {
+        .modalGoalsBackButton {
             background-color: red;
             color: white;
             cursor: pointer;
@@ -134,15 +200,15 @@
             transition: filter 300ms;
         }
 
-        .modalProfessionBackButton:hover {
+        .modalGoalsBackButton:hover {
             background-color: lightcoral;
             color: red;
             border: 1px solid red;
             transition: background-color 500ms ease-in-out;
         }
 
-        .modalProfessionUpdateButton {
-            background-color: orange;
+        .modalGoalsCreateButton {
+            background-color: green;
             color: white;
             cursor: pointer;
             height: 48px;
@@ -154,10 +220,10 @@
             transition: filter 300ms;
         }
 
-        .modalProfessionUpdateButton:hover {
-            background-color: yellow;
-            color: orange;
-            border: 1px solid orange;
+        .modalGoalsCreateButton:hover {
+            background-color: lightgreen;
+            color: green;
+            border: 1px solid green;
             transition: background-color 500ms ease-in-out;
         }
     }

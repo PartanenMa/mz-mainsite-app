@@ -45,6 +45,51 @@
             left: 10px;
         }
     }
+
+    .goal {
+        background-color: #111;
+        height: 200px;
+        width: 90%;
+        border: 1px solid #03a062;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+
+        .goalSection1 {
+            height: 100%;
+            width: 80%;
+            overflow: hidden;
+
+            h3 {
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 30px;
+            }
+
+            p {
+                color: #03a062;
+                font-size: 15px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 30px;
+            }
+        }
+
+        .goalSection2 {
+            height: 100%;
+            width: 20%;
+            overflow: hidden;
+            padding-top: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
 }
 
 @keyframes fadeIn {

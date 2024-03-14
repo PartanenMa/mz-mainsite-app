@@ -502,6 +502,181 @@
     }
 }
 
+.experiencesContainer {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+}
+
+.experiencesTitle {
+    background-color: #0072b1;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    h3 {
+        color: white;
+        font-size: 25px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        bottom: 23px;
+        left: 10px;
+    }
+}
+
+.experiencesContent {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    .experience {
+        width: 98%;
+        border: 1px solid #03a062;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: filter 300ms;
+
+        .experienceTitle {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+
+            .experienceTitleContainer {
+                height: 100%;
+                width: 85%;
+                padding-left: 30px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                h4 {
+                    color: white;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.3px 0.3px 0 black;
+                }
+            }
+
+            .companyLogo {
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 15%;
+                filter: drop-shadow(0 0 2em black);
+            }
+        }
+
+        .experienceContentContainer {
+            width: 100%;
+            border-top: 1px solid #03a062;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+
+            .experienceContent {
+                background-color: #333;
+                width: 100%;
+                padding-right: 10px;
+                padding-bottom: 5px;
+                overflow: hidden;
+
+                .companyTitle {
+                    background-color: #111;
+                    width: 100%;
+                    border-top: 1px solid #03a062;
+                    border-bottom: 1px solid #03a062;
+                    overflow: hidden;
+                    padding-left: 10px;
+
+                    p {
+                        color: white;
+                        font-size: 25px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+
+                .workTitle {
+                    width: 100%;
+                    overflow: hidden;
+                    padding-left: 10px;
+
+                    p {
+                        color: #03a062;
+                        font-size: 15px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+
+                .description {
+                    width: 100%;
+                    border-top: 0.3px solid #03a062;
+                    overflow: hidden;
+                    padding-left: 10px;
+
+                    p {
+                        color: #03a062;
+                        font-size: 15px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        max-width: 1200px;
+                    }
+                }
+
+                .technologiesUsed {
+                    width: 100%;
+                    border-top: 0.3px solid #03a062;
+                    overflow: hidden;
+                    padding-left: 10px;
+
+                    p {
+                        color: #03a062;
+                        font-size: 15px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        max-width: 1200px;
+                    }
+                }
+            }
+
+            .totalExperience {
+                width: 100%;
+                overflow: hidden;
+                padding-left: 30px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                h5 {
+                    color: white;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+        }
+    }
+
+    .experience:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em var(--experience-color));
+    }
+}
+
 .skillsContainer {
     width: 100%;
     overflow: hidden;
@@ -800,133 +975,6 @@
                 }
             }
         }
-    }
-}
-
-.experiencesContainer {
-    width: 100%;
-    overflow: hidden;
-    border-bottom: 1px solid white;
-}
-
-.experiencesTitle {
-    background-color: #0072b1;
-    height: 30px;
-    width: 100%;
-    overflow: hidden;
-    border-bottom: 1px solid white;
-
-    h3 {
-        color: white;
-        font-size: 25px;
-        font-style: italic;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        position: relative;
-        bottom: 23px;
-        left: 10px;
-    }
-}
-
-.experiencesContent {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 1%;
-    padding-right: 1%;
-
-    .experience {
-        width: 98%;
-        border: 1px solid #03a062;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: filter 300ms;
-
-        .experienceTitle {
-            background-color: #111;
-            height: 30px;
-            width: 100%;
-            border-bottom: 1px solid #03a062;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            padding-left: 10px;
-            overflow: hidden;
-
-            h4 {
-                color: #03a062;
-                font-size: 20px;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                position: relative;
-                bottom: 22px;
-                text-shadow: 0.3px 0.3px 0 lightgreen;
-            }
-        }
-
-        .experienceContent1 {
-            height: 100px;
-            width: 100%;
-            padding-left: 10px;
-            overflow: hidden;
-
-            p {
-                color: white;
-                font-size: 18px;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            }
-
-            .companyLogo {
-                background-color: white;
-                background-repeat: no-repeat;
-                background-position: 20% 50%;
-                background-size: 90%;
-                height: 100px;
-                width: 15%;
-                float: right;
-                position: relative;
-                bottom: 96px;
-            }
-        }
-
-        .experienceContent2 {
-            background-color: #333;
-            width: 100%;
-            border-top: 1px solid white;
-            padding-left: 10px;
-            padding-right: 100px;
-            padding-bottom: 5px;
-            overflow: hidden;
-
-            p {
-                color: white;
-                font-size: 15px;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                line-height: 1.5;
-                max-width: 1200px;
-            }
-
-            .usedTech {
-                color: #03a062;
-                font-size: 15px;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                max-width: 1200px;
-            }
-        }
-    }
-
-    .experience:hover {
-        border: 1px solid white;
-        filter: drop-shadow(0 0 2em var(--experience-color));
     }
 }
 

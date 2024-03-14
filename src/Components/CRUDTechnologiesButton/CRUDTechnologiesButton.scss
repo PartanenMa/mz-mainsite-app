@@ -17,6 +17,13 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.technologiesBtn:hover {
+    background-color: yellow;
+    color: orange;
+    border: 1px solid orange;
+    transition: background-color 500ms ease-in-out;
+}
+
 .modalTechnologiesOverlay {
     background-color: gray;
     opacity: 50%;
@@ -400,7 +407,7 @@
         }
 
         .modalTechnologiesUpdateButton {
-            background-color: green;
+            background-color: orange;
             color: white;
             cursor: pointer;
             height: 48px;
@@ -413,9 +420,9 @@
         }
 
         .modalTechnologiesUpdateButton:hover {
-            background-color: lightgreen;
-            color: green;
-            border: 1px solid green;
+            background-color: yellow;
+            color: orange;
+            border: 1px solid orange;
             transition: background-color 500ms ease-in-out;
         }
     }

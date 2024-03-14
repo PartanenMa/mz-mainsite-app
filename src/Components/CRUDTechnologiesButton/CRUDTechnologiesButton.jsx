@@ -57,7 +57,7 @@ function CRUDTechnologiesButton(props) {
                     }}
                     whileTap={{ scale: 0.9 }}
                 >
-                    TECHNOLOGIES SETTINGS
+                    UPDATE TECHNOLOGIES
                 </motion.button>
             </AnimatePresence>
             <ModalTechnologies
@@ -125,9 +125,7 @@ function ModalTechnologies({ isModalOpen, setIsModalOpen, loadingTechnologiesDat
                         >
                             <div className="modalTechnologiesHeader">
                                 <div className="mTH-titleC">
-                                    <h2>
-                                        Technologies settings <span style={{ color: "orange", fontStyle: "normal" }}>{"(UPDATE)"}</span>
-                                    </h2>
+                                    <h2>Update technologies data</h2>
                                 </div>
                                 <div className="mTH-buttonC">
                                     <motion.button

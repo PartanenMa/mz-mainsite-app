@@ -55,7 +55,7 @@ function CRUDProfessionButton(props) {
                     }}
                     whileTap={{ scale: 0.9 }}
                 >
-                    PROFESSION SETTINGS
+                    UPDATE PROFESSION
                 </motion.button>
             </AnimatePresence>
             <ModalProfession isModalOpen={isProfessionModalOpen} setIsModalOpen={setIsProfessionModalOpen} loadingProfessionData={loadingProfessionData} professionData={professionData} />
@@ -116,9 +116,7 @@ function CRUDProfessionButton(props) {
                             >
                                 <div className="modalProfessionHeader">
                                     <div className="mPH-titleC">
-                                        <h2>
-                                            Profession settings <span style={{ color: "orange", fontStyle: "normal" }}>{"(UPDATE)"}</span>
-                                        </h2>
+                                        <h2>Update profession data</h2>
                                     </div>
                                     <div className="mPH-buttonC">
                                         <motion.button

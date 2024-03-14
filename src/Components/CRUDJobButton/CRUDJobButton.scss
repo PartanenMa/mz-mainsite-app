@@ -17,6 +17,13 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.jobBtn:hover {
+    background-color: yellow;
+    color: orange;
+    border: 1px solid orange;
+    transition: background-color 500ms ease-in-out;
+}
+
 .modalJobOverlay {
     background-color: gray;
     opacity: 50%;
@@ -135,7 +142,7 @@
         }
 
         .modalJobUpdateButton {
-            background-color: green;
+            background-color: orange;
             color: white;
             cursor: pointer;
             height: 48px;
@@ -148,9 +155,9 @@
         }
 
         .modalJobUpdateButton:hover {
-            background-color: lightgreen;
-            color: green;
-            border: 1px solid green;
+            background-color: yellow;
+            color: orange;
+            border: 1px solid orange;
             transition: background-color 500ms ease-in-out;
         }
     }

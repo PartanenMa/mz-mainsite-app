@@ -55,7 +55,7 @@ function CRUDJobButton(props) {
                     }}
                     whileTap={{ scale: 0.9 }}
                 >
-                    JOB SETTINGS
+                    UPDATE JOB
                 </motion.button>
             </AnimatePresence>
             <ModalJob isModalOpen={isJobModalOpen} setIsModalOpen={setIsJobModalOpen} loadingJobData={loadingJobData} jobData={jobData} />
@@ -109,9 +109,7 @@ function CRUDJobButton(props) {
                             <motion.div className="modalJob" style={modalStyle} key="modaljob" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
                                 <div className="modalJobHeader">
                                     <div className="mJH-titleC">
-                                        <h2>
-                                            Job settings <span style={{ color: "orange", fontStyle: "normal" }}>{"(UPDATE)"}</span>
-                                        </h2>
+                                        <h2>Update job data</h2>
                                     </div>
                                     <div className="mJH-buttonC">
                                         <motion.button
