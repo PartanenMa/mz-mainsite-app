@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./CRUDGoalsButton.scss";
 
 function CRUDGoalsButton(props) {
-    const [isGoalsModalOpen, setIsGoalsModalOpen] = useState(false);
+    const [isCreateGoalsModalOpen, setIsCreateGoalsModalOpen] = useState(false);
+    const [isUpdateGoalsModalOpen, setIsUpdateGoalsModalOpen] = useState(false);
     const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [goals, setGoals] = useState([]);
 
@@ -40,9 +41,9 @@ function CRUDGoalsButton(props) {
             });
     };
 
-    const updateOrDeleteGoal = (action) => {
+    const openUpdateGoalsModalOrDeleteGoal = (action) => {
         if (action === "Update") {
-            console.log(action.toLowerCase());
+            setIsUpdateGoalsModalOpen(true);
         } else if (action === "Delete") {
             console.log(action.toLowerCase());
         }
@@ -61,7 +62,7 @@ function CRUDGoalsButton(props) {
             <AnimatePresence>
                 <motion.button
                     className={"goals" + props.action + "Btn"}
-                    onClick={props.action === "Create" ? () => setIsGoalsModalOpen(true) : () => updateOrDeleteGoal(props.action)}
+                    onClick={props.action === "Create" ? () => setIsCreateGoalsModalOpen(true) : () => openUpdateGoalsModalOrDeleteGoal(props.action)}
                     key="goalsbtn"
                     whileHover={{
                         scale: 1.05,
@@ -72,12 +73,13 @@ function CRUDGoalsButton(props) {
                     {props.action.toUpperCase() + " GOAL"}
                 </motion.button>
             </AnimatePresence>
-            <ModalGoals isModalOpen={isGoalsModalOpen} setIsModalOpen={setIsGoalsModalOpen} loadingGoalsData={loadingGoalsData} goals={goals} />
+            <ModalCreateGoals isModalOpen={isCreateGoalsModalOpen} setIsModalOpen={setIsCreateGoalsModalOpen} />
+            <ModalUpdateGoals isModalOpen={isUpdateGoalsModalOpen} setIsModalOpen={setIsUpdateGoalsModalOpen} loadingGoalsData={loadingGoalsData} goals={goals} />
         </div>
     );
 }
 
-function ModalGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
+function ModalCreateGoals({ isModalOpen, setIsModalOpen }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
@@ -115,30 +117,29 @@ function ModalGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
         setIsModalOpen(false);
     };
 
-    const updateGoal = () => {
-        console.log("update");
-    };
-
-    const deleteGoal = () => {
-        console.log("delete");
-    };
-
     return ReactDOM.createPortal(
         <>
             {isModalOpen && (
                 <>
-                    <div className="modalGoalsOverlay" />
+                    <div className="modalCreateGoalsOverlay" />
                     <AnimatePresence>
-                        <motion.div className="modalGoals" style={modalStyle} key="modalgoals" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                            <div className="modalGoalsHeader">
-                                <div className="mGH-titleC">
+                        <motion.div
+                            className="modalCreateGoals"
+                            style={modalStyle}
+                            key="modalcreategoals"
+                            initial={{ opacity: 0, y: -100 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -100 }}
+                        >
+                            <div className="modalCreateGoalsHeader">
+                                <div className="mCGH-titleC">
                                     <h2>Create a new goal</h2>
                                 </div>
-                                <div className="mGH-buttonC">
+                                <div className="mCGH-buttonC">
                                     <motion.button
-                                        className="modalGoalsHeaderX-button"
+                                        className="modalCreateGoalsHeaderX-button"
                                         onClick={() => setIsModalOpen(false)}
-                                        key="modalgoalsheaderx-button"
+                                        key="modalcreategoalsheaderx-button"
                                         whileHover={{
                                             scale: 1.05,
                                             transition: { duration: 0.1 },
@@ -149,12 +150,12 @@ function ModalGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
                                     </motion.button>
                                 </div>
                             </div>
-                            <div className="modalGoalsContent"></div>
-                            <div className="modalGoalsFooter">
+                            <div className="modalCreateGoalsContent"></div>
+                            <div className="modalCreateGoalsFooter">
                                 <motion.button
-                                    className="modalGoalsBackButton"
+                                    className="modalCreateGoalsBackButton"
                                     onClick={() => setIsModalOpen(false)}
-                                    key="modalgoalsbackbutton"
+                                    key="modalcreategoalsbackbutton"
                                     whileHover={{
                                         scale: 1.05,
                                         transition: { duration: 0.1 },
@@ -164,9 +165,9 @@ function ModalGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
                                     Cancel
                                 </motion.button>
                                 <motion.button
-                                    className="modalGoalsCreateButton"
+                                    className="modalCreateGoalsCreateButton"
                                     onClick={() => createGoal()}
-                                    key="modalgoalscreatebutton"
+                                    key="modalcreategoalscreatebutton"
                                     whileHover={{
                                         scale: 1.05,
                                         transition: { duration: 0.1 },
@@ -174,6 +175,113 @@ function ModalGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
                                     whileTap={{ scale: 0.9 }}
                                 >
                                     Create
+                                </motion.button>
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </>
+            )}
+        </>,
+        document.getElementById("portal")
+    );
+}
+
+function ModalUpdateGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
+    const [modalStyle, setModalStyle] = useState({
+        top: "",
+        left: "",
+    });
+
+    useEffect(() => {
+        const updateModalPosition = () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            const newTop = `${screenHeight / 2 - 298}px`;
+            const newLeft = `${screenWidth / 2 - 400}px`;
+
+            setModalStyle({
+                top: newTop,
+                left: newLeft,
+                transform: "translate(-50%, -50%)",
+            });
+        };
+
+        //Add an event listener to update the modal position when the window is resized:
+        window.addEventListener("resize", updateModalPosition);
+
+        //Call the updateModalPosition function once to set the initial position:
+        updateModalPosition();
+
+        //Remove the event listener when the component unmounts:
+        return () => {
+            window.removeEventListener("resize", updateModalPosition);
+        };
+    }, [isModalOpen]);
+
+    const updateGoal = () => {
+        console.log("update");
+        setIsModalOpen(false);
+    };
+
+    return ReactDOM.createPortal(
+        <>
+            {isModalOpen && (
+                <>
+                    <div className="modalUpdateGoalsOverlay" />
+                    <AnimatePresence>
+                        <motion.div
+                            className="modalUpdateGoals"
+                            style={modalStyle}
+                            key="modalupdategoals"
+                            initial={{ opacity: 0, y: -100 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -100 }}
+                        >
+                            <div className="modalUpdateGoalsHeader">
+                                <div className="mUGH-titleC">
+                                    <h2>Update goal</h2>
+                                </div>
+                                <div className="mUGH-buttonC">
+                                    <motion.button
+                                        className="modalUpdateGoalsHeaderX-button"
+                                        onClick={() => setIsModalOpen(false)}
+                                        key="modalupdategoalsheaderx-button"
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        X
+                                    </motion.button>
+                                </div>
+                            </div>
+                            <div className="modalUpdateGoalsContent"></div>
+                            <div className="modalUpdateGoalsFooter">
+                                <motion.button
+                                    className="modalUpdateGoalsBackButton"
+                                    onClick={() => setIsModalOpen(false)}
+                                    key="modalupdategoalsbackbutton"
+                                    whileHover={{
+                                        scale: 1.05,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    Cancel
+                                </motion.button>
+                                <motion.button
+                                    className="modalUpdateGoalsUpdateButton"
+                                    onClick={() => updateGoal()}
+                                    key="modalupdategoalscreatebutton"
+                                    whileHover={{
+                                        scale: 1.05,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    Update
                                 </motion.button>
                             </div>
                         </motion.div>

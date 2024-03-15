@@ -90,7 +90,7 @@
     }
 }
 
-.modalGoalsOverlay {
+.modalCreateGoalsOverlay {
     background-color: gray;
     opacity: 50%;
     position: fixed;
@@ -101,7 +101,7 @@
     z-index: 1000;
 }
 
-.modalGoals {
+.modalCreateGoals {
     background-color: #111;
     height: 580px;
     width: 746px;
@@ -114,7 +114,7 @@
     z-index: 1000;
     overflow: hidden;
 
-    .modalGoalsHeader {
+    .modalCreateGoalsHeader {
         height: 10%;
         width: 100%;
         border-bottom: 3px solid #03a062;
@@ -122,7 +122,7 @@
         justify-content: center;
         overflow: hidden;
 
-        .mGH-titleC {
+        .mCGH-titleC {
             height: 100%;
             width: 90%;
             display: flex;
@@ -140,14 +140,14 @@
             }
         }
 
-        .mGH-buttonC {
+        .mCGH-buttonC {
             height: 100%;
             width: 10%;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            .modalGoalsHeaderX-button {
+            .modalCreateGoalsHeaderX-button {
                 animation: fadeIn 0.3s;
                 background-color: red;
                 color: white;
@@ -164,7 +164,7 @@
             }
         }
 
-        .modalGoalsHeaderX-button:hover {
+        .modalCreateGoalsHeaderX-button:hover {
             background-color: lightcoral;
             color: red;
             border: 1px solid red;
@@ -172,13 +172,13 @@
         }
     }
 
-    .modalGoalsContent {
+    .modalCreateGoalsContent {
         height: 80%;
         width: 100%;
         overflow: hidden;
     }
 
-    .modalGoalsFooter {
+    .modalCreateGoalsFooter {
         height: 10%;
         width: 100%;
         border-top: 3px solid #03a062;
@@ -187,7 +187,7 @@
         align-items: center;
         gap: 30px;
 
-        .modalGoalsBackButton {
+        .modalCreateGoalsBackButton {
             background-color: red;
             color: white;
             cursor: pointer;
@@ -200,14 +200,14 @@
             transition: filter 300ms;
         }
 
-        .modalGoalsBackButton:hover {
+        .modalCreateGoalsBackButton:hover {
             background-color: lightcoral;
             color: red;
             border: 1px solid red;
             transition: background-color 500ms ease-in-out;
         }
 
-        .modalGoalsCreateButton {
+        .modalCreateGoalsCreateButton {
             background-color: green;
             color: white;
             cursor: pointer;
@@ -220,10 +220,149 @@
             transition: filter 300ms;
         }
 
-        .modalGoalsCreateButton:hover {
+        .modalCreateGoalsCreateButton:hover {
             background-color: lightgreen;
             color: green;
             border: 1px solid green;
+            transition: background-color 500ms ease-in-out;
+        }
+    }
+}
+
+.modalUpdateGoalsOverlay {
+    background-color: gray;
+    opacity: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.modalUpdateGoals {
+    background-color: #111;
+    height: 580px;
+    width: 746px;
+    padding-bottom: 10px;
+    border: 3px solid #03a062;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #03a062;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: hidden;
+
+    .modalUpdateGoalsHeader {
+        height: 10%;
+        width: 100%;
+        border-bottom: 3px solid #03a062;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        .mUGH-titleC {
+            height: 100%;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 lightgreen;
+                position: relative;
+                left: 30px;
+            }
+        }
+
+        .mUGH-buttonC {
+            height: 100%;
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .modalUpdateGoalsHeaderX-button {
+                animation: fadeIn 0.3s;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-size: 20px;
+                font-style: italic;
+                position: relative;
+                bottom: 8px;
+                left: 16px;
+            }
+        }
+
+        .modalUpdateGoalsHeaderX-button:hover {
+            background-color: lightcoral;
+            color: red;
+            border: 1px solid red;
+            transition: background-color 500ms ease-in-out;
+        }
+    }
+
+    .modalUpdateGoalsContent {
+        height: 80%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .modalUpdateGoalsFooter {
+        height: 10%;
+        width: 100%;
+        border-top: 3px solid #03a062;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .modalUpdateGoalsBackButton {
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            height: 48px;
+            width: 207px;
+            border-radius: 10px;
+            border: 1px solid white;
+            font-size: 30px;
+            font-style: italic;
+            transition: filter 300ms;
+        }
+
+        .modalUpdateGoalsBackButton:hover {
+            background-color: lightcoral;
+            color: red;
+            border: 1px solid red;
+            transition: background-color 500ms ease-in-out;
+        }
+
+        .modalUpdateGoalsUpdateButton {
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            height: 48px;
+            width: 207px;
+            border-radius: 10px;
+            border: 1px solid white;
+            font-size: 30px;
+            font-style: italic;
+            transition: filter 300ms;
+        }
+
+        .modalUpdateGoalsUpdateButton:hover {
+            background-color: yellow;
+            color: orange;
+            border: 1px solid orange;
             transition: background-color 500ms ease-in-out;
         }
     }

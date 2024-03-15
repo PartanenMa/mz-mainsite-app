@@ -10,6 +10,8 @@ function ProfilePage() {
     const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
     const [loadingProfessionData, setLoadingProfessionData] = useState(true);
+    const [loadingJobData, setLoadingJobData] = useState(true);
+    const [loadingProfileData, setLoadingProfileData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
@@ -31,6 +33,8 @@ function ProfilePage() {
                 setSkills(dataFe.profileData.skills);
                 setExperiences(dataFe.profileData.experiences);
                 setLoadingProfessionData(false);
+                setLoadingJobData(false);
+                setLoadingProfileData(false);
             }, 1000);
         }
     }, []);
@@ -69,11 +73,17 @@ function ProfilePage() {
                     const data = res.json();
                     return data;
                 } else {
-                    return;
+                    setTimeout(() => {
+                        setLoadingProfessionData(false);
+                        return;
+                    }, 1000);
                 }
             })
             .then((data) => {
-                setProfessionData(data);
+                setTimeout(() => {
+                    setProfessionData(data);
+                    setLoadingProfessionData(false);
+                }, 1000);
             });
     };
 
@@ -91,11 +101,17 @@ function ProfilePage() {
                     const data = res.json();
                     return data;
                 } else {
-                    return;
+                    setTimeout(() => {
+                        setLoadingJobData(false);
+                        return;
+                    }, 1000);
                 }
             })
             .then((data) => {
-                setJobData(data);
+                setTimeout(() => {
+                    setJobData(data);
+                    setLoadingJobData(false);
+                }, 1000);
             });
     };
 
@@ -114,7 +130,7 @@ function ProfilePage() {
                     return data;
                 } else {
                     setTimeout(() => {
-                        setLoadingProfessionData(false);
+                        setLoadingProfileData(false);
                         return;
                     }, 1000);
                 }
@@ -126,7 +142,7 @@ function ProfilePage() {
                     setSkills(data.profileData.skills);
                     setExperiences(data.profileData.experiences);
                     setStatusDB(true);
-                    setLoadingProfessionData(false);
+                    setLoadingProfileData(false);
                 }, 1000);
             });
     };
@@ -136,11 +152,11 @@ function ProfilePage() {
             <div className="profilePageContainer">
                 <ProfilePageTitle />
                 {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
-                <AboutMe loadingProfessionData={loadingProfessionData} professionData={professionData} jobData={jobData} />
-                <Languages loadingProfessionData={loadingProfessionData} statusDB={statusDB} languages={languages} />
-                <Education loadingProfessionData={loadingProfessionData} statusDB={statusDB} educations={educations} />
-                <Experience loadingProfessionData={loadingProfessionData} statusDB={statusDB} experiences={experiences} />
-                <Skills loadingProfessionData={loadingProfessionData} statusDB={statusDB} skills={skills} />
+                <AboutMe loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
+                <Languages loadingProfileData={loadingProfileData} statusDB={statusDB} languages={languages} />
+                <Education loadingProfileData={loadingProfileData} statusDB={statusDB} educations={educations} />
+                <Experience loadingProfileData={loadingProfileData} statusDB={statusDB} experiences={experiences} />
+                <Skills loadingProfileData={loadingProfileData} statusDB={statusDB} skills={skills} />
                 <Interests />
                 <Hobbies />
                 <ContactMe />
@@ -157,7 +173,7 @@ function ProfilePageTitle() {
     );
 }
 
-function AboutMe({ loadingProfessionData, professionData, jobData }) {
+function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobData }) {
     let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
     let description2 =
         "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
@@ -193,13 +209,13 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
                         <div className="aboutMeTextTitle">
                             <h4 className="h4_1">{info.LinkedIn.name}</h4>
                             {info.api.enabled ? (
-                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingProfessionData) ? (
+                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                     <motion.h4 className="h4_2" key="h4_2success" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                         {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
                                             ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
                                             : professionData?.professionStatus?.profession}
                                     </motion.h4>
-                                ) : loadingProfessionData ? (
+                                ) : loadingProfessionData || loadingJobData ? (
                                     <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loader" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                         LOADING...
                                     </motion.h4>
@@ -208,7 +224,7 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
                                         NO DATA!
                                     </motion.h4>
                                 )
-                            ) : loadingProfessionData ? (
+                            ) : loadingProfessionData || loadingJobData ? (
                                 <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loader" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                     LOADING...
                                 </motion.h4>
@@ -220,7 +236,7 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
                         </div>
                         <div className="aboutMeText">
                             {info.api.enabled ? (
-                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingProfessionData) ? (
+                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                     <motion.p key="aboutmedescriptionsuccess" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                         {description1}
                                         <br />
@@ -230,7 +246,7 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
                                         <br />
                                         {description3}
                                     </motion.p>
-                                ) : loadingProfessionData ? (
+                                ) : loadingProfessionData || loadingJobData ? (
                                     <motion.div className="loadingProfileDataAboutMe" key="loadinglangprofiledataaboutme" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                         <div className="loaderProfileAboutMe" />
                                     </motion.div>
@@ -239,7 +255,7 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
                                         NO DATA!
                                     </motion.p>
                                 )
-                            ) : loadingProfessionData ? (
+                            ) : loadingProfessionData || loadingJobData ? (
                                 <motion.div className="loadingProfileDataAboutMe" key="loadinglangprofiledataaboutme" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfileAboutMe" />
                                 </motion.div>
@@ -262,13 +278,13 @@ function AboutMe({ loadingProfessionData, professionData, jobData }) {
     );
 }
 
-function Languages({ loadingProfessionData, statusDB, languages }) {
+function Languages({ loadingProfileData, statusDB, languages }) {
     return (
         <div className="languagesContainer">
             <div className="languagesTitle">
                 <h3>
                     LANGUAGES
-                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="languagesContent">
@@ -289,7 +305,7 @@ function Languages({ loadingProfessionData, statusDB, languages }) {
                                 </div>
                             </motion.div>
                         ))
-                    ) : loadingProfessionData ? (
+                    ) : loadingProfileData ? (
                         <motion.div className="loadingProfileData" key="loadinglangprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProfile" />
                         </motion.div>
@@ -304,7 +320,7 @@ function Languages({ loadingProfessionData, statusDB, languages }) {
     );
 }
 
-function Education({ loadingProfessionData, statusDB, educations }) {
+function Education({ loadingProfileData, statusDB, educations }) {
     const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
 
     const openOrCloseEducation = (index) => {
@@ -318,7 +334,7 @@ function Education({ loadingProfessionData, statusDB, educations }) {
             <div className="educationsTitle">
                 <h3>
                     EDUCATION
-                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="educationsContent">
@@ -363,7 +379,7 @@ function Education({ loadingProfessionData, statusDB, educations }) {
                                 </div>
                             </motion.div>
                         ))
-                    ) : loadingProfessionData ? (
+                    ) : loadingProfileData ? (
                         <motion.div className="loadingProfileData" key="loadingedprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProfile" />
                         </motion.div>
@@ -378,7 +394,7 @@ function Education({ loadingProfessionData, statusDB, educations }) {
     );
 }
 
-function Experience({ loadingProfessionData, statusDB, experiences }) {
+function Experience({ loadingProfileData, statusDB, experiences }) {
     const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
 
     const openOrCloseExperience = (index) => {
@@ -491,7 +507,7 @@ function Experience({ loadingProfessionData, statusDB, experiences }) {
             <div className="experiencesTitle">
                 <h3>
                     EXPERIENCE
-                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="experiencesContent">
@@ -576,7 +592,7 @@ function Experience({ loadingProfessionData, statusDB, experiences }) {
                                 </div>
                             </motion.div>
                         ))
-                    ) : loadingProfessionData ? (
+                    ) : loadingProfileData ? (
                         <motion.div className="loadingProfileData" key="loadingexpprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderProfile" />
                         </motion.div>
@@ -591,7 +607,7 @@ function Experience({ loadingProfessionData, statusDB, experiences }) {
     );
 }
 
-function Skills({ loadingProfessionData, statusDB, skills }) {
+function Skills({ loadingProfileData, statusDB, skills }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -645,7 +661,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
             <div className="skillsTitle">
                 <h3>
                     SKILLS
-                    <DBstate loading={loadingProfessionData} statusDB={statusDB} />
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
             <div className="skillsContent">
@@ -735,7 +751,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                 </>
-                            ) : loadingProfessionData ? (
+                            ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileData" key="loadingwdsprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -833,7 +849,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                 </>
-                            ) : loadingProfessionData ? (
+                            ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileData" key="loadingfedprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
@@ -931,7 +947,7 @@ function Skills({ loadingProfessionData, statusDB, skills }) {
                                         ))}
                                     </div>
                                 </>
-                            ) : loadingProfessionData ? (
+                            ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileData" key="loadingbedprofiledata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                                     <div className="loaderProfile" />
                                 </motion.div>
