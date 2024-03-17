@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = true;
 
 export const info = {
-    version: "Release 1.0.34",
+    version: "Release 1.0.35",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         loginPage: deployToGitHubPages ? "/MatrixZone-APP/login" : "/login",
@@ -49,7 +49,7 @@ export const info = {
             image: SassLogo,
             size: "80%",
         },
-        /*{
+        {
             name: "Express.js",
             color: "#808080",
             image: ExpressjsLogo,
@@ -60,7 +60,7 @@ export const info = {
             color: "#4DB33D",
             image: MongoDBLogo,
             size: "60%",
-        },*/
+        },
     ],
     fpModalText: {
         introduction:

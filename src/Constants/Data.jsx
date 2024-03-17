@@ -55,6 +55,7 @@ export const dataFe = {
     technologiesData: {
         technologiesFe: [
             {
+                id: 0,
                 name: "React",
                 color: "#61DBFB",
                 image: ReactLogo,
@@ -62,6 +63,7 @@ export const dataFe = {
                 infoLink: "https://react.dev/",
             },
             {
+                id: 1,
                 name: "Sass",
                 color: "#cc6699",
                 image: SassLogo,
@@ -71,6 +73,7 @@ export const dataFe = {
         ],
         technologiesBe: [
             {
+                id: 0,
                 name: "Express.js",
                 color: "#808080",
                 image: ExpressjsLogo,
@@ -78,6 +81,7 @@ export const dataFe = {
                 infoLink: "https://expressjs.com/",
             },
             {
+                id: 1,
                 name: "MongoDB",
                 color: "#4DB33D",
                 image: MongoDBLogo,
@@ -89,18 +93,21 @@ export const dataFe = {
     profileData: {
         languages: [
             {
+                id: 0,
                 name: "Finnish",
                 proficiency: "Native proficiency",
                 color: "white",
                 image: FinnishFlag,
             },
             {
+                id: 1,
                 name: "English",
                 proficiency: "Professional working proficiency - C1",
                 color: "#012169",
                 image: UKFlag,
             },
             {
+                id: 2,
                 name: "Swedish",
                 proficiency: "Limited working proficiency - B1",
                 color: "#006aa7",
@@ -109,6 +116,7 @@ export const dataFe = {
         ],
         educations: [
             {
+                id: 0,
                 schoolName: "PSYL",
                 degreeName: "High School Diploma",
                 timeAndPlace: "11.08.2014 - 05.12.2017 (3 years and 4 months), Pori, Finland",
@@ -120,6 +128,7 @@ export const dataFe = {
                 backgroundSize: "",
             },
             {
+                id: 1,
                 schoolName: "Satakunta University of Applied Sciences",
                 degreeName: "Bachelor of Engineering - BE, Electrical and Automation Engineering - IT automation",
                 timeAndPlace: "16.08.2021 - present, Pori, Finland",
@@ -135,6 +144,7 @@ export const dataFe = {
         ],
         experiences: [
             {
+                id: 0,
                 companyName: "Visma Real Estate Oy",
                 color: "#b11226",
                 image: VismaLogo,
@@ -190,6 +200,7 @@ export const dataFe = {
             webDevelopmentSoftware: {
                 utilitySoftware: [
                     {
+                        id: 0,
                         name: "Visual Studio Code",
                         skillLevel: "advanced",
                         color: "#0078d7",
@@ -197,6 +208,7 @@ export const dataFe = {
                         backgroundSize: "70%",
                     },
                     {
+                        id: 1,
                         name: "Node.js",
                         skillLevel: "advanced",
                         color: "#3c873a",
@@ -204,6 +216,7 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                     {
+                        id: 2,
                         name: "Git",
                         skillLevel: "advanced",
                         color: "#F1502F",
@@ -213,6 +226,7 @@ export const dataFe = {
                 ],
                 cLISoftware: [
                     {
+                        id: 0,
                         name: "Bash",
                         skillLevel: "advanced",
                         color: "darkgreen",
@@ -220,6 +234,7 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                     {
+                        id: 1,
                         name: "PowerShell",
                         skillLevel: "intermediate",
                         color: "#012456",
@@ -229,6 +244,7 @@ export const dataFe = {
                 ],
                 containerizationSoftware: [
                     {
+                        id: 0,
                         name: "Docker",
                         skillLevel: "advanced",
                         color: "#0db7ed",
@@ -236,6 +252,7 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                     {
+                        id: 1,
                         name: "Kubernetes",
                         skillLevel: "beginner",
                         color: "#3970e4",
@@ -247,6 +264,7 @@ export const dataFe = {
             frontEndDevelopment: {
                 frontEndProgrammingLanguages: [
                     {
+                        id: 0,
                         name: "HTML",
                         skillLevel: "advanced",
                         color: "#e34c26",
@@ -254,6 +272,7 @@ export const dataFe = {
                         backgroundSize: "75%",
                     },
                     {
+                        id: 1,
                         name: "CSS",
                         skillLevel: "advanced",
                         color: "#264de4",
@@ -261,6 +280,7 @@ export const dataFe = {
                         backgroundSize: "55%",
                     },
                     {
+                        id: 2,
                         name: "JavaScript",
                         skillLevel: "advanced",
                         color: "#f0db4f",
@@ -268,6 +288,7 @@ export const dataFe = {
                         backgroundSize: "65%",
                     },
                     {
+                        id: 3,
                         name: "TypeScript",
                         skillLevel: "beginner",
                         color: "#007acc",
@@ -277,6 +298,7 @@ export const dataFe = {
                 ],
                 frontEndFrameworks: [
                     {
+                        id: 0,
                         name: "React",
                         skillLevel: "advanced",
                         color: "#61dbfb",
@@ -286,6 +308,7 @@ export const dataFe = {
                 ],
                 cSSFrameworks: [
                     {
+                        id: 0,
                         name: "Sass",
                         skillLevel: "advanced",
                         color: "#cc6699",
@@ -293,6 +316,7 @@ export const dataFe = {
                         backgroundSize: "70%",
                     },
                     {
+                        id: 1,
                         name: "Tailwind CSS",
                         skillLevel: "beginner",
                         color: "#06b6d4",
@@ -304,6 +328,7 @@ export const dataFe = {
             backEndDevelopment: {
                 backEndProgrammingLanguages: [
                     {
+                        id: 0,
                         name: "JavaScript",
                         skillLevel: "experienced",
                         color: "#f0db4f",
@@ -311,6 +336,7 @@ export const dataFe = {
                         backgroundSize: "65%",
                     },
                     {
+                        id: 1,
                         name: "TypeScript",
                         skillLevel: "beginner",
                         color: "#007acc",
@@ -318,6 +344,7 @@ export const dataFe = {
                         backgroundSize: "65%",
                     },
                     {
+                        id: 2,
                         name: "Go",
                         skillLevel: "beginner",
                         color: "#00add8",
@@ -327,6 +354,7 @@ export const dataFe = {
                 ],
                 backEndFrameworks: [
                     {
+                        id: 0,
                         name: "Express.js",
                         skillLevel: "experienced",
                         color: "#808080",
@@ -336,6 +364,7 @@ export const dataFe = {
                 ],
                 databases: [
                     {
+                        id: 0,
                         name: "MongoDB",
                         skillLevel: "beginner",
                         color: "#4DB33D",
@@ -343,6 +372,7 @@ export const dataFe = {
                         backgroundSize: "60%",
                     },
                     {
+                        id: 1,
                         name: "MySQL",
                         skillLevel: "beginner",
                         color: "#00758F",
@@ -355,6 +385,7 @@ export const dataFe = {
     },
     projectsData: [
         {
+            id: 0,
             title: 0,
             type: "",
             description: "",
@@ -363,6 +394,7 @@ export const dataFe = {
             link: "",
         },
         /*{
+            id: 0,
             title: "Example project",
             type: "Example type...",
             description: "blablabla...",
@@ -373,6 +405,7 @@ export const dataFe = {
     ],
     videosData: [
         {
+            id: 0,
             title: 0,
             category: "",
             description: "",
@@ -381,6 +414,7 @@ export const dataFe = {
             link: "",
         },
         /*{
+            id: 0,
             title: "Example video",
             category: "Example category...",
             description: "blablabla...",
@@ -391,6 +425,7 @@ export const dataFe = {
     ],
     goalsData: [
         {
+            id: 0,
             title: "Learn web development software",
             status: "completed",
             step1: {
@@ -407,6 +442,7 @@ export const dataFe = {
             },
         },
         {
+            id: 1,
             title: "Learn front-end development",
             status: "completed",
             step1: {
@@ -423,6 +459,7 @@ export const dataFe = {
             },
         },
         {
+            id: 2,
             title: "Learn back-end development",
             status: "inprogress",
             step1: {

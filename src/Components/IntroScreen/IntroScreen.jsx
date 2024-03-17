@@ -75,14 +75,23 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                 </motion.p>
                                 <motion.div className="madeWith" key="madewith" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 3 } }} exit={{ opacity: 0 }}>
                                     {technologiesUsed.length > 0 ? (
-                                        technologiesUsed.map((tech, index) => (
-                                            <div className="techUsed" key={index} style={{ "--techUsed-color": tech.color, textDecoration: "none" }}>
-                                                <div className="techUsedTitle">
-                                                    <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                        technologiesUsed.map((tech, index) =>
+                                            info.api.enabled ? (
+                                                <div className="techUsed" key={index} style={{ "--techUsed-color": tech.color, textDecoration: "none" }}>
+                                                    <div className="techUsedTitle">
+                                                        <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                                    </div>
+                                                    <div className="techUsedLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </div>
-                                                <div className="techUsedLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
-                                            </div>
-                                        ))
+                                            ) : index === 0 || index === 1 ? (
+                                                <div className="techUsed" key={index} style={{ "--techUsed-color": tech.color, textDecoration: "none" }}>
+                                                    <div className="techUsedTitle">
+                                                        <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                                    </div>
+                                                    <div className="techUsedLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                </div>
+                                            ) : null
+                                        )
                                     ) : (
                                         <div className="noTechUsedData">
                                             <h4>NO DATA!</h4>
