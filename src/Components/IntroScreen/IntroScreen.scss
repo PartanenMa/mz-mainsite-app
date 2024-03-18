@@ -105,7 +105,19 @@
             max-width: 98%;
         }
 
-        .madeWith {
+        .pL-Logo {
+            background-image: url("/src/Assets/Images/JavaScriptLogo.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 50px;
+            width: 50px;
+            border: 0.3px solid white;
+            border-radius: 5px;
+            filter: drop-shadow(0 0 2em #f0db4f);
+        }
+
+        .poweredBy {
             height: 60%;
             width: 95%;
             display: flex;
@@ -177,13 +189,13 @@
         }
     }
 
-    .introScreenBack {
+    .introScreenEnter {
         height: 10%;
         width: 100%;
         display: flex;
         justify-content: center;
 
-        .introScreenBackButton {
+        .introScreenEnterButton {
             background-color: green;
             color: white;
             cursor: pointer;
@@ -196,7 +208,207 @@
             transition: filter 300ms;
         }
 
-        .introScreenBackButton:hover {
+        .introScreenEnterButton:hover {
+            background-color: lightgreen;
+            color: green;
+            border: 1px solid green;
+            transition: background-color 500ms ease-in-out;
+        }
+    }
+}
+
+.introScreenMobile {
+    background-color: transparent;
+    height: 96%;
+    width: 96%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1000;
+
+    .introScreenWelcomeTitleMobile {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        h2 {
+            color: #03a062;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.5px 0.5px 0 lightgreen;
+
+            .iSWTNameM {
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+
+            @keyframes glow {
+                from {
+                    text-shadow:
+                        0 0 2px #fff,
+                        0 0 5px #fff,
+                        0 0 7px #03a062,
+                        0 0 10px #03a062,
+                        0 0 12px #03a062,
+                        0 0 15px #03a062,
+                        0 0 17px #03a062;
+                }
+
+                to {
+                    text-shadow:
+                        0 0 5px #fff,
+                        0 0 7px lightgreen,
+                        0 0 10px lightgreen,
+                        0 0 12px lightgreen,
+                        0 0 15px lightgreen,
+                        0 0 17px lightgreen,
+                        0 0 20px lightgreen;
+                }
+            }
+        }
+
+        .iswtLogo {
+            background-image: url("/src/Assets/Images/Logo.PNG");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 23px;
+            width: 30px;
+            border: 0.5px solid #03a062;
+            border-radius: 3px;
+        }
+    }
+
+    .introScreenAboutMobile {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+
+        h3 {
+            color: #03a062;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.3px 0.3px 0 lightgreen;
+            max-width: 98%;
+        }
+
+        p {
+            color: #03a062;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.3px 0.3px 0 lightgreen;
+            max-width: 98%;
+        }
+
+        .pL-LogoM {
+            background-image: url("/src/Assets/Images/JavaScriptLogo.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 50px;
+            width: 50px;
+            border: 0.3px solid white;
+            border-radius: 5px;
+            filter: drop-shadow(0 0 2em #f0db4f);
+        }
+
+        .poweredByM {
+            height: 60%;
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            bottom: 20px;
+
+            .techUsedM {
+                height: 150px;
+                width: 150px;
+                border-radius: 10px;
+                margin-top: 60px;
+                position: relative;
+                bottom: 30px;
+                overflow: hidden;
+                filter: drop-shadow(0 0 2em var(--techUsed-color));
+
+                .techUsedTitleM {
+                    height: 30px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    h5 {
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+
+                .techUsedLogoM {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 120px;
+                    width: 100%;
+                    overflow: hidden;
+                }
+            }
+
+            .noTechUsedDataM {
+                height: 90%;
+                width: 90%;
+                position: relative;
+                right: 340px;
+                bottom: 20px;
+
+                h4 {
+                    width: fit-content;
+                    color: red;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid red;
+                    border-radius: 48%;
+                    padding: 20px;
+                    position: relative;
+                    top: 10px;
+                    left: 513px;
+                }
+            }
+        }
+    }
+
+    .introScreenEnterMobile {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .introScreenEnterButtonM {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            height: 48px;
+            width: 207px;
+            border-radius: 10px;
+            border: 1px solid white;
+            font-size: 30px;
+            font-style: italic;
+            transition: filter 300ms;
+        }
+
+        .introScreenEnterButtonM:hover {
             background-color: lightgreen;
             color: green;
             border: 1px solid green;
