@@ -134,7 +134,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                             </motion.div>
                         </AnimatePresence>
                     )}
-                    {window.innerWidth <= 500 && (
+                    {window.innerWidth < 1280 && (
                         <div className="introScreenMobile">
                             <div className="introScreenWelcomeTitleMobile">
                                 <motion.h2 key="iswt-h2m" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0, transition: { duration: 1 } }} exit={{ opacity: 0, x: 1000 }}>

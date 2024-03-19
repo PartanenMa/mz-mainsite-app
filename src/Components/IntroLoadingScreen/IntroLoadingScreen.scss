@@ -111,3 +111,106 @@
         }
     }
 }
+
+.introLoadingScreenMobile {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .introLoadingScreenLogoContainerMobile {
+        height: 50%;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .iLSLCLogoM {
+            background-image: url("/src/Assets/Images/Logo.PNG");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 150px;
+            width: 220px;
+            border: 3px solid #03a062;
+            border-radius: 10px;
+            box-shadow: 0 0 30px 5px #03a062;
+        }
+    }
+
+    .introLoadingScreenLoadingBarMobile {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: top;
+        gap: 20px;
+
+        .iLSLBLogoM {
+            background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
+            background-repeat: no-repeat;
+            background-position: 49% 60%;
+            background-size: 280%;
+            height: 60px;
+            width: 60px;
+            filter: drop-shadow(0 0 2em black);
+            animation: logo-spin infinite 3s linear;
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        h2 {
+            color: #03a062;
+            font-size: 45px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.5px 0.5px 0 lightgreen;
+            position: relative;
+            bottom: 30px;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 7px #03a062,
+                    0 0 10px #03a062,
+                    0 0 12px #03a062,
+                    0 0 15px #03a062,
+                    0 0 17px #03a062;
+            }
+
+            to {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 7px lightgreen,
+                    0 0 10px lightgreen,
+                    0 0 12px lightgreen,
+                    0 0 15px lightgreen,
+                    0 0 17px lightgreen,
+                    0 0 20px lightgreen;
+            }
+        }
+    }
+}

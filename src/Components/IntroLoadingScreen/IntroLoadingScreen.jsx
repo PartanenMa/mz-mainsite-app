@@ -39,24 +39,39 @@ function IntroLoadingScreen() {
     return ReactDOM.createPortal(
         <>
             <div className="introLoadingScreenOverlay" />
-            <AnimatePresence>
-                <motion.div
-                    className="introLoadingScreen"
-                    style={introLoadingScreenStyle}
-                    key="introLoadingScreen"
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -100 }}
-                >
-                    <div className="introLoadingScreenLogoContainer">
-                        <div className="iLSLCLogo" />
-                    </div>
-                    <div className="introLoadingScreenLoadingBar">
-                        <div className="iLSLBLogo" />
-                        <h2>LOADING...</h2>
-                    </div>
-                </motion.div>
-            </AnimatePresence>
+            {window.innerWidth >= 1280 && (
+                <AnimatePresence>
+                    <motion.div
+                        className="introLoadingScreen"
+                        style={introLoadingScreenStyle}
+                        key="introLoadingScreen"
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -100 }}
+                    >
+                        <div className="introLoadingScreenLogoContainer">
+                            <div className="iLSLCLogo" />
+                        </div>
+                        <div className="introLoadingScreenLoadingBar">
+                            <div className="iLSLBLogo" />
+                            <h2>LOADING...</h2>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
+            )}
+            {window.innerWidth < 1280 && (
+                <AnimatePresence>
+                    <motion.div className="introLoadingScreenMobile" key="introloadingscreenmobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                        <div className="introLoadingScreenLogoContainerMobile">
+                            <div className="iLSLCLogoM" />
+                        </div>
+                        <div className="introLoadingScreenLoadingBarMobile">
+                            <div className="iLSLBLogoM" />
+                            <h2>LOADING...</h2>
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
+            )}
         </>,
         document.getElementById("portal")
     );
