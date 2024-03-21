@@ -164,3 +164,171 @@
         }
     }
 }
+
+/*Mobile:*/
+.loginScreenContainerMobile {
+    animation: fadeIn 0.3s;
+    min-height: 500px;
+    height: 100%;
+    width: 100%;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .loginTitleContainerMobile {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            color: #03a062;
+            font-size: 30px;
+            height: fit-content;
+            padding: 5px;
+            border: 0.3px solid #03a062;
+            border-radius: 5px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .loginContainerMobile {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .loginMobile {
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            height: 380px;
+            width: 300px;
+            border: 0.3px solid #03a062;
+            border-radius: 5px;
+
+            h2 {
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 lightgreen;
+                position: relative;
+                bottom: 15px;
+                left: 80px;
+            }
+
+            .userMobile {
+                position: relative;
+                bottom: 40px;
+                left: 40px;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    top: 10px;
+                }
+
+                .usernameFieldMobile {
+                    background-color: #03a062;
+                    border-radius: 50px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                .usernameFieldMobile:hover {
+                    background-color: lightgreen;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .passwordMobile {
+                position: relative;
+                bottom: 60px;
+                left: 40px;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    top: 10px;
+                }
+
+                .passwordFieldMobile {
+                    background-color: #03a062;
+                    border-radius: 50px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                .passwordFieldMobile:hover {
+                    background-color: lightgreen;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .loginFButtonMobile {
+                background-color: #111;
+                color: #03a062;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 40px;
+                left: 47px;
+            }
+
+            .loginFButtonMobile:hover {
+                background-color: lightgreen;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            .backToFPButtonMobile {
+                background-color: #111;
+                color: #03a062;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 30px;
+                left: 47px;
+            }
+
+            .backToFPButtonMobile:hover {
+                background-color: lightgreen;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+        }
+    }
+}

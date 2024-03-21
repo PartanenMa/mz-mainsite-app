@@ -103,3 +103,102 @@
         }
     }
 }
+
+//Mobile:
+.logoutLoadingScreenContainerMobile {
+    animation: fadeIn 0.3s;
+    height: 100%;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .logoutLoadingLogoContainerMobile {
+        .logoutMatrixLogoMobile {
+            background-image: url("/src/Assets/Images/Logo.PNG");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            height: 90px;
+            width: 130px;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            filter: drop-shadow(0 0 2em #03a062);
+        }
+    }
+
+    .logoutLoadingTitleContainerMobile {
+        width: 300px;
+        height: 100px;
+        position: relative;
+        left: 50px;
+
+        .path {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 100%;
+            animation: dash 4s linear;
+        }
+
+        @keyframes dash {
+            0%,
+            50% {
+                stroke-dashoffset: 100%;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+
+    .logoutLoadingContainerMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            color: #03a062;
+            height: fit-content;
+            width: fit-content;
+            border: 1px solid #03a062;
+            border-radius: 5px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            padding-left: 5px;
+        }
+
+        .logoutLogo_reactLMobile {
+            background-image: url("/src/Assets/Images/LogoReactGreen.PNG");
+            background-repeat: no-repeat;
+            background-position: 49% 58%;
+            background-size: 300%;
+            height: 50px;
+            width: 50px;
+            filter: drop-shadow(0 0 2em #03a062);
+            animation: logo-spin infinite 3s linear;
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

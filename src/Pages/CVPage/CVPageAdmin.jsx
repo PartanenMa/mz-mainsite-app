@@ -71,7 +71,7 @@ function CVPageAdmin() {
         setNotificationContent({ title, description, type });
         setIsNotificationOpen(true);
 
-        // Close the notification after 5 seconds
+        //Close the notification after 5 seconds:
         setTimeout(() => {
             setIsNotificationOpen(false);
         }, 5000);
