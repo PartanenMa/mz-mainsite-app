@@ -166,7 +166,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         {info.api.enabled ? (
                             (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                 <motion.p key="professionorjobdatasuccess" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
                                 </motion.p>
                             ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfessionData" key="loadingprofessiondata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -183,7 +183,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             </motion.div>
                         ) : (
                             <motion.p key="professionorjobdatasuccess" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
+                                {info.LinkedIn.employed ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
                             </motion.p>
                         )}
                         <AnimatePresence>

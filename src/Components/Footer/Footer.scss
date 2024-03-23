@@ -412,3 +412,348 @@
         }
     }
 }
+
+/*FooterMobile:*/
+.footerMobile {
+    min-height: 50px;
+    width: 99.5%;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #03a062;
+    margin-top: auto;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    .footerMobileTitle {
+        height: 80px;
+        width: 100%;
+        border-bottom: 0.3px solid #03a062;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        overflow: hidden;
+
+        .footerMobileTitleLogo {
+            background-image: url("/src/Assets/Images/Logo.PNG");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 50px;
+            width: 70px;
+            cursor: pointer;
+            border: 1px solid #03a062;
+            border-radius: 5px;
+            position: relative;
+            left: 10px;
+            transition: filter 300ms;
+        }
+
+        .footerMobileTitleLogo:hover {
+            border: 1px solid lightgreen;
+            filter: drop-shadow(0 0 0.6em #03a062);
+        }
+
+        h3 {
+            color: #03a062;
+            font-size: 40px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .footerMobileContent {
+        width: 100%;
+        overflow: hidden;
+
+        .footerNav1Mobile {
+            height: 100%;
+            width: 400px;
+            overflow: hidden;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            .footerNav1-homeMobile {
+                height: 15px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: fit-content;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+
+            .footerNav1-1M {
+                height: 20px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: fit-content;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+
+            .footerNav1-2M {
+                height: 20px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: fit-content;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+
+            .footerNav1-3M {
+                height: 20px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: fit-content;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+
+            .footerNav1-4M {
+                height: 20px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: fit-content;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+
+            .footerNav1-5M {
+                height: 30px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .footerNav2Mobile {
+            height: 160px;
+            width: 100%;
+            border-top: 0.3px solid #03a062;
+            padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .footerNav2-1M {
+                height: 40px;
+                width: 130px;
+                padding-left: 30px;
+                position: relative;
+                top: 10px;
+
+                .linkedInLogoContainerMobile {
+                    background-color: white;
+                    height: 30px;
+                    width: 30px;
+                    border: 1px solid white;
+                    border-radius: 3px;
+                    position: relative;
+                    top: 5px;
+
+                    .linkedInLogoMobile {
+                        background-image: url("/src/Assets/Images/LinkedIn.png");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                h3 {
+                    color: #0072b1;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    height: fit-content;
+                    width: fit-content;
+                    position: relative;
+                    bottom: 40px;
+                    left: 45px;
+                    text-shadow: 0.5px 0.5px 0 white;
+                    transition: background-color 300ms;
+                }
+            }
+
+            .footerNav2-1M:hover h3 {
+                background-color: #0072b1;
+                color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+
+            .footerNav2-2M {
+                height: 40px;
+                width: 130px;
+                padding-left: 30px;
+                position: relative;
+                top: 25px;
+
+                .gitHubLogoContainerMobile {
+                    background-color: white;
+                    height: 30px;
+                    width: 30px;
+                    border: 1px solid white;
+                    border-radius: 100%;
+                    position: relative;
+                    top: 6px;
+                    overflow: hidden;
+
+                    .gitHubLogoMobile {
+                        background-image: url("/src/Assets/Images/GitHub.png");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 98%;
+                        width: 100%;
+                        position: relative;
+                    }
+                }
+
+                h3 {
+                    color: black;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    height: fit-content;
+                    width: fit-content;
+                    position: relative;
+                    bottom: 40px;
+                    left: 45px;
+                    text-shadow: 0.5px 0.5px 0 white;
+                    transition: background-color 300ms;
+                }
+            }
+
+            .footerNav2-2M:hover h3 {
+                background-color: black;
+                color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+
+            .footerNav2-3M {
+                height: 40px;
+                width: 130px;
+                padding-left: 30px;
+                position: relative;
+                top: 40px;
+
+                .youTubeLogoContainerMobile {
+                    background-color: white;
+                    height: 25px;
+                    width: 35px;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    position: relative;
+                    top: 8px;
+
+                    .youTubeLogoMobile {
+                        background-image: url("/src/Assets/Images/YouTube.png");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 280%;
+                        height: 99%;
+                        width: 100%;
+                        position: relative;
+                    }
+                }
+
+                h3 {
+                    color: #c4302b;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    height: fit-content;
+                    width: fit-content;
+                    position: relative;
+                    bottom: 35px;
+                    left: 45px;
+                    text-shadow: 0.5px 0.5px 0 white;
+                    transition: background-color 300ms;
+                }
+            }
+
+            .footerNav2-3M:hover h3 {
+                background-color: #c4302b;
+                color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+    }
+}

@@ -14,6 +14,7 @@ function CVPageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
         description: "",
@@ -24,6 +25,18 @@ function CVPageAdmin() {
         if (info.api.enabled) {
             checkSession();
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkSession = () => {
@@ -87,20 +100,38 @@ function CVPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="cvPageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>Admin / cv</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="cvPageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>Admin / cv</h2>
+                                </div>
+                                <CVPageTitle />
+                                <CVPageContent />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <CVPageTitle />
-                            <CVPageContent />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="cvPageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>Admin / cv</h2>
+                                </div>
+                                <CVPageTitleMobile />
+                                <CVPageContentMobile />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -123,6 +154,28 @@ function CVPageContent() {
     return (
         <div className="cvPageContentContainer">
             <div className="cvContent">
+                <h1>{info.LinkedIn.name}</h1>
+                <h2>{info.LinkedIn.profession}</h2>
+                <div />
+            </div>
+            <GeneratePDF />
+        </div>
+    );
+}
+
+//Mobile:
+function CVPageTitleMobile() {
+    return (
+        <div className="cvPageTitleContainerMobile">
+            <h2>MY CV</h2>
+        </div>
+    );
+}
+
+function CVPageContentMobile() {
+    return (
+        <div className="cvPageContentContainerMobile">
+            <div className="cvContentMobile">
                 <h1>{info.LinkedIn.name}</h1>
                 <h2>{info.LinkedIn.profession}</h2>
                 <div />

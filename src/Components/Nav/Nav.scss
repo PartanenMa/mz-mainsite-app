@@ -195,3 +195,61 @@
         filter: drop-shadow(0 0 2em #03a062);
     }
 }
+
+/*NavMobile:*/
+.navMobileContainer {
+    margin-right: 10px;
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+
+        .hamburgerLine {
+            background-color: #03a062;
+            width: 25px;
+            height: 3px;
+            border-radius: 5px;
+            margin: 5px 0;
+            transition: transform 0.3s;
+        }
+
+        &.open {
+            display: none;
+        }
+    }
+
+    .menu {
+        display: none;
+
+        &.open {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+
+            ul {
+                background-color: #111;
+                height: fit-content;
+                width: 80px;
+                list-style: none;
+                border: 0.3px solid #03a062;
+                border-radius: 5px;
+
+                li {
+                    margin: 10px 0;
+
+                    p {
+                        color: #03a062;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        cursor: pointer;
+                    }
+
+                    p:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

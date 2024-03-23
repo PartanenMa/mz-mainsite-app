@@ -7,11 +7,24 @@ import "./CVPage.scss";
 function CVPage() {
     const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         if (info.api.enabled) {
             checkConnection();
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkConnection = () => {
@@ -36,11 +49,20 @@ function CVPage() {
 
     return (
         <div className="cvP">
-            <div className="cvPageContainer">
-                <CVPageTitle />
-                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
-                <CVPageContent />
-            </div>
+            {windowWidth >= 1280 && (
+                <div className="cvPageContainer">
+                    <CVPageTitle />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <CVPageContent />
+                </div>
+            )}
+            {windowWidth < 1280 && (
+                <div className="cvPageContainer">
+                    <CVPageTitleMobile />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <CVPageContentMobile />
+                </div>
+            )}
         </div>
     );
 }
@@ -57,6 +79,28 @@ function CVPageContent() {
     return (
         <div className="cvPageContentContainer">
             <div className="cvContent">
+                <h1>{info.LinkedIn.name}</h1>
+                <h2>{info.LinkedIn.profession}</h2>
+                <div />
+            </div>
+            <GeneratePDF />
+        </div>
+    );
+}
+
+//Mobile:
+function CVPageTitleMobile() {
+    return (
+        <div className="cvPageTitleContainerMobile">
+            <h2>CV</h2>
+        </div>
+    );
+}
+
+function CVPageContentMobile() {
+    return (
+        <div className="cvPageContentContainerMobile">
+            <div className="cvContentMobile">
                 <h1>{info.LinkedIn.name}</h1>
                 <h2>{info.LinkedIn.profession}</h2>
                 <div />
