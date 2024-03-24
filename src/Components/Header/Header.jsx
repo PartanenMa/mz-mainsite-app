@@ -98,7 +98,7 @@ function HeaderMobile() {
         <header className="headerMobile">
             <AnimatePresence>
                 <motion.div className="headerTitleMobile" key="headertitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                    <motion.div className="headerLogoMobile" onClick={() => handleLogoClick()} key="headerlogomobile" whileTap={{ scale: 0.9 }} />
+                    <motion.div className="headerLogoMobile" title="Go to front page" onClick={() => handleLogoClick()} key="headerlogomobile" whileTap={{ scale: 0.9 }} />
                     <div className="headerTitleContainerMobile">
                         <h1>MatrixZone</h1>
                         <p>{info.version}</p>

@@ -468,6 +468,10 @@
     .footerMobileContent {
         width: 100%;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         .footerNav1Mobile {
             height: 100%;
@@ -581,7 +585,7 @@
             }
 
             .footerNav1-5M {
-                height: 30px;
+                height: 40px;
 
                 h3 {
                     color: #03a062;

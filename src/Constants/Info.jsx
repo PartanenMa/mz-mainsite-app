@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = true;
 
 export const info = {
-    version: "Release 1.0.39",
+    version: "Release 1.0.40",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         loginPage: deployToGitHubPages ? "/MatrixZone-APP/login" : "/login",

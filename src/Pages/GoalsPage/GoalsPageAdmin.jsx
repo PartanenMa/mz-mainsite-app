@@ -18,6 +18,7 @@ function GoalsPageAdmin() {
     const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -35,6 +36,18 @@ function GoalsPageAdmin() {
                 setLoadingGoalsData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkSession = () => {
@@ -124,23 +137,44 @@ function GoalsPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="goalsPageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>Admin / goals</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="goalsPageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>Admin / goals</h2>
+                                </div>
+                                <GoalsPageTitle />
+                                <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
+                                <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                                {info.api.enabled && <CRUDGoalsButton loading={loadingGoalsData} action={"Create"} />}
+                                <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <GoalsPageTitle />
-                            <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
-                            <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
-                            {info.api.enabled && <CRUDGoalsButton loading={loadingGoalsData} action={"Create"} />}
-                            <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="goalsPageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>Admin / goals</h2>
+                                </div>
+                                <GoalsPageTitleMobile />
+                                <GoalsCountMobile loadingGoalsData={loadingGoalsData} goals={goals} />
+                                <GoalsStatusMobile loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                                {info.api.enabled && <CRUDGoalsButton loading={loadingGoalsData} action={"Create"} />}
+                                <GoalsPageContentMobile loadingGoalsData={loadingGoalsData} goals={goals} />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -301,6 +335,165 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
                     </motion.div>
                 ) : (
                     <motion.div className="noGoalsData" key="nogoalsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                        <h4>NO DATA!</h4>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
+
+//Mobile:
+function GoalsPageTitleMobile() {
+    return (
+        <div className="goalsPageTitleContainerMobile">
+            <h2>MY GOALS</h2>
+        </div>
+    );
+}
+
+function GoalsCountMobile({ loadingGoalsData, goals }) {
+    const getLoader = () => {
+        return (
+            <AnimatePresence>
+                <motion.span style={{ fontStyle: "normal" }} key="goalloadermobileA" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    ...
+                </motion.span>
+            </AnimatePresence>
+        );
+    };
+
+    const getCompletedGoals = () => {
+        let completedCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "completed") {
+                completedCount++;
+            }
+        });
+
+        return <span style={{ fontStyle: "normal" }}>{completedCount + " ✔️"}</span>;
+    };
+
+    const getInProgressGoals = () => {
+        let inProgressCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "inprogress") {
+                inProgressCount++;
+            }
+        });
+
+        return <span style={{ fontStyle: "normal" }}>{inProgressCount + " 🟡"}</span>;
+    };
+
+    const getNotYetStartedGoals = () => {
+        let notYetStartedCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "notyetstarted") {
+                notYetStartedCount++;
+            }
+        });
+
+        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount + " ❌"}</span>;
+    };
+
+    return (
+        <div className="goalsCountContainerMobile">
+            <AnimatePresence>
+                <motion.p key="goalcount1mA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    COMPLETED: <span style={{ color: "green" }}>{loadingGoalsData ? getLoader() : getCompletedGoals()}</span>
+                </motion.p>
+                <motion.p key="goalcount2mA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingGoalsData ? getLoader() : getInProgressGoals()}</span>
+                </motion.p>
+                <motion.p key="goalcount3mA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingGoalsData ? getLoader() : getNotYetStartedGoals()}</span>
+                </motion.p>
+            </AnimatePresence>
+        </div>
+    );
+}
+
+function GoalsStatusMobile({ loadingGoalsData, statusDB }) {
+    return (
+        !loadingGoalsData &&
+        info.api.enabled && (
+            <AnimatePresence>
+                <motion.div className="goalsStatusContainerMobile" key="gstatuscontmobileA" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    {statusDB ? (
+                        <motion.p className="gStatus1Mobile" key="goalstatus1mobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            DATA FETCH SUCCESS
+                        </motion.p>
+                    ) : (
+                        <motion.p className="gStatus2Mobile" key="goalstatus2mobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            DATA FETCH FAILED
+                        </motion.p>
+                    )}
+                </motion.div>
+            </AnimatePresence>
+        )
+    );
+}
+
+function GoalsPageContentMobile({ loadingGoalsData, goals }) {
+    const getColor = (status) => {
+        if (status === "completed") {
+            return "green";
+        } else if (status === "inprogress") {
+            return "yellow";
+        } else if (status === "notyetstarted") {
+            return "red";
+        }
+    };
+
+    const getStatus = (status) => {
+        if (status === "completed") {
+            return "COMPLETED ✔️";
+        } else if (status === "inprogress") {
+            return "IN PROGRESS 🟡";
+        } else if (status === "notyetstarted") {
+            return "NOT YET STARTED ❌";
+        }
+    };
+
+    return (
+        <div className="goalsPageContentContainerMobile">
+            <AnimatePresence>
+                {goals.length > 0 ? (
+                    goals.map((goal, index) => (
+                        <motion.div className="goalMobile" key={index} transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="goalSection1Mobile">
+                                <h3>
+                                    {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
+                                </h3>
+                                <p>
+                                    - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
+                                </p>
+                                <p>
+                                    - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
+                                </p>
+                                <p>
+                                    - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
+                                </p>
+                            </div>
+                            <div className="goalSection2Mobile">
+                                {info.api.enabled && (
+                                    <>
+                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Update"} />
+                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Delete"} />
+                                    </>
+                                )}
+                            </div>
+                        </motion.div>
+                    ))
+                ) : loadingGoalsData ? (
+                    <motion.div className="loadingGoalsDataMobile" key="loadinggoalsdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                        <div className="loaderGoalsMobile" />
+                    </motion.div>
+                ) : (
+                    <motion.div className="noGoalsDataMobile" key="nogoalsdatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                         <h4>NO DATA!</h4>
                     </motion.div>
                 )}

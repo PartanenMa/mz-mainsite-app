@@ -26,7 +26,7 @@ import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
-import MySQLLogo from "/src/Assets/Images/MySQLLogo.png";
+import PostgreSQLLogo from "/src/Assets/Images/PostgreSQLLogo.svg";
 
 export const dataFe = {
     professionStatus: {
@@ -373,10 +373,10 @@ export const dataFe = {
                     },
                     {
                         id: 1,
-                        name: "MySQL",
+                        name: "PostgreSQL",
                         skillLevel: "beginner",
-                        color: "#00758F",
-                        image: MySQLLogo,
+                        color: "#336791",
+                        image: PostgreSQLLogo,
                         backgroundSize: "70%",
                     },
                 ],

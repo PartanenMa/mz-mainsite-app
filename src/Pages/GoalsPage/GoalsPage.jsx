@@ -11,6 +11,7 @@ function GoalsPage() {
     const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [goals, setGoals] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -22,6 +23,18 @@ function GoalsPage() {
                 setLoadingGoalsData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkConnection = () => {
@@ -72,13 +85,24 @@ function GoalsPage() {
 
     return (
         <div className="gP">
-            <div className="goalsPageContainer">
-                <GoalsPageTitle />
-                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
-                <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
-                <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
-                <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
-            </div>
+            {windowWidth >= 1280 && (
+                <div className="goalsPageContainer">
+                    <GoalsPageTitle />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
+                    <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                    <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
+                </div>
+            )}
+            {windowWidth < 1280 && (
+                <div className="goalsPageContainer">
+                    <GoalsPageTitleMobile />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <GoalsCountMobile loadingGoalsData={loadingGoalsData} goals={goals} />
+                    <GoalsStatusMobile loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
+                    <GoalsPageContentMobile loadingGoalsData={loadingGoalsData} goals={goals} />
+                </div>
+            )}
         </div>
     );
 }
@@ -223,6 +247,155 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
                     </motion.div>
                 ) : (
                     <motion.div className="noGoalsData" key="nogoalsdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                        <h4>NO DATA!</h4>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
+
+//Mobile:
+function GoalsPageTitleMobile() {
+    return (
+        <div className="goalsPageTitleContainerMobile">
+            <h2>GOALS</h2>
+        </div>
+    );
+}
+
+function GoalsCountMobile({ loadingGoalsData, goals }) {
+    const getLoader = () => {
+        return (
+            <AnimatePresence>
+                <motion.span style={{ fontStyle: "normal" }} key="goalloadermobile" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    ...
+                </motion.span>
+            </AnimatePresence>
+        );
+    };
+
+    const getCompletedGoals = () => {
+        let completedCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "completed") {
+                completedCount++;
+            }
+        });
+
+        return <span style={{ fontStyle: "normal" }}>{completedCount + " ✔️"}</span>;
+    };
+
+    const getInProgressGoals = () => {
+        let inProgressCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "inprogress") {
+                inProgressCount++;
+            }
+        });
+
+        return <span style={{ fontStyle: "normal" }}>{inProgressCount + " 🟡"}</span>;
+    };
+
+    const getNotYetStartedGoals = () => {
+        let notYetStartedCount = 0;
+
+        goals.forEach((goal) => {
+            if (goal.status === "notyetstarted") {
+                notYetStartedCount++;
+            }
+        });
+
+        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount + " ❌"}</span>;
+    };
+
+    return (
+        <div className="goalsCountContainerMobile">
+            <AnimatePresence>
+                <motion.p key="goalcount1m" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    COMPLETED: <span style={{ color: "green" }}>{loadingGoalsData ? getLoader() : getCompletedGoals()}</span>
+                </motion.p>
+                <motion.p key="goalcount2m" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    IN PROGRESS: <span style={{ color: "yellow" }}>{loadingGoalsData ? getLoader() : getInProgressGoals()}</span>
+                </motion.p>
+                <motion.p key="goalcount3m" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                    NOT YET STARTED: <span style={{ color: "red" }}>{loadingGoalsData ? getLoader() : getNotYetStartedGoals()}</span>
+                </motion.p>
+            </AnimatePresence>
+        </div>
+    );
+}
+
+function GoalsStatusMobile({ loadingGoalsData, statusDB }) {
+    return (
+        !loadingGoalsData &&
+        info.api.enabled && (
+            <AnimatePresence>
+                <motion.div className="goalsStatusContainerMobile" key="gstatuscontmobile" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    {statusDB ? (
+                        <motion.p className="gStatus1Mobile" key="goalstatus1mobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            DATA FETCH SUCCESS
+                        </motion.p>
+                    ) : (
+                        <motion.p className="gStatus2Mobile" key="goalstatus2mobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            DATA FETCH FAILED
+                        </motion.p>
+                    )}
+                </motion.div>
+            </AnimatePresence>
+        )
+    );
+}
+
+function GoalsPageContentMobile({ loadingGoalsData, goals }) {
+    const getColor = (status) => {
+        if (status === "completed") {
+            return "green";
+        } else if (status === "inprogress") {
+            return "yellow";
+        } else if (status === "notyetstarted") {
+            return "red";
+        }
+    };
+
+    const getStatus = (status) => {
+        if (status === "completed") {
+            return "COMPLETED ✔️";
+        } else if (status === "inprogress") {
+            return "IN PROGRESS 🟡";
+        } else if (status === "notyetstarted") {
+            return "NOT YET STARTED ❌";
+        }
+    };
+
+    return (
+        <div className="goalsPageContentContainerMobile">
+            <AnimatePresence>
+                {goals.length > 0 ? (
+                    goals.map((goal, index) => (
+                        <motion.div className="goalMobile" key={index} transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h3>
+                                {goal.title}: <span style={{ color: getColor(goal.status), fontStyle: "normal" }}>{getStatus(goal.status)}</span>
+                            </h3>
+                            <p>
+                                - {goal.step1.step} <span style={{ color: getColor(goal.step1.status), fontStyle: "normal" }}>{getStatus(goal.step1.status)}</span>
+                            </p>
+                            <p>
+                                - {goal.step2.step} <span style={{ color: getColor(goal.step2.status), fontStyle: "normal" }}>{getStatus(goal.step2.status)}</span>
+                            </p>
+                            <p>
+                                - {goal.step3.step} <span style={{ color: getColor(goal.step3.status), fontStyle: "normal" }}>{getStatus(goal.step3.status)}</span>
+                            </p>
+                        </motion.div>
+                    ))
+                ) : loadingGoalsData ? (
+                    <motion.div className="loadingGoalsDataMobile" key="loadinggoalsdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                        <div className="loaderGoalsMobile" />
+                    </motion.div>
+                ) : (
+                    <motion.div className="noGoalsDataMobile" key="nogoalsdatamobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                         <h4>NO DATA!</h4>
                     </motion.div>
                 )}
