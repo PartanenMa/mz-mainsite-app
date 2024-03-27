@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import Notification from "/src/Components/Notification/Notification.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./CRUDGoalsButton.scss";
@@ -9,6 +10,12 @@ function CRUDGoalsButton(props) {
     const [isUpdateGoalsModalOpen, setIsUpdateGoalsModalOpen] = useState(false);
     const [loadingGoalsData, setLoadingGoalsData] = useState(true);
     const [goals, setGoals] = useState([]);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [notificationContent, setNotificationContent] = useState({
+        title: "",
+        description: "",
+        type: "",
+    });
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -41,12 +48,36 @@ function CRUDGoalsButton(props) {
             });
     };
 
-    const openUpdateGoalsModalOrDeleteGoal = (action) => {
+    const openUpdateGoalsModalOrDeleteGoal = (action, goalId) => {
         if (action === "Update") {
             setIsUpdateGoalsModalOpen(true);
         } else if (action === "Delete") {
-            console.log(action.toLowerCase());
+            const id = goalId;
+
+            fetch(`/goals/${id}`, {
+                method: "DELETE",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+            }).then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    props.getGoals();
+                } else {
+                    triggerNotification("ERROR", "Failed to delete goal!", "error");
+                }
+            });
         }
+    };
+
+    const triggerNotification = (title, description, type) => {
+        setNotificationContent({ title, description, type });
+        setIsNotificationOpen(true);
+
+        //Close the notification after 5 seconds:
+        setTimeout(() => {
+            setIsNotificationOpen(false);
+        }, 5000);
     };
 
     return props.loading ? (
@@ -62,7 +93,7 @@ function CRUDGoalsButton(props) {
             <AnimatePresence>
                 <motion.button
                     className={"goals" + props.action + "Btn"}
-                    onClick={props.action === "Create" ? () => setIsCreateGoalsModalOpen(true) : () => openUpdateGoalsModalOrDeleteGoal(props.action)}
+                    onClick={props.action === "Create" ? () => setIsCreateGoalsModalOpen(true) : () => openUpdateGoalsModalOrDeleteGoal(props.action, props.id)}
                     key="goalsbtn"
                     whileHover={{
                         scale: 1.05,
@@ -73,16 +104,41 @@ function CRUDGoalsButton(props) {
                     {props.action.toUpperCase() + " GOAL"}
                 </motion.button>
             </AnimatePresence>
-            <ModalCreateGoals isModalOpen={isCreateGoalsModalOpen} setIsModalOpen={setIsCreateGoalsModalOpen} />
-            <ModalUpdateGoals isModalOpen={isUpdateGoalsModalOpen} setIsModalOpen={setIsUpdateGoalsModalOpen} loadingGoalsData={loadingGoalsData} goals={goals} />
+            <ModalCreateGoals isModalOpen={isCreateGoalsModalOpen} setIsModalOpen={setIsCreateGoalsModalOpen} getGoals={props.getGoals} notification={triggerNotification} />
+            <ModalUpdateGoals
+                isModalOpen={isUpdateGoalsModalOpen}
+                setIsModalOpen={setIsUpdateGoalsModalOpen}
+                loadingGoalsData={loadingGoalsData}
+                goalData={goals.find((g) => g.id === props.id)}
+                id={props.id}
+                getGoals={props.getGoals}
+                notification={triggerNotification}
+            />
+            <Notification
+                isNotificationOpen={isNotificationOpen}
+                setIsNotificationOpen={setIsNotificationOpen}
+                title={notificationContent.title}
+                description={notificationContent.description}
+                type={notificationContent.type}
+            />
         </div>
     );
 }
 
-function ModalCreateGoals({ isModalOpen, setIsModalOpen }) {
+function ModalCreateGoals({ isModalOpen, setIsModalOpen, getGoals, notification }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
+    });
+    const [formData, setFormData] = useState({
+        title: "",
+        status: "",
+        step1: "",
+        status1: "",
+        step2: "",
+        status2: "",
+        step3: "",
+        status3: "",
     });
 
     useEffect(() => {
@@ -112,9 +168,48 @@ function ModalCreateGoals({ isModalOpen, setIsModalOpen }) {
         };
     }, [isModalOpen]);
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
     const createGoal = () => {
-        console.log("create");
+        const newGoalData = {
+            title: formData.title,
+            status: formData.status,
+            step1: {
+                step: formData.step1,
+                status: formData.status1,
+            },
+            step2: {
+                step: formData.step2,
+                status: formData.status2,
+            },
+            step3: {
+                step: formData.step3,
+                status: formData.status3,
+            },
+        };
+
         setIsModalOpen(false);
+
+        fetch("/goals", {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newGoalData),
+        }).then((res) => {
+            const statusCode = res.status;
+
+            if (statusCode < 400) {
+                getGoals();
+            } else {
+                notification("ERROR", "Failed to create goal!", "error");
+            }
+        });
     };
 
     return ReactDOM.createPortal(
@@ -150,33 +245,74 @@ function ModalCreateGoals({ isModalOpen, setIsModalOpen }) {
                                     </motion.button>
                                 </div>
                             </div>
-                            <div className="modalCreateGoalsContent"></div>
-                            <div className="modalCreateGoalsFooter">
-                                <motion.button
-                                    className="modalCreateGoalsBackButton"
-                                    onClick={() => setIsModalOpen(false)}
-                                    key="modalcreategoalsbackbutton"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { duration: 0.1 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    Cancel
-                                </motion.button>
-                                <motion.button
-                                    className="modalCreateGoalsCreateButton"
-                                    onClick={() => createGoal()}
-                                    key="modalcreategoalscreatebutton"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { duration: 0.1 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    Create
-                                </motion.button>
-                            </div>
+                            <form className="modalCreateGoalsContent" onSubmit={() => createGoal()}>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="title">Title:</label>
+                                        <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status">Status:</label>
+                                        <input type="text" id="status" name="status" value={formData.status} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="step1">Step 1:</label>
+                                        <input type="text" id="step1" name="step1" value={formData.step1} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status1">Status 1:</label>
+                                        <input type="text" id="status1" name="status1" value={formData.status1} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="step2">Step 2:</label>
+                                        <input type="text" id="step2" name="step2" value={formData.step2} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status2">Status 2:</label>
+                                        <input type="text" id="status2" name="status2" value={formData.status2} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="step3">Step 3:</label>
+                                        <input type="text" id="step3" name="step3" value={formData.step3} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status3">Status 3:</label>
+                                        <input type="text" id="status3" name="status3" value={formData.status3} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formFooter">
+                                    <motion.button
+                                        className="modalCreateGoalsBackButton"
+                                        onClick={() => setIsModalOpen(false)}
+                                        key="modalcreategoalsbackbutton"
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        Cancel
+                                    </motion.button>
+                                    <motion.button
+                                        className="modalCreateGoalsCreateButton"
+                                        type="submit"
+                                        key="modalcreategoalscreatebutton"
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        Create
+                                    </motion.button>
+                                </div>
+                            </form>
                         </motion.div>
                     </AnimatePresence>
                 </>
@@ -186,10 +322,20 @@ function ModalCreateGoals({ isModalOpen, setIsModalOpen }) {
     );
 }
 
-function ModalUpdateGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals }) {
+function ModalUpdateGoals({ isModalOpen, setIsModalOpen, goalData, id, getGoals, notification }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
+    });
+    const [formData, setFormData] = useState({
+        title: "",
+        status: "",
+        step1: "",
+        status1: "",
+        step2: "",
+        status2: "",
+        step3: "",
+        status3: "",
     });
 
     useEffect(() => {
@@ -219,9 +365,66 @@ function ModalUpdateGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals
         };
     }, [isModalOpen]);
 
-    const updateGoal = () => {
-        console.log("update");
+    useEffect(() => {
+        if (goalData) {
+            setFormData({
+                title: goalData.title,
+                status: goalData.status,
+                step1: goalData.step1.step,
+                status1: goalData.step1.status,
+                step2: goalData.step2.step,
+                status2: goalData.step2.status,
+                step3: goalData.step3.step,
+                status3: goalData.step3.status,
+            });
+        }
+    }, [goalData]);
+
+    const handleChange = (e) => {
+        console.log(goalData);
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const updateGoal = (goalId) => {
+        const id = goalId;
+
+        const updatedGoalData = {
+            title: formData.title,
+            status: formData.status,
+            step1: {
+                step: formData.step1,
+                status: formData.status1,
+            },
+            step2: {
+                step: formData.step2,
+                status: formData.status2,
+            },
+            step3: {
+                step: formData.step3,
+                status: formData.status3,
+            },
+        };
+
         setIsModalOpen(false);
+
+        fetch(`/goals/${id}`, {
+            method: "PUT",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedGoalData),
+        }).then((res) => {
+            const statusCode = res.status;
+
+            if (statusCode < 400) {
+                getGoals();
+            } else {
+                notification("ERROR", "Failed to update goal!", "error");
+            }
+        });
     };
 
     return ReactDOM.createPortal(
@@ -257,33 +460,74 @@ function ModalUpdateGoals({ isModalOpen, setIsModalOpen, loadingGoalsData, goals
                                     </motion.button>
                                 </div>
                             </div>
-                            <div className="modalUpdateGoalsContent"></div>
-                            <div className="modalUpdateGoalsFooter">
-                                <motion.button
-                                    className="modalUpdateGoalsBackButton"
-                                    onClick={() => setIsModalOpen(false)}
-                                    key="modalupdategoalsbackbutton"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { duration: 0.1 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    Cancel
-                                </motion.button>
-                                <motion.button
-                                    className="modalUpdateGoalsUpdateButton"
-                                    onClick={() => updateGoal()}
-                                    key="modalupdategoalscreatebutton"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { duration: 0.1 },
-                                    }}
-                                    whileTap={{ scale: 0.9 }}
-                                >
-                                    Update
-                                </motion.button>
-                            </div>
+                            <form className="modalUpdateGoalsContent" onSubmit={() => updateGoal(id)}>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="title">Title:</label>
+                                        <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status">Status:</label>
+                                        <input type="text" id="status" name="status" value={formData.status} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="step1">Step 1:</label>
+                                        <input type="text" id="step1" name="step1" value={formData.step1} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status1">Status 1:</label>
+                                        <input type="text" id="status1" name="status1" value={formData.status1} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="step2">Step 2:</label>
+                                        <input type="text" id="step2" name="step2" value={formData.step2} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status2">Status 2:</label>
+                                        <input type="text" id="status2" name="status2" value={formData.status2} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formComponent">
+                                    <div>
+                                        <label htmlFor="step3">Step 3:</label>
+                                        <input type="text" id="step3" name="step3" value={formData.step3} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="status3">Status 3:</label>
+                                        <input type="text" id="status3" name="status3" value={formData.status3} onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="formFooter">
+                                    <motion.button
+                                        className="modalUpdateGoalsBackButton"
+                                        onClick={() => setIsModalOpen(false)}
+                                        key="modalupdategoalsbackbutton"
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        Cancel
+                                    </motion.button>
+                                    <motion.button
+                                        className="modalUpdateGoalsUpdateButton"
+                                        type="submit"
+                                        key="modalupdategoalsupdatebutton"
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
+                                        Update
+                                    </motion.button>
+                                </div>
+                            </form>
                         </motion.div>
                     </AnimatePresence>
                 </>

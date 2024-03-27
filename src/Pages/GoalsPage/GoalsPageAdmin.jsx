@@ -71,12 +71,31 @@ function GoalsPageAdmin() {
             .then(({ statusCode }) => {
                 if (statusCode !== 200) {
                     sessionStorage.setItem("isLoggedIn", "false");
+                    sessionStorage.setItem("csrfToken", "");
                 }
             });
     };
 
-    const getGoals = () => {
-        fetch("/goals", {
+    const getGoalsAfterCreate = async () => {
+        setLoadingGoalsData(true);
+        await getGoals();
+        triggerNotification("GOAL CREATED", "Goal created successfully!", "success");
+    };
+
+    const getGoalsAfterUpdate = async () => {
+        setLoadingGoalsData(true);
+        await getGoals();
+        triggerNotification("GOAL UPDATED", "Goal updated successfully!", "success");
+    };
+
+    const getGoalsAfterDelete = async () => {
+        setLoadingGoalsData(true);
+        await getGoals();
+        triggerNotification("GOAL DELETED", "Goal deleted successfully!", "success");
+    };
+
+    const getGoals = async () => {
+        await fetch("/goals", {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
@@ -145,8 +164,8 @@ function GoalsPageAdmin() {
                                 <GoalsPageTitle />
                                 <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
                                 <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
-                                {info.api.enabled && <CRUDGoalsButton loading={loadingGoalsData} action={"Create"} />}
-                                <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
+                                {info.api.enabled && <CRUDGoalsButton loading={loadingGoalsData} action={"Create"} getGoals={() => getGoalsAfterCreate()} />}
+                                <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} getGoalsU={() => getGoalsAfterUpdate()} getGoalsD={() => getGoalsAfterDelete()} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -278,7 +297,7 @@ function GoalsStatus({ loadingGoalsData, statusDB }) {
     );
 }
 
-function GoalsPageContent({ loadingGoalsData, goals }) {
+function GoalsPageContent({ loadingGoalsData, goals, getGoalsU, getGoalsD }) {
     const getColor = (status) => {
         if (status === "completed") {
             return "green";
@@ -302,7 +321,7 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
     return (
         <div className="goalsPageContentContainer">
             <AnimatePresence>
-                {goals.length > 0 ? (
+                {goals.length > 0 && !loadingGoalsData ? (
                     goals.map((goal, index) => (
                         <motion.div className="goal" key={index} transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="goalSection1">
@@ -322,8 +341,8 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
                             <div className="goalSection2">
                                 {info.api.enabled && (
                                     <>
-                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Update"} />
-                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Delete"} />
+                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Update"} id={goal.id} getGoals={getGoalsU} />
+                                        <CRUDGoalsButton loading={loadingGoalsData} action={"Delete"} id={goal.id} getGoals={getGoalsD} />
                                     </>
                                 )}
                             </div>
