@@ -135,7 +135,7 @@ function GoalsCount({ loadingGoalsData, goals }) {
             }
         });
 
-        return <span style={{ fontStyle: "normal" }}>{completedCount + " ✔️"}</span>;
+        return <span style={{ fontStyle: "normal" }}>{completedCount}</span>;
     };
 
     const getInProgressGoals = () => {
@@ -147,7 +147,7 @@ function GoalsCount({ loadingGoalsData, goals }) {
             }
         });
 
-        return <span style={{ fontStyle: "normal" }}>{inProgressCount + " 🟡"}</span>;
+        return <span style={{ fontStyle: "normal" }}>{inProgressCount}</span>;
     };
 
     const getNotYetStartedGoals = () => {
@@ -159,7 +159,7 @@ function GoalsCount({ loadingGoalsData, goals }) {
             }
         });
 
-        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount + " ❌"}</span>;
+        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount}</span>;
     };
 
     return (
@@ -213,11 +213,11 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
 
     const getStatus = (status) => {
         if (status === "completed") {
-            return "COMPLETED ✔️";
+            return "COMPLETED";
         } else if (status === "inprogress") {
-            return "IN PROGRESS 🟡";
+            return "IN PROGRESS";
         } else if (status === "notyetstarted") {
-            return "NOT YET STARTED ❌";
+            return "NOT YET STARTED";
         }
     };
 
@@ -284,7 +284,7 @@ function GoalsCountMobile({ loadingGoalsData, goals }) {
             }
         });
 
-        return <span style={{ fontStyle: "normal" }}>{completedCount + " ✔️"}</span>;
+        return <span style={{ fontStyle: "normal" }}>{completedCount}</span>;
     };
 
     const getInProgressGoals = () => {
@@ -296,7 +296,7 @@ function GoalsCountMobile({ loadingGoalsData, goals }) {
             }
         });
 
-        return <span style={{ fontStyle: "normal" }}>{inProgressCount + " 🟡"}</span>;
+        return <span style={{ fontStyle: "normal" }}>{inProgressCount}</span>;
     };
 
     const getNotYetStartedGoals = () => {
@@ -308,7 +308,7 @@ function GoalsCountMobile({ loadingGoalsData, goals }) {
             }
         });
 
-        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount + " ❌"}</span>;
+        return <span style={{ fontStyle: "normal" }}>{notYetStartedCount}</span>;
     };
 
     return (
@@ -362,11 +362,11 @@ function GoalsPageContentMobile({ loadingGoalsData, goals }) {
 
     const getStatus = (status) => {
         if (status === "completed") {
-            return "COMPLETED ✔️";
+            return "COMPLETED";
         } else if (status === "inprogress") {
-            return "IN PROGRESS 🟡";
+            return "IN PROGRESS";
         } else if (status === "notyetstarted") {
-            return "NOT YET STARTED ❌";
+            return "NOT YET STARTED";
         }
     };
 

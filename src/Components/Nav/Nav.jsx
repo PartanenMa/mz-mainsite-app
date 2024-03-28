@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -251,12 +250,12 @@ function Nav() {
                     </motion.div>
                 </AnimatePresence>
             )}
-
             {windowWidth < 1280 && <NavMobile />}
         </>
     );
 }
 
+//Mobile:
 function NavMobile() {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const navigate = useNavigate();

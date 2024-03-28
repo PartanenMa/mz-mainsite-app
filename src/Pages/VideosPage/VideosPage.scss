@@ -45,6 +45,50 @@
             left: 10px;
         }
     }
+
+    .createVideo {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+
+    .videoTitle {
+        background-color: #c4302b;
+        height: 20%;
+        width: 100%;
+        overflow: hidden;
+
+        .videoTitleSection1 {
+            height: 100%;
+            width: 80%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            h4 {
+                color: white;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                padding-left: 10px;
+                position: relative;
+                top: 0px;
+            }
+        }
+
+        .videoTitleSection2 {
+            height: 100%;
+            width: 20%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            bottom: 60px;
+            left: 900px;
+        }
+    }
 }
 
 @keyframes fadeIn {
@@ -449,6 +493,512 @@
         }
 
         .noVideosData {
+            height: 300px;
+            width: 90%;
+            overflow: hidden;
+
+            h4 {
+                width: fit-content;
+                color: red;
+                font-size: 60px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                border: 1px solid red;
+                border-radius: 48%;
+                padding: 20px;
+                position: relative;
+                top: 10px;
+                left: 430px;
+            }
+        }
+    }
+}
+
+/*VideosPage (mobile):*/
+.videosPageContainerMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+}
+
+/*VideosPageAdmin (mobile):*/
+.videosPageContainerAdminMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 100%;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h2 {
+            font-size: 10px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .createVideoMobile {
+        height: 30px;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+
+    .videoTitleMobile {
+        background-color: #c4302b;
+        height: 20%;
+        width: 100%;
+        overflow: hidden;
+
+        .videoTitleSection1Mobile {
+            height: 100%;
+            width: 80%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            h4 {
+                color: white;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                padding-left: 10px;
+                position: relative;
+                top: 0px;
+            }
+        }
+
+        .videoTitleSection2Mobile {
+            height: 100%;
+            width: 20%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            bottom: 60px;
+            left: 900px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both (mobile):*/
+.videosPageTitleContainerMobile {
+    background-color: #c4302b;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: white;
+        font-size: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.aboutMyVideosContainerMobile {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.aboutMyVideosTitleMobile {
+    background-color: #c4302b;
+    height: 10%;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 5px;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+
+    h3 {
+        color: white;
+        font-size: 12px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.aboutMyVideosContentMobile {
+    background-image: url("/src/Assets/Images/VideosBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 2%;
+
+    .aboutMyVideosPhotoMobile {
+        background-image: url("/src/Assets/Images/VideosBG.jpg");
+        background-repeat: no-repeat;
+        background-size: 280%;
+        background-position: 53.5% 60%;
+        height: 60%;
+        width: 25%;
+        border-radius: 100%;
+        border: 1px solid #03a062;
+        transition: filter 300ms;
+    }
+
+    .aboutMyVideosPhotoMobile:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em #c4302b);
+    }
+
+    .aboutMyVideosTextContainerMobile {
+        height: 90%;
+        width: 65%;
+        border-radius: 10px;
+        border: 1px solid #03a062;
+        overflow: hidden;
+
+        .aboutMyVideosTextTitleMobile {
+            background-color: #111;
+            height: 20%;
+            width: 100%;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom: 1px solid #03a062;
+
+            .h4_1M {
+                color: #03a062;
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 13px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+
+            .h4_2M {
+                color: #03a062;
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 26px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+
+        .aboutMyVideosTextMobile {
+            background-color: #333;
+            height: 80%;
+            width: 100%;
+            overflow: hidden;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding-top: 5px;
+            padding-left: 5px;
+
+            p {
+                color: white;
+                font-size: 9px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                line-height: 1.2;
+                max-width: 90%;
+                position: relative;
+                bottom: 12px;
+            }
+        }
+    }
+}
+
+.videosContainerMobile {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+
+    .videosTitleMobile {
+        background-color: #c4302b;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .videosContentMobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .videoMobile {
+            height: 150px;
+            width: 90%;
+            border: 1px solid white;
+            border-radius: 10px;
+            text-decoration: none;
+            overflow: hidden;
+            transition: border 300ms;
+            transition: filter 300ms;
+
+            .videoCoverTitleMobile {
+                animation: fadeIn 0.3s;
+                background-color: #c4302b;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                h2 {
+                    display: block;
+                    color: white;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+
+            .videoTitleMobile {
+                background-color: #c4302b;
+                height: 20%;
+                width: 100%;
+                overflow: hidden;
+
+                h4 {
+                    color: white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 14px;
+                    left: 5px;
+                }
+            }
+
+            .videoContentMobile {
+                height: 80%;
+                width: 100%;
+                border-top: 1px solid lightcoral;
+                display: flex;
+
+                .videoContentDescriptionMobile {
+                    background-color: #333;
+                    height: 100%;
+                    width: 70%;
+                    border-right: 1px solid lightcoral;
+                    overflow: hidden;
+
+                    .vCDBox1Mobile {
+                        height: 20%;
+                        width: 100%;
+                        border-bottom: 1px solid lightcoral;
+                        overflow: hidden;
+
+                        p {
+                            color: #03a062;
+                            font-size: 10px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            bottom: 4px;
+                            left: 5px;
+                        }
+                    }
+
+                    .vCDBox2Mobile {
+                        height: 60%;
+                        width: 100%;
+                        overflow: hidden;
+
+                        .vCDBox2TitleMobile {
+                            height: 20%;
+                            width: 100%;
+                            text-decoration: underline;
+                            text-decoration-color: #03a062;
+                            overflow: hidden;
+
+                            p {
+                                color: #03a062;
+                                font-size: 10px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                position: relative;
+                                bottom: 9px;
+                                left: 5px;
+                            }
+                        }
+
+                        .vCDBox2ContentMobile {
+                            height: 80%;
+                            width: 100%;
+                            overflow: hidden;
+
+                            p {
+                                color: white;
+                                font-size: 7px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                position: relative;
+                                bottom: 6px;
+                                left: 5px;
+                            }
+                        }
+                    }
+
+                    .vCDBox3Mobile {
+                        height: 20%;
+                        width: 100%;
+                        border-top: 1px solid lightcoral;
+                        overflow: hidden;
+
+                        p {
+                            color: #03a062;
+                            font-size: 10px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            bottom: 4px;
+                            left: 5px;
+                        }
+                    }
+                }
+
+                .videoContentPhotoMobile {
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 100%;
+                    width: 30%;
+                }
+            }
+        }
+
+        .videoMobile:hover {
+            border: 1px solid lightcoral;
+            filter: drop-shadow(0 0 2em #c4302b);
+        }
+
+        .videoMobile:hover .videoCoverTitleMobile {
+            animation: fadeIn 0.3s;
+            display: none;
+        }
+
+        .videoMobile:hover .videoTitleMobile {
+            animation: fadeIn 0.3s;
+            display: block;
+        }
+
+        .videoMobile:hover .videoContentMobile {
+            animation: fadeIn 0.3s;
+            display: block;
+        }
+
+        .noVideosYetMobile {
+            height: 300px;
+            width: 90%;
+            overflow: hidden;
+
+            h4 {
+                width: fit-content;
+                color: yellow;
+                font-size: 60px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                border: 1px solid yellow;
+                border-radius: 48%;
+                padding: 20px;
+                position: relative;
+                top: 10px;
+                left: 340px;
+            }
+        }
+
+        .loadingVideosDataMobile {
+            height: 300px;
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .loaderVideosMobile {
+                border: 16px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 16px solid #c4302b;
+                width: 120px;
+                height: 120px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+
+            @-webkit-keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        .noVideosDataMobile {
             height: 300px;
             width: 90%;
             overflow: hidden;

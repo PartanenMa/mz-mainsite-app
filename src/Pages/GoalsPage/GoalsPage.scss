@@ -353,8 +353,9 @@
             width: 20%;
             overflow: hidden;
             padding-top: 8px;
+            padding-right: 3px;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             gap: 10px;
         }

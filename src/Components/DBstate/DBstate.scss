@@ -1,3 +1,4 @@
+/*DBState:*/
 .titleDBstateMain {
     background-color: lightgreen;
     color: green;
@@ -32,4 +33,41 @@
     position: relative;
     bottom: 3px;
     left: 10px;
+}
+
+/*DBState (mobile:)*/
+.titleDBstateMainMobile {
+    background-color: lightgreen;
+    color: green;
+    font-size: 7px;
+    border: 0.3px solid green;
+    border-radius: 2px;
+    padding: 1px;
+    position: relative;
+    bottom: 1px;
+    left: 5px;
+}
+
+.titleDBstateBackupMobile {
+    background-color: lightcoral;
+    color: red;
+    font-size: 7px;
+    border: 0.3px solid red;
+    border-radius: 2px;
+    padding: 1px;
+    position: relative;
+    bottom: 1px;
+    left: 5px;
+}
+
+.titleDBloadingMobile {
+    background-color: gray;
+    color: white;
+    font-size: 7px;
+    border: 0.3px solid white;
+    border-radius: 2px;
+    padding: 1px;
+    position: relative;
+    bottom: 1px;
+    left: 5px;
 }

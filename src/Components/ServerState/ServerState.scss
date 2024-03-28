@@ -1,3 +1,4 @@
+/*ServerState:*/
 .ServerStateContainer {
     height: 30px;
     width: 100%;
@@ -8,6 +9,21 @@
 
     p {
         font-size: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+/*Mobile:*/
+.ServerStateContainerMobile {
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 10px;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     }
 }

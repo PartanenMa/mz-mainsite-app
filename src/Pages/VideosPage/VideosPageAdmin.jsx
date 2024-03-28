@@ -6,6 +6,7 @@ import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
+import CRUDVideosButton from "/src/Components/CRUDVideosButton/CRUDVideosButton.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,6 +19,7 @@ function VideosPageAdmin() {
     const [loadingVideosData, setLoadingVideosData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [videos, setVideos] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -35,6 +37,18 @@ function VideosPageAdmin() {
                 setLoadingVideosData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkSession = () => {
@@ -62,7 +76,25 @@ function VideosPageAdmin() {
             });
     };
 
-    const getVideos = () => {
+    const getVideosAfterCreate = async () => {
+        setLoadingVideosData(true);
+        await getVideos();
+        triggerNotification("VIDEO CREATED", "Video created successfully!", "success");
+    };
+
+    const getVideosAfterUpdate = async () => {
+        setLoadingVideosData(true);
+        await getVideos();
+        triggerNotification("VIDEO UPDATED", "Video updated successfully!", "success");
+    };
+
+    const getVideosAfterDelete = async () => {
+        setLoadingVideosData(true);
+        await getVideos();
+        triggerNotification("VIDEO DELETED", "Video deleted successfully!", "success");
+    };
+
+    const getVideos = async () => {
         fetch("/videos", {
             method: "GET",
             credentials: "include",
@@ -124,21 +156,54 @@ function VideosPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="videosPageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>Admin / videos</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="videosPageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>Admin / videos</h2>
+                                </div>
+                                <VideosPageTitle />
+                                <AboutMyVideos />
+                                <MyVideos
+                                    loadingVideosData={loadingVideosData}
+                                    statusDB={statusDB}
+                                    videos={videos}
+                                    getVideosC={() => getVideosAfterCreate()}
+                                    getVideosU={() => getVideosAfterUpdate()}
+                                    getVideosD={() => getVideosAfterDelete()}
+                                />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <VideosPageTitle />
-                            <AboutMyVideos />
-                            <MyVideos loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="videosPageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>Admin / videos</h2>
+                                </div>
+                                <VideosPageTitleMobile />
+                                <AboutMyVideosMobile />
+                                <MyVideosMobile
+                                    loadingVideosData={loadingVideosData}
+                                    statusDB={statusDB}
+                                    videos={videos}
+                                    getVideosC={() => getVideosAfterCreate()}
+                                    getVideosU={() => getVideosAfterUpdate()}
+                                    getVideosD={() => getVideosAfterDelete()}
+                                />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -200,7 +265,7 @@ function AboutMyVideos() {
     );
 }
 
-function MyVideos({ loadingVideosData, statusDB, videos }) {
+function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU, getVideosD }) {
     return (
         <div className="videosContainer">
             <div className="videosTitle">
@@ -209,9 +274,14 @@ function MyVideos({ loadingVideosData, statusDB, videos }) {
                     <DBstate loading={loadingVideosData} statusDB={statusDB} />
                 </h3>
             </div>
+            {info.api.enabled && (
+                <div className="createVideo">
+                    <CRUDVideosButton loading={loadingVideosData} action={"Create"} getVideos={getVideosC} />
+                </div>
+            )}
             <div className="videosContent">
                 <AnimatePresence>
-                    {videos.length > 0 ? (
+                    {videos.length > 0 && !loadingVideosData ? (
                         videos[0].title !== 0 ? (
                             videos.map((video, index) => (
                                 <motion.div
@@ -228,7 +298,17 @@ function MyVideos({ loadingVideosData, statusDB, videos }) {
                                         <h2>{video.title}</h2>
                                     </div>
                                     <div className="videoTitle">
-                                        <h4>{video.title}</h4>
+                                        <div className="videoTitleSection1">
+                                            <h4>{video.title}</h4>
+                                        </div>
+                                        <div className="videoTitleSection2">
+                                            {info.api.enabled && (
+                                                <>
+                                                    <CRUDVideosButton loading={loadingVideosData} action={"Update"} id={video.id} getVideos={getVideosU} />
+                                                    <CRUDVideosButton loading={loadingVideosData} action={"Delete"} id={video.id} getVideos={getVideosD} />
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="videoContent">
                                         <div className="videoContentDescription">
@@ -266,6 +346,148 @@ function MyVideos({ loadingVideosData, statusDB, videos }) {
                         </motion.div>
                     ) : (
                         <motion.div className="noVideosData" key="novideosdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+//Mobile:
+function VideosPageTitleMobile() {
+    return (
+        <div className="videosPageTitleContainerMobile">
+            <h2>MY VIDEOS</h2>
+        </div>
+    );
+}
+
+function AboutMyVideosMobile() {
+    return (
+        <div className="aboutMyVideosContainerMobile">
+            <div className="aboutMyVideosTitleMobile">
+                <h3>ABOUT MY VIDEOS</h3>
+            </div>
+            <div className="aboutMyVideosContentMobile">
+                <AnimatePresence>
+                    <motion.a
+                        className="aboutMyVideosPhotoMobile"
+                        title="My YouTube"
+                        href={info.YouTube.link}
+                        target="_blank"
+                        key="aboutmyviedosphotomobileA"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
+                <div className="aboutMyVideosTextContainerMobile">
+                    <div className="aboutMyVideosTextTitleMobile">
+                        <h4 className="h4_1M">{info.YouTube.user}</h4>
+                        <h4 className="h4_2M">{info.LinkedIn.name}</h4>
+                    </div>
+                    <div className="aboutMyVideosTextMobile">
+                        <p>
+                            {info.YouTube.description1}
+                            <br />
+                            <br />
+                            {info.YouTube.description2}
+                            <br />
+                            <br />
+                            {info.YouTube.description3}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVideosU, getVideosD }) {
+    return (
+        <div className="videosContainerMobile">
+            <div className="videosTitleMobile">
+                <h3>
+                    MY VIDEOS
+                    <DBstate loading={loadingVideosData} statusDB={statusDB} />
+                </h3>
+            </div>
+            {info.api.enabled && (
+                <div className="createVideoMobile">
+                    <CRUDVideosButton loading={loadingVideosData} action={"Create"} getVideos={getVideosC} />
+                </div>
+            )}
+            <div className="videosContentMobile">
+                <AnimatePresence>
+                    {videos.length > 0 && !loadingVideosData ? (
+                        videos[0].title !== 0 ? (
+                            videos.map((video, index) => (
+                                <motion.div
+                                    className="videoMobile"
+                                    key={index}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                >
+                                    <div className="videoCoverTitleMobile">
+                                        <h2>{video.title}</h2>
+                                    </div>
+                                    <div className="videoTitleMobile">
+                                        <div className="videoTitleSection1Mobile">
+                                            <h4>{video.title}</h4>
+                                        </div>
+                                        <div className="videoTitleSection2Mobile">
+                                            {info.api.enabled && (
+                                                <>
+                                                    <CRUDVideosButton loading={loadingVideosData} action={"Update"} id={video.id} getVideos={getVideosU} />
+                                                    <CRUDVideosButton loading={loadingVideosData} action={"Delete"} id={video.id} getVideos={getVideosD} />
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="videoContentMobile">
+                                        <div className="videoContentDescriptionMobile">
+                                            <div className="vCDBox1Mobile">
+                                                <p>
+                                                    Video category: <span style={{ color: "white", fontSize: "10px" }}>{video.category}</span>
+                                                </p>
+                                            </div>
+                                            <div className="vCDBox2Mobile">
+                                                <div className="vCDBox2TitleMobile">
+                                                    <p>Video description:</p>
+                                                </div>
+                                                <div className="vCDBox2ContentMobile">
+                                                    <p>{video.description}</p>
+                                                </div>
+                                            </div>
+                                            <div className="vCDBox3Mobile">
+                                                <p>
+                                                    Video tags: <span style={{ color: "white", fontSize: "10px" }}>{video.tags}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="videoContentPhotoMobile" style={{ backgroundImage: `url(${video.image})` }} />
+                                    </div>
+                                </motion.div>
+                            ))
+                        ) : (
+                            <motion.div className="noVideosYetMobile" key="novideosyetmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO VIDEOS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingVideosData ? (
+                        <motion.div className="loadingVideosDataMobile" key="loadingvideosdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderVideosMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noVideosDataMobile" key="novideosdatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                             <h4>NO DATA!</h4>
                         </motion.div>
                     )}
