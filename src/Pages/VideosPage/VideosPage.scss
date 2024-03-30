@@ -670,8 +670,8 @@
         background-repeat: no-repeat;
         background-size: 280%;
         background-position: 53.5% 60%;
-        height: 60%;
-        width: 25%;
+        height: 100px;
+        width: 100px;
         border-radius: 100%;
         border: 1px solid #03a062;
         transition: filter 300ms;
@@ -737,7 +737,7 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 line-height: 1.2;
-                max-width: 90%;
+                max-width: 96%;
                 position: relative;
                 bottom: 12px;
             }
@@ -950,7 +950,7 @@
             h4 {
                 width: fit-content;
                 color: yellow;
-                font-size: 60px;
+                font-size: 30px;
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 border: 1px solid yellow;
@@ -958,7 +958,7 @@
                 padding: 20px;
                 position: relative;
                 top: 10px;
-                left: 340px;
+                left: 30px;
             }
         }
 
@@ -1014,7 +1014,7 @@
                 padding: 20px;
                 position: relative;
                 top: 10px;
-                left: 430px;
+                left: 12px;
             }
         }
     }

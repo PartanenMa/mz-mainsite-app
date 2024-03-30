@@ -523,16 +523,6 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
                                         <input type="text" id="link" name="link" value={formData.link} onChange={handleChange} />
                                     </div>
                                 </div>
-                                <div className="formComponent">
-                                    <div>
-                                        <label htmlFor="step3">Step 3:</label>
-                                        <input type="text" id="step3" name="step3" value={formData.step3} onChange={handleChange} />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="status3">Status 3:</label>
-                                        <input type="text" id="status3" name="status3" value={formData.status3} onChange={handleChange} />
-                                    </div>
-                                </div>
                                 <div className="formFooter">
                                     <motion.button
                                         className="modalUpdateVideosBackButton"

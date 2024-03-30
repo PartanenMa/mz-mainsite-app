@@ -12,6 +12,7 @@ function ProjectsPage() {
     const [loadingProjectsData, setLoadingProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -23,6 +24,18 @@ function ProjectsPage() {
                 setLoadingProjectsData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkConnection = () => {
@@ -73,12 +86,22 @@ function ProjectsPage() {
 
     return (
         <div className="pJP">
-            <div className="projectsPageContainer">
-                <ProjectsPageTitle />
-                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
-                <AboutMyProjects />
-                <Projects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
-            </div>
+            {windowWidth >= 1280 && (
+                <div className="projectsPageContainer">
+                    <ProjectsPageTitle />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <AboutMyProjects />
+                    <Projects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
+                </div>
+            )}
+            {windowWidth < 1280 && (
+                <div className="projectsPageContainerMobile">
+                    <ProjectsPageTitleMobile />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <AboutMyProjectsMobile />
+                    <ProjectsMobile loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
+                </div>
+            )}
         </div>
     );
 }
@@ -200,6 +223,133 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                         </motion.div>
                     ) : (
                         <motion.div className="noProjectsData" key="noprojectsdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+//Mobile:
+function ProjectsPageTitleMobile() {
+    return (
+        <div className="projectsPageTitleContainerMobile">
+            <h2>PROJECTS</h2>
+        </div>
+    );
+}
+
+function AboutMyProjectsMobile() {
+    return (
+        <div className="aboutMyProjectsContainerMobile">
+            <div className="aboutMyProjectsTitleMobile">
+                <h3>ABOUT MY PROJECTS</h3>
+            </div>
+            <div className="aboutMyProjectsContentMobile">
+                <AnimatePresence>
+                    <motion.a
+                        className="aboutMyProjectsPhotoMobile"
+                        title="My GitHub"
+                        href={info.GitHub.link}
+                        target="_blank"
+                        key="aboutmyprojectsphotomobile"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
+                <div className="aboutMyProjectsTextContainerMobile">
+                    <div className="aboutMyProjectsTextTitleMobile">
+                        <h4 className="h4_1M">{info.GitHub.user}</h4>
+                        <h4 className="h4_2M">{info.LinkedIn.name}</h4>
+                    </div>
+                    <div className="aboutMyProjectsTextMobile">
+                        <p>
+                            {info.GitHub.description1}
+                            <br />
+                            <br />
+                            {info.GitHub.description2}
+                            <br />
+                            <br />
+                            {info.GitHub.description3}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function ProjectsMobile({ loadingProjectsData, statusDB, projects }) {
+    return (
+        <div className="projectsContainerMobile">
+            <div className="projectsTitleMobile">
+                <h3>
+                    PROJECTS
+                    <DBstate loading={loadingProjectsData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="projectsContentMobile">
+                <AnimatePresence>
+                    {projects.length > 0 ? (
+                        projects[0].title !== 0 ? (
+                            projects.map((project, index) => (
+                                <motion.div
+                                    className="projectMobile"
+                                    key={index}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, delay: 0.5, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                >
+                                    <div className="projectCoverTitleMobile">
+                                        <h2>{project.title}</h2>
+                                    </div>
+                                    <div className="projectTitleMobile">
+                                        <h4>{project.title}</h4>
+                                    </div>
+                                    <div className="projectContentMobile">
+                                        <div className="projectContentDescriptionMobile">
+                                            <div className="pCDBox1Mobile">
+                                                <p>
+                                                    Project type: <span style={{ color: "white", fontSize: "10px" }}>{project.type}</span>
+                                                </p>
+                                            </div>
+                                            <div className="pCDBox2Mobile">
+                                                <div className="pCDBox2TitleMobile">
+                                                    <p>Project description:</p>
+                                                </div>
+                                                <div className="pCDBox2ContentMobile">
+                                                    <p>{project.description}</p>
+                                                </div>
+                                            </div>
+                                            <div className="pCDBox3Mobile">
+                                                <p>
+                                                    Technologies used: <span style={{ color: "white", fontSize: "10px" }}>{project.tech}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="projectContentPhotoMobile" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.div>
+                            ))
+                        ) : (
+                            <motion.div className="noProjectsYetMobile" key="noprojectsyetmobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingProjectsData ? (
+                        <motion.div className="loadingProjectsDataMobile" key="loadingprojectsdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProjectsMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProjectsDataMobile" key="noprojectsdatamobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                             <h4>NO DATA!</h4>
                         </motion.div>
                     )}

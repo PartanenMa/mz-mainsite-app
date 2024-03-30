@@ -446,7 +446,6 @@ function ModalUpdateGoals({ isModalOpen, setIsModalOpen, goalData, id, getGoals,
     }, [goalData]);
 
     const handleChange = (e) => {
-        console.log(goalData);
         const { name, value } = e.target;
         setFormData({
             ...formData,

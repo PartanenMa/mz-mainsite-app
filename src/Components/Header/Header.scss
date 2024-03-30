@@ -256,3 +256,61 @@
         }
     }
 }
+
+/*HeaderAdmin (mobile):*/
+.headerContainerMobile {
+    background-color: #111;
+    height: 60px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: 3px solid #03a062;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    .logoContainerMobile {
+        background-image: url("/src/Assets/Images/Logo.PNG");
+        background-size: cover;
+        background-color: black;
+        height: 80%;
+        width: 65px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 0.3px solid #03a062;
+        transition: filter 300ms;
+        margin-left: 5px;
+    }
+
+    .logoContainerMobile:hover {
+        border: 0.3px solid lightgreen;
+        filter: drop-shadow(0 0 2em #03a062);
+    }
+
+    .titleContainerMobile {
+        float: right;
+        margin-left: 5px;
+
+        h1 {
+            color: #03a062;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 0.3px 0.3px 0 lightgreen;
+        }
+    }
+
+    .matrixContainerMobile {
+        background-image: url("/src/Assets/Images/Matrix.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 60%;
+        width: 25px;
+        float: right;
+        margin-left: 5px;
+    }
+}

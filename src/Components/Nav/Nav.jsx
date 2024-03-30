@@ -279,6 +279,9 @@ function NavMobile() {
             navigate(info.routes.goalsPage);
         } else if (page === "cv") {
             navigate(info.routes.cvPage);
+        } else if (page === "login") {
+            sessionStorage.setItem("logoutLoad", "false");
+            navigate(info.routes.loginPage);
         }
     };
 
@@ -326,6 +329,11 @@ function NavMobile() {
                         <li>
                             <motion.p whileTap={{ scale: 0.9 }} onClick={() => handleMobileNavClick("cv")}>
                                 CV
+                            </motion.p>
+                        </li>
+                        <li>
+                            <motion.p whileTap={{ scale: 0.9 }} onClick={() => handleMobileNavClick("login")}>
+                                Log in
                             </motion.p>
                         </li>
                         <li>

@@ -76,6 +76,7 @@ function ProfilePageAdmin() {
             .then(({ statusCode }) => {
                 if (statusCode !== 200) {
                     sessionStorage.setItem("isLoggedIn", "false");
+                    sessionStorage.setItem("csrfToken", "");
                 }
             });
     };

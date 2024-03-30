@@ -6,6 +6,7 @@ import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
+import CRUDProjectsButton from "/src/Components/CRUDProjectsButton/CRUDProjectsButton.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,6 +19,7 @@ function ProjectsPageAdmin() {
     const [loadingProjectsData, setLoadingProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -35,6 +37,18 @@ function ProjectsPageAdmin() {
                 setLoadingProjectsData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkSession = () => {
@@ -58,8 +72,27 @@ function ProjectsPageAdmin() {
             .then(({ statusCode }) => {
                 if (statusCode !== 200) {
                     sessionStorage.setItem("isLoggedIn", "false");
+                    sessionStorage.setItem("csrfToken", "");
                 }
             });
+    };
+
+    const getProjectsAfterCreate = async () => {
+        setLoadingProjectsData(true);
+        await getProjects();
+        triggerNotification("PROJECT CREATED", "Project created successfully!", "success");
+    };
+
+    const getProjectsAfterUpdate = async () => {
+        setLoadingProjectsData(true);
+        await getProjects();
+        triggerNotification("PROJECT UPDATED", "Project updated successfully!", "success");
+    };
+
+    const getProjectsAfterDelete = async () => {
+        setLoadingProjectsData(true);
+        await getProjects();
+        triggerNotification("PROJECT DELETED", "Project deleted successfully!", "success");
     };
 
     const getProjects = async () => {
@@ -124,21 +157,54 @@ function ProjectsPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="projectsPageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>Admin / projects</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="projectsPageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>Admin / projects</h2>
+                                </div>
+                                <ProjectsPageTitle />
+                                <AboutMyProjects />
+                                <MyProjects
+                                    loadingProjectsData={loadingProjectsData}
+                                    statusDB={statusDB}
+                                    projects={projects}
+                                    getProjectsC={() => getProjectsAfterCreate()}
+                                    getProjectsU={() => getProjectsAfterUpdate()}
+                                    getProjectsD={() => getProjectsAfterDelete()}
+                                />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <ProjectsPageTitle />
-                            <AboutMyProjects />
-                            <MyProjects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="projectsPageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>Admin / projects</h2>
+                                </div>
+                                <ProjectsPageTitleMobile />
+                                <AboutMyProjectsMobile />
+                                <MyProjectsMobile
+                                    loadingProjectsData={loadingProjectsData}
+                                    statusDB={statusDB}
+                                    projects={projects}
+                                    getProjectsC={() => getProjectsAfterCreate()}
+                                    getProjectsU={() => getProjectsAfterUpdate()}
+                                    getProjectsD={() => getProjectsAfterDelete()}
+                                />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -200,7 +266,7 @@ function AboutMyProjects() {
     );
 }
 
-function MyProjects({ loadingProjectsData, statusDB, projects }) {
+function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, getProjectsU, getProjectsD }) {
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
@@ -209,54 +275,67 @@ function MyProjects({ loadingProjectsData, statusDB, projects }) {
                     <DBstate loading={loadingProjectsData} statusDB={statusDB} />
                 </h3>
             </div>
+            {info.api.enabled && (
+                <div className="createProject">
+                    <CRUDProjectsButton loading={loadingProjectsData} action={"Create"} getProjects={getProjectsC} />
+                </div>
+            )}
             <div className="projectsContent">
                 <AnimatePresence>
-                    {projects.length > 0 ? (
+                    {projects.length > 0 && !loadingProjectsData ? (
                         projects[0].title !== 0 ? (
-                            projects.map((project, index) =>
-                                projects.map((project, index) => (
-                                    <motion.div
-                                        className="project"
-                                        key={index}
-                                        initial={{ opacity: 0, y: -100 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                        whileHover={{
-                                            scale: 1.03,
-                                            transition: { duration: 0.1 },
-                                        }}
-                                    >
-                                        <div className="projectCoverTitle">
-                                            <h2>{project.title}</h2>
-                                        </div>
-                                        <div className="projectTitle">
+                            projects.map((project, index) => (
+                                <motion.div
+                                    className="project"
+                                    key={index}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                >
+                                    <div className="projectCoverTitle">
+                                        <h2>{project.title}</h2>
+                                    </div>
+                                    <div className="projectTitle">
+                                        <div className="projectTitleSection1">
                                             <h4>{project.title}</h4>
                                         </div>
-                                        <div className="projectContent">
-                                            <div className="projectContentDescription">
-                                                <div className="pCDBox1">
-                                                    <p>
-                                                        Project type: <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
-                                                    </p>
+                                        <div className="projectTitleSection2">
+                                            {info.api.enabled && (
+                                                <>
+                                                    <CRUDProjectsButton loading={loadingProjectsData} action={"Update"} id={project.id} getProjects={getProjectsU} />
+                                                    <CRUDProjectsButton loading={loadingProjectsData} action={"Delete"} id={project.id} getProjects={getProjectsD} />
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="projectContent">
+                                        <div className="projectContentDescription">
+                                            <div className="pCDBox1">
+                                                <p>
+                                                    Project type: <span style={{ color: "white", fontSize: "15px" }}>{project.type}</span>
+                                                </p>
+                                            </div>
+                                            <div className="pCDBox2">
+                                                <div className="pCDBox2Title">
+                                                    <p>Project description:</p>
                                                 </div>
-                                                <div className="pCDBox2">
-                                                    <div className="pCDBox2Title">
-                                                        <p>Project description:</p>
-                                                    </div>
-                                                    <div className="pCDBox2Content">
-                                                        <p>{project.description}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="pCDBox3">
-                                                    <p>
-                                                        Technologies used: <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
-                                                    </p>
+                                                <div className="pCDBox2Content">
+                                                    <p>{project.description}</p>
                                                 </div>
                                             </div>
-                                            <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
+                                            <div className="pCDBox3">
+                                                <p>
+                                                    Technologies used: <span style={{ color: "white", fontSize: "15px" }}>{project.tech}</span>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </motion.div>
-                                ))
-                            )
+                                        <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.div>
+                            ))
                         ) : (
                             <motion.div className="noProjectsYet" key="noprojectsyetA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                 <h4>NO PROJECTS YET!</h4>
@@ -268,6 +347,148 @@ function MyProjects({ loadingProjectsData, statusDB, projects }) {
                         </motion.div>
                     ) : (
                         <motion.div className="noProjectsData" key="noprojectsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+//Mobile:
+function ProjectsPageTitleMobile() {
+    return (
+        <div className="projectsPageTitleContainerMobile">
+            <h2>MY PROJECTS</h2>
+        </div>
+    );
+}
+
+function AboutMyProjectsMobile() {
+    return (
+        <div className="aboutMyProjectsContainerMobile">
+            <div className="aboutMyProjectsTitleMobile">
+                <h3>ABOUT MY PROJECTS</h3>
+            </div>
+            <div className="aboutMyProjectsContentMobile">
+                <AnimatePresence>
+                    <motion.a
+                        className="aboutMyProjectsPhotoMobile"
+                        title="My GitHub"
+                        href={info.GitHub.link}
+                        target="_blank"
+                        key="aboutmyprojectsphotomobileA"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                </AnimatePresence>
+                <div className="aboutMyProjectsTextContainerMobile">
+                    <div className="aboutMyProjectsTextTitleMobile">
+                        <h4 className="h4_1M">{info.GitHub.user}</h4>
+                        <h4 className="h4_2M">{info.LinkedIn.name}</h4>
+                    </div>
+                    <div className="aboutMyProjectsTextMobile">
+                        <p>
+                            {info.GitHub.description1}
+                            <br />
+                            <br />
+                            {info.GitHub.description2}
+                            <br />
+                            <br />
+                            {info.GitHub.description3}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjectsC, getProjectsU, getProjectsD }) {
+    return (
+        <div className="projectsContainerMobile">
+            <div className="projectsTitleMobile">
+                <h3>
+                    MY PROJECTS
+                    <DBstate loading={loadingProjectsData} statusDB={statusDB} />
+                </h3>
+            </div>
+            {info.api.enabled && (
+                <div className="createProjectMobile">
+                    <CRUDProjectsButton loading={loadingProjectsData} action={"Create"} getProjects={getProjectsC} />
+                </div>
+            )}
+            <div className="projectsContentMobile">
+                <AnimatePresence>
+                    {projects.length > 0 && !loadingProjectsData ? (
+                        projects[0].title !== 0 ? (
+                            projects.map((project, index) => (
+                                <motion.div
+                                    className="projectMobile"
+                                    key={index}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                >
+                                    <div className="projectCoverTitleMobile">
+                                        <h2>{project.title}</h2>
+                                    </div>
+                                    <div className="projectTitleMobile">
+                                        <div className="projectTitleSection1Mobile">
+                                            <h4>{project.title}</h4>
+                                        </div>
+                                        <div className="projectTitleSection2Mobile">
+                                            {info.api.enabled && (
+                                                <>
+                                                    <CRUDProjectsButton loading={loadingProjectsData} action={"Update"} id={project.id} getProjects={getProjectsU} />
+                                                    <CRUDProjectsButton loading={loadingProjectsData} action={"Delete"} id={project.id} getProjects={getProjectsD} />
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="projectContentMobile">
+                                        <div className="projectContentDescriptionMobile">
+                                            <div className="pCDBox1Mobile">
+                                                <p>
+                                                    Project type: <span style={{ color: "white", fontSize: "10px" }}>{project.type}</span>
+                                                </p>
+                                            </div>
+                                            <div className="pCDBox2Mobile">
+                                                <div className="pCDBox2TitleMobile">
+                                                    <p>Project description:</p>
+                                                </div>
+                                                <div className="pCDBox2ContentMobile">
+                                                    <p>{project.description}</p>
+                                                </div>
+                                            </div>
+                                            <div className="pCDBox3Mobile">
+                                                <p>
+                                                    Technologies used: <span style={{ color: "white", fontSize: "10px" }}>{project.tech}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="projectContentPhotoMobile" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.div>
+                            ))
+                        ) : (
+                            <motion.div className="noProjectsYetMobile" key="noprojectsyetmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingProjectsData ? (
+                        <motion.div className="loadingProjectsDataMobile" key="loadingprojectsdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProjects" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProjectsDataMobile" key="noprojectsdatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                             <h4>NO DATA!</h4>
                         </motion.div>
                     )}
