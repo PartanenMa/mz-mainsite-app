@@ -81,8 +81,24 @@ function ProfilePageAdmin() {
             });
     };
 
-    const getProfession = () => {
-        fetch("/profession", {
+    const getProfessionAfterUpdate = async () => {
+        setLoadingProfessionData(true);
+        setLoadingJobData(true);
+        await getProfession();
+        await getJob();
+        triggerNotification("PROFESSION UPDATED", "Profession updated successfully!", "success");
+    };
+
+    const getJobAfterUpdate = async () => {
+        setLoadingProfessionData(true);
+        setLoadingJobData(true);
+        await getProfession();
+        await getJob();
+        triggerNotification("JOB UPDATED", "Job updated successfully!", "success");
+    };
+
+    const getProfession = async () => {
+        await fetch("/profession", {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
@@ -109,8 +125,8 @@ function ProfilePageAdmin() {
             });
     };
 
-    const getJob = () => {
-        fetch("/job", {
+    const getJob = async () => {
+        await fetch("/job", {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
@@ -210,7 +226,14 @@ function ProfilePageAdmin() {
                                 <h2>Admin / profile</h2>
                             </div>
                             <ProfileAdminPageTitle />
-                            <AboutMe loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
+                            <AboutMe
+                                loadingProfessionData={loadingProfessionData}
+                                loadingJobData={loadingJobData}
+                                professionData={professionData}
+                                jobData={jobData}
+                                getJob={() => getJobAfterUpdate()}
+                                getProfession={() => getProfessionAfterUpdate()}
+                            />
                             <Languages loadingProfileData={loadingProfileData} statusDB={statusDB} languages={languages} />
                             <Education loadingProfileData={loadingProfileData} statusDB={statusDB} educations={educations} />
                             <Experience loadingProfileData={loadingProfileData} statusDB={statusDB} experiences={experiences} />
@@ -244,7 +267,7 @@ function ProfileAdminPageTitle() {
     );
 }
 
-function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobData }) {
+function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobData, getJob, getProfession }) {
     let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
     let description2 =
         "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
@@ -311,9 +334,9 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                             <div className="aboutMeTextTitle2">
                                 {info.api.enabled && professionData?.professionStatus && (
                                     <>
-                                        <CRUDProfessionButton loading={loadingProfessionData} />
-                                        <CRUDJobButton loading={loadingProfessionData} />
-                                        <CRUDTechnologiesButton loading={loadingProfessionData} />
+                                        <CRUDProfessionButton loading={loadingProfessionData} getProfessionU={getProfession} />
+                                        <CRUDJobButton loading={loadingJobData} getJobU={getJob} />
+                                        <CRUDTechnologiesButton loading={loadingJobData} />
                                     </>
                                 )}
                             </div>

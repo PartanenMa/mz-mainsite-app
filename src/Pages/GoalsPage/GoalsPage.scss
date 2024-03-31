@@ -259,6 +259,9 @@
         height: 300px;
         width: 90%;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         h4 {
             width: fit-content;
@@ -269,9 +272,6 @@
             border: 1px solid red;
             border-radius: 48%;
             padding: 20px;
-            position: relative;
-            top: 10px;
-            left: 430px;
         }
     }
 }
@@ -527,6 +527,9 @@
         height: 300px;
         width: 90%;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         h4 {
             width: fit-content;
@@ -537,9 +540,6 @@
             border: 1px solid red;
             border-radius: 48%;
             padding: 20px;
-            position: relative;
-            top: 10px;
-            left: 12px;
         }
     }
 }

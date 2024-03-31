@@ -108,58 +108,94 @@
     }
 
     .modalProfessionContent {
-        height: 80%;
+        height: 90%;
         width: 100%;
         overflow: hidden;
-    }
 
-    .modalProfessionFooter {
-        height: 10%;
-        width: 100%;
-        border-top: 3px solid #03a062;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
+        .formComponent {
+            height: 25%;
+            width: 100%;
+            border: 0.5px solid lightgreen;
+            display: flex;
 
-        .modalProfessionBackButton {
-            background-color: red;
-            color: white;
-            cursor: pointer;
-            height: 48px;
-            width: 207px;
-            border-radius: 10px;
-            border: 1px solid white;
-            font-size: 30px;
-            font-style: italic;
-            transition: filter 300ms;
+            .fCDiv {
+                height: 100%;
+                width: 50%;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    label {
+                        color: #03a062;
+                        font-size: 18px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-decoration: underline;
+                    }
+
+                    input {
+                        background-color: lightgreen;
+                        color: black;
+                        font-size: 20px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        border-radius: 5px;
+                    }
+                }
+            }
         }
 
-        .modalProfessionBackButton:hover {
-            background-color: lightcoral;
-            color: red;
-            border: 1px solid red;
-            transition: background-color 500ms ease-in-out;
-        }
+        .formFooter {
+            height: 25%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
 
-        .modalProfessionUpdateButton {
-            background-color: orange;
-            color: white;
-            cursor: pointer;
-            height: 48px;
-            width: 207px;
-            border-radius: 10px;
-            border: 1px solid white;
-            font-size: 30px;
-            font-style: italic;
-            transition: filter 300ms;
-        }
+            .modalProfessionBackButton {
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid white;
+                font-size: 30px;
+                font-style: italic;
+                transition: filter 300ms;
+            }
 
-        .modalProfessionUpdateButton:hover {
-            background-color: yellow;
-            color: orange;
-            border: 1px solid orange;
-            transition: background-color 500ms ease-in-out;
+            .modalProfessionBackButton:hover {
+                background-color: lightcoral;
+                color: red;
+                border: 1px solid red;
+                transition: background-color 500ms ease-in-out;
+            }
+
+            .modalProfessionUpdateButton {
+                background-color: orange;
+                color: white;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid white;
+                font-size: 30px;
+                font-style: italic;
+                transition: filter 300ms;
+            }
+
+            .modalProfessionUpdateButton:hover {
+                background-color: yellow;
+                color: orange;
+                border: 1px solid orange;
+                transition: background-color 500ms ease-in-out;
+            }
         }
     }
 }
