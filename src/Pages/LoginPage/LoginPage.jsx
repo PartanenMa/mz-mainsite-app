@@ -168,7 +168,7 @@ function LoginSection() {
                     if (username === info.testLoginFe.adminUserName && password === info.testLoginFe.adminPassword) {
                         sessionStorage.setItem("isLoggedIn", "true");
                         sessionStorage.setItem("load", "true");
-                        navigate(info.routes.homePageAdmin);
+                        navigate(info.routes.dashboardPage);
                     } else {
                         event.preventDefault();
                         triggerNotification("TEST LOG IN FAILED!", "Incorrect username or password.", "error");
@@ -210,7 +210,7 @@ function LoginSection() {
                     sessionStorage.setItem("csrfToken", csrfToken);
                     sessionStorage.setItem("isLoggedIn", "true");
                     sessionStorage.setItem("load", "true");
-                    navigate(info.routes.homePageAdmin);
+                    navigate(info.routes.dashboardPage);
                 } else if (statusCode === 401) {
                     triggerNotification("LOG IN FAILED!", "Incorrect username or password.", "error");
                 } else if (statusCode === 500) {

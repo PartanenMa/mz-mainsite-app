@@ -1,0 +1,495 @@
+/*DashboardPage:*/
+.dashboardPageContainerAdmin {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 1244px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumb {
+        background-color: lightgreen;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+        }
+    }
+
+    .logOutSectionAdmin {
+        background-image: url("/src/Assets/Images/AdminBG.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 480px;
+        width: 100%;
+        padding-top: 5px;
+        padding-left: 5px;
+        border-top: 1px solid #03a062;
+
+        .logOutContainer1 {
+            animation: fadeIn 0.3s;
+            background-color: #111;
+            cursor: pointer;
+            height: 50px;
+            width: 200px;
+            display: flex;
+            position: relative;
+            top: 0px;
+            right: 0px;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+
+            .logo_react {
+                float: left;
+                position: relative;
+                top: 9px;
+                left: 160px;
+                filter: drop-shadow(0 0 2em #61dafbaa);
+                animation: logo-spin infinite 20s linear;
+            }
+
+            @keyframes logo-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .logoAdmin1 {
+                background-image: url("/src/Assets/Images/Admin.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 100%;
+                border: 1px solid #03a062;
+                height: 45px;
+                width: 45px;
+                position: relative;
+                top: 3px;
+                left: 5px;
+            }
+
+            .nameAdmin {
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 64px;
+                bottom: 69px;
+            }
+        }
+
+        .logOutContainer1:hover {
+            filter: drop-shadow(0 0 2em #03a062);
+        }
+
+        .logOutContainer1:before {
+            content: "";
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .logOutContainer1:active {
+            color: #000;
+        }
+
+        .logOutContainer1:active:after {
+            background: transparent;
+        }
+
+        .logOutContainer1:hover:before {
+            opacity: 1;
+        }
+
+        .logOutContainer1:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .logOutContainer2 {
+            display: block;
+            background-color: #111;
+            height: 300px;
+            width: 200px;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+
+            h3 {
+                animation: fadeIn 0.3s;
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 12px;
+                bottom: 25px;
+            }
+
+            .x-buttonAdmin {
+                animation: fadeIn 0.3s;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-size: 20px;
+                font-style: italic;
+                position: relative;
+                bottom: 85px;
+                left: 160px;
+            }
+
+            .x-buttonAdmin:hover {
+                background-color: lightcoral;
+                color: red;
+                border: 1px solid red;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em lightcoral);
+            }
+
+            .logoAdmin2 {
+                animation: fadeIn 0.3s;
+                background-image: url("/src/Assets/Images/Admin.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 100%;
+                border: 1px solid #03a062;
+                cursor: pointer;
+                height: 100px;
+                width: 100px;
+                position: relative;
+                bottom: 65px;
+                left: 45px;
+                transition: filter 300ms;
+            }
+
+            .logoAdmin2:hover {
+                filter: drop-shadow(0 0 2em lightgreen);
+            }
+
+            .settingsButtonAdmin {
+                animation: fadeIn 0.3s;
+                background-color: orange;
+                color: white;
+                cursor: pointer;
+                height: 48px;
+                width: 127px;
+                border-radius: 10px;
+                border: 1px solid white;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 35px;
+                bottom: 45px;
+            }
+
+            .settingsButtonAdmin:hover {
+                background-color: yellow;
+                color: orange;
+                border: 1px solid orange;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em yellow);
+            }
+
+            .logOutButtonAdmin {
+                animation: fadeIn 0.3s;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 48px;
+                width: 127px;
+                border-radius: 10px;
+                border: 1px solid white;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 35px;
+                bottom: 34px;
+            }
+
+            .logOutButtonAdmin:hover {
+                background-color: lightcoral;
+                color: red;
+                border: 1px solid red;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em lightcoral);
+            }
+        }
+
+        .logOutContainer3 {
+            display: block;
+            background-color: #111;
+            height: 300px;
+            width: 200px;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+
+            h3 {
+                animation: fadeIn 0.3s;
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 12px;
+                bottom: 25px;
+            }
+
+            .settings_X-button {
+                animation: fadeIn 0.3s;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-size: 20px;
+                font-style: italic;
+                position: relative;
+                bottom: 85px;
+                left: 160px;
+            }
+
+            .settings_X-button:hover {
+                background-color: lightcoral;
+                color: red;
+                border: 1px solid red;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em lightcoral);
+            }
+
+            .optionText {
+                animation: fadeIn 0.3s;
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 85px;
+                left: 50px;
+            }
+
+            .optionBG {
+                animation: fadeIn 0.3s;
+                border: 1px solid #03a062;
+                cursor: pointer;
+                border-radius: 20px;
+                height: 40px;
+                width: 100px;
+                position: relative;
+                bottom: 90px;
+                left: 45px;
+
+                .optionBall {
+                    background-color: #03a062;
+                    border-radius: 100%;
+                    height: 40px;
+                    width: 40px;
+                    position: relative;
+                }
+            }
+
+            .settingsBackButton {
+                animation: fadeIn 0.3s;
+                background-color: #111;
+                color: #03a062;
+                cursor: pointer;
+                height: 48px;
+                width: 127px;
+                border-radius: 10px;
+                border: 1px solid #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 35px;
+                top: 25px;
+            }
+
+            .settingsBackButton:hover {
+                background-color: lightgreen;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+        }
+
+        .logOutContainer4 {
+            display: block;
+            background-color: #111;
+            height: 190px;
+            width: 200px;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+
+            h3 {
+                animation: fadeIn 0.3s;
+                color: #03a062;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                left: 12px;
+                bottom: 25px;
+            }
+
+            .logOut_X-button {
+                animation: fadeIn 0.3s;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-size: 20px;
+                font-style: italic;
+                position: relative;
+                bottom: 85px;
+                left: 160px;
+            }
+
+            .logOut_X-button:hover {
+                background-color: lightcoral;
+                color: red;
+                border: 1px solid red;
+                transition: background-color 500ms ease-in-out;
+                filter: drop-shadow(0 0 2em lightcoral);
+            }
+
+            .lOC4Buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                position: relative;
+                bottom: 80px;
+
+                .logOutButton {
+                    animation: fadeIn 0.3s;
+                    background-color: red;
+                    color: white;
+                    cursor: pointer;
+                    height: 48px;
+                    width: 127px;
+                    border-radius: 10px;
+                    border: 1px solid white;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    left: 35px;
+                    top: 25px;
+                }
+
+                .logOutButton:hover {
+                    background-color: lightcoral;
+                    color: red;
+                    border: 1px solid red;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em lightcoral);
+                }
+
+                .logOutBackButton {
+                    animation: fadeIn 0.3s;
+                    background-color: #111;
+                    color: #03a062;
+                    cursor: pointer;
+                    height: 48px;
+                    width: 127px;
+                    border-radius: 10px;
+                    border: 1px solid #03a062;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    left: 35px;
+                    top: 25px;
+                }
+
+                .logOutBackButton:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+        }
+    }
+
+    .clock {
+        animation: fadeIn 0.3s;
+        float: right;
+        position: relative;
+        bottom: 50px;
+        right: 10px;
+    }
+
+    .welcome {
+        animation: fadeIn 0.3s;
+        color: #03a062;
+        font-size: 150px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-shadow: 1px 1px 0 lightgreen;
+        float: center;
+        position: relative;
+        bottom: 30px;
+        left: 15px;
+    }
+
+    .showGIF {
+        background-image: url("/src/Assets/Images/UserBG.gif");
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -30,7 +30,7 @@ function FooterAdmin() {
                                 <motion.div
                                     className="footerInfoBoxTitleLogo"
                                     title="Go to home page"
-                                    onClick={() => navigate(info.routes.homePageAdmin)}
+                                    onClick={() => navigate(info.routes.dashboardPage)}
                                     key="fibtlA"
                                     whileHover={{
                                         scale: 1.05,
@@ -48,7 +48,7 @@ function FooterAdmin() {
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.profilePageAdmin)}
-                                                key="FN1-1A"
+                                                key="fn1-1A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -63,7 +63,7 @@ function FooterAdmin() {
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.projectsPageAdmin)}
-                                                key="FN1-2A"
+                                                key="fn1-2A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -78,7 +78,7 @@ function FooterAdmin() {
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.videosPageAdmin)}
-                                                key="FN1-3A"
+                                                key="fn1-3A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -93,7 +93,7 @@ function FooterAdmin() {
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.goalsPageAdmin)}
-                                                key="FN1-4A"
+                                                key="fn1-4A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -108,7 +108,7 @@ function FooterAdmin() {
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.cvPageAdmin)}
-                                                key="FN1-5A"
+                                                key="fn1-5A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -208,7 +208,7 @@ function FooterAdminMobile() {
                     <motion.div
                         className="footerMobileTitleLogo"
                         title="Go to front page"
-                        onClick={() => navigate(info.routes.homePageAdmin)}
+                        onClick={() => navigate(info.routes.dashboardPage)}
                         key="fibtl"
                         whileHover={{
                             scale: 1.05,

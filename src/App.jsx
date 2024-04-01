@@ -8,6 +8,7 @@ import IntroLoadingScreen from "./Components/IntroLoadingScreen/IntroLoadingScre
 import Header from "/src/Components/Header/Header.jsx";
 import Footer from "/src/Components/Footer/Footer.jsx";
 import FrontPage from "./Pages/FrontPage/FrontPage.jsx";
+import DashboardPage from "./Pages/DashboardPage/DashboardPage.jsx";
 import LoginPage from "./Pages/LoginPage/LoginPage.jsx";
 import HomePage from "./Pages/HomePage/HomePage.jsx";
 import HomePageAdmin from "./Pages/HomePage/HomePageAdmin.jsx";
@@ -78,6 +79,7 @@ function App() {
                             {location.pathname !== info.routes.loginPage && !location.pathname.includes("admin") && <Header />}
                             <Routes>
                                 <Route path={info.routes.frontPage} element={<FrontPage />} />
+                                <Route path={info.routes.dashboardPage} element={<DashboardPage />} />
                                 <Route path={info.routes.loginPage} element={<LoginPage />} />
                                 <Route path={info.routes.homePage} element={<HomePage />} />
                                 <Route path={info.routes.homePageAdmin} element={<HomePageAdmin />} />
