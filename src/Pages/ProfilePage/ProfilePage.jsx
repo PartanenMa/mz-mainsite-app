@@ -17,8 +17,8 @@ function ProfilePage() {
     const [jobData, setJobData] = useState([]);
     const [languages, setLanguages] = useState([]);
     const [educations, setEducations] = useState([]);
-    const [skills, setSkills] = useState([]);
     const [experiences, setExperiences] = useState([]);
+    const [skills, setSkills] = useState([]);
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -69,7 +69,6 @@ function ProfilePage() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const statusCode = res.status;
                     const data = res.json();
                     return data;
                 } else {
@@ -97,7 +96,6 @@ function ProfilePage() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const statusCode = res.status;
                     const data = res.json();
                     return data;
                 } else {
@@ -125,7 +123,6 @@ function ProfilePage() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const statusCode = res.status;
                     const data = res.json();
                     return data;
                 } else {

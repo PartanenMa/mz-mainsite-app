@@ -27,8 +27,8 @@ function ProfilePageAdmin() {
     const [jobData, setJobData] = useState([]);
     const [languages, setLanguages] = useState([]);
     const [educations, setEducations] = useState([]);
-    const [skills, setSkills] = useState([]);
     const [experiences, setExperiences] = useState([]);
+    const [skills, setSkills] = useState([]);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -97,6 +97,24 @@ function ProfilePageAdmin() {
         triggerNotification("JOB UPDATED", "Job updated successfully!", "success");
     };
 
+    const getProfileAfterCreate = async () => {
+        setLoadingProfileData(true);
+        await getProfile();
+        triggerNotification("PROFILE DATA CREATED", "Profile data created successfully!", "success");
+    };
+
+    const getProfileAfterUpdate = async () => {
+        setLoadingProfileData(true);
+        await getProfile();
+        triggerNotification("PROFILE DATA UPDATED", "Profile data updated successfully!", "success");
+    };
+
+    const getProfileAfterDelete = async () => {
+        setLoadingProfileData(true);
+        await getProfile();
+        triggerNotification("PROFILE DATA DELETED", "Profile data deleted successfully!", "success");
+    };
+
     const getProfession = async () => {
         await fetch("/profession", {
             method: "GET",
@@ -107,7 +125,6 @@ function ProfilePageAdmin() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const statusCode = res.status;
                     const data = res.json();
                     return data;
                 } else {
@@ -135,7 +152,6 @@ function ProfilePageAdmin() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const statusCode = res.status;
                     const data = res.json();
                     return data;
                 } else {
@@ -153,8 +169,8 @@ function ProfilePageAdmin() {
             });
     };
 
-    const getProfile = () => {
-        fetch("/profile", {
+    const getProfile = async () => {
+        await fetch("/profile", {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
@@ -163,7 +179,6 @@ function ProfilePageAdmin() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const statusCode = res.status;
                     const data = res.json();
                     return data;
                 } else {
@@ -231,13 +246,41 @@ function ProfilePageAdmin() {
                                 loadingJobData={loadingJobData}
                                 professionData={professionData}
                                 jobData={jobData}
-                                getJob={() => getJobAfterUpdate()}
-                                getProfession={() => getProfessionAfterUpdate()}
+                                getJobU={() => getJobAfterUpdate()}
+                                getProfessionU={() => getProfessionAfterUpdate()}
                             />
-                            <Languages loadingProfileData={loadingProfileData} statusDB={statusDB} languages={languages} />
-                            <Education loadingProfileData={loadingProfileData} statusDB={statusDB} educations={educations} />
-                            <Experience loadingProfileData={loadingProfileData} statusDB={statusDB} experiences={experiences} />
-                            <Skills loadingProfileData={loadingProfileData} statusDB={statusDB} skills={skills} />
+                            <Languages
+                                loadingProfileData={loadingProfileData}
+                                statusDB={statusDB}
+                                languages={languages}
+                                getProfileC={() => getProfileAfterCreate()}
+                                getProfileU={() => getProfileAfterUpdate()}
+                                getProfileD={() => getProfileAfterDelete()}
+                            />
+                            <Education
+                                loadingProfileData={loadingProfileData}
+                                statusDB={statusDB}
+                                educations={educations}
+                                getProfileC={() => getProfileAfterCreate()}
+                                getProfileU={() => getProfileAfterUpdate()}
+                                getProfileD={() => getProfileAfterDelete()}
+                            />
+                            <Experience
+                                loadingProfileData={loadingProfileData}
+                                statusDB={statusDB}
+                                experiences={experiences}
+                                getProfileC={() => getProfileAfterCreate()}
+                                getProfileU={() => getProfileAfterUpdate()}
+                                getProfileD={() => getProfileAfterDelete()}
+                            />
+                            <Skills
+                                loadingProfileData={loadingProfileData}
+                                statusDB={statusDB}
+                                skills={skills}
+                                getProfileC={() => getProfileAfterCreate()}
+                                getProfileU={() => getProfileAfterUpdate()}
+                                getProfileD={() => getProfileAfterDelete()}
+                            />
                             <Interests />
                             <Hobbies />
                             <ContactMe />
@@ -267,7 +310,7 @@ function ProfileAdminPageTitle() {
     );
 }
 
-function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobData, getJob, getProfession }) {
+function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobData, getJobU, getProfessionU }) {
     let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
     let description2 =
         "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
@@ -334,8 +377,8 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                             <div className="aboutMeTextTitle2">
                                 {info.api.enabled && professionData?.professionStatus && (
                                     <>
-                                        <CRUDProfessionButton loading={loadingProfessionData} getProfessionU={getProfession} />
-                                        <CRUDJobButton loading={loadingJobData} getJobU={getJob} />
+                                        <CRUDProfessionButton loading={loadingProfessionData} getProfession={getProfessionU} />
+                                        <CRUDJobButton loading={loadingJobData} getJob={getJobU} />
                                         <CRUDTechnologiesButton loading={loadingJobData} />
                                     </>
                                 )}
@@ -385,7 +428,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
     );
 }
 
-function Languages({ loadingProfileData, statusDB, languages }) {
+function Languages({ loadingProfileData, statusDB, languages, getProfileC, getProfileU, getProfileD }) {
     return (
         <div className="languagesContainer">
             <div className="languagesTitle">
@@ -394,9 +437,14 @@ function Languages({ loadingProfileData, statusDB, languages }) {
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
+            {info.api.enabled && (
+                <div className="createProfile">
+                    <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"language"} getProfile={getProfileC} />
+                </div>
+            )}
             <div className="languagesContent">
                 <AnimatePresence>
-                    {languages.length > 0 ? (
+                    {languages.length > 0 && !loadingProfileData ? (
                         languages.map((language, index) => (
                             <motion.div
                                 className="language"
@@ -407,8 +455,18 @@ function Languages({ loadingProfileData, statusDB, languages }) {
                             >
                                 <div className="languageLogo" style={{ backgroundImage: `url(${language.image})` }} />
                                 <div className="languageContent">
-                                    <h4>{language.name}</h4>
-                                    <p>{language.proficiency}</p>
+                                    <div className="lC1">
+                                        <h4>{language.name}</h4>
+                                        <p>{language.proficiency}</p>
+                                    </div>
+                                    <div className="lC2">
+                                        {info.api.enabled && (
+                                            <>
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={language.id} data={"language"} getProfile={getProfileU} />
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={language.id} data={"language"} getProfile={getProfileD} />
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
                             </motion.div>
                         ))
@@ -427,7 +485,7 @@ function Languages({ loadingProfileData, statusDB, languages }) {
     );
 }
 
-function Education({ loadingProfileData, statusDB, educations }) {
+function Education({ loadingProfileData, statusDB, educations, getProfileC, getProfileU, getProfileD }) {
     const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
 
     const openOrCloseEducation = (index) => {
@@ -444,9 +502,10 @@ function Education({ loadingProfileData, statusDB, educations }) {
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
+            <div className="createProfile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"education"} getProfile={getProfileC} />}</div>
             <div className="educationsContent">
                 <AnimatePresence>
-                    {educations.length > 0 ? (
+                    {educations.length > 0 && !loadingProfileData ? (
                         educations.map((education, index) => (
                             <motion.div
                                 className="education"
@@ -465,8 +524,18 @@ function Education({ loadingProfileData, statusDB, educations }) {
                                     <h4>{education.schoolName}</h4>
                                 </div>
                                 <div className="educationContent1" style={{ backgroundColor: education.color }}>
-                                    <p>{education.degreeName}</p>
-                                    <p>{education.timeAndPlace}</p>
+                                    <div className="eC1">
+                                        <p>{education.degreeName}</p>
+                                        <p>{education.timeAndPlace}</p>
+                                    </div>
+                                    <div className="eC2">
+                                        {info.api.enabled && (
+                                            <>
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={education.id} data={"education"} getProfile={getProfileU} />
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={education.id} data={"education"} getProfile={getProfileD} />
+                                            </>
+                                        )}
+                                    </div>
                                     <div
                                         className="schoolLogo"
                                         style={{
@@ -501,7 +570,7 @@ function Education({ loadingProfileData, statusDB, educations }) {
     );
 }
 
-function Experience({ loadingProfileData, statusDB, experiences }) {
+function Experience({ loadingProfileData, statusDB, experiences, getProfileC, getProfileU, getProfileD }) {
     const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
 
     const openOrCloseExperience = (index) => {
@@ -617,9 +686,10 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
+            <div className="createProfile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"experience"} getProfile={getProfileC} />}</div>
             <div className="experiencesContent">
                 <AnimatePresence>
-                    {experiences.length > 0 ? (
+                    {experiences.length > 0 && !loadingProfileData ? (
                         experiences.map((experience, index) => (
                             <motion.div
                                 className="experience"
@@ -636,12 +706,22 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
                             >
                                 <div className="experienceTitle" style={{ backgroundColor: experience.color }}>
                                     <div className="experienceTitleContainer">
-                                        <h4>
-                                            {experience.companyName}
-                                            <span title="Currently employed" style={{ fontStyle: "normal" }}>
-                                                {experience.current ? " 💼" : ""}
-                                            </span>
-                                        </h4>
+                                        <div className="eTC1">
+                                            <h4>
+                                                {experience.companyName}
+                                                <span title="Currently employed" style={{ fontStyle: "normal" }}>
+                                                    {experience.current ? " 💼" : ""}
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <div className="eTC2">
+                                            {info.api.enabled && (
+                                                <>
+                                                    <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={experience.id} data={"experience"} getProfile={getProfileU} />
+                                                    <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={experience.id} data={"experience"} getProfile={getProfileD} />
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
                                     <div
                                         className="companyLogo"
@@ -714,7 +794,7 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
     );
 }
 
-function Skills({ loadingProfileData, statusDB, skills }) {
+function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU, getProfileD }) {
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -771,6 +851,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
+            <div className="createProfile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"skill"} getProfile={getProfileC} />}</div>
             <div className="skillsContent">
                 <div className="webDevelopmentSoftware">
                     <div className="wDSTitle">
@@ -780,7 +861,8 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                         <AnimatePresence>
                             {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
+                            skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 &&
+                            !loadingProfileData ? (
                                 <>
                                     <div className="software">
                                         <h5>{info.LinkedIn.skills1SubTitle1}</h5>
@@ -800,9 +882,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"us"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"us"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -825,9 +937,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"clis"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"clis"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -850,9 +992,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cs"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cs"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -878,7 +1050,8 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                         <AnimatePresence>
                             {skills.frontEndDevelopment?.frontEndProgrammingLanguages?.length > 0 &&
                             skills.frontEndDevelopment?.frontEndFrameworks?.length > 0 &&
-                            skills.frontEndDevelopment?.cSSFrameworks?.length > 0 ? (
+                            skills.frontEndDevelopment?.cSSFrameworks?.length > 0 &&
+                            !loadingProfileData ? (
                                 <>
                                     <div className="frontEndSoftware">
                                         <h5>{info.LinkedIn.skills2SubTitle1}</h5>
@@ -898,9 +1071,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fepl"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fepl"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -923,9 +1126,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fef"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fef"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -948,9 +1181,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cssf"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cssf"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -976,7 +1239,8 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                         <AnimatePresence>
                             {skills.backEndDevelopment?.backEndProgrammingLanguages?.length > 0 &&
                             skills.backEndDevelopment?.backEndFrameworks?.length > 0 &&
-                            skills.backEndDevelopment?.databases?.length > 0 ? (
+                            skills.backEndDevelopment?.databases?.length > 0 &&
+                            !loadingProfileData ? (
                                 <>
                                     <div className="backEndSoftware">
                                         <h5>{info.LinkedIn.skills3SubTitle1}</h5>
@@ -996,9 +1260,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bepl"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bepl"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1021,9 +1315,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bef"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bef"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1046,9 +1370,39 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"db"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"db"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}

@@ -80,7 +80,7 @@ function CRUDProfessionButton(props) {
                 setIsModalOpen={setIsProfessionModalOpen}
                 loadingProfessionData={loadingProfessionData}
                 professionData={professionData}
-                getProfession={props.getProfessionU}
+                getProfession={props.getProfession}
                 reload={() => getProfession()}
                 notification={triggerNotification}
             />

@@ -80,7 +80,7 @@ function CRUDJobButton(props) {
                 setIsModalOpen={setIsJobModalOpen}
                 loadingJobData={loadingJobData}
                 jobData={jobData}
-                getJob={props.getJobU}
+                getJob={props.getJob}
                 reload={() => getJob()}
                 notification={triggerNotification}
             />

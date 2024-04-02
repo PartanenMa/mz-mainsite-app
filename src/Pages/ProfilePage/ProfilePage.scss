@@ -18,6 +18,250 @@
         margin: auto;
         box-shadow: 0 0 30px 5px #03a062;
         overflow: hidden;
+
+        .language {
+            height: 40px;
+            width: 96%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+
+            .languageLogo {
+                background-color: black;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 80%;
+                height: 100%;
+                width: 4%;
+                float: left;
+                border-right: 1px solid black;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .languageContent {
+                height: 100%;
+                width: 96%;
+                float: right;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+
+                h4 {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 60%;
+                    float: left;
+                    position: relative;
+                    left: 10px;
+                    bottom: 68px;
+                }
+
+                p {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 40%;
+                    float: left;
+                    position: relative;
+                    bottom: 61px;
+                    left: 40px;
+                }
+            }
+        }
+
+        .education {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: filter 300ms;
+
+            .educationTitle {
+                background-color: #111;
+                height: 30px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 22px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .educationContent1 {
+                height: 100px;
+                width: 100%;
+                padding-left: 10px;
+                overflow: hidden;
+
+                p {
+                    color: white;
+                    font-size: 18px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                .schoolLogo {
+                    background-color: white;
+                    background-repeat: no-repeat;
+                    background-position: 30% 50%;
+                    background-size: 90%;
+                    height: 100%;
+                    width: 15%;
+                    border-bottom-right-radius: 10px;
+                    float: right;
+                    position: relative;
+                    bottom: 95.5px;
+                }
+            }
+
+            .educationContent2 {
+                background-color: #333;
+                width: 100%;
+                border-top: 1px solid white;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 5px;
+                overflow: hidden;
+
+                p {
+                    color: white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    line-height: 1.5;
+                    max-width: 1200px;
+                }
+
+                .subjects {
+                    color: #03a062;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    max-width: 1200px;
+                }
+            }
+        }
+
+        .education:hover {
+            border: 1px solid white;
+            filter: drop-shadow(0 0 2em var(--education-color));
+        }
+
+        .experienceTitle {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+
+            .experienceTitleContainer {
+                height: 100%;
+                width: 85%;
+                padding-left: 30px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                h4 {
+                    color: white;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.3px 0.3px 0 black;
+                }
+            }
+
+            .companyLogo {
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 15%;
+                filter: drop-shadow(0 0 2em black);
+            }
+        }
+
+        .skill {
+            height: 40px;
+            width: 96%;
+            border: 1px solid white;
+            border-radius: 10px;
+
+            .skillLogo {
+                background-color: black;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100%;
+                width: 4%;
+                float: left;
+                border-right: 1px solid black;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .skillContent {
+                height: 100%;
+                width: 96%;
+                float: right;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+
+                h4 {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 70%;
+                    float: left;
+                    position: relative;
+                    left: 10px;
+                    bottom: 68px;
+                }
+
+                p {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                    height: 100%;
+                    width: 20%;
+                    float: left;
+                    position: relative;
+                    bottom: 61px;
+                    left: 35px;
+                }
+
+                div {
+                    color: gray;
+                    font-size: 50px;
+                    text-shadow: 1px 1px 0 black;
+                    height: 100%;
+                    width: 10%;
+                    float: right;
+                    position: relative;
+                    bottom: 41px;
+                }
+            }
+        }
     }
 }
 
@@ -91,6 +335,326 @@
         align-items: center;
         gap: 20px;
         padding-right: 20px;
+    }
+
+    .createProfile {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+
+    .language {
+        height: 40px;
+        width: 96%;
+        border: 1px solid #03a062;
+        border-radius: 10px;
+        display: flex;
+
+        .languageLogo {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+            height: 100%;
+            width: 4%;
+            border-right: 1px solid black;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .languageContent {
+            height: 100%;
+            width: 96%;
+            float: right;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+
+            .lC1 {
+                height: 100%;
+                width: 80%;
+                overflow: hidden;
+                padding-left: 10px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 360px;
+
+                h4 {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                }
+
+                p {
+                    color: black;
+                    font-size: 25px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                }
+            }
+
+            .lC2 {
+                height: 100%;
+                width: 20%;
+                overflow: hidden;
+                display: flex;
+                justify-content: right;
+                gap: 10px;
+            }
+        }
+    }
+
+    .education {
+        width: 98%;
+        border: 1px solid #03a062;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: filter 300ms;
+
+        .educationTitle {
+            background-color: #111;
+            height: 30px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-left: 10px;
+            overflow: hidden;
+
+            h4 {
+                color: #03a062;
+                font-size: 20px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 22px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+
+        .educationContent1 {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+
+            .eC1 {
+                height: 100%;
+                width: 60%;
+                padding-left: 10px;
+
+                p {
+                    color: white;
+                    font-size: 18px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+
+            .eC2 {
+                height: 100%;
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .schoolLogo {
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: 30% 50%;
+                background-size: 90%;
+                height: 100%;
+                width: 15%;
+                border-bottom-right-radius: 10px;
+            }
+        }
+
+        .educationContent2 {
+            background-color: #333;
+            width: 100%;
+            border-top: 1px solid white;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 5px;
+            overflow: hidden;
+
+            p {
+                color: white;
+                font-size: 15px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                line-height: 1.5;
+                max-width: 1200px;
+            }
+
+            .subjects {
+                color: #03a062;
+                font-size: 15px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                max-width: 1200px;
+            }
+        }
+    }
+
+    .education:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em var(--education-color));
+    }
+
+    .experienceTitle {
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+
+        .experienceTitleContainer {
+            height: 100%;
+            width: 85%;
+            display: flex;
+
+            .eTC1 {
+                height: 100%;
+                width: 89%;
+                padding-left: 30px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                h4 {
+                    color: white;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.3px 0.3px 0 black;
+                }
+            }
+
+            .eTC2 {
+                height: 100%;
+                width: 11%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        .companyLogo {
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 15%;
+            filter: drop-shadow(0 0 2em black);
+        }
+    }
+
+    .skill {
+        height: 40px;
+        width: 96%;
+        border: 1px solid white;
+        border-radius: 10px;
+        display: flex;
+        overflow: hidden;
+
+        .skillLogo {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 4%;
+            border-right: 1px solid black;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .skillContent {
+            height: 100%;
+            width: 96%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+
+            .sC1 {
+                height: 100%;
+                width: 80%;
+                overflow: hidden;
+                display: flex;
+
+                .sC1-1 {
+                    height: 100%;
+                    width: 50%;
+                    padding-left: 10px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+
+                    h4 {
+                        color: black;
+                        font-size: 25px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow: 0.5px 0.5px 0 gray;
+                    }
+                }
+
+                .sC1-2 {
+                    height: 100%;
+                    width: 50%;
+                    display: flex;
+
+                    .sC1-2-1 {
+                        height: 100%;
+                        width: 50%;
+                        display: flex;
+                        justify-content: right;
+                        align-items: center;
+
+                        p {
+                            color: black;
+                            font-size: 25px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow: 0.5px 0.5px 0 gray;
+                        }
+                    }
+
+                    .sC1-2-2 {
+                        height: 100%;
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        div {
+                            color: gray;
+                            font-size: 50px;
+                            text-shadow: 1px 1px 0 black;
+                            height: 100%;
+                            width: 10%;
+                        }
+                    }
+                }
+            }
+
+            .sC2 {
+                height: 100%;
+                width: 20%;
+                overflow: hidden;
+                display: flex;
+                justify-content: right;
+                gap: 10px;
+            }
+        }
     }
 }
 
@@ -314,63 +878,6 @@
         padding-bottom: 15px;
         padding-left: 2%;
         padding-right: 2%;
-
-        .language {
-            height: 40px;
-            width: 96%;
-            border: 1px solid #03a062;
-            border-radius: 10px;
-
-            .languageLogo {
-                background-color: black;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 80%;
-                height: 100%;
-                width: 4%;
-                float: left;
-                border-right: 1px solid black;
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
-            }
-
-            .languageContent {
-                height: 100%;
-                width: 96%;
-                float: right;
-                border-top-right-radius: 10px;
-                border-bottom-right-radius: 10px;
-                display: flex;
-
-                h4 {
-                    color: black;
-                    font-size: 25px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    text-shadow: 0.5px 0.5px 0 gray;
-                    height: 100%;
-                    width: 60%;
-                    float: left;
-                    position: relative;
-                    left: 10px;
-                    bottom: 68px;
-                }
-
-                p {
-                    color: black;
-                    font-size: 25px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    text-shadow: 0.5px 0.5px 0 gray;
-                    height: 100%;
-                    width: 40%;
-                    float: left;
-                    position: relative;
-                    bottom: 61px;
-                    left: 40px;
-                }
-            }
-        }
     }
 }
 
@@ -410,95 +917,6 @@
         padding-bottom: 15px;
         padding-left: 1%;
         padding-right: 1%;
-
-        .education {
-            width: 98%;
-            border: 1px solid #03a062;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: filter 300ms;
-
-            .educationTitle {
-                background-color: #111;
-                height: 30px;
-                width: 100%;
-                border-bottom: 1px solid #03a062;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-                padding-left: 10px;
-                overflow: hidden;
-
-                h4 {
-                    color: #03a062;
-                    font-size: 20px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
-                    text-shadow: 0.3px 0.3px 0 lightgreen;
-                }
-            }
-
-            .educationContent1 {
-                height: 100px;
-                width: 100%;
-                padding-left: 10px;
-                overflow: hidden;
-
-                p {
-                    color: white;
-                    font-size: 18px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                }
-
-                .schoolLogo {
-                    background-color: white;
-                    background-repeat: no-repeat;
-                    background-position: 30% 50%;
-                    background-size: 90%;
-                    height: 100%;
-                    width: 15%;
-                    border-bottom-right-radius: 10px;
-                    float: right;
-                    position: relative;
-                    bottom: 96px;
-                }
-            }
-
-            .educationContent2 {
-                background-color: #333;
-                width: 100%;
-                border-top: 1px solid white;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-bottom: 5px;
-                overflow: hidden;
-
-                p {
-                    color: white;
-                    font-size: 15px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    line-height: 1.5;
-                    max-width: 1200px;
-                }
-
-                .subjects {
-                    color: #03a062;
-                    font-size: 15px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    max-width: 1200px;
-                }
-            }
-        }
-
-        .education:hover {
-            border: 1px solid white;
-            filter: drop-shadow(0 0 2em var(--education-color));
-        }
     }
 }
 
@@ -547,37 +965,6 @@
         overflow: hidden;
         cursor: pointer;
         transition: filter 300ms;
-
-        .experienceTitle {
-            height: 100px;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-
-            .experienceTitleContainer {
-                height: 100%;
-                width: 85%;
-                padding-left: 30px;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-
-                h4 {
-                    color: white;
-                    font-size: 60px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    text-shadow: 0.3px 0.3px 0 black;
-                }
-            }
-
-            .companyLogo {
-                background-repeat: no-repeat;
-                height: 100%;
-                width: 15%;
-                filter: drop-shadow(0 0 2em black);
-            }
-        }
 
         .experienceContentContainer {
             width: 100%;
@@ -905,73 +1292,6 @@
                         text-decoration: underline;
                         line-height: 0px;
                     }
-                }
-            }
-        }
-
-        .skill {
-            height: 40px;
-            width: 96%;
-            border: 1px solid white;
-            border-radius: 10px;
-
-            .skillLogo {
-                background-color: black;
-                background-repeat: no-repeat;
-                background-position: center;
-                height: 100%;
-                width: 4%;
-                float: left;
-                border-right: 1px solid black;
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
-            }
-
-            .skillContent {
-                height: 100%;
-                width: 96%;
-                float: right;
-                border-top-right-radius: 10px;
-                border-bottom-right-radius: 10px;
-                display: flex;
-
-                h4 {
-                    color: black;
-                    font-size: 25px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    text-shadow: 0.5px 0.5px 0 gray;
-                    height: 100%;
-                    width: 70%;
-                    float: left;
-                    position: relative;
-                    left: 10px;
-                    bottom: 68px;
-                }
-
-                p {
-                    color: black;
-                    font-size: 25px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    text-shadow: 0.5px 0.5px 0 gray;
-                    height: 100%;
-                    width: 20%;
-                    float: left;
-                    position: relative;
-                    bottom: 61px;
-                    left: 35px;
-                }
-
-                div {
-                    color: gray;
-                    font-size: 50px;
-                    text-shadow: 1px 1px 0 black;
-                    height: 100%;
-                    width: 10%;
-                    float: right;
-                    position: relative;
-                    bottom: 41px;
                 }
             }
         }
