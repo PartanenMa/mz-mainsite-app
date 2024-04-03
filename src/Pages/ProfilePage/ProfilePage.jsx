@@ -528,8 +528,8 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
                                     <div className="experienceTitleContainer">
                                         <h4>
                                             {experience.companyName}
-                                            <span title="Currently employed" style={{ fontStyle: "normal" }}>
-                                                {experience.current ? " 💼" : ""}
+                                            <span title="Currently employed" style={{ color: "lightgreen", fontSize: "25px", fontStyle: "normal", position: "relative", bottom: "10px", left: "10px" }}>
+                                                {experience.current ? " (CURRENT JOB)" : ""}
                                             </span>
                                         </h4>
                                     </div>

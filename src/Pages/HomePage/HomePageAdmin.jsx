@@ -22,6 +22,7 @@ function HomePageAdmin() {
     const [loadingJobData, setLoadingJobData] = useState(true);
     const [professionData, setProfessionData] = useState([]);
     const [jobData, setJobData] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -40,6 +41,18 @@ function HomePageAdmin() {
                 setLoadingJobData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkSession = () => {
@@ -154,20 +167,38 @@ function HomePageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="homePageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>Admin / home</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="homePageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>Admin / home</h2>
+                                </div>
+                                <HomePageTitle />
+                                <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <HomePageTitle />
-                            <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="homePageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>Admin / home</h2>
+                                </div>
+                                <HomePageTitleMobile />
+                                <FirstSectionMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -483,6 +514,313 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         </AnimatePresence>
                     </div>
                     <div className="box5" />
+                </div>
+            </section>
+        </div>
+    );
+}
+
+//Mobile:
+function HomePageTitleMobile() {
+    return (
+        <div className="homePageTitleContainerMobile">
+            <h2>HOME</h2>
+        </div>
+    );
+}
+
+function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionData, jobData }) {
+    const navigate = useNavigate();
+    const carouselImages = [Carousel1, Carousel2, Carousel3];
+
+    return (
+        <div className="firstSectionContainerMobile">
+            <section className="homeFirstSectionCarouselMobile">
+                <Carousel images={carouselImages} height={"90%"} width={"90%"} />
+            </section>
+            <section className="homeFirstSection1Mobile">
+                <div className="checkMyProfileMobile">
+                    <h2>MY PROFILE</h2>
+                </div>
+                <div className="goToMyProfileMobile">
+                    <AnimatePresence>
+                        <motion.a
+                            className="photoMobile"
+                            title="My LinkedIn"
+                            href={info.LinkedIn.link}
+                            target="_blank"
+                            key="photomobileA"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="profileTextBoxMobile">
+                        <AnimatePresence>
+                            <motion.a
+                                title="My LinkedIn"
+                                href={info.LinkedIn.link}
+                                target="_blank"
+                                key="linkedinlogomobileA"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>LinkedIn</h3>
+                        <p>{info.LinkedIn.user}</p>
+                        {info.api.enabled ? (
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                <motion.p key="professionorjobdatasuccessmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </motion.p>
+                            ) : loadingProfessionData ? (
+                                <motion.div className="loadingProfessionDataMobile" key="loadingprofessiondatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionDataMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.p style={{ color: "red" }} key="professionorjobdatafailmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    NO DATA!{jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
+                                </motion.p>
+                            )
+                        ) : loadingProfessionData ? (
+                            <motion.div className="loadingProfessionDataMobile" key="loadingprofessiondatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionDataMobile" />
+                            </motion.div>
+                        ) : (
+                            <motion.p key="professionorjobdatasuccessmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.employed ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
+                            </motion.p>
+                        )}
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToProfileMobile"
+                                onClick={() => navigate(info.routes.profilePageAdmin)}
+                                key="gotoprofilemobileA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Profile
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </section>
+            <section className="homeFirstSection2Mobile">
+                <div className="checkMyProjectsMobile">
+                    <h2>MY PROJECTS</h2>
+                </div>
+                <div className="goToMyProjectsMobile">
+                    <AnimatePresence>
+                        <motion.a
+                            className="gHLogoMobile"
+                            title="My GitHub"
+                            href={info.GitHub.link}
+                            target="_blank"
+                            key="ghlogo1mobileA"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="projectsTextBoxMobile">
+                        <AnimatePresence>
+                            <motion.a
+                                title="My GitHubMobile"
+                                href={info.GitHub.link}
+                                target="_blank"
+                                key="ghlogo2mobileA"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>GitHub</h3>
+                        <p>{info.GitHub.user}</p>
+                        <p>{info.LinkedIn.name}</p>
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToProjectsMobile"
+                                onClick={() => navigate(info.routes.projectsPageAdmin)}
+                                key="gotoprojectsmobileA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Projects
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </section>
+            <section className="homeFirstSection3Mobile">
+                <div className="checkMyVideosMobile">
+                    <h2>MY VIDEOS</h2>
+                </div>
+                <div className="goToMyVideosMobile">
+                    <AnimatePresence>
+                        <motion.a
+                            className="yTLogoMobile"
+                            title="My YouTube"
+                            href={info.YouTube.link}
+                            target="_blank"
+                            key="ytlogo1mobileA"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="videosTextBoxMobile">
+                        <AnimatePresence>
+                            <motion.a
+                                title="My YouTube"
+                                href={info.YouTube.link}
+                                target="_blank"
+                                key="ytlogo2mobileA"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>YouTube</h3>
+                        <p>{info.YouTube.user}</p>
+                        <p>{info.LinkedIn.name}</p>
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToVideosMobile"
+                                onClick={() => navigate(info.routes.videosPageAdmin)}
+                                key="gotovideosmobileA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Videos
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </section>
+            <section className="homeFirstSection4Mobile">
+                <div className="checkMyGoalsMobile">
+                    <h2>MY GOALS</h2>
+                </div>
+                <div className="goToMyGoalsMobile">
+                    <AnimatePresence>
+                        <motion.div
+                            className="goalsLogoMobile"
+                            title="My goals"
+                            onClick={() => navigate(info.routes.goalsPageAdmin)}
+                            key="goalslogo1mobileA"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="goalsTextBoxMobile">
+                        <AnimatePresence>
+                            <motion.div
+                                className="myGoalsLogoMobile"
+                                title="My goals"
+                                onClick={() => navigate(info.routes.goalsPageAdmin)}
+                                key="goalslogo2mobileA"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>My goals</h3>
+                        <p>All of my goals.</p>
+                        <p>Can be viewed.</p>
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToGoalsMobile"
+                                onClick={() => navigate(info.routes.goalsPageAdmin)}
+                                key="gotogoalsmobileA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Goals
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </section>
+            <section className="homeFirstSection5Mobile">
+                <div className="checkMyCVMobile">
+                    <h2>MY CV</h2>
+                </div>
+                <div className="goToMyCVMobile">
+                    <AnimatePresence>
+                        <motion.div
+                            className="cvLogoMobile"
+                            title="My CV"
+                            onClick={() => navigate(info.routes.cvPageAdmin)}
+                            key="cvlogo1mobileA"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        />
+                    </AnimatePresence>
+                    <div className="cvTextBoxMobile">
+                        <AnimatePresence>
+                            <motion.div
+                                className="myCVLogoMobile"
+                                title="My CV"
+                                onClick={() => navigate(info.routes.cvPageAdmin)}
+                                key="cvlogo2mobileA"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </AnimatePresence>
+                        <h3>My CV</h3>
+                        <p>My experience summed up.</p>
+                        <p>Can be downloaded.</p>
+                        <AnimatePresence>
+                            <motion.button
+                                className="goToCVMobile"
+                                onClick={() => navigate(info.routes.cvPageAdmin)}
+                                key="gotocvmobileA"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                CV
+                            </motion.button>
+                        </AnimatePresence>
+                    </div>
                 </div>
             </section>
         </div>

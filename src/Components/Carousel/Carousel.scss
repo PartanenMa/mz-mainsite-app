@@ -74,3 +74,78 @@
         background-color: lightgreen;
     }
 }
+
+/*CarouselMobile:*/
+.App-headerMobile {
+    font-size: 1rem;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    padding-bottom: 2rem;
+}
+
+.carouselMobile {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .carousel-imagesMobile {
+        position: relative;
+        border-radius: 10px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .carousel-imagesMobile img {
+        width: 99%;
+        height: 99%;
+        border-radius: 8px;
+        border: #03a062 solid 2px;
+    }
+
+    .slide_directionMobile {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .leftMobile,
+    .rightMobile {
+        background-color: #03a062;
+        color: #fff;
+        padding: 10px 8px 8px 13px;
+        margin: 0 20px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 10px;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+    }
+
+    .leftMobile {
+        left: 0;
+    }
+
+    .rightMobile {
+        right: 0;
+    }
+
+    .carousel-indicatorMobile {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .dotMobile {
+        background-color: #333;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .activeMobile {
+        background-color: lightgreen;
+    }
+}

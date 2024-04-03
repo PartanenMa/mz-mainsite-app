@@ -792,3 +792,762 @@
         }
     }
 }
+
+/*HomePage (mobile):*/
+.homePageContainerMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+}
+
+/*HomePageAdmin (mobile):*/
+.homePageContainerAdminMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 100%;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h2 {
+            font-size: 10px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+}
+
+/*Both (mobile):*/
+.homePageTitleContainerMobile {
+    background-color: #111;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: #03a062;
+        font-size: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.firstSectionContainerMobile {
+    background-color: #111;
+    width: 100%;
+    overflow: hidden;
+
+    .homeFirstSectionCarouselMobile {
+        width: 100%;
+        border-top: 1px solid #03a062;
+        box-shadow: inset 0 0 30px 5px green;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .homeFirstSection1Mobile {
+        width: 100%;
+        border-top: 1px solid #03a062;
+        border-bottom: 1px solid #03a062;
+
+        .checkMyProfileMobile {
+            background-color: #0072b1;
+            height: 15px;
+            width: 100%;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            overflow: hidden;
+            padding-left: 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h2 {
+                color: white;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                overflow: hidden;
+            }
+        }
+
+        .goToMyProfileMobile {
+            background-image: url("/src/Assets/Images/ProfileBG.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 180%;
+            background-position: center;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .photoMobile {
+                background-image: url("/src/Assets/Images/Photo.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: black;
+                border: 2px solid #0072b1;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .photoMobile:hover {
+                border: 2px solid white;
+                filter: drop-shadow(0 0 2em #0072b1);
+            }
+
+            .profileTextBoxMobile {
+                background-color: lightblue;
+                height: 100px;
+                width: 120px;
+                border-radius: 5px;
+                border: 1px solid #0072b1;
+                padding-left: 7px;
+
+                a {
+                    background-image: url("/src/Assets/Images/LinkedIn.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 10%;
+                    height: 25px;
+                    width: 25px;
+                    float: right;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 5px;
+                    transition: filter 300ms;
+                }
+
+                a:hover {
+                    filter: drop-shadow(0 0 2em #0072b1);
+                }
+
+                h3 {
+                    background-color: #0072b1;
+                    color: white;
+                    border: 1px solid white;
+                    height: 10px;
+                    width: 35px;
+                    border-radius: 3px;
+                    padding: 3px;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: #0072b1;
+                    font-size: 8px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .loadingProfessionDataMobile {
+                    height: 10px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 7px;
+                    position: relative;
+                    right: 35px;
+
+                    .loaderProfessionDataMobile {
+                        border: 2px solid #f3f3f3;
+                        border-radius: 50%;
+                        border-top: 2px solid #0072b1;
+                        width: 10px;
+                        height: 10px;
+                        -webkit-animation: spin 2s linear infinite;
+                        animation: spin 2s linear infinite;
+                    }
+
+                    @-webkit-keyframes spin {
+                        0% {
+                            -webkit-transform: rotate(0deg);
+                        }
+                        100% {
+                            -webkit-transform: rotate(360deg);
+                        }
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+
+                .goToProfileMobile {
+                    background-color: #0072b1;
+                    color: white;
+                    cursor: pointer;
+                    height: 24px;
+                    width: 103px;
+                    float: left;
+                    border-radius: 5px;
+                    border: 1px solid white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToProfileMobile:hover {
+                    background-color: lightblue;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #0072b1);
+                }
+            }
+        }
+    }
+
+    .homeFirstSection2Mobile {
+        width: 100%;
+
+        .checkMyProjectsMobile {
+            background-color: black;
+            height: 15px;
+            width: 100%;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            overflow: hidden;
+            padding-left: 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h2 {
+                color: white;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+        }
+
+        .goToMyProjectsMobile {
+            background-image: url("/src/Assets/Images/ProjectsBG.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .gHLogoMobile {
+                background-image: url("/src/Assets/Images/Admin.jpeg");
+                background-color: white;
+                border: 2px solid black;
+                background-size: cover;
+                background-position: center;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .gHLogoMobile:hover {
+                border: 2px solid white;
+                filter: drop-shadow(0 0 2em black);
+            }
+
+            .projectsTextBoxMobile {
+                background-color: gray;
+                height: 100px;
+                width: 120px;
+                border-radius: 5px;
+                border: 1px solid black;
+                padding-left: 7px;
+
+                a {
+                    background-image: url("/src/Assets/Images/GitHub.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 100%;
+                    height: 22px;
+                    width: 25px;
+                    float: right;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 5px;
+                    transition: filter 300ms;
+                }
+
+                a:hover {
+                    filter: drop-shadow(0 0 2em black);
+                }
+
+                h3 {
+                    background-color: black;
+                    color: white;
+                    border: 1px solid white;
+                    height: 10px;
+                    width: 29px;
+                    border-radius: 3px;
+                    padding: 3px;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: black;
+                    font-size: 8px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .goToProjectsMobile {
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                    height: 24px;
+                    width: 103px;
+                    float: left;
+                    border-radius: 5px;
+                    border: 1px solid white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToProjectsMobile:hover {
+                    background-color: gray;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em black);
+                }
+            }
+        }
+    }
+
+    .homeFirstSection3Mobile {
+        width: 100%;
+
+        .checkMyVideosMobile {
+            background-color: #c4302b;
+            height: 15px;
+            width: 100%;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            overflow: hidden;
+            padding-left: 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h2 {
+                color: white;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+        }
+
+        .goToMyVideosMobile {
+            background-image: url("/src/Assets/Images/VideosBG.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .yTLogoMobile {
+                background-image: url("/src/Assets/Images/VideosBG.jpg");
+                background-color: white;
+                border: 2px solid #c4302b;
+                background-size: 280%;
+                background-position: 53.5% 60%;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .yTLogoMobile:hover {
+                border: 2px solid white;
+                filter: drop-shadow(0 0 2em #c4302b);
+            }
+
+            .videosTextBoxMobile {
+                background-color: lightcoral;
+                height: 100px;
+                width: 120px;
+                border-radius: 5px;
+                border: 1px solid #c4302b;
+                padding-left: 7px;
+
+                a {
+                    background-image: url("/src/Assets/Images/YouTube.png");
+                    background-repeat: no-repeat;
+                    background-size: 300%;
+                    background-position: center;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    height: 22px;
+                    width: 30px;
+                    float: right;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 5px;
+                    transition: filter 300ms;
+                }
+
+                a:hover {
+                    filter: drop-shadow(0 0 2em #c4302b);
+                }
+
+                h3 {
+                    background-color: #c4302b;
+                    color: white;
+                    border: 1px solid white;
+                    height: 10px;
+                    width: 34px;
+                    border-radius: 5px;
+                    padding: 3px;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: #c4302b;
+                    font-size: 8px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .goToVideosMobile {
+                    background-color: #c4302b;
+                    color: white;
+                    cursor: pointer;
+                    height: 24px;
+                    width: 103px;
+                    float: left;
+                    border-radius: 5px;
+                    border: 1px solid white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToVideosMobile:hover {
+                    background-color: lightcoral;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #c4302b);
+                }
+            }
+        }
+    }
+
+    .homeFirstSection4Mobile {
+        width: 100%;
+
+        .checkMyGoalsMobile {
+            background-color: #111;
+            height: 15px;
+            width: 100%;
+            border-top: 1px solid #03a062;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+            padding-left: 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h2 {
+                color: #03a062;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+        }
+
+        .goToMyGoalsMobile {
+            background-color: #111;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .goalsLogoMobile {
+                background-image: url("/src/Assets/Images/Checkmark.png");
+                background-color: white;
+                border: 2px solid #03a062;
+                background-size: cover;
+                background-position: center;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                cursor: pointer;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .goalsLogoMobile:hover {
+                border: 2px solid white;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            .goalsTextBoxMobile {
+                background-color: #111;
+                height: 100px;
+                width: 120px;
+                border-radius: 5px;
+                border: 1px solid #03a062;
+                padding-left: 7px;
+
+                .myGoalsLogoMobile {
+                    background-image: url("/src/Assets/Images/Checkmark.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 100%;
+                    height: 22px;
+                    width: 22px;
+                    float: right;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 5px;
+                    cursor: pointer;
+                    transition: filter 300ms;
+                }
+
+                .myGoalsLogoMobile:hover {
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+
+                h3 {
+                    background-color: #111;
+                    color: #03a062;
+                    border: 1px solid #03a062;
+                    height: 10px;
+                    width: 40px;
+                    border-radius: 5px;
+                    padding: 3px;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: #03a062;
+                    font-size: 8px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .goToGoalsMobile {
+                    background-color: #111;
+                    color: #03a062;
+                    cursor: pointer;
+                    height: 24px;
+                    width: 103px;
+                    float: left;
+                    border-radius: 5px;
+                    border: 1px solid #03a062;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToGoalsMobile:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+        }
+    }
+
+    .homeFirstSection5Mobile {
+        width: 100%;
+
+        .checkMyCVMobile {
+            background-color: #111;
+            height: 10%;
+            width: 100%;
+            border-top: 1px solid #03a062;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+            padding-left: 5px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h2 {
+                color: #03a062;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+        }
+
+        .goToMyCVMobile {
+            background-color: #111;
+            height: 90%;
+            width: 100%;
+            overflow: hidden;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .cvLogoMobile {
+                background-image: url("/src/Assets/Images/CV2.png");
+                background-color: white;
+                border: 2px solid #03a062;
+                background-size: cover;
+                background-position: center;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                cursor: pointer;
+                transition: filter 300ms;
+                transition: border 300ms;
+            }
+
+            .cvLogoMobile:hover {
+                border: 2px solid white;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            .cvTextBoxMobile {
+                background-color: #111;
+                height: 100px;
+                width: 120px;
+                border-radius: 5px;
+                border: 1px solid #03a062;
+                padding-left: 7px;
+
+                .myCVLogoMobile {
+                    background-image: url("/src/Assets/Images/CV2.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-color: white;
+                    border: 1px solid white;
+                    border-radius: 100%;
+                    height: 22px;
+                    width: 22px;
+                    float: right;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 5px;
+                    cursor: pointer;
+                    transition: filter 300ms;
+                }
+
+                .myCVLogoMobile:hover {
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+
+                h3 {
+                    background-color: #111;
+                    color: #03a062;
+                    border: 1px solid #03a062;
+                    height: 10px;
+                    width: 30px;
+                    border-radius: 5px;
+                    padding: 3px;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+
+                p {
+                    color: #03a062;
+                    font-size: 8px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 white;
+                }
+
+                .goToCVMobile {
+                    background-color: #111;
+                    color: #03a062;
+                    cursor: pointer;
+                    height: 24px;
+                    width: 103px;
+                    float: left;
+                    border-radius: 5px;
+                    border: 1px solid #03a062;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                }
+
+                .goToCVMobile:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+        }
+    }
+}

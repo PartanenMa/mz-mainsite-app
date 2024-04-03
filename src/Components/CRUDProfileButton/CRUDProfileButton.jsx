@@ -76,24 +76,24 @@ function CRUDProfileButton(props) {
                     } else if (props.data === "experience") {
                         setRequiredData(data.profileData.experiences.find((d) => d.id === props.id));
                     } else if (props.data === "skill") {
-                        if (props.skillType === "us") {
-                            setRequiredData(data.skills.webDevelopmentSoftware.utilitySoftware.find((d) => d.id === props.id));
-                        } else if (props.skillType === "clis") {
-                            setRequiredData(data.skills.webDevelopmentSoftware.cLISoftware.find((d) => d.id === props.id));
-                        } else if (props.skillType === "cs") {
-                            setRequiredData(data.skills.webDevelopmentSoftware.containerizationSoftware.find((d) => d.id === props.id));
-                        } else if (props.skillType === "fepl") {
-                            setRequiredData(data.skills.frontEndDevelopment.frontEndProgrammingLanguages.find((d) => d.id === props.id));
-                        } else if (props.skillType === "fef") {
-                            setRequiredData(data.skills.frontEndDevelopment.frontEndFrameworks.find((d) => d.id === props.id));
-                        } else if (props.skillType === "cssf") {
-                            setRequiredData(data.skills.frontEndDevelopment.cSSFrameworks.find((d) => d.id === props.id));
-                        } else if (props.skillType === "bepl") {
-                            setRequiredData(data.skills.backEndDevelopment.backEndProgrammingLanguages.find((d) => d.id === props.id));
-                        } else if (props.skillType === "bef") {
-                            setRequiredData(data.skills.backEndDevelopment.backEndFrameworks.find((d) => d.id === props.id));
-                        } else if (props.skillType === "db") {
-                            setRequiredData(data.skills.backEndDevelopment.databases.find((d) => d.id === props.id));
+                        if (props.dataSkillType === "us") {
+                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.utilitySoftware.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "clis") {
+                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.cLISoftware.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "cs") {
+                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.containerizationSoftware.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "fepl") {
+                            setRequiredData(data.profileData.skills.frontEndDevelopment.frontEndProgrammingLanguages.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "fef") {
+                            setRequiredData(data.profileData.skills.frontEndDevelopment.frontEndFrameworks.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "cssf") {
+                            setRequiredData(data.profileData.skills.frontEndDevelopment.cSSFrameworks.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "bepl") {
+                            setRequiredData(data.profileData.skills.backEndDevelopment.backEndProgrammingLanguages.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "bef") {
+                            setRequiredData(data.profileData.skills.backEndDevelopment.backEndFrameworks.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "db") {
+                            setRequiredData(data.profileData.skills.backEndDevelopment.databases.find((d) => d.id === props.id));
                         }
                     }
                 }, 1000);
@@ -217,6 +217,7 @@ function CRUDProfileButton(props) {
                 isModalOpen={isUpdateProfileModalOpen}
                 setIsModalOpen={setIsUpdateProfileModalOpen}
                 data={props.data}
+                dataSkillType={props.dataSkillType}
                 loadingProfileData={loadingProfileData}
                 profileData={requiredData}
                 id={props.id}
@@ -507,7 +508,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                                 )}
                                 {data === "experience" && (
                                     <>
-                                        <div className="formComponent" style={{ height: "20%" }}>
+                                        <div className="formComponent" style={{ height: "25%" }}>
                                             <div>
                                                 <label htmlFor="companyName">Company name:</label>
                                                 <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
@@ -517,7 +518,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                                                 <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
                                             </div>
                                         </div>
-                                        <div className="formComponent" style={{ height: "20%" }}>
+                                        <div className="formComponent" style={{ height: "25%" }}>
                                             <div>
                                                 <label htmlFor="image">Image:</label>
                                                 <input style={{ width: "180px" }} type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
@@ -534,7 +535,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                                                 />
                                             </div>
                                         </div>
-                                        <div className="formComponent" style={{ height: "20%" }}>
+                                        <div className="formComponent" style={{ height: "30%" }}>
                                             <div>
                                                 <label htmlFor="backGroundSize">{"Background size (%):"}</label>
                                                 <input type="text" id="backGroundSize" name="backGroundSize" value={formData.backGroundSize} onChange={handleChange} />
@@ -577,7 +578,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                                                 <input type="text" id="backGroundSize" name="backGroundSize" value={formData.backGroundSize} onChange={handleChange} />
                                             </div>
                                             <div>
-                                                <label for="skillType">Skill type:</label>
+                                                <label htmlFor="skillType">Skill type:</label>
                                                 <select name="skillType" id="skillType">
                                                     <option value="us">Utility software</option>
                                                     <option value="clis">CLI software</option>
@@ -629,7 +630,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
     );
 }
 
-function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, profileData, id, getProfile, notification }) {
+function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, profileData, id, getProfile, notification }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
@@ -903,7 +904,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, profileData, id
                                 )}
                                 {data === "experience" && (
                                     <>
-                                        <div className="formComponent" style={{ height: "20%" }}>
+                                        <div className="formComponent" style={{ height: "25%" }}>
                                             <div>
                                                 <label htmlFor="companyName">Company name:</label>
                                                 <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
@@ -913,7 +914,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, profileData, id
                                                 <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
                                             </div>
                                         </div>
-                                        <div className="formComponent" style={{ height: "20%" }}>
+                                        <div className="formComponent" style={{ height: "25%" }}>
                                             <div>
                                                 <label htmlFor="image">Image:</label>
                                                 <input style={{ width: "180px" }} type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
@@ -930,7 +931,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, profileData, id
                                                 />
                                             </div>
                                         </div>
-                                        <div className="formComponent" style={{ height: "20%" }}>
+                                        <div className="formComponent" style={{ height: "30%" }}>
                                             <div>
                                                 <label htmlFor="backGroundSize">{"Background size (%):"}</label>
                                                 <input type="text" id="backGroundSize" name="backGroundSize" value={formData.backGroundSize} onChange={handleChange} />
@@ -973,8 +974,8 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, profileData, id
                                                 <input type="text" id="backGroundSize" name="backGroundSize" value={formData.backGroundSize} onChange={handleChange} />
                                             </div>
                                             <div>
-                                                <label for="skillType">Skill type:</label>
-                                                <select name="skillType" id="skillType">
+                                                <label htmlFor="skillType">Skill type:</label>
+                                                <select name="skillType" id="skillType" defaultValue={dataSkillType}>
                                                     <option value="us">Utility software</option>
                                                     <option value="clis">CLI software</option>
                                                     <option value="cs">Containerization software</option>
