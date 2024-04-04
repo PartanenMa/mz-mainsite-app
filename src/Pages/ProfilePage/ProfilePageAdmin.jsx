@@ -29,6 +29,7 @@ function ProfilePageAdmin() {
     const [educations, setEducations] = useState([]);
     const [experiences, setExperiences] = useState([]);
     const [skills, setSkills] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -53,6 +54,18 @@ function ProfilePageAdmin() {
                 setLoadingProfileData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkSession = () => {
@@ -236,62 +249,122 @@ function ProfilePageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="profilePageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>Admin / profile</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="profilePageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>Admin / profile</h2>
+                                </div>
+                                <ProfileAdminPageTitle />
+                                <AboutMe
+                                    loadingProfessionData={loadingProfessionData}
+                                    loadingJobData={loadingJobData}
+                                    professionData={professionData}
+                                    jobData={jobData}
+                                    getJobU={() => getJobAfterUpdate()}
+                                    getProfessionU={() => getProfessionAfterUpdate()}
+                                />
+                                <Languages
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    languages={languages}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <Education
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    educations={educations}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <Experience
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    experiences={experiences}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <Skills
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    skills={skills}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <Interests />
+                                <Hobbies />
+                                <ContactMe />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <ProfileAdminPageTitle />
-                            <AboutMe
-                                loadingProfessionData={loadingProfessionData}
-                                loadingJobData={loadingJobData}
-                                professionData={professionData}
-                                jobData={jobData}
-                                getJobU={() => getJobAfterUpdate()}
-                                getProfessionU={() => getProfessionAfterUpdate()}
-                            />
-                            <Languages
-                                loadingProfileData={loadingProfileData}
-                                statusDB={statusDB}
-                                languages={languages}
-                                getProfileC={() => getProfileAfterCreate()}
-                                getProfileU={() => getProfileAfterUpdate()}
-                                getProfileD={() => getProfileAfterDelete()}
-                            />
-                            <Education
-                                loadingProfileData={loadingProfileData}
-                                statusDB={statusDB}
-                                educations={educations}
-                                getProfileC={() => getProfileAfterCreate()}
-                                getProfileU={() => getProfileAfterUpdate()}
-                                getProfileD={() => getProfileAfterDelete()}
-                            />
-                            <Experience
-                                loadingProfileData={loadingProfileData}
-                                statusDB={statusDB}
-                                experiences={experiences}
-                                getProfileC={() => getProfileAfterCreate()}
-                                getProfileU={() => getProfileAfterUpdate()}
-                                getProfileD={() => getProfileAfterDelete()}
-                            />
-                            <Skills
-                                loadingProfileData={loadingProfileData}
-                                statusDB={statusDB}
-                                skills={skills}
-                                getProfileC={() => getProfileAfterCreate()}
-                                getProfileU={() => getProfileAfterUpdate()}
-                                getProfileD={() => getProfileAfterDelete()}
-                            />
-                            <Interests />
-                            <Hobbies />
-                            <ContactMe />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="profilePageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>Admin / profile</h2>
+                                </div>
+                                <ProfileAdminPageTitleMobile />
+                                <AboutMeMobile
+                                    loadingProfessionData={loadingProfessionData}
+                                    loadingJobData={loadingJobData}
+                                    professionData={professionData}
+                                    jobData={jobData}
+                                    getJobU={() => getJobAfterUpdate()}
+                                    getProfessionU={() => getProfessionAfterUpdate()}
+                                />
+                                <LanguagesMobile
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    languages={languages}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <EducationMobile
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    educations={educations}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <ExperienceMobile
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    experiences={experiences}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <SkillsMobile
+                                    loadingProfileData={loadingProfileData}
+                                    statusDB={statusDB}
+                                    skills={skills}
+                                    getProfileC={() => getProfileAfterCreate()}
+                                    getProfileU={() => getProfileAfterUpdate()}
+                                    getProfileD={() => getProfileAfterDelete()}
+                                />
+                                <InterestsMobile />
+                                <HobbiesMobile />
+                                <ContactMeMobile />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -1543,6 +1616,1261 @@ function ContactMe() {
                             <h4>{info.LinkedIn.emailAddress}</h4>
                         </div>
                         <div className="email2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+//Mobile:
+function ProfileAdminPageTitleMobile() {
+    return (
+        <div className="profilePageTitleContainerMobile">
+            <h2>MY PROFILE</h2>
+        </div>
+    );
+}
+
+function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, jobData, getJobU, getProfessionU }) {
+    let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
+    let description2 =
+        "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
+        (jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStackFe : professionData?.professionStatus?.professionTechStackFe) +
+        ". On the back-end, I'm currently working with " +
+        (jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStackBe : professionData?.professionStatus?.professionTechStackBe) +
+        ". " +
+        (jobData?.jobStatus?.employed ? "Besides my job, " : "") +
+        "I love working on my own projects during my free time using the skills that I've gained, and enjoy learning new tools and technologies while doing so.";
+    let description3 =
+        "In addition to my technical skills, I am a strong collaborator and enjoy working in agile development environments. I believe in continuous learning and staying up-to-date with the latest tech and best practices.";
+
+    return (
+        <div className="aboutMeContainerMobile">
+            <div className="aboutMeTitleMobile">
+                <h3>ABOUT ME</h3>
+            </div>
+            <div className="aboutMeContentMobile">
+                <AnimatePresence>
+                    <motion.a
+                        className="aboutMePhotoMobile"
+                        title="My LinkedIn"
+                        href={info.LinkedIn.link}
+                        target="_blank"
+                        key="aboutmephotomobileA"
+                        whileHover={{
+                            scale: 1.05,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                    />
+                    <div className="aboutMeTextContainerMobile">
+                        <div className="aboutMeTextTitleMobile">
+                            <div className="aboutMeTextTitle1Mobile">
+                                <h4 className="h4_1M">{info.LinkedIn.name}</h4>
+                                {info.api.enabled ? (
+                                    (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                        <motion.h4 className="h4_2M" key="h4_2successmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                                ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                                : professionData?.professionStatus?.profession}
+                                        </motion.h4>
+                                    ) : loadingProfessionData || loadingJobData ? (
+                                        <motion.h4 className="h4_2M" style={{ color: "#0072b1" }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            LOADING...
+                                        </motion.h4>
+                                    ) : (
+                                        <motion.h4
+                                            className="h4_2M"
+                                            style={{ color: "red", textShadow: "none" }}
+                                            key="h4_2failmobileA"
+                                            initial={{ opacity: 0, x: -100 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                        >
+                                            NO DATA!
+                                        </motion.h4>
+                                    )
+                                ) : loadingProfessionData || loadingJobData ? (
+                                    <motion.h4 className="h4_2M" style={{ color: "#0072b1" }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        LOADING...
+                                    </motion.h4>
+                                ) : (
+                                    <motion.h4 className="h4_2M" key="h4_2successmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company
+                                            ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company
+                                            : info.LinkedIn.profession}
+                                    </motion.h4>
+                                )}
+                            </div>
+                            <div className="aboutMeTextTitle2Mobile">
+                                {info.api.enabled && professionData?.professionStatus && (
+                                    <>
+                                        <CRUDProfessionButton loading={loadingProfessionData} getProfession={getProfessionU} />
+                                        <CRUDJobButton loading={loadingJobData} getJob={getJobU} />
+                                        <CRUDTechnologiesButton loading={loadingJobData} />
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                        <div className="aboutMeTextMobile">
+                            {info.api.enabled ? (
+                                (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                    <motion.p key="aboutmedescriptionsuccessmobileA" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        {description1}
+                                        <br />
+                                        <br />
+                                        {description2}
+                                        <br />
+                                        <br />
+                                        {description3}
+                                    </motion.p>
+                                ) : loadingProfessionData || loadingJobData ? (
+                                    <motion.div className="loadingProfileDataAboutMeMobile" key="loadinglangprofiledataaboutmemobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                        <div className="loaderProfileAboutMeMobile" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.p style={{ color: "red", textShadow: "none" }} key="aboutmedescriptionfailmobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        NO DATA!
+                                    </motion.p>
+                                )
+                            ) : loadingProfessionData || loadingJobData ? (
+                                <motion.div className="loadingProfileDataAboutMeMobile" key="loadinglangprofiledataaboutmemobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfileAboutMeMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.p key="aboutmedescriptionsuccessmobileA" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                    {info.LinkedIn.description1}
+                                    <br />
+                                    <br />
+                                    {info.LinkedIn.description2}
+                                    <br />
+                                    <br />
+                                    {info.LinkedIn.description3}
+                                </motion.p>
+                            )}
+                        </div>
+                    </div>
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function LanguagesMobile({ loadingProfileData, statusDB, languages, getProfileC, getProfileU, getProfileD }) {
+    return (
+        <div className="languagesContainerMobile">
+            <div className="languagesTitleMobile">
+                <h3>
+                    MY LANGUAGES
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
+                </h3>
+            </div>
+            {info.api.enabled && (
+                <div className="createProfileMobile">
+                    <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"language"} getProfile={getProfileC} />
+                </div>
+            )}
+            <div className="languagesContentMobile">
+                <AnimatePresence>
+                    {languages.length > 0 && !loadingProfileData ? (
+                        languages.map((language, index) => (
+                            <motion.div
+                                className="languageMobile"
+                                style={{ backgroundColor: language.color }}
+                                key={index}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                            >
+                                <div className="languageLogoMobile" style={{ backgroundImage: `url(${language.image})` }} />
+                                <div className="languageContentMobile">
+                                    <div className="lC1M">
+                                        <h4>{language.name}</h4>
+                                        <p>{language.proficiency}</p>
+                                    </div>
+                                    <div className="lC2M">
+                                        {info.api.enabled && (
+                                            <>
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={language.id} data={"language"} getProfile={getProfileU} />
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={language.id} data={"language"} getProfile={getProfileD} />
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))
+                    ) : loadingProfileData ? (
+                        <motion.div className="loadingProfileDataMobile" key="loadinglangprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProfileMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProfileDataMobile" key="nolangprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function EducationMobile({ loadingProfileData, statusDB, educations, getProfileC, getProfileU, getProfileD }) {
+    const [isVisibleEd, setIsVisibleEd] = useState(Array(educations.length).fill(false));
+
+    const openOrCloseEducation = (index) => {
+        const updatedVisibility = [...isVisibleEd];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setIsVisibleEd(updatedVisibility);
+    };
+
+    return (
+        <div className="educationsContainerMobile">
+            <div className="educationsTitleMobile">
+                <h3>
+                    MY EDUCATION
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="createProfileMobile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"education"} getProfile={getProfileC} />}</div>
+            <div className="educationsContentMobile">
+                <AnimatePresence>
+                    {educations.length > 0 && !loadingProfileData ? (
+                        educations.map((education, index) => (
+                            <motion.div
+                                className="educationMobile"
+                                style={{ "--education-color": education.color }}
+                                key={index}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                onClick={() => openOrCloseEducation(index)}
+                                whileHover={{
+                                    scale: 1.01,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="educationTitleMobile">
+                                    <h4>{education.schoolName}</h4>
+                                </div>
+                                <div className="educationContent1Mobile" style={{ backgroundColor: education.color }}>
+                                    <div className="eC1M">
+                                        <p>{education.degreeName}</p>
+                                        <p>{education.timeAndPlace}</p>
+                                    </div>
+                                    <div className="eC2M">
+                                        {info.api.enabled && (
+                                            <>
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={education.id} data={"education"} getProfile={getProfileU} />
+                                                <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={education.id} data={"education"} getProfile={getProfileD} />
+                                            </>
+                                        )}
+                                    </div>
+                                    <div
+                                        className="schoolLogoMobile"
+                                        style={{
+                                            backgroundImage: `url(${education.image})`,
+                                            backgroundColor: !education.image && education.color,
+                                            backgroundPosition: education.backgroundPosition,
+                                            backgroundSize: education.backgroundSize,
+                                        }}
+                                    />
+                                </div>
+                                <div className="educationContent2Mobile" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
+                                    <p>{education.educationDescription}</p>
+                                    <p>{education.extra}</p>
+                                    <p className="subjectsMobile">
+                                        Education subjects: <span style={{ color: "white" }}>{education.educationSubjects}.</span>
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))
+                    ) : loadingProfileData ? (
+                        <motion.div className="loadingProfileDataMobile" key="loadingedprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProfileMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProfileDataMobile" key="noedprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfileC, getProfileU, getProfileD }) {
+    const [isVisibleEx, setIsVisibleEx] = useState(Array(experiences.length).fill(false));
+
+    const openOrCloseExperience = (index) => {
+        const updatedVisibility = [...isVisibleEx];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setIsVisibleEx(updatedVisibility);
+    };
+
+    const formatDate = (date) => {
+        const day = date.getDate().toString().padStart(2, "0");
+        const month = (date.getMonth() + 1).toString().padStart(2, "0");
+        const year = date.getFullYear().toString();
+
+        return `${day}.${month}.${year}`;
+    };
+
+    const getExperienceTime = (e) => {
+        let startDate = new Date(e.startDate);
+        startDate = formatDate(startDate);
+        let endDate;
+        let time;
+
+        if (e.endDate === "") {
+            endDate = "present";
+            return startDate + " - " + endDate;
+        } else {
+            endDate = new Date(e.endDate);
+            endDate = formatDate(endDate);
+            time = e.time;
+
+            const years = Math.floor(time / 12);
+            const remainingMonths = time % 12;
+
+            if (years < 1) {
+                if (remainingMonths === 0) {
+                    time = "0 months";
+                } else if (remainingMonths === 1) {
+                    time = remainingMonths + " month";
+                } else {
+                    time = remainingMonths + " months";
+                }
+            } else if (years === 1 && remainingMonths === 0) {
+                time = "1 year";
+            } else if (years === 1 && remainingMonths > 0) {
+                if (remainingMonths === 1) {
+                    time = `1 year and ${remainingMonths} month`;
+                } else {
+                    time = `1 year and ${remainingMonths} months`;
+                }
+            } else if (years > 1 && remainingMonths === 0) {
+                if (years === 1) {
+                    time = `${years} year`;
+                } else {
+                    time = `${years} years`;
+                }
+            } else {
+                time = `${years} years and ${remainingMonths} months`;
+            }
+
+            return startDate + " - " + endDate + " (" + time + ")";
+        }
+    };
+
+    const getTotalExperience = (index) => {
+        let totalMonths = 0;
+
+        experiences[index].experiences.map((e) => {
+            if (e.time === 0) {
+                const start = new Date(e.startDate);
+                const end = new Date();
+                const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+                totalMonths += diffInMonths;
+            } else {
+                totalMonths += e.time;
+            }
+        });
+
+        const years = Math.floor(totalMonths / 12);
+        const remainingMonths = totalMonths % 12;
+
+        if (years < 1) {
+            if (remainingMonths === 0) {
+                return "NO EXPERIENCE YET!";
+            } else if (remainingMonths === 1) {
+                return remainingMonths + " month";
+            } else {
+                return remainingMonths + " months";
+            }
+        } else if (years === 1 && remainingMonths === 0) {
+            return "1 year";
+        } else if (years === 1 && remainingMonths > 0) {
+            if (remainingMonths === 1) {
+                return `1 year and ${remainingMonths} month`;
+            } else {
+                return `1 year and ${remainingMonths} months`;
+            }
+        } else if (years > 1 && remainingMonths === 0) {
+            if (years === 1) {
+                return `${years} year`;
+            } else {
+                return `${years} years`;
+            }
+        } else {
+            return `${years} years and ${remainingMonths} months`;
+        }
+    };
+
+    return (
+        <div className="experiencesContainerMobile">
+            <div className="experiencesTitleMobile">
+                <h3>
+                    EXPERIENCE
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="createProfileMobile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"experience"} getProfile={getProfileC} />}</div>
+            <div className="experiencesContentMobile">
+                <AnimatePresence>
+                    {experiences.length > 0 && !loadingProfileData ? (
+                        experiences.map((experience, index) => (
+                            <motion.div
+                                className="experienceMobile"
+                                style={{ "--experience-color": experience.color }}
+                                key={index}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                onClick={() => openOrCloseExperience(index)}
+                                whileHover={{
+                                    scale: 1.01,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.99 }}
+                            >
+                                <div className="experienceTitleMobile" style={{ backgroundColor: experience.color }}>
+                                    <div className="experienceTitleContainerMobile">
+                                        <div className="eTC1M">
+                                            <h4>
+                                                {experience.companyName}
+                                                <span
+                                                    title="Currently employed"
+                                                    style={{ color: "lightgreen", fontSize: "8px", fontStyle: "normal", position: "relative", bottom: "4px", left: "10px" }}
+                                                >
+                                                    {experience.current ? " (CURRENT JOB)" : ""}
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <div className="eTC2M">
+                                            {info.api.enabled && (
+                                                <>
+                                                    <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={experience.id} data={"experience"} getProfile={getProfileU} />
+                                                    <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={experience.id} data={"experience"} getProfile={getProfileD} />
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="companyLogoMobile"
+                                        style={{
+                                            backgroundImage: `url(${experience.image})`,
+                                            backgroundPosition: experience.backgroundPosition,
+                                            backgroundSize: experience.backgroundSize,
+                                            backgroundColor: !experience.image && experience.color,
+                                        }}
+                                    />
+                                </div>
+                                <div className="experienceContentContainerMobile" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
+                                    {experience.experiences.map((e, i) => (
+                                        <div className="experienceContentMobile">
+                                            <>
+                                                <div className="companyTitleMobile">
+                                                    <p>
+                                                        {e.workTitle + " at "}
+                                                        {e.companyName}
+                                                        {e.current && (
+                                                            <span style={{ color: "lightgreen", fontSize: "10px", position: "relative", left: "5px", bottom: "1px" }}>
+                                                                {" (CURRENTLY WORKING IN THIS ROLE)"}
+                                                            </span>
+                                                        )}
+                                                    </p>
+                                                </div>
+                                                <div className="workTitleMobile">
+                                                    <p>
+                                                        Type: <span style={{ color: "white" }}>{e.workType}</span>
+                                                    </p>
+                                                    <p>
+                                                        Time: <span style={{ color: "white" }}>{getExperienceTime(e)}</span>
+                                                    </p>
+                                                    <p>
+                                                        Place: <span style={{ color: "white" }}>{e.place}</span>
+                                                    </p>
+                                                </div>
+                                                <div className="descriptionMobile">
+                                                    <p>Description:</p>
+                                                    <p style={{ color: "white" }}>{e.workDescription}</p>
+                                                </div>
+                                                <div className="technologiesUsedMobile">
+                                                    <p>Technologies used:</p>
+                                                    <p style={{ color: "white" }}>{e.workTech}.</p>
+                                                </div>
+                                            </>
+                                            ;
+                                        </div>
+                                    ))}
+                                    <div className="totalExperienceMobile" style={{ backgroundColor: experience.color }}>
+                                        <h5>
+                                            Total experience at {experience.companyName} {"(" + getTotalExperience(index) + ")"}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))
+                    ) : loadingProfileData ? (
+                        <motion.div className="loadingProfileDataMobile" key="loadingexpprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderProfileMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noProfileDataMobile" key="noutilexpprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getProfileU, getProfileD }) {
+    const getSkillLevelTitle = (skillLevel) => {
+        if (skillLevel === "beginner") {
+            return "Beginner";
+        } else if (skillLevel === "experienced") {
+            return "Experienced";
+        } else if (skillLevel === "intermediate") {
+            return "Intermediate";
+        } else if (skillLevel === "advanced") {
+            return "Advanced";
+        } else if (skillLevel === "professional") {
+            return "Professional";
+        }
+    };
+
+    const getSkillLevel = (skillLevel) => {
+        if (skillLevel === "beginner") {
+            return (
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>*</span>****
+                </div>
+            );
+        } else if (skillLevel === "experienced") {
+            return (
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>**</span>***
+                </div>
+            );
+        } else if (skillLevel === "intermediate") {
+            return (
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>***</span>**
+                </div>
+            );
+        } else if (skillLevel === "advanced") {
+            return (
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>****</span>*
+                </div>
+            );
+        } else if (skillLevel === "professional") {
+            return (
+                <div style={{ position: "relative", right: "25px" }}>
+                    <span style={{ color: "lightgreen" }}>*****</span>
+                </div>
+            );
+        }
+    };
+
+    return (
+        <div className="skillsContainerMobile">
+            <div className="skillsTitleMobile">
+                <h3>
+                    MY SKILLS
+                    <DBstate loading={loadingProfileData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="createProfileMobile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"skill"} getProfile={getProfileC} />}</div>
+            <div className="skillsContentMobile">
+                <div className="webDevelopmentSoftwareMobile">
+                    <div className="wDSTitleMobile">
+                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                    </div>
+                    <div className="wDSContentMobile">
+                        <AnimatePresence>
+                            {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 &&
+                            !loadingProfileData ? (
+                                <>
+                                    <div className="softwareMobile">
+                                        <h5>{info.LinkedIn.skills1SubTitle1}</h5>
+                                        {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"us"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"us"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="softwareMobile">
+                                        <h5>{info.LinkedIn.skills1SubTitle2}</h5>
+                                        {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"clis"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"clis"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="softwareMobile">
+                                        <h5>{info.LinkedIn.skills1SubTitle3}</h5>
+                                        {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cs"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cs"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : loadingProfileData ? (
+                                <motion.div className="loadingProfileDataMobile" key="loadingwdsprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfileMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.div className="noProfileDataMobile" key="nowdsprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <h4>NO DATA!</h4>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
+                <div className="front-endDevelopmentMobile">
+                    <div className="fEDTitleMobile">
+                        <h4>{info.LinkedIn.skillsTitle2}</h4>
+                    </div>
+                    <div className="fEDContentMobile">
+                        <AnimatePresence>
+                            {skills.frontEndDevelopment?.frontEndProgrammingLanguages?.length > 0 &&
+                            skills.frontEndDevelopment?.frontEndFrameworks?.length > 0 &&
+                            skills.frontEndDevelopment?.cSSFrameworks?.length > 0 &&
+                            !loadingProfileData ? (
+                                <>
+                                    <div className="frontEndSoftwareMobile">
+                                        <h5>{info.LinkedIn.skills2SubTitle1}</h5>
+                                        {skills.frontEndDevelopment.frontEndProgrammingLanguages.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fepl"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fepl"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="frontEndSoftwareMobile">
+                                        <h5>{info.LinkedIn.skills2SubTitle2}</h5>
+                                        {skills.frontEndDevelopment.frontEndFrameworks.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fef"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"fef"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="frontEndSoftwareMobile">
+                                        <h5>{info.LinkedIn.skills2SubTitle3}</h5>
+                                        {skills.frontEndDevelopment.cSSFrameworks.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cssf"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"cssf"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : loadingProfileData ? (
+                                <motion.div className="loadingProfileDataMobile" key="loadingfedprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfileMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.div className="noProfileDataMobile" key="nofedprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <h4>NO DATA!</h4>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
+                <div className="back-endDevelopmentMobile">
+                    <div className="bEDTitleMobile">
+                        <h4>{info.LinkedIn.skillsTitle3}</h4>
+                    </div>
+                    <div className="bEDContentMobile">
+                        <AnimatePresence>
+                            {skills.backEndDevelopment?.backEndProgrammingLanguages?.length > 0 &&
+                            skills.backEndDevelopment?.backEndFrameworks?.length > 0 &&
+                            skills.backEndDevelopment?.databases?.length > 0 &&
+                            !loadingProfileData ? (
+                                <>
+                                    <div className="backEndSoftwareMobile">
+                                        <h5>{info.LinkedIn.skills3SubTitle1}</h5>
+                                        {skills.backEndDevelopment.backEndProgrammingLanguages.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bepl"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bepl"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="backEndSoftwareMobile">
+                                        <h5>{info.LinkedIn.skills3SubTitle2}</h5>
+                                        {skills.backEndDevelopment.backEndFrameworks.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bef"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"bef"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="backEndSoftwareMobile">
+                                        <h5>{info.LinkedIn.skills3SubTitle3}</h5>
+                                        {skills.backEndDevelopment.databases.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"db"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"db"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : loadingProfileData ? (
+                                <motion.div className="loadingProfileDataMobile" key="loadingbedprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfileMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.div className="noProfileDataMobile" key="nobedprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <h4>NO DATA!</h4>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function InterestsMobile() {
+    return (
+        <div className="interestsContainerMobile">
+            <div className="interestsTitleMobile">
+                <h3>MY INTERESTS</h3>
+            </div>
+            <div className="interestsContentMobile">
+                <div className="interest1Mobile">
+                    <div className="interest1TitleMobile">
+                        <h4>IT infrastructure</h4>
+                    </div>
+                    <div className="interest1ContentMobile">
+                        <div className="interest1ContentCoverMobile">
+                            <div className="interest1ContentCoverLogoMobile"></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="interest2Mobile">
+                    <div className="interest2TitleMobile">
+                        <h4>Software Development</h4>
+                    </div>
+                    <div className="interest2ContentMobile">
+                        <div className="interest2ContentCoverMobile">
+                            <div className="interest2ContentCoverLogoMobile"></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="interest3Mobile">
+                    <div className="interest3TitleMobile">
+                        <h4>Robotics</h4>
+                    </div>
+                    <div className="interest3ContentMobile">
+                        <div className="interest3ContentCoverMobile">
+                            <div className="interest3ContentCoverLogoMobile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function HobbiesMobile() {
+    return (
+        <div className="hobbiesContainerMobile">
+            <div className="hobbiesTitleMobile">
+                <h3>MY HOBBIES</h3>
+            </div>
+            <div className="hobbiesContentMobile">
+                <div className="hobby1Mobile">
+                    <div className="hobby1TitleMobile">
+                        <h4>Gaming</h4>
+                    </div>
+                    <div className="hobby1ContentMobile">
+                        <div className="hobby1ContentCoverMobile">
+                            <div className="hobby1ContentCoverLogoMobile"></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="hobby2Mobile">
+                    <div className="hobby2TitleMobile">
+                        <h4>Web development</h4>
+                    </div>
+                    <div className="hobby2ContentMobile">
+                        <div className="hobby2ContentCoverMobile">
+                            <div className="hobby2ContentCoverLogoMobile"></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="hobby3Mobile">
+                    <div className="hobby3TitleMobile">
+                        <h4>Camping</h4>
+                    </div>
+                    <div className="hobby3ContentMobile">
+                        <div className="hobby3ContentCoverMobile">
+                            <div className="hobby3ContentCoverLogoMobile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function ContactMeMobile() {
+    return (
+        <div className="contactContainerMobile">
+            <div className="contactTitleMobile">
+                <h3>MY CONTACT INFO</h3>
+            </div>
+            <div className="contactContentMobile">
+                <div className="phoneContainerMobile">
+                    <div className="phoneContainerTitleMobile">
+                        <h3>
+                            PHONE<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>☎️</span>
+                        </h3>
+                    </div>
+                    <div className="phoneContainerContentMobile">
+                        <div className="phone1Mobile">
+                            <h4>{info.LinkedIn.phoneNumber}</h4>
+                        </div>
+                        <div className="phone2Mobile"></div>
+                    </div>
+                </div>
+                <div className="emailContainerMobile">
+                    <div className="emailContainerTitleMobile">
+                        <h3>
+                            EMAIL<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>📧</span>
+                        </h3>
+                    </div>
+                    <div className="emailContainerContentMobile">
+                        <div className="email1Mobile">
+                            <h4>{info.LinkedIn.emailAddress}</h4>
+                        </div>
+                        <div className="email2Mobile"></div>
                     </div>
                 </div>
             </div>

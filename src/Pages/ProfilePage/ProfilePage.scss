@@ -693,148 +693,148 @@
     overflow: hidden;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-}
 
-.aboutMeTitle {
-    background-color: #0072b1;
-    height: 10%;
-    width: 100%;
-    overflow: hidden;
-    border-bottom: 1px solid white;
-
-    h3 {
-        color: white;
-        font-size: 25px;
-        font-style: italic;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        position: relative;
-        bottom: 23px;
-        left: 10px;
-    }
-}
-
-.aboutMeContent {
-    background-image: url("/src/Assets/Images/ProfileBG.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 90%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding-top: 12px;
-
-    .aboutMePhoto {
-        background-image: url("/src/Assets/Images/Photo.jpeg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50% 10%;
-        height: 70%;
-        width: 15%;
-        border-radius: 100%;
-        border: 1px solid #03a062;
-        position: relative;
-        top: 20px;
-        transition: filter 300ms;
-    }
-
-    .aboutMePhoto:hover {
-        border: 1px solid white;
-        filter: drop-shadow(0 0 2em #0072b1);
-    }
-
-    .aboutMeTextContainer {
-        height: 90%;
-        width: 80%;
-        border-radius: 10px;
-        border: 1px solid #03a062;
+    .aboutMeTitle {
+        background-color: #0072b1;
+        height: 10%;
+        width: 100%;
         overflow: hidden;
+        border-bottom: 1px solid white;
 
-        .aboutMeTextTitle {
-            background-color: #111;
-            height: 20%;
-            width: 100%;
-            overflow: hidden;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            border-bottom: 1px solid #03a062;
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 23px;
+            left: 10px;
+        }
+    }
 
-            .h4_1 {
-                color: #03a062;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                position: relative;
-                bottom: 15px;
-                left: 10px;
-                text-shadow: 0.3px 0.3px 0 lightgreen;
-            }
+    .aboutMeContent {
+        background-image: url("/src/Assets/Images/ProfileBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding-top: 12px;
 
-            .h4_2 {
-                color: #03a062;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                position: relative;
-                bottom: 32px;
-                left: 10px;
-                text-shadow: 0.3px 0.3px 0 lightgreen;
-            }
+        .aboutMePhoto {
+            background-image: url("/src/Assets/Images/Photo.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 10%;
+            height: 70%;
+            width: 15%;
+            border-radius: 100%;
+            border: 1px solid #03a062;
+            position: relative;
+            top: 20px;
+            transition: filter 300ms;
         }
 
-        .aboutMeText {
-            background-color: #333;
-            height: 80%;
-            width: 100%;
-            overflow: hidden;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            padding-top: 5px;
-            padding-left: 5px;
+        .aboutMePhoto:hover {
+            border: 1px solid white;
+            filter: drop-shadow(0 0 2em #0072b1);
+        }
 
-            p {
-                color: white;
-                font-size: 16px;
-                font-style: italic;
-                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                line-height: 1.2;
-                max-width: 975px;
-                position: relative;
-                left: 6px;
-                bottom: 13px;
+        .aboutMeTextContainer {
+            height: 90%;
+            width: 80%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            overflow: hidden;
+
+            .aboutMeTextTitle {
+                background-color: #111;
+                height: 20%;
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+
+                .h4_1 {
+                    color: #03a062;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 15px;
+                    left: 10px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+
+                .h4_2 {
+                    color: #03a062;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 32px;
+                    left: 10px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
             }
 
-            .loadingProfileDataAboutMe {
-                height: 180px;
-                width: 95%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .aboutMeText {
+                background-color: #333;
+                height: 80%;
+                width: 100%;
+                overflow: hidden;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding-top: 5px;
+                padding-left: 5px;
 
-                .loaderProfileAboutMe {
-                    border: 10px solid #f3f3f3;
-                    border-radius: 50%;
-                    border-top: 10px solid #0072b1;
-                    width: 80px;
-                    height: 80px;
-                    -webkit-animation: spin 2s linear infinite;
-                    animation: spin 2s linear infinite;
+                p {
+                    color: white;
+                    font-size: 16px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    line-height: 1.2;
+                    max-width: 975px;
+                    position: relative;
+                    left: 6px;
+                    bottom: 13px;
                 }
 
-                @-webkit-keyframes spin {
-                    0% {
-                        -webkit-transform: rotate(0deg);
-                    }
-                    100% {
-                        -webkit-transform: rotate(360deg);
-                    }
-                }
+                .loadingProfileDataAboutMe {
+                    height: 180px;
+                    width: 95%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                @keyframes spin {
-                    0% {
-                        transform: rotate(0deg);
+                    .loaderProfileAboutMe {
+                        border: 10px solid #f3f3f3;
+                        border-radius: 50%;
+                        border-top: 10px solid #0072b1;
+                        width: 80px;
+                        height: 80px;
+                        -webkit-animation: spin 2s linear infinite;
+                        animation: spin 2s linear infinite;
                     }
-                    100% {
-                        transform: rotate(360deg);
+
+                    @-webkit-keyframes spin {
+                        0% {
+                            -webkit-transform: rotate(0deg);
+                        }
+                        100% {
+                            -webkit-transform: rotate(360deg);
+                        }
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
                     }
                 }
             }
@@ -1992,6 +1992,2007 @@
                 }
 
                 .email2 {
+                    background-image: url("/src/Assets/Images/EmailLogo.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 70%;
+                    height: 75%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*ProfilePage (mobile):*/
+.profilePageContainerMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+
+    .languageMobile {
+        height: 20px;
+        width: 96%;
+        border: 1px solid #03a062;
+        border-radius: 5px;
+
+        .languageLogoMobile {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+            height: 100%;
+            width: 4%;
+            float: left;
+            border-right: 1px solid black;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .languageContentMobile {
+            background-color: #111;
+            height: 100%;
+            width: 96%;
+            float: right;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+
+            h4 {
+                color: black;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 gray;
+                height: 100%;
+                width: 60%;
+                float: left;
+                position: relative;
+                left: 5px;
+                bottom: 34px;
+            }
+
+            p {
+                color: black;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 gray;
+                height: 100%;
+                width: 40%;
+                float: left;
+                position: relative;
+                bottom: 22px;
+            }
+        }
+    }
+
+    .educationMobile {
+        width: 98%;
+        border: 1px solid #03a062;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: filter 300ms;
+
+        .educationTitleMobile {
+            background-color: #111;
+            height: 15px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding-left: 5px;
+            overflow: hidden;
+
+            h4 {
+                color: #03a062;
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 11px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+
+        .educationContent1Mobile {
+            height: 50px;
+            width: 100%;
+            padding-left: 5px;
+            overflow: hidden;
+
+            p {
+                color: white;
+                font-size: 6px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
+
+            .schoolLogoMobile {
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: 30% 50%;
+                background-size: 90%;
+                height: 100%;
+                width: 15%;
+                border-bottom-right-radius: 5px;
+                float: right;
+                position: relative;
+                bottom: 31px;
+            }
+        }
+
+        .educationContent2Mobile {
+            background-color: #333;
+            width: 100%;
+            border-top: 1px solid white;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 2px;
+            overflow: hidden;
+
+            p {
+                color: white;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                line-height: 1.5;
+                max-width: 96%;
+            }
+
+            .subjectsMobile {
+                color: #03a062;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                max-width: 96%;
+            }
+        }
+    }
+
+    .educationMobile:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em var(--education-color));
+    }
+
+    .experienceTitleMobile {
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+
+        .experienceTitleContainerMobile {
+            height: 100%;
+            width: 85%;
+            padding-left: 30px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h4 {
+                color: white;
+                font-size: 20px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.3px 0.3px 0 black;
+            }
+        }
+
+        .companyLogoMobile {
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 15%;
+            filter: drop-shadow(0 0 2em black);
+        }
+    }
+
+    .skillMobile {
+        height: 20px;
+        width: 96%;
+        border: 1px solid white;
+        border-radius: 5px;
+
+        .skillLogoMobile {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 4%;
+            float: left;
+            border-right: 1px solid black;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .skillContentMobile {
+            height: 100%;
+            width: 96%;
+            float: right;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+
+            h4 {
+                color: black;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 gray;
+                height: 100%;
+                width: 70%;
+                float: left;
+                position: relative;
+                left: 5px;
+                bottom: 34px;
+            }
+
+            p {
+                color: black;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-shadow: 0.5px 0.5px 0 gray;
+                height: 100%;
+                width: 20%;
+                float: left;
+                position: relative;
+                bottom: 30px;
+                right: 40px;
+            }
+
+            div {
+                color: gray;
+                font-size: 20px;
+                text-shadow: 1px 1px 0 black;
+                height: 100%;
+                width: 10%;
+                float: right;
+                position: relative;
+                bottom: 19px;
+            }
+        }
+    }
+}
+
+/*ProfilePageAdmin (mobile):*/
+.profilePageContainerAdminMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 100%;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h2 {
+            font-size: 10px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .aboutMeTextTitleMobile {
+        background-color: #111;
+        height: 20%;
+        width: 100%;
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid #03a062;
+        display: flex;
+
+        .aboutMeTextTitle1Mobile {
+            height: 100%;
+            width: 60%;
+
+            .h4_1M {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 15px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+
+            .h4_2M {
+                color: #03a062;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 32px;
+                left: 10px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+    }
+
+    .aboutMeTextTitle2Mobile {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    .createProfileMobile {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+
+    .languageMobile {
+        height: 20px;
+        width: 96%;
+        border: 1px solid #03a062;
+        border-radius: 5px;
+        display: flex;
+
+        .languageLogoMobile {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+            height: 100%;
+            width: 4%;
+            border-right: 1px solid black;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .languageContentMobile {
+            height: 100%;
+            width: 96%;
+            float: right;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+
+            .lC1M {
+                height: 100%;
+                width: 80%;
+                overflow: hidden;
+                padding-left: 5px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 360px;
+
+                h4 {
+                    color: black;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                }
+
+                p {
+                    color: black;
+                    font-size: 7px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 gray;
+                }
+            }
+
+            .lC2M {
+                height: 100%;
+                width: 20%;
+                overflow: hidden;
+                display: flex;
+                justify-content: right;
+                gap: 5px;
+            }
+        }
+    }
+
+    .educationMobile {
+        width: 98%;
+        border: 1px solid #03a062;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: filter 300ms;
+
+        .educationTitleMobile {
+            background-color: #111;
+            height: 15px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding-left: 5px;
+            overflow: hidden;
+
+            h4 {
+                color: #03a062;
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 11px;
+                text-shadow: 0.3px 0.3px 0 lightgreen;
+            }
+        }
+
+        .educationContent1Mobile {
+            height: 50px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+
+            .eC1M {
+                height: 100%;
+                width: 60%;
+                padding-left: 5px;
+
+                p {
+                    color: white;
+                    font-size: 6px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+
+            .eC2M {
+                height: 100%;
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .schoolLogoMobile {
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: 30% 50%;
+                background-size: 90%;
+                height: 100%;
+                width: 15%;
+                border-bottom-right-radius: 5px;
+            }
+        }
+
+        .educationContent2Mobile {
+            background-color: #333;
+            width: 100%;
+            border-top: 1px solid white;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 2px;
+            overflow: hidden;
+
+            p {
+                color: white;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                line-height: 1.5;
+                max-width: 96%;
+            }
+
+            .subjectsMobile {
+                color: #03a062;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                max-width: 96%;
+            }
+        }
+    }
+
+    .educationMobile:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em var(--education-color));
+    }
+
+    .experienceTitleMobile {
+        height: 50px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+
+        .experienceTitleContainerMobile {
+            height: 100%;
+            width: 85%;
+            display: flex;
+
+            .eTC1M {
+                height: 100%;
+                width: 89%;
+                padding-left: 15px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                h4 {
+                    color: white;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.3px 0.3px 0 black;
+                }
+            }
+
+            .eTC2M {
+                height: 100%;
+                width: 11%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .companyLogoMobile {
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 15%;
+            filter: drop-shadow(0 0 2em black);
+        }
+    }
+
+    .skillMobile {
+        height: 20px;
+        width: 96%;
+        border: 1px solid white;
+        border-radius: 5px;
+        display: flex;
+        overflow: hidden;
+
+        .skillLogoMobile {
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 4%;
+            border-right: 1px solid black;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .skillContentMobile {
+            height: 100%;
+            width: 96%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            display: flex;
+
+            .sC1M {
+                height: 100%;
+                width: 80%;
+                overflow: hidden;
+                display: flex;
+
+                .sC1-1M {
+                    height: 100%;
+                    width: 50%;
+                    padding-left: 10px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+
+                    h4 {
+                        color: black;
+                        font-size: 12px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow: 0.5px 0.5px 0 gray;
+                    }
+                }
+
+                .sC1-2M {
+                    height: 100%;
+                    width: 50%;
+                    display: flex;
+
+                    .sC1-2-1M {
+                        height: 100%;
+                        width: 50%;
+                        display: flex;
+                        justify-content: right;
+                        align-items: center;
+
+                        p {
+                            color: black;
+                            font-size: 7px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow: 0.5px 0.5px 0 gray;
+                        }
+                    }
+
+                    .sC1-2-2M {
+                        height: 100%;
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        div {
+                            color: gray;
+                            font-size: 20px;
+                            text-shadow: 1px 1px 0 black;
+                            height: 100%;
+                            width: 10%;
+                        }
+                    }
+                }
+            }
+
+            .sC2M {
+                height: 100%;
+                width: 20%;
+                overflow: hidden;
+                display: flex;
+                justify-content: right;
+                gap: 5px;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both (mobile):*/
+.profilePageTitleContainerMobile {
+    background-color: #0072b1;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: white;
+        font-size: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.aboutMeContainerMobile {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    .aboutMeTitleMobile {
+        background-color: #0072b1;
+        height: 10%;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .aboutMeContentMobile {
+        background-image: url("/src/Assets/Images/ProfileBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding-right: 2%;
+
+        .aboutMePhotoMobile {
+            background-image: url("/src/Assets/Images/Photo.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 10%;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+        }
+
+        .aboutMePhotoMobile:hover {
+            border: 1px solid white;
+            filter: drop-shadow(0 0 2em #0072b1);
+        }
+
+        .aboutMeTextContainerMobile {
+            height: 90%;
+            width: 65%;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            overflow: hidden;
+
+            .aboutMeTextTitleMobile {
+                background-color: #111;
+                height: 20%;
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+
+                .h4_1M {
+                    color: #03a062;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 13px;
+                    left: 10px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+
+                .h4_2M {
+                    color: #03a062;
+                    font-size: 8px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 26px;
+                    left: 10px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .aboutMeTextMobile {
+                background-color: #333;
+                height: 80%;
+                width: 100%;
+                overflow: hidden;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding-top: 5px;
+                padding-left: 5px;
+
+                p {
+                    color: white;
+                    font-size: 6px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    line-height: 1.2;
+                    max-width: 96%;
+                    position: relative;
+                    bottom: 6px;
+                }
+
+                .loadingProfileDataAboutMeMobile {
+                    height: 90px;
+                    width: 95%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .loaderProfileAboutMeMobile {
+                        border: 5px solid #f3f3f3;
+                        border-radius: 50%;
+                        border-top: 5px solid #0072b1;
+                        width: 40px;
+                        height: 40px;
+                        -webkit-animation: spin 2s linear infinite;
+                        animation: spin 2s linear infinite;
+                    }
+
+                    @-webkit-keyframes spin {
+                        0% {
+                            -webkit-transform: rotate(0deg);
+                        }
+                        100% {
+                            -webkit-transform: rotate(360deg);
+                        }
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.languagesContainerMobile {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .languagesTitleMobile {
+        background-color: #0072b1;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .languagesContentMobile {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 7px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.educationsContainerMobile {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .educationsTitleMobile {
+        background-color: #0072b1;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .educationsContentMobile {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 7px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+
+.experiencesContainerMobile {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+}
+
+.experiencesTitleMobile {
+    background-color: #0072b1;
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+    padding-left: 5px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    h3 {
+        color: white;
+        font-size: 12px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
+.experiencesContentMobile {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    .experienceMobile {
+        width: 98%;
+        border: 1px solid #03a062;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: filter 300ms;
+
+        .experienceContentContainerMobile {
+            width: 100%;
+            border-top: 1px solid #03a062;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+
+            .experienceContentMobile {
+                background-color: #333;
+                width: 100%;
+                padding-right: 5px;
+                padding-bottom: 2px;
+                overflow: hidden;
+
+                .companyTitleMobile {
+                    background-color: #111;
+                    width: 100%;
+                    border-top: 1px solid #03a062;
+                    border-bottom: 1px solid #03a062;
+                    overflow: hidden;
+                    padding-left: 5px;
+
+                    p {
+                        color: white;
+                        font-size: 12px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+
+                .workTitleMobile {
+                    width: 100%;
+                    overflow: hidden;
+                    padding-left: 5px;
+
+                    p {
+                        color: #03a062;
+                        font-size: 7px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+
+                .descriptionMobile {
+                    width: 100%;
+                    border-top: 0.3px solid #03a062;
+                    overflow: hidden;
+                    padding-left: 5px;
+
+                    p {
+                        color: #03a062;
+                        font-size: 7px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        max-width: 96%;
+                    }
+                }
+
+                .technologiesUsedMobile {
+                    width: 100%;
+                    border-top: 0.3px solid #03a062;
+                    overflow: hidden;
+                    padding-left: 5px;
+
+                    p {
+                        color: #03a062;
+                        font-size: 7px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        max-width: 96%;
+                    }
+                }
+            }
+
+            .totalExperienceMobile {
+                width: 100%;
+                overflow: hidden;
+                padding-left: 15px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                h5 {
+                    color: white;
+                    font-size: 15px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+        }
+    }
+
+    .experienceMobile:hover {
+        border: 1px solid white;
+        filter: drop-shadow(0 0 2em var(--experience-color));
+    }
+}
+
+.skillsContainerMobile {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .skillsTitleMobile {
+        background-color: #0072b1;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .skillsContentMobile {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 7px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 1%;
+        padding-right: 1%;
+
+        .webDevelopmentSoftwareMobile {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 5px;
+            overflow: hidden;
+
+            .wDSTitleMobile {
+                background-color: #111;
+                height: 15px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                padding-left: 5px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 11px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .wDSContentMobile {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                .softwareMobile {
+                    background-color: #111;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                    width: 99%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    overflow: hidden;
+                    padding-bottom: 10px;
+
+                    h5 {
+                        color: #03a062;
+                        font-size: 10px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-decoration: underline;
+                        line-height: 0px;
+                    }
+                }
+            }
+        }
+
+        .front-endDevelopmentMobile {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 5px;
+            overflow: hidden;
+
+            .fEDTitleMobile {
+                background-color: #111;
+                height: 15px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                padding-left: 5px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 11px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .fEDContentMobile {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                .frontEndSoftwareMobile {
+                    background-color: #111;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                    width: 99%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    overflow: hidden;
+                    padding-bottom: 5px;
+
+                    h5 {
+                        color: #03a062;
+                        font-size: 10px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-decoration: underline;
+                        line-height: 0px;
+                    }
+                }
+            }
+        }
+
+        .back-endDevelopmentMobile {
+            width: 98%;
+            border: 1px solid #03a062;
+            border-radius: 5px;
+            overflow: hidden;
+
+            .bEDTitleMobile {
+                background-color: #111;
+                height: 15px;
+                width: 100%;
+                border-bottom: 1px solid #03a062;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                padding-left: 5px;
+                overflow: hidden;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 11px;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                }
+            }
+
+            .bEDContentMobile {
+                background-color: #333;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                .backEndSoftwareMobile {
+                    background-color: #111;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                    width: 99%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    overflow: hidden;
+                    padding-bottom: 5px;
+
+                    h5 {
+                        color: #03a062;
+                        font-size: 10px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-decoration: underline;
+                        line-height: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loadingProfileData {
+    height: 300px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loaderProfileMobile {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #0072b1;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.noProfileDataMobile {
+    height: 300px;
+    width: 90%;
+    overflow: hidden;
+
+    h4 {
+        width: fit-content;
+        color: red;
+        font-size: 60px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        border: 1px solid red;
+        border-radius: 48%;
+        padding: 20px;
+        position: relative;
+        top: 10px;
+        left: 430px;
+    }
+}
+
+.interestsContainerMobile {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .interestsTitleMobile {
+        background-color: #0072b1;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .interestsContentMobile {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .interest1Mobile {
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+            overflow: hidden;
+
+            .interest1TitleMobile {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 9px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .interest1ContentMobile {
+                background-image: url("/src/Assets/Images/ITInfraBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+
+                .interest1ContentCoverMobile {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .interest1ContentCoverLogoMobile {
+                        background-image: url("/src/Assets/Images/ITInfra.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 20%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .interest1Mobile:hover {
+            filter: drop-shadow(0 0 2em white);
+        }
+
+        .interest1Mobile:hover .interest1ContentCoverMobile {
+            display: block;
+        }
+
+        .interest2Mobile {
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+            overflow: hidden;
+
+            .interest2TitleMobile {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 9px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .interest2ContentMobile {
+                background-image: url("/src/Assets/Images/ProgrammingIBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+
+                .interest2ContentCoverMobile {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .interest2ContentCoverLogoMobile {
+                        background-image: url("/src/Assets/Images/ProgrammingI.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .interest2Mobile:hover {
+            filter: drop-shadow(0 0 2em white);
+        }
+
+        .interest2Mobile:hover .interest2ContentCoverMobile {
+            display: block;
+        }
+
+        .interest3Mobile {
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+            overflow: hidden;
+
+            .interest3TitleMobile {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 9px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .interest3ContentMobile {
+                background-image: url("/src/Assets/Images/RoboticsBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+
+                .interest3ContentCoverMobile {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .interest3ContentCoverLogoMobile {
+                        background-image: url("/src/Assets/Images/Robotics.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 80%;
+                        width: 30%;
+                        position: relative;
+                        top: 10%;
+                        left: 33%;
+                    }
+                }
+            }
+        }
+
+        .interest3Mobile:hover {
+            filter: drop-shadow(0 0 2em white);
+        }
+
+        .interest3Mobile:hover .interest3ContentCoverMobile {
+            display: block;
+        }
+    }
+}
+
+.hobbiesContainerMobile {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+
+    .hobbiesTitleMobile {
+        background-color: #0072b1;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .hobbiesContentMobile {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hobby1Mobile {
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+            overflow: hidden;
+
+            .hobby1TitleMobile {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 9px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .hobby1ContentMobile {
+                background-image: url("/src/Assets/Images/GamingBG.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+
+                .hobby1ContentCoverMobile {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .hobby1ContentCoverLogoMobile {
+                        background-image: url("/src/Assets/Images/OpenRA.svg");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .hobby1Mobile:hover {
+            filter: drop-shadow(0 0 2em red);
+        }
+
+        .hobby1Mobile:hover .hobby1ContentCoverMobile {
+            display: block;
+        }
+
+        .hobby2Mobile {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+            overflow: hidden;
+
+            .hobby2TitleMobile {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 9px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .hobby2ContentMobile {
+                background-image: url("/src/Assets/Images/ProgrammingBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+
+                .hobby2ContentCoverMobile {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .hobby2ContentCoverLogoMobile {
+                        background-image: url("/src/Assets/Images/Programming.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .hobby2Mobile:hover {
+            filter: drop-shadow(0 0 2em blue);
+        }
+
+        .hobby2Mobile:hover .hobby2ContentCoverMobile {
+            display: block;
+        }
+
+        .hobby3Mobile {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            border: 1px solid #03a062;
+            transition: filter 300ms;
+            overflow: hidden;
+
+            .hobby3TitleMobile {
+                background-color: #111;
+                color: #03a062;
+                height: 20%;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid #03a062;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    color: #03a062;
+                    font-size: 9px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .hobby3ContentMobile {
+                background-image: url("/src/Assets/Images/CampingBG.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 80%;
+                width: 100%;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+
+                .hobby3ContentCoverMobile {
+                    display: none;
+                    background-color: black;
+                    opacity: 50%;
+                    height: 100%;
+                    width: 100%;
+
+                    .hobby3ContentCoverLogoMobile {
+                        background-image: url("/src/Assets/Images/Camping.png");
+                        background-repeat: no-repeat;
+                        background-size: 75%;
+                        background-position: center;
+                        height: 50%;
+                        width: 50%;
+                        position: relative;
+                        top: 25%;
+                        left: 25%;
+                    }
+                }
+            }
+        }
+
+        .hobby3Mobile:hover {
+            filter: drop-shadow(0 0 2em green);
+        }
+
+        .hobby3Mobile:hover .hobby3ContentCoverMobile {
+            display: block;
+        }
+    }
+}
+
+.contactContainerMobile {
+    height: 255px;
+    width: 100%;
+    overflow: hidden;
+
+    .contactTitleMobile {
+        background-color: #0072b1;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .contactContentMobile {
+        height: 240px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 30px;
+
+        .phoneContainerMobile {
+            background-color: #111;
+            height: 200px;
+            width: 150px;
+            border: 1px solid #03a062;
+            box-shadow: 10px 5px 5px red;
+            border-radius: 5px;
+
+            .phoneContainerTitleMobile {
+                height: 10%;
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .phoneContainerContentMobile {
+                height: 90%;
+                width: 100%;
+                border-top: 1px solid #03a062;
+
+                .phone1Mobile {
+                    height: 25%;
+                    width: 100%;
+                    overflow: hidden;
+                    border-bottom: 1px solid #03a062;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    h4 {
+                        color: #03a062;
+                        font-size: 10px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow: 0.5px 0.5px 0 lightgreen;
+                    }
+                }
+
+                .phone2Mobile {
+                    background-image: url("/src/Assets/Images/PhoneLogo.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 70%;
+                    height: 75%;
+                    width: 100%;
+                }
+            }
+        }
+
+        .emailContainerMobile {
+            background-color: #111;
+            height: 200px;
+            width: 150px;
+            border: 1px solid #03a062;
+            border-radius: 5px;
+            box-shadow: 10px 5px 5px blue;
+
+            .emailContainerTitleMobile {
+                height: 10%;
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    color: #03a062;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                }
+            }
+
+            .emailContainerContentMobile {
+                height: 90%;
+                width: 100%;
+                border-top: 1px solid #03a062;
+
+                .email1Mobile {
+                    height: 25%;
+                    width: 100%;
+                    overflow: hidden;
+                    border-bottom: 1px solid #03a062;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    h4 {
+                        color: #03a062;
+                        font-size: 10px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow: 0.5px 0.5px 0 lightgreen;
+                    }
+                }
+
+                .email2Mobile {
                     background-image: url("/src/Assets/Images/EmailLogo.png");
                     background-repeat: no-repeat;
                     background-position: center;
