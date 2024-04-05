@@ -24,3 +24,30 @@
         left: 10px;
     }
 }
+
+/*Mobile:*/
+.timeAndDateContainerMobile {
+    background-color: #111;
+    height: 42px;
+    width: 117px;
+    border: 1px solid #03a062;
+    border-radius: 5px;
+
+    .timeMobile {
+        color: #03a062;
+        font-size: 15px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        left: 5%;
+        bottom: 11px;
+    }
+
+    .dateMobile {
+        color: #03a062;
+        font-size: 15px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+        bottom: 25px;
+        left: 5px;
+    }
+}

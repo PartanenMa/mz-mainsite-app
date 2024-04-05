@@ -19,7 +19,6 @@
         align-items: center;
         flex-direction: column;
 
-        /*Main:*/
         .main {
             background-color: #111;
             min-height: 580px;
@@ -30,19 +29,1037 @@
             margin: auto;
             box-shadow: 0 0 30px 5px #03a062;
             overflow: hidden;
-        }
 
-        .heroSection {
+            .heroSection {
+                background-image: url("/src/Assets/Images/HeroSectionBG.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-color: transparent;
+                height: 600px;
+                width: 100%;
+                overflow: hidden;
+
+                .heroTitle {
+                    animation: fadeIn 0.3s;
+                    width: 100%;
+                    height: 65%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    .hTWelcome1 {
+                        color: #03a062;
+                        font-size: 2.26rem;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        height: 100vh;
+                        text-shadow: 0.5px 0.5px 0 lightgreen;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        bottom: 10px;
+
+                        .hTW1text {
+                            width: 25ch;
+                            animation:
+                                typing 2s steps(22),
+                                blink 0.5s step-end infinite alternate;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            font-family: monospace;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
+                        }
+
+                        @keyframes typing {
+                            from {
+                                width: 0;
+                            }
+                        }
+
+                        @keyframes blink {
+                            50% {
+                                border-color: transparent;
+                            }
+                        }
+                    }
+
+                    .hTWelcome2 {
+                        color: #03a062;
+                        font-size: 2.26rem;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        height: 100vh;
+                        text-shadow: 0.5px 0.5px 0 lightgreen;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        bottom: 80px;
+                        left: 5px;
+
+                        .hTW2text {
+                            width: 24ch;
+                            animation:
+                                typing 2s steps(22),
+                                blink 0.5s step-end infinite alternate;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
+                        }
+
+                        @keyframes typing {
+                            from {
+                                width: 0;
+                            }
+                        }
+
+                        @keyframes blink {
+                            50% {
+                                border-color: transparent;
+                            }
+                        }
+
+                        .loadingProfessionTitle {
+                            height: 30px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .loaderProfessionTitle {
+                                border: 6px solid #f3f3f3;
+                                border-radius: 50%;
+                                border-top: 6px solid #03a062;
+                                width: 30px;
+                                height: 30px;
+                                -webkit-animation: spin 2s linear infinite;
+                                animation: spin 2s linear infinite;
+                            }
+
+                            @-webkit-keyframes spin {
+                                0% {
+                                    -webkit-transform: rotate(0deg);
+                                }
+                                100% {
+                                    -webkit-transform: rotate(360deg);
+                                }
+                            }
+
+                            @keyframes spin {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+                    }
+
+                    .hTWelcome3 {
+                        background-color: black;
+                        border-radius: 20px;
+                        height: 100px;
+                        width: fit-content;
+                        box-shadow:
+                            0 0 10px black,
+                            0 0 20px black;
+                        position: relative;
+                        bottom: 80px;
+
+                        h3 {
+                            font-size: 100px;
+                            background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            letter-spacing: -3px;
+                            transition: 700ms ease;
+                            font-variation-settings: "wght" 311;
+                            outline: none;
+                            margin-bottom: 0.8rem;
+                            text-align: center;
+                            animation: hover-effect 5s infinite;
+                            position: relative;
+                            bottom: 110px;
+                        }
+
+                        @keyframes hover-effect {
+                            0% {
+                                font-variation-settings: "wght" 582;
+                                letter-spacing: -2px;
+                            }
+                            50% {
+                                font-variation-settings: "wght" 400;
+                                letter-spacing: -3px;
+                            }
+                            100% {
+                                font-variation-settings: "wght" 582;
+                                letter-spacing: -2px;
+                            }
+                        }
+                    }
+                }
+
+                .heroContent {
+                    animation: fadeIn 0.3s;
+                    height: 35%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    gap: 30px;
+                    padding-top: 10px;
+
+                    .heroContent1 {
+                        background-color: #0072b1;
+                        height: 90%;
+                        width: 30%;
+                        cursor: pointer;
+                        border: 1px solid white;
+                        border-radius: 10px;
+                        display: flex;
+                        transition: filter 300ms;
+                        overflow: hidden;
+
+                        .hC-1T {
+                            animation: fadeIn 0.3s;
+                            display: block;
+                            color: white;
+                            font-size: 60px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            top: 5px;
+                            left: 65px;
+                        }
+
+                        .hC1-1 {
+                            display: none;
+                            background-color: lightblue;
+                            height: 100%;
+                            width: 60%;
+
+                            .titleProfile {
+                                height: 20%;
+                                padding-left: 10px;
+                                border-bottom: 1px solid lightblue;
+                                display: flex;
+                                justify-content: center;
+                                flex-direction: row;
+                                gap: 38px;
+                                overflow: hidden;
+
+                                h3 {
+                                    color: #0072b1;
+                                    font-size: 20px;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 13px;
+                                }
+
+                                .logoProfile {
+                                    background-image: url("/src/Assets/Images/Profile.png");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: 60%;
+                                    height: 100%;
+                                    width: 20%;
+                                }
+                            }
+
+                            .contentProfile {
+                                background-color: #0072b1;
+                                height: 80%;
+                                padding-left: 10px;
+                                overflow: hidden;
+
+                                p {
+                                    color: white;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 10px;
+                                }
+                            }
+                        }
+
+                        .hC1-2 {
+                            display: none;
+                            background-image: url("/src/Assets/Images/Photo.jpeg");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            height: 100%;
+                            width: 40%;
+                            border-left: 1px solid lightblue;
+                        }
+                    }
+
+                    .heroContent1:hover {
+                        border: 1px solid lightblue;
+                        filter: drop-shadow(0 0 2em #0072b1);
+                    }
+
+                    .heroContent1:hover .hC1-1 {
+                        animation: fadeIn 0.3s;
+                        display: block;
+                    }
+
+                    .heroContent1:hover .hC1-2 {
+                        animation: fadeIn 0.3s;
+                        display: block;
+                    }
+
+                    .heroContent1:hover .hC-1T {
+                        display: none;
+                    }
+
+                    .heroContent2 {
+                        background-color: black;
+                        height: 90%;
+                        width: 30%;
+                        cursor: pointer;
+                        border: 1px solid white;
+                        border-radius: 10px;
+                        display: flex;
+                        transition: filter 300ms;
+                        overflow: hidden;
+
+                        .hC-2T {
+                            animation: fadeIn 0.3s;
+                            display: block;
+                            color: white;
+                            font-size: 60px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            top: 5px;
+                            left: 50px;
+                        }
+
+                        .hC2-1 {
+                            display: none;
+                            background-color: gray;
+                            height: 100%;
+                            width: 60%;
+
+                            .titleProjects {
+                                height: 20%;
+                                padding-left: 10px;
+                                border-bottom: 1px solid gray;
+                                display: flex;
+                                justify-content: center;
+                                flex-direction: row;
+                                gap: 20px;
+                                overflow: hidden;
+
+                                h3 {
+                                    color: black;
+                                    font-size: 20px;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 13px;
+                                }
+
+                                .logoProjects {
+                                    background-image: url("/src/Assets/Images/Projects.png");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: 60%;
+                                    height: 100%;
+                                    width: 20%;
+                                }
+                            }
+
+                            .contentProjects {
+                                background-color: black;
+                                height: 80%;
+                                padding-left: 10px;
+                                overflow: hidden;
+
+                                p {
+                                    color: white;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 10px;
+                                }
+                            }
+                        }
+
+                        .hC2-2 {
+                            display: none;
+                            background-image: url("/src/Assets/Images/Admin.jpeg");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            height: 100%;
+                            width: 40%;
+                            border-left: 1px solid gray;
+                        }
+                    }
+
+                    .heroContent2:hover {
+                        border: 1px solid gray;
+                        filter: drop-shadow(0 0 2em black);
+                    }
+
+                    .heroContent2:hover .hC2-1 {
+                        animation: fadeIn 0.3s;
+                        display: block;
+                    }
+
+                    .heroContent2:hover .hC2-2 {
+                        animation: fadeIn 0.3s;
+                        display: block;
+                    }
+
+                    .heroContent2:hover .hC-2T {
+                        display: none;
+                    }
+
+                    .heroContent3 {
+                        background-color: #c4302b;
+                        height: 90%;
+                        width: 30%;
+                        cursor: pointer;
+                        border: 1px solid white;
+                        border-radius: 10px;
+                        display: flex;
+                        transition: filter 300ms;
+                        overflow: hidden;
+
+                        .hC-3T {
+                            animation: fadeIn 0.3s;
+                            display: block;
+                            color: white;
+                            font-size: 60px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            top: 5px;
+                            left: 85px;
+                        }
+
+                        .hC3-1 {
+                            display: none;
+                            background-color: lightcoral;
+                            height: 100%;
+                            width: 60%;
+
+                            .titleVideos {
+                                height: 20%;
+                                padding-left: 10px;
+                                border-bottom: 1px solid lightcoral;
+                                display: flex;
+                                justify-content: center;
+                                flex-direction: row;
+                                gap: 38px;
+                                overflow: hidden;
+
+                                h3 {
+                                    color: #c4302b;
+                                    font-size: 20px;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 13px;
+                                }
+
+                                .logoVideos {
+                                    background-image: url("/src/Assets/Images/Videos.png");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: 60%;
+                                    height: 100%;
+                                    width: 20%;
+                                }
+                            }
+
+                            .contentVideos {
+                                background-color: #c4302b;
+                                height: 80%;
+                                padding-left: 10px;
+                                overflow: hidden;
+
+                                p {
+                                    color: white;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 10px;
+                                }
+                            }
+                        }
+
+                        .hC3-2 {
+                            display: none;
+                            background-image: url("/src/Assets/Images/VideosBG.jpg");
+                            background-repeat: no-repeat;
+                            background-size: 320%;
+                            background-position: 53.5% 60%;
+                            height: 100%;
+                            width: 40%;
+                            border-left: 1px solid lightcoral;
+                        }
+                    }
+
+                    .heroContent3:hover {
+                        border: 1px solid lightcoral;
+                        filter: drop-shadow(0 0 2em #c4302b);
+                    }
+
+                    .heroContent3:hover .hC3-1 {
+                        animation: fadeIn 0.3s;
+                        display: block;
+                    }
+
+                    .heroContent3:hover .hC3-2 {
+                        animation: fadeIn 0.3s;
+                        display: block;
+                    }
+
+                    .heroContent3:hover .hC-3T {
+                        display: none;
+                    }
+                }
+            }
+
+            .technologySection {
+                background-image: url("/src/Assets/Images/TechnologySectionBG.gif");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-color: transparent;
+                height: 650px;
+                width: 100%;
+                box-shadow: inset 0 0 30px 20px #222;
+                overflow: hidden;
+
+                .technology {
+                    height: 100%;
+                    width: 1194px;
+                    margin-left: 50px;
+
+                    .technologyTitle {
+                        height: 10%;
+                        width: 100%;
+
+                        h3 {
+                            animation: fadeIn 0.3s;
+                            color: #03a062;
+                            font-size: 45px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
+                        }
+
+                        .loadingProfessionTitleTech {
+                            height: 30px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
+                            top: 50px;
+                            right: 600px;
+
+                            .loaderProfessionTitleTech {
+                                border: 6px solid #f3f3f3;
+                                border-radius: 50%;
+                                border-top: 6px solid #03a062;
+                                width: 30px;
+                                height: 30px;
+                                -webkit-animation: spin 2s linear infinite;
+                                animation: spin 2s linear infinite;
+                            }
+
+                            @-webkit-keyframes spin {
+                                0% {
+                                    -webkit-transform: rotate(0deg);
+                                }
+                                100% {
+                                    -webkit-transform: rotate(360deg);
+                                }
+                            }
+
+                            @keyframes spin {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+                    }
+
+                    .technologyContent {
+                        height: 90%;
+                        width: 100%;
+
+                        .technologyContentBox1 {
+                            animation: fadeIn 0.3s;
+                            background-color: #333;
+                            backdrop-filter: blur(15px);
+                            min-height: 335px;
+                            width: 535px;
+                            border: 1px inset darkblue;
+                            border-radius: 10px;
+                            box-shadow: 10px 5px 5px #111;
+                            position: relative;
+                            top: 30px;
+                            overflow: hidden;
+
+                            .tCB1Title {
+                                background-color: #111;
+                                height: 60px;
+                                width: 100%;
+                                border-bottom: 1px solid darkblue;
+                                padding-left: 20px;
+                                overflow: hidden;
+
+                                h4 {
+                                    color: darkblue;
+                                    font-size: 40px;
+                                    font-style: italic;
+                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                    position: relative;
+                                    bottom: 48px;
+                                }
+                            }
+
+                            .tCB1Content {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 30px;
+
+                                .tech {
+                                    background-color: #111;
+                                    height: 150px;
+                                    width: 150px;
+                                    border: 1px solid var(--tech-color);
+                                    border-radius: 10px;
+                                    margin-top: 60px;
+                                    overflow: hidden;
+                                    transition: filter 300ms;
+
+                                    .techTitle {
+                                        height: 30px;
+                                        width: 100%;
+                                        border-bottom: 0.5px solid var(--tech-color);
+                                        padding-left: 10px;
+                                        overflow: hidden;
+
+                                        h5 {
+                                            font-style: italic;
+                                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                            font-size: 20px;
+                                            position: relative;
+                                            bottom: 30px;
+                                        }
+                                    }
+
+                                    .techLogo {
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        height: 120px;
+                                        width: 100%;
+                                        overflow: hidden;
+                                    }
+                                }
+
+                                .tech:hover {
+                                    filter: drop-shadow(0 0 2em var(--tech-color));
+                                }
+
+                                .loadingTechData {
+                                    height: 300px;
+                                    width: 95%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    .loaderTech {
+                                        border: 16px solid #f3f3f3;
+                                        border-radius: 50%;
+                                        border-top: 16px solid darkblue;
+                                        width: 120px;
+                                        height: 120px;
+                                        -webkit-animation: spin 2s linear infinite;
+                                        animation: spin 2s linear infinite;
+                                    }
+
+                                    @-webkit-keyframes spin {
+                                        0% {
+                                            -webkit-transform: rotate(0deg);
+                                        }
+                                        100% {
+                                            -webkit-transform: rotate(360deg);
+                                        }
+                                    }
+
+                                    @keyframes spin {
+                                        0% {
+                                            transform: rotate(0deg);
+                                        }
+                                        100% {
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+                                }
+
+                                .noTechData {
+                                    height: 90%;
+                                    width: 90%;
+                                    position: relative;
+                                    right: 340px;
+                                    bottom: 20px;
+
+                                    h4 {
+                                        width: fit-content;
+                                        color: red;
+                                        font-size: 60px;
+                                        font-style: italic;
+                                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                        border: 1px solid red;
+                                        border-radius: 48%;
+                                        padding: 20px;
+                                        position: relative;
+                                        top: 10px;
+                                        left: 430px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .technologyContentBox2 {
+                            animation: fadeIn 0.3s;
+                            background-color: #333;
+                            backdrop-filter: blur(15px);
+                            min-height: 335px;
+                            width: 535px;
+                            border: 1px inset darkred;
+                            border-radius: 10px;
+                            box-shadow: 10px 5px 5px #111;
+                            position: relative;
+                            overflow: hidden;
+
+                            .tCB2Title {
+                                background-color: #111;
+                                height: 60px;
+                                width: 100%;
+                                border-bottom: 1px solid darkred;
+                                padding-left: 20px;
+                                overflow: hidden;
+                            }
+
+                            .tCB2Title h4 {
+                                color: darkred;
+                                font-size: 40px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                position: relative;
+                                bottom: 48px;
+                            }
+
+                            .tCB2Content {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 30px;
+
+                                .tech {
+                                    background-color: #111;
+                                    height: 150px;
+                                    width: 150px;
+                                    border: 1px solid var(--tech-color);
+                                    border-radius: 10px;
+                                    margin-top: 60px;
+                                    overflow: hidden;
+                                    transition: filter 300ms;
+
+                                    .techTitle {
+                                        height: 30px;
+                                        width: 100%;
+                                        border-bottom: 0.5px solid var(--tech-color);
+                                        padding-left: 10px;
+                                        overflow: hidden;
+
+                                        h5 {
+                                            font-style: italic;
+                                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                            font-size: 20px;
+                                            position: relative;
+                                            bottom: 30px;
+                                        }
+                                    }
+
+                                    .techLogo {
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        height: 120px;
+                                        width: 100%;
+                                        overflow: hidden;
+                                    }
+                                }
+
+                                .tech:hover {
+                                    filter: drop-shadow(0 0 2em var(--tech-color));
+                                }
+
+                                .loadingTechData {
+                                    height: 300px;
+                                    width: 95%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    .loaderTech {
+                                        border: 16px solid #f3f3f3;
+                                        border-radius: 50%;
+                                        border-top: 16px solid darkred;
+                                        width: 120px;
+                                        height: 120px;
+                                        -webkit-animation: spin 2s linear infinite;
+                                        animation: spin 2s linear infinite;
+                                    }
+
+                                    @-webkit-keyframes spin {
+                                        0% {
+                                            -webkit-transform: rotate(0deg);
+                                        }
+                                        100% {
+                                            -webkit-transform: rotate(360deg);
+                                        }
+                                    }
+
+                                    @keyframes spin {
+                                        0% {
+                                            transform: rotate(0deg);
+                                        }
+                                        100% {
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+                                }
+
+                                .noTechData {
+                                    height: 90%;
+                                    width: 90%;
+                                    position: relative;
+                                    right: 340px;
+                                    bottom: 20px;
+
+                                    h4 {
+                                        width: fit-content;
+                                        color: red;
+                                        font-size: 60px;
+                                        font-style: italic;
+                                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                        border: 1px solid red;
+                                        border-radius: 48%;
+                                        padding: 20px;
+                                        position: relative;
+                                        top: 10px;
+                                        left: 430px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .professionSection {
+                background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-color: transparent;
+                height: 650px;
+                width: 100%;
+                box-shadow: inset 0 0 30px 20px #222;
+                overflow: hidden;
+
+                .profession {
+                    height: 100%;
+                    width: 1194px;
+                    margin-left: 50px;
+
+                    .professionTitle {
+                        height: 10%;
+                        width: 100%;
+
+                        h3 {
+                            animation: fadeIn 0.3s;
+                            color: #03a062;
+                            font-size: 45px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
+                        }
+
+                        .loadingProfessionOrJobTitle {
+                            height: 30px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
+                            top: 50px;
+                            right: 600px;
+
+                            .loaderProfessionOrJobTitle {
+                                border: 6px solid #f3f3f3;
+                                border-radius: 50%;
+                                border-top: 6px solid #03a062;
+                                width: 30px;
+                                height: 30px;
+                                -webkit-animation: spin 2s linear infinite;
+                                animation: spin 2s linear infinite;
+                            }
+
+                            @-webkit-keyframes spin {
+                                0% {
+                                    -webkit-transform: rotate(0deg);
+                                }
+                                100% {
+                                    -webkit-transform: rotate(360deg);
+                                }
+                            }
+
+                            @keyframes spin {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+                    }
+
+                    .professionContent {
+                        height: 90%;
+                        width: 100%;
+
+                        .professionContentBox1 {
+                            animation: fadeIn 0.3s;
+                            background-color: transparent;
+                            backdrop-filter: blur(15px);
+                            width: 535px;
+                            border: 1px inset #03a062;
+                            border-radius: 10px;
+                            box-shadow: 10px 5px 5px #111;
+                            position: relative;
+                            top: 30px;
+
+                            p {
+                                color: #03a062;
+                                font-size: 30px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                text-shadow:
+                                    0 0 7px black,
+                                    0 0 3px black;
+                                max-width: 515px;
+                                margin-left: 10px;
+                                margin-right: 10px;
+                            }
+                        }
+
+                        .professionContentBox2 {
+                            animation: fadeIn 0.3s;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            filter: drop-shadow(0 0 2em var(--company-color));
+                            border-radius: 10px;
+                            position: relative;
+                            bottom: 200px;
+                            left: 650px;
+                            animation: floating 3s ease-in-out infinite;
+                        }
+
+                        @keyframes floating {
+                            0% {
+                                transform: translate(0, 0px);
+                            }
+                            50% {
+                                transform: translate(0, 5px);
+                            }
+                            100% {
+                                transform: translate(0, -0px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*FrontPage (mobile):*/
+.frontPageContainerMobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .mainMobile {
+        background-color: #111;
+        min-height: 580px;
+        max-width: 1244px;
+        width: 100%;
+        border: 0.1px solid grey;
+        border-radius: 2px;
+        margin: auto;
+        box-shadow: 0 0 30px 5px #03a062;
+        overflow: hidden;
+
+        .heroSectionMobile {
             background-image: url("/src/Assets/Images/HeroSectionBG.jpg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             background-color: transparent;
-            height: 600px;
+            height: 210px;
             width: 100%;
             overflow: hidden;
 
-            .heroTitle {
+            .heroTitleMobile {
                 animation: fadeIn 0.3s;
                 width: 100%;
                 height: 65%;
@@ -52,25 +1069,24 @@
                 align-items: center;
                 overflow: hidden;
 
-                .hTWelcome1 {
+                .hTWelcome1Mobile {
                     color: #03a062;
                     font-size: 2.26rem;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: 100vh;
+                    height: 50vh;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    position: relative;
-                    bottom: 10px;
 
-                    .hTW1text {
-                        width: 25ch;
+                    .hTW1textMobile {
+                        width: 26ch;
                         animation:
                             typing 2s steps(22),
                             blink 0.5s step-end infinite alternate;
                         white-space: nowrap;
                         overflow: hidden;
+                        font-size: 15px;
                         font-family: monospace;
                         text-shadow:
                             0 0 7px black,
@@ -90,26 +1106,27 @@
                     }
                 }
 
-                .hTWelcome2 {
+                .hTWelcome2Mobile {
                     color: #03a062;
-                    font-size: 2.26rem;
+                    font-size: 1.13rem;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: 100vh;
+                    height: 50vh;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     position: relative;
-                    bottom: 80px;
-                    left: 5px;
+                    bottom: 23px;
+                    left: 2px;
 
-                    .hTW2text {
-                        width: 24ch;
+                    .hTW2textMobile {
+                        width: 21ch;
                         animation:
                             typing 2s steps(22),
                             blink 0.5s step-end infinite alternate;
                         white-space: nowrap;
                         overflow: hidden;
+                        font-size: 12px;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow:
                             0 0 7px black,
@@ -128,19 +1145,19 @@
                         }
                     }
 
-                    .loadingProfessionTitle {
-                        height: 30px;
+                    .loadingProfessionTitleMobile {
+                        height: 15px;
                         width: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
 
-                        .loaderProfessionTitle {
-                            border: 6px solid #f3f3f3;
+                        .loaderProfessionTitleMobile {
+                            border: 3px solid #f3f3f3;
                             border-radius: 50%;
-                            border-top: 6px solid #03a062;
-                            width: 30px;
-                            height: 30px;
+                            border-top: 3px solid #03a062;
+                            width: 15px;
+                            height: 15px;
                             -webkit-animation: spin 2s linear infinite;
                             animation: spin 2s linear infinite;
                         }
@@ -165,25 +1182,25 @@
                     }
                 }
 
-                .hTWelcome3 {
+                .hTWelcome3Mobile {
                     background-color: black;
-                    border-radius: 20px;
-                    height: 100px;
+                    border-radius: 10px;
+                    height: 30px;
                     width: fit-content;
                     box-shadow:
                         0 0 10px black,
                         0 0 20px black;
                     position: relative;
-                    bottom: 80px;
+                    bottom: 20px;
 
                     h3 {
-                        font-size: 100px;
+                        font-size: 30px;
                         background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        letter-spacing: -3px;
+                        letter-spacing: -1px;
                         transition: 700ms ease;
                         font-variation-settings: "wght" 311;
                         outline: none;
@@ -191,7 +1208,7 @@
                         text-align: center;
                         animation: hover-effect 5s infinite;
                         position: relative;
-                        bottom: 110px;
+                        bottom: 32px;
                     }
 
                     @keyframes hover-effect {
@@ -211,65 +1228,62 @@
                 }
             }
 
-            .heroContent {
+            .heroContentMobile {
                 animation: fadeIn 0.3s;
                 height: 35%;
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 flex-direction: row;
-                gap: 30px;
+                gap: 10px;
                 padding-top: 10px;
 
-                .heroContent1 {
+                .heroContent1Mobile {
                     background-color: #0072b1;
-                    height: 90%;
-                    width: 30%;
+                    height: 60px;
+                    width: 100px;
                     cursor: pointer;
                     border: 1px solid white;
-                    border-radius: 10px;
-                    display: flex;
+                    border-radius: 5px;
                     transition: filter 300ms;
                     overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                    .hC-1T {
+                    .hC-1TM {
                         animation: fadeIn 0.3s;
                         display: block;
                         color: white;
-                        font-size: 60px;
+                        font-size: 20px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        position: relative;
-                        top: 5px;
-                        left: 65px;
                     }
 
-                    .hC1-1 {
+                    .hC1-1M {
                         display: none;
                         background-color: lightblue;
                         height: 100%;
                         width: 60%;
 
-                        .titleProfile {
+                        .titleProfileMobile {
                             height: 20%;
-                            padding-left: 10px;
+                            padding-left: 5px;
                             border-bottom: 1px solid lightblue;
+                            overflow: hidden;
                             display: flex;
                             justify-content: center;
-                            flex-direction: row;
-                            gap: 38px;
-                            overflow: hidden;
+                            align-items: center;
+                            gap: 3px;
 
                             h3 {
                                 color: #0072b1;
-                                font-size: 20px;
+                                font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                position: relative;
-                                bottom: 13px;
                             }
 
-                            .logoProfile {
+                            .logoProfileMobile {
                                 background-image: url("/src/Assets/Images/Profile.png");
                                 background-repeat: no-repeat;
                                 background-position: center;
@@ -279,23 +1293,24 @@
                             }
                         }
 
-                        .contentProfile {
+                        .contentProfileMobile {
                             background-color: #0072b1;
                             height: 80%;
-                            padding-left: 10px;
+                            padding-left: 5px;
                             overflow: hidden;
 
                             p {
                                 color: white;
+                                font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                                 position: relative;
-                                bottom: 10px;
+                                bottom: 3px;
                             }
                         }
                     }
 
-                    .hC1-2 {
+                    .hC1-2M {
                         display: none;
                         background-image: url("/src/Assets/Images/Photo.jpeg");
                         background-repeat: no-repeat;
@@ -307,74 +1322,71 @@
                     }
                 }
 
-                .heroContent1:hover {
+                .heroContent1Mobile:hover {
                     border: 1px solid lightblue;
                     filter: drop-shadow(0 0 2em #0072b1);
                 }
 
-                .heroContent1:hover .hC1-1 {
+                .heroContent1Mobile:hover .hC1-1M {
                     animation: fadeIn 0.3s;
                     display: block;
                 }
 
-                .heroContent1:hover .hC1-2 {
+                .heroContent1Mobile:hover .hC1-2M {
                     animation: fadeIn 0.3s;
                     display: block;
                 }
 
-                .heroContent1:hover .hC-1T {
+                .heroContent1Mobile:hover .hC-1TM {
                     display: none;
                 }
 
-                .heroContent2 {
+                .heroContent2Mobile {
                     background-color: black;
-                    height: 90%;
-                    width: 30%;
+                    height: 60px;
+                    width: 100px;
                     cursor: pointer;
                     border: 1px solid white;
-                    border-radius: 10px;
-                    display: flex;
+                    border-radius: 5px;
                     transition: filter 300ms;
                     overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                    .hC-2T {
+                    .hC-2TM {
                         animation: fadeIn 0.3s;
                         display: block;
                         color: white;
-                        font-size: 60px;
+                        font-size: 20px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        position: relative;
-                        top: 5px;
-                        left: 50px;
                     }
 
-                    .hC2-1 {
+                    .hC2-1M {
                         display: none;
                         background-color: gray;
                         height: 100%;
                         width: 60%;
 
-                        .titleProjects {
+                        .titleProjectsMobile {
                             height: 20%;
-                            padding-left: 10px;
+                            padding-left: 5px;
                             border-bottom: 1px solid gray;
+                            gap: 3px;
+                            overflow: hidden;
                             display: flex;
                             justify-content: center;
-                            flex-direction: row;
-                            gap: 20px;
-                            overflow: hidden;
+                            align-items: center;
 
                             h3 {
                                 color: black;
-                                font-size: 20px;
+                                font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                position: relative;
-                                bottom: 13px;
                             }
 
-                            .logoProjects {
+                            .logoProjectsMobile {
                                 background-image: url("/src/Assets/Images/Projects.png");
                                 background-repeat: no-repeat;
                                 background-position: center;
@@ -384,23 +1396,24 @@
                             }
                         }
 
-                        .contentProjects {
+                        .contentProjectsMobile {
                             background-color: black;
                             height: 80%;
-                            padding-left: 10px;
+                            padding-left: 5px;
                             overflow: hidden;
 
                             p {
                                 color: white;
+                                font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                                 position: relative;
-                                bottom: 10px;
+                                bottom: 3px;
                             }
                         }
                     }
 
-                    .hC2-2 {
+                    .hC2-2M {
                         display: none;
                         background-image: url("/src/Assets/Images/Admin.jpeg");
                         background-repeat: no-repeat;
@@ -412,74 +1425,71 @@
                     }
                 }
 
-                .heroContent2:hover {
+                .heroContent2Mobile:hover {
                     border: 1px solid gray;
                     filter: drop-shadow(0 0 2em black);
                 }
 
-                .heroContent2:hover .hC2-1 {
+                .heroContent2Mobile:hover .hC2-1M {
                     animation: fadeIn 0.3s;
                     display: block;
                 }
 
-                .heroContent2:hover .hC2-2 {
+                .heroContent2Mobile:hover .hC2-2M {
                     animation: fadeIn 0.3s;
                     display: block;
                 }
 
-                .heroContent2:hover .hC-2T {
+                .heroContent2Mobile:hover .hC-2TM {
                     display: none;
                 }
 
-                .heroContent3 {
+                .heroContent3Mobile {
                     background-color: #c4302b;
-                    height: 90%;
-                    width: 30%;
+                    height: 60px;
+                    width: 100px;
                     cursor: pointer;
                     border: 1px solid white;
-                    border-radius: 10px;
-                    display: flex;
+                    border-radius: 5px;
                     transition: filter 300ms;
                     overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                    .hC-3T {
+                    .hC-3TM {
                         animation: fadeIn 0.3s;
                         display: block;
                         color: white;
-                        font-size: 60px;
+                        font-size: 20px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        position: relative;
-                        top: 5px;
-                        left: 85px;
                     }
 
-                    .hC3-1 {
+                    .hC3-1M {
                         display: none;
                         background-color: lightcoral;
                         height: 100%;
                         width: 60%;
 
-                        .titleVideos {
+                        .titleVideosMobile {
                             height: 20%;
-                            padding-left: 10px;
+                            padding-left: 5px;
                             border-bottom: 1px solid lightcoral;
+                            gap: 3px;
+                            overflow: hidden;
                             display: flex;
                             justify-content: center;
-                            flex-direction: row;
-                            gap: 38px;
-                            overflow: hidden;
+                            align-items: center;
 
                             h3 {
                                 color: #c4302b;
-                                font-size: 20px;
+                                font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                position: relative;
-                                bottom: 13px;
                             }
 
-                            .logoVideos {
+                            .logoVideosMobile {
                                 background-image: url("/src/Assets/Images/Videos.png");
                                 background-repeat: no-repeat;
                                 background-position: center;
@@ -489,23 +1499,24 @@
                             }
                         }
 
-                        .contentVideos {
+                        .contentVideosMobile {
                             background-color: #c4302b;
                             height: 80%;
-                            padding-left: 10px;
+                            padding-left: 5px;
                             overflow: hidden;
 
                             p {
                                 color: white;
+                                font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                                 position: relative;
-                                bottom: 10px;
+                                bottom: 3px;
                             }
                         }
                     }
 
-                    .hC3-2 {
+                    .hC3-2M {
                         display: none;
                         background-image: url("/src/Assets/Images/VideosBG.jpg");
                         background-repeat: no-repeat;
@@ -517,51 +1528,51 @@
                     }
                 }
 
-                .heroContent3:hover {
+                .heroContent3Mobile:hover {
                     border: 1px solid lightcoral;
                     filter: drop-shadow(0 0 2em #c4302b);
                 }
 
-                .heroContent3:hover .hC3-1 {
+                .heroContent3Mobile:hover .hC3-1M {
                     animation: fadeIn 0.3s;
                     display: block;
                 }
 
-                .heroContent3:hover .hC3-2 {
+                .heroContent3Mobile:hover .hC3-2M {
                     animation: fadeIn 0.3s;
                     display: block;
                 }
 
-                .heroContent3:hover .hC-3T {
+                .heroContent3Mobile:hover .hC-3TM {
                     display: none;
                 }
             }
         }
 
-        .technologySection {
+        .technologySectionMobile {
             background-image: url("/src/Assets/Images/TechnologySectionBG.gif");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             background-color: transparent;
-            height: 650px;
+            height: 230px;
             width: 100%;
             box-shadow: inset 0 0 30px 20px #222;
             overflow: hidden;
 
-            .technology {
+            .technologyMobile {
                 height: 100%;
-                width: 1194px;
-                margin-left: 50px;
+                width: 330px;
+                margin-left: 5px;
 
-                .technologyTitle {
+                .technologyTitleMobile {
                     height: 10%;
                     width: 100%;
 
                     h3 {
                         animation: fadeIn 0.3s;
                         color: #03a062;
-                        font-size: 45px;
+                        font-size: 20px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow:
@@ -569,22 +1580,22 @@
                             0 0 3px black;
                     }
 
-                    .loadingProfessionTitleTech {
-                        height: 30px;
+                    .loadingProfessionTitleTechMobile {
+                        height: 15px;
                         width: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         position: relative;
-                        top: 50px;
-                        right: 600px;
+                        top: 5px;
+                        right: 200px;
 
-                        .loaderProfessionTitleTech {
-                            border: 6px solid #f3f3f3;
+                        .loaderProfessionTitleTechMobile {
+                            border: 3px solid #f3f3f3;
                             border-radius: 50%;
-                            border-top: 6px solid #03a062;
-                            width: 30px;
-                            height: 30px;
+                            border-top: 3px solid #03a062;
+                            width: 15px;
+                            height: 15px;
                             -webkit-animation: spin 2s linear infinite;
                             animation: spin 2s linear infinite;
                         }
@@ -609,103 +1620,112 @@
                     }
                 }
 
-                .technologyContent {
+                .technologyContentMobile {
                     height: 90%;
                     width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
 
-                    .technologyContentBox1 {
+                    .technologyContentBox1Mobile {
                         animation: fadeIn 0.3s;
                         background-color: #333;
                         backdrop-filter: blur(15px);
-                        min-height: 335px;
-                        width: 535px;
+                        height: 110px;
+                        width: 140px;
                         border: 1px inset darkblue;
-                        border-radius: 10px;
+                        border-radius: 5px;
                         box-shadow: 10px 5px 5px #111;
-                        position: relative;
-                        top: 30px;
                         overflow: hidden;
+                        position: relative;
+                        bottom: 10px;
 
-                        .tCB1Title {
+                        .tCB1TitleMobile {
                             background-color: #111;
-                            height: 60px;
+                            height: 20px;
                             width: 100%;
                             border-bottom: 1px solid darkblue;
-                            padding-left: 20px;
                             overflow: hidden;
+                            padding-left: 5px;
+                            display: flex;
+                            justify-content: left;
+                            align-items: center;
 
                             h4 {
                                 color: darkblue;
-                                font-size: 40px;
+                                font-size: 13px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                position: relative;
-                                bottom: 48px;
                             }
                         }
 
-                        .tCB1Content {
+                        .tCB1ContentMobile {
                             width: 100%;
                             display: flex;
                             flex-direction: row;
                             justify-content: center;
                             align-items: center;
-                            gap: 30px;
+                            gap: 15px;
 
-                            .tech {
+                            .techMobile {
                                 background-color: #111;
-                                height: 150px;
-                                width: 150px;
+                                height: 50px;
+                                width: 50px;
                                 border: 1px solid var(--tech-color);
-                                border-radius: 10px;
-                                margin-top: 60px;
+                                border-radius: 3px;
                                 overflow: hidden;
+                                margin-top: 16px;
                                 transition: filter 300ms;
 
-                                .techTitle {
-                                    height: 30px;
+                                .techTitleMobile {
+                                    height: 10px;
                                     width: 100%;
                                     border-bottom: 0.5px solid var(--tech-color);
-                                    padding-left: 10px;
+                                    padding-left: 3px;
                                     overflow: hidden;
+                                    display: flex;
+                                    justify-content: left;
+                                    align-items: center;
 
                                     h5 {
                                         font-style: italic;
                                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                        font-size: 20px;
-                                        position: relative;
-                                        bottom: 30px;
+                                        font-size: 6px;
                                     }
                                 }
 
-                                .techLogo {
+                                .techLogoMobile {
                                     background-repeat: no-repeat;
                                     background-position: center;
-                                    height: 120px;
+                                    height: 40px;
                                     width: 100%;
                                     overflow: hidden;
                                 }
                             }
 
-                            .tech:hover {
+                            .techMobile:hover {
                                 filter: drop-shadow(0 0 2em var(--tech-color));
                             }
 
-                            .loadingTechData {
-                                height: 300px;
-                                width: 95%;
+                            .loadingTechDataMobile {
+                                height: 100%;
+                                width: 100%;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
 
-                                .loaderTech {
-                                    border: 16px solid #f3f3f3;
+                                .loaderTechMobile {
+                                    border: 4px solid #f3f3f3;
                                     border-radius: 50%;
-                                    border-top: 16px solid darkblue;
-                                    width: 120px;
-                                    height: 120px;
+                                    border-top: 4px solid darkblue;
+                                    width: 30px;
+                                    height: 30px;
                                     -webkit-animation: spin 2s linear infinite;
                                     animation: spin 2s linear infinite;
+                                    position: relative;
+                                    top: 20px;
                                 }
 
                                 @-webkit-keyframes spin {
@@ -727,98 +1747,98 @@
                                 }
                             }
 
-                            .noTechData {
-                                height: 90%;
-                                width: 90%;
-                                position: relative;
-                                right: 340px;
-                                bottom: 20px;
+                            .noTechDataMobile {
+                                height: 100%;
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
 
                                 h4 {
                                     width: fit-content;
                                     color: red;
-                                    font-size: 60px;
+                                    font-size: 20px;
                                     font-style: italic;
                                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                                     border: 1px solid red;
                                     border-radius: 48%;
-                                    padding: 20px;
-                                    position: relative;
-                                    top: 10px;
-                                    left: 430px;
+                                    padding: 5px;
                                 }
                             }
                         }
                     }
 
-                    .technologyContentBox2 {
+                    .technologyContentBox2Mobile {
                         animation: fadeIn 0.3s;
                         background-color: #333;
                         backdrop-filter: blur(15px);
-                        min-height: 335px;
-                        width: 535px;
+                        height: 110px;
+                        width: 140px;
                         border: 1px inset darkred;
-                        border-radius: 10px;
+                        border-radius: 5px;
                         box-shadow: 10px 5px 5px #111;
-                        position: relative;
                         overflow: hidden;
+                        position: relative;
+                        bottom: 10px;
 
-                        .tCB2Title {
+                        .tCB2TitleMobile {
                             background-color: #111;
-                            height: 60px;
+                            height: 20px;
                             width: 100%;
                             border-bottom: 1px solid darkred;
-                            padding-left: 20px;
                             overflow: hidden;
+                            padding-left: 5px;
+                            display: flex;
+                            justify-content: left;
+                            align-items: center;
                         }
 
-                        .tCB2Title h4 {
+                        .tCB2TitleMobile h4 {
                             color: darkred;
-                            font-size: 40px;
+                            font-size: 13px;
                             font-style: italic;
                             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            position: relative;
-                            bottom: 48px;
                         }
 
-                        .tCB2Content {
+                        .tCB2ContentMobile {
                             width: 100%;
                             display: flex;
                             flex-direction: row;
                             justify-content: center;
                             align-items: center;
-                            gap: 30px;
+                            gap: 15px;
 
-                            .tech {
+                            .techMobile {
                                 background-color: #111;
-                                height: 150px;
-                                width: 150px;
+                                height: 50px;
+                                width: 50px;
                                 border: 1px solid var(--tech-color);
-                                border-radius: 10px;
-                                margin-top: 60px;
+                                border-radius: 3px;
                                 overflow: hidden;
+                                margin-top: 16px;
                                 transition: filter 300ms;
 
-                                .techTitle {
-                                    height: 30px;
+                                .techTitleMobile {
+                                    height: 10px;
                                     width: 100%;
                                     border-bottom: 0.5px solid var(--tech-color);
-                                    padding-left: 10px;
+                                    padding-left: 3px;
                                     overflow: hidden;
+                                    display: flex;
+                                    justify-content: left;
+                                    align-items: center;
 
                                     h5 {
                                         font-style: italic;
                                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                        font-size: 20px;
-                                        position: relative;
-                                        bottom: 30px;
+                                        font-size: 6px;
                                     }
                                 }
 
-                                .techLogo {
+                                .techLogoMobile {
                                     background-repeat: no-repeat;
                                     background-position: center;
-                                    height: 120px;
+                                    height: 40px;
                                     width: 100%;
                                     overflow: hidden;
                                 }
@@ -828,21 +1848,23 @@
                                 filter: drop-shadow(0 0 2em var(--tech-color));
                             }
 
-                            .loadingTechData {
-                                height: 300px;
-                                width: 95%;
+                            .loadingTechDataMobile {
+                                height: 100%;
+                                width: 100%;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
 
-                                .loaderTech {
-                                    border: 16px solid #f3f3f3;
+                                .loaderTechMobile {
+                                    border: 4px solid #f3f3f3;
                                     border-radius: 50%;
-                                    border-top: 16px solid darkred;
-                                    width: 120px;
-                                    height: 120px;
+                                    border-top: 4px solid darkred;
+                                    width: 30px;
+                                    height: 30px;
                                     -webkit-animation: spin 2s linear infinite;
                                     animation: spin 2s linear infinite;
+                                    position: relative;
+                                    top: 20px;
                                 }
 
                                 @-webkit-keyframes spin {
@@ -864,25 +1886,22 @@
                                 }
                             }
 
-                            .noTechData {
-                                height: 90%;
-                                width: 90%;
-                                position: relative;
-                                right: 340px;
-                                bottom: 20px;
+                            .noTechDataMobile {
+                                height: 100%;
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
 
                                 h4 {
                                     width: fit-content;
                                     color: red;
-                                    font-size: 60px;
+                                    font-size: 20px;
                                     font-style: italic;
                                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                                     border: 1px solid red;
                                     border-radius: 48%;
-                                    padding: 20px;
-                                    position: relative;
-                                    top: 10px;
-                                    left: 430px;
+                                    padding: 5px;
                                 }
                             }
                         }
@@ -891,30 +1910,30 @@
             }
         }
 
-        .professionSection {
+        .professionSectionMobile {
             background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             background-color: transparent;
-            height: 650px;
+            height: 230px;
             width: 100%;
             box-shadow: inset 0 0 30px 20px #222;
             overflow: hidden;
 
-            .profession {
+            .professionMobile {
                 height: 100%;
-                width: 1194px;
-                margin-left: 50px;
+                width: 330px;
+                margin-left: 5px;
 
-                .professionTitle {
+                .professionTitleMobile {
                     height: 10%;
                     width: 100%;
 
                     h3 {
                         animation: fadeIn 0.3s;
                         color: #03a062;
-                        font-size: 45px;
+                        font-size: 20px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow:
@@ -922,7 +1941,7 @@
                             0 0 3px black;
                     }
 
-                    .loadingProfessionOrJobTitle {
+                    .loadingProfessionOrJobTitleMobile {
                         height: 30px;
                         width: 100%;
                         display: flex;
@@ -932,12 +1951,12 @@
                         top: 50px;
                         right: 600px;
 
-                        .loaderProfessionOrJobTitle {
-                            border: 6px solid #f3f3f3;
+                        .loaderProfessionOrJobTitleMobile {
+                            border: 3px solid #f3f3f3;
                             border-radius: 50%;
-                            border-top: 6px solid #03a062;
-                            width: 30px;
-                            height: 30px;
+                            border-top: 3px solid #03a062;
+                            width: 15px;
+                            height: 15px;
                             -webkit-animation: spin 2s linear infinite;
                             animation: spin 2s linear infinite;
                         }
@@ -962,45 +1981,46 @@
                     }
                 }
 
-                .professionContent {
+                .professionContentMobile {
                     height: 90%;
                     width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
 
-                    .professionContentBox1 {
+                    .professionContentBox1Mobile {
                         animation: fadeIn 0.3s;
                         background-color: transparent;
                         backdrop-filter: blur(15px);
-                        width: 535px;
+                        width: 170px;
                         border: 1px inset #03a062;
-                        border-radius: 10px;
+                        border-radius: 5px;
                         box-shadow: 10px 5px 5px #111;
-                        position: relative;
-                        top: 30px;
 
                         p {
                             color: #03a062;
-                            font-size: 30px;
+                            font-size: 9px;
                             font-style: italic;
                             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                             text-shadow:
                                 0 0 7px black,
                                 0 0 3px black;
-                            max-width: 515px;
+                            max-width: 96%px;
                             margin-left: 10px;
                             margin-right: 10px;
                         }
                     }
 
-                    .professionContentBox2 {
+                    .professionContentBox2Mobile {
+                        height: 110px;
+                        width: 140px;
                         animation: fadeIn 0.3s;
                         background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: cover;
+                        background-position: 60% 35%;
+                        background-size: 80%;
                         filter: drop-shadow(0 0 2em var(--company-color));
-                        border-radius: 10px;
-                        position: relative;
-                        bottom: 200px;
-                        left: 650px;
+                        border-radius: 5px;
                         animation: floating 3s ease-in-out infinite;
                     }
 
@@ -1019,14 +2039,14 @@
             }
         }
     }
-}
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
 
-    100% {
-        opacity: 1;
+        100% {
+            opacity: 1;
+        }
     }
 }

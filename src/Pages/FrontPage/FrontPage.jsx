@@ -18,6 +18,7 @@ function FrontPage() {
     const [technologiesBe, setTechnologiesBe] = useState([]);
     const [showFrontEnd, setShowFrontEnd] = useState(false);
     const [showBackEnd, setShowBackEnd] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -44,6 +45,18 @@ function FrontPage() {
                 setLoadingTechnologiesData(false);
             }, 1000);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     const checkConnection = () => {
@@ -157,21 +170,40 @@ function FrontPage() {
 
     return (
         <div className="fP">
-            <div className="frontPageContainer">
-                <Main
-                    connectionLoading={connectionLoading}
-                    connection={connection}
-                    loadingProfessionData={loadingProfessionData}
-                    loadingJobData={loadingJobData}
-                    loadingTechnologiesData={loadingTechnologiesData}
-                    showFrontEnd={showFrontEnd}
-                    showBackEnd={showBackEnd}
-                    professionData={professionData}
-                    jobData={jobData}
-                    techFe={technologiesFe}
-                    techBe={technologiesBe}
-                />
-            </div>
+            {windowWidth >= 1280 && (
+                <div className="frontPageContainer">
+                    <Main
+                        connectionLoading={connectionLoading}
+                        connection={connection}
+                        loadingProfessionData={loadingProfessionData}
+                        loadingJobData={loadingJobData}
+                        loadingTechnologiesData={loadingTechnologiesData}
+                        showFrontEnd={showFrontEnd}
+                        showBackEnd={showBackEnd}
+                        professionData={professionData}
+                        jobData={jobData}
+                        techFe={technologiesFe}
+                        techBe={technologiesBe}
+                    />
+                </div>
+            )}
+            {windowWidth < 1280 && (
+                <div className="frontPageContainerMobile">
+                    <MainMobile
+                        connectionLoading={connectionLoading}
+                        connection={connection}
+                        loadingProfessionData={loadingProfessionData}
+                        loadingJobData={loadingJobData}
+                        loadingTechnologiesData={loadingTechnologiesData}
+                        showFrontEnd={showFrontEnd}
+                        showBackEnd={showBackEnd}
+                        professionData={professionData}
+                        jobData={jobData}
+                        techFe={technologiesFe}
+                        techBe={technologiesBe}
+                    />
+                </div>
+            )}
         </div>
     );
 }
@@ -651,6 +683,491 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                                   backgroundImage: `url(${info.LinkedIn.companyLogo})`,
                                                   height: info.LinkedIn.companyLogoH,
                                                   width: info.LinkedIn.companyLogoW,
+                                                  cursor: "pointer",
+                                              }}
+                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
+                                          />
+                                      )}
+                            </>
+                        )}
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
+}
+
+//Mobile:
+function MainMobile({ connectionLoading, connection, loadingProfessionData, loadingJobData, loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
+    const navigate = useNavigate();
+
+    const handleNavigation = (page) => {
+        if (page === "profile") {
+            navigate(info.routes.profilePage);
+        } else if (page === "projects") {
+            navigate(info.routes.projectsPage);
+        } else if (page === "videos") {
+            navigate(info.routes.videosPage);
+        }
+    };
+
+    return (
+        <main className="mainMobile">
+            {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+            <section className="heroSectionMobile">
+                <AnimatePresence>
+                    <motion.div className="heroTitleMobile" key="herotitlemobile" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
+                        <div className="hTWelcome1Mobile">
+                            <h3 className="hTW1textMobile">
+                                Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
+                            </h3>
+                        </div>
+                        <div className="hTWelcome2Mobile">
+                            {info.api.enabled ? (
+                                professionData?.professionStatus?.profession && !loadingProfessionData ? (
+                                    <p className="hTW2textMobile">
+                                        I'm a <span style={{ color: "green" }}>{professionData?.professionStatus?.profession + " 👨‍💻"}</span>
+                                    </p>
+                                ) : loadingProfessionData ? (
+                                    <motion.div className="loadingProfessionTitleMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                        <div className="loaderProfessionTitleMobile" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.p
+                                        className="hTW2textMobile"
+                                        style={{
+                                            backgroundColor: "transparent",
+                                            backdropFilter: "blur(15px)",
+                                            color: "red",
+                                            height: "fit-content",
+                                            width: "fit-content",
+                                            border: "1px solid red",
+                                            borderRadius: "5px",
+                                            padding: "5px",
+                                            animation: "none",
+                                        }}
+                                        key="htw2textfailmobile"
+                                        transition={{ delay: 0.5 }}
+                                        initial={{ opacity: 0, y: 100 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                    >
+                                        NO DATA!
+                                    </motion.p>
+                                )
+                            ) : !loadingProfessionData ? (
+                                <p className="hTW2textMobile">
+                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession + " 👨‍💻"}</span>
+                                </p>
+                            ) : (
+                                <motion.div className="loadingProfessionTitleMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionTitleMobile" />
+                                </motion.div>
+                            )}
+                        </div>
+                        <div className="hTWelcome3Mobile">
+                            <h3>Welcome to the MatrixZone</h3>
+                        </div>
+                    </motion.div>
+                    <motion.div className="heroContentMobile" key="herocontentmobile" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
+                        <motion.div
+                            className="heroContent1Mobile"
+                            onClick={() => handleNavigation("profile")}
+                            key="herocontent1mobile"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <h2 className="hC-1TM">PROFILE</h2>
+                            <div className="hC1-1M">
+                                <div className="titleProfileMobile">
+                                    <h3>View my profile</h3>
+                                    <div className="logoProfileMobile" />
+                                </div>
+                                <div className="contentProfileMobile">
+                                    <p>- About me.</p>
+                                    <p>- My educational background.</p>
+                                    <p>- My experience.</p>
+                                    <p>- My skills.</p>
+                                </div>
+                            </div>
+                            <div className="hC1-2M" />
+                        </motion.div>
+                        <motion.div
+                            className="heroContent2Mobile"
+                            onClick={() => handleNavigation("projects")}
+                            key="herocontent2mobile"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <h2 className="hC-2TM">PROJECTS</h2>
+                            <div className="hC2-1M">
+                                <div className="titleProjectsMobile">
+                                    <h3>View my projects</h3>
+                                    <div className="logoProjectsMobile" />
+                                </div>
+                                <div className="contentProjectsMobile">
+                                    <p>- About my projects.</p>
+                                    <p>- My projects.</p>
+                                </div>
+                            </div>
+                            <div className="hC2-2M" />
+                        </motion.div>
+                        <motion.div
+                            className="heroContent3Mobile"
+                            onClick={() => handleNavigation("videos")}
+                            key="herocontent3mobile"
+                            whileHover={{
+                                scale: 1.1,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <h2 className="hC-3TM">VIDEOS</h2>
+                            <div className="hC3-1M">
+                                <div className="titleVideosMobile">
+                                    <h3>View my videos</h3>
+                                    <div className="logoVideosMobile" />
+                                </div>
+                                <div className="contentVideosMobile">
+                                    <p>- About my videos.</p>
+                                    <p>- My videos.</p>
+                                </div>
+                            </div>
+                            <div className="hC3-2M" />
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+            </section>
+            <section className="technologySectionMobile">
+                <div className="technologyMobile">
+                    <div className="technologyTitleMobile">
+                        {info.api.enabled ? (
+                            professionData?.professionStatus && !loadingProfessionData ? (
+                                <motion.h3 key="technologysectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {professionData?.professionStatus?.professionTech}
+                                    {professionData?.professionStatus?.professionDetailed && (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{professionData?.professionStatus?.professionDetailed}</span>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                        </>
+                                    )}
+                                </motion.h3>
+                            ) : loadingProfessionData ? (
+                                <motion.div className="loadingProfessionTitleTechMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionTitleTechMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.h3
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        backdropFilter: "blur(15px)",
+                                        color: "red",
+                                        height: "fit-content",
+                                        width: "fit-content",
+                                        border: "1px solid red",
+                                        borderRadius: "5px",
+                                        padding: "5px",
+                                        animation: "none",
+                                    }}
+                                    key="professiondatafailmobile"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: 100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    NO DATA!
+                                </motion.h3>
+                            )
+                        ) : loadingProfessionData ? (
+                            <motion.div className="loadingProfessionTitleTechMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionTitleTechMobile" />
+                            </motion.div>
+                        ) : (
+                            <motion.h3 key="technologysectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.professionTech}
+                                {info.LinkedIn.professionDetailed && (
+                                    <>
+                                        <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                        <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                        <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                    </>
+                                )}
+                            </motion.h3>
+                        )}
+                    </div>
+                    <div className="technologyContentMobile">
+                        {showFrontEnd && (
+                            <div className="technologyContentBox1Mobile" style={showFrontEnd && !showBackEnd ? { marginRight: "150px" } : { marginRight: "0px" }}>
+                                <div className="tCB1TitleMobile">
+                                    <h4>Front-end tech stack</h4>
+                                </div>
+                                <div className="tCB1ContentMobile">
+                                    <AnimatePresence>
+                                        {techFe.length > 0 && !loadingTechnologiesData ? (
+                                            techFe.map((tech, index) => (
+                                                <motion.a
+                                                    className="techMobile"
+                                                    key={index}
+                                                    style={{ "--tech-color": tech.color, textDecoration: "none" }}
+                                                    href={tech.infoLink}
+                                                    target="_blank"
+                                                    initial={{ opacity: 0, y: -100 }}
+                                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    <div className="techTitleMobile">
+                                                        <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                                    </div>
+                                                    <div className="techLogoMobile" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                </motion.a>
+                                            ))
+                                        ) : loadingTechnologiesData ? (
+                                            <motion.div className="loadingTechDataMobile" key="loadingtechdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <div className="loaderTechMobile" />
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div className="noTechDataMobile" key="notechdatamobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <h4>NO DATA!</h4>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            </div>
+                        )}
+                        {showBackEnd && (
+                            <div className="technologyContentBox2Mobile">
+                                <div className="tCB2TitleMobile">
+                                    <h4>Back-end tech stack</h4>
+                                </div>
+                                <div className="tCB2ContentMobile">
+                                    <AnimatePresence>
+                                        {techBe.length > 0 && !loadingTechnologiesData ? (
+                                            techBe.map((tech, index) => (
+                                                <motion.a
+                                                    className="techMobile"
+                                                    key={index}
+                                                    style={{ "--tech-color": tech.color, textDecoration: "none" }}
+                                                    href={tech.infoLink}
+                                                    target="_blank"
+                                                    initial={{ opacity: 0, y: -100 }}
+                                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    <div className="techTitleMobile">
+                                                        <h5 style={{ color: tech.color }}>{tech.name}</h5>
+                                                    </div>
+                                                    <div className="techLogoMobile" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
+                                                </motion.a>
+                                            ))
+                                        ) : loadingTechnologiesData ? (
+                                            <motion.div className="loadingTechDataMobile" key="loadingtechdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <div className="loaderTechMobile" />
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div className="noTechDataMobile" key="notechdatamobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                                <h4>NO DATA!</h4>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </section>
+            <section className="professionSectionMobile">
+                <div className="professionMobile">
+                    <div className="professionTitleMobile">
+                        {info.api.enabled ? (
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle + " at " : professionData?.professionStatus?.profession}
+                                    <span
+                                        style={{
+                                            color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                        }}
+                                    >
+                                        {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : ""}
+                                    </span>
+                                    {!jobData?.jobStatus?.employed ? (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                        </>
+                                    ) : (
+                                        ""
+                                    )}
+                                    <span title={jobData?.jobStatus?.employed ? "Currently employed" : "Currently unemployed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
+                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? " 💼" : " 📋"}
+                                    </span>
+                                </motion.h3>
+                            ) : loadingProfessionData || loadingJobData ? (
+                                <motion.div className="loadingProfessionOrJobTitleMobile" key="loadingprofessionorjobtitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionOrJobTitleMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.h3
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        backdropFilter: "blur(15px)",
+                                        color: "red",
+                                        height: "fit-content",
+                                        width: "fit-content",
+                                        border: "1px solid red",
+                                        borderRadius: "5px",
+                                        padding: "5px",
+                                        animation: "none",
+                                    }}
+                                    key="professionorjobdatafailmobile"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: 100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    NO DATA!
+                                </motion.h3>
+                            )
+                        ) : loadingProfessionData || loadingJobData ? (
+                            <motion.div className="loadingProfessionOrJobTitleMobile" key="loadingprofessionorjobtitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionOrJobTitleMobile" />
+                            </motion.div>
+                        ) : (
+                            <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
+                                <span
+                                    style={{
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                                </span>
+                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                    <>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                        <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                    </>
+                                ) : (
+                                    ""
+                                )}
+                                <span
+                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                    style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
+                                </span>
+                            </motion.h3>
+                        )}
+                    </div>
+                    <div className="professionContentMobile">
+                        {professionData && !loadingProfessionData && (
+                            <>
+                                <motion.div
+                                    className="professionContentBox1Mobile"
+                                    style={{ display: info.api.enabled && !professionData?.professionStatus && "none" }}
+                                    key="professioncontentbox1mobile"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    {info.api.enabled ? (
+                                        <p>
+                                            {jobData?.jobStatus?.employed ? "Currently working as a " + jobData?.jobStatus?.jobTitle + " at " : "Currently looking for work as a "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : professionData?.professionStatus?.profession}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I use technologies such as{" "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStack : professionData?.professionStatus?.professionTechStack}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I also use tools such as{" "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobAdditionalTech : professionData?.professionStatus?.professionAdditionalTech}
+                                            </span>
+                                            .
+                                        </p>
+                                    ) : (
+                                        <p>
+                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I use technologies such as{" "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I also use tools such as{" "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
+                                            </span>
+                                            .
+                                        </p>
+                                    )}
+                                </motion.div>
+                                {info.api.enabled
+                                    ? jobData?.jobStatus?.employed && (
+                                          <div
+                                              className="professionContentBox2Mobile"
+                                              style={{
+                                                  "--company-color": jobData?.jobStatus?.companyColor,
+                                                  backgroundImage: `url(${jobData?.jobStatus?.companyLogo})`,
+                                                  height: jobData?.jobStatus?.companyLogoH / 2,
+                                                  width: jobData?.jobStatus?.companyLogoW / 2,
+                                                  cursor: "pointer",
+                                              }}
+                                              onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
+                                          />
+                                      )
+                                    : info.LinkedIn.employed && (
+                                          <div
+                                              className="professionContentBox2Mobile"
+                                              style={{
+                                                  "--company-color": info.LinkedIn.companyColor,
+                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
                                                   cursor: "pointer",
                                               }}
                                               onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
