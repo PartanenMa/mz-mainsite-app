@@ -44,6 +44,7 @@
             position: relative;
             bottom: 20px;
             animation: glow 1s ease-in-out infinite alternate;
+            cursor: default;
         }
 
         @keyframes glow {
@@ -99,6 +100,7 @@
                 text-shadow: 0.3px 0.3px 0 lightgreen;
                 position: relative;
                 top: 5px;
+                cursor: default;
             }
         }
     }
@@ -148,6 +150,7 @@
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             text-shadow: 1px 1px 0 lightgreen;
+            cursor: default;
         }
     }
 

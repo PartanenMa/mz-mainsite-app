@@ -79,11 +79,11 @@ function Terminal({ isTerminalOpen, setIsTerminalOpen }) {
                                 <div className="terminalInputField">
                                     {terminalCommands.map((command, index) => (
                                         <div key={index}>
-                                            <h3>{command}</h3>
+                                            <h3 style={{ cursor: "default" }}>{command}</h3>
                                         </div>
                                     ))}
                                     <div>
-                                        <p style={{ paddingLeft: "5px" }}>$</p>
+                                        <p style={{ paddingLeft: "5px", cursor: "default" }}>$</p>
                                         <input
                                             type="text"
                                             value={currentCommand}

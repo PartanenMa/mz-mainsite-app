@@ -29,7 +29,7 @@ function FooterAdmin() {
                             <AnimatePresence>
                                 <motion.div
                                     className="footerInfoBoxTitleLogo"
-                                    title="Go to home page"
+                                    title="Go to dashboard"
                                     onClick={() => navigate(info.routes.dashboardPage)}
                                     key="fibtlA"
                                     whileHover={{
@@ -207,7 +207,7 @@ function FooterAdminMobile() {
                 <AnimatePresence>
                     <motion.div
                         className="footerMobileTitleLogo"
-                        title="Go to front page"
+                        title="Go to dashboard"
                         onClick={() => navigate(info.routes.dashboardPage)}
                         key="fibtl"
                         whileHover={{

@@ -32,7 +32,7 @@ export const dataFe = {
     professionStatus: {
         profession: "Software Developer",
         professionDetailed: "Web Developer",
-        professionTech: "Front-end Developer",
+        professionTech: "Full-stack Developer",
         professionTechStack: "React, Sass, Express.js and MongoDB",
         professionTechStackFe: "React and Sass",
         professionTechStackBe: "Express.js and MongoDB",
@@ -134,7 +134,7 @@ export const dataFe = {
                 timeAndPlace: "16.08.2021 - present, Pori, Finland",
                 educationDescription:
                     "Studied information technology, automation technology and some electrical engineering, in addition to finnish, english and swedish languages, and the basics of entrepreneurship. My studies included a minimum of 240 credits worth of courses, mandatory internships, and a thesis.",
-                extra: "Total credits earned: 285",
+                extra: "Total credits earned: 290",
                 educationSubjects: "IT infrastructure, software development, data science, automation, 3D technology, robotics, math, finnish, english, swedish, entrepreneurship",
                 color: "#00a5cd",
                 image: SAMKLogo,
@@ -330,7 +330,7 @@ export const dataFe = {
                     {
                         id: 0,
                         name: "JavaScript",
-                        skillLevel: "experienced",
+                        skillLevel: "intermediate",
                         color: "#f0db4f",
                         image: JavaScriptLogo,
                         backgroundSize: "65%",
@@ -356,7 +356,7 @@ export const dataFe = {
                     {
                         id: 0,
                         name: "Express.js",
-                        skillLevel: "experienced",
+                        skillLevel: "intermediate",
                         color: "#808080",
                         image: ExpressjsLogo,
                         backgroundSize: "70%",

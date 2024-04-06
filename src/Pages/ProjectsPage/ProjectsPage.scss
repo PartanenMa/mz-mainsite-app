@@ -18,6 +18,25 @@
         margin: auto;
         box-shadow: 0 0 30px 5px #03a062;
         overflow: hidden;
+
+        .projectTitle {
+            display: none;
+            background-color: black;
+            height: 20%;
+            width: 100%;
+            overflow: hidden;
+
+            h4 {
+                color: white;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 28px;
+                left: 10px;
+                cursor: default;
+            }
+        }
     }
 }
 
@@ -43,6 +62,7 @@
             position: relative;
             bottom: 20px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -71,8 +91,7 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 padding-left: 10px;
-                position: relative;
-                top: 0px;
+                cursor: default;
             }
         }
 
@@ -117,6 +136,7 @@
         bottom: 40px;
         font-style: italic;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        cursor: default;
     }
 }
 
@@ -141,6 +161,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -199,6 +220,7 @@
                     bottom: 15px;
                     left: 10px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
 
                 .h4_2 {
@@ -209,6 +231,7 @@
                     bottom: 32px;
                     left: 10px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -232,6 +255,7 @@
                     position: relative;
                     left: 6px;
                     bottom: 13px;
+                    cursor: default;
                 }
             }
         }
@@ -258,6 +282,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -299,24 +324,6 @@
                 }
             }
 
-            .projectTitle {
-                display: none;
-                background-color: black;
-                height: 20%;
-                width: 100%;
-                overflow: hidden;
-
-                h4 {
-                    color: white;
-                    font-size: 30px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 28px;
-                    left: 10px;
-                }
-            }
-
             .projectContent {
                 display: none;
                 height: 80%;
@@ -345,6 +352,7 @@
                             position: relative;
                             bottom: 8px;
                             left: 10px;
+                            cursor: default;
                         }
                     }
 
@@ -368,6 +376,7 @@
                                 position: relative;
                                 bottom: 18px;
                                 left: 10px;
+                                cursor: default;
                             }
                         }
 
@@ -384,6 +393,7 @@
                                 position: relative;
                                 bottom: 10px;
                                 left: 10px;
+                                cursor: default;
                             }
                         }
                     }
@@ -402,6 +412,7 @@
                             position: relative;
                             bottom: 8px;
                             left: 10px;
+                            cursor: default;
                         }
                     }
                 }
@@ -454,6 +465,7 @@
                 border: 1px solid yellow;
                 border-radius: 48%;
                 padding: 20px;
+                cursor: default;
             }
         }
 
@@ -510,6 +522,7 @@
                 border: 1px solid red;
                 border-radius: 48%;
                 padding: 20px;
+                cursor: default;
             }
         }
     }
@@ -551,6 +564,7 @@
             font-size: 10px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
         }
     }
 
@@ -581,6 +595,7 @@
                 padding-left: 10px;
                 position: relative;
                 top: 0px;
+                cursor: default;
             }
         }
 
@@ -624,6 +639,7 @@
         font-size: 40px;
         font-style: italic;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        cursor: default;
     }
 }
 
@@ -706,6 +722,7 @@
                     bottom: 13px;
                     left: 10px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
 
                 .h4_2M {
@@ -717,6 +734,7 @@
                     bottom: 26px;
                     left: 10px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -739,6 +757,7 @@
                     max-width: 96%;
                     position: relative;
                     bottom: 12px;
+                    cursor: default;
                 }
             }
         }
@@ -765,6 +784,7 @@
             font-size: 12px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
         }
     }
 
@@ -821,6 +841,7 @@
                     position: relative;
                     bottom: 14px;
                     left: 5px;
+                    cursor: default;
                 }
             }
 
@@ -852,6 +873,7 @@
                             position: relative;
                             bottom: 4px;
                             left: 5px;
+                            cursor: default;
                         }
                     }
 
@@ -875,6 +897,7 @@
                                 position: relative;
                                 bottom: 9px;
                                 left: 5px;
+                                cursor: default;
                             }
                         }
 
@@ -891,6 +914,7 @@
                                 position: relative;
                                 bottom: 6px;
                                 left: 5px;
+                                cursor: default;
                             }
                         }
                     }
@@ -909,6 +933,7 @@
                             position: relative;
                             bottom: 4px;
                             left: 5px;
+                            cursor: default;
                         }
                     }
                 }
@@ -961,6 +986,7 @@
                 border: 1px solid yellow;
                 border-radius: 48%;
                 padding: 20px;
+                cursor: default;
             }
         }
 
@@ -1017,6 +1043,7 @@
                 border: 1px solid red;
                 border-radius: 48%;
                 padding: 20px;
+                cursor: default;
             }
         }
     }

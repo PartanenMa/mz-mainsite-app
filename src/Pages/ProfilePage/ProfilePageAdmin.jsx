@@ -582,21 +582,19 @@ function Education({ loadingProfileData, statusDB, educations, getProfileC, getP
                         educations.map((education, index) => (
                             <motion.div
                                 className="education"
-                                style={{ "--education-color": education.color }}
+                                style={{ "--education-color": education.color, backgroundColor: education.color }}
                                 key={index}
                                 initial={{ opacity: 0, y: -100 }}
                                 animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                onClick={() => openOrCloseEducation(index)}
                                 whileHover={{
                                     scale: 1.01,
                                     transition: { duration: 0.1 },
                                 }}
-                                whileTap={{ scale: 0.99 }}
                             >
                                 <div className="educationTitle">
                                     <h4>{education.schoolName}</h4>
                                 </div>
-                                <div className="educationContent1" style={{ backgroundColor: education.color }}>
+                                <motion.div className="educationContent1" key={index} onClick={() => openOrCloseEducation(index)} whileTap={{ scale: 0.99 }}>
                                     <div className="eC1">
                                         <p>{education.degreeName}</p>
                                         <p>{education.timeAndPlace}</p>
@@ -618,7 +616,7 @@ function Education({ loadingProfileData, statusDB, educations, getProfileC, getP
                                             backgroundSize: education.backgroundSize,
                                         }}
                                     />
-                                </div>
+                                </motion.div>
                                 <div className="educationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
                                     <p>{education.educationDescription}</p>
                                     <p>{education.extra}</p>
@@ -766,18 +764,16 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                         experiences.map((experience, index) => (
                             <motion.div
                                 className="experience"
-                                style={{ "--experience-color": experience.color }}
+                                style={{ "--experience-color": experience.color, backgroundColor: experience.color }}
                                 key={index}
                                 initial={{ opacity: 0, y: -100 }}
                                 animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                onClick={() => openOrCloseExperience(index)}
                                 whileHover={{
                                     scale: 1.01,
                                     transition: { duration: 0.1 },
                                 }}
-                                whileTap={{ scale: 0.99 }}
                             >
-                                <div className="experienceTitle" style={{ backgroundColor: experience.color }}>
+                                <motion.div className="experienceTitle" key={index} onClick={() => openOrCloseExperience(index)} whileTap={{ scale: 0.99 }}>
                                     <div className="experienceTitleContainer">
                                         <div className="eTC1">
                                             <h4>
@@ -808,21 +804,34 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                             backgroundColor: !experience.image && experience.color,
                                         }}
                                     />
-                                </div>
+                                </motion.div>
                                 <div className="experienceContentContainer" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     {experience.experiences.map((e, i) => (
                                         <div className="experienceContent">
                                             <>
+                                                <div className="createRole">
+                                                    <CRUDProfileButton loading={loadingProfileData} action={"Create"} id={experience.id} data={"role"} getProfile={getProfileD} />
+                                                </div>
                                                 <div className="companyTitle">
-                                                    <p>
-                                                        {e.workTitle + " at "}
-                                                        {e.companyName}
-                                                        {e.current && (
-                                                            <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>
-                                                                {" (CURRENTLY WORKING IN THIS ROLE)"}
-                                                            </span>
+                                                    <div className="cT1">
+                                                        <p>
+                                                            {e.workTitle + " at "}
+                                                            {e.companyName}
+                                                            {e.current && (
+                                                                <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>
+                                                                    {" (CURRENTLY WORKING IN THIS ROLE)"}
+                                                                </span>
+                                                            )}
+                                                        </p>
+                                                    </div>
+                                                    <div className="cT2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={experience.id} data={"role"} getProfile={getProfileU} />
+                                                                <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={experience.id} data={"role"} getProfile={getProfileD} />
+                                                            </>
                                                         )}
-                                                    </p>
+                                                    </div>
                                                 </div>
                                                 <div className="workTitle">
                                                     <p>
@@ -847,11 +856,17 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                             ;
                                         </div>
                                     ))}
-                                    <div className="totalExperience" style={{ backgroundColor: experience.color }}>
+                                    <motion.div
+                                        className="totalExperience"
+                                        style={{ backgroundColor: experience.color }}
+                                        key={index}
+                                        onClick={() => openOrCloseExperience(index)}
+                                        whileTap={{ scale: 0.99 }}
+                                    >
                                         <h5>
                                             Total experience at {experience.companyName} {"(" + getTotalExperience(index) + ")"}
                                         </h5>
-                                    </div>
+                                    </motion.div>
                                 </div>
                             </motion.div>
                         ))
@@ -871,6 +886,20 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
 }
 
 function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU, getProfileD }) {
+    const getSkillTitle = (skillLevel) => {
+        if (skillLevel === "beginner") {
+            return "Limited knowledge on the skill.";
+        } else if (skillLevel === "experienced") {
+            return "Some experience using the skill.";
+        } else if (skillLevel === "intermediate") {
+            return "Comfortable using the skill.";
+        } else if (skillLevel === "advanced") {
+            return "At least 1 year of real work experience.";
+        } else if (skillLevel === "professional") {
+            return "At least 3 years of real work experience.";
+        }
+    };
+
     const getSkillLevelTitle = (skillLevel) => {
         if (skillLevel === "beginner") {
             return "Beginner";
@@ -964,7 +993,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1019,7 +1048,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1074,7 +1103,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1153,7 +1182,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1208,7 +1237,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1263,7 +1292,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1342,7 +1371,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1397,7 +1426,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1452,7 +1481,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                         </div>
                                                         <div className="sC1-2">
                                                             <div className="sC1-2-1">
-                                                                <p>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                                <p title={getSkillTitle(skill.skillLevel)}>{getSkillLevelTitle(skill.skillLevel)}</p>
                                                             </div>
                                                             <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
                                                         </div>
@@ -1594,9 +1623,7 @@ function ContactMe() {
             <div className="contactContent">
                 <div className="phoneContainer">
                     <div className="phoneContainerTitle">
-                        <h3>
-                            PHONE<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>☎️</span>
-                        </h3>
+                        <h3>PHONE</h3>
                     </div>
                     <div className="phoneContainerContent">
                         <div className="phone1">
@@ -1607,9 +1634,7 @@ function ContactMe() {
                 </div>
                 <div className="emailContainer">
                     <div className="emailContainerTitle">
-                        <h3>
-                            EMAIL<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>📧</span>
-                        </h3>
+                        <h3>EMAIL</h3>
                     </div>
                     <div className="emailContainerContent">
                         <div className="email1">
@@ -2849,9 +2874,7 @@ function ContactMeMobile() {
             <div className="contactContentMobile">
                 <div className="phoneContainerMobile">
                     <div className="phoneContainerTitleMobile">
-                        <h3>
-                            PHONE<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>☎️</span>
-                        </h3>
+                        <h3>PHONE</h3>
                     </div>
                     <div className="phoneContainerContentMobile">
                         <div className="phone1Mobile">
@@ -2862,9 +2885,7 @@ function ContactMeMobile() {
                 </div>
                 <div className="emailContainerMobile">
                     <div className="emailContainerTitleMobile">
-                        <h3>
-                            EMAIL<span style={{ fontStyle: "normal", textShadow: "none", paddingLeft: "5px" }}>📧</span>
-                        </h3>
+                        <h3>EMAIL</h3>
                     </div>
                     <div className="emailContainerContentMobile">
                         <div className="email1Mobile">

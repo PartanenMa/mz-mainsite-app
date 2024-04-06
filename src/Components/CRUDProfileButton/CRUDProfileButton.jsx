@@ -75,6 +75,9 @@ function CRUDProfileButton(props) {
                         setRequiredData(data.profileData.educations.find((d) => d.id === props.id));
                     } else if (props.data === "experience") {
                         setRequiredData(data.profileData.experiences.find((d) => d.id === props.id));
+                    } else if (props.data === "role") {
+                        const experience = data.profileData.experiences.find((d) => d.id === props.id);
+                        setRequiredData(experience.experiences.find((d) => d.id === props.id));
                     } else if (props.data === "skill") {
                         if (props.dataSkillType === "us") {
                             setRequiredData(data.profileData.skills.webDevelopmentSoftware.utilitySoftware.find((d) => d.id === props.id));
@@ -298,6 +301,20 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                 backgroundSize: "",
                 current: false,
                 experiences: [],
+            });
+        } else if (data === "role") {
+            setFormData({
+                companyName: "",
+                color: "",
+                current: false,
+                workTitle: "",
+                workType: "",
+                startDate: "",
+                endDate: "",
+                time: 0,
+                place: "",
+                workDescription: "",
+                workTech: "",
             });
         } else if (data === "skill") {
             setFormData({
@@ -550,6 +567,63 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                                         </div>
                                     </>
                                 )}
+                                {data === "role" && (
+                                    <>
+                                        <div className="formComponent" style={{ height: "25%" }}>
+                                            <div>
+                                                <label htmlFor="companyName">Company name:</label>
+                                                <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="color">Color:</label>
+                                                <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="current">{"Current (true/false):"}</label>
+                                                <select name="current" id="current" defaultValue={formData.current}>
+                                                    <option value="true">True</option>
+                                                    <option value="false">False</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="workTitle">Work title:</label>
+                                                <input type="text" id="workTitle" name="workTitle" value={formData.workTitle} onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className="formComponent" style={{ height: "25%" }}>
+                                            <div>
+                                                <label htmlFor="workType">Work type:</label>
+                                                <input type="text" id="workType" name="workType" value={formData.workType} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="time">{"Time (months):"}</label>
+                                                <input type="text" id="time" name="time" value={formData.time} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="startDate">Start date:</label>
+                                                <input type="text" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="endDate">End date:</label>
+                                                <input type="text" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className="formComponent" style={{ height: "30%" }}>
+                                            <div>
+                                                <label htmlFor="place">Place:</label>
+                                                <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="workDescription">Work description:</label>
+                                                <input type="text" id="workDescription" name="workDescription" value={formData.workDescription} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="workTech">Work tech:</label>
+                                                <input type="text" id="workTech" name="workTech" value={formData.workTech} onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                                 {data === "skill" && (
                                     <>
                                         <div className="formComponent" style={{ height: "25%" }}>
@@ -693,6 +767,20 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
                 backgroundSize: profileData?.backgroundSize,
                 current: profileData?.current,
                 experiences: profileData?.experiences,
+            });
+        } else if (data === "role") {
+            setFormData({
+                companyName: profileData?.companyName,
+                color: profileData?.color,
+                current: profileData?.current,
+                workTitle: profileData?.workTitle,
+                workType: profileData?.workType,
+                startDate: profileData?.startDate,
+                endDate: profileData?.endDate,
+                time: profileData?.time,
+                place: profileData?.place,
+                workDescription: profileData?.workDescription,
+                workTech: profileData?.workTech,
             });
         } else if (data === "skill") {
             setFormData({
@@ -942,6 +1030,63 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
                                                     <option value="true">True</option>
                                                     <option value="false">False</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                                {data === "role" && (
+                                    <>
+                                        <div className="formComponent" style={{ height: "25%" }}>
+                                            <div>
+                                                <label htmlFor="companyName">Company name:</label>
+                                                <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="color">Color:</label>
+                                                <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="current">{"Current (true/false):"}</label>
+                                                <select name="current" id="current" defaultValue={formData.current}>
+                                                    <option value="true">True</option>
+                                                    <option value="false">False</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="workTitle">Work title:</label>
+                                                <input type="text" id="workTitle" name="workTitle" value={formData.workTitle} onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className="formComponent" style={{ height: "25%" }}>
+                                            <div>
+                                                <label htmlFor="workType">Work type:</label>
+                                                <input type="text" id="workType" name="workType" value={formData.workType} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="time">{"Time (months):"}</label>
+                                                <input type="text" id="time" name="time" value={formData.time} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="startDate">Start date:</label>
+                                                <input type="text" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="endDate">End date:</label>
+                                                <input type="text" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className="formComponent" style={{ height: "30%" }}>
+                                            <div>
+                                                <label htmlFor="place">Place:</label>
+                                                <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="workDescription">Work description:</label>
+                                                <input type="text" id="workDescription" name="workDescription" value={formData.workDescription} onChange={handleChange} />
+                                            </div>
+                                            <div>
+                                                <label htmlFor="workTech">Work tech:</label>
+                                                <input type="text" id="workTech" name="workTech" value={formData.workTech} onChange={handleChange} />
                                             </div>
                                         </div>
                                     </>

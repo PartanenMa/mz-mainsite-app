@@ -84,6 +84,7 @@
             position: relative;
             bottom: 30px;
             animation: glow 1s ease-in-out infinite alternate;
+            cursor: default;
         }
 
         @keyframes glow {
@@ -188,6 +189,7 @@
             position: relative;
             bottom: 30px;
             animation: glow 1s ease-in-out infinite alternate;
+            cursor: default;
         }
 
         @keyframes glow {

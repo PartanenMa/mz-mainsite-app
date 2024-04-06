@@ -20,6 +20,7 @@
             position: relative;
             bottom: 20px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -164,6 +165,7 @@
                 position: relative;
                 left: 12px;
                 bottom: 25px;
+                cursor: default;
             }
 
             .x-buttonAdmin {
@@ -278,6 +280,7 @@
                 position: relative;
                 left: 12px;
                 bottom: 25px;
+                cursor: default;
             }
 
             .settings_X-button {
@@ -312,6 +315,7 @@
                 position: relative;
                 bottom: 85px;
                 left: 50px;
+                cursor: default;
             }
 
             .optionBG {
@@ -375,6 +379,7 @@
                 position: relative;
                 left: 12px;
                 bottom: 25px;
+                cursor: default;
             }
 
             .logOut_X-button {
@@ -478,6 +483,7 @@
         position: relative;
         bottom: 30px;
         left: 15px;
+        cursor: default;
     }
 
     .showGIF {
@@ -517,6 +523,7 @@
             font-size: 10px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
         }
     }
 
@@ -655,20 +662,21 @@
             .logOutContainer2Mobile {
                 display: block;
                 background-color: #111;
-                height: 300px;
-                width: 200px;
-                border-radius: 10px;
+                height: 150px;
+                width: 100px;
+                border-radius: 5px;
                 border: 1px solid #03a062;
 
                 h3 {
                     animation: fadeIn 0.3s;
                     color: #03a062;
-                    font-size: 30px;
+                    font-size: 15px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 12px;
-                    bottom: 25px;
+                    left: 6px;
+                    bottom: 12px;
+                    cursor: default;
                 }
 
                 .x-buttonAdminMobile {
@@ -676,15 +684,16 @@
                     background-color: red;
                     color: white;
                     cursor: pointer;
-                    height: 30px;
-                    width: 30px;
+                    height: 15px;
+                    width: 15px;
                     border: 1px solid white;
-                    border-radius: 5px;
-                    font-size: 20px;
+                    border-radius: 2px;
+                    padding: 1px;
+                    font-size: 10px;
                     font-style: italic;
                     position: relative;
-                    bottom: 85px;
-                    left: 160px;
+                    bottom: 46px;
+                    left: 80px;
                 }
 
                 .x-buttonAdminMobile:hover {
@@ -703,11 +712,11 @@
                     border-radius: 100%;
                     border: 1px solid #03a062;
                     cursor: pointer;
-                    height: 100px;
-                    width: 100px;
+                    height: 50px;
+                    width: 50px;
                     position: relative;
-                    bottom: 65px;
-                    left: 45px;
+                    bottom: 32px;
+                    left: 22px;
                     transition: filter 300ms;
                 }
 
@@ -720,16 +729,16 @@
                     background-color: orange;
                     color: white;
                     cursor: pointer;
-                    height: 48px;
-                    width: 127px;
-                    border-radius: 10px;
+                    height: 22px;
+                    width: 63px;
+                    border-radius: 3px;
                     border: 1px solid white;
-                    font-size: 30px;
+                    font-size: 15px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 35px;
-                    bottom: 45px;
+                    left: 17px;
+                    bottom: 22px;
                 }
 
                 .settingsButtonAdminMobile:hover {
@@ -745,16 +754,16 @@
                     background-color: red;
                     color: white;
                     cursor: pointer;
-                    height: 48px;
-                    width: 127px;
-                    border-radius: 10px;
+                    height: 22px;
+                    width: 63px;
+                    border-radius: 3px;
                     border: 1px solid white;
-                    font-size: 30px;
+                    font-size: 15px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 35px;
-                    bottom: 34px;
+                    left: 17px;
+                    bottom: 16px;
                 }
 
                 .logOutButtonAdminMobile:hover {
@@ -769,20 +778,21 @@
             .logOutContainer3Mobile {
                 display: block;
                 background-color: #111;
-                height: 300px;
-                width: 200px;
-                border-radius: 10px;
+                height: 150px;
+                width: 100px;
+                border-radius: 5px;
                 border: 1px solid #03a062;
 
                 h3 {
                     animation: fadeIn 0.3s;
                     color: #03a062;
-                    font-size: 30px;
+                    font-size: 15px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 12px;
-                    bottom: 25px;
+                    left: 6px;
+                    bottom: 12px;
+                    cursor: default;
                 }
 
                 .settings_X-buttonMobile {
@@ -790,15 +800,16 @@
                     background-color: red;
                     color: white;
                     cursor: pointer;
-                    height: 30px;
-                    width: 30px;
+                    height: 15px;
+                    width: 15px;
                     border: 1px solid white;
-                    border-radius: 5px;
-                    font-size: 20px;
+                    border-radius: 2px;
+                    padding: 1px;
+                    font-size: 10px;
                     font-style: italic;
                     position: relative;
-                    bottom: 85px;
-                    left: 160px;
+                    bottom: 46px;
+                    left: 80px;
                 }
 
                 .settings_X-buttonMobile:hover {
@@ -812,29 +823,31 @@
                 .optionTextMobile {
                     animation: fadeIn 0.3s;
                     color: #03a062;
+                    font-size: 10px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    bottom: 85px;
-                    left: 50px;
+                    bottom: 42px;
+                    left: 25px;
+                    cursor: default;
                 }
 
                 .optionBGMobile {
                     animation: fadeIn 0.3s;
                     border: 1px solid #03a062;
                     cursor: pointer;
-                    border-radius: 20px;
-                    height: 40px;
-                    width: 100px;
+                    border-radius: 10px;
+                    height: 20px;
+                    width: 50px;
                     position: relative;
-                    bottom: 90px;
-                    left: 45px;
+                    bottom: 45px;
+                    left: 22px;
 
                     .optionBallMobile {
                         background-color: #03a062;
                         border-radius: 100%;
-                        height: 40px;
-                        width: 40px;
+                        height: 20px;
+                        width: 20px;
                         position: relative;
                     }
                 }
@@ -844,16 +857,16 @@
                     background-color: #111;
                     color: #03a062;
                     cursor: pointer;
-                    height: 48px;
-                    width: 127px;
-                    border-radius: 10px;
+                    height: 24px;
+                    width: 63px;
+                    border-radius: 3px;
                     border: 1px solid #03a062;
-                    font-size: 30px;
+                    font-size: 15px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 35px;
-                    top: 25px;
+                    left: 17px;
+                    top: 2px;
                 }
 
                 .settingsBackButtonMobile:hover {
@@ -866,20 +879,21 @@
             .logOutContainer4Mobile {
                 display: block;
                 background-color: #111;
-                height: 190px;
-                width: 200px;
-                border-radius: 10px;
+                height: 95px;
+                width: 100px;
+                border-radius: 5px;
                 border: 1px solid #03a062;
 
                 h3 {
                     animation: fadeIn 0.3s;
                     color: #03a062;
-                    font-size: 30px;
+                    font-size: 15px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
-                    left: 12px;
-                    bottom: 25px;
+                    left: 6px;
+                    bottom: 12px;
+                    cursor: default;
                 }
 
                 .logOut_X-buttonMobile {
@@ -887,15 +901,16 @@
                     background-color: red;
                     color: white;
                     cursor: pointer;
-                    height: 30px;
-                    width: 30px;
+                    height: 15px;
+                    width: 15px;
                     border: 1px solid white;
-                    border-radius: 5px;
-                    font-size: 20px;
+                    border-radius: 2px;
+                    padding: 1px;
+                    font-size: 10px;
                     font-style: italic;
                     position: relative;
-                    bottom: 85px;
-                    left: 160px;
+                    bottom: 46px;
+                    left: 80px;
                 }
 
                 .logOut_X-buttonMobile:hover {
@@ -909,25 +924,25 @@
                 .lOC4ButtonsMobile {
                     display: flex;
                     flex-direction: column;
-                    gap: 12px;
+                    gap: 6px;
                     position: relative;
-                    bottom: 80px;
+                    bottom: 40px;
 
                     .logOutButtonMobile {
                         animation: fadeIn 0.3s;
                         background-color: red;
                         color: white;
                         cursor: pointer;
-                        height: 48px;
-                        width: 127px;
-                        border-radius: 10px;
+                        height: 24px;
+                        width: 63px;
+                        border-radius: 3px;
                         border: 1px solid white;
-                        font-size: 30px;
+                        font-size: 15px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         position: relative;
-                        left: 35px;
-                        top: 25px;
+                        left: 17px;
+                        top: 12px;
                     }
 
                     .logOutButtonMobile:hover {
@@ -943,16 +958,16 @@
                         background-color: #111;
                         color: #03a062;
                         cursor: pointer;
-                        height: 48px;
-                        width: 127px;
-                        border-radius: 10px;
+                        height: 24px;
+                        width: 63px;
+                        border-radius: 3px;
                         border: 1px solid #03a062;
-                        font-size: 30px;
+                        font-size: 15px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         position: relative;
-                        left: 35px;
-                        top: 25px;
+                        left: 17px;
+                        top: 12px;
                     }
 
                     .logOutBackButtonMobile:hover {
@@ -993,6 +1008,7 @@
             text-shadow: 1px 1px 0 lightgreen;
             position: relative;
             bottom: 50px;
+            cursor: default;
         }
     }
 }

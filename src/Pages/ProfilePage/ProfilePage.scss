@@ -52,6 +52,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 gray;
+                    cursor: default;
                     height: 100%;
                     width: 60%;
                     float: left;
@@ -66,6 +67,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 gray;
+                    cursor: default;
                     height: 100%;
                     width: 40%;
                     float: left;
@@ -81,7 +83,6 @@
             border: 1px solid #03a062;
             border-radius: 10px;
             overflow: hidden;
-            cursor: pointer;
             transition: filter 300ms;
 
             .educationTitle {
@@ -102,6 +103,7 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -109,6 +111,7 @@
                 height: 100px;
                 width: 100%;
                 padding-left: 10px;
+                cursor: pointer;
                 overflow: hidden;
 
                 p {
@@ -148,6 +151,7 @@
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     line-height: 1.5;
                     max-width: 1200px;
+                    cursor: default;
                 }
 
                 .subjects {
@@ -156,6 +160,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     max-width: 1200px;
+                    cursor: default;
                 }
             }
         }
@@ -168,6 +173,7 @@
         .experienceTitle {
             height: 100px;
             width: 100%;
+            cursor: pointer;
             overflow: hidden;
             display: flex;
 
@@ -193,6 +199,23 @@
                 height: 100%;
                 width: 15%;
                 filter: drop-shadow(0 0 2em black);
+            }
+        }
+
+        .companyTitle {
+            background-color: #111;
+            width: 100%;
+            border-top: 1px solid #03a062;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+            padding-left: 10px;
+
+            p {
+                color: white;
+                font-size: 25px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
             }
         }
 
@@ -228,6 +251,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 gray;
+                    cursor: default;
                     height: 100%;
                     width: 70%;
                     float: left;
@@ -242,6 +266,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 gray;
+                    cursor: default;
                     height: 100%;
                     width: 20%;
                     float: left;
@@ -254,6 +279,7 @@
                     color: gray;
                     font-size: 50px;
                     text-shadow: 1px 1px 0 black;
+                    cursor: default;
                     height: 100%;
                     width: 10%;
                     float: right;
@@ -287,6 +313,7 @@
             position: relative;
             bottom: 20px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -312,6 +339,7 @@
                 bottom: 15px;
                 left: 10px;
                 text-shadow: 0.3px 0.3px 0 lightgreen;
+                cursor: default;
             }
 
             .h4_2 {
@@ -322,6 +350,7 @@
                 bottom: 32px;
                 left: 10px;
                 text-shadow: 0.3px 0.3px 0 lightgreen;
+                cursor: default;
             }
         }
     }
@@ -388,6 +417,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 gray;
+                    cursor: default;
                 }
 
                 p {
@@ -396,6 +426,7 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 gray;
+                    cursor: default;
                 }
             }
 
@@ -415,7 +446,6 @@
         border: 1px solid #03a062;
         border-radius: 10px;
         overflow: hidden;
-        cursor: pointer;
         transition: filter 300ms;
 
         .educationTitle {
@@ -436,12 +466,14 @@
                 position: relative;
                 bottom: 22px;
                 text-shadow: 0.3px 0.3px 0 lightgreen;
+                cursor: default;
             }
         }
 
         .educationContent1 {
             height: 100px;
             width: 100%;
+            cursor: pointer;
             overflow: hidden;
             display: flex;
 
@@ -494,6 +526,7 @@
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 line-height: 1.5;
                 max-width: 1200px;
+                cursor: default;
             }
 
             .subjects {
@@ -502,6 +535,7 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 max-width: 1200px;
+                cursor: default;
             }
         }
     }
@@ -514,6 +548,7 @@
     .experienceTitle {
         height: 100px;
         width: 100%;
+        cursor: pointer;
         overflow: hidden;
         display: flex;
 
@@ -555,6 +590,48 @@
             height: 100%;
             width: 15%;
             filter: drop-shadow(0 0 2em black);
+        }
+    }
+
+    .createRole {
+        background-color: #111;
+        height: 50px;
+        width: 100%;
+    }
+
+    .companyTitle {
+        background-color: #111;
+        width: 100%;
+        border-top: 1px solid #03a062;
+        border-bottom: 1px solid #03a062;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        .cT1 {
+            height: 100%;
+            width: 80%;
+            padding-left: 10px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            p {
+                color: white;
+                font-size: 25px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+            }
+        }
+
+        .cT2 {
+            height: 100%;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
     }
 
@@ -604,6 +681,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow: 0.5px 0.5px 0 gray;
+                        cursor: default;
                     }
                 }
 
@@ -625,6 +703,7 @@
                             font-style: italic;
                             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                             text-shadow: 0.5px 0.5px 0 gray;
+                            cursor: default;
                         }
                     }
 
@@ -641,6 +720,7 @@
                             text-shadow: 1px 1px 0 black;
                             height: 100%;
                             width: 10%;
+                            cursor: default;
                         }
                     }
                 }
@@ -684,6 +764,7 @@
         bottom: 40px;
         font-style: italic;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        cursor: default;
     }
 }
 
@@ -709,6 +790,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -767,6 +849,7 @@
                     bottom: 15px;
                     left: 10px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
 
                 .h4_2 {
@@ -777,6 +860,7 @@
                     bottom: 32px;
                     left: 10px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -800,6 +884,7 @@
                     position: relative;
                     left: 6px;
                     bottom: 13px;
+                    cursor: default;
                 }
 
                 .loadingProfileDataAboutMe {
@@ -862,6 +947,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -941,6 +1027,7 @@
         position: relative;
         bottom: 23px;
         left: 10px;
+        cursor: default;
     }
 }
 
@@ -963,7 +1050,6 @@
         border: 1px solid #03a062;
         border-radius: 10px;
         overflow: hidden;
-        cursor: pointer;
         transition: filter 300ms;
 
         .experienceContentContainer {
@@ -980,22 +1066,6 @@
                 padding-bottom: 5px;
                 overflow: hidden;
 
-                .companyTitle {
-                    background-color: #111;
-                    width: 100%;
-                    border-top: 1px solid #03a062;
-                    border-bottom: 1px solid #03a062;
-                    overflow: hidden;
-                    padding-left: 10px;
-
-                    p {
-                        color: white;
-                        font-size: 25px;
-                        font-style: italic;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-
                 .workTitle {
                     width: 100%;
                     overflow: hidden;
@@ -1006,6 +1076,7 @@
                         font-size: 15px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        cursor: default;
                     }
                 }
 
@@ -1021,6 +1092,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         max-width: 1200px;
+                        cursor: default;
                     }
                 }
 
@@ -1036,6 +1108,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         max-width: 1200px;
+                        cursor: default;
                     }
                 }
             }
@@ -1047,6 +1120,7 @@
                 display: flex;
                 justify-content: left;
                 align-items: center;
+                cursor: pointer;
 
                 h5 {
                     color: white;
@@ -1084,6 +1158,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -1125,6 +1200,7 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1161,6 +1237,7 @@
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-decoration: underline;
                         line-height: 0px;
+                        cursor: default;
                     }
                 }
             }
@@ -1190,6 +1267,7 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1226,6 +1304,7 @@
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-decoration: underline;
                         line-height: 0px;
+                        cursor: default;
                     }
                 }
             }
@@ -1255,6 +1334,7 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1291,6 +1371,7 @@
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-decoration: underline;
                         line-height: 0px;
+                        cursor: default;
                     }
                 }
             }
@@ -1351,6 +1432,7 @@
         position: relative;
         top: 10px;
         left: 430px;
+        cursor: default;
     }
 }
 
@@ -1375,6 +1457,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -1413,6 +1496,7 @@
                     bottom: 30px;
                     left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1484,6 +1568,7 @@
                     bottom: 30px;
                     left: 5px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1555,6 +1640,7 @@
                     bottom: 30px;
                     left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1622,6 +1708,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -1660,6 +1747,7 @@
                     bottom: 30px;
                     left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1731,6 +1819,7 @@
                     bottom: 30px;
                     left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1802,6 +1891,7 @@
                     bottom: 30px;
                     left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1868,6 +1958,7 @@
             position: relative;
             bottom: 23px;
             left: 10px;
+            cursor: default;
         }
     }
 
@@ -1905,6 +1996,7 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1927,6 +2019,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow: 0.5px 0.5px 0 lightgreen;
+                        cursor: default;
                     }
                 }
 
@@ -1966,6 +2059,7 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
+                    cursor: default;
                 }
             }
 
@@ -1988,6 +2082,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         text-shadow: 0.5px 0.5px 0 lightgreen;
+                        cursor: default;
                     }
                 }
 

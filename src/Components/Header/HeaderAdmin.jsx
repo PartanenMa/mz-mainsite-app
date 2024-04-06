@@ -45,7 +45,7 @@ function Logo() {
         <AnimatePresence>
             <motion.div
                 className="logoContainer"
-                title="Go to home page"
+                title="Go to dashboard"
                 onClick={() => navigate(info.routes.dashboardPage)}
                 key="logocontainerA"
                 whileHover={{
@@ -79,7 +79,7 @@ function LogoMobile() {
         <AnimatePresence>
             <motion.div
                 className="logoContainerMobile"
-                title="Go to home page"
+                title="Go to dashboard"
                 onClick={() => navigate(info.routes.dashboardPage)}
                 key="logocontainermobileA"
                 whileHover={{

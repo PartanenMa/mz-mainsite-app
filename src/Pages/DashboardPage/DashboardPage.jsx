@@ -444,7 +444,7 @@ function LogOutSectionMobile() {
         } else if (BGoption === "OFF") {
             setBGoption("ON");
             sessionStorage.setItem("isAdminGIF", "true");
-            option.style.left = "60px";
+            option.style.left = "30px";
             bg.style.backgroundColor = "lightgreen";
         }
     };
