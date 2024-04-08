@@ -84,6 +84,7 @@
             border-radius: 10px;
             overflow: hidden;
             transition: filter 300ms;
+            cursor: pointer;
 
             .educationTitle {
                 background-color: #111;
@@ -103,7 +104,6 @@
                     position: relative;
                     bottom: 22px;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
-                    cursor: default;
                 }
             }
 
@@ -111,7 +111,6 @@
                 height: 100px;
                 width: 100%;
                 padding-left: 10px;
-                cursor: pointer;
                 overflow: hidden;
 
                 p {
@@ -151,7 +150,6 @@
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     line-height: 1.5;
                     max-width: 1200px;
-                    cursor: default;
                 }
 
                 .subjects {
@@ -160,7 +158,6 @@
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     max-width: 1200px;
-                    cursor: default;
                 }
             }
         }
@@ -447,6 +444,7 @@
         border-radius: 10px;
         overflow: hidden;
         transition: filter 300ms;
+        cursor: pointer;
 
         .educationTitle {
             background-color: #111;
@@ -466,14 +464,12 @@
                 position: relative;
                 bottom: 22px;
                 text-shadow: 0.3px 0.3px 0 lightgreen;
-                cursor: default;
             }
         }
 
         .educationContent1 {
             height: 100px;
             width: 100%;
-            cursor: pointer;
             overflow: hidden;
             display: flex;
 
@@ -526,7 +522,6 @@
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 line-height: 1.5;
                 max-width: 1200px;
-                cursor: default;
             }
 
             .subjects {
@@ -535,7 +530,6 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 max-width: 1200px;
-                cursor: default;
             }
         }
     }
@@ -2262,6 +2256,7 @@
         width: 100%;
         overflow: hidden;
         display: flex;
+        cursor: pointer;
 
         .experienceTitleContainerMobile {
             height: 100%;
@@ -2608,6 +2603,7 @@
         width: 100%;
         overflow: hidden;
         display: flex;
+        cursor: pointer;
 
         .experienceTitleContainerMobile {
             height: 100%;
@@ -3056,7 +3052,6 @@
         border: 1px solid #03a062;
         border-radius: 10px;
         overflow: hidden;
-        cursor: pointer;
         transition: filter 300ms;
 
         .experienceContentContainerMobile {
@@ -3086,6 +3081,7 @@
                         font-size: 12px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        cursor: default;
                     }
                 }
 
@@ -3099,6 +3095,7 @@
                         font-size: 7px;
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        cursor: default;
                     }
                 }
 
@@ -3114,6 +3111,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         max-width: 96%;
+                        cursor: default;
                     }
                 }
 
@@ -3129,6 +3127,7 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         max-width: 96%;
+                        cursor: default;
                     }
                 }
             }
@@ -3140,6 +3139,7 @@
                 display: flex;
                 justify-content: left;
                 align-items: center;
+                cursor: pointer;
 
                 h5 {
                     color: white;

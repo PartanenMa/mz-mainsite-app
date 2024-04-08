@@ -584,17 +584,19 @@ function Education({ loadingProfileData, statusDB, educations, getProfileC, getP
                                 className="education"
                                 style={{ "--education-color": education.color, backgroundColor: education.color }}
                                 key={index}
+                                onClick={() => openOrCloseEducation(index)}
                                 initial={{ opacity: 0, y: -100 }}
                                 animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                 whileHover={{
                                     scale: 1.01,
                                     transition: { duration: 0.1 },
                                 }}
+                                whileTap={{ scale: 0.99 }}
                             >
                                 <div className="educationTitle">
                                     <h4>{education.schoolName}</h4>
                                 </div>
-                                <motion.div className="educationContent1" key={index} onClick={() => openOrCloseEducation(index)} whileTap={{ scale: 0.99 }}>
+                                <div className="educationContent1">
                                     <div className="eC1">
                                         <p>{education.degreeName}</p>
                                         <p>{education.timeAndPlace}</p>
@@ -616,7 +618,7 @@ function Education({ loadingProfileData, statusDB, educations, getProfileC, getP
                                             backgroundSize: education.backgroundSize,
                                         }}
                                     />
-                                </motion.div>
+                                </div>
                                 <div className="educationContent2" style={{ display: isVisibleEd[index] ? "block" : "none" }}>
                                     <p>{education.educationDescription}</p>
                                     <p>{education.extra}</p>
@@ -768,12 +770,17 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                 key={index}
                                 initial={{ opacity: 0, y: -100 }}
                                 animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                whileHover={{
-                                    scale: 1.01,
-                                    transition: { duration: 0.1 },
-                                }}
                             >
-                                <motion.div className="experienceTitle" key={index} onClick={() => openOrCloseExperience(index)} whileTap={{ scale: 0.99 }}>
+                                <motion.div
+                                    className="experienceTitle"
+                                    key={index}
+                                    onClick={() => openOrCloseExperience(index)}
+                                    whileHover={{
+                                        scale: 1.01,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.99 }}
+                                >
                                     <div className="experienceTitleContainer">
                                         <div className="eTC1">
                                             <h4>
@@ -861,6 +868,10 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                         style={{ backgroundColor: experience.color }}
                                         key={index}
                                         onClick={() => openOrCloseExperience(index)}
+                                        whileHover={{
+                                            scale: 1.01,
+                                            transition: { duration: 0.1 },
+                                        }}
                                         whileTap={{ scale: 0.99 }}
                                     >
                                         <h5>
@@ -2046,18 +2057,21 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                         experiences.map((experience, index) => (
                             <motion.div
                                 className="experienceMobile"
-                                style={{ "--experience-color": experience.color }}
+                                style={{ "--experience-color": experience.color, backgroundColor: experience.color }}
                                 key={index}
                                 initial={{ opacity: 0, y: -100 }}
                                 animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                onClick={() => openOrCloseExperience(index)}
-                                whileHover={{
-                                    scale: 1.01,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.99 }}
                             >
-                                <div className="experienceTitleMobile" style={{ backgroundColor: experience.color }}>
+                                <motion.div
+                                    className="experienceTitleMobile"
+                                    key={index}
+                                    onClick={() => openOrCloseExperience(index)}
+                                    whileHover={{
+                                        scale: 1.01,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.99 }}
+                                >
                                     <div className="experienceTitleContainerMobile">
                                         <div className="eTC1M">
                                             <h4>
@@ -2088,7 +2102,7 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                                             backgroundColor: !experience.image && experience.color,
                                         }}
                                     />
-                                </div>
+                                </motion.div>
                                 <div className="experienceContentContainerMobile" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     {experience.experiences.map((e, i) => (
                                         <div className="experienceContentMobile">
@@ -2127,11 +2141,21 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                                             ;
                                         </div>
                                     ))}
-                                    <div className="totalExperienceMobile" style={{ backgroundColor: experience.color }}>
+                                    <motion.div
+                                        className="totalExperienceMobile"
+                                        style={{ backgroundColor: experience.color }}
+                                        key={index}
+                                        onClick={() => openOrCloseExperience(index)}
+                                        whileHover={{
+                                            scale: 1.01,
+                                            transition: { duration: 0.1 },
+                                        }}
+                                        whileTap={{ scale: 0.99 }}
+                                    >
                                         <h5>
                                             Total experience at {experience.companyName} {"(" + getTotalExperience(index) + ")"}
                                         </h5>
-                                    </div>
+                                    </motion.div>
                                 </div>
                             </motion.div>
                         ))
