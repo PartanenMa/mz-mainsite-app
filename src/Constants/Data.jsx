@@ -151,8 +151,9 @@ export const dataFe = {
                 backgroundPosition: "20% 50%",
                 backgroundSize: "90%",
                 current: true,
-                experiences: [
+                roles: [
                     {
+                        id: 0,
                         companyName: "Visma Real Estate Oy",
                         color: "#b11226",
                         current: false,
@@ -166,6 +167,7 @@ export const dataFe = {
                         workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
                     },
                     {
+                        id: 1,
                         companyName: "Visma Real Estate Oy",
                         color: "#b11226",
                         current: false,
@@ -180,6 +182,7 @@ export const dataFe = {
                         workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
                     },
                     {
+                        id: 2,
                         companyName: "Visma Real Estate Oy",
                         color: "#b11226",
                         current: true,

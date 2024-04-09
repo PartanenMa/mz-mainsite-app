@@ -77,7 +77,7 @@ function CRUDProfileButton(props) {
                         setRequiredData(data.profileData.experiences.find((d) => d.id === props.id));
                     } else if (props.data === "role") {
                         const experience = data.profileData.experiences.find((d) => d.id === props.id);
-                        setRequiredData(experience.experiences.find((d) => d.id === props.id));
+                        setRequiredData(experience.roles.find((r) => r.id === props.roleId));
                     } else if (props.data === "skill") {
                         if (props.dataSkillType === "us") {
                             setRequiredData(data.profileData.skills.webDevelopmentSoftware.utilitySoftware.find((d) => d.id === props.id));
@@ -108,10 +108,13 @@ function CRUDProfileButton(props) {
             setIsUpdateProfileModalOpen(true);
         } else if (action === "Delete") {
             let id = profileId;
+            let rId;
             let dataType = data;
             let skillType;
 
-            if (data === "skill") {
+            if (data === "role") {
+                rId = props.roleId;
+            } else if (data === "skill") {
                 skillType = dataSkillType;
             } else {
                 skillType = "";
@@ -156,7 +159,7 @@ function CRUDProfileButton(props) {
                 dataType = "skillBe";
             }
 
-            let body = { type: dataType, skillType: skillType };
+            let body = { type: dataType, skillType: skillType, roleId: rId };
 
             fetch(`/profile/${id}`, {
                 method: "DELETE",
@@ -213,6 +216,7 @@ function CRUDProfileButton(props) {
                 isModalOpen={isCreateProfileModalOpen}
                 setIsModalOpen={setIsCreateProfileModalOpen}
                 data={props.data}
+                id={props.id}
                 getProfile={props.getProfile}
                 notification={triggerNotification}
             />
@@ -224,6 +228,7 @@ function CRUDProfileButton(props) {
                 loadingProfileData={loadingProfileData}
                 profileData={requiredData}
                 id={props.id}
+                roleId={props.roleId}
                 getProfile={props.getProfile}
                 notification={triggerNotification}
             />
@@ -238,7 +243,7 @@ function CRUDProfileButton(props) {
     );
 }
 
-function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, notification }) {
+function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, id, getProfile, notification }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
@@ -300,7 +305,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                 backgroundPosition: "",
                 backgroundSize: "",
                 current: false,
-                experiences: [],
+                roles: [],
             });
         } else if (data === "role") {
             setFormData({
@@ -336,10 +341,13 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
     };
 
     const createProfile = () => {
+        let eId;
         let dataType = data;
         let skillType;
 
-        if (data === "skill") {
+        if (data === "role") {
+            eId = id;
+        } else if (data === "skill") {
             skillType = document.getElementById("skillType").value;
         } else {
             skillType = "";
@@ -386,11 +394,13 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
 
         const newData = formData;
 
-        if (data === "experience") {
+        if (data === "role") {
+            newData.current = document.getElementById("current").value === "true";
+        } else if (data === "experience") {
             newData.current = document.getElementById("current").value === "true";
         }
 
-        let body = { type: dataType, skillType: skillType, data: newData };
+        let body = { type: dataType, skillType: skillType, data: newData, experienceId: eId };
 
         setIsModalOpen(false);
 
@@ -571,55 +581,67 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
                                     <>
                                         <div className="formComponent" style={{ height: "25%" }}>
                                             <div>
-                                                <label htmlFor="companyName">Company name:</label>
-                                                <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+                                                <div className="fCD">
+                                                    <label htmlFor="companyName">Company name:</label>
+                                                    <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="color">Color:</label>
+                                                    <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="color">Color:</label>
-                                                <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="current">{"Current (true/false):"}</label>
-                                                <select name="current" id="current" defaultValue={formData.current}>
-                                                    <option value="true">True</option>
-                                                    <option value="false">False</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label htmlFor="workTitle">Work title:</label>
-                                                <input type="text" id="workTitle" name="workTitle" value={formData.workTitle} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="current">{"Current (true/false):"}</label>
+                                                    <select name="current" id="current" defaultValue={formData.current}>
+                                                        <option value="true">True</option>
+                                                        <option value="false">False</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="workTitle">Work title:</label>
+                                                    <input type="text" id="workTitle" name="workTitle" value={formData.workTitle} onChange={handleChange} />
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="formComponent" style={{ height: "25%" }}>
-                                            <div>
-                                                <label htmlFor="workType">Work type:</label>
-                                                <input type="text" id="workType" name="workType" value={formData.workType} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="workType">Work type:</label>
+                                                    <input type="text" id="workType" name="workType" value={formData.workType} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="time">{"Time (months):"}</label>
+                                                    <input type="text" id="time" name="time" value={formData.time} onChange={handleChange} />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="time">{"Time (months):"}</label>
-                                                <input type="text" id="time" name="time" value={formData.time} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="startDate">Start date:</label>
-                                                <input type="text" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="endDate">End date:</label>
-                                                <input type="text" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="startDate">Start date:</label>
+                                                    <input type="text" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="endDate">End date:</label>
+                                                    <input type="text" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} />
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="formComponent" style={{ height: "30%" }}>
-                                            <div>
-                                                <label htmlFor="place">Place:</label>
-                                                <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="place">Place:</label>
+                                                    <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="workDescription">Work description:</label>
+                                                    <input type="text" id="workDescription" name="workDescription" value={formData.workDescription} onChange={handleChange} />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="workDescription">Work description:</label>
-                                                <input type="text" id="workDescription" name="workDescription" value={formData.workDescription} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="workTech">Work tech:</label>
-                                                <input type="text" id="workTech" name="workTech" value={formData.workTech} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="workTech">Work tech:</label>
+                                                    <input type="text" id="workTech" name="workTech" value={formData.workTech} onChange={handleChange} />
+                                                </div>
                                             </div>
                                         </div>
                                     </>
@@ -704,7 +726,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, getProfile, not
     );
 }
 
-function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, profileData, id, getProfile, notification }) {
+function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, profileData, id, roleId, getProfile, notification }) {
     const [modalStyle, setModalStyle] = useState({
         top: "",
         left: "",
@@ -766,7 +788,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
                 backgroundPosition: profileData?.backgroundPosition,
                 backgroundSize: profileData?.backgroundSize,
                 current: profileData?.current,
-                experiences: profileData?.experiences,
+                roles: profileData?.roles,
             });
         } else if (data === "role") {
             setFormData({
@@ -803,10 +825,13 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
 
     const updateProfile = (profileId) => {
         let id = profileId;
+        let rId;
         let dataType = data;
         let skillType;
 
-        if (data === "skill") {
+        if (data === "role") {
+            rId = roleId;
+        } else if (data === "skill") {
             skillType = document.getElementById("skillType").value;
         } else {
             skillType = "";
@@ -853,11 +878,13 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
 
         const updatedData = formData;
 
-        if (data === "experience") {
+        if (data === "role") {
+            updatedData.current = document.getElementById("current").value === "true";
+        } else if (data === "experience") {
             updatedData.current = document.getElementById("current").value === "true";
         }
 
-        let body = { type: dataType, skillType: skillType, data: updatedData };
+        let body = { type: dataType, skillType: skillType, data: updatedData, roleId: rId };
 
         setIsModalOpen(false);
 
@@ -1038,55 +1065,67 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
                                     <>
                                         <div className="formComponent" style={{ height: "25%" }}>
                                             <div>
-                                                <label htmlFor="companyName">Company name:</label>
-                                                <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+                                                <div className="fCD">
+                                                    <label htmlFor="companyName">Company name:</label>
+                                                    <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="color">Color:</label>
+                                                    <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="color">Color:</label>
-                                                <input type="text" id="color" name="color" value={formData.color} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="current">{"Current (true/false):"}</label>
-                                                <select name="current" id="current" defaultValue={formData.current}>
-                                                    <option value="true">True</option>
-                                                    <option value="false">False</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label htmlFor="workTitle">Work title:</label>
-                                                <input type="text" id="workTitle" name="workTitle" value={formData.workTitle} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="current">{"Current (true/false):"}</label>
+                                                    <select name="current" id="current" defaultValue={formData.current}>
+                                                        <option value="true">True</option>
+                                                        <option value="false">False</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="workTitle">Work title:</label>
+                                                    <input type="text" id="workTitle" name="workTitle" value={formData.workTitle} onChange={handleChange} />
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="formComponent" style={{ height: "25%" }}>
-                                            <div>
-                                                <label htmlFor="workType">Work type:</label>
-                                                <input type="text" id="workType" name="workType" value={formData.workType} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="workType">Work type:</label>
+                                                    <input type="text" id="workType" name="workType" value={formData.workType} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="time">{"Time (months):"}</label>
+                                                    <input type="text" id="time" name="time" value={formData.time} onChange={handleChange} />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="time">{"Time (months):"}</label>
-                                                <input type="text" id="time" name="time" value={formData.time} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="startDate">Start date:</label>
-                                                <input type="text" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="endDate">End date:</label>
-                                                <input type="text" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="startDate">Start date:</label>
+                                                    <input type="text" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="endDate">End date:</label>
+                                                    <input type="text" id="endDate" name="endDate" value={formData.endDate} onChange={handleChange} />
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="formComponent" style={{ height: "30%" }}>
-                                            <div>
-                                                <label htmlFor="place">Place:</label>
-                                                <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="place">Place:</label>
+                                                    <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="workDescription">Work description:</label>
+                                                    <input type="text" id="workDescription" name="workDescription" value={formData.workDescription} onChange={handleChange} />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="workDescription">Work description:</label>
-                                                <input type="text" id="workDescription" name="workDescription" value={formData.workDescription} onChange={handleChange} />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="workTech">Work tech:</label>
-                                                <input type="text" id="workTech" name="workTech" value={formData.workTech} onChange={handleChange} />
+                                            <div className="fCD">
+                                                <div>
+                                                    <label htmlFor="workTech">Work tech:</label>
+                                                    <input type="text" id="workTech" name="workTech" value={formData.workTech} onChange={handleChange} />
+                                                </div>
                                             </div>
                                         </div>
                                     </>

@@ -660,19 +660,19 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
         return `${day}.${month}.${year}`;
     };
 
-    const getExperienceTime = (e) => {
-        let startDate = new Date(e.startDate);
+    const getRoleTime = (r) => {
+        let startDate = new Date(r.startDate);
         startDate = formatDate(startDate);
         let endDate;
         let time;
 
-        if (e.endDate === "") {
+        if (r.endDate === "") {
             endDate = "present";
             return startDate + " - " + endDate;
         } else {
-            endDate = new Date(e.endDate);
+            endDate = new Date(r.endDate);
             endDate = formatDate(endDate);
-            time = e.time;
+            time = r.time;
 
             const years = Math.floor(time / 12);
             const remainingMonths = time % 12;
@@ -710,14 +710,14 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
     const getTotalExperience = (index) => {
         let totalMonths = 0;
 
-        experiences[index].experiences.map((e) => {
-            if (e.time === 0) {
-                const start = new Date(e.startDate);
+        experiences[index].roles.map((r) => {
+            if (r.time === 0) {
+                const start = new Date(r.startDate);
                 const end = new Date();
                 const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
                 totalMonths += diffInMonths;
             } else {
-                totalMonths += e.time;
+                totalMonths += r.time;
             }
         });
 
@@ -813,51 +813,63 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                     />
                                 </motion.div>
                                 <div className="experienceContentContainer" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
-                                    {experience.experiences.map((e, i) => (
+                                    <div className="createRole">
+                                        <CRUDProfileButton loading={loadingProfileData} action={"Create"} id={experience.id} data={"role"} getProfile={getProfileC} />
+                                    </div>
+                                    {experience.roles.map((r, i) => (
                                         <div className="experienceContent">
                                             <>
-                                                <div className="createRole">
-                                                    <CRUDProfileButton loading={loadingProfileData} action={"Create"} id={experience.id} data={"role"} getProfile={getProfileD} />
-                                                </div>
                                                 <div className="companyTitle">
                                                     <div className="cT1">
                                                         <p>
-                                                            {e.workTitle + " at "}
-                                                            {e.companyName}
-                                                            {e.current && (
-                                                                <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>
-                                                                    {" (CURRENTLY WORKING IN THIS ROLE)"}
-                                                                </span>
+                                                            {r.workTitle + " at "}
+                                                            {r.companyName}
+                                                            {r.current && (
+                                                                <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENT ROLE)"}</span>
                                                             )}
                                                         </p>
                                                     </div>
                                                     <div className="cT2">
                                                         {info.api.enabled && (
                                                             <>
-                                                                <CRUDProfileButton loading={loadingProfileData} action={"Update"} id={experience.id} data={"role"} getProfile={getProfileU} />
-                                                                <CRUDProfileButton loading={loadingProfileData} action={"Delete"} id={experience.id} data={"role"} getProfile={getProfileD} />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={experience.id}
+                                                                    roleId={r.id}
+                                                                    data={"role"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={experience.id}
+                                                                    roleId={r.id}
+                                                                    data={"role"}
+                                                                    getProfile={getProfileD}
+                                                                />
                                                             </>
                                                         )}
                                                     </div>
                                                 </div>
                                                 <div className="workTitle">
                                                     <p>
-                                                        Type: <span style={{ color: "white" }}>{e.workType}</span>
+                                                        Type: <span style={{ color: "white" }}>{r.workType}</span>
                                                     </p>
                                                     <p>
-                                                        Time: <span style={{ color: "white" }}>{getExperienceTime(e)}</span>
+                                                        Time: <span style={{ color: "white" }}>{getRoleTime(r)}</span>
                                                     </p>
                                                     <p>
-                                                        Place: <span style={{ color: "white" }}>{e.place}</span>
+                                                        Place: <span style={{ color: "white" }}>{r.place}</span>
                                                     </p>
                                                 </div>
                                                 <div className="description">
                                                     <p>Description:</p>
-                                                    <p style={{ color: "white" }}>{e.workDescription}</p>
+                                                    <p style={{ color: "white" }}>{r.workDescription}</p>
                                                 </div>
                                                 <div className="technologiesUsed">
                                                     <p>Technologies used:</p>
-                                                    <p style={{ color: "white" }}>{e.workTech}.</p>
+                                                    <p style={{ color: "white" }}>{r.workTech}.</p>
                                                 </div>
                                             </>
                                             ;
@@ -1951,19 +1963,19 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
         return `${day}.${month}.${year}`;
     };
 
-    const getExperienceTime = (e) => {
-        let startDate = new Date(e.startDate);
+    const getRoleTime = (r) => {
+        let startDate = new Date(r.startDate);
         startDate = formatDate(startDate);
         let endDate;
         let time;
 
-        if (e.endDate === "") {
+        if (r.endDate === "") {
             endDate = "present";
             return startDate + " - " + endDate;
         } else {
-            endDate = new Date(e.endDate);
+            endDate = new Date(r.endDate);
             endDate = formatDate(endDate);
-            time = e.time;
+            time = r.time;
 
             const years = Math.floor(time / 12);
             const remainingMonths = time % 12;
@@ -2001,14 +2013,14 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
     const getTotalExperience = (index) => {
         let totalMonths = 0;
 
-        experiences[index].experiences.map((e) => {
-            if (e.time === 0) {
-                const start = new Date(e.startDate);
+        experiences[index].roles.map((r) => {
+            if (r.time === 0) {
+                const start = new Date(r.startDate);
                 const end = new Date();
                 const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
                 totalMonths += diffInMonths;
             } else {
-                totalMonths += e.time;
+                totalMonths += r.time;
             }
         });
 
@@ -2104,38 +2116,36 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                                     />
                                 </motion.div>
                                 <div className="experienceContentContainerMobile" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
-                                    {experience.experiences.map((e, i) => (
+                                    {experience.roles.map((r, i) => (
                                         <div className="experienceContentMobile">
                                             <>
                                                 <div className="companyTitleMobile">
                                                     <p>
-                                                        {e.workTitle + " at "}
-                                                        {e.companyName}
-                                                        {e.current && (
-                                                            <span style={{ color: "lightgreen", fontSize: "10px", position: "relative", left: "5px", bottom: "1px" }}>
-                                                                {" (CURRENTLY WORKING IN THIS ROLE)"}
-                                                            </span>
+                                                        {r.workTitle + " at "}
+                                                        {r.companyName}
+                                                        {r.current && (
+                                                            <span style={{ color: "lightgreen", fontSize: "10px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENT ROLE)"}</span>
                                                         )}
                                                     </p>
                                                 </div>
                                                 <div className="workTitleMobile">
                                                     <p>
-                                                        Type: <span style={{ color: "white" }}>{e.workType}</span>
+                                                        Type: <span style={{ color: "white" }}>{r.workType}</span>
                                                     </p>
                                                     <p>
-                                                        Time: <span style={{ color: "white" }}>{getExperienceTime(e)}</span>
+                                                        Time: <span style={{ color: "white" }}>{getRoleTime(r)}</span>
                                                     </p>
                                                     <p>
-                                                        Place: <span style={{ color: "white" }}>{e.place}</span>
+                                                        Place: <span style={{ color: "white" }}>{r.place}</span>
                                                     </p>
                                                 </div>
                                                 <div className="descriptionMobile">
                                                     <p>Description:</p>
-                                                    <p style={{ color: "white" }}>{e.workDescription}</p>
+                                                    <p style={{ color: "white" }}>{r.workDescription}</p>
                                                 </div>
                                                 <div className="technologiesUsedMobile">
                                                     <p>Technologies used:</p>
-                                                    <p style={{ color: "white" }}>{e.workTech}.</p>
+                                                    <p style={{ color: "white" }}>{r.workTech}.</p>
                                                 </div>
                                             </>
                                             ;
