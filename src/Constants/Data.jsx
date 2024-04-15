@@ -26,7 +26,9 @@ import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
+import MariaDBLogo from "/src/Assets/Images/MariaDBLogo.svg";
 import PostgreSQLLogo from "/src/Assets/Images/PostgreSQLLogo.svg";
+import MySQLLogo from "/src/Assets/Images/MySQLLogo.png";
 
 export const dataFe = {
     professionStatus: {
@@ -376,12 +378,28 @@ export const dataFe = {
                     },
                     {
                         id: 1,
+                        name: "MariaDB",
+                        skillLevel: "beginner",
+                        color: "darkblue",
+                        image: MariaDBLogo,
+                        backgroundSize: "90%",
+                    },
+                    /*{
+                        id: 2,
                         name: "PostgreSQL",
                         skillLevel: "beginner",
                         color: "#336791",
                         image: PostgreSQLLogo,
                         backgroundSize: "70%",
                     },
+                    {
+                        id: 3,
+                        name: "MySQL",
+                        skillLevel: "beginner",
+                        color: "#00758f",
+                        image: MySQLLogo,
+                        backgroundSize: "70%",
+                    },*/
                 ],
             },
         },
@@ -464,18 +482,18 @@ export const dataFe = {
         {
             id: 2,
             title: "Learn back-end development",
-            status: "inprogress",
+            status: "completed",
             step1: {
                 step: "Learn back-end programming languages such as JavaScript, TypeScript, and Go.",
-                status: "inprogress",
+                status: "completed",
             },
             step2: {
                 step: "Learn a back-end framework.",
-                status: "inprogress",
+                status: "completed",
             },
             step3: {
                 step: "Learn to use non-relational (NoSQL) - and relational (SQL) databases.",
-                status: "inprogress",
+                status: "completed",
             },
         },
     ],
