@@ -42,6 +42,9 @@ export const dataFe = {
     },
     jobStatus: {
         employed: true,
+        job: "Software Developer",
+        jobDetailed: "Web Developer",
+        jobTech: "Full-stack Developer",
         jobTitle: "Junior Software Developer",
         company: "Visma Real Estate Oy",
         companyInfoLink: "https://vismarealestate.fi/",
@@ -54,7 +57,7 @@ export const dataFe = {
         companyLogoH: "73px",
         companyLogoW: "420px",
     },
-    technologiesData: {
+    technologiesDataP: {
         technologiesFe: [
             {
                 id: 0,
@@ -89,6 +92,44 @@ export const dataFe = {
                 image: MongoDBLogo,
                 size: "60%",
                 infoLink: "https://www.mongodb.com/",
+            },
+        ],
+    },
+    technologiesDataJ: {
+        technologiesFe: [
+            {
+                id: 0,
+                name: "React",
+                color: "#61DBFB",
+                image: ReactLogo,
+                size: "80%",
+                infoLink: "https://react.dev/",
+            },
+            {
+                id: 1,
+                name: "Sass",
+                color: "#cc6699",
+                image: SassLogo,
+                size: "80%",
+                infoLink: "https://sass-lang.com/",
+            },
+        ],
+        technologiesBe: [
+            {
+                id: 0,
+                name: "Go",
+                color: "#00add8",
+                image: GoLogo,
+                size: "90%",
+                infoLink: "https://go.dev/",
+            },
+            {
+                id: 1,
+                name: "MariaDB",
+                color: "darkblue",
+                image: MariaDBLogo,
+                size: "90%",
+                infoLink: "https://mariadb.org/",
             },
         ],
     },

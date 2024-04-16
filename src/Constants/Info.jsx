@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = true;
 
 export const info = {
-    version: "Release 1.1.1",
+    version: "Release 1.1.2",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         dashboardPage: deployToGitHubPages ? "/MatrixZone-APP/admin/dashboard" : "/admin/dashboard",
@@ -112,6 +112,9 @@ export const info = {
         professionAdditionalTech: dataFe.professionStatus.professionAdditionalTech,
         //Job:
         employed: dataFe.jobStatus.employed ? dataFe.jobStatus.employed : false,
+        job: dataFe.jobStatus.employed ? dataFe.jobStatus.job : "",
+        jobDetailed: dataFe.jobStatus.employed ? dataFe.jobStatus.jobDetailed : "",
+        jobTech: dataFe.jobStatus.employed ? dataFe.jobStatus.jobTech : "",
         jobTitle: dataFe.jobStatus.employed ? dataFe.jobStatus.jobTitle : "",
         company: dataFe.jobStatus.employed ? dataFe.jobStatus.company : "",
         companyInfoLink: dataFe.jobStatus.employed ? dataFe.jobStatus.companyInfoLink : "",

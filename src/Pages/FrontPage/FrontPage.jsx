@@ -27,18 +27,35 @@ function FrontPage() {
             getJob();
             getTechnologies();
         } else {
-            if (info.LinkedIn.professionTech.includes("Front-end")) {
-                setShowFrontEnd(true);
-                setShowBackEnd(false);
-            } else if (info.LinkedIn.professionTech.includes("Back-end")) {
-                setShowFrontEnd(false);
-                setShowBackEnd(true);
-            } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
-                setShowFrontEnd(true);
-                setShowBackEnd(true);
+            if (info.LinkedIn.employed) {
+                if (info.LinkedIn.jobTech.includes("Front-end")) {
+                    setShowFrontEnd(true);
+                    setShowBackEnd(false);
+                } else if (info.LinkedIn.jobTech.includes("Back-end")) {
+                    setShowFrontEnd(false);
+                    setShowBackEnd(true);
+                } else if (info.LinkedIn.jobTech.includes("Full-stack")) {
+                    setShowFrontEnd(true);
+                    setShowBackEnd(true);
+                }
+
+                setTechnologiesFe(dataFe.technologiesDataJ.technologiesFe);
+                setTechnologiesBe(dataFe.technologiesDataJ.technologiesBe);
+            } else {
+                if (info.LinkedIn.professionTech.includes("Front-end")) {
+                    setShowFrontEnd(true);
+                    setShowBackEnd(false);
+                } else if (info.LinkedIn.professionTech.includes("Back-end")) {
+                    setShowFrontEnd(false);
+                    setShowBackEnd(true);
+                } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
+                    setShowFrontEnd(true);
+                    setShowBackEnd(true);
+                }
+
+                setTechnologiesFe(dataFe.technologiesDataP.technologiesFe);
+                setTechnologiesBe(dataFe.technologiesDataP.technologiesBe);
             }
-            setTechnologiesFe(dataFe.technologiesData.technologiesFe);
-            setTechnologiesBe(dataFe.technologiesData.technologiesBe);
             setTimeout(() => {
                 setLoadingProfessionData(false);
                 setLoadingJobData(false);
@@ -156,17 +173,30 @@ function FrontPage() {
     };
 
     useEffect(() => {
-        if (professionData?.professionStatus?.professionTech.includes("Front-end")) {
-            setShowFrontEnd(true);
-            setShowBackEnd(false);
-        } else if (professionData?.professionStatus?.professionTech.includes("Back-end")) {
-            setShowFrontEnd(false);
-            setShowBackEnd(true);
-        } else if (professionData?.professionStatus?.professionTech.includes("Full-stack")) {
-            setShowFrontEnd(true);
-            setShowBackEnd(true);
+        if (jobData?.jobStatus?.employed) {
+            if (jobData?.jobStatus?.jobTech.includes("Front-end")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(false);
+            } else if (jobData?.jobStatus?.jobTech.includes("Back-end")) {
+                setShowFrontEnd(false);
+                setShowBackEnd(true);
+            } else if (jobData?.jobStatus?.jobTech.includes("Full-stack")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(true);
+            }
+        } else {
+            if (professionData?.professionStatus?.professionTech.includes("Front-end")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(false);
+            } else if (professionData?.professionStatus?.professionTech.includes("Back-end")) {
+                setShowFrontEnd(false);
+                setShowBackEnd(true);
+            } else if (professionData?.professionStatus?.professionTech.includes("Full-stack")) {
+                setShowFrontEnd(true);
+                setShowBackEnd(true);
+            }
         }
-    }, [professionData]);
+    }, [jobData]);
 
     return (
         <div className="fP">
@@ -357,15 +387,24 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                 <div className="technology">
                     <div className="technologyTitle">
                         {info.api.enabled ? (
-                            professionData?.professionStatus && !loadingProfessionData ? (
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                 <motion.h3 key="technologysectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    {professionData?.professionStatus?.professionTech}
-                                    {professionData?.professionStatus?.professionDetailed && (
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTech : professionData?.professionStatus?.professionTech}
+                                    {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobDetailed ? (
                                         <>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{professionData?.professionStatus?.professionDetailed}</span>
+                                            <span style={{ color: "green" }}>{jobData.jobStatus.jobDetailed}</span>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
                                         </>
+                                    ) : (
+                                        !jobData?.jobStatus?.employed &&
+                                        professionData?.professionStatus?.professionDetailed && (
+                                            <>
+                                                <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                                <span style={{ color: "green" }}>{professionData.professionStatus.professionDetailed}</span>
+                                                <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                            </>
+                                        )
                                     )}
                                 </motion.h3>
                             ) : loadingProfessionData ? (
@@ -399,13 +438,22 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             </motion.div>
                         ) : (
                             <motion.h3 key="technologysectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.professionTech}
-                                {info.LinkedIn.professionDetailed && (
+                                {info.LinkedIn.employed ? info.LinkedIn.jobTech : info.LinkedIn.professionTech}
+                                {info.LinkedIn.employed && info.LinkedIn.jobDetailed ? (
                                     <>
                                         <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                        <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                        <span style={{ color: "green" }}>{info.LinkedIn.jobDetailed}</span>
                                         <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
                                     </>
+                                ) : (
+                                    !info.LinkedIn.employed &&
+                                    info.LinkedIn.professionDetailed && (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                        </>
+                                    )
                                 )}
                             </motion.h3>
                         )}
