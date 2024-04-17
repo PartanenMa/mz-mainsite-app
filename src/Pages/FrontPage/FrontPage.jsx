@@ -895,15 +895,24 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                 <div className="technologyMobile">
                     <div className="technologyTitleMobile">
                         {info.api.enabled ? (
-                            professionData?.professionStatus && !loadingProfessionData ? (
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                 <motion.h3 key="technologysectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    {professionData?.professionStatus?.professionTech}
-                                    {professionData?.professionStatus?.professionDetailed && (
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTech : professionData?.professionStatus?.professionTech}
+                                    {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobDetailed ? (
                                         <>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{professionData?.professionStatus?.professionDetailed}</span>
+                                            <span style={{ color: "green" }}>{jobData.jobStatus.jobDetailed}</span>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
                                         </>
+                                    ) : (
+                                        !jobData?.jobStatus?.employed &&
+                                        professionData?.professionStatus?.professionDetailed && (
+                                            <>
+                                                <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                                <span style={{ color: "green" }}>{professionData.professionStatus.professionDetailed}</span>
+                                                <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                            </>
+                                        )
                                     )}
                                 </motion.h3>
                             ) : loadingProfessionData ? (
@@ -937,13 +946,22 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             </motion.div>
                         ) : (
                             <motion.h3 key="technologysectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.professionTech}
-                                {info.LinkedIn.professionDetailed && (
+                                {info.LinkedIn.employed ? info.LinkedIn.jobTech : info.LinkedIn.professionTech}
+                                {info.LinkedIn.employed && info.LinkedIn.jobDetailed ? (
                                     <>
                                         <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                        <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                        <span style={{ color: "green" }}>{info.LinkedIn.jobDetailed}</span>
                                         <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
                                     </>
+                                ) : (
+                                    !info.LinkedIn.employed &&
+                                    info.LinkedIn.professionDetailed && (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                            <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                        </>
+                                    )
                                 )}
                             </motion.h3>
                         )}
