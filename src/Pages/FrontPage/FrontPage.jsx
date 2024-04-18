@@ -264,9 +264,10 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                         </div>
                         <div className="hTWelcome2">
                             {info.api.enabled ? (
-                                professionData?.professionStatus?.profession && !loadingProfessionData ? (
+                                (professionData?.professionStatus?.profession && !loadingProfessionData) || (jobData?.jobStatus?.job && !loadingJobData) ? (
                                     <p className="hTW2text">
-                                        I'm a <span style={{ color: "green" }}>{professionData?.professionStatus?.profession + " 👨‍💻"}</span>
+                                        I'm a{" "}
+                                        <span style={{ color: "green" }}>{jobData?.jobStatus?.employed ? jobData?.jobStatus?.job + " 👨‍💻" : professionData?.professionStatus?.profession + " 👨‍💻"}</span>
                                     </p>
                                 ) : loadingProfessionData ? (
                                     <motion.div className="loadingProfessionTitle" key="loadingprofessiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -294,9 +295,9 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                         NO DATA!
                                     </motion.p>
                                 )
-                            ) : !loadingProfessionData ? (
+                            ) : !loadingProfessionData || !loadingJobData ? (
                                 <p className="hTW2text">
-                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession + " 👨‍💻"}</span>
+                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.employed ? info.LinkedIn.job + " 👨‍💻" : info.LinkedIn.profession + " 👨‍💻"}</span>
                                 </p>
                             ) : (
                                 <motion.div className="loadingProfessionTitle" key="loadingprofessiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -772,9 +773,10 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                         </div>
                         <div className="hTWelcome2Mobile">
                             {info.api.enabled ? (
-                                professionData?.professionStatus?.profession && !loadingProfessionData ? (
+                                (professionData?.professionStatus?.profession && !loadingProfessionData) || (jobData?.jobStatus?.job && !loadingJobData) ? (
                                     <p className="hTW2textMobile">
-                                        I'm a <span style={{ color: "green" }}>{professionData?.professionStatus?.profession + " 👨‍💻"}</span>
+                                        I'm a{" "}
+                                        <span style={{ color: "green" }}>{jobData?.jobStatus?.employed ? jobData?.jobStatus?.job + " 👨‍💻" : professionData?.professionStatus?.profession + " 👨‍💻"}</span>
                                     </p>
                                 ) : loadingProfessionData ? (
                                     <motion.div className="loadingProfessionTitleMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -802,9 +804,9 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                         NO DATA!
                                     </motion.p>
                                 )
-                            ) : !loadingProfessionData ? (
+                            ) : !loadingProfessionData || !loadingJobData ? (
                                 <p className="hTW2textMobile">
-                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.profession + " 👨‍💻"}</span>
+                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.employed ? info.LinkedIn.job + " 👨‍💻" : info.LinkedIn.profession + " 👨‍💻"}</span>
                                 </p>
                             ) : (
                                 <motion.div className="loadingProfessionTitleMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
