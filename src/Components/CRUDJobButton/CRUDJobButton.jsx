@@ -101,6 +101,9 @@ function CRUDJobButton(props) {
         });
         const [formData, setFormData] = useState({
             employed: false,
+            job: "",
+            jobDetailed: "",
+            JobTech: "",
             jobTitle: "",
             company: "",
             companyInfoLink: "",
