@@ -329,9 +329,7 @@
 
         @media only screen and (max-height: 739px) {
             .pL-LogoM {
-                height: 20px;
-                width: 20px;
-                border-radius: 1px;
+                display: none;
             }
         }
 
@@ -385,10 +383,17 @@
                 .techUsedM {
                     height: 50px;
                     width: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
 
                     .techUsedTitleM {
                         height: 10px;
                         width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
 
                         h5 {
                             font-size: 8px;
@@ -402,7 +407,7 @@
                         background-repeat: no-repeat;
                         background-position: center;
                         height: 40px;
-                        width: 100%;
+                        width: 40px;
                         overflow: hidden;
                     }
                 }
@@ -458,6 +463,15 @@
             color: green;
             border: 0.3px solid green;
             transition: background-color 500ms ease-in-out;
+        }
+
+        @media only screen and (max-height: 739px) {
+            .introScreenEnterButtonM {
+                height: 20px;
+                width: 110px;
+                font-size: 15px;
+                border-radius: 2px;
+            }
         }
     }
 }

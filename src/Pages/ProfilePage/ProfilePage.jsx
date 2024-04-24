@@ -437,6 +437,14 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
         return `${day}.${month}.${year}`;
     };
 
+    const isCompanyNameChanged = (eCompanyName, rCompanyName) => {
+        if (eCompanyName !== rCompanyName) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     const getRoleTime = (r) => {
         let startDate = new Date(r.startDate);
         startDate = formatDate(startDate);
@@ -560,7 +568,10 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
                                     <div className="experienceTitleContainer">
                                         <h4>
                                             {experience.companyName}
-                                            <span title="Currently employed" style={{ color: "lightgreen", fontSize: "25px", fontStyle: "normal", position: "relative", bottom: "10px", left: "10px" }}>
+                                            <span style={{ color: "gray", fontSize: "25px", fontStyle: "normal", position: "relative", bottom: "10px", left: "10px" }}>
+                                                {" " + getTotalExperience(index)}
+                                            </span>
+                                            <span title="Currently employed" style={{ color: "lightgreen", fontSize: "25px", fontStyle: "normal", position: "relative", bottom: "10px", left: "20px" }}>
                                                 {experience.current ? " (CURRENT JOB)" : ""}
                                             </span>
                                         </h4>
@@ -582,7 +593,10 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
                                                 <div className="companyTitle">
                                                     <p>
                                                         {r.workTitle + " at "}
-                                                        {r.companyName}
+                                                        <span style={{ color: experience.color }}>{r.companyName}</span>
+                                                        {isCompanyNameChanged(experience.companyName, r.companyName) && !r.current && (
+                                                            <span style={{ color: "gray", fontSize: "12px", position: "relative", left: "10px", bottom: "5px" }}>{" (Former company name)"}</span>
+                                                        )}
                                                         {r.current && (
                                                             <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENT ROLE)"}</span>
                                                         )}
@@ -1379,6 +1393,14 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences }) {
         return `${day}.${month}.${year}`;
     };
 
+    const isCompanyNameChanged = (eCompanyName, rCompanyName) => {
+        if (eCompanyName !== rCompanyName) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     const getRoleTime = (r) => {
         let startDate = new Date(r.startDate);
         startDate = formatDate(startDate);
@@ -1502,7 +1524,10 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences }) {
                                     <div className="experienceTitleContainerMobile">
                                         <h4>
                                             {experience.companyName}
-                                            <span title="Currently employed" style={{ color: "lightgreen", fontSize: "8px", fontStyle: "normal", position: "relative", bottom: "4px", left: "10px" }}>
+                                            <span style={{ color: "gray", fontSize: "8px", fontStyle: "normal", position: "relative", bottom: "4px", left: "10px" }}>
+                                                {" " + getTotalExperience(index)}
+                                            </span>
+                                            <span title="Currently employed" style={{ color: "lightgreen", fontSize: "8px", fontStyle: "normal", position: "relative", bottom: "4px", left: "20px" }}>
                                                 {experience.current ? " (CURRENT JOB)" : ""}
                                             </span>
                                         </h4>
@@ -1524,7 +1549,10 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences }) {
                                                 <div className="companyTitleMobile">
                                                     <p>
                                                         {r.workTitle + " at "}
-                                                        {r.companyName}
+                                                        <span style={{ color: experience.color }}>{r.companyName}</span>
+                                                        {isCompanyNameChanged(experience.companyName, r.companyName) && !r.current && (
+                                                            <span style={{ color: "gray", fontSize: "4px", position: "relative", left: "5px", bottom: "2.5px" }}>{" (Former company name)"}</span>
+                                                        )}
                                                         {r.current && (
                                                             <span style={{ color: "lightgreen", fontSize: "10px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENT ROLE)"}</span>
                                                         )}
