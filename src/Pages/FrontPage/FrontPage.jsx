@@ -461,9 +461,38 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                     </div>
                     <div className="technologyContent">
                         {showFrontEnd && (
-                            <div className="technologyContentBox1">
-                                <div className="tCB1Title">
-                                    <h4>Front-end tech stack</h4>
+                            <div
+                                className="technologyContentBox1"
+                                style={
+                                    info.api.enabled
+                                        ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
+                                        : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                }
+                            >
+                                <div
+                                    className="tCB1Title"
+                                    style={
+                                        info.api.enabled
+                                            ? { borderBottom: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
+                                            : { borderBottom: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                    }
+                                >
+                                    <div className="tCB1T1">
+                                        <h4
+                                            style={
+                                                info.api.enabled
+                                                    ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
+                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                            }
+                                        >
+                                            Front-end tech stack
+                                        </h4>
+                                    </div>
+                                    {info.api.enabled ? (
+                                        <div className="tCB1T2" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                    ) : (
+                                        <div className="tCB1T2" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                    )}
                                 </div>
                                 <div className="tCB1Content">
                                     <AnimatePresence>
@@ -491,7 +520,14 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                             ))
                                         ) : loadingTechnologiesData ? (
                                             <motion.div className="loadingTechData" key="loadingtechdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                                <div className="loaderTech" />
+                                                <div
+                                                    className="loaderTech"
+                                                    style={
+                                                        info.api.enabled
+                                                            ? { borderTop: jobData?.jobStatus?.employed ? `16px solid ${jobData?.jobStatus?.companyColor}` : "16px solid #03a062" }
+                                                            : { borderTop: info.LinkedIn.employed ? `16px solid ${info.LinkedIn.companyColor}` : "16px solid #03a062" }
+                                                    }
+                                                />
                                             </motion.div>
                                         ) : (
                                             <motion.div className="noTechData" key="notechdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -505,10 +541,44 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                         {showBackEnd && (
                             <div
                                 className="technologyContentBox2"
-                                style={showFrontEnd && showBackEnd ? (loadingTechnologiesData ? { bottom: "332px", left: "600px" } : { bottom: "308px", left: "600px" }) : { top: "30px" }}
+                                style={
+                                    info.api.enabled
+                                        ? showFrontEnd && showBackEnd
+                                            ? loadingTechnologiesData
+                                                ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062", bottom: "332px", left: "600px" }
+                                                : { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062", bottom: "308px", left: "600px" }
+                                            : { top: "30px" }
+                                        : showFrontEnd && showBackEnd
+                                        ? loadingTechnologiesData
+                                            ? { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062", bottom: "332px", left: "600px" }
+                                            : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062", bottom: "308px", left: "600px" }
+                                        : { top: "30px" }
+                                }
                             >
-                                <div className="tCB2Title">
-                                    <h4>Back-end tech stack</h4>
+                                <div
+                                    className="tCB2Title"
+                                    style={
+                                        info.api.enabled
+                                            ? { borderBottom: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
+                                            : { borderBottom: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                    }
+                                >
+                                    <div className="tCB2T1">
+                                        <h4
+                                            style={
+                                                info.api.enabled
+                                                    ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
+                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                            }
+                                        >
+                                            Back-end tech stack
+                                        </h4>
+                                    </div>
+                                    {info.api.enabled ? (
+                                        <div className="tCB2T2" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                    ) : (
+                                        <div className="tCB2T2" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                    )}
                                 </div>
                                 <div className="tCB2Content">
                                     <AnimatePresence>
@@ -536,7 +606,14 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                             ))
                                         ) : loadingTechnologiesData ? (
                                             <motion.div className="loadingTechData" key="loadingtechdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                                <div className="loaderTech" />
+                                                <div
+                                                    className="loaderTech"
+                                                    style={
+                                                        info.api.enabled
+                                                            ? { borderTop: jobData?.jobStatus?.employed ? `16px solid ${jobData?.jobStatus?.companyColor}` : "16px solid #03a062" }
+                                                            : { borderTop: info.LinkedIn.employed ? `16px solid ${info.LinkedIn.companyColor}` : "16px solid #03a062" }
+                                                    }
+                                                />
                                             </motion.div>
                                         ) : (
                                             <motion.div className="noTechData" key="notechdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -970,9 +1047,47 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                     </div>
                     <div className="technologyContentMobile">
                         {showFrontEnd && (
-                            <div className="technologyContentBox1Mobile" style={showFrontEnd && !showBackEnd ? { marginRight: "150px" } : { marginRight: "0px" }}>
-                                <div className="tCB1TitleMobile">
-                                    <h4>Front-end tech stack</h4>
+                            <div
+                                className="technologyContentBox1Mobile"
+                                style={
+                                    showFrontEnd && !showBackEnd
+                                        ? {
+                                              border: info.api.enabled
+                                                  ? jobData?.jobStatus?.employed
+                                                      ? `1px solid ${jobData?.jobStatus?.companyColor}`
+                                                      : "1px solid #03a062"
+                                                  : info.LinkedIn.employed
+                                                  ? `1px solid ${info.LinkedIn.companyColor}`
+                                                  : "1px solid #03a062",
+                                              marginRight: "150px",
+                                          }
+                                        : { marginRight: "0px" }
+                                }
+                            >
+                                <div
+                                    className="tCB1TitleMobile"
+                                    style={
+                                        info.api.enabled
+                                            ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
+                                            : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                    }
+                                >
+                                    <div className="tCB1T1M">
+                                        <h4
+                                            style={
+                                                info.api.enabled
+                                                    ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
+                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                            }
+                                        >
+                                            Front-end tech stack
+                                        </h4>
+                                    </div>
+                                    {info.api.enabled ? (
+                                        <div className="tCB1T2M" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                    ) : (
+                                        <div className="tCB1T2M" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                    )}
                                 </div>
                                 <div className="tCB1ContentMobile">
                                     <AnimatePresence>
@@ -1000,7 +1115,14 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                             ))
                                         ) : loadingTechnologiesData ? (
                                             <motion.div className="loadingTechDataMobile" key="loadingtechdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                                <div className="loaderTechMobile" />
+                                                <div
+                                                    className="loaderTechMobile"
+                                                    style={
+                                                        info.api.enabled
+                                                            ? { borderTop: jobData?.jobStatus?.employed ? `4px solid ${jobData?.jobStatus?.companyColor}` : "4px solid #03a062" }
+                                                            : { borderTop: info.LinkedIn.employed ? `4px solid ${info.LinkedIn.companyColor}` : "4px solid #03a062" }
+                                                    }
+                                                />
                                             </motion.div>
                                         ) : (
                                             <motion.div className="noTechDataMobile" key="notechdatamobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -1012,9 +1134,38 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             </div>
                         )}
                         {showBackEnd && (
-                            <div className="technologyContentBox2Mobile">
-                                <div className="tCB2TitleMobile">
-                                    <h4>Back-end tech stack</h4>
+                            <div
+                                className="technologyContentBox2Mobile"
+                                style={
+                                    info.api.enabled
+                                        ? { borderBottom: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
+                                        : { borderBottom: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                }
+                            >
+                                <div
+                                    className="tCB2TitleMobile"
+                                    style={
+                                        info.api.enabled
+                                            ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
+                                            : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                    }
+                                >
+                                    <div className="tCB2T1M">
+                                        <h4
+                                            style={
+                                                info.api.enabled
+                                                    ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
+                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                            }
+                                        >
+                                            Back-end tech stack
+                                        </h4>
+                                    </div>
+                                    {info.api.enabled ? (
+                                        <div className="tCB2T2M" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                    ) : (
+                                        <div className="tCB2T2M" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                    )}
                                 </div>
                                 <div className="tCB2ContentMobile">
                                     <AnimatePresence>
@@ -1042,7 +1193,14 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                             ))
                                         ) : loadingTechnologiesData ? (
                                             <motion.div className="loadingTechDataMobile" key="loadingtechdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                                <div className="loaderTechMobile" />
+                                                <div
+                                                    className="loaderTechMobile"
+                                                    style={
+                                                        info.api.enabled
+                                                            ? { borderTop: jobData?.jobStatus?.employed ? `4px solid ${jobData?.jobStatus?.companyColor}` : "4px solid #03a062" }
+                                                            : { borderTop: info.LinkedIn.employed ? `4px solid ${info.LinkedIn.companyColor}` : "4px solid #03a062" }
+                                                    }
+                                                />
                                             </motion.div>
                                         ) : (
                                             <motion.div className="noTechDataMobile" key="notechdatamobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
