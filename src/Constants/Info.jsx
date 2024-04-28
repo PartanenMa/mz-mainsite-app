@@ -4,10 +4,10 @@ import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
-const deployToGitHubPages = false;
+const deployToGitHubPages = true;
 
 export const info = {
-    version: "Release 1.1.10",
+    version: "Release 1.1.11",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         dashboardPage: deployToGitHubPages ? "/MatrixZone-APP/admin/dashboard" : "/admin/dashboard",
