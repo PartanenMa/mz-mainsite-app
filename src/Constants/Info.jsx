@@ -4,7 +4,7 @@ import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 
-const deployToGitHubPages = true;
+const deployToGitHubPages = false;
 
 export const info = {
     version: "Release 1.1.11",
