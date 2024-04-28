@@ -46,11 +46,11 @@ export const dataFe = {
         jobDetailed: "Web Developer",
         jobTech: "Full-stack Developer",
         jobTitle: "Junior Software Developer",
-        company: "Visma Real Estate Oy",
+        company: "Visma Sirius Oy",
         companyInfoLink: "https://vismarealestate.fi/",
-        jobTechStack: "React, Sass, Go and Maria DB",
+        jobTechStack: "React, Sass, Go and MariaDB",
         jobTechStackFe: "React and Sass",
-        jobTechStackBe: "Go and Maria DB",
+        jobTechStackBe: "Go and MariaDB",
         jobAdditionalTech: "Visual Studio Code, Node.js and Git",
         companyColor: "#b11226",
         companyLogo: VismaLogo,
@@ -188,7 +188,7 @@ export const dataFe = {
         experiences: [
             {
                 id: 0,
-                companyName: "Visma Real Estate Oy",
+                companyName: "Visma Sirius Oy",
                 color: "#b11226",
                 image: VismaLogo,
                 backgroundPosition: "20% 50%",
@@ -226,7 +226,7 @@ export const dataFe = {
                     },
                     {
                         id: 2,
-                        companyName: "Visma Real Estate Oy",
+                        companyName: "Visma Sirius Oy",
                         color: "#b11226",
                         current: true,
                         workTitle: "Junior Software Developer",
@@ -237,7 +237,7 @@ export const dataFe = {
                         place: "Pori, Finland",
                         workDescription:
                             "My full-stack developer job after my internship and part-time jobs. My tasks included developing the UI, and the API of the Hausvise housing management system using React, Sass and Go.",
-                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass, Go, Maria DB",
+                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass, Go, MariaDB",
                     },
                 ],
             },
