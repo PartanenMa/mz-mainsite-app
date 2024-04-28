@@ -1,4 +1,6 @@
-# Site live at: https://partanenma.github.io/MatrixZone-APP/
+# Netlify: https://matrixzone.netlify.app/
+
+# GitHub Pages: https://partanenma.github.io/MatrixZone-APP/
 
 # 1. Install NPM packages (SKIP THIS STEP IF ALREADY INSTALLED):
 
