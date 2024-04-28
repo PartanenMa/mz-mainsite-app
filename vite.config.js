@@ -1,8 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { info } from "/src/Constants/info.jsx";
 
-const deployToGitHubPages = info.deployToGHPages;
+const deployToGitHubPages = false;
 
 // https://vitejs.dev/config/
 export default defineConfig({
