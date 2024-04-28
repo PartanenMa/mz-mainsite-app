@@ -1,5 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { info } from "/src/Constants/info.jsx";
+
+const deployToGitHubPages = info.deployToGHPages;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,5 +21,5 @@ export default defineConfig({
         },
     },
     plugins: [react()],
-    base: "/MatrixZone-APP/",
+    base: deployToGitHubPages ? "/MatrixZone-APP/" : "",
 });
