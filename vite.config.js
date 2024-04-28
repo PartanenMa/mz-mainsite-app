@@ -21,5 +21,5 @@ export default defineConfig({
         },
     },
     plugins: [react()],
-    base: deployToGitHubPages ? "/MatrixZone-APP/" : "",
+    base: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
 });
