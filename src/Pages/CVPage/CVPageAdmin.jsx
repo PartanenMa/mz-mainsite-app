@@ -13,8 +13,12 @@ function CVPageAdmin() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
-    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [loadingProfessionData, setLoadingProfessionData] = useState(true);
+    const [loadingJobData, setLoadingJobData] = useState(true);
+    const [professionData, setProfessionData] = useState([]);
+    const [jobData, setJobData] = useState([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
         description: "",
@@ -24,6 +28,8 @@ function CVPageAdmin() {
     useEffect(() => {
         if (info.api.enabled) {
             checkSession();
+            getProfession();
+            getJob();
         }
     }, []);
 
@@ -62,6 +68,56 @@ function CVPageAdmin() {
                     sessionStorage.setItem("isLoggedIn", "false");
                     sessionStorage.setItem("csrfToken", "");
                 }
+            });
+    };
+
+    const getProfession = () => {
+        fetch("/profession", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setProfessionData(data);
+                setTimeout(() => {
+                    setLoadingProfessionData(false);
+                }, 1000);
+            });
+    };
+
+    const getJob = () => {
+        fetch("/job", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const statusCode = res.status;
+                    const data = res.json();
+                    return data;
+                } else {
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setJobData(data);
+                    setLoadingJobData(false);
+                }, 1000);
             });
     };
 
@@ -107,7 +163,7 @@ function CVPageAdmin() {
                                     <h2>Admin / cv</h2>
                                 </div>
                                 <CVPageTitle />
-                                <CVPageContent />
+                                <CVPageContent jobData={jobData} professionData={professionData} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -123,7 +179,7 @@ function CVPageAdmin() {
                                     <h2>Admin / cv</h2>
                                 </div>
                                 <CVPageTitleMobile />
-                                <CVPageContentMobile />
+                                <CVPageContentMobile jobData={jobData} professionData={professionData} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -151,12 +207,16 @@ function CVPageTitle() {
     );
 }
 
-function CVPageContent() {
+function CVPageContent({ jobData, professionData }) {
     return (
         <div className="cvPageContentContainer">
             <div className="cvContent">
                 <h1>{info.LinkedIn.name}</h1>
-                <h2>{info.LinkedIn.profession}</h2>
+                {info.api.enabled ? (
+                    <h2>{jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}</h2>
+                ) : (
+                    <h2>{info.LinkedIn.employed ? info.LinkedIn.job : info.LinkedIn.profession}</h2>
+                )}
                 <div />
             </div>
             <GeneratePDF />
@@ -173,12 +233,16 @@ function CVPageTitleMobile() {
     );
 }
 
-function CVPageContentMobile() {
+function CVPageContentMobile({ jobData, professionData }) {
     return (
         <div className="cvPageContentContainerMobile">
             <div className="cvContentMobile">
                 <h1>{info.LinkedIn.name}</h1>
-                <h2>{info.LinkedIn.profession}</h2>
+                {info.api.enabled ? (
+                    <h2>{jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}</h2>
+                ) : (
+                    <h2>{info.LinkedIn.employed ? info.LinkedIn.job : info.LinkedIn.profession}</h2>
+                )}
                 <div />
             </div>
             <GeneratePDF />
