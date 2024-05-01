@@ -7,6 +7,7 @@ import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
 import GeneratePDF from "/src/Tools/GeneratePDF.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 import "./CVPage.scss";
 
 function CVPageAdmin() {
@@ -30,6 +31,11 @@ function CVPageAdmin() {
             checkSession();
             getProfession();
             getJob();
+        } else {
+            setTimeout(() => {
+                setLoadingProfessionData(false);
+                setLoadingJobData(false);
+            }, 1000);
         }
     }, []);
 
@@ -163,7 +169,7 @@ function CVPageAdmin() {
                                     <h2>Admin / cv</h2>
                                 </div>
                                 <CVPageTitle />
-                                <CVPageContent jobData={jobData} professionData={professionData} />
+                                <CVPageContent loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -179,7 +185,7 @@ function CVPageAdmin() {
                                     <h2>Admin / cv</h2>
                                 </div>
                                 <CVPageTitleMobile />
-                                <CVPageContentMobile jobData={jobData} professionData={professionData} />
+                                <CVPageContentMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -207,18 +213,34 @@ function CVPageTitle() {
     );
 }
 
-function CVPageContent({ jobData, professionData }) {
+function CVPageContent({ loadingProfessionData, loadingJobData, professionData, jobData }) {
     return (
         <div className="cvPageContentContainer">
-            <div className="cvContent">
-                <h1>{info.LinkedIn.name}</h1>
-                {info.api.enabled ? (
-                    <h2>{jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}</h2>
-                ) : (
-                    <h2>{info.LinkedIn.employed ? info.LinkedIn.job : info.LinkedIn.profession}</h2>
-                )}
-                <div />
-            </div>
+            <AnimatePresence>
+                <div className="cvContent">
+                    <h1>{info.LinkedIn.name}</h1>
+                    {info.api.enabled ? (
+                        !loadingProfessionData || !loadingJobData ? (
+                            <motion.h2 key="porjA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                                {jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}
+                            </motion.h2>
+                        ) : (
+                            <motion.h2 style={{ fontStyle: "normal" }} key="porjloaderA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                                ...
+                            </motion.h2>
+                        )
+                    ) : !loadingProfessionData || !loadingJobData ? (
+                        <motion.h2 key="porjA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            {info.LinkedIn.employed ? info.LinkedIn.job : info.LinkedIn.profession}
+                        </motion.h2>
+                    ) : (
+                        <motion.h2 style={{ fontStyle: "normal" }} key="porjloaderA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            ...
+                        </motion.h2>
+                    )}
+                    <div />
+                </div>
+            </AnimatePresence>
             <GeneratePDF />
         </div>
     );
@@ -233,18 +255,34 @@ function CVPageTitleMobile() {
     );
 }
 
-function CVPageContentMobile({ jobData, professionData }) {
+function CVPageContentMobile({ loadingProfessionData, loadingJobData, professionData, jobData }) {
     return (
         <div className="cvPageContentContainerMobile">
-            <div className="cvContentMobile">
-                <h1>{info.LinkedIn.name}</h1>
-                {info.api.enabled ? (
-                    <h2>{jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}</h2>
-                ) : (
-                    <h2>{info.LinkedIn.employed ? info.LinkedIn.job : info.LinkedIn.profession}</h2>
-                )}
-                <div />
-            </div>
+            <AnimatePresence>
+                <div className="cvContentMobile">
+                    <h1>{info.LinkedIn.name}</h1>
+                    {info.api.enabled ? (
+                        !loadingProfessionData || !loadingJobData ? (
+                            <motion.h2 key="porjmobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                                {jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}
+                            </motion.h2>
+                        ) : (
+                            <motion.h2 style={{ fontStyle: "normal" }} key="porjloadermobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                                ...
+                            </motion.h2>
+                        )
+                    ) : !loadingProfessionData || !loadingJobData ? (
+                        <motion.h2 key="porj" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            {info.LinkedIn.employed ? info.LinkedIn.job : info.LinkedIn.profession}
+                        </motion.h2>
+                    ) : (
+                        <motion.h2 style={{ fontStyle: "normal" }} key="porjloadermobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+                            ...
+                        </motion.h2>
+                    )}
+                    <div />
+                </div>
+            </AnimatePresence>
             <GeneratePDF />
         </div>
     );
