@@ -393,9 +393,9 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                     {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTech : professionData?.professionStatus?.professionTech}
                                     {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobDetailed ? (
                                         <>
-                                            <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{jobData.jobStatus.jobDetailed}</span>
-                                            <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                            <span style={{ color: jobData?.jobStatus?.companyColor, fontStyle: "normal" }}>{" ("}</span>
+                                            <span style={{ color: jobData?.jobStatus?.companyColor }}>{jobData.jobStatus.jobDetailed}</span>
+                                            <span style={{ color: jobData?.jobStatus?.companyColor, fontStyle: "normal" }}>{") "}</span>
                                         </>
                                     ) : (
                                         !jobData?.jobStatus?.employed &&
@@ -442,9 +442,9 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                 {info.LinkedIn.employed ? info.LinkedIn.jobTech : info.LinkedIn.professionTech}
                                 {info.LinkedIn.employed && info.LinkedIn.jobDetailed ? (
                                     <>
-                                        <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                        <span style={{ color: "green" }}>{info.LinkedIn.jobDetailed}</span>
-                                        <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{" ("}</span>
+                                        <span style={{ color: info.LinkedIn.companyColor }}>{info.LinkedIn.jobDetailed}</span>
+                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{") "}</span>
                                     </>
                                 ) : (
                                     !info.LinkedIn.employed &&
@@ -979,9 +979,9 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTech : professionData?.professionStatus?.professionTech}
                                     {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobDetailed ? (
                                         <>
-                                            <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{jobData.jobStatus.jobDetailed}</span>
-                                            <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                            <span style={{ color: jobData?.jobStatus?.companyColor, fontStyle: "normal" }}>{" ("}</span>
+                                            <span style={{ color: jobData?.jobStatus?.companyColor }}>{jobData.jobStatus.jobDetailed}</span>
+                                            <span style={{ color: jobData?.jobStatus?.companyColor, fontStyle: "normal" }}>{") "}</span>
                                         </>
                                     ) : (
                                         !jobData?.jobStatus?.employed &&
@@ -1028,9 +1028,9 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                 {info.LinkedIn.employed ? info.LinkedIn.jobTech : info.LinkedIn.professionTech}
                                 {info.LinkedIn.employed && info.LinkedIn.jobDetailed ? (
                                     <>
-                                        <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                        <span style={{ color: "green" }}>{info.LinkedIn.jobDetailed}</span>
-                                        <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
+                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{" ("}</span>
+                                        <span style={{ color: info.LinkedIn.companyColor }}>{info.LinkedIn.jobDetailed}</span>
+                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{") "}</span>
                                     </>
                                 ) : (
                                     !info.LinkedIn.employed &&
