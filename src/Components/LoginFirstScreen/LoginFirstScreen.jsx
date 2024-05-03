@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { TextField } from "@mui/material";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -50,7 +49,6 @@ function LoginTitleContainer() {
 function LoginSection() {
     const [userValue, setUserValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
-    const [passwordType, setPasswordType] = useState("password");
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -66,14 +64,6 @@ function LoginSection() {
 
     const handlePasswordChange = (event) => {
         setPasswordValue(event.target.value);
-    };
-
-    const togglePassword = () => {
-        if (passwordType === "password") {
-            setPasswordType("text");
-            return;
-        }
-        setPasswordType("password");
     };
 
     const handleLogin = () => {
@@ -156,11 +146,11 @@ function LoginSection() {
                 <h2>MatrixZone</h2>
                 <div className="user">
                     <h3>Username:</h3>
-                    <TextField className="usernameField" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
+                    <input type="text" placeholder="Enter username" className="usernameField" value={userValue} onChange={handleUserChange} />
                 </div>
                 <div className="password">
                     <h3>Password:</h3>
-                    <TextField className="passwordField" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
+                    <input type="password" placeholder="Enter password" className="passwordField" value={passwordValue} onChange={handlePasswordChange} />
                 </div>
                 <AnimatePresence>
                     <motion.button
@@ -212,7 +202,6 @@ function LoginTitleContainerMobile() {
 function LoginSectionMobile() {
     const [userValue, setUserValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
-    const [passwordType, setPasswordType] = useState("password");
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -228,14 +217,6 @@ function LoginSectionMobile() {
 
     const handlePasswordChange = (event) => {
         setPasswordValue(event.target.value);
-    };
-
-    const togglePassword = () => {
-        if (passwordType === "password") {
-            setPasswordType("text");
-            return;
-        }
-        setPasswordType("password");
     };
 
     const handleLogin = () => {
@@ -318,11 +299,11 @@ function LoginSectionMobile() {
                 <h2>MatrixZone</h2>
                 <div className="userMobile">
                     <h3>Username:</h3>
-                    <TextField className="usernameFieldMobile" value={userValue} label="Enter username" variant="outlined" onChange={handleUserChange} />
+                    <input type="text" placeholder="Enter username" className="usernameFieldMobile" value={userValue} onChange={handleUserChange} />
                 </div>
                 <div className="passwordMobile">
                     <h3>Password:</h3>
-                    <TextField className="passwordFieldMobile" type={passwordType} value={passwordValue} label="Enter password" variant="outlined" onChange={handlePasswordChange} />
+                    <input type="password" placeholder="Enter password" className="passwordFieldMobile" value={passwordValue} onChange={handlePasswordChange} />
                 </div>
                 <AnimatePresence>
                     <motion.button

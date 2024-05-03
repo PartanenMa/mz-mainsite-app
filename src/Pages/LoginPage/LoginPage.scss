@@ -114,10 +114,24 @@
 
                 .usernameField {
                     background-color: #03a062;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
                     border-radius: 50px;
+                    outline-color: green;
+                    padding-left: 10px;
                     will-change: filter;
                     transition: filter 300ms;
                     transition: background-color 500ms ease-in-out;
+                }
+
+                ::placeholder {
+                    color: #333;
+                    opacity: 1;
+                }
+
+                ::-ms-input-placeholder {
+                    color: #333;
                 }
 
                 .usernameField:hover {
@@ -143,10 +157,24 @@
 
                 .passwordField {
                     background-color: #03a062;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
                     border-radius: 50px;
+                    outline-color: green;
+                    padding-left: 10px;
                     will-change: filter;
                     transition: filter 300ms;
                     transition: background-color 500ms ease-in-out;
+                }
+
+                ::placeholder {
+                    color: #333;
+                    opacity: 1;
+                }
+
+                ::-ms-input-placeholder {
+                    color: #333;
                 }
 
                 .passwordField:hover {
@@ -325,10 +353,24 @@
 
                 .usernameFieldMobile {
                     background-color: #03a062;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
                     border-radius: 50px;
+                    outline-color: green;
+                    padding-left: 10px;
                     will-change: filter;
                     transition: filter 300ms;
                     transition: background-color 500ms ease-in-out;
+                }
+
+                ::placeholder {
+                    color: #333;
+                    opacity: 1;
+                }
+
+                ::-ms-input-placeholder {
+                    color: #333;
                 }
 
                 .usernameFieldMobile:hover {
@@ -354,10 +396,24 @@
 
                 .passwordFieldMobile {
                     background-color: #03a062;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
                     border-radius: 50px;
+                    outline-color: green;
+                    padding-left: 10px;
                     will-change: filter;
                     transition: filter 300ms;
                     transition: background-color 500ms ease-in-out;
+                }
+
+                ::placeholder {
+                    color: #333;
+                    opacity: 1;
+                }
+
+                ::-ms-input-placeholder {
+                    color: #333;
                 }
 
                 .passwordFieldMobile:hover {
