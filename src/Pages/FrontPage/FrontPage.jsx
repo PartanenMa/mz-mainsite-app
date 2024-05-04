@@ -384,6 +384,198 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                     </motion.div>
                 </AnimatePresence>
             </section>
+            <section className="professionSection">
+                <div className="profession">
+                    <div className="professionTitle">
+                        {info.api.enabled ? (
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                <motion.h3 key="professionsectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle + " at " : professionData?.professionStatus?.profession}
+                                    <span
+                                        style={{
+                                            color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                        }}
+                                    >
+                                        {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : ""}
+                                    </span>
+                                    {!jobData?.jobStatus?.employed ? (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                        </>
+                                    ) : (
+                                        ""
+                                    )}
+                                    <span title={jobData?.jobStatus?.employed ? "Currently employed" : "Currently unemployed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
+                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? " 💼" : " 📋"}
+                                    </span>
+                                </motion.h3>
+                            ) : loadingProfessionData || loadingJobData ? (
+                                <motion.div className="loadingProfessionOrJobTitle" key="loadingprofessionorjobtitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionOrJobTitle" />
+                                </motion.div>
+                            ) : (
+                                <motion.h3
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        backdropFilter: "blur(15px)",
+                                        color: "red",
+                                        height: "fit-content",
+                                        width: "fit-content",
+                                        border: "1px solid red",
+                                        borderRadius: "5px",
+                                        padding: "5px",
+                                        animation: "none",
+                                    }}
+                                    key="professionorjobdatafail"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: 100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    NO DATA!
+                                </motion.h3>
+                            )
+                        ) : loadingProfessionData || loadingJobData ? (
+                            <motion.div className="loadingProfessionOrJobTitle" key="loadingprofessionorjobtitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionOrJobTitle" />
+                            </motion.div>
+                        ) : (
+                            <motion.h3 key="professionsectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
+                                <span
+                                    style={{
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                                </span>
+                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                    <>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                        <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                    </>
+                                ) : (
+                                    ""
+                                )}
+                                <span
+                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                    style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
+                                </span>
+                            </motion.h3>
+                        )}
+                    </div>
+                    <div className="professionContent">
+                        {professionData && !loadingProfessionData && (
+                            <>
+                                <motion.div
+                                    className="professionContentBox1"
+                                    style={{ display: info.api.enabled && !professionData?.professionStatus && "none" }}
+                                    key="professioncontentbox1"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    {info.api.enabled ? (
+                                        <p>
+                                            {jobData?.jobStatus?.employed ? "Currently working as a " + jobData?.jobStatus?.jobTitle + " at " : "Currently looking for work as a "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : professionData?.professionStatus?.profession}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I use technologies such as{" "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStack : professionData?.professionStatus?.professionTechStack}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I also use tools such as{" "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobAdditionalTech : professionData?.professionStatus?.professionAdditionalTech}
+                                            </span>
+                                            .
+                                        </p>
+                                    ) : (
+                                        <p>
+                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I use technologies such as{" "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I also use tools such as{" "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
+                                            </span>
+                                            .
+                                        </p>
+                                    )}
+                                </motion.div>
+                                {info.api.enabled
+                                    ? jobData?.jobStatus?.employed && (
+                                          <div
+                                              className="professionContentBox2"
+                                              style={{
+                                                  "--company-color": jobData?.jobStatus?.companyColor,
+                                                  backgroundImage: `url(${jobData?.jobStatus?.companyLogo})`,
+                                                  height: jobData?.jobStatus?.companyLogoH,
+                                                  width: jobData?.jobStatus?.companyLogoW,
+                                                  cursor: "pointer",
+                                              }}
+                                              onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
+                                          />
+                                      )
+                                    : info.LinkedIn.employed && (
+                                          <div
+                                              className="professionContentBox2"
+                                              style={{
+                                                  "--company-color": info.LinkedIn.companyColor,
+                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
+                                                  height: info.LinkedIn.companyLogoH,
+                                                  width: info.LinkedIn.companyLogoW,
+                                                  cursor: "pointer",
+                                              }}
+                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
+                                          />
+                                      )}
+                            </>
+                        )}
+                    </div>
+                </div>
+            </section>
             <section className="technologySection">
                 <div className="technology">
                     <div className="technologyTitle">
@@ -627,198 +819,6 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                     </div>
                 </div>
             </section>
-            <section className="professionSection">
-                <div className="profession">
-                    <div className="professionTitle">
-                        {info.api.enabled ? (
-                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
-                                <motion.h3 key="professionsectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle + " at " : professionData?.professionStatus?.profession}
-                                    <span
-                                        style={{
-                                            color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                        }}
-                                    >
-                                        {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : ""}
-                                    </span>
-                                    {!jobData?.jobStatus?.employed ? (
-                                        <>
-                                            <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{"Looking for work"}</span>
-                                            <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
-                                        </>
-                                    ) : (
-                                        ""
-                                    )}
-                                    <span title={jobData?.jobStatus?.employed ? "Currently employed" : "Currently unemployed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
-                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? " 💼" : " 📋"}
-                                    </span>
-                                </motion.h3>
-                            ) : loadingProfessionData || loadingJobData ? (
-                                <motion.div className="loadingProfessionOrJobTitle" key="loadingprofessionorjobtitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfessionOrJobTitle" />
-                                </motion.div>
-                            ) : (
-                                <motion.h3
-                                    style={{
-                                        backgroundColor: "transparent",
-                                        backdropFilter: "blur(15px)",
-                                        color: "red",
-                                        height: "fit-content",
-                                        width: "fit-content",
-                                        border: "1px solid red",
-                                        borderRadius: "5px",
-                                        padding: "5px",
-                                        animation: "none",
-                                    }}
-                                    key="professionorjobdatafail"
-                                    transition={{ delay: 0.5 }}
-                                    initial={{ opacity: 0, y: 100 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
-                                    NO DATA!
-                                </motion.h3>
-                            )
-                        ) : loadingProfessionData || loadingJobData ? (
-                            <motion.div className="loadingProfessionOrJobTitle" key="loadingprofessionorjobtitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                <div className="loaderProfessionOrJobTitle" />
-                            </motion.div>
-                        ) : (
-                            <motion.h3 key="professionsectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
-                                <span
-                                    style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
-                                    }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
-                                </span>
-                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
-                                    <>
-                                        <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
-                                        <span style={{ color: "green" }}>{"Looking for work"}</span>
-                                        <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
-                                    </>
-                                ) : (
-                                    ""
-                                )}
-                                <span
-                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
-                                    style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
-                                </span>
-                            </motion.h3>
-                        )}
-                    </div>
-                    <div className="professionContent">
-                        {professionData && !loadingProfessionData && (
-                            <>
-                                <motion.div
-                                    className="professionContentBox1"
-                                    style={{ display: info.api.enabled && !professionData?.professionStatus && "none" }}
-                                    key="professioncontentbox1"
-                                    initial={{ opacity: 0, y: -100 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
-                                    {info.api.enabled ? (
-                                        <p>
-                                            {jobData?.jobStatus?.employed ? "Currently working as a " + jobData?.jobStatus?.jobTitle + " at " : "Currently looking for work as a "}
-                                            <span
-                                                style={{
-                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                                }}
-                                            >
-                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : professionData?.professionStatus?.profession}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I use technologies such as{" "}
-                                            <span
-                                                style={{
-                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                                }}
-                                            >
-                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStack : professionData?.professionStatus?.professionTechStack}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I also use tools such as{" "}
-                                            <span
-                                                style={{
-                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                                }}
-                                            >
-                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobAdditionalTech : professionData?.professionStatus?.professionAdditionalTech}
-                                            </span>
-                                            .
-                                        </p>
-                                    ) : (
-                                        <p>
-                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
-                                            <span
-                                                style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
-                                                }}
-                                            >
-                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I use technologies such as{" "}
-                                            <span
-                                                style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
-                                                }}
-                                            >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I also use tools such as{" "}
-                                            <span
-                                                style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
-                                                }}
-                                            >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
-                                            </span>
-                                            .
-                                        </p>
-                                    )}
-                                </motion.div>
-                                {info.api.enabled
-                                    ? jobData?.jobStatus?.employed && (
-                                          <div
-                                              className="professionContentBox2"
-                                              style={{
-                                                  "--company-color": jobData?.jobStatus?.companyColor,
-                                                  backgroundImage: `url(${jobData?.jobStatus?.companyLogo})`,
-                                                  height: jobData?.jobStatus?.companyLogoH,
-                                                  width: jobData?.jobStatus?.companyLogoW,
-                                                  cursor: "pointer",
-                                              }}
-                                              onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
-                                          />
-                                      )
-                                    : info.LinkedIn.employed && (
-                                          <div
-                                              className="professionContentBox2"
-                                              style={{
-                                                  "--company-color": info.LinkedIn.companyColor,
-                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
-                                                  height: info.LinkedIn.companyLogoH,
-                                                  width: info.LinkedIn.companyLogoW,
-                                                  cursor: "pointer",
-                                              }}
-                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
-                                          />
-                                      )}
-                            </>
-                        )}
-                    </div>
-                </div>
-            </section>
         </main>
     );
 }
@@ -969,6 +969,196 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                         </motion.div>
                     </motion.div>
                 </AnimatePresence>
+            </section>
+            <section className="professionSectionMobile">
+                <div className="professionMobile">
+                    <div className="professionTitleMobile">
+                        {info.api.enabled ? (
+                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle + " at " : professionData?.professionStatus?.profession}
+                                    <span
+                                        style={{
+                                            color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                        }}
+                                    >
+                                        {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : ""}
+                                    </span>
+                                    {!jobData?.jobStatus?.employed ? (
+                                        <>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                            <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                            <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                        </>
+                                    ) : (
+                                        ""
+                                    )}
+                                    <span title={jobData?.jobStatus?.employed ? "Currently employed" : "Currently unemployed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
+                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? " 💼" : " 📋"}
+                                    </span>
+                                </motion.h3>
+                            ) : loadingProfessionData || loadingJobData ? (
+                                <motion.div className="loadingProfessionOrJobTitleMobile" key="loadingprofessionorjobtitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <div className="loaderProfessionOrJobTitleMobile" />
+                                </motion.div>
+                            ) : (
+                                <motion.h3
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        backdropFilter: "blur(15px)",
+                                        color: "red",
+                                        height: "fit-content",
+                                        width: "fit-content",
+                                        border: "1px solid red",
+                                        borderRadius: "5px",
+                                        padding: "5px",
+                                        animation: "none",
+                                    }}
+                                    key="professionorjobdatafailmobile"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: 100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    NO DATA!
+                                </motion.h3>
+                            )
+                        ) : loadingProfessionData || loadingJobData ? (
+                            <motion.div className="loadingProfessionOrJobTitleMobile" key="loadingprofessionorjobtitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderProfessionOrJobTitleMobile" />
+                            </motion.div>
+                        ) : (
+                            <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
+                                <span
+                                    style={{
+                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                    }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                                </span>
+                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                    <>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
+                                        <span style={{ color: "green" }}>{"Looking for work"}</span>
+                                        <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
+                                    </>
+                                ) : (
+                                    ""
+                                )}
+                                <span
+                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                    style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
+                                >
+                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
+                                </span>
+                            </motion.h3>
+                        )}
+                    </div>
+                    <div className="professionContentMobile">
+                        {professionData && !loadingProfessionData && (
+                            <>
+                                <motion.div
+                                    className="professionContentBox1Mobile"
+                                    style={{ display: info.api.enabled && !professionData?.professionStatus && "none" }}
+                                    key="professioncontentbox1mobile"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    {info.api.enabled ? (
+                                        <p>
+                                            {jobData?.jobStatus?.employed ? "Currently working as a " + jobData?.jobStatus?.jobTitle + " at " : "Currently looking for work as a "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : professionData?.professionStatus?.profession}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I use technologies such as{" "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStack : professionData?.professionStatus?.professionTechStack}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I also use tools such as{" "}
+                                            <span
+                                                style={{
+                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
+                                                }}
+                                            >
+                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobAdditionalTech : professionData?.professionStatus?.professionAdditionalTech}
+                                            </span>
+                                            .
+                                        </p>
+                                    ) : (
+                                        <p>
+                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I use technologies such as{" "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
+                                            </span>
+                                            .
+                                            <br />
+                                            <br />I also use tools such as{" "}
+                                            <span
+                                                style={{
+                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                }}
+                                            >
+                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
+                                            </span>
+                                            .
+                                        </p>
+                                    )}
+                                </motion.div>
+                                {info.api.enabled
+                                    ? jobData?.jobStatus?.employed && (
+                                          <div
+                                              className="professionContentBox2Mobile"
+                                              style={{
+                                                  "--company-color": jobData?.jobStatus?.companyColor,
+                                                  backgroundImage: `url(${jobData?.jobStatus?.companyLogo})`,
+                                                  height: jobData?.jobStatus?.companyLogoH / 2,
+                                                  width: jobData?.jobStatus?.companyLogoW / 2,
+                                                  cursor: "pointer",
+                                              }}
+                                              onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
+                                          />
+                                      )
+                                    : info.LinkedIn.employed && (
+                                          <div
+                                              className="professionContentBox2Mobile"
+                                              style={{
+                                                  "--company-color": info.LinkedIn.companyColor,
+                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
+                                                  cursor: "pointer",
+                                              }}
+                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
+                                          />
+                                      )}
+                            </>
+                        )}
+                    </div>
+                </div>
             </section>
             <section className="technologySectionMobile">
                 <div className="technologyMobile">
@@ -1210,196 +1400,6 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     </AnimatePresence>
                                 </div>
                             </div>
-                        )}
-                    </div>
-                </div>
-            </section>
-            <section className="professionSectionMobile">
-                <div className="professionMobile">
-                    <div className="professionTitleMobile">
-                        {info.api.enabled ? (
-                            (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
-                                <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle + " at " : professionData?.professionStatus?.profession}
-                                    <span
-                                        style={{
-                                            color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                        }}
-                                    >
-                                        {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : ""}
-                                    </span>
-                                    {!jobData?.jobStatus?.employed ? (
-                                        <>
-                                            <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{"Looking for work"}</span>
-                                            <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
-                                        </>
-                                    ) : (
-                                        ""
-                                    )}
-                                    <span title={jobData?.jobStatus?.employed ? "Currently employed" : "Currently unemployed"} style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}>
-                                        {jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company ? " 💼" : " 📋"}
-                                    </span>
-                                </motion.h3>
-                            ) : loadingProfessionData || loadingJobData ? (
-                                <motion.div className="loadingProfessionOrJobTitleMobile" key="loadingprofessionorjobtitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfessionOrJobTitleMobile" />
-                                </motion.div>
-                            ) : (
-                                <motion.h3
-                                    style={{
-                                        backgroundColor: "transparent",
-                                        backdropFilter: "blur(15px)",
-                                        color: "red",
-                                        height: "fit-content",
-                                        width: "fit-content",
-                                        border: "1px solid red",
-                                        borderRadius: "5px",
-                                        padding: "5px",
-                                        animation: "none",
-                                    }}
-                                    key="professionorjobdatafailmobile"
-                                    transition={{ delay: 0.5 }}
-                                    initial={{ opacity: 0, y: 100 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
-                                    NO DATA!
-                                </motion.h3>
-                            )
-                        ) : loadingProfessionData || loadingJobData ? (
-                            <motion.div className="loadingProfessionOrJobTitleMobile" key="loadingprofessionorjobtitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                <div className="loaderProfessionOrJobTitleMobile" />
-                            </motion.div>
-                        ) : (
-                            <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
-                                <span
-                                    style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
-                                    }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
-                                </span>
-                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
-                                    <>
-                                        <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
-                                        <span style={{ color: "green" }}>{"Looking for work"}</span>
-                                        <span style={{ color: "green", fontStyle: "norman" }}>{") "}</span>
-                                    </>
-                                ) : (
-                                    ""
-                                )}
-                                <span
-                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
-                                    style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
-                                >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
-                                </span>
-                            </motion.h3>
-                        )}
-                    </div>
-                    <div className="professionContentMobile">
-                        {professionData && !loadingProfessionData && (
-                            <>
-                                <motion.div
-                                    className="professionContentBox1Mobile"
-                                    style={{ display: info.api.enabled && !professionData?.professionStatus && "none" }}
-                                    key="professioncontentbox1mobile"
-                                    initial={{ opacity: 0, y: -100 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
-                                    {info.api.enabled ? (
-                                        <p>
-                                            {jobData?.jobStatus?.employed ? "Currently working as a " + jobData?.jobStatus?.jobTitle + " at " : "Currently looking for work as a "}
-                                            <span
-                                                style={{
-                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                                }}
-                                            >
-                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.company : professionData?.professionStatus?.profession}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I use technologies such as{" "}
-                                            <span
-                                                style={{
-                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                                }}
-                                            >
-                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStack : professionData?.professionStatus?.professionTechStack}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I also use tools such as{" "}
-                                            <span
-                                                style={{
-                                                    color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "green",
-                                                }}
-                                            >
-                                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobAdditionalTech : professionData?.professionStatus?.professionAdditionalTech}
-                                            </span>
-                                            .
-                                        </p>
-                                    ) : (
-                                        <p>
-                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
-                                            <span
-                                                style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
-                                                }}
-                                            >
-                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I use technologies such as{" "}
-                                            <span
-                                                style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
-                                                }}
-                                            >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
-                                            </span>
-                                            .
-                                            <br />
-                                            <br />I also use tools such as{" "}
-                                            <span
-                                                style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
-                                                }}
-                                            >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
-                                            </span>
-                                            .
-                                        </p>
-                                    )}
-                                </motion.div>
-                                {info.api.enabled
-                                    ? jobData?.jobStatus?.employed && (
-                                          <div
-                                              className="professionContentBox2Mobile"
-                                              style={{
-                                                  "--company-color": jobData?.jobStatus?.companyColor,
-                                                  backgroundImage: `url(${jobData?.jobStatus?.companyLogo})`,
-                                                  height: jobData?.jobStatus?.companyLogoH / 2,
-                                                  width: jobData?.jobStatus?.companyLogoW / 2,
-                                                  cursor: "pointer",
-                                              }}
-                                              onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
-                                          />
-                                      )
-                                    : info.LinkedIn.employed && (
-                                          <div
-                                              className="professionContentBox2Mobile"
-                                              style={{
-                                                  "--company-color": info.LinkedIn.companyColor,
-                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
-                                                  cursor: "pointer",
-                                              }}
-                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
-                                          />
-                                      )}
-                            </>
                         )}
                     </div>
                 </div>

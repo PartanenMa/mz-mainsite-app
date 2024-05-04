@@ -540,6 +540,136 @@
                 }
             }
 
+            .professionSection {
+                background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-color: transparent;
+                height: 650px;
+                width: 100%;
+                box-shadow: inset 0 0 30px 20px black;
+                overflow: hidden;
+
+                .profession {
+                    height: 100%;
+                    width: 1194px;
+                    margin-left: 50px;
+
+                    .professionTitle {
+                        height: 10%;
+                        width: 100%;
+
+                        h3 {
+                            animation: fadeIn 0.3s;
+                            color: #03a062;
+                            font-size: 45px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
+                            cursor: default;
+                        }
+
+                        .loadingProfessionOrJobTitle {
+                            height: 30px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
+                            top: 50px;
+                            right: 600px;
+
+                            .loaderProfessionOrJobTitle {
+                                border: 6px solid #f3f3f3;
+                                border-radius: 50%;
+                                border-top: 6px solid #03a062;
+                                width: 30px;
+                                height: 30px;
+                                -webkit-animation: spin 2s linear infinite;
+                                animation: spin 2s linear infinite;
+                            }
+
+                            @-webkit-keyframes spin {
+                                0% {
+                                    -webkit-transform: rotate(0deg);
+                                }
+                                100% {
+                                    -webkit-transform: rotate(360deg);
+                                }
+                            }
+
+                            @keyframes spin {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+                    }
+
+                    .professionContent {
+                        height: 90%;
+                        width: 100%;
+
+                        .professionContentBox1 {
+                            animation: fadeIn 0.3s;
+                            background-color: transparent;
+                            backdrop-filter: blur(15px);
+                            width: 535px;
+                            border: 1px inset #03a062;
+                            border-radius: 10px;
+                            box-shadow: 10px 5px 5px #111;
+                            position: relative;
+                            top: 30px;
+
+                            p {
+                                color: #03a062;
+                                font-size: 30px;
+                                font-style: italic;
+                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                                text-shadow:
+                                    0 0 7px black,
+                                    0 0 3px black;
+                                max-width: 515px;
+                                margin-left: 10px;
+                                margin-right: 10px;
+                                cursor: default;
+                            }
+                        }
+
+                        .professionContentBox2 {
+                            animation: fadeIn 0.3s;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            filter: drop-shadow(0 0 2em var(--company-color));
+                            border-radius: 10px;
+                            position: relative;
+                            bottom: 200px;
+                            left: 650px;
+                            animation: floating 3s ease-in-out infinite;
+                        }
+
+                        @keyframes floating {
+                            0% {
+                                transform: translate(0, 0px);
+                            }
+                            50% {
+                                transform: translate(0, 5px);
+                            }
+                            100% {
+                                transform: translate(0, -0px);
+                            }
+                        }
+                    }
+                }
+            }
+
             .technologySection {
                 background-image: url("/src/Assets/Images/TechnologySectionBG.gif");
                 background-repeat: no-repeat;
@@ -917,136 +1047,6 @@
                                         left: 430px;
                                     }
                                 }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .professionSection {
-                background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-                background-color: transparent;
-                height: 650px;
-                width: 100%;
-                box-shadow: inset 0 0 30px 20px black;
-                overflow: hidden;
-
-                .profession {
-                    height: 100%;
-                    width: 1194px;
-                    margin-left: 50px;
-
-                    .professionTitle {
-                        height: 10%;
-                        width: 100%;
-
-                        h3 {
-                            animation: fadeIn 0.3s;
-                            color: #03a062;
-                            font-size: 45px;
-                            font-style: italic;
-                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            text-shadow:
-                                0 0 7px black,
-                                0 0 3px black;
-                            cursor: default;
-                        }
-
-                        .loadingProfessionOrJobTitle {
-                            height: 30px;
-                            width: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            position: relative;
-                            top: 50px;
-                            right: 600px;
-
-                            .loaderProfessionOrJobTitle {
-                                border: 6px solid #f3f3f3;
-                                border-radius: 50%;
-                                border-top: 6px solid #03a062;
-                                width: 30px;
-                                height: 30px;
-                                -webkit-animation: spin 2s linear infinite;
-                                animation: spin 2s linear infinite;
-                            }
-
-                            @-webkit-keyframes spin {
-                                0% {
-                                    -webkit-transform: rotate(0deg);
-                                }
-                                100% {
-                                    -webkit-transform: rotate(360deg);
-                                }
-                            }
-
-                            @keyframes spin {
-                                0% {
-                                    transform: rotate(0deg);
-                                }
-                                100% {
-                                    transform: rotate(360deg);
-                                }
-                            }
-                        }
-                    }
-
-                    .professionContent {
-                        height: 90%;
-                        width: 100%;
-
-                        .professionContentBox1 {
-                            animation: fadeIn 0.3s;
-                            background-color: transparent;
-                            backdrop-filter: blur(15px);
-                            width: 535px;
-                            border: 1px inset #03a062;
-                            border-radius: 10px;
-                            box-shadow: 10px 5px 5px #111;
-                            position: relative;
-                            top: 30px;
-
-                            p {
-                                color: #03a062;
-                                font-size: 30px;
-                                font-style: italic;
-                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                text-shadow:
-                                    0 0 7px black,
-                                    0 0 3px black;
-                                max-width: 515px;
-                                margin-left: 10px;
-                                margin-right: 10px;
-                                cursor: default;
-                            }
-                        }
-
-                        .professionContentBox2 {
-                            animation: fadeIn 0.3s;
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            background-size: cover;
-                            filter: drop-shadow(0 0 2em var(--company-color));
-                            border-radius: 10px;
-                            position: relative;
-                            bottom: 200px;
-                            left: 650px;
-                            animation: floating 3s ease-in-out infinite;
-                        }
-
-                        @keyframes floating {
-                            0% {
-                                transform: translate(0, 0px);
-                            }
-                            50% {
-                                transform: translate(0, 5px);
-                            }
-                            100% {
-                                transform: translate(0, -0px);
                             }
                         }
                     }
@@ -1586,6 +1586,137 @@
             }
         }
 
+        .professionSectionMobile {
+            background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: transparent;
+            height: 230px;
+            width: 100%;
+            box-shadow: inset 0 0 30px 20px black;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+
+            .professionMobile {
+                height: 100%;
+                width: 330px;
+                margin-left: 5px;
+
+                .professionTitleMobile {
+                    height: 10%;
+                    width: 100%;
+
+                    h3 {
+                        animation: fadeIn 0.3s;
+                        color: #03a062;
+                        font-size: 20px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        text-shadow:
+                            0 0 7px black,
+                            0 0 3px black;
+                    }
+
+                    .loadingProfessionOrJobTitleMobile {
+                        height: 30px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        top: 50px;
+                        right: 600px;
+
+                        .loaderProfessionOrJobTitleMobile {
+                            border: 3px solid #f3f3f3;
+                            border-radius: 50%;
+                            border-top: 3px solid #03a062;
+                            width: 15px;
+                            height: 15px;
+                            -webkit-animation: spin 2s linear infinite;
+                            animation: spin 2s linear infinite;
+                        }
+
+                        @-webkit-keyframes spin {
+                            0% {
+                                -webkit-transform: rotate(0deg);
+                            }
+                            100% {
+                                -webkit-transform: rotate(360deg);
+                            }
+                        }
+
+                        @keyframes spin {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+                }
+
+                .professionContentMobile {
+                    height: 90%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    .professionContentBox1Mobile {
+                        animation: fadeIn 0.3s;
+                        background-color: transparent;
+                        backdrop-filter: blur(15px);
+                        width: 170px;
+                        border: 1px inset #03a062;
+                        border-radius: 5px;
+                        box-shadow: 10px 5px 5px #111;
+
+                        p {
+                            color: #03a062;
+                            font-size: 9px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
+                            max-width: 96%px;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .professionContentBox2Mobile {
+                        height: 110px;
+                        width: 140px;
+                        animation: fadeIn 0.3s;
+                        background-repeat: no-repeat;
+                        background-position: 60% 35%;
+                        background-size: 80%;
+                        filter: drop-shadow(0 0 2em var(--company-color));
+                        border-radius: 5px;
+                        animation: floating 3s ease-in-out infinite;
+                    }
+
+                    @keyframes floating {
+                        0% {
+                            transform: translate(0, 0px);
+                        }
+                        50% {
+                            transform: translate(0, 5px);
+                        }
+                        100% {
+                            transform: translate(0, -0px);
+                        }
+                    }
+                }
+            }
+        }
+
         .technologySectionMobile {
             background-image: url("/src/Assets/Images/TechnologySectionBG.gif");
             background-repeat: no-repeat;
@@ -1967,137 +2098,6 @@
                                     padding: 5px;
                                 }
                             }
-                        }
-                    }
-                }
-            }
-        }
-
-        .professionSectionMobile {
-            background-image: url("/src/Assets/Images/ProfessionSectionBG.gif");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            background-color: transparent;
-            height: 230px;
-            width: 100%;
-            box-shadow: inset 0 0 30px 20px black;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-
-            .professionMobile {
-                height: 100%;
-                width: 330px;
-                margin-left: 5px;
-
-                .professionTitleMobile {
-                    height: 10%;
-                    width: 100%;
-
-                    h3 {
-                        animation: fadeIn 0.3s;
-                        color: #03a062;
-                        font-size: 20px;
-                        font-style: italic;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        text-shadow:
-                            0 0 7px black,
-                            0 0 3px black;
-                    }
-
-                    .loadingProfessionOrJobTitleMobile {
-                        height: 30px;
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
-                        top: 50px;
-                        right: 600px;
-
-                        .loaderProfessionOrJobTitleMobile {
-                            border: 3px solid #f3f3f3;
-                            border-radius: 50%;
-                            border-top: 3px solid #03a062;
-                            width: 15px;
-                            height: 15px;
-                            -webkit-animation: spin 2s linear infinite;
-                            animation: spin 2s linear infinite;
-                        }
-
-                        @-webkit-keyframes spin {
-                            0% {
-                                -webkit-transform: rotate(0deg);
-                            }
-                            100% {
-                                -webkit-transform: rotate(360deg);
-                            }
-                        }
-
-                        @keyframes spin {
-                            0% {
-                                transform: rotate(0deg);
-                            }
-                            100% {
-                                transform: rotate(360deg);
-                            }
-                        }
-                    }
-                }
-
-                .professionContentMobile {
-                    height: 90%;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 10px;
-
-                    .professionContentBox1Mobile {
-                        animation: fadeIn 0.3s;
-                        background-color: transparent;
-                        backdrop-filter: blur(15px);
-                        width: 170px;
-                        border: 1px inset #03a062;
-                        border-radius: 5px;
-                        box-shadow: 10px 5px 5px #111;
-
-                        p {
-                            color: #03a062;
-                            font-size: 9px;
-                            font-style: italic;
-                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            text-shadow:
-                                0 0 7px black,
-                                0 0 3px black;
-                            max-width: 96%px;
-                            margin-left: 10px;
-                            margin-right: 10px;
-                        }
-                    }
-
-                    .professionContentBox2Mobile {
-                        height: 110px;
-                        width: 140px;
-                        animation: fadeIn 0.3s;
-                        background-repeat: no-repeat;
-                        background-position: 60% 35%;
-                        background-size: 80%;
-                        filter: drop-shadow(0 0 2em var(--company-color));
-                        border-radius: 5px;
-                        animation: floating 3s ease-in-out infinite;
-                    }
-
-                    @keyframes floating {
-                        0% {
-                            transform: translate(0, 0px);
-                        }
-                        50% {
-                            transform: translate(0, 5px);
-                        }
-                        100% {
-                            transform: translate(0, -0px);
                         }
                     }
                 }
