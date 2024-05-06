@@ -23,6 +23,7 @@ import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 //Skills (back-end development):
+import CsLogo from "/src/Assets/Images/CsLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
@@ -391,6 +392,14 @@ export const dataFe = {
                     },
                     {
                         id: 2,
+                        name: "C#",
+                        skillLevel: "intermediate",
+                        color: "#684D95",
+                        image: CsLogo,
+                        backgroundSize: "60%",
+                    },
+                    {
+                        id: 3,
                         name: "Go",
                         skillLevel: "beginner",
                         color: "#00add8",
