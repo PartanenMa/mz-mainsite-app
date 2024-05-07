@@ -150,6 +150,16 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
     return (
         <div className="firstSectionContainer">
             <section className="homeFirstSectionCarousel">
+                <div className="carouselIntro">
+                    <div className="cIC">
+                        <h1 className="text-shadow"> -- MatrixZone -- </h1>
+                        <div className="tags">
+                            <p className="text-shadow">
+                                <small>My personal website.</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <Carousel images={carouselImages} height={"550px"} width={"900px"} />
             </section>
             <section className="homeFirstSection1">
