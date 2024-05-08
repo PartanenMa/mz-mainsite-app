@@ -239,7 +239,50 @@ function FrontPage() {
 }
 
 function Main({ connectionLoading, connection, loadingProfessionData, loadingJobData, loadingTechnologiesData, showFrontEnd, showBackEnd, professionData, jobData, techFe, techBe }) {
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const navigate = useNavigate();
+
+    const words = ["profile", "projects", "videos"];
+    const colors = ["profileColor", "projectsColor", "videosColor"];
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }, 3000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    useEffect(() => {
+        const words = document.querySelectorAll(".word");
+
+        const rotateText = () => {
+            const maxWordIndex = words.length - 1;
+            const currentWord = words[currentWordIndex];
+            const nextWord = currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
+
+            //Rotate out letters of current word:
+            Array.from(currentWord.children).forEach((letter, i) => {
+                setTimeout(() => {
+                    letter.className = "letter out";
+                }, i * 80);
+            });
+
+            //Reveal and rotate in letters of next word:
+            nextWord.style.opacity = "1";
+            Array.from(nextWord.children).forEach((letter, i) => {
+                letter.className = "letter behind";
+                setTimeout(
+                    () => {
+                        letter.className = "letter in";
+                    },
+                    340 + i * 80
+                );
+            });
+        };
+
+        rotateText();
+    }, [currentWordIndex]);
 
     const handleNavigation = (page) => {
         if (page === "profile") {
@@ -309,6 +352,22 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             <h3>Welcome to the MatrixZone</h3>
                         </div>
                     </motion.div>
+                    <div className="heroRotatingTextContainer">
+                        <div className="rotating-text">
+                            <p>Check out my</p>
+                            <p>
+                                {words.map((word, index) => (
+                                    <span key={index} className={`word ${index === 0 ? "active" : ""} ${colors[index]}`}>
+                                        {word.split("").map((letter, i) => (
+                                            <span key={i} className="letter">
+                                                {letter}
+                                            </span>
+                                        ))}
+                                    </span>
+                                ))}
+                            </p>
+                        </div>
+                    </div>
                     <motion.div className="heroContent" key="heroC" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
                         <motion.div
                             className="heroContent1"
