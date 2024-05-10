@@ -242,8 +242,8 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const navigate = useNavigate();
 
-    const words = ["profile", "projects", "videos"];
-    const colors = ["profileColor", "projectsColor", "videosColor"];
+    const words = ["videos", "profile", "projects"];
+    const colors = ["videosColor", "profileColor", "projectsColor"];
 
     useEffect(() => {
         const intervalId = setInterval(() => {
