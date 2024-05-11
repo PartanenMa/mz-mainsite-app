@@ -47,8 +47,23 @@ function FooterAdmin() {
                                     <div className="footerNav1-1">
                                         <AnimatePresence>
                                             <motion.h3
-                                                onClick={() => navigate(info.routes.profilePageAdmin)}
+                                                onClick={() => navigate(info.routes.homePageAdmin)}
                                                 key="fn1-1A"
+                                                whileHover={{
+                                                    scale: 1.2,
+                                                    transition: { duration: 0.1 },
+                                                }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
+                                                Home
+                                            </motion.h3>
+                                        </AnimatePresence>
+                                    </div>
+                                    <div className="footerNav1-2">
+                                        <AnimatePresence>
+                                            <motion.h3
+                                                onClick={() => navigate(info.routes.profilePageAdmin)}
+                                                key="fn1-2A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -59,11 +74,11 @@ function FooterAdmin() {
                                             </motion.h3>
                                         </AnimatePresence>
                                     </div>
-                                    <div className="footerNav1-2">
+                                    <div className="footerNav1-3">
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.projectsPageAdmin)}
-                                                key="fn1-2A"
+                                                key="fn1-3A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -74,11 +89,11 @@ function FooterAdmin() {
                                             </motion.h3>
                                         </AnimatePresence>
                                     </div>
-                                    <div className="footerNav1-3">
+                                    <div className="footerNav1-4">
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.videosPageAdmin)}
-                                                key="fn1-3A"
+                                                key="fn1-4A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -89,11 +104,11 @@ function FooterAdmin() {
                                             </motion.h3>
                                         </AnimatePresence>
                                     </div>
-                                    <div className="footerNav1-4">
+                                    <div className="footerNav1-5">
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.goalsPageAdmin)}
-                                                key="fn1-4A"
+                                                key="fn1-5A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },
@@ -104,11 +119,11 @@ function FooterAdmin() {
                                             </motion.h3>
                                         </AnimatePresence>
                                     </div>
-                                    <div className="footerNav1-5">
+                                    <div className="footerNav1-6">
                                         <AnimatePresence>
                                             <motion.h3
                                                 onClick={() => navigate(info.routes.cvPageAdmin)}
-                                                key="fn1-5A"
+                                                key="fn1-6A"
                                                 whileHover={{
                                                     scale: 1.2,
                                                     transition: { duration: 0.1 },

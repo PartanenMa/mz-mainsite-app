@@ -98,7 +98,7 @@
     }
 
     .footerInfoBoxContent {
-        height: 220px;
+        height: 230px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -202,6 +202,29 @@
             }
 
             .footerNav1-5 {
+                height: 20px;
+
+                h3 {
+                    color: #03a062;
+                    cursor: pointer;
+                    width: fit-content;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    position: relative;
+                    bottom: 20px;
+                    left: 20px;
+                    text-shadow: 0.5px 0.5px 0 lightgreen;
+                    transition: background-color 300ms;
+                }
+
+                h3:hover {
+                    background-color: lightgreen;
+                    border: 1px solid #03a062;
+                    border-radius: 5px;
+                }
+            }
+
+            .footerNav1-6 {
                 height: 20px;
 
                 h3 {
