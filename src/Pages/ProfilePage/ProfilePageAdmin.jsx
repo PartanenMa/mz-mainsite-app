@@ -994,6 +994,19 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                 </h3>
             </div>
             <div className="createProfile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"skill"} getProfile={getProfileC} />}</div>
+            <div className="skillsExplained">
+                <div className="skillExplanation1">
+                    <p>Beginner = Limited knowledge</p>
+                </div>
+                <div className="skillExplanation2">
+                    <p>Experienced = Some experience</p>
+                    <p>Intermediate = Comfortable</p>
+                </div>
+                <div className="skillExplanation3">
+                    <p>Advanced = At least 1 year of real work experience</p>
+                    <p>Professional = At least 3 years of real work experience</p>
+                </div>
+            </div>
             <div className="skillsContent">
                 <div className="webDevelopmentSoftware">
                     <div className="wDSTitle">
