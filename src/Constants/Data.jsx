@@ -534,7 +534,7 @@ export const dataFe = {
             title: "Learn back-end development",
             status: "completed",
             step1: {
-                step: "Learn back-end programming languages such as JavaScript, TypeScript, and Go.",
+                step: "Learn back-end programming languages such as JavaScript, TypeScript, C# and Go.",
                 status: "completed",
             },
             step2: {
