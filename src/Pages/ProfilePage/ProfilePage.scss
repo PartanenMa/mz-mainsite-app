@@ -262,7 +262,9 @@
                     font-size: 25px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    text-shadow: 0.5px 0.5px 0 gray;
+                    text-shadow:
+                        0 0 7px black,
+                        0 0 3px black;
                     cursor: default;
                     height: 100%;
                     width: 20%;
@@ -275,7 +277,9 @@
                 div {
                     color: gray;
                     font-size: 50px;
-                    text-shadow: 1px 1px 0 black;
+                    text-shadow:
+                        0 0 7px black,
+                        0 0 3px black;
                     cursor: default;
                     height: 100%;
                     width: 10%;
@@ -696,7 +700,9 @@
                             font-size: 25px;
                             font-style: italic;
                             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            text-shadow: 0.5px 0.5px 0 gray;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
                             cursor: default;
                         }
                     }
@@ -711,7 +717,9 @@
                         div {
                             color: gray;
                             font-size: 50px;
-                            text-shadow: 1px 1px 0 black;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
                             height: 100%;
                             width: 10%;
                             cursor: default;
@@ -2384,7 +2392,9 @@
                 font-size: 12px;
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                text-shadow: 0.5px 0.5px 0 gray;
+                text-shadow:
+                    0 0 7px black,
+                    0 0 3px black;
                 height: 100%;
                 width: 20%;
                 float: left;
@@ -2396,7 +2406,9 @@
             div {
                 color: gray;
                 font-size: 20px;
-                text-shadow: 1px 1px 0 black;
+                text-shadow:
+                    0 0 7px black,
+                    0 0 3px black;
                 height: 100%;
                 width: 10%;
                 float: right;
@@ -2768,7 +2780,9 @@
                             font-size: 7px;
                             font-style: italic;
                             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            text-shadow: 0.5px 0.5px 0 gray;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
                         }
                     }
 
@@ -2782,7 +2796,9 @@
                         div {
                             color: gray;
                             font-size: 20px;
-                            text-shadow: 1px 1px 0 black;
+                            text-shadow:
+                                0 0 7px black,
+                                0 0 3px black;
                             height: 100%;
                             width: 10%;
                         }
@@ -3234,6 +3250,62 @@
             font-size: 12px;
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .skillsExplainedMobile {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid white;
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+
+        .skillExplanation1Mobile {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+
+            p {
+                color: #03a062;
+                font-size: 6px;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                margin-left: 10px;
+            }
+        }
+
+        .skillExplanation2Mobile {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+
+            p {
+                color: #03a062;
+                font-size: 6px;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                margin-left: 10px;
+            }
+        }
+
+        .skillExplanation3Mobile {
+            height: 100%;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+
+            p {
+                color: #03a062;
+                font-size: 6px;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
         }
     }
 
