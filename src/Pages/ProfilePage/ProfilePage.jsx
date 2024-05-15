@@ -703,33 +703,33 @@ function Skills({ loadingProfileData, statusDB, skills }) {
     const getSkillLevel = (skillLevel) => {
         if (skillLevel === "beginner") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "red" }}>*</span>****
-                </div>
+                </p>
             );
         } else if (skillLevel === "experienced") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "orange" }}>**</span>***
-                </div>
+                </p>
             );
         } else if (skillLevel === "intermediate") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "yellow" }}>***</span>**
-                </div>
+                </p>
             );
         } else if (skillLevel === "advanced") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "blue" }}>****</span>*
-                </div>
+                </p>
             );
         } else if (skillLevel === "professional") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "green" }}>*****</span>
-                </div>
+                </p>
             );
         }
     };
@@ -794,11 +794,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -821,11 +827,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -848,11 +860,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -898,11 +916,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -925,11 +949,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -952,11 +982,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1002,11 +1038,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1029,11 +1071,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1056,11 +1104,17 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContent">
-                                                    <h4>{skill.name}</h4>
-                                                    <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                        {getSkillLevelTitle(skill.skillLevel)}
-                                                    </p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        <div className="sC2-1">
+                                                            <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                {getSkillLevelTitle(skill.skillLevel)}
+                                                            </p>
+                                                        </div>
+                                                        <div className="sC2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1701,33 +1755,33 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
     const getSkillLevel = (skillLevel) => {
         if (skillLevel === "beginner") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "red" }}>*</span>****
-                </div>
+                </p>
             );
         } else if (skillLevel === "experienced") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "orange" }}>**</span>***
-                </div>
+                </p>
             );
         } else if (skillLevel === "intermediate") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "yellow" }}>***</span>**
-                </div>
+                </p>
             );
         } else if (skillLevel === "advanced") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "blue" }}>****</span>*
-                </div>
+                </p>
             );
         } else if (skillLevel === "professional") {
             return (
-                <div style={{ position: "relative", right: "25px" }}>
+                <p>
                     <span style={{ color: "green" }}>*****</span>
-                </div>
+                </p>
             );
         }
     };
@@ -1792,9 +1846,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1817,9 +1877,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1842,9 +1908,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1890,9 +1962,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1915,9 +1993,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1940,9 +2024,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -1988,9 +2078,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -2013,9 +2109,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -2038,9 +2140,15 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                                     }}
                                                 />
                                                 <div className="skillContentMobile">
-                                                    <h4>{skill.name}</h4>
-                                                    <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                    {getSkillLevel(skill.skillLevel)}
+                                                    <div className="sC1M">
+                                                        <h4>{skill.name}</h4>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        <div className="sC2-1M">
+                                                            <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                        </div>
+                                                        <div className="sC2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                    </div>
                                                 </div>
                                             </motion.div>
                                         ))}
