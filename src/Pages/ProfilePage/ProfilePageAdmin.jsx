@@ -1007,7 +1007,6 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
                 </h3>
             </div>
-            <div className="createProfile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"skill"} getProfile={getProfileC} />}</div>
             <div className="skillsExplained">
                 <div className="skillExplanation1">
                     <p>
@@ -1031,6 +1030,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                     </p>
                 </div>
             </div>
+            <div className="createProfile">{info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} data={"skill"} getProfile={getProfileC} />}</div>
             <div className="skillsContent">
                 <div className="webDevelopmentSoftware">
                     <div className="wDSTitle">
