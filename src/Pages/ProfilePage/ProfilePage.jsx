@@ -194,7 +194,11 @@ function ProfilePage() {
 function ProfilePageTitle() {
     return (
         <div className="profilePageTitleContainer">
-            <h2>PROFILE</h2>
+            <AnimatePresence>
+                <motion.h2 key="profpt" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    PROFILE
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

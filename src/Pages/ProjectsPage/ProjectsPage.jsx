@@ -109,7 +109,11 @@ function ProjectsPage() {
 function ProjectsPageTitle() {
     return (
         <div className="projectsPageTitleContainer">
-            <h2>PROJECTS</h2>
+            <AnimatePresence>
+                <motion.h2 key="projpt" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    PROJECTS
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

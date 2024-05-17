@@ -138,7 +138,11 @@ function HomePage() {
 function HomePageTitle() {
     return (
         <div className="homePageTitleContainer">
-            <h2>HOME</h2>
+            <AnimatePresence>
+                <motion.h2 key="hpt" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    HOME
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

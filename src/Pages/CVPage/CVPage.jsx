@@ -132,7 +132,11 @@ function CVPage() {
 function CVPageTitle() {
     return (
         <div className="cvPageTitleContainer">
-            <h2>CV</h2>
+            <AnimatePresence>
+                <motion.h2 key="cvpt" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    CV
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

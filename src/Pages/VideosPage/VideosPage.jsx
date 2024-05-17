@@ -109,7 +109,11 @@ function VideosPage() {
 function VideosPageTitle() {
     return (
         <div className="videosPageTitleContainer">
-            <h2>VIDEOS</h2>
+            <AnimatePresence>
+                <motion.h2 key="vpt" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    VIDEOS
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }
