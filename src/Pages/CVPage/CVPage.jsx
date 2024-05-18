@@ -178,7 +178,11 @@ function CVPageContent({ loadingProfessionData, loadingJobData, professionData, 
 function CVPageTitleMobile() {
     return (
         <div className="cvPageTitleContainerMobile">
-            <h2>CV</h2>
+            <AnimatePresence>
+                <motion.h2 key="cvptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    CV
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

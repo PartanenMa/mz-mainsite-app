@@ -1263,7 +1263,11 @@ function ContactMe() {
 function ProfilePageTitleMobile() {
     return (
         <div className="profilePageTitleContainerMobile">
-            <h2>PROFILE</h2>
+            <AnimatePresence>
+                <motion.h2 key="profptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    PROFILE
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

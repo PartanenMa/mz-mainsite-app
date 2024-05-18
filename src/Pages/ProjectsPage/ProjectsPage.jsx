@@ -240,7 +240,11 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
 function ProjectsPageTitleMobile() {
     return (
         <div className="projectsPageTitleContainerMobile">
-            <h2>PROJECTS</h2>
+            <AnimatePresence>
+                <motion.h2 key="projptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    PROJECTS
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

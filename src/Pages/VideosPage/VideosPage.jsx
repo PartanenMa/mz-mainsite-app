@@ -240,7 +240,11 @@ function Videos({ loadingVideosData, statusDB, videos }) {
 function VideosPageTitleMobile() {
     return (
         <div className="videosPageTitleContainerMobile">
-            <h2>VIDEOS</h2>
+            <AnimatePresence>
+                <motion.h2 key="vptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    VIDEOS
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }

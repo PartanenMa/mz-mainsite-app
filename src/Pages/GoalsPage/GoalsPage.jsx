@@ -263,7 +263,11 @@ function GoalsPageContent({ loadingGoalsData, goals }) {
 function GoalsPageTitleMobile() {
     return (
         <div className="goalsPageTitleContainerMobile">
-            <h2>GOALS</h2>
+            <AnimatePresence>
+                <motion.h2 key="gptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                    GOALS
+                </motion.h2>
+            </AnimatePresence>
         </div>
     );
 }
