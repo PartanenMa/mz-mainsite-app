@@ -218,7 +218,9 @@ function CVPageContent({ loadingProfessionData, loadingJobData, professionData, 
         <div className="cvPageContentContainer">
             <AnimatePresence>
                 <div className="cvContent">
-                    <h1>{info.LinkedIn.name}</h1>
+                    <motion.h1 key="cvcnA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }}>
+                        {info.LinkedIn.name}
+                    </motion.h1>
                     {info.api.enabled ? (
                         !loadingProfessionData || !loadingJobData ? (
                             <motion.h2 key="porjA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
@@ -260,7 +262,9 @@ function CVPageContentMobile({ loadingProfessionData, loadingJobData, profession
         <div className="cvPageContentContainerMobile">
             <AnimatePresence>
                 <div className="cvContentMobile">
-                    <h1>{info.LinkedIn.name}</h1>
+                    <motion.h1 key="cvcnmA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }}>
+                        {info.LinkedIn.name}
+                    </motion.h1>
                     {info.api.enabled ? (
                         !loadingProfessionData || !loadingJobData ? (
                             <motion.h2 key="porjmobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
