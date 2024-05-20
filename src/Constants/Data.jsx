@@ -462,7 +462,8 @@ export const dataFe = {
             description: "",
             tech: "",
             image: "",
-            link: "",
+            gHlink: "",
+            pLink: "",
         },
         /*{
             id: 0,
@@ -470,8 +471,9 @@ export const dataFe = {
             type: "Example type...",
             description: "blablabla...",
             tech: "Example tech...",
-            image: "",
-            link: "https://github.com/PartanenMa",
+            image: "/src/Assets/Images/HeroSectionBG.jpg",
+            gHlink: "https://github.com/PartanenMa",
+            pLink: "https://www.google.fi/"
         },*/
     ],
     videosData: [

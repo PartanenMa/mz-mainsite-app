@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
@@ -162,6 +163,8 @@ function AboutMyProjects() {
 }
 
 function Projects({ loadingProjectsData, statusDB, projects }) {
+    const navigate = useNavigate();
+
     return (
         <div className="projectsContainer">
             <div className="projectsTitle">
@@ -212,7 +215,47 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
+                                        <div className="projectContentOther">
+                                            <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
+                                            <div className="projectContentButtons">
+                                                <motion.a
+                                                    className="projectBtn1"
+                                                    title="View code on GitHub"
+                                                    key="pbtn1"
+                                                    href={project.gHlink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                />
+                                                <motion.a
+                                                    className="projectBtn2"
+                                                    title="Go to site"
+                                                    key="pbtn2"
+                                                    href={project.pLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                />
+                                                <motion.button
+                                                    className="projectBtn3"
+                                                    key="pbtn3"
+                                                    onClick={() => navigate(info.routes.projectPage)}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    View project
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))
