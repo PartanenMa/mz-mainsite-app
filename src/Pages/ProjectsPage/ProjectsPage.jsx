@@ -245,7 +245,7 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                                                 <motion.button
                                                     className="projectBtn3"
                                                     key="pbtn3"
-                                                    onClick={() => navigate(info.routes.projectPage)}
+                                                    onClick={() => navigate(`/projects/view/${project.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

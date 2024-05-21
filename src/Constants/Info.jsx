@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.3.1",
+    version: "Release 1.3.2",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         dashboardPage: deployToGitHubPages ? "/MatrixZone-APP/admin/dashboard" : "/admin/dashboard",
@@ -18,7 +18,7 @@ export const info = {
         profilePageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/profile" : "/admin/profile",
         projectsPage: deployToGitHubPages ? "/MatrixZone-APP/projects" : "/projects",
         projectsPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/projects" : "/admin/projects",
-        projectPage: deployToGitHubPages ? "/MatrixZone-APP/projects/view" : "/projects/view",
+        projectPage: deployToGitHubPages ? "/MatrixZone-APP/projects/view/:id" : "/projects/view/:id",
         projectPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/projects/view" : "/admin/projects/view",
         videosPage: deployToGitHubPages ? "/MatrixZone-APP/videos" : "/videos",
         videosPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/videos" : "/admin/videos",
