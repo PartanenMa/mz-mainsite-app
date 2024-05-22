@@ -78,7 +78,6 @@ function ProjectPage() {
             <div className="projectPageContainer">
                 <ProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
                 {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
-                <Description loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
                 <Project loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
             </div>
         </div>
@@ -103,20 +102,6 @@ function ProjectPageTitle({ loadingProjectData, projectData }) {
     );
 }
 
-function Description({ loadingProjectData, projectData, statusDB }) {
-    return (
-        <div className="projectDescriptionContainer">
-            <div className="projectDescriptionTitle">
-                <h3>
-                    DESCRIPTION
-                    <DBstate loading={loadingProjectData} statusDB={statusDB} />
-                </h3>
-            </div>
-            <div className="projectDescriptionContent"></div>
-        </div>
-    );
-}
-
 function Project({ loadingProjectData, projectData, statusDB }) {
     return (
         <div className="projectContainer">
@@ -126,7 +111,37 @@ function Project({ loadingProjectData, projectData, statusDB }) {
                     <DBstate loading={loadingProjectData} statusDB={statusDB} />
                 </h3>
             </div>
-            <div className="projectContent"></div>
+            <div className="projectContent">
+                <div className="projectType">
+                    {loadingProjectData ? (
+                        <p>
+                            Type: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Type: <span style={{ color: "white" }}>{projectData.type}</span>
+                        </p>
+                    )}
+                </div>
+                <div className="projectImage" style={{ backgroundImage: `url(${projectData.image})` }} />
+                <div className="projectDescription">
+                    <div className="pDTitle">
+                        <p>Project description:</p>
+                    </div>
+                    <div className="pDContent">{loadingProjectData ? <p>...</p> : <p>{projectData.description}</p>}</div>
+                </div>
+                <div className="projectTech">
+                    {loadingProjectData ? (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>{projectData.tech}</span>
+                        </p>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }

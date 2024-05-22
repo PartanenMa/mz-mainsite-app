@@ -365,7 +365,7 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                                                 <motion.button
                                                     className="projectBtn3"
                                                     key="pbtn3A"
-                                                    onClick={() => navigate(info.routes.projectPageAdmin)}
+                                                    onClick={() => navigate(`/admin/projects/view/${project.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

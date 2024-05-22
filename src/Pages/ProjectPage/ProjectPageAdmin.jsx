@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
@@ -16,7 +17,9 @@ function ProjectPageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [loadingProjectData, setLoadingProjectData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
     const [projectData, setProjectData] = useState([]);
+    const { id } = useParams();
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -25,11 +28,68 @@ function ProjectPageAdmin() {
     });
 
     useEffect(() => {
-        setTimeout(() => {
-            //setProjectData(dataFe.projectsData);
-            setLoadingProjectData(false);
-        }, [1000]);
-    }, []);
+        if (info.api.enabled) {
+            checkSession();
+            getProject();
+        } else {
+            setTimeout(() => {
+                setProjectData(dataFe.projectsData[id]);
+                setLoadingProjectData(false);
+            }, 1000);
+        }
+    }, [id]);
+
+    const checkSession = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
+        fetch("/login/session", {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ csrfToken }),
+        })
+            .then((res) => {
+                const statusCode = res.status;
+
+                if (statusCode === 200) {
+                    return { statusCode };
+                } else {
+                    return { statusCode };
+                }
+            })
+            .then(({ statusCode }) => {
+                if (statusCode !== 200) {
+                    sessionStorage.setItem("isLoggedIn", "false");
+                    sessionStorage.setItem("csrfToken", "");
+                }
+            });
+    };
+
+    const getProject = () => {
+        fetch(`/projects/${id}`, {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setLoadingProjectData(false);
+                    return;
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setProjectData(data.foundProject);
+                    setStatusDB(true);
+                    setLoadingProjectData(false);
+                }, 1000);
+            });
+    };
 
     useEffect(() => {
         if (isLoggedIn === "true") {
@@ -69,11 +129,10 @@ function ProjectPageAdmin() {
                         <NavAdmin />
                         <div className="projectPageContainerAdmin">
                             <div className="breadcrumb">
-                                <h2>Admin / projects / view</h2>
+                                <h2>{"Admin / projects / view / " + id}</h2>
                             </div>
-                            <ProjectPageTitle />
-                            <Description loadingProjectData={loadingProjectData} />
-                            <Project loadingProjectData={loadingProjectData} />
+                            <MyProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
+                            <MyProject loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -92,38 +151,64 @@ function ProjectPageAdmin() {
     }
 }
 
-function ProjectPageTitle() {
+function MyProjectPageTitle({ loadingProjectData, projectData }) {
     return (
-        <div className="projectPageTitleContainer">
-            <h2>PROJECT NAME</h2>
-        </div>
-    );
-}
-
-function Description({ loadingProjectData }) {
-    return (
-        <div className="descriptionContainer">
-            <div className="descriptionTitle">
-                <h3>
-                    DESCRIPTION
-                    <DBstate loading={loadingProjectData} />
-                </h3>
+        <AnimatePresence>
+            <div className="projectPageTitleContainer">
+                {loadingProjectData ? (
+                    <motion.h2 key="projpptA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                        ...
+                    </motion.h2>
+                ) : (
+                    <motion.h2 key="projpptA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                        {projectData.title}
+                    </motion.h2>
+                )}
             </div>
-            <div className="descriptionContent"></div>
-        </div>
+        </AnimatePresence>
     );
 }
 
-function Project({ loadingProjectData }) {
+function MyProject({ loadingProjectData, projectData, statusDB }) {
     return (
         <div className="projectContainer">
             <div className="projectTitle">
                 <h3>
                     PROJECT
-                    <DBstate loading={loadingProjectData} />
+                    <DBstate loading={loadingProjectData} statusDB={statusDB} />
                 </h3>
             </div>
-            <div className="projectContent"></div>
+            <div className="projectContent">
+                <div className="projectType">
+                    {loadingProjectData ? (
+                        <p>
+                            Type: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Type: <span style={{ color: "white" }}>{projectData.type}</span>
+                        </p>
+                    )}
+                </div>
+                <div className="projectImage" style={{ backgroundImage: `url(${projectData.image})` }} />
+                <div className="projectDescription">
+                    <div className="pDTitle">
+                        <p>Project description:</p>
+                    </div>
+                    <div className="pDContent">{loadingProjectData ? <p>...</p> : <p>{projectData.description}</p>}</div>
+                </div>
+                <div className="projectTech">
+                    {loadingProjectData ? (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>{projectData.tech}</span>
+                        </p>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }
