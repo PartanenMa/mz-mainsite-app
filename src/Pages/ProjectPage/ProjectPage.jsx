@@ -14,6 +14,7 @@ function ProjectPage() {
     const [statusDB, setStatusDB] = useState(false);
     const [projectData, setProjectData] = useState([]);
     const { id } = useParams();
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -26,6 +27,18 @@ function ProjectPage() {
             }, 1000);
         }
     }, [id]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const checkConnection = () => {
         fetch("/connection", {
@@ -75,11 +88,20 @@ function ProjectPage() {
 
     return (
         <div className="pJPV">
-            <div className="projectPageContainer">
-                <ProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
-                {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
-                <Project loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
-            </div>
+            {windowWidth >= 1280 && (
+                <div className="projectPageContainer">
+                    <ProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Project loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
+                </div>
+            )}
+            {windowWidth < 1280 && (
+                <div className="projectPageContainerMobile">
+                    <ProjectPageTitleMobile loadingProjectData={loadingProjectData} projectData={projectData} />
+                    {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <ProjectMobile loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
+                </div>
+            )}
         </div>
     );
 }
@@ -131,6 +153,69 @@ function Project({ loadingProjectData, projectData, statusDB }) {
                     <div className="pDContent">{loadingProjectData ? <p>...</p> : <p>{projectData.description}</p>}</div>
                 </div>
                 <div className="projectTech">
+                    {loadingProjectData ? (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>{projectData.tech}</span>
+                        </p>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+//Mobile:
+function ProjectPageTitleMobile({ loadingProjectData, projectData }) {
+    return (
+        <AnimatePresence>
+            <div className="projectPageTitleContainerMobile">
+                {loadingProjectData ? (
+                    <motion.h2 key="projpptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                        ...
+                    </motion.h2>
+                ) : (
+                    <motion.h2 key="projpptm" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                        {projectData.title}
+                    </motion.h2>
+                )}
+            </div>
+        </AnimatePresence>
+    );
+}
+
+function ProjectMobile({ loadingProjectData, projectData, statusDB }) {
+    return (
+        <div className="projectContainerMobile">
+            <div className="projectTitleMobile">
+                <h3>
+                    PROJECT
+                    <DBstate loading={loadingProjectData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="projectContentMobile">
+                <div className="projectTypeMobile">
+                    {loadingProjectData ? (
+                        <p>
+                            Type: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Type: <span style={{ color: "white" }}>{projectData.type}</span>
+                        </p>
+                    )}
+                </div>
+                <div className="projectImageMobile" style={{ backgroundImage: `url(${projectData.image})` }} />
+                <div className="projectDescriptionMobile">
+                    <div className="pDTitleMobile">
+                        <p>Project description:</p>
+                    </div>
+                    <div className="pDContentMobile">{loadingProjectData ? <p>...</p> : <p>{projectData.description}</p>}</div>
+                </div>
+                <div className="projectTechMobile">
                     {loadingProjectData ? (
                         <p>
                             Technologies used: <span style={{ color: "white" }}>...</span>

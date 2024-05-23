@@ -78,6 +78,7 @@
 }
 
 .projectContainer {
+    background-color: #333;
     width: 100%;
     overflow: hidden;
     border-top: 1px solid white;
@@ -123,6 +124,7 @@
         }
 
         .projectImage {
+            background-color: #111;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -179,6 +181,183 @@
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 margin-left: 20px;
+            }
+        }
+    }
+}
+
+/*ProjectPage (mobile):*/
+.projectPageContainerMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+}
+
+/*ProjectPageAdmin (mobile):*/
+.projectPageContainerAdminMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 100%;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h2 {
+            font-size: 10px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Both (mobile):*/
+.projectPageTitleContainerMobile {
+    background-color: black;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #03a062;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: white;
+        font-size: 40px;
+        font-style: italic;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        cursor: default;
+    }
+}
+
+.projectContainerMobile {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid white;
+
+    .projectTitleMobile {
+        background-color: black;
+        height: 15px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid white;
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .projectContentMobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .projectTypeMobile {
+            height: 25px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            p {
+                color: #03a062;
+                font-size: 10px;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                margin-left: 10px;
+            }
+        }
+
+        .projectImageMobile {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+        }
+
+        .projectDescriptionMobile {
+            min-height: 150px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            display: flex;
+            flex-direction: column;
+
+            .pDTitleMobile {
+                height: 10%;
+                width: 100%;
+
+                p {
+                    color: #03a062;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-decoration: underline;
+                    margin-left: 10px;
+                }
+            }
+
+            .pDContentMobile {
+                height: 90%;
+                width: 100%;
+
+                p {
+                    color: white;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .projectTechMobile {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            p {
+                color: #03a062;
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                margin-left: 10px;
             }
         }
     }

@@ -20,6 +20,7 @@ function ProjectPageAdmin() {
     const [statusDB, setStatusDB] = useState(false);
     const [projectData, setProjectData] = useState([]);
     const { id } = useParams();
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
         title: "",
@@ -38,6 +39,18 @@ function ProjectPageAdmin() {
             }, 1000);
         }
     }, [id]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const checkSession = () => {
         const csrfToken = sessionStorage.getItem("csrfToken");
@@ -127,20 +140,38 @@ function ProjectPageAdmin() {
                     <div>
                         <HeaderAdmin />
                         <NavAdmin />
-                        <div className="projectPageContainerAdmin">
-                            <div className="breadcrumb">
-                                <h2>{"Admin / projects / view / " + id}</h2>
+                        {windowWidth >= 1280 && (
+                            <div className="projectPageContainerAdmin">
+                                <div className="breadcrumb">
+                                    <h2>{"Admin / projects / view / " + id}</h2>
+                                </div>
+                                <MyProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
+                                <MyProject loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
                             </div>
-                            <MyProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
-                            <MyProject loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
-                            <Notification
-                                isNotificationOpen={isNotificationOpen}
-                                setIsNotificationOpen={setIsNotificationOpen}
-                                title={notificationContent.title}
-                                description={notificationContent.description}
-                                type={notificationContent.type}
-                            />
-                        </div>
+                        )}
+                        {windowWidth < 1280 && (
+                            <div className="projectPageContainerAdminMobile">
+                                <div className="breadcrumbMobile">
+                                    <h2>{"Admin / projects / view / " + id}</h2>
+                                </div>
+                                <MyProjectPageTitleMobile loadingProjectData={loadingProjectData} projectData={projectData} />
+                                <MyProjectMobile loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
+                                <Notification
+                                    isNotificationOpen={isNotificationOpen}
+                                    setIsNotificationOpen={setIsNotificationOpen}
+                                    title={notificationContent.title}
+                                    description={notificationContent.description}
+                                    type={notificationContent.type}
+                                />
+                            </div>
+                        )}
                         <FooterAdmin />
                     </div>
                 )}
@@ -198,6 +229,69 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
                     <div className="pDContent">{loadingProjectData ? <p>...</p> : <p>{projectData.description}</p>}</div>
                 </div>
                 <div className="projectTech">
+                    {loadingProjectData ? (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Technologies used: <span style={{ color: "white" }}>{projectData.tech}</span>
+                        </p>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+//Mobile:
+function MyProjectPageTitleMobile({ loadingProjectData, projectData }) {
+    return (
+        <AnimatePresence>
+            <div className="projectPageTitleContainerMobile">
+                {loadingProjectData ? (
+                    <motion.h2 key="projpptmA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                        ...
+                    </motion.h2>
+                ) : (
+                    <motion.h2 key="projpptmA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
+                        {projectData.title}
+                    </motion.h2>
+                )}
+            </div>
+        </AnimatePresence>
+    );
+}
+
+function MyProjectMobile({ loadingProjectData, projectData, statusDB }) {
+    return (
+        <div className="projectContainerMobile">
+            <div className="projectTitleMobile">
+                <h3>
+                    PROJECT
+                    <DBstate loading={loadingProjectData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="projectContentMobile">
+                <div className="projectTypeMobile">
+                    {loadingProjectData ? (
+                        <p>
+                            Type: <span style={{ color: "white" }}>...</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Type: <span style={{ color: "white" }}>{projectData.type}</span>
+                        </p>
+                    )}
+                </div>
+                <div className="projectImageMobile" style={{ backgroundImage: `url(${projectData.image})` }} />
+                <div className="projectDescriptionMobile">
+                    <div className="pDTitleMobile">
+                        <p>Project description:</p>
+                    </div>
+                    <div className="pDContentMobile">{loadingProjectData ? <p>...</p> : <p>{projectData.description}</p>}</div>
+                </div>
+                <div className="projectTechMobile">
                     {loadingProjectData ? (
                         <p>
                             Technologies used: <span style={{ color: "white" }}>...</span>
