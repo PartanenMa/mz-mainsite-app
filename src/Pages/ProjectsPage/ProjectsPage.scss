@@ -325,11 +325,15 @@
             }
 
             .projectContent {
-                display: none;
                 height: 80%;
                 width: 100%;
                 border-top: 1px solid gray;
                 display: flex;
+                visibility: hidden;
+                opacity: 0;
+                transition:
+                    visibility 0.3s,
+                    opacity 0.3s;
 
                 .projectContentDescription {
                     background-color: #333;
@@ -337,6 +341,8 @@
                     width: 70%;
                     border-right: 1px solid gray;
                     overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
 
                     .pCDBox1 {
                         height: 20%;
@@ -422,22 +428,19 @@
                     width: 30%;
                     display: flex;
                     flex-direction: column;
-                    position: relative;
-                    bottom: 239px;
-                    left: 785px;
 
                     .projectContentPhoto {
                         background-color: #111;
                         background-repeat: no-repeat;
                         background-position: center;
                         background-size: cover;
-                        height: 192px;
+                        height: 80%;
                         width: 100%;
                     }
 
                     .projectContentButtons {
                         background-color: #111;
-                        height: 46px;
+                        height: 20%;
                         width: 100%;
                         border-top: 1px solid gray;
                         display: flex;
@@ -523,8 +526,8 @@
         }
 
         .project:hover .projectContent {
-            animation: fadeIn 0.3s;
-            display: block;
+            visibility: visible;
+            opacity: 1;
         }
 
         .noProjectsYet {
@@ -925,11 +928,15 @@
             }
 
             .projectContentMobile {
-                display: none;
                 height: 80%;
                 width: 100%;
                 border-top: 1px solid gray;
                 display: flex;
+                visibility: hidden;
+                opacity: 0;
+                transition:
+                    visibility 0.3s,
+                    opacity 0.3s;
 
                 .projectContentDescriptionMobile {
                     background-color: #333;
@@ -1017,13 +1024,89 @@
                     }
                 }
 
-                .projectContentPhotoMobile {
-                    background-color: white;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
+                .projectContentOtherMobile {
                     height: 100%;
                     width: 30%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .projectContentPhotoMobile {
+                        background-color: #111;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 80%;
+                        width: 100%;
+                    }
+
+                    .projectContentButtonsMobile {
+                        background-color: #111;
+                        height: 20%;
+                        width: 100%;
+                        border-top: 1px solid gray;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10%;
+
+                        .projectBtn1Mobile {
+                            background-color: white;
+                            background-image: url("/src/Assets/Images/GitHub.png");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 105%;
+                            height: 15px;
+                            width: 15px;
+                            cursor: pointer;
+                            border: 0.5px solid white;
+                            border-radius: 50%;
+                            transition: filter 300ms;
+                        }
+
+                        .projectBtn1Mobile:hover {
+                            filter: drop-shadow(0 0 2em black);
+                        }
+
+                        .projectBtn2Mobile {
+                            background-color: #111;
+                            background-image: url("/src/Assets/Images/Projects.png");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 65%;
+                            height: 15px;
+                            width: 15px;
+                            cursor: pointer;
+                            border-radius: 50%;
+                            border: 0.5px solid #03a062;
+                            transition: filter 300ms;
+                        }
+
+                        .projectBtn2Mobile:hover {
+                            background-color: lightgreen;
+                            transition: background-color 500ms ease-in-out;
+                            filter: drop-shadow(0 0 2em #03a062);
+                        }
+
+                        .projectBtn3Mobile {
+                            background-color: #111;
+                            color: #03a062;
+                            height: 15px;
+                            width: 30px;
+                            cursor: pointer;
+                            border-radius: 2px;
+                            border: 0.5px solid #03a062;
+                            font-size: 5px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            transition: filter 300ms;
+                        }
+
+                        .projectBtn3Mobile:hover {
+                            background-color: lightgreen;
+                            transition: background-color 500ms ease-in-out;
+                            filter: drop-shadow(0 0 2em #03a062);
+                        }
+                    }
                 }
             }
         }
@@ -1044,8 +1127,8 @@
         }
 
         .projectMobile:hover .projectContentMobile {
-            animation: fadeIn 0.3s;
-            display: block;
+            visibility: visible;
+            opacity: 1;
         }
 
         .noProjectsYetMobile {
