@@ -107,6 +107,102 @@
         flex-direction: column;
         align-items: center;
 
+        .projectContentGoBackAndButtons {
+            background-color: #111;
+            height: 50px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            display: flex;
+            overflow: hidden;
+
+            .projectGoBack {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .goBackBtn {
+                    background-color: #111;
+                    color: #03a062;
+                    height: 35px;
+                    width: 35px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    border-radius: 100%;
+                    border: 1px solid #03a062;
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                .goBackBtn:hover {
+                    background-color: lightgreen;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .projectButtons {
+                height: 100%;
+                width: 50%;
+                border-top: 1px solid gray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                .projectBtn1 {
+                    background-color: white;
+                    background-image: url("/src/Assets/Images/GitHub.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 105%;
+                    height: 35px;
+                    width: 35px;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    transition: filter 300ms;
+                }
+
+                .projectBtn1:hover {
+                    filter: drop-shadow(0 0 2em black);
+                }
+
+                .projectBtn2 {
+                    background-color: #111;
+                    background-image: url("/src/Assets/Images/Projects.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 65%;
+                    height: 35px;
+                    width: 35px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    border: 1px solid #03a062;
+                    transition: filter 300ms;
+                }
+
+                .projectBtn2:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+        }
+
+        .projectImage {
+            background-color: #111;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 600px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+        }
+
         .projectType {
             height: 50px;
             width: 100%;
@@ -121,16 +217,6 @@
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 margin-left: 20px;
             }
-        }
-
-        .projectImage {
-            background-color: #111;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 600px;
-            width: 100%;
-            border-bottom: 0.5px solid gray;
         }
 
         .projectDescription {
@@ -285,6 +371,101 @@
         flex-direction: column;
         align-items: center;
 
+        .projectContentGoBackAndButtonsMobile {
+            background-color: #111;
+            height: 25px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            display: flex;
+            overflow: hidden;
+
+            .projectGoBackMobile {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                .goBackBtnMobile {
+                    background-color: #111;
+                    color: #03a062;
+                    height: 20px;
+                    width: 20px;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    border-radius: 100%;
+                    border: 1px solid #03a062;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                .goBackBtnMobile:hover {
+                    background-color: lightgreen;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+
+            .projectButtonsMobile {
+                height: 100%;
+                width: 50%;
+                border-top: 1px solid gray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                .projectBtn1Mobile {
+                    background-color: white;
+                    background-image: url("/src/Assets/Images/GitHub.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 105%;
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    transition: filter 300ms;
+                }
+
+                .projectBtn1Mobile:hover {
+                    filter: drop-shadow(0 0 2em black);
+                }
+
+                .projectBtn2Mobile {
+                    background-color: #111;
+                    background-image: url("/src/Assets/Images/Projects.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 65%;
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    border: 1px solid #03a062;
+                    transition: filter 300ms;
+                }
+
+                .projectBtn2Mobile:hover {
+                    background-color: lightgreen;
+                    transition: background-color 500ms ease-in-out;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+            }
+        }
+
+        .projectImageMobile {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+        }
+
         .projectTypeMobile {
             height: 25px;
             width: 100%;
@@ -299,15 +480,6 @@
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 margin-left: 10px;
             }
-        }
-
-        .projectImageMobile {
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 200px;
-            width: 100%;
-            border-bottom: 0.5px solid gray;
         }
 
         .projectDescriptionMobile {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
@@ -125,6 +125,8 @@ function ProjectPageTitle({ loadingProjectData, projectData }) {
 }
 
 function Project({ loadingProjectData, projectData, statusDB }) {
+    const navigate = useNavigate();
+
     return (
         <div className="projectContainer">
             <div className="projectTitle">
@@ -134,6 +136,52 @@ function Project({ loadingProjectData, projectData, statusDB }) {
                 </h3>
             </div>
             <div className="projectContent">
+                <AnimatePresence>
+                    <div className="projectContentGoBackAndButtons">
+                        <div className="projectGoBack">
+                            <motion.button
+                                className="goBackBtn"
+                                title="Back to projects"
+                                onClick={() => navigate(info.routes.projectsPage)}
+                                key="backtoprojects"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                {"<"}
+                            </motion.button>
+                        </div>
+                        <div className="projectButtons">
+                            <motion.a
+                                className="projectBtn1"
+                                title="View code on GitHub"
+                                key="pbtn1"
+                                href={projectData.gHlink}
+                                target="_blank"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                            <motion.a
+                                className="projectBtn2"
+                                title="Go to site"
+                                key="pbtn2"
+                                href={projectData.pLink}
+                                target="_blank"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </div>
+                    </div>
+                </AnimatePresence>
+                <div className="projectImage" style={{ backgroundImage: `url(${projectData.image})` }} />
                 <div className="projectType">
                     {loadingProjectData ? (
                         <p>
@@ -145,7 +193,6 @@ function Project({ loadingProjectData, projectData, statusDB }) {
                         </p>
                     )}
                 </div>
-                <div className="projectImage" style={{ backgroundImage: `url(${projectData.image})` }} />
                 <div className="projectDescription">
                     <div className="pDTitle">
                         <p>Project description:</p>
@@ -188,6 +235,8 @@ function ProjectPageTitleMobile({ loadingProjectData, projectData }) {
 }
 
 function ProjectMobile({ loadingProjectData, projectData, statusDB }) {
+    const navigate = useNavigate();
+
     return (
         <div className="projectContainerMobile">
             <div className="projectTitleMobile">
@@ -197,6 +246,52 @@ function ProjectMobile({ loadingProjectData, projectData, statusDB }) {
                 </h3>
             </div>
             <div className="projectContentMobile">
+                <AnimatePresence>
+                    <div className="projectContentGoBackAndButtonsMobile">
+                        <div className="projectGoBackMobile">
+                            <motion.button
+                                className="goBackBtnMobile"
+                                title="Back to projects"
+                                onClick={() => navigate(info.routes.projectsPage)}
+                                key="backtoprojectsm"
+                                whileHover={{
+                                    scale: 1.05,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                {"<"}
+                            </motion.button>
+                        </div>
+                        <div className="projectButtonsMobile">
+                            <motion.a
+                                className="projectBtn1Mobile"
+                                title="View code on GitHub"
+                                key="pbtn1m"
+                                href={projectData.gHlink}
+                                target="_blank"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                            <motion.a
+                                className="projectBtn2Mobile"
+                                title="Go to site"
+                                key="pbtn2m"
+                                href={projectData.pLink}
+                                target="_blank"
+                                whileHover={{
+                                    scale: 1.1,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
+                        </div>
+                    </div>
+                </AnimatePresence>
+                <div className="projectImageMobile" style={{ backgroundImage: `url(${projectData.image})` }} />
                 <div className="projectTypeMobile">
                     {loadingProjectData ? (
                         <p>
@@ -208,7 +303,6 @@ function ProjectMobile({ loadingProjectData, projectData, statusDB }) {
                         </p>
                     )}
                 </div>
-                <div className="projectImageMobile" style={{ backgroundImage: `url(${projectData.image})` }} />
                 <div className="projectDescriptionMobile">
                     <div className="pDTitleMobile">
                         <p>Project description:</p>
