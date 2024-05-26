@@ -152,7 +152,7 @@ function CVPageContent({ loadingProfessionData, loadingJobData, professionData, 
                     {info.api.enabled ? (
                         !loadingProfessionData || !loadingJobData ? (
                             <motion.h2 key="porj" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                                {jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}
+                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}
                             </motion.h2>
                         ) : (
                             <motion.h2 style={{ fontStyle: "normal" }} key="porjloader" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
@@ -200,7 +200,7 @@ function CVPageContentMobile({ loadingProfessionData, loadingJobData, profession
                     {info.api.enabled ? (
                         !loadingProfessionData || !loadingJobData ? (
                             <motion.h2 key="porjmobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
-                                {jobData?.jobStatus.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}
+                                {jobData?.jobStatus?.employed ? jobData?.jobStatus?.job : professionData?.professionStatus?.profession}
                             </motion.h2>
                         ) : (
                             <motion.h2 style={{ fontStyle: "normal" }} key="porjloadermobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
