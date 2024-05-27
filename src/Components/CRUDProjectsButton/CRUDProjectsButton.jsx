@@ -206,8 +206,8 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
         description: "",
         tech: "",
         image: "",
-        gHlink: "",
-        pLink: "",
+        codeLink: "",
+        projectLink: "",
     });
 
     useEffect(() => {
@@ -252,8 +252,8 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
             description: formData.description,
             tech: formData.tech,
             image: formData.image,
-            gHlink: formData.gHlink,
-            pLink: formData.pLink,
+            codeLink: formData.codeLink,
+            projectLink: formData.projectLink,
         };
 
         setIsModalOpen(false);
@@ -334,12 +334,12 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="gHlink">GitHub link:</label>
-                                        <input type="text" id="gHlink" name="gHlink" value={formData.gHlink} onChange={handleChange} />
+                                        <label htmlFor="codeLink">Code link:</label>
+                                        <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="pLink">Project link:</label>
-                                        <input type="text" id="pLink" name="pLink" value={formData.pLink} onChange={handleChange} />
+                                        <label htmlFor="projectLink">Project link:</label>
+                                        <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooter">
@@ -389,8 +389,8 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
         description: "",
         tech: "",
         image: "",
-        gHlink: "",
-        pLink: "",
+        codeLink: "",
+        projectLink: "",
     });
 
     useEffect(() => {
@@ -428,8 +428,8 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
                 description: projectData.description,
                 tech: projectData.tech,
                 image: projectData.image,
-                gHlink: projectData.gHlink,
-                pLink: projectData.pLink,
+                codeLink: projectData.codeLink,
+                projectLink: projectData.projectLink,
             });
         }
     }, [projectData]);
@@ -451,8 +451,8 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
             description: formData.description,
             tech: formData.tech,
             image: formData.image,
-            gHlink: formData.gHlink,
-            pLink: formData.pLink,
+            codeLink: formData.codeLink,
+            projectLink: formData.projectLink,
         };
 
         setIsModalOpen(false);
@@ -533,12 +533,12 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="gHlink">GitHub link:</label>
-                                        <input type="text" id="gHlink" name="gHlink" value={formData.gHlink} onChange={handleChange} />
+                                        <label htmlFor="codeLink">Code link:</label>
+                                        <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="pLink">Project link:</label>
-                                        <input type="text" id="pLink" name="pLink" value={formData.pLink} onChange={handleChange} />
+                                        <label htmlFor="projectLink">Project link:</label>
+                                        <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooter">
@@ -589,8 +589,8 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
         description: "",
         tech: "",
         image: "",
-        gHlink: "",
-        pLink: "",
+        codeLink: "",
+        projectLink: "",
     });
 
     useEffect(() => {
@@ -635,8 +635,8 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
             description: formData.description,
             tech: formData.tech,
             image: formData.image,
-            gHlink: formData.gHlink,
-            pLink: formData.pLink,
+            codeLink: formData.codeLink,
+            projectLink: formData.projectLink,
         };
 
         setIsModalOpen(false);
@@ -717,12 +717,12 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="gHlink">GitHub link:</label>
-                                        <input type="text" id="gHlink" name="gHlink" value={formData.gHlink} onChange={handleChange} />
+                                        <label htmlFor="codeLink">Code link:</label>
+                                        <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="pLink">Project link:</label>
-                                        <input type="text" id="pLink" name="pLink" value={formData.pLink} onChange={handleChange} />
+                                        <label htmlFor="projectLink">Project link:</label>
+                                        <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooterMobile">
@@ -772,8 +772,8 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
         description: "",
         tech: "",
         image: "",
-        gHlink: "",
-        pLink: "",
+        codeLink: "",
+        projectLink: "",
     });
 
     useEffect(() => {
@@ -811,8 +811,8 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
                 description: projectData.description,
                 tech: projectData.tech,
                 image: projectData.image,
-                gHlink: projectData.gHlink,
-                pLink: projectData.pLink,
+                codeLink: projectData.codeLink,
+                projectLink: projectData.projectLink,
             });
         }
     }, [projectData]);
@@ -834,8 +834,8 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
             description: formData.description,
             tech: formData.tech,
             image: formData.image,
-            gHlink: formData.gHlink,
-            pLink: formData.pLink,
+            codeLink: formData.codeLink,
+            projectLink: formData.projectLink,
         };
 
         setIsModalOpen(false);
@@ -916,12 +916,12 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="gHlink">GitHub link:</label>
-                                        <input type="text" id="gHlink" name="gHlink" value={formData.gHlink} onChange={handleChange} />
+                                        <label htmlFor="codeLink">Code link:</label>
+                                        <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="pLink">Project link:</label>
-                                        <input type="text" id="pLink" name="pLink" value={formData.pLink} onChange={handleChange} />
+                                        <label htmlFor="projectLink">Project link:</label>
+                                        <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooterMobile">

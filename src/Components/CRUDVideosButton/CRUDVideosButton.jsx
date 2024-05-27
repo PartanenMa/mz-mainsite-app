@@ -201,7 +201,7 @@ function ModalCreateVideos({ isModalOpen, setIsModalOpen, getVideos, notificatio
         description: "",
         tags: "",
         image: "",
-        link: "",
+        videoLink: "",
     });
 
     useEffect(() => {
@@ -246,7 +246,7 @@ function ModalCreateVideos({ isModalOpen, setIsModalOpen, getVideos, notificatio
             description: formData.description,
             tags: formData.tags,
             image: formData.image,
-            link: formData.link,
+            videoLink: formData.videoLink,
         };
 
         setIsModalOpen(false);
@@ -327,8 +327,8 @@ function ModalCreateVideos({ isModalOpen, setIsModalOpen, getVideos, notificatio
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="link">Link:</label>
-                                        <input type="text" id="link" name="link" value={formData.link} onChange={handleChange} />
+                                        <label htmlFor="videoLink">Video link:</label>
+                                        <input type="text" id="videoLink" name="videoLink" value={formData.videoLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooter">
@@ -378,7 +378,7 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
         description: "",
         tags: "",
         image: "",
-        link: "",
+        videoLink: "",
     });
 
     useEffect(() => {
@@ -416,7 +416,7 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
                 description: videoData.description,
                 tags: videoData.tags,
                 image: videoData.image,
-                link: videoData.link,
+                videoLink: videoData.videoLink,
             });
         }
     }, [videoData]);
@@ -438,7 +438,7 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
             description: formData.description,
             tags: formData.tags,
             image: formData.image,
-            link: formData.link,
+            videoLink: formData.videoLink,
         };
 
         setIsModalOpen(false);
@@ -519,8 +519,8 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="link">Link:</label>
-                                        <input type="text" id="link" name="link" value={formData.link} onChange={handleChange} />
+                                        <label htmlFor="videoLink">Video link:</label>
+                                        <input type="text" id="videoLink" name="videoLink" value={formData.videoLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooter">
@@ -571,7 +571,7 @@ function ModalCreateVideosMobile({ isModalOpen, setIsModalOpen, getVideos, notif
         description: "",
         tags: "",
         image: "",
-        link: "",
+        videoLink: "",
     });
 
     useEffect(() => {
@@ -616,7 +616,7 @@ function ModalCreateVideosMobile({ isModalOpen, setIsModalOpen, getVideos, notif
             description: formData.description,
             tags: formData.tags,
             image: formData.image,
-            link: formData.link,
+            videoLink: formData.videoLink,
         };
 
         setIsModalOpen(false);
@@ -697,8 +697,8 @@ function ModalCreateVideosMobile({ isModalOpen, setIsModalOpen, getVideos, notif
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="link">Link:</label>
-                                        <input type="text" id="link" name="link" value={formData.link} onChange={handleChange} />
+                                        <label htmlFor="videoLink">Video link:</label>
+                                        <input type="text" id="videoLink" name="videoLink" value={formData.videoLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooterMobile">
@@ -748,7 +748,7 @@ function ModalUpdateVideosMobile({ isModalOpen, setIsModalOpen, videoData, id, g
         description: "",
         tags: "",
         image: "",
-        link: "",
+        videoLink: "",
     });
 
     useEffect(() => {
@@ -786,7 +786,7 @@ function ModalUpdateVideosMobile({ isModalOpen, setIsModalOpen, videoData, id, g
                 description: videoData.description,
                 tags: videoData.tags,
                 image: videoData.image,
-                link: videoData.link,
+                videoLink: videoData.videoLink,
             });
         }
     }, [videoData]);
@@ -808,7 +808,7 @@ function ModalUpdateVideosMobile({ isModalOpen, setIsModalOpen, videoData, id, g
             description: formData.description,
             tags: formData.tags,
             image: formData.image,
-            link: formData.link,
+            videoLink: formData.videoLink,
         };
 
         setIsModalOpen(false);
@@ -889,8 +889,8 @@ function ModalUpdateVideosMobile({ isModalOpen, setIsModalOpen, videoData, id, g
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
                                     <div>
-                                        <label htmlFor="link">Link:</label>
-                                        <input type="text" id="link" name="link" value={formData.link} onChange={handleChange} />
+                                        <label htmlFor="videoLink">Video link:</label>
+                                        <input type="text" id="videoLink" name="videoLink" value={formData.videoLink} onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="formFooterMobile">

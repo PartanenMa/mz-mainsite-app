@@ -222,7 +222,7 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                                                     className="projectBtn1"
                                                     title="View code on GitHub"
                                                     key="pbtn1"
-                                                    href={project.gHlink}
+                                                    href={project.codeLink}
                                                     target="_blank"
                                                     whileHover={{
                                                         scale: 1.1,
@@ -234,7 +234,7 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                                                     className="projectBtn2"
                                                     title="Go to site"
                                                     key="pbtn2"
-                                                    href={project.pLink}
+                                                    href={project.projectLink}
                                                     target="_blank"
                                                     whileHover={{
                                                         scale: 1.1,
@@ -395,7 +395,7 @@ function ProjectsMobile({ loadingProjectsData, statusDB, projects }) {
                                                     className="projectBtn1Mobile"
                                                     title="View code on GitHub"
                                                     key="pbtn1m"
-                                                    href={project.gHlink}
+                                                    href={project.codeLink}
                                                     target="_blank"
                                                     whileHover={{
                                                         scale: 1.1,
@@ -407,7 +407,7 @@ function ProjectsMobile({ loadingProjectsData, statusDB, projects }) {
                                                     className="projectBtn2Mobile"
                                                     title="Go to site"
                                                     key="pbtn2m"
-                                                    href={project.pLink}
+                                                    href={project.projectLink}
                                                     target="_blank"
                                                     whileHover={{
                                                         scale: 1.1,

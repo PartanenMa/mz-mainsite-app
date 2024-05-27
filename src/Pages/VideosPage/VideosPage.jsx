@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import { info } from "/src/Constants/Info.jsx";
@@ -162,6 +163,8 @@ function AboutMyVideos() {
 }
 
 function Videos({ loadingVideosData, statusDB, videos }) {
+    const navigate = useNavigate();
+
     return (
         <div className="videosContainer">
             <div className="videosTitle">
@@ -212,7 +215,35 @@ function Videos({ loadingVideosData, statusDB, videos }) {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
+                                        <div className="videoContentOther">
+                                            <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
+                                            <div className="videoContentButtons">
+                                                <motion.a
+                                                    className="videoBtn1"
+                                                    title="Watch video on YouTube"
+                                                    key="vbtn1"
+                                                    href={video.videoLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                />
+                                                <motion.button
+                                                    className="videoBtn2"
+                                                    key="vbtn2"
+                                                    onClick={() => navigate(`/videos/watch/${video.id}`)}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    Watch video
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))
@@ -293,6 +324,8 @@ function AboutMyVideosMobile() {
 }
 
 function VideosMobile({ loadingVideosData, statusDB, videos }) {
+    const navigate = useNavigate();
+
     return (
         <div className="videosContainerMobile">
             <div className="videosTitleMobile">
@@ -343,7 +376,35 @@ function VideosMobile({ loadingVideosData, statusDB, videos }) {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="videoContentPhotoMobile" style={{ backgroundImage: `url(${video.image})` }} />
+                                        <div className="videoContentOtherMobile">
+                                            <div className="videoContentPhotoMobile" style={{ backgroundImage: `url(${video.image})` }} />
+                                            <div className="videoContentButtonsMobile">
+                                                <motion.a
+                                                    className="videoBtn1Mobile"
+                                                    title="Watch video on YouTube"
+                                                    key="vbtn1m"
+                                                    href={video.videoLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                />
+                                                <motion.button
+                                                    className="videoBtn2Mobile"
+                                                    key="vbtn2m"
+                                                    onClick={() => navigate(`/videos/watch/${video.id}`)}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    Watch video
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))

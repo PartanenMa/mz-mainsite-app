@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
@@ -267,6 +268,8 @@ function AboutMyVideos() {
 }
 
 function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU, getVideosD }) {
+    const navigate = useNavigate();
+
     return (
         <div className="videosContainer">
             <div className="videosTitle">
@@ -332,7 +335,35 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
+                                        <div className="videoContentOther">
+                                            <div className="videoContentPhoto" style={{ backgroundImage: `url(${video.image})` }} />
+                                            <div className="videoContentButtons">
+                                                <motion.a
+                                                    className="videoBtn1"
+                                                    title="Watch video on YouTube"
+                                                    key="vbtn1A"
+                                                    href={video.videoLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                />
+                                                <motion.button
+                                                    className="videoBtn2"
+                                                    key="vbtn2A"
+                                                    onClick={() => navigate(`/admin/videos/watch/${video.id}`)}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    Watch video
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))
@@ -409,6 +440,8 @@ function AboutMyVideosMobile() {
 }
 
 function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVideosU, getVideosD }) {
+    const navigate = useNavigate();
+
     return (
         <div className="videosContainerMobile">
             <div className="videosTitleMobile">
@@ -474,7 +507,35 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="videoContentPhotoMobile" style={{ backgroundImage: `url(${video.image})` }} />
+                                        <div className="videoContentOtherMobile">
+                                            <div className="videoContentPhotoMobile" style={{ backgroundImage: `url(${video.image})` }} />
+                                            <div className="videoContentButtonsMobile">
+                                                <motion.a
+                                                    className="videoBtn1Mobile"
+                                                    title="Watch video on YouTube"
+                                                    key="vbtn1mA"
+                                                    href={video.videoLink}
+                                                    target="_blank"
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                />
+                                                <motion.button
+                                                    className="videoBtn2Mobile"
+                                                    key="vbtn2mA"
+                                                    onClick={() => navigate(`/admin/videos/watch/${video.id}`)}
+                                                    whileHover={{
+                                                        scale: 1.1,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    Watch video
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))

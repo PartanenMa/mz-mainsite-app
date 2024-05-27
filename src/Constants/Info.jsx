@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.3.7",
+    version: "Release 1.3.8",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         dashboardPage: deployToGitHubPages ? "/MatrixZone-APP/admin/dashboard" : "/admin/dashboard",
@@ -22,8 +22,8 @@ export const info = {
         projectPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/projects/view/:id" : "/admin/projects/view/:id",
         videosPage: deployToGitHubPages ? "/MatrixZone-APP/videos" : "/videos",
         videosPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/videos" : "/admin/videos",
-        videoPage: deployToGitHubPages ? "/MatrixZone-APP/videos/view" : "/videos/view",
-        videoPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/videos/view" : "/admin/videos/view",
+        videoPage: deployToGitHubPages ? "/MatrixZone-APP/videos/watch/:id" : "/videos/watch/:id",
+        videoPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/videos/watch/:id" : "/admin/videos/watch/:id",
         goalsPage: deployToGitHubPages ? "/MatrixZone-APP/goals" : "/goals",
         goalsPageAdmin: deployToGitHubPages ? "/MatrixZone-APP/admin/goals" : "/admin/goals",
         cvPage: deployToGitHubPages ? "/MatrixZone-APP/cv" : "/cv",

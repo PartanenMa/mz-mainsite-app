@@ -207,7 +207,7 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
         <div className="projectContainer">
             <div className="projectTitle">
                 <h3>
-                    PROJECT
+                    MY PROJECT
                     <DBstate loading={loadingProjectData} statusDB={statusDB} />
                 </h3>
             </div>
@@ -234,7 +234,7 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
                                 className="projectBtn1"
                                 title="View code on GitHub"
                                 key="pbtn1A"
-                                href={projectData.gHlink}
+                                href={projectData.codeLink}
                                 target="_blank"
                                 whileHover={{
                                     scale: 1.1,
@@ -246,7 +246,7 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
                                 className="projectBtn2"
                                 title="Go to site"
                                 key="pbtn2A"
-                                href={projectData.pLink}
+                                href={projectData.projectLink}
                                 target="_blank"
                                 whileHover={{
                                     scale: 1.1,
@@ -317,7 +317,7 @@ function MyProjectMobile({ loadingProjectData, projectData, statusDB }) {
         <div className="projectContainerMobile">
             <div className="projectTitleMobile">
                 <h3>
-                    PROJECT
+                    MY PROJECT
                     <DBstate loading={loadingProjectData} statusDB={statusDB} />
                 </h3>
             </div>
@@ -344,7 +344,7 @@ function MyProjectMobile({ loadingProjectData, projectData, statusDB }) {
                                 className="projectBtn1Mobile"
                                 title="View code on GitHub"
                                 key="pbtn1mA"
-                                href={projectData.gHlink}
+                                href={projectData.codeLink}
                                 target="_blank"
                                 whileHover={{
                                     scale: 1.1,
@@ -356,7 +356,7 @@ function MyProjectMobile({ loadingProjectData, projectData, statusDB }) {
                                 className="projectBtn2Mobile"
                                 title="Go to site"
                                 key="pbtn2mA"
-                                href={projectData.pLink}
+                                href={projectData.projectLink}
                                 target="_blank"
                                 whileHover={{
                                     scale: 1.1,

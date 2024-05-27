@@ -462,8 +462,8 @@ export const dataFe = {
             description: "",
             tech: "",
             image: "",
-            gHlink: "",
-            pLink: "",
+            codeLink: "",
+            projectLink: "",
         },
         /*{
             id: 0,
@@ -472,8 +472,8 @@ export const dataFe = {
             description: "blablabla...",
             tech: "Example tech...",
             image: "/src/Assets/Images/HeroSectionBG.jpg",
-            gHlink: "https://github.com/PartanenMa",
-            pLink: "https://www.google.fi/"
+            codeLink: "https://github.com/PartanenMa",
+            projectLink: "https://www.google.fi/"
         },*/
     ],
     videosData: [
@@ -484,7 +484,7 @@ export const dataFe = {
             description: "",
             tags: "",
             image: "",
-            link: "",
+            videoLink: "",
         },
         /*{
             id: 0,
@@ -492,8 +492,8 @@ export const dataFe = {
             category: "Example category...",
             description: "blablabla...",
             tags: "Example tags...",
-            image: "",
-            link: "https://github.com/PartanenMa",
+            image: "/src/Assets/Images/YouTube.png",
+            videoLink: "https://www.youtube.com/",
         },*/
     ],
     goalsData: [
