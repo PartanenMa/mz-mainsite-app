@@ -485,6 +485,7 @@ export const dataFe = {
             tags: "",
             image: "",
             videoLink: "",
+            videoWatchLink: "",
         },
         /*{
             id: 0,
@@ -494,6 +495,7 @@ export const dataFe = {
             tags: "Example tags...",
             image: "/src/Assets/Images/YouTube.png",
             videoLink: "https://www.youtube.com/",
+            videoWatchLink: "https://www.youtube.com/embed/tgbNymZ7vqY",
         },*/
     ],
     goalsData: [

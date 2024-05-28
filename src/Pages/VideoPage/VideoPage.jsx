@@ -169,7 +169,32 @@ function Video({ loadingVideoData, videoData, statusDB }) {
                         </div>
                     </div>
                 </AnimatePresence>
-                <div className="videoImage" style={{ backgroundImage: `url(${videoData.image})` }} />
+                <AnimatePresence>
+                    <div className="videoImage" style={{ backgroundImage: `url(${videoData.image})` }}>
+                        {!loadingVideoData && videoData?.videoWatchLink !== "" ? (
+                            <motion.iframe src={videoData.videoWatchLink} key="videoplayer" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }} />
+                        ) : (
+                            !loadingVideoData && (
+                                <motion.div className="noVideoLink" key="novideolink" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }}>
+                                    <p>CAN NOT PLAY VIDEO!</p>
+                                    <p>NO VIDEO WATCH LINK!</p>
+                                    <a href={videoData.videoLink} target="_blank">
+                                        <motion.button
+                                            key="watchelsewherebtn"
+                                            whileHover={{
+                                                scale: 1.1,
+                                                transition: { duration: 0.1 },
+                                            }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            Watch on YouTube
+                                        </motion.button>
+                                    </a>
+                                </motion.div>
+                            )
+                        )}
+                    </div>
+                </AnimatePresence>
                 <div className="videoCategory">
                     {loadingVideoData ? (
                         <p>
@@ -267,7 +292,32 @@ function VideoMobile({ loadingVideoData, videoData, statusDB }) {
                         </div>
                     </div>
                 </AnimatePresence>
-                <div className="videoImageMobile" style={{ backgroundImage: `url(${videoData.image})` }} />
+                <AnimatePresence>
+                    <div className="videoImageMobile" style={{ backgroundImage: `url(${videoData.image})` }}>
+                        {!loadingVideoData && videoData?.videoWatchLink !== "" ? (
+                            <motion.iframe src={videoData.videoWatchLink} key="videoplayerm" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }} />
+                        ) : (
+                            !loadingVideoData && (
+                                <motion.div className="noVideoLinkMobile" key="novideolinkm" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }}>
+                                    <p>CAN NOT PLAY VIDEO!</p>
+                                    <p>NO VIDEO WATCH LINK!</p>
+                                    <a href={videoData.videoLink} target="_blank">
+                                        <motion.button
+                                            key="watchelsewherebtnm"
+                                            whileHover={{
+                                                scale: 1.1,
+                                                transition: { duration: 0.1 },
+                                            }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            Watch on YouTube
+                                        </motion.button>
+                                    </a>
+                                </motion.div>
+                            )
+                        )}
+                    </div>
+                </AnimatePresence>
                 <div className="videoCategoryMobile">
                     {loadingVideoData ? (
                         <p>
