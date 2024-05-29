@@ -433,6 +433,14 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
         setIsVisibleEx(updatedVisibility);
     };
 
+    const isCompanyNameChanged = (eCompanyName, rCompanyName) => {
+        if (eCompanyName !== rCompanyName) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     const formatDate = (date) => {
         const day = date.getDate().toString().padStart(2, "0");
         const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -441,11 +449,17 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
         return `${day}.${month}.${year}`;
     };
 
-    const isCompanyNameChanged = (eCompanyName, rCompanyName) => {
-        if (eCompanyName !== rCompanyName) {
-            return true;
+    const calculateTimeDifference = (start, end) => {
+        const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+        const years = Math.floor(diffInMonths / 12);
+        const remainingMonths = (diffInMonths % 12) + 1;
+
+        if (years < 1) {
+            return remainingMonths === 1 ? "1 month" : `${remainingMonths} months`;
+        } else if (years === 1) {
+            return remainingMonths === 0 ? "1 year" : `1 year and ${remainingMonths} months`;
         } else {
-            return false;
+            return remainingMonths === 0 ? `${years} years` : `${years} years and ${remainingMonths} months`;
         }
     };
 
@@ -455,45 +469,18 @@ function Experience({ loadingProfileData, statusDB, experiences }) {
         let endDate;
         let time;
 
+        const start = new Date(r.startDate);
         if (r.endDate === "") {
             endDate = "present";
-            return startDate + " - " + endDate;
+            const current = new Date();
+            time = calculateTimeDifference(start, current);
         } else {
-            endDate = new Date(r.endDate);
-            endDate = formatDate(endDate);
-            time = r.time;
-
-            const years = Math.floor(time / 12);
-            const remainingMonths = time % 12;
-
-            if (years < 1) {
-                if (remainingMonths === 0) {
-                    time = "0 months";
-                } else if (remainingMonths === 1) {
-                    time = remainingMonths + " month";
-                } else {
-                    time = remainingMonths + " months";
-                }
-            } else if (years === 1 && remainingMonths === 0) {
-                time = "1 year";
-            } else if (years === 1 && remainingMonths > 0) {
-                if (remainingMonths === 1) {
-                    time = `1 year and ${remainingMonths} month`;
-                } else {
-                    time = `1 year and ${remainingMonths} months`;
-                }
-            } else if (years > 1 && remainingMonths === 0) {
-                if (years === 1) {
-                    time = `${years} year`;
-                } else {
-                    time = `${years} years`;
-                }
-            } else {
-                time = `${years} years and ${remainingMonths} months`;
-            }
-
-            return startDate + " - " + endDate + " (" + time + ")";
+            const end = new Date(r.endDate);
+            endDate = formatDate(end);
+            time = calculateTimeDifference(start, end);
         }
+
+        return `${startDate} - ${endDate} (${time})`;
     };
 
     const getTotalExperience = (index) => {
@@ -1502,6 +1489,14 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences }) {
         setIsVisibleEx(updatedVisibility);
     };
 
+    const isCompanyNameChanged = (eCompanyName, rCompanyName) => {
+        if (eCompanyName !== rCompanyName) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     const formatDate = (date) => {
         const day = date.getDate().toString().padStart(2, "0");
         const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -1510,11 +1505,17 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences }) {
         return `${day}.${month}.${year}`;
     };
 
-    const isCompanyNameChanged = (eCompanyName, rCompanyName) => {
-        if (eCompanyName !== rCompanyName) {
-            return true;
+    const calculateTimeDifference = (start, end) => {
+        const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+        const years = Math.floor(diffInMonths / 12);
+        const remainingMonths = (diffInMonths % 12) + 1;
+
+        if (years < 1) {
+            return remainingMonths === 1 ? "1 month" : `${remainingMonths} months`;
+        } else if (years === 1) {
+            return remainingMonths === 0 ? "1 year" : `1 year and ${remainingMonths} months`;
         } else {
-            return false;
+            return remainingMonths === 0 ? `${years} years` : `${years} years and ${remainingMonths} months`;
         }
     };
 
@@ -1524,45 +1525,18 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences }) {
         let endDate;
         let time;
 
+        const start = new Date(r.startDate);
         if (r.endDate === "") {
             endDate = "present";
-            return startDate + " - " + endDate;
+            const current = new Date();
+            time = calculateTimeDifference(start, current);
         } else {
-            endDate = new Date(r.endDate);
-            endDate = formatDate(endDate);
-            time = r.time;
-
-            const years = Math.floor(time / 12);
-            const remainingMonths = time % 12;
-
-            if (years < 1) {
-                if (remainingMonths === 0) {
-                    time = "0 months";
-                } else if (remainingMonths === 1) {
-                    time = remainingMonths + " month";
-                } else {
-                    time = remainingMonths + " months";
-                }
-            } else if (years === 1 && remainingMonths === 0) {
-                time = "1 year";
-            } else if (years === 1 && remainingMonths > 0) {
-                if (remainingMonths === 1) {
-                    time = `1 year and ${remainingMonths} month`;
-                } else {
-                    time = `1 year and ${remainingMonths} months`;
-                }
-            } else if (years > 1 && remainingMonths === 0) {
-                if (years === 1) {
-                    time = `${years} year`;
-                } else {
-                    time = `${years} years`;
-                }
-            } else {
-                time = `${years} years and ${remainingMonths} months`;
-            }
-
-            return startDate + " - " + endDate + " (" + time + ")";
+            const end = new Date(r.endDate);
+            endDate = formatDate(end);
+            time = calculateTimeDifference(start, end);
         }
+
+        return `${startDate} - ${endDate} (${time})`;
     };
 
     const getTotalExperience = (index) => {
