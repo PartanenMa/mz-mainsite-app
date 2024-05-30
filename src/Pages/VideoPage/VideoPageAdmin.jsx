@@ -232,7 +232,7 @@ function MyVideo({ loadingVideoData, videoData, statusDB }) {
                         <div className="videoButtons">
                             <motion.a
                                 className="videoBtn1"
-                                title="Watch video on YouTube"
+                                title={"Watch video on " + info.videos.siteName}
                                 key="vbtn1A"
                                 href={videoData.videoLink}
                                 target="_blank"
@@ -246,7 +246,7 @@ function MyVideo({ loadingVideoData, videoData, statusDB }) {
                     </div>
                 </AnimatePresence>
                 <AnimatePresence>
-                    <div className="videoImage" style={{ backgroundImage: `url(${videoData.image})` }}>
+                    <div className="videoImage">
                         {!loadingVideoData && videoData?.videoWatchLink !== "" ? (
                             <motion.iframe src={videoData.videoWatchLink} key="videoplayerA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }} />
                         ) : (
@@ -263,7 +263,7 @@ function MyVideo({ loadingVideoData, videoData, statusDB }) {
                                             }}
                                             whileTap={{ scale: 0.9 }}
                                         >
-                                            Watch on YouTube
+                                            {"Watch on " + info.videos.siteName}
                                         </motion.button>
                                     </a>
                                 </motion.div>
@@ -355,7 +355,7 @@ function MyVideoMobile({ loadingVideoData, videoData, statusDB }) {
                         <div className="videoButtonsMobile">
                             <motion.a
                                 className="videoBtn1Mobile"
-                                title="Watch video on YouTube"
+                                title={"Watch video on " + info.videos.siteName}
                                 key="vbtn1mA"
                                 href={videoData.videoLink}
                                 target="_blank"
@@ -369,7 +369,7 @@ function MyVideoMobile({ loadingVideoData, videoData, statusDB }) {
                     </div>
                 </AnimatePresence>
                 <AnimatePresence>
-                    <div className="videoImageMobile" style={{ backgroundImage: `url(${videoData.image})` }}>
+                    <div className="videoImageMobile">
                         {!loadingVideoData && videoData?.videoWatchLink !== "" ? (
                             <motion.iframe src={videoData.videoWatchLink} key="videoplayermA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }} />
                         ) : (
@@ -386,7 +386,7 @@ function MyVideoMobile({ loadingVideoData, videoData, statusDB }) {
                                             }}
                                             whileTap={{ scale: 0.9 }}
                                         >
-                                            Watch on YouTube
+                                            {"Watch on " + info.videos.siteName}
                                         </motion.button>
                                     </a>
                                 </motion.div>

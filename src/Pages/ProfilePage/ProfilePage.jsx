@@ -225,8 +225,8 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                 <AnimatePresence>
                     <motion.a
                         className="aboutMePhoto"
-                        title="My LinkedIn"
-                        href={info.LinkedIn.link}
+                        title={"My " + info.profile.siteName}
+                        href={info.profile.link}
                         target="_blank"
                         key="aboutmephoto"
                         whileHover={{
@@ -237,7 +237,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                     />
                     <div className="aboutMeTextContainer">
                         <div className="aboutMeTextTitle">
-                            <h4 className="h4_1">{info.LinkedIn.name}</h4>
+                            <h4 className="h4_1">{info.profile.name}</h4>
                             {info.api.enabled ? (
                                 (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                     <motion.h4 className="h4_2" key="h4_2success" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
@@ -260,7 +260,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                                 </motion.h4>
                             ) : (
                                 <motion.h4 className="h4_2" key="h4_2success" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                    {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
+                                    {dataFe.jobStatus.employed && info.profile.jobTitle && info.profile.company ? info.profile.jobTitle + " at " + info.profile.company : info.profile.profession}
                                 </motion.h4>
                             )}
                         </div>
@@ -291,13 +291,13 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                                 </motion.div>
                             ) : (
                                 <motion.p key="aboutmedescriptionsuccess" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                    {info.LinkedIn.description1}
+                                    {info.profile.description1}
                                     <br />
                                     <br />
-                                    {info.LinkedIn.description2}
+                                    {info.profile.description2}
                                     <br />
                                     <br />
-                                    {info.LinkedIn.description3}
+                                    {info.profile.description3}
                                 </motion.p>
                             )}
                         </div>
@@ -759,7 +759,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
             <div className="skillsContent">
                 <div className="webDevelopmentSoftware">
                     <div className="wDSTitle">
-                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                        <h4>{info.profile.skillsTitle1}</h4>
                     </div>
                     <div className="wDSContent">
                         <AnimatePresence>
@@ -768,7 +768,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                             skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
                                 <>
                                     <div className="software">
-                                        <h5>{info.LinkedIn.skills1SubTitle1}</h5>
+                                        <h5>{info.profile.skills1SubTitle1}</h5>
                                         {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -801,7 +801,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="software">
-                                        <h5>{info.LinkedIn.skills1SubTitle2}</h5>
+                                        <h5>{info.profile.skills1SubTitle2}</h5>
                                         {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -834,7 +834,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="software">
-                                        <h5>{info.LinkedIn.skills1SubTitle3}</h5>
+                                        <h5>{info.profile.skills1SubTitle3}</h5>
                                         {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -881,7 +881,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                 </div>
                 <div className="front-endDevelopment">
                     <div className="fEDTitle">
-                        <h4>{info.LinkedIn.skillsTitle2}</h4>
+                        <h4>{info.profile.skillsTitle2}</h4>
                     </div>
                     <div className="fEDContent">
                         <AnimatePresence>
@@ -890,7 +890,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                             skills.frontEndDevelopment?.cSSFrameworks?.length > 0 ? (
                                 <>
                                     <div className="frontEndSoftware">
-                                        <h5>{info.LinkedIn.skills2SubTitle1}</h5>
+                                        <h5>{info.profile.skills2SubTitle1}</h5>
                                         {skills.frontEndDevelopment.frontEndProgrammingLanguages.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -923,7 +923,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="frontEndSoftware">
-                                        <h5>{info.LinkedIn.skills2SubTitle2}</h5>
+                                        <h5>{info.profile.skills2SubTitle2}</h5>
                                         {skills.frontEndDevelopment.frontEndFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -956,7 +956,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="frontEndSoftware">
-                                        <h5>{info.LinkedIn.skills2SubTitle3}</h5>
+                                        <h5>{info.profile.skills2SubTitle3}</h5>
                                         {skills.frontEndDevelopment.cSSFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -1003,7 +1003,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                 </div>
                 <div className="back-endDevelopment">
                     <div className="bEDTitle">
-                        <h4>{info.LinkedIn.skillsTitle3}</h4>
+                        <h4>{info.profile.skillsTitle3}</h4>
                     </div>
                     <div className="bEDContent">
                         <AnimatePresence>
@@ -1012,7 +1012,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                             skills.backEndDevelopment?.databases?.length > 0 ? (
                                 <>
                                     <div className="backEndSoftware">
-                                        <h5>{info.LinkedIn.skills3SubTitle1}</h5>
+                                        <h5>{info.profile.skills3SubTitle1}</h5>
                                         {skills.backEndDevelopment.backEndProgrammingLanguages.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -1045,7 +1045,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="backEndSoftware">
-                                        <h5>{info.LinkedIn.skills3SubTitle2}</h5>
+                                        <h5>{info.profile.skills3SubTitle2}</h5>
                                         {skills.backEndDevelopment.backEndFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -1078,7 +1078,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="backEndSoftware">
-                                        <h5>{info.LinkedIn.skills3SubTitle3}</h5>
+                                        <h5>{info.profile.skills3SubTitle3}</h5>
                                         {skills.backEndDevelopment.databases.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -1225,7 +1225,7 @@ function ContactMe() {
                     </div>
                     <div className="phoneContainerContent">
                         <div className="phone1">
-                            <h4>{info.LinkedIn.phoneNumber}</h4>
+                            <h4>{info.profile.phoneNumber}</h4>
                         </div>
                         <div className="phone2"></div>
                     </div>
@@ -1236,7 +1236,7 @@ function ContactMe() {
                     </div>
                     <div className="emailContainerContent">
                         <div className="email1">
-                            <h4>{info.LinkedIn.emailAddress}</h4>
+                            <h4>{info.profile.emailAddress}</h4>
                         </div>
                         <div className="email2"></div>
                     </div>
@@ -1281,8 +1281,8 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                 <AnimatePresence>
                     <motion.a
                         className="aboutMePhotoMobile"
-                        title="My LinkedIn"
-                        href={info.LinkedIn.link}
+                        title={"My " + info.profile.siteName}
+                        href={info.profile.link}
                         target="_blank"
                         key="aboutmephotomobile"
                         whileHover={{
@@ -1293,7 +1293,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                     />
                     <div className="aboutMeTextContainerMobile">
                         <div className="aboutMeTextTitleMobile">
-                            <h4 className="h4_1M">{info.LinkedIn.name}</h4>
+                            <h4 className="h4_1M">{info.profile.name}</h4>
                             {info.api.enabled ? (
                                 (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                     <motion.h4 className="h4_2M" key="h4_2successmobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
@@ -1316,7 +1316,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                                 </motion.h4>
                             ) : (
                                 <motion.h4 className="h4_2M" key="h4_2successmobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                    {dataFe.jobStatus.employed && info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " + info.LinkedIn.company : info.LinkedIn.profession}
+                                    {dataFe.jobStatus.employed && info.profile.jobTitle && info.profile.company ? info.profile.jobTitle + " at " + info.profile.company : info.profile.profession}
                                 </motion.h4>
                             )}
                         </div>
@@ -1347,13 +1347,13 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                                 </motion.div>
                             ) : (
                                 <motion.p key="aboutmedescriptionsuccessmobile" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                    {info.LinkedIn.description1}
+                                    {info.profile.description1}
                                     <br />
                                     <br />
-                                    {info.LinkedIn.description2}
+                                    {info.profile.description2}
                                     <br />
                                     <br />
-                                    {info.LinkedIn.description3}
+                                    {info.profile.description3}
                                 </motion.p>
                             )}
                         </div>
@@ -1802,7 +1802,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
             <div className="skillsContentMobile">
                 <div className="webDevelopmentSoftwareMobile">
                     <div className="wDSTitleMobile">
-                        <h4>{info.LinkedIn.skillsTitle1}</h4>
+                        <h4>{info.profile.skillsTitle1}</h4>
                     </div>
                     <div className="wDSContentMobile">
                         <AnimatePresence>
@@ -1811,7 +1811,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                             skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
                                 <>
                                     <div className="softwareMobile">
-                                        <h5>{info.LinkedIn.skills1SubTitle1}</h5>
+                                        <h5>{info.profile.skills1SubTitle1}</h5>
                                         {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -1842,7 +1842,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="softwareMobile">
-                                        <h5>{info.LinkedIn.skills1SubTitle2}</h5>
+                                        <h5>{info.profile.skills1SubTitle2}</h5>
                                         {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -1873,7 +1873,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="softwareMobile">
-                                        <h5>{info.LinkedIn.skills1SubTitle3}</h5>
+                                        <h5>{info.profile.skills1SubTitle3}</h5>
                                         {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -1918,7 +1918,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                 </div>
                 <div className="front-endDevelopmentMobile">
                     <div className="fEDTitleMobile">
-                        <h4>{info.LinkedIn.skillsTitle2}</h4>
+                        <h4>{info.profile.skillsTitle2}</h4>
                     </div>
                     <div className="fEDContentMobile">
                         <AnimatePresence>
@@ -1927,7 +1927,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                             skills.frontEndDevelopment?.cSSFrameworks?.length > 0 ? (
                                 <>
                                     <div className="frontEndSoftwareMobile">
-                                        <h5>{info.LinkedIn.skills2SubTitle1}</h5>
+                                        <h5>{info.profile.skills2SubTitle1}</h5>
                                         {skills.frontEndDevelopment.frontEndProgrammingLanguages.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -1958,7 +1958,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="frontEndSoftwareMobile">
-                                        <h5>{info.LinkedIn.skills2SubTitle2}</h5>
+                                        <h5>{info.profile.skills2SubTitle2}</h5>
                                         {skills.frontEndDevelopment.frontEndFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -1989,7 +1989,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="frontEndSoftwareMobile">
-                                        <h5>{info.LinkedIn.skills2SubTitle3}</h5>
+                                        <h5>{info.profile.skills2SubTitle3}</h5>
                                         {skills.frontEndDevelopment.cSSFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -2034,7 +2034,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                 </div>
                 <div className="back-endDevelopmentMobile">
                     <div className="bEDTitleMobile">
-                        <h4>{info.LinkedIn.skillsTitle3}</h4>
+                        <h4>{info.profile.skillsTitle3}</h4>
                     </div>
                     <div className="bEDContentMobile">
                         <AnimatePresence>
@@ -2043,7 +2043,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                             skills.backEndDevelopment?.databases?.length > 0 ? (
                                 <>
                                     <div className="backEndSoftwareMobile">
-                                        <h5>{info.LinkedIn.skills3SubTitle1}</h5>
+                                        <h5>{info.profile.skills3SubTitle1}</h5>
                                         {skills.backEndDevelopment.backEndProgrammingLanguages.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -2074,7 +2074,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="backEndSoftwareMobile">
-                                        <h5>{info.LinkedIn.skills3SubTitle2}</h5>
+                                        <h5>{info.profile.skills3SubTitle2}</h5>
                                         {skills.backEndDevelopment.backEndFrameworks.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -2105,7 +2105,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                         ))}
                                     </div>
                                     <div className="backEndSoftwareMobile">
-                                        <h5>{info.LinkedIn.skills3SubTitle3}</h5>
+                                        <h5>{info.profile.skills3SubTitle3}</h5>
                                         {skills.backEndDevelopment.databases.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -2250,7 +2250,7 @@ function ContactMeMobile() {
                     </div>
                     <div className="phoneContainerContentMobile">
                         <div className="phone1Mobile">
-                            <h4>{info.LinkedIn.phoneNumber}</h4>
+                            <h4>{info.profile.phoneNumber}</h4>
                         </div>
                         <div className="phone2Mobile"></div>
                     </div>
@@ -2261,7 +2261,7 @@ function ContactMeMobile() {
                     </div>
                     <div className="emailContainerContentMobile">
                         <div className="email1Mobile">
-                            <h4>{info.LinkedIn.emailAddress}</h4>
+                            <h4>{info.profile.emailAddress}</h4>
                         </div>
                         <div className="email2Mobile"></div>
                     </div>

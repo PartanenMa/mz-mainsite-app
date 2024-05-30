@@ -174,8 +174,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                     <AnimatePresence>
                         <motion.a
                             className="photo"
-                            title="My LinkedIn"
-                            href={info.LinkedIn.link}
+                            title={"My " + info.profile.siteName}
+                            href={info.profile.link}
                             target="_blank"
                             key="photo"
                             whileHover={{
@@ -188,8 +188,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                     <div className="profileTextBox">
                         <AnimatePresence>
                             <motion.a
-                                title="My LinkedIn"
-                                href={info.LinkedIn.link}
+                                title={"My " + info.profile.siteName}
+                                href={info.profile.link}
                                 target="_blank"
                                 key="linkedinlogo"
                                 whileHover={{
@@ -199,8 +199,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>LinkedIn</h3>
-                        <p>{info.LinkedIn.user}</p>
+                        <h3>{info.profile.siteName}</h3>
+                        <p>{info.profile.user}</p>
                         {info.api.enabled ? (
                             (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                 <motion.p key="professionorjobdatasuccess" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -221,7 +221,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             </motion.div>
                         ) : (
                             <motion.p key="professionorjobdatasuccess" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.employed ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
+                                {info.profile.employed ? info.profile.jobTitle : info.profile.profession}
                             </motion.p>
                         )}
                         <AnimatePresence>
@@ -250,8 +250,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                     <AnimatePresence>
                         <motion.a
                             className="gHLogo"
-                            title="My GitHub"
-                            href={info.GitHub.link}
+                            title={"My " + info.projects.siteName}
+                            href={info.projects.link}
                             target="_blank"
                             key="ghlogo1"
                             whileHover={{
@@ -264,8 +264,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                     <div className="projectsTextBox">
                         <AnimatePresence>
                             <motion.a
-                                title="My GitHub"
-                                href={info.GitHub.link}
+                                title={"My " + info.projects.siteName}
+                                href={info.projects.link}
                                 target="_blank"
                                 key="ghlogo2"
                                 whileHover={{
@@ -275,9 +275,9 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>GitHub</h3>
-                        <p>{info.GitHub.user}</p>
-                        <p>{info.LinkedIn.name}</p>
+                        <h3>{info.projects.siteName}</h3>
+                        <p>{info.projects.user}</p>
+                        <p>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToProjects"
@@ -304,8 +304,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                     <AnimatePresence>
                         <motion.a
                             className="yTLogo"
-                            title="My YouTube"
-                            href={info.YouTube.link}
+                            title={"My " + info.videos.siteName}
+                            href={info.videos.link}
                             target="_blank"
                             key="ytlogo1"
                             whileHover={{
@@ -318,8 +318,8 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                     <div className="videosTextBox">
                         <AnimatePresence>
                             <motion.a
-                                title="My YouTube"
-                                href={info.YouTube.link}
+                                title={"My " + info.videos.siteName}
+                                href={info.videos.link}
                                 target="_blank"
                                 key="ytlogo2"
                                 whileHover={{
@@ -329,9 +329,9 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>YouTube</h3>
-                        <p>{info.YouTube.user}</p>
-                        <p>{info.LinkedIn.name}</p>
+                        <h3>{info.videos.siteName}</h3>
+                        <p>{info.videos.user}</p>
+                        <p>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToVideos"
@@ -490,8 +490,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                     <AnimatePresence>
                         <motion.a
                             className="photoMobile"
-                            title="My LinkedIn"
-                            href={info.LinkedIn.link}
+                            title={"My " + info.profile.siteName}
+                            href={info.profile.link}
                             target="_blank"
                             key="photomobile"
                             whileHover={{
@@ -504,8 +504,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                     <div className="profileTextBoxMobile">
                         <AnimatePresence>
                             <motion.a
-                                title="My LinkedIn"
-                                href={info.LinkedIn.link}
+                                title={"My " + info.profile.siteName}
+                                href={info.profile.link}
                                 target="_blank"
                                 key="linkedinlogomobile"
                                 whileHover={{
@@ -515,8 +515,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>LinkedIn</h3>
-                        <p>{info.LinkedIn.user}</p>
+                        <h3>{info.profile.siteName}</h3>
+                        <p>{info.profile.user}</p>
                         {info.api.enabled ? (
                             (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
                                 <motion.p key="professionorjobdatasuccessmobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -537,7 +537,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             </motion.div>
                         ) : (
                             <motion.p key="professionorjobdatasuccessmobile" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.employed ? info.LinkedIn.jobTitle : info.LinkedIn.profession}
+                                {info.profile.employed ? info.profile.jobTitle : info.profile.profession}
                             </motion.p>
                         )}
                         <AnimatePresence>
@@ -565,8 +565,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                     <AnimatePresence>
                         <motion.a
                             className="gHLogoMobile"
-                            title="My GitHub"
-                            href={info.GitHub.link}
+                            title={"My " + info.projects.siteName}
+                            href={info.projects.link}
                             target="_blank"
                             key="ghlogo1mobile"
                             whileHover={{
@@ -579,8 +579,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                     <div className="projectsTextBoxMobile">
                         <AnimatePresence>
                             <motion.a
-                                title="My GitHub"
-                                href={info.GitHub.link}
+                                title={"My " + info.projects.siteName}
+                                href={info.projects.link}
                                 target="_blank"
                                 key="ghlogo2mobile"
                                 whileHover={{
@@ -590,9 +590,9 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>GitHub</h3>
-                        <p>{info.GitHub.user}</p>
-                        <p>{info.LinkedIn.name}</p>
+                        <h3>{info.projects.siteName}</h3>
+                        <p>{info.projects.user}</p>
+                        <p>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToProjectsMobile"
@@ -618,8 +618,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                     <AnimatePresence>
                         <motion.a
                             className="yTLogoMobile"
-                            title="My YouTube"
-                            href={info.YouTube.link}
+                            title={"My " + info.videos.siteName}
+                            href={info.videos.link}
                             target="_blank"
                             key="ytlogo1mobile"
                             whileHover={{
@@ -632,8 +632,8 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                     <div className="videosTextBoxMobile">
                         <AnimatePresence>
                             <motion.a
-                                title="My YouTube"
-                                href={info.YouTube.link}
+                                title={"My " + info.videos.siteName}
+                                href={info.videos.link}
                                 target="_blank"
                                 key="ytlogo2mobile"
                                 whileHover={{
@@ -643,9 +643,9 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>YouTube</h3>
-                        <p>{info.YouTube.user}</p>
-                        <p>{info.LinkedIn.name}</p>
+                        <h3>{info.videos.siteName}</h3>
+                        <p>{info.videos.user}</p>
+                        <p>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToVideosMobile"

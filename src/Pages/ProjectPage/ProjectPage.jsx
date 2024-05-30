@@ -156,7 +156,7 @@ function Project({ loadingProjectData, projectData, statusDB }) {
                         <div className="projectButtons">
                             <motion.a
                                 className="projectBtn1"
-                                title="View code on GitHub"
+                                title={"View code on " + info.projects.siteName}
                                 key="pbtn1"
                                 href={projectData.codeLink}
                                 target="_blank"
@@ -266,7 +266,7 @@ function ProjectMobile({ loadingProjectData, projectData, statusDB }) {
                         <div className="projectButtonsMobile">
                             <motion.a
                                 className="projectBtn1Mobile"
-                                title="View code on GitHub"
+                                title={"View code on " + info.projects.siteName}
                                 key="pbtn1m"
                                 href={projectData.codeLink}
                                 target="_blank"

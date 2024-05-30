@@ -234,8 +234,8 @@ function AboutMyVideos() {
                 <AnimatePresence>
                     <motion.a
                         className="aboutMyVideosPhoto"
-                        title="My YouTube"
-                        href={info.YouTube.link}
+                        title={"My " + info.videos.siteName}
+                        href={info.videos.link}
                         target="_blank"
                         key="aboutmyviedosphotoA"
                         whileHover={{
@@ -247,18 +247,18 @@ function AboutMyVideos() {
                 </AnimatePresence>
                 <div className="aboutMyVideosTextContainer">
                     <div className="aboutMyVideosTextTitle">
-                        <h4 className="h4_1">{info.YouTube.user}</h4>
-                        <h4 className="h4_2">{info.LinkedIn.name}</h4>
+                        <h4 className="h4_1">{info.videos.user}</h4>
+                        <h4 className="h4_2">{info.profile.name}</h4>
                     </div>
                     <div className="aboutMyVideosText">
                         <p>
-                            {info.YouTube.description1}
+                            {info.videos.description1}
                             <br />
                             <br />
-                            {info.YouTube.description2}
+                            {info.videos.description2}
                             <br />
                             <br />
-                            {info.YouTube.description3}
+                            {info.videos.description3}
                         </p>
                     </div>
                 </div>
@@ -340,7 +340,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                                             <div className="videoContentButtons">
                                                 <motion.a
                                                     className="videoBtn1"
-                                                    title="Watch video on YouTube"
+                                                    title={"Watch video on " + info.videos.siteName}
                                                     key="vbtn1A"
                                                     href={video.videoLink}
                                                     target="_blank"
@@ -406,8 +406,8 @@ function AboutMyVideosMobile() {
                 <AnimatePresence>
                     <motion.a
                         className="aboutMyVideosPhotoMobile"
-                        title="My YouTube"
-                        href={info.YouTube.link}
+                        title={"My " + info.videos.siteName}
+                        href={info.videos.link}
                         target="_blank"
                         key="aboutmyviedosphotomobileA"
                         whileHover={{
@@ -419,18 +419,18 @@ function AboutMyVideosMobile() {
                 </AnimatePresence>
                 <div className="aboutMyVideosTextContainerMobile">
                     <div className="aboutMyVideosTextTitleMobile">
-                        <h4 className="h4_1M">{info.YouTube.user}</h4>
-                        <h4 className="h4_2M">{info.LinkedIn.name}</h4>
+                        <h4 className="h4_1M">{info.videos.user}</h4>
+                        <h4 className="h4_2M">{info.profile.name}</h4>
                     </div>
                     <div className="aboutMyVideosTextMobile">
                         <p>
-                            {info.YouTube.description1}
+                            {info.videos.description1}
                             <br />
                             <br />
-                            {info.YouTube.description2}
+                            {info.videos.description2}
                             <br />
                             <br />
-                            {info.YouTube.description3}
+                            {info.videos.description3}
                         </p>
                     </div>
                 </div>
@@ -512,7 +512,7 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                                             <div className="videoContentButtonsMobile">
                                                 <motion.a
                                                     className="videoBtn1Mobile"
-                                                    title="Watch video on YouTube"
+                                                    title={"Watch video on " + info.videos.siteName}
                                                     key="vbtn1mA"
                                                     href={video.videoLink}
                                                     target="_blank"

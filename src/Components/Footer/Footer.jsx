@@ -138,7 +138,7 @@ function Footer() {
                                     </div>
                                 </div>
                                 <div className="footerNav2" style={{ borderRight: "1px solid #03a062" }}>
-                                    <a style={{ textDecoration: "none" }} href={info.LinkedIn.link} target="_blank">
+                                    <a style={{ textDecoration: "none" }} href={info.profile.link} target="_blank">
                                         <AnimatePresence>
                                             <motion.div
                                                 className="footerNav2-1"
@@ -152,11 +152,11 @@ function Footer() {
                                                 <div className="linkedInLogoContainer">
                                                     <div className="linkedInLogo" />
                                                 </div>
-                                                <h3>LinkedIn</h3>
+                                                <h3>{info.profile.siteName}</h3>
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
-                                    <a style={{ textDecoration: "none" }} href={info.GitHub.link} target="_blank">
+                                    <a style={{ textDecoration: "none" }} href={info.projects.link} target="_blank">
                                         <AnimatePresence>
                                             <motion.div
                                                 className="footerNav2-2"
@@ -170,11 +170,11 @@ function Footer() {
                                                 <div className="gitHubLogoContainer">
                                                     <div className="gitHubLogo" />
                                                 </div>
-                                                <h3>GitHub</h3>
+                                                <h3>{info.projects.siteName}</h3>
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
-                                    <a style={{ textDecoration: "none" }} href={info.YouTube.link} target="_blank">
+                                    <a style={{ textDecoration: "none" }} href={info.videos.link} target="_blank">
                                         <AnimatePresence>
                                             <motion.div
                                                 className="footerNav2-3"
@@ -188,7 +188,7 @@ function Footer() {
                                                 <div className="youTubeLogoContainer">
                                                     <div className="youTubeLogo" />
                                                 </div>
-                                                <h3>YouTube</h3>
+                                                <h3>{info.videos.siteName}</h3>
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
@@ -332,7 +332,7 @@ function FooterMobile() {
                     </div>
                 </div>
                 <div className="footerNav2Mobile">
-                    <a style={{ textDecoration: "none" }} href={info.LinkedIn.link} target="_blank">
+                    <a style={{ textDecoration: "none" }} href={info.profile.link} target="_blank">
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav2-1M"
@@ -346,11 +346,11 @@ function FooterMobile() {
                                 <div className="linkedInLogoContainerMobile">
                                     <div className="linkedInLogoMobile" />
                                 </div>
-                                <h3>LinkedIn</h3>
+                                <h3>{info.profile.siteName}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </a>
-                    <a style={{ textDecoration: "none" }} href={info.GitHub.link} target="_blank">
+                    <a style={{ textDecoration: "none" }} href={info.projects.link} target="_blank">
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav2-2M"
@@ -364,11 +364,11 @@ function FooterMobile() {
                                 <div className="gitHubLogoContainerMobile">
                                     <div className="gitHubLogoMobile" />
                                 </div>
-                                <h3>GitHub</h3>
+                                <h3>{info.projects.siteName}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </a>
-                    <a style={{ textDecoration: "none" }} href={info.YouTube.link} target="_blank">
+                    <a style={{ textDecoration: "none" }} href={info.videos.link} target="_blank">
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav2-3M"
@@ -382,7 +382,7 @@ function FooterMobile() {
                                 <div className="youTubeLogoContainerMobile">
                                     <div className="youTubeLogoMobile" />
                                 </div>
-                                <h3>YouTube</h3>
+                                <h3>{info.videos.siteName}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </a>

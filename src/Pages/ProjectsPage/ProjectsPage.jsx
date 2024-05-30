@@ -129,8 +129,8 @@ function AboutMyProjects() {
                 <AnimatePresence>
                     <motion.a
                         className="aboutMyProjectsPhoto"
-                        title="My GitHub"
-                        href={info.GitHub.link}
+                        title={"My " + info.projects.siteName}
+                        href={info.projects.link}
                         target="_blank"
                         key="aboutmyprojectsphoto"
                         whileHover={{
@@ -142,18 +142,18 @@ function AboutMyProjects() {
                 </AnimatePresence>
                 <div className="aboutMyProjectsTextContainer">
                     <div className="aboutMyProjectsTextTitle">
-                        <h4 className="h4_1">{info.GitHub.user}</h4>
-                        <h4 className="h4_2">{info.LinkedIn.name}</h4>
+                        <h4 className="h4_1">{info.projects.user}</h4>
+                        <h4 className="h4_2">{info.profile.name}</h4>
                     </div>
                     <div className="aboutMyProjectsText">
                         <p>
-                            {info.GitHub.description1}
+                            {info.projects.description1}
                             <br />
                             <br />
-                            {info.GitHub.description2}
+                            {info.projects.description2}
                             <br />
                             <br />
-                            {info.GitHub.description3}
+                            {info.projects.description3}
                         </p>
                     </div>
                 </div>
@@ -220,7 +220,7 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                                             <div className="projectContentButtons">
                                                 <motion.a
                                                     className="projectBtn1"
-                                                    title="View code on GitHub"
+                                                    title={"View code on " + info.projects.siteName}
                                                     key="pbtn1"
                                                     href={project.codeLink}
                                                     target="_blank"
@@ -302,8 +302,8 @@ function AboutMyProjectsMobile() {
                 <AnimatePresence>
                     <motion.a
                         className="aboutMyProjectsPhotoMobile"
-                        title="My GitHub"
-                        href={info.GitHub.link}
+                        title={"My " + info.projects.siteName}
+                        href={info.projects.link}
                         target="_blank"
                         key="aboutmyprojectsphotomobile"
                         whileHover={{
@@ -315,18 +315,18 @@ function AboutMyProjectsMobile() {
                 </AnimatePresence>
                 <div className="aboutMyProjectsTextContainerMobile">
                     <div className="aboutMyProjectsTextTitleMobile">
-                        <h4 className="h4_1M">{info.GitHub.user}</h4>
-                        <h4 className="h4_2M">{info.LinkedIn.name}</h4>
+                        <h4 className="h4_1M">{info.projects.user}</h4>
+                        <h4 className="h4_2M">{info.profile.name}</h4>
                     </div>
                     <div className="aboutMyProjectsTextMobile">
                         <p>
-                            {info.GitHub.description1}
+                            {info.projects.description1}
                             <br />
                             <br />
-                            {info.GitHub.description2}
+                            {info.projects.description2}
                             <br />
                             <br />
-                            {info.GitHub.description3}
+                            {info.projects.description3}
                         </p>
                     </div>
                 </div>
@@ -393,7 +393,7 @@ function ProjectsMobile({ loadingProjectsData, statusDB, projects }) {
                                             <div className="projectContentButtonsMobile">
                                                 <motion.a
                                                     className="projectBtn1Mobile"
-                                                    title="View code on GitHub"
+                                                    title={"View code on " + info.projects.siteName}
                                                     key="pbtn1m"
                                                     href={project.codeLink}
                                                     target="_blank"

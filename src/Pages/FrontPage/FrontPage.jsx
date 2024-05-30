@@ -27,14 +27,14 @@ function FrontPage() {
             getJob();
             getTechnologies();
         } else {
-            if (info.LinkedIn.employed) {
-                if (info.LinkedIn.jobTech.includes("Front-end")) {
+            if (info.profile.employed) {
+                if (info.profile.jobTech.includes("Front-end")) {
                     setShowFrontEnd(true);
                     setShowBackEnd(false);
-                } else if (info.LinkedIn.jobTech.includes("Back-end")) {
+                } else if (info.profile.jobTech.includes("Back-end")) {
                     setShowFrontEnd(false);
                     setShowBackEnd(true);
-                } else if (info.LinkedIn.jobTech.includes("Full-stack")) {
+                } else if (info.profile.jobTech.includes("Full-stack")) {
                     setShowFrontEnd(true);
                     setShowBackEnd(true);
                 }
@@ -42,13 +42,13 @@ function FrontPage() {
                 setTechnologiesFe(dataFe.technologiesDataJ.technologiesFe);
                 setTechnologiesBe(dataFe.technologiesDataJ.technologiesBe);
             } else {
-                if (info.LinkedIn.professionTech.includes("Front-end")) {
+                if (info.profile.professionTech.includes("Front-end")) {
                     setShowFrontEnd(true);
                     setShowBackEnd(false);
-                } else if (info.LinkedIn.professionTech.includes("Back-end")) {
+                } else if (info.profile.professionTech.includes("Back-end")) {
                     setShowFrontEnd(false);
                     setShowBackEnd(true);
-                } else if (info.LinkedIn.professionTech.includes("Full-stack")) {
+                } else if (info.profile.professionTech.includes("Full-stack")) {
                     setShowFrontEnd(true);
                     setShowBackEnd(true);
                 }
@@ -302,7 +302,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                     <motion.div className="heroTitle" key="heroT" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
                         <div className="hTWelcome1">
                             <h3 className="hTW1text">
-                                Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
+                                Hi, 👋 I'm <span style={{ color: "green" }}>{info.profile.name}</span>
                             </h3>
                         </div>
                         <div className="hTWelcome2">
@@ -340,7 +340,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                 )
                             ) : !loadingProfessionData || !loadingJobData ? (
                                 <p className="hTW2text">
-                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.employed ? info.LinkedIn.job + " 👨‍💻" : info.LinkedIn.profession + " 👨‍💻"}</span>
+                                    I'm a <span style={{ color: "green" }}>{info.profile.employed ? info.profile.job + " 👨‍💻" : info.profile.profession + " 👨‍💻"}</span>
                                 </p>
                             ) : (
                                 <motion.div className="loadingProfessionTitle" key="loadingprofessiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -501,15 +501,15 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             </motion.div>
                         ) : (
                             <motion.h3 key="professionsectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
+                                {info.profile.jobTitle && info.profile.company ? info.profile.jobTitle + " at " : info.profile.profession}
                                 <span
                                     style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                        color: info.profile.jobTitle && info.profile.company ? info.profile.companyColor : "green",
                                     }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                                    {info.profile.jobTitle && info.profile.company ? info.profile.company : ""}
                                 </span>
-                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                {!info.profile.jobTitle || !info.profile.company ? (
                                     <>
                                         <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
                                         <span style={{ color: "green" }}>{"Looking for work"}</span>
@@ -519,10 +519,10 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                     ""
                                 )}
                                 <span
-                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                    title={info.profile.jobTitle && info.profile.company ? "Currently employed" : "Currently unemployed"}
                                     style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
+                                    {info.profile.jobTitle && info.profile.company ? " 💼" : " 📋"}
                                 </span>
                             </motion.h3>
                         )}
@@ -571,33 +571,33 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                         </p>
                                     ) : (
                                         <p>
-                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
+                                            {info.profile.employed ? "Currently working as a " + info.profile.jobTitle + " at " : "Currently looking for work as a "}
                                             <span
                                                 style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                    color: info.profile.employed ? info.profile.companyColor : "green",
                                                 }}
                                             >
-                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
+                                                {info.profile.employed ? info.profile.company : info.profile.profession}
                                             </span>
                                             .
                                             <br />
                                             <br />I use technologies such as{" "}
                                             <span
                                                 style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                    color: info.profile.employed ? info.profile.companyColor : "green",
                                                 }}
                                             >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
+                                                {info.profile.employed ? info.profile.jobTechStack : info.profile.professionTechStack}
                                             </span>
                                             .
                                             <br />
                                             <br />I also use tools such as{" "}
                                             <span
                                                 style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                    color: info.profile.employed ? info.profile.companyColor : "green",
                                                 }}
                                             >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
+                                                {info.profile.employed ? info.profile.jobAdditionalTech : info.profile.professionAdditionalTech}
                                             </span>
                                             .
                                         </p>
@@ -617,17 +617,17 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                               onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
                                           />
                                       )
-                                    : info.LinkedIn.employed && (
+                                    : info.profile.employed && (
                                           <div
                                               className="professionContentBox2"
                                               style={{
-                                                  "--company-color": info.LinkedIn.companyColor,
-                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
-                                                  height: info.LinkedIn.companyLogoH,
-                                                  width: info.LinkedIn.companyLogoW,
+                                                  "--company-color": info.profile.companyColor,
+                                                  backgroundImage: `url(${info.profile.companyLogo})`,
+                                                  height: info.profile.companyLogoH,
+                                                  width: info.profile.companyLogoW,
                                                   cursor: "pointer",
                                               }}
-                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
+                                              onClick={() => window.open(info.profile.companyInfoLink, "_blank")}
                                           />
                                       )}
                             </>
@@ -690,19 +690,19 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             </motion.div>
                         ) : (
                             <motion.h3 key="technologysectiontitle" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.employed ? info.LinkedIn.jobTech : info.LinkedIn.professionTech}
-                                {info.LinkedIn.employed && info.LinkedIn.jobDetailed ? (
+                                {info.profile.employed ? info.profile.jobTech : info.profile.professionTech}
+                                {info.profile.employed && info.profile.jobDetailed ? (
                                     <>
-                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{" ("}</span>
-                                        <span style={{ color: info.LinkedIn.companyColor }}>{info.LinkedIn.jobDetailed}</span>
-                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{") "}</span>
+                                        <span style={{ color: info.profile.companyColor, fontStyle: "normal" }}>{" ("}</span>
+                                        <span style={{ color: info.profile.companyColor }}>{info.profile.jobDetailed}</span>
+                                        <span style={{ color: info.profile.companyColor, fontStyle: "normal" }}>{") "}</span>
                                     </>
                                 ) : (
-                                    !info.LinkedIn.employed &&
-                                    info.LinkedIn.professionDetailed && (
+                                    !info.profile.employed &&
+                                    info.profile.professionDetailed && (
                                         <>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                            <span style={{ color: "green" }}>{info.profile.professionDetailed}</span>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
                                         </>
                                     )
@@ -717,7 +717,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                 style={
                                     info.api.enabled
                                         ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
-                                        : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                        : { border: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062" }
                                 }
                             >
                                 <div
@@ -725,7 +725,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                     style={
                                         info.api.enabled
                                             ? { borderBottom: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
-                                            : { borderBottom: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                            : { borderBottom: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062" }
                                     }
                                 >
                                     <div className="tCB1T1">
@@ -733,7 +733,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                             style={
                                                 info.api.enabled
                                                     ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
-                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                                    : { color: info.profile.employed ? info.profile.companyColor : "#03a062" }
                                             }
                                         >
                                             Front-end tech stack
@@ -742,7 +742,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                     {info.api.enabled ? (
                                         <div className="tCB1T2" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
                                     ) : (
-                                        <div className="tCB1T2" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                        <div className="tCB1T2" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
                                     )}
                                 </div>
                                 <div className="tCB1Content">
@@ -776,7 +776,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                                     style={
                                                         info.api.enabled
                                                             ? { borderTop: jobData?.jobStatus?.employed ? `16px solid ${jobData?.jobStatus?.companyColor}` : "16px solid #03a062" }
-                                                            : { borderTop: info.LinkedIn.employed ? `16px solid ${info.LinkedIn.companyColor}` : "16px solid #03a062" }
+                                                            : { borderTop: info.profile.employed ? `16px solid ${info.profile.companyColor}` : "16px solid #03a062" }
                                                     }
                                                 />
                                             </motion.div>
@@ -801,8 +801,8 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                             : { top: "30px" }
                                         : showFrontEnd && showBackEnd
                                         ? loadingTechnologiesData
-                                            ? { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062", bottom: "332px", left: "600px" }
-                                            : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062", bottom: "308px", left: "600px" }
+                                            ? { border: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062", bottom: "332px", left: "600px" }
+                                            : { border: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062", bottom: "308px", left: "600px" }
                                         : { top: "30px" }
                                 }
                             >
@@ -811,7 +811,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                     style={
                                         info.api.enabled
                                             ? { borderBottom: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
-                                            : { borderBottom: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                            : { borderBottom: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062" }
                                     }
                                 >
                                     <div className="tCB2T1">
@@ -819,7 +819,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                             style={
                                                 info.api.enabled
                                                     ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
-                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                                    : { color: info.profile.employed ? info.profile.companyColor : "#03a062" }
                                             }
                                         >
                                             Back-end tech stack
@@ -828,7 +828,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                     {info.api.enabled ? (
                                         <div className="tCB2T2" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
                                     ) : (
-                                        <div className="tCB2T2" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                        <div className="tCB2T2" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
                                     )}
                                 </div>
                                 <div className="tCB2Content">
@@ -862,7 +862,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                                     style={
                                                         info.api.enabled
                                                             ? { borderTop: jobData?.jobStatus?.employed ? `16px solid ${jobData?.jobStatus?.companyColor}` : "16px solid #03a062" }
-                                                            : { borderTop: info.LinkedIn.employed ? `16px solid ${info.LinkedIn.companyColor}` : "16px solid #03a062" }
+                                                            : { borderTop: info.profile.employed ? `16px solid ${info.profile.companyColor}` : "16px solid #03a062" }
                                                     }
                                                 />
                                             </motion.div>
@@ -904,7 +904,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                     <motion.div className="heroTitleMobile" key="herotitlemobile" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
                         <div className="hTWelcome1Mobile">
                             <h3 className="hTW1textMobile">
-                                Hi, 👋 I'm <span style={{ color: "green" }}>{info.LinkedIn.name}</span>
+                                Hi, 👋 I'm <span style={{ color: "green" }}>{info.profile.name}</span>
                             </h3>
                         </div>
                         <div className="hTWelcome2Mobile">
@@ -942,7 +942,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                 )
                             ) : !loadingProfessionData || !loadingJobData ? (
                                 <p className="hTW2textMobile">
-                                    I'm a <span style={{ color: "green" }}>{info.LinkedIn.employed ? info.LinkedIn.job + " 👨‍💻" : info.LinkedIn.profession + " 👨‍💻"}</span>
+                                    I'm a <span style={{ color: "green" }}>{info.profile.employed ? info.profile.job + " 👨‍💻" : info.profile.profession + " 👨‍💻"}</span>
                                 </p>
                             ) : (
                                 <motion.div className="loadingProfessionTitleMobile" key="loadingprofessiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
@@ -1087,15 +1087,15 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             </motion.div>
                         ) : (
                             <motion.h3 key="professionsectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.jobTitle + " at " : info.LinkedIn.profession}
+                                {info.profile.jobTitle && info.profile.company ? info.profile.jobTitle + " at " : info.profile.profession}
                                 <span
                                     style={{
-                                        color: info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.companyColor : "green",
+                                        color: info.profile.jobTitle && info.profile.company ? info.profile.companyColor : "green",
                                     }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? info.LinkedIn.company : ""}
+                                    {info.profile.jobTitle && info.profile.company ? info.profile.company : ""}
                                 </span>
-                                {!info.LinkedIn.jobTitle || !info.LinkedIn.company ? (
+                                {!info.profile.jobTitle || !info.profile.company ? (
                                     <>
                                         <span style={{ color: "green", fontStyle: "norman" }}>{" ("}</span>
                                         <span style={{ color: "green" }}>{"Looking for work"}</span>
@@ -1105,10 +1105,10 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     ""
                                 )}
                                 <span
-                                    title={info.LinkedIn.jobTitle && info.LinkedIn.company ? "Currently employed" : "Currently unemployed"}
+                                    title={info.profile.jobTitle && info.profile.company ? "Currently employed" : "Currently unemployed"}
                                     style={{ fontStyle: "normal", cursor: "default", textShadow: "none" }}
                                 >
-                                    {info.LinkedIn.jobTitle && info.LinkedIn.company ? " 💼" : " 📋"}
+                                    {info.profile.jobTitle && info.profile.company ? " 💼" : " 📋"}
                                 </span>
                             </motion.h3>
                         )}
@@ -1157,33 +1157,33 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                         </p>
                                     ) : (
                                         <p>
-                                            {info.LinkedIn.employed ? "Currently working as a " + info.LinkedIn.jobTitle + " at " : "Currently looking for work as a "}
+                                            {info.profile.employed ? "Currently working as a " + info.profile.jobTitle + " at " : "Currently looking for work as a "}
                                             <span
                                                 style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                    color: info.profile.employed ? info.profile.companyColor : "green",
                                                 }}
                                             >
-                                                {info.LinkedIn.employed ? info.LinkedIn.company : info.LinkedIn.profession}
+                                                {info.profile.employed ? info.profile.company : info.profile.profession}
                                             </span>
                                             .
                                             <br />
                                             <br />I use technologies such as{" "}
                                             <span
                                                 style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                    color: info.profile.employed ? info.profile.companyColor : "green",
                                                 }}
                                             >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobTechStack : info.LinkedIn.professionTechStack}
+                                                {info.profile.employed ? info.profile.jobTechStack : info.profile.professionTechStack}
                                             </span>
                                             .
                                             <br />
                                             <br />I also use tools such as{" "}
                                             <span
                                                 style={{
-                                                    color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "green",
+                                                    color: info.profile.employed ? info.profile.companyColor : "green",
                                                 }}
                                             >
-                                                {info.LinkedIn.employed ? info.LinkedIn.jobAdditionalTech : info.LinkedIn.professionAdditionalTech}
+                                                {info.profile.employed ? info.profile.jobAdditionalTech : info.profile.professionAdditionalTech}
                                             </span>
                                             .
                                         </p>
@@ -1203,15 +1203,15 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                               onClick={() => window.open(jobData?.jobStatus?.companyInfoLink, "_blank")}
                                           />
                                       )
-                                    : info.LinkedIn.employed && (
+                                    : info.profile.employed && (
                                           <div
                                               className="professionContentBox2Mobile"
                                               style={{
-                                                  "--company-color": info.LinkedIn.companyColor,
-                                                  backgroundImage: `url(${info.LinkedIn.companyLogo})`,
+                                                  "--company-color": info.profile.companyColor,
+                                                  backgroundImage: `url(${info.profile.companyLogo})`,
                                                   cursor: "pointer",
                                               }}
-                                              onClick={() => window.open(info.LinkedIn.companyInfoLink, "_blank")}
+                                              onClick={() => window.open(info.profile.companyInfoLink, "_blank")}
                                           />
                                       )}
                             </>
@@ -1274,19 +1274,19 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             </motion.div>
                         ) : (
                             <motion.h3 key="technologysectiontitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                {info.LinkedIn.employed ? info.LinkedIn.jobTech : info.LinkedIn.professionTech}
-                                {info.LinkedIn.employed && info.LinkedIn.jobDetailed ? (
+                                {info.profile.employed ? info.profile.jobTech : info.profile.professionTech}
+                                {info.profile.employed && info.profile.jobDetailed ? (
                                     <>
-                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{" ("}</span>
-                                        <span style={{ color: info.LinkedIn.companyColor }}>{info.LinkedIn.jobDetailed}</span>
-                                        <span style={{ color: info.LinkedIn.companyColor, fontStyle: "normal" }}>{") "}</span>
+                                        <span style={{ color: info.profile.companyColor, fontStyle: "normal" }}>{" ("}</span>
+                                        <span style={{ color: info.profile.companyColor }}>{info.profile.jobDetailed}</span>
+                                        <span style={{ color: info.profile.companyColor, fontStyle: "normal" }}>{") "}</span>
                                     </>
                                 ) : (
-                                    !info.LinkedIn.employed &&
-                                    info.LinkedIn.professionDetailed && (
+                                    !info.profile.employed &&
+                                    info.profile.professionDetailed && (
                                         <>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{" ("}</span>
-                                            <span style={{ color: "green" }}>{info.LinkedIn.professionDetailed}</span>
+                                            <span style={{ color: "green" }}>{info.profile.professionDetailed}</span>
                                             <span style={{ color: "green", fontStyle: "normal" }}>{") "}</span>
                                         </>
                                     )
@@ -1305,8 +1305,8 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                                   ? jobData?.jobStatus?.employed
                                                       ? `1px solid ${jobData?.jobStatus?.companyColor}`
                                                       : "1px solid #03a062"
-                                                  : info.LinkedIn.employed
-                                                  ? `1px solid ${info.LinkedIn.companyColor}`
+                                                  : info.profile.employed
+                                                  ? `1px solid ${info.profile.companyColor}`
                                                   : "1px solid #03a062",
                                               marginRight: "150px",
                                           }
@@ -1318,7 +1318,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     style={
                                         info.api.enabled
                                             ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
-                                            : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                            : { border: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062" }
                                     }
                                 >
                                     <div className="tCB1T1M">
@@ -1326,7 +1326,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                             style={
                                                 info.api.enabled
                                                     ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
-                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                                    : { color: info.profile.employed ? info.profile.companyColor : "#03a062" }
                                             }
                                         >
                                             Front-end tech stack
@@ -1335,7 +1335,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     {info.api.enabled ? (
                                         <div className="tCB1T2M" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
                                     ) : (
-                                        <div className="tCB1T2M" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                        <div className="tCB1T2M" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
                                     )}
                                 </div>
                                 <div className="tCB1ContentMobile">
@@ -1369,7 +1369,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                                     style={
                                                         info.api.enabled
                                                             ? { borderTop: jobData?.jobStatus?.employed ? `4px solid ${jobData?.jobStatus?.companyColor}` : "4px solid #03a062" }
-                                                            : { borderTop: info.LinkedIn.employed ? `4px solid ${info.LinkedIn.companyColor}` : "4px solid #03a062" }
+                                                            : { borderTop: info.profile.employed ? `4px solid ${info.profile.companyColor}` : "4px solid #03a062" }
                                                     }
                                                 />
                                             </motion.div>
@@ -1388,7 +1388,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                 style={
                                     info.api.enabled
                                         ? { borderBottom: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
-                                        : { borderBottom: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                        : { borderBottom: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062" }
                                 }
                             >
                                 <div
@@ -1396,7 +1396,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     style={
                                         info.api.enabled
                                             ? { border: jobData?.jobStatus?.employed ? `1px solid ${jobData?.jobStatus?.companyColor}` : "1px solid #03a062" }
-                                            : { border: info.LinkedIn.employed ? `1px solid ${info.LinkedIn.companyColor}` : "1px solid #03a062" }
+                                            : { border: info.profile.employed ? `1px solid ${info.profile.companyColor}` : "1px solid #03a062" }
                                     }
                                 >
                                     <div className="tCB2T1M">
@@ -1404,7 +1404,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                             style={
                                                 info.api.enabled
                                                     ? { color: jobData?.jobStatus?.employed ? jobData?.jobStatus?.companyColor : "#03a062" }
-                                                    : { color: info.LinkedIn.employed ? info.LinkedIn.companyColor : "#03a062" }
+                                                    : { color: info.profile.employed ? info.profile.companyColor : "#03a062" }
                                             }
                                         >
                                             Back-end tech stack
@@ -1413,7 +1413,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                     {info.api.enabled ? (
                                         <div className="tCB2T2M" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
                                     ) : (
-                                        <div className="tCB2T2M" style={{ backgroundImage: info.LinkedIn.employed && `url(${info.LinkedIn.companyLogo})` }} />
+                                        <div className="tCB2T2M" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
                                     )}
                                 </div>
                                 <div className="tCB2ContentMobile">
@@ -1447,7 +1447,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                                     style={
                                                         info.api.enabled
                                                             ? { borderTop: jobData?.jobStatus?.employed ? `4px solid ${jobData?.jobStatus?.companyColor}` : "4px solid #03a062" }
-                                                            : { borderTop: info.LinkedIn.employed ? `4px solid ${info.LinkedIn.companyColor}` : "4px solid #03a062" }
+                                                            : { borderTop: info.profile.employed ? `4px solid ${info.profile.companyColor}` : "4px solid #03a062" }
                                                     }
                                                 />
                                             </motion.div>

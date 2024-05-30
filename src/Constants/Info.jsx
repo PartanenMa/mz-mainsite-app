@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.3.10",
+    version: "Release 1.3.11",
     routes: {
         frontPage: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
         dashboardPage: deployToGitHubPages ? "/MatrixZone-APP/admin/dashboard" : "/admin/dashboard",
@@ -72,7 +72,9 @@ export const info = {
             "MatrixZone is not just a showcase of my skills; it's a testament to my dedication and commitment to excellence. Through a carefully curated collection of projects, you'll gain insight into my problem-solving abilities, attention to detail, and ability to tackle complex challenges head-on.",
         //videos: "But that's not all. MatrixZone also offers a glimpse into my journey as a software developer through captivating videos. From behind-the-scenes looks at my projects to thought-provoking discussions on industry trends, these videos provide a window into my world and the passion that drives me.",
     },
-    LinkedIn: {
+    profile: {
+        //Site data:
+        siteName: "LinkedIn",
         //Account data:
         user: "Manu Partanen",
         name: "Manu Partanen",
@@ -125,7 +127,9 @@ export const info = {
         companyLogoH: dataFe.jobStatus.employed ? dataFe.jobStatus.companyLogoH : "",
         companyLogoW: dataFe.jobStatus.employed ? dataFe.jobStatus.companyLogoW : "",
     },
-    GitHub: {
+    projects: {
+        //Site data:
+        siteName: "GitHub",
         //Account data:
         user: "PartanenMa",
         link: "https://github.com/PartanenMa",
@@ -134,7 +138,9 @@ export const info = {
         description2: "",
         description3: "",
     },
-    YouTube: {
+    videos: {
+        //Site data:
+        siteName: "YouTube",
         //Account data:
         user: "Manunaama",
         link: "https://www.youtube.com/channel/UCsEePl0jBNlnqYYnyjdQW5g",
