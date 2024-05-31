@@ -92,6 +92,20 @@
                     transition: background-color 500ms ease-in-out;
                 }
 
+                .usernameFieldDisabled {
+                    background-color: red;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
+                    border-radius: 50px;
+                    outline-color: red;
+                    padding-left: 10px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                    cursor: not-allowed;
+                }
+
                 ::placeholder {
                     color: #333;
                     opacity: 1;
@@ -133,6 +147,20 @@
                     will-change: filter;
                     transition: filter 300ms;
                     transition: background-color 500ms ease-in-out;
+                }
+
+                .passwordFieldDisabled {
+                    background-color: red;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
+                    border-radius: 50px;
+                    outline-color: red;
+                    padding-left: 10px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                    cursor: not-allowed;
                 }
 
                 ::placeholder {
@@ -292,6 +320,20 @@
                     transition: background-color 500ms ease-in-out;
                 }
 
+                .usernameFieldDisabledMobile {
+                    background-color: red;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
+                    border-radius: 50px;
+                    outline-color: red;
+                    padding-left: 10px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                    cursor: not-allowed;
+                }
+
                 ::placeholder {
                     color: #333;
                     opacity: 1;
@@ -333,6 +375,20 @@
                     will-change: filter;
                     transition: filter 300ms;
                     transition: background-color 500ms ease-in-out;
+                }
+
+                .passwordFieldDisabledMobile {
+                    background-color: red;
+                    height: 50px;
+                    width: 200px;
+                    font-size: 16px;
+                    border-radius: 50px;
+                    outline-color: red;
+                    padding-left: 10px;
+                    will-change: filter;
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                    cursor: not-allowed;
                 }
 
                 ::placeholder {

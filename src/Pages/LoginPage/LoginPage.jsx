@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./LoginPage.scss";
 
 function LoginPage() {
+    const [connectionLoading, setConnectionLoading] = useState(true);
+    const [connection, setConnection] = useState(false);
     const load = sessionStorage.getItem("logoutLoad");
     const [loading, setLoading] = useState(true);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -16,6 +18,12 @@ function LoginPage() {
         description: "",
         type: "",
     });
+
+    useEffect(() => {
+        if (info.api.enabled) {
+            checkConnection();
+        }
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -28,6 +36,26 @@ function LoginPage() {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
+    const checkConnection = () => {
+        fetch("/connection", {
+            method: "GET",
+            credentials: "include",
+        }).then(async (res) => {
+            const statusCode = res.status;
+
+            if (statusCode === 200) {
+                setConnection(true);
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    setConnectionLoading(false);
+                }, 300);
+            }
+        });
+    };
 
     useEffect(() => {
         //Simulate loading for 1 second:
@@ -64,7 +92,7 @@ function LoginPage() {
                         <div className="loginPageContainer">
                             <BackToFrontPage />
                             <LogoSection />
-                            <LoginSection />
+                            <LoginSection connectionLoading={connectionLoading} connection={connection} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -78,7 +106,7 @@ function LoginPage() {
                         <div className="loginPageContainerMobile">
                             <BackToFrontPageMobile />
                             <LogoSectionMobile />
-                            <LoginSectionMobile />
+                            <LoginSectionMobile connectionLoading={connectionLoading} connection={connection} />
                             <Notification
                                 isNotificationOpen={isNotificationOpen}
                                 setIsNotificationOpen={setIsNotificationOpen}
@@ -126,7 +154,7 @@ function LogoSection() {
     );
 }
 
-function LoginSection() {
+function LoginSection({ connectionLoading, connection }) {
     const [userValue, setUserValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -225,11 +253,27 @@ function LoginSection() {
                 <h2>MatrixZone</h2>
                 <div className="user">
                     <h3>Username:</h3>
-                    <input type="text" placeholder="Enter username" className="usernameField" value={userValue} onChange={handleUserChange} />
+                    <input
+                        type="text"
+                        placeholder="Enter username"
+                        className={info.api.enabled && !connectionLoading && !connection ? "usernameFieldDisabled" : "usernameField"}
+                        title={info.api.enabled && !connectionLoading && !connection ? "Server disconnected!" : ""}
+                        value={userValue}
+                        onChange={handleUserChange}
+                        disabled={info.api.enabled && !connectionLoading && !connection ? true : false}
+                    />
                 </div>
                 <div className="password">
                     <h3>Password:</h3>
-                    <input type="password" placeholder="Enter password" className="passwordField" value={passwordValue} onChange={handlePasswordChange} />
+                    <input
+                        type="password"
+                        placeholder="Enter password"
+                        className={info.api.enabled && !connectionLoading && !connection ? "passwordFieldDisabled" : "passwordField"}
+                        title={info.api.enabled && !connectionLoading && !connection ? "Server disconnected!" : ""}
+                        value={passwordValue}
+                        onChange={handlePasswordChange}
+                        disabled={info.api.enabled && !connectionLoading && !connection ? true : false}
+                    />
                 </div>
                 <AnimatePresence>
                     <motion.button
@@ -302,7 +346,7 @@ function LogoSectionMobile() {
     );
 }
 
-function LoginSectionMobile() {
+function LoginSectionMobile({ connectionLoading, connection }) {
     const [userValue, setUserValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -401,11 +445,27 @@ function LoginSectionMobile() {
                 <h2>MatrixZone</h2>
                 <div className="userMobile">
                     <h3>Username:</h3>
-                    <input type="text" placeholder="Enter username" className="usernameFieldMobile" value={userValue} onChange={handleUserChange} />
+                    <input
+                        type="text"
+                        placeholder="Enter username"
+                        className={info.api.enabled && !connectionLoading && !connection ? "usernameFieldDisabledMobile" : "usernameFieldMobile"}
+                        title={info.api.enabled && !connectionLoading && !connection ? "Server disconnected!" : ""}
+                        value={userValue}
+                        onChange={handleUserChange}
+                        disabled={info.api.enabled && !connectionLoading && !connection ? true : false}
+                    />
                 </div>
                 <div className="passwordMobile">
                     <h3>Password:</h3>
-                    <input type="password" placeholder="Enter password" className="passwordFieldMobile" value={passwordValue} onChange={handlePasswordChange} />
+                    <input
+                        type="password"
+                        placeholder="Enter password"
+                        className={info.api.enabled && !connectionLoading && !connection ? "passwordFieldDisabledMobile" : "passwordFieldMobile"}
+                        title={info.api.enabled && !connectionLoading && !connection ? "Server disconnected!" : ""}
+                        value={passwordValue}
+                        onChange={handlePasswordChange}
+                        disabled={info.api.enabled && !connectionLoading && !connection ? true : false}
+                    />
                 </div>
                 <AnimatePresence>
                     <motion.button
