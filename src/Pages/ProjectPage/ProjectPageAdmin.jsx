@@ -27,6 +27,7 @@ function ProjectPageAdmin() {
         description: "",
         type: "",
     });
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -143,7 +144,13 @@ function ProjectPageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="projectPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>{"Admin / projects / view / " + id}</h2>
+                                    <h2>
+                                        {"Admin / "}
+                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
+                                            {"projects"}
+                                        </span>
+                                        {" / view / " + id}
+                                    </h2>
                                 </div>
                                 <MyProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
                                 <MyProject loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
@@ -159,7 +166,13 @@ function ProjectPageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="projectPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>{"Admin / projects / view / " + id}</h2>
+                                    <h2>
+                                        {"Admin / "}
+                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
+                                            {"projects"}
+                                        </span>
+                                        {" / view / " + id}
+                                    </h2>
                                 </div>
                                 <MyProjectPageTitleMobile loadingProjectData={loadingProjectData} projectData={projectData} />
                                 <MyProjectMobile loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />

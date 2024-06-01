@@ -27,6 +27,7 @@ function VideoPageAdmin() {
         description: "",
         type: "",
     });
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (info.api.enabled) {
@@ -143,7 +144,13 @@ function VideoPageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="videoPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>{"Admin / videos / view / " + id}</h2>
+                                    <h2>
+                                        {"Admin / "}
+                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
+                                            {"videos"}
+                                        </span>
+                                        {" / watch / " + id}
+                                    </h2>
                                 </div>
                                 <MyVideoPageTitle loadingVideoData={loadingVideoData} videoData={videoData} />
                                 <MyVideo loadingVideoData={loadingVideoData} videoData={videoData} statusDB={statusDB} />
@@ -159,7 +166,13 @@ function VideoPageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="videoPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>{"Admin / videos / view / " + id}</h2>
+                                    <h2>
+                                        {"Admin / "}
+                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
+                                            {"videos"}
+                                        </span>
+                                        {" / watch / " + id}
+                                    </h2>
                                 </div>
                                 <MyVideoPageTitleMobile loadingVideoData={loadingVideoData} videoData={videoData} />
                                 <MyVideoMobile loadingVideoData={loadingVideoData} videoData={videoData} statusDB={statusDB} />
