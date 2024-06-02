@@ -277,14 +277,13 @@ function LoginSection({ connectionLoading, connection }) {
                 </div>
                 <AnimatePresence>
                     <motion.button
-                        className="loginButton"
+                        className={info.api.enabled && !connectionLoading && !connection ? "loginButtonDisabled" : "loginButton"}
+                        title={info.api.enabled && !connectionLoading && !connection ? "Server disconnected!" : ""}
                         onClick={() => handleLogin()}
+                        disabled={info.api.enabled && !connectionLoading && !connection ? true : false}
                         key="loginbutton"
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={info.api.enabled && !connectionLoading && !connection ? {} : { scale: 1.05, transition: { duration: 0.1 } }}
+                        whileTap={info.api.enabled && !connectionLoading && !connection ? {} : { scale: 0.9 }}
                     >
                         Log in
                     </motion.button>
@@ -469,14 +468,13 @@ function LoginSectionMobile({ connectionLoading, connection }) {
                 </div>
                 <AnimatePresence>
                     <motion.button
-                        className="loginButtonMobile"
+                        className={info.api.enabled && !connectionLoading && !connection ? "loginButtonDisabledMobile" : "loginButtonMobile"}
+                        title={info.api.enabled && !connectionLoading && !connection ? "Server disconnected!" : ""}
                         onClick={() => handleLogin()}
+                        disabled={info.api.enabled && !connectionLoading && !connection ? true : false}
                         key="loginbuttonmobile"
-                        whileHover={{
-                            scale: 1.05,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={info.api.enabled && !connectionLoading && !connection ? {} : { scale: 1.05, transition: { duration: 0.1 } }}
+                        whileTap={info.api.enabled && !connectionLoading && !connection ? {} : { scale: 0.9 }}
                     >
                         Log in
                     </motion.button>

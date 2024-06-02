@@ -194,6 +194,23 @@
                 left: 47px;
             }
 
+            .loginFButtonDisabled {
+                background-color: lightgray;
+                color: gray;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid gray;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 40px;
+                left: 47px;
+                cursor: not-allowed;
+            }
+
             .loginFButton:hover {
                 background-color: lightgreen;
                 transition: background-color 500ms ease-in-out;
@@ -420,6 +437,23 @@
                 position: relative;
                 bottom: 40px;
                 left: 47px;
+            }
+
+            .loginFButtonDisabledMobile {
+                background-color: lightgray;
+                color: gray;
+                cursor: pointer;
+                height: 48px;
+                width: 207px;
+                border-radius: 10px;
+                border: 1px solid gray;
+                font-size: 30px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                position: relative;
+                bottom: 40px;
+                left: 47px;
+                cursor: not-allowed;
             }
 
             .loginFButtonMobile:hover {
