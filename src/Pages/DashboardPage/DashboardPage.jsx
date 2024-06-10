@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
@@ -9,6 +10,7 @@ import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
 import TimeAndDate from "/src/Components/CurrentTime/TimeAndDate.jsx";
 import reactLogo from "/src/Assets/Images/React.svg";
 import { info } from "/src/Constants/Info.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./DashboardPage.scss";
 
@@ -16,6 +18,9 @@ function DashboardPage() {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
+    const [loadingPinnedProjectsData, setLoadingPinnedProjectsData] = useState(true);
+    const [statusDB, setStatusDB] = useState(false);
+    const [pinnedProjects, setPinnedProjects] = useState([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -27,6 +32,25 @@ function DashboardPage() {
     useEffect(() => {
         if (info.api.enabled) {
             checkSession();
+            //getPinnedProjects();
+        } else {
+            let pinnedProjects = [];
+
+            if (dataFe.projectsData[0].title === 0) {
+                pinnedProjects.push(dataFe.projectsData[0]);
+            } else {
+                dataFe.projectsData.map((p) => {
+                    if (p.pinned) {
+                        pinnedProjects.push(p);
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                setPinnedProjects(pinnedProjects);
+                setStatusDB(true);
+                setLoadingPinnedProjectsData(false);
+            }, 1000);
         }
     }, []);
 
@@ -65,6 +89,34 @@ function DashboardPage() {
                     sessionStorage.setItem("isLoggedIn", "false");
                     sessionStorage.setItem("csrfToken", "");
                 }
+            });
+    };
+
+    const getPinnedProjects = async () => {
+        await fetch("/projects/pinned", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const data = res.json();
+                    return data;
+                } else {
+                    setTimeout(() => {
+                        setLoadingPinnedProjectsData(false);
+                        return;
+                    }, 1000);
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setPinnedProjects(data.pinnedProjectsData);
+                    setStatusDB(true);
+                    setLoadingPinnedProjectsData(false);
+                }, 1000);
             });
     };
 
@@ -110,6 +162,7 @@ function DashboardPage() {
                                     <h2>Admin / home</h2>
                                 </div>
                                 <LogOutSection />
+                                <PinnedProjectsSection loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -399,6 +452,59 @@ function LogOutSection() {
                     WELCOME ADMIN
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function PinnedProjectsSection({ loadingPinnedProjectsData, statusDB, pinnedProjects }) {
+    return (
+        <div className="pinnedProjectsSectionAdmin">
+            <div className="pPSATitle">
+                <h3>
+                    PINNED PROJECTS <DBstate loading={loadingPinnedProjectsData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="pPSAContent">
+                <AnimatePresence>
+                    {pinnedProjects.length > 0 && !loadingPinnedProjectsData ? (
+                        pinnedProjects[0].title !== 0 ? (
+                            pinnedProjects.map((project, index) => (
+                                <motion.div
+                                    className="pinnedProject"
+                                    key={index}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <div className="pPTitle">
+                                        <p>{project.title}</p>
+                                    </div>
+                                    <div className="pPContent">
+                                        <div className="projectLogo" />
+                                        <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.div>
+                            ))
+                        ) : (
+                            <motion.div className="noPinnedProjectsYet" key="nopinnedprojectsyetA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO PINNED PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingPinnedProjectsData ? (
+                        <motion.div className="loadingPinnedProjectsData" key="loadingpinnedprojectsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderPinnedProjects" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noPinnedProjectsData" key="nopinnedprojectsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
         </div>
     );
 }

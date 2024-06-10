@@ -464,6 +464,7 @@ export const dataFe = {
             image: "",
             codeLink: "",
             projectLink: "",
+            pinned: false,
         },
         /*{
             id: 0,
@@ -473,7 +474,8 @@ export const dataFe = {
             tech: "Example tech...",
             image: "/src/Assets/Images/HeroSectionBG.jpg",
             codeLink: "https://github.com/PartanenMa",
-            projectLink: "https://www.google.fi/"
+            projectLink: "https://www.google.fi/",
+            pinned: true,
         },*/
     ],
     videosData: [

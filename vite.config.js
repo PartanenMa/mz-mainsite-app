@@ -16,6 +16,7 @@ export default defineConfig({
             "/profile": "http://localhost:8000",
             "/projects": "http://localhost:8000",
             "/projects/:id": "http://localhost:8000",
+            "/projects/pinned": "http://localhost:8000",
             "/videos": "http://localhost:8000",
             "/videos/:id": "http://localhost:8000",
             "/goals": "http://localhost:8000",

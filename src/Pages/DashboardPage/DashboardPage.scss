@@ -462,32 +462,204 @@
                 }
             }
         }
-    }
 
-    .clock {
-        animation: fadeIn 0.3s;
-        float: right;
-        position: relative;
-        bottom: 50px;
-        right: 10px;
-    }
+        .clock {
+            animation: fadeIn 0.3s;
+            float: right;
+            position: relative;
+            bottom: 50px;
+            right: 10px;
+        }
 
-    .welcome {
-        animation: fadeIn 0.3s;
-        color: #03a062;
-        font-size: 150px;
-        font-style: italic;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        text-shadow: 1px 1px 0 lightgreen;
-        float: center;
-        position: relative;
-        bottom: 30px;
-        left: 15px;
-        cursor: default;
+        .welcome {
+            animation: fadeIn 0.3s;
+            color: #03a062;
+            font-size: 150px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-shadow: 1px 1px 0 lightgreen;
+            float: center;
+            position: relative;
+            bottom: 30px;
+            left: 15px;
+            cursor: default;
+        }
     }
 
     .showGIF {
         background-image: url("/src/Assets/Images/UserBG.gif");
+    }
+
+    .pinnedProjectsSectionAdmin {
+        height: 236px;
+        width: 100%;
+        border-top: 1px solid #03a062;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .pPSATitle {
+            background-color: #111;
+            height: 36px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h3 {
+                color: #03a062;
+                font-size: 25px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+                margin-left: 10px;
+            }
+        }
+
+        .pPSAContent {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+
+            .pinnedProject {
+                background-color: black;
+                height: 150px;
+                width: 300px;
+                border: 1px solid white;
+                border-radius: 10px;
+                cursor: pointer;
+                overflow: hidden;
+                transition: border 300ms;
+                transition: filter 300ms;
+                display: flex;
+                flex-direction: column;
+
+                .pPTitle {
+                    height: 20%;
+                    width: 100%;
+                    border-bottom: 1px solid white;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+
+                    p {
+                        color: #03a062;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        margin-left: 10px;
+                    }
+                }
+
+                .pPContent {
+                    background-color: #222;
+                    height: 80%;
+                    width: 100%;
+                    display: flex;
+
+                    .projectLogo {
+                        height: 100%;
+                        width: 50%;
+                        border-right: 1px solid white;
+                    }
+
+                    .projectImage {
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        height: 100%;
+                        width: 50%;
+                    }
+                }
+            }
+
+            .pinnedProject:hover {
+                border: 1px solid gray;
+                filter: drop-shadow(0 0 2em black);
+            }
+
+            .noPinnedProjectsYet {
+                height: 300px;
+                width: 90%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    width: fit-content;
+                    color: yellow;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid yellow;
+                    border-radius: 48%;
+                    padding: 20px;
+                    cursor: default;
+                }
+            }
+
+            .loadingPinnedProjectsData {
+                height: 300px;
+                width: 95%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .loaderPinnedProjects {
+                    border: 8px solid #f3f3f3;
+                    border-radius: 50%;
+                    border-top: 8px solid black;
+                    width: 60px;
+                    height: 60px;
+                    -webkit-animation: spin 2s linear infinite;
+                    animation: spin 2s linear infinite;
+                }
+
+                @-webkit-keyframes spin {
+                    0% {
+                        -webkit-transform: rotate(0deg);
+                    }
+                    100% {
+                        -webkit-transform: rotate(360deg);
+                    }
+                }
+
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            .noPinnedProjectsData {
+                height: 300px;
+                width: 90%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    width: fit-content;
+                    color: red;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid red;
+                    border-radius: 48%;
+                    padding: 20px;
+                    cursor: default;
+                }
+            }
+        }
     }
 }
 
@@ -977,18 +1149,14 @@
                     }
                 }
             }
-        }
 
-        .clockMobile {
-            animation: fadeIn 0.3s;
-            float: right;
-            position: relative;
-            bottom: 30px;
-            right: 10px;
-        }
-
-        .showGIFMobile {
-            background-image: url("/src/Assets/Images/UserBG.gif");
+            .clockMobile {
+                animation: fadeIn 0.3s;
+                float: right;
+                position: relative;
+                bottom: 30px;
+                right: 10px;
+            }
         }
     }
 
@@ -1010,6 +1178,10 @@
             bottom: 50px;
             cursor: default;
         }
+    }
+
+    .showGIFMobile {
+        background-image: url("/src/Assets/Images/UserBG.gif");
     }
 }
 
