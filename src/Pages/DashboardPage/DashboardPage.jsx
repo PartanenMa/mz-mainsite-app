@@ -32,7 +32,7 @@ function DashboardPage() {
     useEffect(() => {
         if (info.api.enabled) {
             checkSession();
-            //getPinnedProjects();
+            getPinnedProjects();
         } else {
             let pinnedProjects = [];
 
@@ -102,7 +102,7 @@ function DashboardPage() {
                 const statusCode = res.status;
 
                 if (statusCode < 400) {
-                    const data = res.json();
+                    const data = await res.json();
                     return data;
                 } else {
                     setTimeout(() => {
