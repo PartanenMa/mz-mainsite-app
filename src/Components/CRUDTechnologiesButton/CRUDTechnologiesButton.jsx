@@ -25,7 +25,11 @@ function CRUDTechnologiesButton(props) {
     }, []);
 
     const getTechnologies = () => {
-        fetch("/technologies")
+        fetch("/technologies", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -161,6 +165,8 @@ function ModalTechnologies({ isModalOpen, setIsModalOpen, loadingTechnologiesDat
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const updatedTechData = {
             technologiesFe: formData.technologiesFe,
             technologiesBe: formData.technologiesBe,
@@ -170,7 +176,7 @@ function ModalTechnologies({ isModalOpen, setIsModalOpen, loadingTechnologiesDat
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedTechData),
+            body: JSON.stringify({ updatedTechData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 

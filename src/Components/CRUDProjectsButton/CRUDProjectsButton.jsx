@@ -65,12 +65,14 @@ function CRUDProjectsButton(props) {
         if (action === "Update") {
             setIsUpdateProjectsModalOpen(true);
         } else if (action === "Delete") {
+            const csrfToken = sessionStorage.getItem("csrfToken");
             const id = projectId;
 
             fetch(`/projects/${id}`, {
                 method: "DELETE",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ csrfToken }),
             }).then((res) => {
                 const statusCode = res.status;
 
@@ -246,6 +248,8 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
     };
 
     const createProject = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const newProjectData = {
             title: formData.title,
             type: formData.type,
@@ -262,7 +266,7 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newProjectData),
+            body: JSON.stringify({ newProjectData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -443,6 +447,7 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
     };
 
     const updateProject = (projectId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         const id = projectId;
 
         const updatedProjectData = {
@@ -461,7 +466,7 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedProjectData),
+            body: JSON.stringify({ updatedProjectData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -629,6 +634,8 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
     };
 
     const createProject = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const newProjectData = {
             title: formData.title,
             type: formData.type,
@@ -645,7 +652,7 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newProjectData),
+            body: JSON.stringify({ newProjectData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -826,6 +833,7 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
     };
 
     const updateProject = (projectId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         const id = projectId;
 
         const updatedProjectData = {
@@ -844,7 +852,7 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedProjectData),
+            body: JSON.stringify({ updatedProjectData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 

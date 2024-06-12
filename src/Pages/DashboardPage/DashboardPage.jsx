@@ -93,10 +93,13 @@ function DashboardPage() {
     };
 
     const getPinnedProjects = async () => {
+        const message = "Request successful!";
+
         await fetch("/projects/pinned", {
-            method: "GET",
+            method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message }),
         })
             .then(async (res) => {
                 const statusCode = res.status;

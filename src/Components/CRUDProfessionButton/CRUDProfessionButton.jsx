@@ -23,7 +23,11 @@ function CRUDProfessionButton(props) {
     }, []);
 
     const getProfession = () => {
-        fetch("/profession")
+        fetch("/profession", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -151,6 +155,7 @@ function CRUDProfessionButton(props) {
         };
 
         const updateProfession = () => {
+            const csrfToken = sessionStorage.getItem("csrfToken");
             const updatedProfessionData = formData;
 
             setIsModalOpen(false);
@@ -159,7 +164,7 @@ function CRUDProfessionButton(props) {
                 method: "PUT",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(updatedProfessionData),
+                body: JSON.stringify({ updatedProfessionData, csrfToken }),
             }).then((res) => {
                 const statusCode = res.status;
 

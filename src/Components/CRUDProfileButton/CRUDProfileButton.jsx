@@ -107,6 +107,7 @@ function CRUDProfileButton(props) {
         if (action === "Update") {
             setIsUpdateProfileModalOpen(true);
         } else if (action === "Delete") {
+            const csrfToken = sessionStorage.getItem("csrfToken");
             let id = profileId;
             let rId;
             let dataType = data;
@@ -159,7 +160,7 @@ function CRUDProfileButton(props) {
                 dataType = "skillBe";
             }
 
-            let body = { type: dataType, skillType: skillType, roleId: rId };
+            let body = { type: dataType, skillType: skillType, roleId: rId, csrfToken: csrfToken };
 
             fetch(`/profile/${id}`, {
                 method: "DELETE",
@@ -341,6 +342,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, id, getProfile,
     };
 
     const createProfile = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         let eId;
         let dataType = data;
         let skillType;
@@ -400,7 +402,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, id, getProfile,
             newData.current = document.getElementById("current").value === "true";
         }
 
-        let body = { type: dataType, skillType: skillType, data: newData, experienceId: eId };
+        let body = { type: dataType, skillType: skillType, data: newData, experienceId: eId, csrfToken: csrfToken };
 
         setIsModalOpen(false);
 
@@ -824,6 +826,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
     };
 
     const updateProfile = (profileId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         let id = profileId;
         let rId;
         let dataType = data;
@@ -884,7 +887,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
             updatedData.current = document.getElementById("current").value === "true";
         }
 
-        let body = { type: dataType, skillType: skillType, data: updatedData, roleId: rId };
+        let body = { type: dataType, skillType: skillType, data: updatedData, roleId: rId, csrfToken: csrfToken };
 
         setIsModalOpen(false);
 

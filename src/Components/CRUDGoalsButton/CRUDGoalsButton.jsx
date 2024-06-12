@@ -65,12 +65,14 @@ function CRUDGoalsButton(props) {
         if (action === "Update") {
             setIsUpdateGoalsModalOpen(true);
         } else if (action === "Delete") {
+            const csrfToken = sessionStorage.getItem("csrfToken");
             const id = goalId;
 
             fetch(`/goals/${id}`, {
                 method: "DELETE",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ csrfToken }),
             }).then((res) => {
                 const statusCode = res.status;
 
@@ -242,6 +244,8 @@ function ModalCreateGoals({ isModalOpen, setIsModalOpen, getGoals, notification 
     };
 
     const createGoal = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const newGoalData = {
             title: formData.title,
             status: formData.status,
@@ -265,7 +269,7 @@ function ModalCreateGoals({ isModalOpen, setIsModalOpen, getGoals, notification 
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newGoalData),
+            body: JSON.stringify({ newGoalData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -454,6 +458,7 @@ function ModalUpdateGoals({ isModalOpen, setIsModalOpen, goalData, id, getGoals,
     };
 
     const updateGoal = (goalId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         const id = goalId;
 
         const updatedGoalData = {
@@ -479,7 +484,7 @@ function ModalUpdateGoals({ isModalOpen, setIsModalOpen, goalData, id, getGoals,
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedGoalData),
+            body: JSON.stringify({ updatedGoalData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -654,6 +659,8 @@ function ModalCreateGoalsMobile({ isModalOpen, setIsModalOpen, getGoals, notific
     };
 
     const createGoal = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const newGoalData = {
             title: formData.title,
             status: formData.status,
@@ -677,7 +684,7 @@ function ModalCreateGoalsMobile({ isModalOpen, setIsModalOpen, getGoals, notific
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newGoalData),
+            body: JSON.stringify({ newGoalData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -866,6 +873,7 @@ function ModalUpdateGoalsMobile({ isModalOpen, setIsModalOpen, goalData, id, get
     };
 
     const updateGoal = (goalId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         const id = goalId;
 
         const updatedGoalData = {
@@ -891,7 +899,7 @@ function ModalUpdateGoalsMobile({ isModalOpen, setIsModalOpen, goalData, id, get
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedGoalData),
+            body: JSON.stringify({ updatedGoalData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 

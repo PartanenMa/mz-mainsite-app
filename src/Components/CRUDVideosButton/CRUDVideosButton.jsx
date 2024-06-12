@@ -65,12 +65,14 @@ function CRUDVideosButton(props) {
         if (action === "Update") {
             setIsUpdateVideosModalOpen(true);
         } else if (action === "Delete") {
+            const csrfToken = sessionStorage.getItem("csrfToken");
             const id = videoId;
 
             fetch(`/videos/${id}`, {
                 method: "DELETE",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ csrfToken }),
             }).then((res) => {
                 const statusCode = res.status;
 
@@ -240,6 +242,8 @@ function ModalCreateVideos({ isModalOpen, setIsModalOpen, getVideos, notificatio
     };
 
     const createVideo = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const newVideoData = {
             title: formData.title,
             category: formData.category,
@@ -255,7 +259,7 @@ function ModalCreateVideos({ isModalOpen, setIsModalOpen, getVideos, notificatio
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newVideoData),
+            body: JSON.stringify({ newVideoData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -430,6 +434,7 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
     };
 
     const updateVideo = (videoId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         const id = videoId;
 
         const updatedVideoData = {
@@ -447,7 +452,7 @@ function ModalUpdateVideos({ isModalOpen, setIsModalOpen, videoData, id, getVide
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedVideoData),
+            body: JSON.stringify({ updatedVideoData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -610,6 +615,8 @@ function ModalCreateVideosMobile({ isModalOpen, setIsModalOpen, getVideos, notif
     };
 
     const createVideo = () => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
+
         const newVideoData = {
             title: formData.title,
             category: formData.category,
@@ -625,7 +632,7 @@ function ModalCreateVideosMobile({ isModalOpen, setIsModalOpen, getVideos, notif
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newVideoData),
+            body: JSON.stringify({ newVideoData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -800,6 +807,7 @@ function ModalUpdateVideosMobile({ isModalOpen, setIsModalOpen, videoData, id, g
     };
 
     const updateVideo = (videoId) => {
+        const csrfToken = sessionStorage.getItem("csrfToken");
         const id = videoId;
 
         const updatedVideoData = {
@@ -817,7 +825,7 @@ function ModalUpdateVideosMobile({ isModalOpen, setIsModalOpen, videoData, id, g
             method: "PUT",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedVideoData),
+            body: JSON.stringify({ updatedVideoData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 

@@ -23,7 +23,11 @@ function CRUDJobButton(props) {
     }, []);
 
     const getJob = () => {
-        fetch("/job")
+        fetch("/job", {
+            method: "GET",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+        })
             .then(async (res) => {
                 const statusCode = res.status;
 
@@ -159,6 +163,7 @@ function CRUDJobButton(props) {
         };
 
         const updateJob = () => {
+            const csrfToken = sessionStorage.getItem("csrfToken");
             const employedBool = formData.employed === "true";
 
             const updatedJobData = {
@@ -172,7 +177,7 @@ function CRUDJobButton(props) {
                 method: "PUT",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(updatedJobData),
+                body: JSON.stringify({ updatedJobData, csrfToken }),
             }).then((res) => {
                 const statusCode = res.status;
 
