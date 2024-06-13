@@ -162,7 +162,7 @@ function DashboardPage() {
                         {windowWidth >= 1280 && (
                             <div className="dashboardPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / home</h2>
+                                    <h2>Admin / dashboard</h2>
                                 </div>
                                 <LogOutSection />
                                 <PinnedProjectsSection loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
@@ -178,9 +178,10 @@ function DashboardPage() {
                         {windowWidth < 1280 && (
                             <div className="dashboardPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / home</h2>
+                                    <h2>Admin / dashboard</h2>
                                 </div>
                                 <LogOutSectionMobile />
+                                <PinnedProjectsSectionMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -472,9 +473,11 @@ function PinnedProjectsSection({ loadingPinnedProjectsData, statusDB, pinnedProj
                     {pinnedProjects.length > 0 && !loadingPinnedProjectsData ? (
                         pinnedProjects[0].title !== 0 ? (
                             pinnedProjects.map((project, index) => (
-                                <motion.div
+                                <motion.a
                                     className="pinnedProject"
                                     key={index}
+                                    href={project.projectLink}
+                                    target="_blank"
                                     initial={{ opacity: 0, y: -100 }}
                                     animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
                                     whileHover={{
@@ -490,7 +493,7 @@ function PinnedProjectsSection({ loadingPinnedProjectsData, statusDB, pinnedProj
                                         <div className="projectLogo" />
                                         <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
                                     </div>
-                                </motion.div>
+                                </motion.a>
                             ))
                         ) : (
                             <motion.div className="noPinnedProjectsYet" key="nopinnedprojectsyetA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -782,6 +785,73 @@ function LogOutSectionMobile() {
                     >
                         WELCOME ADMIN
                     </motion.h2>
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function PinnedProjectsSectionMobile({ loadingPinnedProjectsData, statusDB, pinnedProjects }) {
+    return (
+        <div className="pinnedProjectsSectionAdminMobile">
+            <div className="pPSATitleMobile">
+                <h3>
+                    PINNED PROJECTS <DBstate loading={loadingPinnedProjectsData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="pPSAContentMobile">
+                <AnimatePresence>
+                    {pinnedProjects.length > 0 && !loadingPinnedProjectsData ? (
+                        pinnedProjects[0].title !== 0 ? (
+                            pinnedProjects.map((project, index) => (
+                                <motion.a
+                                    className="pinnedProjectMobile"
+                                    key={index}
+                                    href={project.projectLink}
+                                    target="_blank"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <div className="pPTitleMobile">
+                                        <p>{project.title}</p>
+                                    </div>
+                                    <div className="pPContentMobile">
+                                        <div className="projectLogoMobile" />
+                                        <div className="projectImageMobile" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.a>
+                            ))
+                        ) : (
+                            <motion.div
+                                className="noPinnedProjectsYetMobile"
+                                key="nopinnedprojectsyetmobileA"
+                                transition={{ delay: 0.5 }}
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                <h4>NO PINNED PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingPinnedProjectsData ? (
+                        <motion.div className="loadingPinnedProjectsDataMobile" key="loadingpinnedprojectsdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderPinnedProjectsMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            className="noPinnedProjectsDataMobile"
+                            key="nopinnedprojectsdatamobileA"
+                            transition={{ delay: 0.5 }}
+                            initial={{ opacity: 0, y: 100 }}
+                            animate={{ opacity: 1, y: 0 }}
+                        >
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
                 </AnimatePresence>
             </div>
         </div>
