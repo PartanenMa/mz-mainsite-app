@@ -486,6 +486,9 @@ function PinnedProjectsSection({ loadingPinnedProjectsData, statusDB, pinnedProj
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
+                                    <div className="pPCoverTitle">
+                                        <p>{project.title}</p>
+                                    </div>
                                     <div className="pPTitle">
                                         <p>{project.title}</p>
                                     </div>
@@ -817,6 +820,9 @@ function PinnedProjectsSectionMobile({ loadingPinnedProjectsData, statusDB, pinn
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
+                                    <div className="pPCoverTitleMobile">
+                                        <p>{project.title}</p>
+                                    </div>
                                     <div className="pPTitleMobile">
                                         <p>{project.title}</p>
                                     </div>

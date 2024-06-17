@@ -540,10 +540,32 @@
                 display: flex;
                 flex-direction: column;
 
+                .pPCoverTitle {
+                    display: block;
+                    animation: fadeIn 0.3s;
+                    background-color: black;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        display: block;
+                        color: white;
+                        font-size: 20px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        position: relative;
+                        top: 40px;
+                    }
+                }
+
                 .pPTitle {
+                    visibility: hidden;
                     height: 20%;
                     width: 100%;
-                    border-bottom: 1px solid white;
+                    border-bottom: 1px solid gray;
                     display: flex;
                     justify-content: left;
                     align-items: center;
@@ -557,6 +579,7 @@
                 }
 
                 .pPContent {
+                    visibility: hidden;
                     background-color: #222;
                     height: 80%;
                     width: 100%;
@@ -565,7 +588,7 @@
                     .projectLogo {
                         height: 100%;
                         width: 50%;
-                        border-right: 1px solid white;
+                        border-right: 1px solid gray;
                     }
 
                     .projectImage {
@@ -581,6 +604,21 @@
             .pinnedProject:hover {
                 border: 1px solid gray;
                 filter: drop-shadow(0 0 2em black);
+            }
+
+            .pinnedProject:hover .pPCoverTitle {
+                animation: fadeIn 0.3s;
+                display: none;
+            }
+
+            .pinnedProject:hover .pPTitle {
+                animation: fadeIn 0.3s;
+                visibility: visible;
+            }
+
+            .pinnedProject:hover .pPContent {
+                visibility: visible;
+                opacity: 1;
             }
 
             .noPinnedProjectsYet {
@@ -1235,10 +1273,32 @@
                 display: flex;
                 flex-direction: column;
 
+                .pPCoverTitleMobile {
+                    display: block;
+                    animation: fadeIn 0.3s;
+                    background-color: black;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        display: block;
+                        color: white;
+                        font-size: 8px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        position: relative;
+                        top: 20px;
+                    }
+                }
+
                 .pPTitleMobile {
+                    visibility: hidden;
                     height: 20%;
                     width: 100%;
-                    border-bottom: 1px solid white;
+                    border-bottom: 1px solid gray;
                     display: flex;
                     justify-content: left;
                     align-items: center;
@@ -1253,6 +1313,7 @@
                 }
 
                 .pPContentMobile {
+                    visibility: hidden;
                     background-color: #222;
                     height: 80%;
                     width: 100%;
@@ -1261,7 +1322,7 @@
                     .projectLogoMobile {
                         height: 100%;
                         width: 50%;
-                        border-right: 1px solid white;
+                        border-right: 1px solid gray;
                     }
 
                     .projectImageMobile {
@@ -1277,6 +1338,21 @@
             .pinnedProjectMobile:hover {
                 border: 1px solid gray;
                 filter: drop-shadow(0 0 2em black);
+            }
+
+            .pinnedProjectMobile:hover .pPCoverTitleMobile {
+                animation: fadeIn 0.3s;
+                display: none;
+            }
+
+            .pinnedProjectMobile:hover .pPTitleMobile {
+                animation: fadeIn 0.3s;
+                visibility: visible;
+            }
+
+            .pinnedProjectMobile:hover .pPContentMobile {
+                visibility: visible;
+                opacity: 1;
             }
 
             .noPinnedProjectsYetMobile {
