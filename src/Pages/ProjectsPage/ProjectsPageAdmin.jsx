@@ -18,8 +18,10 @@ function ProjectsPageAdmin() {
     const load = sessionStorage.getItem("load");
     const [loading, setLoading] = useState(true);
     const [loadingProjectsData, setLoadingProjectsData] = useState(true);
+    const [loadingPinnedProjectsData, setLoadingPinnedProjectsData] = useState(true);
     const [statusDB, setStatusDB] = useState(false);
     const [projects, setProjects] = useState([]);
+    const [pinnedProjects, setPinnedProjects] = useState([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -32,10 +34,26 @@ function ProjectsPageAdmin() {
         if (info.api.enabled) {
             checkSession();
             getProjects();
+            getPinnedProjects();
         } else {
+            let pinnedProjects = [];
+
+            if (dataFe.projectsData[0].title === 0) {
+                pinnedProjects.push(dataFe.projectsData[0]);
+            } else {
+                dataFe.projectsData.map((p) => {
+                    if (p.pinned) {
+                        pinnedProjects.push(p);
+                    }
+                });
+            }
+
             setTimeout(() => {
                 setProjects(dataFe.projectsData);
+                setPinnedProjects(pinnedProjects);
+                setStatusDB(true);
                 setLoadingProjectsData(false);
+                setLoadingPinnedProjectsData(false);
             }, 1000);
         }
     }, []);
@@ -122,6 +140,37 @@ function ProjectsPageAdmin() {
             });
     };
 
+    const getPinnedProjects = async () => {
+        const message = "Request successful!";
+
+        await fetch("/projects/pinned", {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message }),
+        })
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setTimeout(() => {
+                        setLoadingPinnedProjectsData(false);
+                        return;
+                    }, 1000);
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setPinnedProjects(data.pinnedProjectsData);
+                    setStatusDB(true);
+                    setLoadingPinnedProjectsData(false);
+                }, 1000);
+            });
+    };
+
     useEffect(() => {
         if (isLoggedIn === "true") {
             //Simulate loading for 1 second:
@@ -165,6 +214,7 @@ function ProjectsPageAdmin() {
                                 </div>
                                 <ProjectsPageTitle />
                                 <AboutMyProjects />
+                                <MyPinnedProjects loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                                 <MyProjects
                                     loadingProjectsData={loadingProjectsData}
                                     statusDB={statusDB}
@@ -189,6 +239,7 @@ function ProjectsPageAdmin() {
                                 </div>
                                 <ProjectsPageTitleMobile />
                                 <AboutMyProjectsMobile />
+                                <MyPinnedProjectsMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                                 <MyProjectsMobile
                                     loadingProjectsData={loadingProjectsData}
                                     statusDB={statusDB}
@@ -262,6 +313,64 @@ function AboutMyProjects() {
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    );
+}
+
+function MyPinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects }) {
+    return (
+        <div className="pinnedProjectsContainer">
+            <div className="pPSATitle">
+                <h3>
+                    MY PINNED PROJECTS <DBstate loading={loadingPinnedProjectsData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="pPSAContent">
+                <AnimatePresence>
+                    {pinnedProjects.length > 0 && !loadingPinnedProjectsData ? (
+                        pinnedProjects[0].title !== 0 ? (
+                            pinnedProjects.map((project, index) => (
+                                <motion.a
+                                    className="pinnedProject"
+                                    key={index}
+                                    href={project.projectLink}
+                                    target="_blank"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <div className="pPCoverTitle">
+                                        <p>{project.title}</p>
+                                    </div>
+                                    <div className="pPTitle">
+                                        <p>{project.title}</p>
+                                    </div>
+                                    <div className="pPContent">
+                                        <div className="projectLogo" />
+                                        <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.a>
+                            ))
+                        ) : (
+                            <motion.div className="noPinnedProjectsYet" key="nopinnedprojectsyetA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO PINNED PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingPinnedProjectsData ? (
+                        <motion.div className="loadingPinnedProjectsData" key="loadingpinnedprojectsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderPinnedProjects" />
+                        </motion.div>
+                    ) : (
+                        <motion.div className="noPinnedProjectsData" key="nopinnedprojectsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );
@@ -446,6 +555,76 @@ function AboutMyProjectsMobile() {
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    );
+}
+
+function MyPinnedProjectsMobile({ loadingPinnedProjectsData, statusDB, pinnedProjects }) {
+    return (
+        <div className="pinnedProjectsContainerMobile">
+            <div className="pPSATitleMobile">
+                <h3>
+                    MY PINNED PROJECTS <DBstate loading={loadingPinnedProjectsData} statusDB={statusDB} />
+                </h3>
+            </div>
+            <div className="pPSAContentMobile">
+                <AnimatePresence>
+                    {pinnedProjects.length > 0 && !loadingPinnedProjectsData ? (
+                        pinnedProjects[0].title !== 0 ? (
+                            pinnedProjects.map((project, index) => (
+                                <motion.a
+                                    className="pinnedProjectMobile"
+                                    key={index}
+                                    href={project.projectLink}
+                                    target="_blank"
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                    whileHover={{
+                                        scale: 1.03,
+                                        transition: { duration: 0.1 },
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <div className="pPCoverTitleMobile">
+                                        <p>{project.title}</p>
+                                    </div>
+                                    <div className="pPTitleMobile">
+                                        <p>{project.title}</p>
+                                    </div>
+                                    <div className="pPContentMobile">
+                                        <div className="projectLogoMobile" />
+                                        <div className="projectImageMobile" style={{ backgroundImage: `url(${project.image})` }} />
+                                    </div>
+                                </motion.a>
+                            ))
+                        ) : (
+                            <motion.div
+                                className="noPinnedProjectsYetMobile"
+                                key="nopinnedprojectsyetmobileA"
+                                transition={{ delay: 0.5 }}
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                <h4>NO PINNED PROJECTS YET!</h4>
+                            </motion.div>
+                        )
+                    ) : loadingPinnedProjectsData ? (
+                        <motion.div className="loadingPinnedProjectsDataMobile" key="loadingpinnedprojectsdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <div className="loaderPinnedProjectsMobile" />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            className="noPinnedProjectsDataMobile"
+                            key="nopinnedprojectsdatamobileA"
+                            transition={{ delay: 0.5 }}
+                            initial={{ opacity: 0, y: 100 }}
+                            animate={{ opacity: 1, y: 0 }}
+                        >
+                            <h4>NO DATA!</h4>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );
