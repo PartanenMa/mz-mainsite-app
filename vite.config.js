@@ -23,5 +23,5 @@ export default defineConfig({
         },
     },
     plugins: [react()],
-    base: deployToGitHubPages ? "/MatrixZone-APP/" : "/",
+    base: deployToGitHubPages ? "/mz-mainsite-app/" : "/",
 });
