@@ -72,7 +72,9 @@ function Header() {
                                         whileTap={{ scale: 0.9 }}
                                     />
                                 </AnimatePresence>
-                                <p>{info.version}</p>
+                                <p>
+                                    Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
+                                </p>
                             </div>
                         </motion.div>
                         <Nav />
@@ -101,7 +103,9 @@ function HeaderMobile() {
                     <motion.div className="headerLogoMobile" title="Go to front page" onClick={() => handleLogoClick()} key="headerlogomobile" whileTap={{ scale: 0.9 }} />
                     <div className="headerTitleContainerMobile">
                         <h1>MatrixZone</h1>
-                        <p>{info.version}</p>
+                        <p>
+                            Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
+                        </p>
                     </div>
                 </motion.div>
                 <Nav />
