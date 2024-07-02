@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.5.2",
+    version: "Release 1.5.3",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/",
         dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/admin/dashboard",
@@ -28,6 +28,9 @@ export const info = {
         goalsPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/goals" : "/admin/goals",
         cvPage: deployToGitHubPages ? "/mz-mainsite-app/cv" : "/cv",
         cvPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/cv" : "/admin/cv",
+    },
+    projectRoutes: {
+        portfolio: "https://www.google.fi",
     },
     testLoginFe: {
         enabled: false,

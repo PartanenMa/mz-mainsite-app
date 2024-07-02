@@ -262,6 +262,115 @@
     }
 }
 
+.portfolioContainer {
+    height: 400px;
+    width: 100%;
+    border-top: 1px solid white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .portfolioTitle {
+        background-color: black;
+        height: 30px;
+        width: 100%;
+        border-bottom: 1px solid white;
+        overflow: hidden;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
+            margin-left: 10px;
+        }
+    }
+
+    .portfolioContent {
+        background-color: rgb(1, 44, 1);
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .pCBox {
+            background-color: transparentize($color: darkgreen, $amount: 0.6);
+            height: 90%;
+            width: 96%;
+            border: 0.5px solid gray;
+            border-radius: 10px;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: border 300ms;
+            transition: filter 300ms;
+
+            .pCB1 {
+                height: 100%;
+                width: 50%;
+            }
+
+            .pCB2 {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    color: #03a062;
+                    font-size: 60px;
+                    font-style: italic;
+                    font-family: "Courier New", Courier, monospace;
+                }
+            }
+        }
+
+        .pCBox:hover {
+            border: 1px solid lightgreen;
+            filter: drop-shadow(0 0 2em lightgreen);
+        }
+    }
+
+    .space1 {
+        background-color: rgb(1, 44, 1);
+        height: 20px;
+        width: 100%;
+    }
+
+    .or {
+        background-color: #222;
+        height: 100px;
+        width: 100%;
+        border-top: 0.5px solid gray;
+        border-bottom: 0.5px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            color: #03a062;
+            font-size: 35px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
+        }
+    }
+
+    .space2 {
+        background-color: rgb(1, 44, 1);
+        height: 50px;
+        width: 100%;
+    }
+}
+
 .pinnedProjectsContainer {
     height: 236px;
     width: 100%;
@@ -272,7 +381,7 @@
 
     .pPSATitle {
         background-color: black;
-        height: 36px;
+        height: 30px;
         width: 100%;
         border-bottom: 1px solid white;
         overflow: hidden;

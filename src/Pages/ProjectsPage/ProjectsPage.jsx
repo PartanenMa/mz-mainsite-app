@@ -141,6 +141,7 @@ function ProjectsPage() {
                     <ProjectsPageTitle />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
                     <AboutMyProjects />
+                    <Portfolio />
                     <PinnedProjects loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                     <Projects loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
                 </div>
@@ -209,6 +210,42 @@ function AboutMyProjects() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function Portfolio() {
+    return (
+        <div className="portfolioContainer">
+            <div className="portfolioTitle">
+                <h3>CHECK OUT MY PORTFOLIO!</h3>
+            </div>
+            <div className="portfolioContent">
+                <AnimatePresence>
+                    <motion.a
+                        className="pCBox"
+                        href={info.projectRoutes.portfolio}
+                        target="_blank"
+                        title="Go to portfolio"
+                        key="gotoportfolio"
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        <div className="pCB1"></div>
+                        <div className="pCB2">
+                            <p>{"<MyPortfolio/>"}</p>
+                        </div>
+                    </motion.a>
+                </AnimatePresence>
+            </div>
+            <div className="space1" />
+            <div className="or">
+                <h3>...OR EXPLORE ALL OF MY PROJECTS DOWN BELOW</h3>
+            </div>
+            <div className="space2" />
         </div>
     );
 }
