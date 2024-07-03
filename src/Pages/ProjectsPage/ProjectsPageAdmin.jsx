@@ -214,6 +214,7 @@ function ProjectsPageAdmin() {
                                 </div>
                                 <ProjectsPageTitle />
                                 <AboutMyProjects />
+                                <MyPortfolio />
                                 <MyPinnedProjects loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                                 <MyProjects
                                     loadingProjectsData={loadingProjectsData}
@@ -239,6 +240,7 @@ function ProjectsPageAdmin() {
                                 </div>
                                 <ProjectsPageTitleMobile />
                                 <AboutMyProjectsMobile />
+                                <MyPortfolioMobile />
                                 <MyPinnedProjectsMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                                 <MyProjectsMobile
                                     loadingProjectsData={loadingProjectsData}
@@ -314,6 +316,43 @@ function AboutMyProjects() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function MyPortfolio() {
+    return (
+        <div className="portfolioContainer">
+            <div className="portfolioTitle">
+                <h3>MY PORTFOLIO</h3>
+            </div>
+            <div className="portfolioContent">
+                <AnimatePresence>
+                    <motion.a
+                        className="pCBox"
+                        href={info.projectRoutes.portfolio}
+                        title="Go to portfolio"
+                        key="gotoportfolio"
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        <div className="pCB1">
+                            <div className="portfolioImg" />
+                        </div>
+                        <div className="pCB2">
+                            <p>{"<MyPortfolio/>"}</p>
+                        </div>
+                    </motion.a>
+                </AnimatePresence>
+            </div>
+            <div className="space1" />
+            <div className="or">
+                <h3>ALL OF MY PROJECTS ARE DOWN BELOW</h3>
+            </div>
+            <div className="space2" />
         </div>
     );
 }
@@ -556,6 +595,43 @@ function AboutMyProjectsMobile() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function MyPortfolioMobile() {
+    return (
+        <div className="portfolioContainerMobile">
+            <div className="portfolioTitleMobile">
+                <h3>MY PORTFOLIO</h3>
+            </div>
+            <div className="portfolioContentMobile">
+                <AnimatePresence>
+                    <motion.a
+                        className="pCBoxMobile"
+                        href={info.projectRoutes.portfolio}
+                        title="Go to portfolio"
+                        key="gotoportfoliomobile"
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        <div className="pCB1M">
+                            <div className="portfolioImgMobile" />
+                        </div>
+                        <div className="pCB2M">
+                            <p>{"<MyPortfolio/>"}</p>
+                        </div>
+                    </motion.a>
+                </AnimatePresence>
+            </div>
+            <div className="space1Mobile" />
+            <div className="orMobile">
+                <h3>ALL OF MY PROJECTS ARE DOWN BELOW</h3>
+            </div>
+            <div className="space2Mobile" />
         </div>
     );
 }

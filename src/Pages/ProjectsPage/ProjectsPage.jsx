@@ -151,6 +151,7 @@ function ProjectsPage() {
                     <ProjectsPageTitleMobile />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
                     <AboutMyProjectsMobile />
+                    <PortfolioMobile />
                     <PinnedProjectsMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
                     <ProjectsMobile loadingProjectsData={loadingProjectsData} statusDB={statusDB} projects={projects} />
                 </div>
@@ -225,7 +226,6 @@ function Portfolio() {
                     <motion.a
                         className="pCBox"
                         href={info.projectRoutes.portfolio}
-                        target="_blank"
                         title="Go to portfolio"
                         key="gotoportfolio"
                         whileHover={{
@@ -234,7 +234,9 @@ function Portfolio() {
                         }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        <div className="pCB1"></div>
+                        <div className="pCB1">
+                            <div className="portfolioImg" />
+                        </div>
                         <div className="pCB2">
                             <p>{"<MyPortfolio/>"}</p>
                         </div>
@@ -477,6 +479,43 @@ function AboutMyProjectsMobile() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function PortfolioMobile() {
+    return (
+        <div className="portfolioContainerMobile">
+            <div className="portfolioTitleMobile">
+                <h3>CHECK OUT MY PORTFOLIO!</h3>
+            </div>
+            <div className="portfolioContentMobile">
+                <AnimatePresence>
+                    <motion.a
+                        className="pCBoxMobile"
+                        href={info.projectRoutes.portfolio}
+                        title="Go to portfolio"
+                        key="gotoportfoliomobile"
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        <div className="pCB1M">
+                            <div className="portfolioImgMobile" />
+                        </div>
+                        <div className="pCB2M">
+                            <p>{"<MyPortfolio/>"}</p>
+                        </div>
+                    </motion.a>
+                </AnimatePresence>
+            </div>
+            <div className="space1Mobile" />
+            <div className="orMobile">
+                <h3>...OR EXPLORE ALL OF MY PROJECTS DOWN BELOW</h3>
+            </div>
+            <div className="space2Mobile" />
         </div>
     );
 }

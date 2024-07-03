@@ -315,13 +315,25 @@
             .pCB1 {
                 height: 100%;
                 width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .portfolioImg {
+                    background-image: url("/src/Assets/Images/Portfolio.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 160px;
+                    width: 200px;
+                }
             }
 
             .pCB2 {
                 height: 100%;
                 width: 50%;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
 
                 p {
@@ -1166,6 +1178,127 @@
     }
 }
 
+.portfolioContainerMobile {
+    height: 200px;
+    width: 100%;
+    border-top: 1px solid white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .portfolioTitleMobile {
+        background-color: black;
+        height: 15px;
+        width: 100%;
+        border-bottom: 1px solid white;
+        overflow: hidden;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h3 {
+            color: white;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
+            margin-left: 5px;
+        }
+    }
+
+    .portfolioContentMobile {
+        background-color: rgb(1, 44, 1);
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .pCBoxMobile {
+            background-color: transparentize($color: darkgreen, $amount: 0.6);
+            height: 90%;
+            width: 96%;
+            border: 0.5px solid gray;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: border 300ms;
+            transition: filter 300ms;
+
+            .pCB1M {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .portfolioImgMobile {
+                    background-image: url("/src/Assets/Images/Portfolio.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 80px;
+                    width: 100px;
+                }
+            }
+
+            .pCB2M {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+
+                p {
+                    color: #03a062;
+                    font-size: 18px;
+                    font-style: italic;
+                    font-family: "Courier New", Courier, monospace;
+                }
+            }
+        }
+
+        .pCBoxMobile:hover {
+            border: 1px solid lightgreen;
+            filter: drop-shadow(0 0 2em lightgreen);
+        }
+    }
+
+    .space1Mobile {
+        background-color: rgb(1, 44, 1);
+        height: 10px;
+        width: 100%;
+    }
+
+    .orMobile {
+        background-color: #222;
+        height: 50px;
+        width: 100%;
+        border-top: 0.5px solid gray;
+        border-bottom: 0.5px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            color: #03a062;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
+        }
+    }
+
+    .space2Mobile {
+        background-color: rgb(1, 44, 1);
+        height: 25px;
+        width: 100%;
+    }
+}
+
 .pinnedProjectsContainerMobile {
     height: 115px;
     width: 100%;
@@ -1309,7 +1442,7 @@
             h4 {
                 width: fit-content;
                 color: yellow;
-                font-size: 30px;
+                font-size: 20px;
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                 border: 1px solid yellow;

@@ -701,7 +701,7 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
     };
 
     const getTotalExperience = (index) => {
-        let totalMonths = 0;
+        let totalMonths = 1;
 
         experiences[index].roles.map((r) => {
             if (r.time === 0) {
@@ -2058,7 +2058,7 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
     };
 
     const getTotalExperience = (index) => {
-        let totalMonths = 0;
+        let totalMonths = 1;
 
         experiences[index].roles.map((r) => {
             if (r.time === 0) {
