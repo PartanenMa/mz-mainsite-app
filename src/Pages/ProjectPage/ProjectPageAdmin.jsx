@@ -145,11 +145,11 @@ function ProjectPageAdmin() {
                             <div className="projectPageContainerAdmin">
                                 <div className="breadcrumb">
                                     <h2>
-                                        {"Admin / "}
+                                        {"mainsite/admin/"}
                                         <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
                                             {"projects"}
                                         </span>
-                                        {" / view / " + id}
+                                        {"/view/" + id}
                                     </h2>
                                 </div>
                                 <MyProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
@@ -167,11 +167,11 @@ function ProjectPageAdmin() {
                             <div className="projectPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
                                     <h2>
-                                        {"Admin / "}
+                                        {"mainsite/admin/"}
                                         <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
                                             {"projects"}
                                         </span>
-                                        {" / view / " + id}
+                                        {"/view/ " + id}
                                     </h2>
                                 </div>
                                 <MyProjectPageTitleMobile loadingProjectData={loadingProjectData} projectData={projectData} />

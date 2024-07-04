@@ -233,7 +233,7 @@ function Videos({ loadingVideosData, statusDB, videos }) {
                                                 <motion.button
                                                     className="videoBtn2"
                                                     key="vbtn2"
-                                                    onClick={() => navigate(`/videos/watch/${video.id}`)}
+                                                    onClick={() => navigate(`/mainsite/videos/watch/${video.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -394,7 +394,7 @@ function VideosMobile({ loadingVideosData, statusDB, videos }) {
                                                 <motion.button
                                                     className="videoBtn2Mobile"
                                                     key="vbtn2m"
-                                                    onClick={() => navigate(`/videos/watch/${video.id}`)}
+                                                    onClick={() => navigate(`/mainsite/videos/watch/${video.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

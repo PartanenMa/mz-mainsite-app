@@ -210,7 +210,7 @@ function ProjectsPageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="projectsPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / projects</h2>
+                                    <h2>{info.routes.projectsPageAdmin}</h2>
                                 </div>
                                 <ProjectsPageTitle />
                                 <AboutMyProjects />
@@ -236,7 +236,7 @@ function ProjectsPageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="projectsPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / projects</h2>
+                                    <h2>{info.routes.projectsPageAdmin}</h2>
                                 </div>
                                 <ProjectsPageTitleMobile />
                                 <AboutMyProjectsMobile />
@@ -513,7 +513,7 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                                                 <motion.button
                                                     className="projectBtn3"
                                                     key="pbtn3A"
-                                                    onClick={() => navigate(`/admin/projects/view/${project.id}`)}
+                                                    onClick={() => navigate(`/mainsite/admin/projects/view/${project.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -804,7 +804,7 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
                                                 <motion.button
                                                     className="projectBtn3Mobile"
                                                     key="pbtn3mA"
-                                                    onClick={() => navigate(`/admin/projects/view/${project.id}`)}
+                                                    onClick={() => navigate(`/mainsite/admin/projects/view/${project.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

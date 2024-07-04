@@ -166,7 +166,7 @@ function CVPageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="cvPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / cv</h2>
+                                    <h2>{info.routes.cvPageAdmin}</h2>
                                 </div>
                                 <CVPageTitle />
                                 <CVPageContent loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
@@ -182,7 +182,7 @@ function CVPageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="cvPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / cv</h2>
+                                    <h2>{info.routes.cvPageAdmin}</h2>
                                 </div>
                                 <CVPageTitleMobile />
                                 <CVPageContentMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />

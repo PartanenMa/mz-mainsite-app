@@ -161,7 +161,7 @@ function VideosPageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="videosPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / videos</h2>
+                                    <h2>{info.routes.videosPageAdmin}</h2>
                                 </div>
                                 <VideosPageTitle />
                                 <AboutMyVideos />
@@ -185,7 +185,7 @@ function VideosPageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="videosPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / videos</h2>
+                                    <h2>{info.routes.videosPageAdmin}</h2>
                                 </div>
                                 <VideosPageTitleMobile />
                                 <AboutMyVideosMobile />
@@ -353,7 +353,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                                                 <motion.button
                                                     className="videoBtn2"
                                                     key="vbtn2A"
-                                                    onClick={() => navigate(`/admin/videos/watch/${video.id}`)}
+                                                    onClick={() => navigate(`/mainsite/admin/videos/watch/${video.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -525,7 +525,7 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                                                 <motion.button
                                                     className="videoBtn2Mobile"
                                                     key="vbtn2mA"
-                                                    onClick={() => navigate(`/admin/videos/watch/${video.id}`)}
+                                                    onClick={() => navigate(`/mainsite/admin/videos/watch/${video.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

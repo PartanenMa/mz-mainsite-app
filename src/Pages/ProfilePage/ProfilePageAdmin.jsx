@@ -252,7 +252,7 @@ function ProfilePageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="profilePageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / profile</h2>
+                                    <h2>{info.routes.profilePageAdmin}</h2>
                                 </div>
                                 <ProfileAdminPageTitle />
                                 <AboutMe
@@ -310,7 +310,7 @@ function ProfilePageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="profilePageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / profile</h2>
+                                    <h2>{info.routes.profilePageAdmin}</h2>
                                 </div>
                                 <ProfileAdminPageTitleMobile />
                                 <AboutMeMobile

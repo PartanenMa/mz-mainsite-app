@@ -162,7 +162,7 @@ function DashboardPage() {
                         {windowWidth >= 1280 && (
                             <div className="dashboardPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / dashboard</h2>
+                                    <h2>{info.routes.dashboardPage}</h2>
                                 </div>
                                 <LogOutSection />
                                 <PinnedProjectsSection loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
@@ -178,7 +178,7 @@ function DashboardPage() {
                         {windowWidth < 1280 && (
                             <div className="dashboardPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / dashboard</h2>
+                                    <h2>{info.routes.dashboardPage}</h2>
                                 </div>
                                 <LogOutSectionMobile />
                                 <PinnedProjectsSectionMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />

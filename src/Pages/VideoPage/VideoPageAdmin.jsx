@@ -145,11 +145,11 @@ function VideoPageAdmin() {
                             <div className="videoPageContainerAdmin">
                                 <div className="breadcrumb">
                                     <h2>
-                                        {"Admin / "}
+                                        {"mainsite/admin/"}
                                         <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
                                             {"videos"}
                                         </span>
-                                        {" / watch / " + id}
+                                        {"/watch/" + id}
                                     </h2>
                                 </div>
                                 <MyVideoPageTitle loadingVideoData={loadingVideoData} videoData={videoData} />
@@ -167,11 +167,11 @@ function VideoPageAdmin() {
                             <div className="videoPageContainerAdmin">
                                 <div className="breadcrumb">
                                     <h2>
-                                        {"Admin / "}
+                                        {"mainsite/admin/"}
                                         <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
                                             {"videos"}
                                         </span>
-                                        {" / watch / " + id}
+                                        {"/watch/" + id}
                                     </h2>
                                 </div>
                                 <MyVideoPageTitleMobile loadingVideoData={loadingVideoData} videoData={videoData} />

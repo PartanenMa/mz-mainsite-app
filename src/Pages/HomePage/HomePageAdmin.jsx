@@ -170,7 +170,7 @@ function HomePageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="homePageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / home</h2>
+                                    <h2>{info.routes.homePageAdmin}</h2>
                                 </div>
                                 <HomePageTitle />
                                 <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
@@ -186,7 +186,7 @@ function HomePageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="homePageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / home</h2>
+                                    <h2>{info.routes.homePageAdmin}</h2>
                                 </div>
                                 <HomePageTitleMobile />
                                 <FirstSectionMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />

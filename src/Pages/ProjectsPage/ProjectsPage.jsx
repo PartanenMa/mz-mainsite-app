@@ -393,7 +393,7 @@ function Projects({ loadingProjectsData, statusDB, projects }) {
                                                 <motion.button
                                                     className="projectBtn3"
                                                     key="pbtn3"
-                                                    onClick={() => navigate(`/projects/view/${project.id}`)}
+                                                    onClick={() => navigate(`/mainsite/projects/view/${project.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -673,7 +673,7 @@ function ProjectsMobile({ loadingProjectsData, statusDB, projects }) {
                                                 <motion.button
                                                     className="projectBtn3Mobile"
                                                     key="pbtn3m"
-                                                    onClick={() => navigate(`/projects/view/${project.id}`)}
+                                                    onClick={() => navigate(`/mainsite/projects/view/${project.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

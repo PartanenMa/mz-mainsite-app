@@ -159,7 +159,7 @@ function GoalsPageAdmin() {
                         {windowWidth >= 1280 && (
                             <div className="goalsPageContainerAdmin">
                                 <div className="breadcrumb">
-                                    <h2>Admin / goals</h2>
+                                    <h2>{info.routes.goalsPageAdmin}</h2>
                                 </div>
                                 <GoalsPageTitle />
                                 <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
@@ -178,7 +178,7 @@ function GoalsPageAdmin() {
                         {windowWidth < 1280 && (
                             <div className="goalsPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
-                                    <h2>Admin / goals</h2>
+                                    <h2>{info.routes.goalsPageAdmin}</h2>
                                 </div>
                                 <GoalsPageTitleMobile />
                                 <GoalsCountMobile loadingGoalsData={loadingGoalsData} goals={goals} />
