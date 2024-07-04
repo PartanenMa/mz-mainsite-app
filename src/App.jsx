@@ -41,11 +41,13 @@ function App() {
         if (!hasSeenIntro) {
             //If the intro screen hasn't been seen, keep it open:
             setIsIntroScreenOpen(true);
+            navigate(info.routes.frontPage);
         } else {
             //Intro screen has been seen, start the loading process:
             const timer = setTimeout(() => {
                 setIsAfterIntroLoad(false);
                 sessionStorage.setItem("afterIntroLoading", "false");
+                navigate(info.routes.frontPage);
             }, 1000);
 
             return () => clearTimeout(timer);

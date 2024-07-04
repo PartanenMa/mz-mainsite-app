@@ -168,28 +168,6 @@
                     overflow: hidden;
                 }
             }
-
-            .noTechUsedData {
-                height: 90%;
-                width: 90%;
-                position: relative;
-                right: 340px;
-                bottom: 20px;
-
-                h4 {
-                    width: fit-content;
-                    color: red;
-                    font-size: 60px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    border: 1px solid red;
-                    border-radius: 48%;
-                    padding: 20px;
-                    position: relative;
-                    top: 10px;
-                    left: 513px;
-                }
-            }
         }
     }
 
@@ -410,29 +388,6 @@
                         width: 40px;
                         overflow: hidden;
                     }
-                }
-            }
-
-            .noTechUsedDataM {
-                height: 90%;
-                width: 90%;
-                position: relative;
-                right: 340px;
-                bottom: 20px;
-
-                h4 {
-                    width: fit-content;
-                    color: red;
-                    font-size: 60px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    border: 1px solid red;
-                    border-radius: 48%;
-                    padding: 20px;
-                    position: relative;
-                    top: 10px;
-                    left: 513px;
-                    cursor: default;
                 }
             }
         }

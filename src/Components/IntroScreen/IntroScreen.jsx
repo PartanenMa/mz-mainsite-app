@@ -89,7 +89,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                         exit={{ opacity: 0, y: 100 }}
                                     />
                                     <motion.div className="poweredBy" key="poweredby" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 3 } }} exit={{ opacity: 0 }}>
-                                        {technologiesUsed.length > 0 ? (
+                                        {technologiesUsed.length > 0 &&
                                             technologiesUsed.map((tech, index) =>
                                                 info.api.enabled ? (
                                                     <div className="techUsed" key={index} style={{ "--techUsed-color": tech.color, textDecoration: "none" }}>
@@ -106,12 +106,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                                         <div className="techUsedLogo" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                     </div>
                                                 ) : null
-                                            )
-                                        ) : (
-                                            <div className="noTechUsedData">
-                                                <h4>NO DATA!</h4>
-                                            </div>
-                                        )}
+                                            )}
                                     </motion.div>
                                 </div>
                                 <div className="introScreenEnter">
@@ -160,7 +155,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                     exit={{ opacity: 0, y: 100 }}
                                 />
                                 <motion.div className="poweredByM" key="poweredbym" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 3 } }} exit={{ opacity: 0 }}>
-                                    {technologiesUsed.length > 0 ? (
+                                    {technologiesUsed.length > 0 &&
                                         technologiesUsed.map((tech, index) =>
                                             info.api.enabled ? (
                                                 <div className="techUsedM" key={index} style={{ "--techUsed-color": tech.color, textDecoration: "none" }}>
@@ -177,12 +172,7 @@ function IntroScreen({ isIntroScreenOpen, setIsIntroScreenOpen }) {
                                                     <div className="techUsedLogoM" style={{ backgroundImage: `url(${tech.image})`, backgroundSize: tech.size }} />
                                                 </div>
                                             ) : null
-                                        )
-                                    ) : (
-                                        <div className="noTechUsedDataM">
-                                            <h4>NO DATA!</h4>
-                                        </div>
-                                    )}
+                                        )}
                                 </motion.div>
                             </div>
                             <div className="introScreenEnterMobile">
