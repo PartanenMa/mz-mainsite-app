@@ -210,6 +210,7 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
         image: "",
         codeLink: "",
         projectLink: "",
+        pinned: false,
     });
 
     useEffect(() => {
@@ -258,6 +259,7 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
             image: formData.image,
             codeLink: formData.codeLink,
             projectLink: formData.projectLink,
+            pinned: document.getElementById("pinned").value === "true",
         };
 
         setIsModalOpen(false);
@@ -331,12 +333,12 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
                                         <label htmlFor="tech">Tech:</label>
                                         <input type="text" id="tech" name="tech" value={formData.tech} onChange={handleChange} />
                                     </div>
-                                </div>
-                                <div className="formComponent">
                                     <div>
                                         <label htmlFor="image">Image:</label>
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
+                                </div>
+                                <div className="formComponent">
                                     <div>
                                         <label htmlFor="codeLink">Code link:</label>
                                         <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
@@ -344,6 +346,13 @@ function ModalCreateProjects({ isModalOpen, setIsModalOpen, getProjects, notific
                                     <div>
                                         <label htmlFor="projectLink">Project link:</label>
                                         <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="pinned">{"Pinned (true/false):"}</label>
+                                        <select name="pinned" id="pinned" defaultValue={formData.pinned}>
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="formFooter">
@@ -395,6 +404,7 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
         image: "",
         codeLink: "",
         projectLink: "",
+        pinned: false,
     });
 
     useEffect(() => {
@@ -434,6 +444,7 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
                 image: projectData.image,
                 codeLink: projectData.codeLink,
                 projectLink: projectData.projectLink,
+                pinned: projectData.pinned,
             });
         }
     }, [projectData]);
@@ -458,6 +469,7 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
             image: formData.image,
             codeLink: formData.codeLink,
             projectLink: formData.projectLink,
+            pinned: document.getElementById("pinned").value === "true",
         };
 
         setIsModalOpen(false);
@@ -531,12 +543,12 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
                                         <label htmlFor="tech">Tech:</label>
                                         <input type="text" id="tech" name="tech" value={formData.tech} onChange={handleChange} />
                                     </div>
-                                </div>
-                                <div className="formComponent">
                                     <div>
                                         <label htmlFor="image">Image:</label>
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
+                                </div>
+                                <div className="formComponent">
                                     <div>
                                         <label htmlFor="codeLink">Code link:</label>
                                         <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
@@ -544,6 +556,13 @@ function ModalUpdateProjects({ isModalOpen, setIsModalOpen, projectData, id, get
                                     <div>
                                         <label htmlFor="projectLink">Project link:</label>
                                         <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="pinned">{"Pinned (true/false):"}</label>
+                                        <select name="pinned" id="pinned" defaultValue={formData.pinned}>
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="formFooter">
@@ -596,6 +615,7 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
         image: "",
         codeLink: "",
         projectLink: "",
+        pinned: false,
     });
 
     useEffect(() => {
@@ -644,6 +664,7 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
             image: formData.image,
             codeLink: formData.codeLink,
             projectLink: formData.projectLink,
+            pinned: document.getElementById("pinned").value === "true",
         };
 
         setIsModalOpen(false);
@@ -717,12 +738,12 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
                                         <label htmlFor="tech">Tech:</label>
                                         <input type="text" id="tech" name="tech" value={formData.tech} onChange={handleChange} />
                                     </div>
-                                </div>
-                                <div className="formComponentMobile">
                                     <div>
                                         <label htmlFor="image">Image:</label>
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
+                                </div>
+                                <div className="formComponentMobile">
                                     <div>
                                         <label htmlFor="codeLink">Code link:</label>
                                         <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
@@ -730,6 +751,13 @@ function ModalCreateProjectsMobile({ isModalOpen, setIsModalOpen, getProjects, n
                                     <div>
                                         <label htmlFor="projectLink">Project link:</label>
                                         <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="pinned">{"Pinned (true/false):"}</label>
+                                        <select name="pinned" id="pinned" defaultValue={formData.pinned}>
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="formFooterMobile">
@@ -820,6 +848,7 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
                 image: projectData.image,
                 codeLink: projectData.codeLink,
                 projectLink: projectData.projectLink,
+                pinned: projectData.pinned,
             });
         }
     }, [projectData]);
@@ -844,6 +873,7 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
             image: formData.image,
             codeLink: formData.codeLink,
             projectLink: formData.projectLink,
+            pinned: document.getElementById("pinned").value === "true",
         };
 
         setIsModalOpen(false);
@@ -917,12 +947,12 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
                                         <label htmlFor="tech">Tech:</label>
                                         <input type="text" id="tech" name="tech" value={formData.tech} onChange={handleChange} />
                                     </div>
-                                </div>
-                                <div className="formComponentMobile">
                                     <div>
                                         <label htmlFor="image">Image:</label>
                                         <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                                     </div>
+                                </div>
+                                <div className="formComponentMobile">
                                     <div>
                                         <label htmlFor="codeLink">Code link:</label>
                                         <input type="text" id="codeLink" name="codeLink" value={formData.codeLink} onChange={handleChange} />
@@ -930,6 +960,13 @@ function ModalUpdateProjectsMobile({ isModalOpen, setIsModalOpen, projectData, i
                                     <div>
                                         <label htmlFor="projectLink">Project link:</label>
                                         <input type="text" id="projectLink" name="projectLink" value={formData.projectLink} onChange={handleChange} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="pinned">{"Pinned (true/false):"}</label>
+                                        <select name="pinned" id="pinned" defaultValue={formData.pinned}>
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="formFooterMobile">

@@ -98,19 +98,25 @@ function ProjectsPageAdmin() {
 
     const getProjectsAfterCreate = async () => {
         setLoadingProjectsData(true);
+        setLoadingPinnedProjectsData(true);
         await getProjects();
+        await getPinnedProjects();
         triggerNotification("PROJECT CREATED", "Project created successfully!", "success");
     };
 
     const getProjectsAfterUpdate = async () => {
         setLoadingProjectsData(true);
+        setLoadingPinnedProjectsData(true);
         await getProjects();
+        await getPinnedProjects();
         triggerNotification("PROJECT UPDATED", "Project updated successfully!", "success");
     };
 
     const getProjectsAfterDelete = async () => {
         setLoadingProjectsData(true);
+        setLoadingPinnedProjectsData(true);
         await getProjects();
+        await getPinnedProjects();
         triggerNotification("PROJECT DELETED", "Project deleted successfully!", "success");
     };
 
