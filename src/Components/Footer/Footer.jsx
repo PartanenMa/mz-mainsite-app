@@ -194,15 +194,54 @@ function Footer() {
                                     </a>
                                 </div>
                                 <div className="footerNav3" style={{ borderRight: "1px solid #03a062" }}>
-                                    <div className="footerNav3-1">
-                                        <h3></h3>
-                                    </div>
-                                    <div className="footerNav3-2">
-                                        <h3></h3>
-                                    </div>
-                                    <div className="footerNav3-3">
-                                        <h3></h3>
-                                    </div>
+                                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                                        <AnimatePresence>
+                                            <motion.div
+                                                className="footerNav3-1"
+                                                key="FN3-1"
+                                                whileHover={{
+                                                    scale: 1.2,
+                                                    transition: { duration: 0.1 },
+                                                }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
+                                                <div className="matrixLogo" />
+                                                <h3>Portfolio</h3>
+                                            </motion.div>
+                                        </AnimatePresence>
+                                    </a>
+                                    {/*<a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                                        <AnimatePresence>
+                                            <motion.div
+                                                className="footerNav3-2"
+                                                key="FN3-2"
+                                                whileHover={{
+                                                    scale: 1.2,
+                                                    transition: { duration: 0.1 },
+                                                }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
+                                                <div className="matrixLogo" />
+                                                <h3>sitename</h3>
+                                            </motion.div>
+                                        </AnimatePresence>
+                                    </a>
+                                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                                        <AnimatePresence>
+                                            <motion.div
+                                                className="footerNav3-3"
+                                                key="FN3-3"
+                                                whileHover={{
+                                                    scale: 1.2,
+                                                    transition: { duration: 0.1 },
+                                                }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
+                                                <div className="matrixLogo" />
+                                                <h3>sitename</h3>
+                                            </motion.div>
+                                        </AnimatePresence>
+                                    </a>*/}
                                 </div>
                             </div>
                         </div>
@@ -388,15 +427,54 @@ function FooterMobile() {
                     </a>
                 </div>
                 <div className="footerNav3Mobile">
-                    <div className="footerNav3-1M">
-                        <h3></h3>
-                    </div>
-                    <div className="footerNav3-2M">
-                        <h3></h3>
-                    </div>
-                    <div className="footerNav3-3M">
-                        <h3></h3>
-                    </div>
+                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                        <AnimatePresence>
+                            <motion.div
+                                className="footerNav3-1M"
+                                key="FN3-1m"
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <div className="matrixLogoMobile" />
+                                <h3>Portfolio</h3>
+                            </motion.div>
+                        </AnimatePresence>
+                    </a>
+                    {/*<a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                        <AnimatePresence>
+                            <motion.div
+                                className="footerNav3-2M"
+                                key="FN3-2m"
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <div className="matrixLogoMobile" />
+                                <h3>sitename</h3>
+                            </motion.div>
+                        </AnimatePresence>
+                    </a>
+                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                        <AnimatePresence>
+                            <motion.div
+                                className="footerNav3-3M"
+                                key="FN3-3m"
+                                whileHover={{
+                                    scale: 1.2,
+                                    transition: { duration: 0.1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                <div className="matrixLogoMobile" />
+                                <h3>sitename</h3>
+                            </motion.div>
+                        </AnimatePresence>
+                    </a>*/}
                 </div>
             </div>
         </footer>

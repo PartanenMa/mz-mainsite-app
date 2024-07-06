@@ -412,6 +412,8 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                 </div>
                                 <div className="contentProjects">
                                     <p>- About my projects.</p>
+                                    <p>- My portfolio.</p>
+                                    <p>- My pinned projects.</p>
                                     <p>- My projects.</p>
                                 </div>
                             </div>
@@ -998,6 +1000,8 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                 </div>
                                 <div className="contentProjectsMobile">
                                     <p>- About my projects.</p>
+                                    <p>- My portfolio.</p>
+                                    <p>- My pinned projects.</p>
                                     <p>- My projects.</p>
                                 </div>
                             </div>
