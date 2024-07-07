@@ -1562,15 +1562,15 @@
                 border-top-right-radius: 10px;
                 border-bottom: 1px solid #03a062;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h4 {
                     color: #03a062;
                     font-size: 30px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 30px;
-                    left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -1634,15 +1634,15 @@
                 border-top-right-radius: 10px;
                 border-bottom: 1px solid #03a062;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h4 {
                     color: #03a062;
                     font-size: 30px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 30px;
-                    left: 5px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -1706,15 +1706,15 @@
                 border-top-right-radius: 10px;
                 border-bottom: 1px solid #03a062;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h4 {
                     color: #03a062;
                     font-size: 30px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 30px;
-                    left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -1813,15 +1813,15 @@
                 border-top-right-radius: 10px;
                 border-bottom: 1px solid #03a062;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h4 {
                     color: #03a062;
                     font-size: 30px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 30px;
-                    left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -1885,15 +1885,15 @@
                 border-top-right-radius: 10px;
                 border-bottom: 1px solid #03a062;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h4 {
                     color: #03a062;
                     font-size: 30px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 30px;
-                    left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -1957,15 +1957,15 @@
                 border-top-right-radius: 10px;
                 border-bottom: 1px solid #03a062;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 h4 {
                     color: #03a062;
                     font-size: 30px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 30px;
-                    left: 10px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -2063,14 +2063,13 @@
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 h3 {
                     color: #03a062;
                     font-size: 25px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -2088,6 +2087,7 @@
                     border-bottom: 1px solid #03a062;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
 
                     h4 {
                         color: #03a062;
@@ -2126,14 +2126,13 @@
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 h3 {
                     color: #03a062;
                     font-size: 25px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    position: relative;
-                    bottom: 22px;
                     text-shadow: 0.5px 0.5px 0 lightgreen;
                     cursor: default;
                 }
@@ -2151,6 +2150,7 @@
                     border-bottom: 1px solid #03a062;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
 
                     h4 {
                         color: #03a062;
