@@ -120,6 +120,7 @@ function HomePage() {
                     <div className="homePageContainer">
                         <HomePageTitle />
                         {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                        <Breadcrumb />
                         <FirstSection loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                     </div>
                 )}
@@ -127,6 +128,7 @@ function HomePage() {
                     <div className="homePageContainerMobile">
                         <HomePageTitleMobile />
                         {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                        <BreadcrumbMobile />
                         <FirstSectionMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                     </div>
                 )}
@@ -143,6 +145,17 @@ function HomePageTitle() {
                     HOME
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function Breadcrumb() {
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>{info.routes.homePage}</h2>
+            </div>
         </div>
     );
 }
@@ -469,6 +482,17 @@ function HomePageTitleMobile() {
                     HOME
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function BreadcrumbMobile() {
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>{info.routes.homePage}</h2>
+            </div>
         </div>
     );
 }

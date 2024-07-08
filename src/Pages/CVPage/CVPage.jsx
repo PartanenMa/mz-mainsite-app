@@ -115,13 +115,15 @@ function CVPage() {
                 <div className="cvPageContainer">
                     <CVPageTitle />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb />
                     <CVPageContent loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                 </div>
             )}
             {windowWidth < 1280 && (
-                <div className="cvPageContainer">
+                <div className="cvPageContainerMobile">
                     <CVPageTitleMobile />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile />
                     <CVPageContentMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                 </div>
             )}
@@ -137,6 +139,17 @@ function CVPageTitle() {
                     CV
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function Breadcrumb() {
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>{info.routes.cvPage}</h2>
+            </div>
         </div>
     );
 }
@@ -185,6 +198,17 @@ function CVPageTitleMobile() {
                     CV
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function BreadcrumbMobile() {
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>{info.routes.cvPage}</h2>
+            </div>
         </div>
     );
 }

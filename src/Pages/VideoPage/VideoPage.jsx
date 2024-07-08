@@ -92,13 +92,15 @@ function VideoPage() {
                 <div className="videoPageContainer">
                     <VideoPageTitle loadingVideoData={loadingVideoData} videoData={videoData} />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb id={id} />
                     <Video loadingVideoData={loadingVideoData} videoData={videoData} statusDB={statusDB} />
                 </div>
             )}
             {windowWidth < 1280 && (
-                <div className="videoPageContainer">
+                <div className="videoPageContainerMobile">
                     <VideoPageTitleMobile loadingVideoData={loadingVideoData} videoData={videoData} />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile id={id} />
                     <VideoMobile loadingVideoData={loadingVideoData} videoData={videoData} statusDB={statusDB} />
                 </div>
             )}
@@ -121,6 +123,25 @@ function VideoPageTitle({ loadingVideoData, videoData }) {
                 )}
             </div>
         </AnimatePresence>
+    );
+}
+
+function Breadcrumb({ id }) {
+    const navigate = useNavigate();
+
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>
+                    {"mainsite/"}
+                    <span title={"Back to videos"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPage)}>
+                        {"videos"}
+                    </span>
+                    {"/watch/" + id}
+                </h2>
+            </div>
+        </div>
     );
 }
 
@@ -244,6 +265,25 @@ function VideoPageTitleMobile({ loadingVideoData, videoData }) {
                 )}
             </div>
         </AnimatePresence>
+    );
+}
+
+function BreadcrumbMobile({ id }) {
+    const navigate = useNavigate();
+
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>
+                    {"mainsite/"}
+                    <span title={"Back to videos"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPage)}>
+                        {"videos"}
+                    </span>
+                    {"/watch/" + id}
+                </h2>
+            </div>
+        </div>
     );
 }
 

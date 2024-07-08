@@ -163,6 +163,7 @@ function ProfilePage() {
                 <div className="profilePageContainer">
                     <ProfilePageTitle />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb />
                     <AboutMe loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                     <Languages loadingProfileData={loadingProfileData} statusDB={statusDB} languages={languages} />
                     <Education loadingProfileData={loadingProfileData} statusDB={statusDB} educations={educations} />
@@ -177,6 +178,7 @@ function ProfilePage() {
                 <div className="profilePageContainerMobile">
                     <ProfilePageTitleMobile />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile />
                     <AboutMeMobile loadingProfessionData={loadingProfessionData} loadingJobData={loadingJobData} professionData={professionData} jobData={jobData} />
                     <LanguagesMobile loadingProfileData={loadingProfileData} statusDB={statusDB} languages={languages} />
                     <EducationMobile loadingProfileData={loadingProfileData} statusDB={statusDB} educations={educations} />
@@ -199,6 +201,17 @@ function ProfilePageTitle() {
                     PROFILE
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function Breadcrumb() {
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>{info.routes.profilePage}</h2>
+            </div>
         </div>
     );
 }
@@ -1255,6 +1268,17 @@ function ProfilePageTitleMobile() {
                     PROFILE
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function BreadcrumbMobile() {
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>{info.routes.profilePage}</h2>
+            </div>
         </div>
     );
 }

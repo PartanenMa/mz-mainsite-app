@@ -92,6 +92,7 @@ function ProjectPage() {
                 <div className="projectPageContainer">
                     <ProjectPageTitle loadingProjectData={loadingProjectData} projectData={projectData} />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb id={id} />
                     <Project loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
                 </div>
             )}
@@ -99,6 +100,7 @@ function ProjectPage() {
                 <div className="projectPageContainerMobile">
                     <ProjectPageTitleMobile loadingProjectData={loadingProjectData} projectData={projectData} />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile id={id} />
                     <ProjectMobile loadingProjectData={loadingProjectData} projectData={projectData} statusDB={statusDB} />
                 </div>
             )}
@@ -121,6 +123,25 @@ function ProjectPageTitle({ loadingProjectData, projectData }) {
                 )}
             </div>
         </AnimatePresence>
+    );
+}
+
+function Breadcrumb({ id }) {
+    const navigate = useNavigate();
+
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>
+                    {"mainsite/"}
+                    <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPage)}>
+                        {"projects"}
+                    </span>
+                    {"/view/" + id}
+                </h2>
+            </div>
+        </div>
     );
 }
 
@@ -231,6 +252,25 @@ function ProjectPageTitleMobile({ loadingProjectData, projectData }) {
                 )}
             </div>
         </AnimatePresence>
+    );
+}
+
+function BreadcrumbMobile({ id }) {
+    const navigate = useNavigate();
+
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>
+                    {"mainsite/"}
+                    <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPage)}>
+                        {"projects"}
+                    </span>
+                    {"/view/" + id}
+                </h2>
+            </div>
+        </div>
     );
 }
 

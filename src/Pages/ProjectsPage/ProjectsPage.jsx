@@ -140,6 +140,7 @@ function ProjectsPage() {
                 <div className="projectsPageContainer">
                     <ProjectsPageTitle />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb />
                     <AboutMyProjects />
                     <Portfolio />
                     <PinnedProjects loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
@@ -150,6 +151,7 @@ function ProjectsPage() {
                 <div className="projectsPageContainerMobile">
                     <ProjectsPageTitleMobile />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile />
                     <AboutMyProjectsMobile />
                     <PortfolioMobile />
                     <PinnedProjectsMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
@@ -168,6 +170,17 @@ function ProjectsPageTitle() {
                     PROJECTS
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function Breadcrumb() {
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>{info.routes.projectsPage}</h2>
+            </div>
         </div>
     );
 }
@@ -436,6 +449,17 @@ function ProjectsPageTitleMobile() {
                     PROJECTS
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function BreadcrumbMobile() {
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>{info.routes.projectsPage}</h2>
+            </div>
         </div>
     );
 }

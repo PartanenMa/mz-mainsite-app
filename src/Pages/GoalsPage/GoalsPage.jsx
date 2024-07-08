@@ -89,15 +89,17 @@ function GoalsPage() {
                 <div className="goalsPageContainer">
                     <GoalsPageTitle />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb />
                     <GoalsCount loadingGoalsData={loadingGoalsData} goals={goals} />
                     <GoalsStatus loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
                     <GoalsPageContent loadingGoalsData={loadingGoalsData} goals={goals} />
                 </div>
             )}
             {windowWidth < 1280 && (
-                <div className="goalsPageContainer">
+                <div className="goalsPageContainerMobile">
                     <GoalsPageTitleMobile />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile />
                     <GoalsCountMobile loadingGoalsData={loadingGoalsData} goals={goals} />
                     <GoalsStatusMobile loadingGoalsData={loadingGoalsData} statusDB={statusDB} />
                     <GoalsPageContentMobile loadingGoalsData={loadingGoalsData} goals={goals} />
@@ -115,6 +117,17 @@ function GoalsPageTitle() {
                     GOALS
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function Breadcrumb() {
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>{info.routes.goalsPage}</h2>
+            </div>
         </div>
     );
 }
@@ -268,6 +281,17 @@ function GoalsPageTitleMobile() {
                     GOALS
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function BreadcrumbMobile() {
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>{info.routes.goalsPage}</h2>
+            </div>
         </div>
     );
 }

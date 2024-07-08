@@ -19,6 +19,39 @@
         box-shadow: 0 0 30px 5px #03a062;
         overflow: hidden;
 
+        .breadcrumb {
+            background-color: lightgreen;
+            height: 30px;
+            overflow: hidden;
+            border-bottom: 1px solid #03a062;
+            display: flex;
+
+            .breadcrumbLogo {
+                background-image: url("/src/Assets/Images/Projects.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 70%;
+                height: 100%;
+                width: 3%;
+            }
+
+            .breadcrumbText {
+                height: 100%;
+                width: 97%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding-left: 10px;
+
+                h2 {
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Courier New", Courier, monospace;
+                    cursor: default;
+                }
+            }
+        }
+
         .projectTitle {
             display: none;
             background-color: black;
@@ -953,6 +986,39 @@
     margin: auto;
     box-shadow: 0 0 30px 5px #03a062;
     overflow: hidden;
+
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 15px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        display: flex;
+
+        .breadcrumbLogoMobile {
+            background-image: url("/src/Assets/Images/Projects.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70%;
+            height: 100%;
+            width: 3%;
+        }
+
+        .breadcrumbTextMobile {
+            height: 100%;
+            width: 97%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding-left: 5px;
+
+            h2 {
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Courier New", Courier, monospace;
+                cursor: default;
+            }
+        }
+    }
 }
 
 /*ProjectsPageAdmin (mobile):*/

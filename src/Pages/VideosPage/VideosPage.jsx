@@ -91,6 +91,7 @@ function VideosPage() {
                 <div className="videosPageContainer">
                     <VideosPageTitle />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <Breadcrumb />
                     <AboutMyVideos />
                     <Videos loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
                 </div>
@@ -99,6 +100,7 @@ function VideosPage() {
                 <div className="videosPageContainerMobile">
                     <VideosPageTitleMobile />
                     {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+                    <BreadcrumbMobile />
                     <AboutMyVideosMobile />
                     <VideosMobile loadingVideosData={loadingVideosData} statusDB={statusDB} videos={videos} />
                 </div>
@@ -115,6 +117,17 @@ function VideosPageTitle() {
                     VIDEOS
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function Breadcrumb() {
+    return (
+        <div className="breadcrumb">
+            <div className="breadcrumbLogo" />
+            <div className="breadcrumbText">
+                <h2>{info.routes.videosPage}</h2>
+            </div>
         </div>
     );
 }
@@ -276,6 +289,17 @@ function VideosPageTitleMobile() {
                     VIDEOS
                 </motion.h2>
             </AnimatePresence>
+        </div>
+    );
+}
+
+function BreadcrumbMobile() {
+    return (
+        <div className="breadcrumbMobile">
+            <div className="breadcrumbLogoMobile" />
+            <div className="breadcrumbTextMobile">
+                <h2>{info.routes.videosPage}</h2>
+            </div>
         </div>
     );
 }
