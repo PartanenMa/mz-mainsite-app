@@ -1,0 +1,114 @@
+.projectNavBtn {
+    background-color: #111;
+    height: 15px;
+    width: 100%;
+    border: 0.5px solid #03a062;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: #03a062;
+        font-size: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        position: relative;
+    }
+}
+
+.projectNavBtn:hover {
+    background-color: lightgreen;
+    color: #03a062;
+    border: 1px solid #03a062;
+}
+
+.projectNav {
+    background-color: #222;
+    height: 50px;
+    width: 100%;
+    border: 2px solid #03a062;
+    border-radius: 3px;
+    display: flex;
+    overflow: hidden;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+    .block1 {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block2 {
+        height: 100%;
+        width: 80%;
+        border-left: 2px solid #03a062;
+        border-right: 2px solid #03a062;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .projectLink {
+            background-color: #222;
+            height: 45px;
+            width: 80px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 300ms ease-in-out;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .pLImg {
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 30%;
+                height: 33px;
+                width: 100%;
+            }
+
+            .pLTitle {
+                height: 12px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    color: #03a062;
+                    font-size: 12px;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                }
+            }
+        }
+
+        .projectLink:hover .pLImg {
+            transition: filter 300ms;
+            color: lightgreen;
+            filter: drop-shadow(0 0 0.6em lightgreen);
+        }
+
+        .projectLink:hover p {
+            color: lightgreen;
+        }
+
+        .noProjectLinks {
+            color: #03a062;
+            font-size: 20px;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+    }
+
+    .block3 {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

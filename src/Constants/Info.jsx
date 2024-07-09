@@ -3,11 +3,12 @@ import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
+import PortfolioImg from "/src/Assets/Images/PortfolioSite.png";
 
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.5.10",
+    version: "Release 1.5.11",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/mainsite",
         dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/mainsite/admin/dashboard",
@@ -32,6 +33,9 @@ export const info = {
     projectRoutes: {
         portfolio: "https://www.google.fi",
     },
+    projectLinks: [
+        /*{ label: "Portfolio", image: PortfolioImg, link: "https://www.google.fi" }*/
+    ],
     testLoginFe: {
         enabled: false,
         adminUserName: "AdminTest",

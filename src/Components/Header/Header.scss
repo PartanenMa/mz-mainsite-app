@@ -1,105 +1,111 @@
 /*Header:*/
 .header {
-    height: 50px;
     width: 100%;
     padding: 3px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     border-bottom: 1px solid #03a062;
     margin-bottom: 30px;
 
-    .headerTitle {
-        height: 100%;
-        width: 480px;
+    .headerSection1 {
+        height: 50px;
+        width: 100%;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
 
-        .headerLogo {
-            background-image: url("/src/Assets/Images/Logo.PNG");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            cursor: pointer;
-            height: 44px;
-            width: 64px;
-            margin-top: 2px;
-            border: 1px solid #03a062;
-            border-radius: 5px;
-            transition: filter 300ms;
-        }
-
-        .headerLogo:hover {
-            border: 1px solid lightgreen;
-            filter: drop-shadow(0 0 2em #03a062);
-        }
-
-        h1 {
-            color: #03a062;
-            font-size: 35px;
-            font-style: italic;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-            text-shadow: 1px 1px 0 lightgreen;
-            position: relative;
-            bottom: 20px;
-            animation: glow 1s ease-in-out infinite alternate;
-            cursor: default;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow:
-                    0 0 2px #fff,
-                    0 0 5px #fff,
-                    0 0 7px #03a062,
-                    0 0 10px #03a062,
-                    0 0 12px #03a062,
-                    0 0 15px #03a062,
-                    0 0 17px #03a062;
-            }
-
-            to {
-                text-shadow:
-                    0 0 5px #fff,
-                    0 0 7px lightgreen,
-                    0 0 10px lightgreen,
-                    0 0 12px lightgreen,
-                    0 0 15px lightgreen,
-                    0 0 17px lightgreen,
-                    0 0 20px lightgreen;
-            }
-        }
-
-        .version {
+        .headerTitle {
             height: 100%;
-            width: 210px;
+            width: 480px;
             display: flex;
             flex-direction: row;
-            position: relative;
-            right: 0px;
+            justify-content: space-between;
 
-            .terminalLogo {
-                background-image: url("/src/Assets/Images/Terminal.png");
+            .headerLogo {
+                background-image: url("/src/Assets/Images/Logo.PNG");
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
-                height: 20px;
-                width: 20px;
-                margin-right: 5px;
-                position: relative;
-                top: 19px;
                 cursor: pointer;
+                height: 44px;
+                width: 64px;
+                margin-top: 2px;
+                border: 1px solid #03a062;
+                border-radius: 5px;
+                transition: filter 300ms;
             }
 
-            p {
+            .headerLogo:hover {
+                border: 1px solid lightgreen;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+
+            h1 {
                 color: #03a062;
-                font-size: 14px;
+                font-size: 35px;
+                font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                text-shadow: 0.3px 0.3px 0 lightgreen;
+                text-shadow: 1px 1px 0 lightgreen;
                 position: relative;
-                top: 6px;
+                bottom: 20px;
+                animation: glow 1s ease-in-out infinite alternate;
                 cursor: default;
+            }
+
+            @keyframes glow {
+                from {
+                    text-shadow:
+                        0 0 2px #fff,
+                        0 0 5px #fff,
+                        0 0 7px #03a062,
+                        0 0 10px #03a062,
+                        0 0 12px #03a062,
+                        0 0 15px #03a062,
+                        0 0 17px #03a062;
+                }
+
+                to {
+                    text-shadow:
+                        0 0 5px #fff,
+                        0 0 7px lightgreen,
+                        0 0 10px lightgreen,
+                        0 0 12px lightgreen,
+                        0 0 15px lightgreen,
+                        0 0 17px lightgreen,
+                        0 0 20px lightgreen;
+                }
+            }
+
+            .version {
+                height: 100%;
+                width: 210px;
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                right: 0px;
+
+                .terminalLogo {
+                    background-image: url("/src/Assets/Images/Terminal.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 20px;
+                    width: 20px;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 19px;
+                    cursor: pointer;
+                }
+
+                p {
+                    color: #03a062;
+                    font-size: 14px;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    text-shadow: 0.3px 0.3px 0 lightgreen;
+                    position: relative;
+                    top: 6px;
+                    cursor: default;
+                }
             }
         }
     }
