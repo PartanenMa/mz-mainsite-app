@@ -9,7 +9,7 @@ import PortfolioImg from "/src/Assets/Images/PortfolioSite.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.5.12",
+    version: "Release 1.5.13",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/mainsite",
         dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/mainsite/admin/dashboard",
@@ -32,7 +32,7 @@ export const info = {
         cvPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/cv" : "/mainsite/admin/cv",
     },
     mainSiteLink: [{ label: "Main site", image: MainSiteImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-mainsite-app/" : "https://matrixzone.netlify.app/" }],
-    projectLinks: [{ label: "Portfolio", image: PortfolioImg, link: "https://www.google.fi", disabled: false }],
+    projectLinks: [{ label: "Portfolio", image: PortfolioImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-portfolio-app/" : "https://matrixzone.netlify.app/", disabled: true }],
     testLoginFe: {
         enabled: false,
         adminUserName: "AdminTest",

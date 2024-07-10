@@ -408,23 +408,20 @@
 
             .footerNav3-1 {
                 height: 40px;
-                width: 130px;
+                width: 260px;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
                 gap: 10px;
                 margin-top: 10px;
                 margin-left: 10px;
 
-                .matrixLogo {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
+                .image {
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 70%;
                     height: 30px;
                     width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
                 }
 
                 h3 {
@@ -444,29 +441,29 @@
                 border-radius: 5px;
             }
 
-            .footerNav3-2 {
+            .footerNav3-1D {
                 height: 40px;
-                width: 130px;
+                width: 260px;
+                cursor: not-allowed;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
                 gap: 10px;
                 margin-top: 10px;
                 margin-left: 10px;
 
-                .matrixLogo {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
+                .image {
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 70%;
                     height: 30px;
                     width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
+                    transition: filter 300ms;
+                    filter: drop-shadow(0 0 0.6em red);
                 }
 
                 h3 {
-                    color: #03a062;
+                    color: red;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -474,50 +471,6 @@
                     text-shadow: 0.5px 0.5px 0 white;
                     transition: background-color 300ms;
                 }
-            }
-
-            .footerNav3-2:hover h3 {
-                background-color: lightgreen;
-                border: 1px solid #03a062;
-                border-radius: 5px;
-            }
-
-            .footerNav3-3 {
-                height: 40px;
-                width: 130px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                margin-top: 10px;
-                margin-left: 10px;
-
-                .matrixLogo {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    height: 30px;
-                    width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
-                }
-
-                h3 {
-                    color: #03a062;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: fit-content;
-                    width: fit-content;
-                    text-shadow: 0.5px 0.5px 0 white;
-                    transition: background-color 300ms;
-                }
-            }
-
-            .footerNav3-3:hover h3 {
-                background-color: lightgreen;
-                border: 1px solid #03a062;
-                border-radius: 5px;
             }
         }
     }
@@ -885,20 +838,18 @@
                 height: 40px;
                 width: 130px;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
                 gap: 10px;
                 margin-top: 10px;
-                margin-left: 10px;
+                margin-left: 30px;
 
-                .matrixLogoMobile {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
+                .imageMobile {
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 70%;
                     height: 30px;
                     width: 40px;
-                    border: 1px solid white;
                     border-radius: 3px;
                 }
 
@@ -919,29 +870,29 @@
                 border-radius: 5px;
             }
 
-            .footerNav3-2M {
+            .footerNav3-1DM {
                 height: 40px;
-                width: 130px;
+                width: 200px;
+                cursor: not-allowed;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
                 gap: 10px;
                 margin-top: 10px;
-                margin-left: 10px;
+                margin-left: 100px;
 
-                .matrixLogoMobile {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
+                .imageMobile {
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 70%;
                     height: 30px;
                     width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
+                    transition: filter 300ms;
+                    filter: drop-shadow(0 0 0.6em red);
                 }
 
                 h3 {
-                    color: #03a062;
+                    color: red;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -949,50 +900,6 @@
                     text-shadow: 0.5px 0.5px 0 white;
                     transition: background-color 300ms;
                 }
-            }
-
-            .footerNav3-2M:hover h3 {
-                background-color: lightgreen;
-                border: 1px solid #03a062;
-                border-radius: 5px;
-            }
-
-            .footerNav3-3M {
-                height: 40px;
-                width: 130px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                margin-top: 10px;
-                margin-left: 10px;
-
-                .matrixLogoMobile {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    height: 30px;
-                    width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
-                }
-
-                h3 {
-                    color: #03a062;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: fit-content;
-                    width: fit-content;
-                    text-shadow: 0.5px 0.5px 0 white;
-                    transition: background-color 300ms;
-                }
-            }
-
-            .footerNav3-3:hover h3 {
-                background-color: lightgreen;
-                border: 1px solid #03a062;
-                border-radius: 5px;
             }
         }
     }
@@ -1356,20 +1263,21 @@
 
             .footerNav3-1M {
                 height: 40px;
-                width: 130px;
+                width: 200px;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
                 gap: 10px;
+                margin-top: 10px;
+                margin-left: 100px;
 
-                .matrixLogoMobile {
+                .imageMobile {
                     background-image: url("/src/Assets/Images/Logo.PNG");
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 70%;
                     height: 30px;
                     width: 40px;
-                    border: 1px solid white;
                     border-radius: 3px;
                 }
 
@@ -1390,27 +1298,29 @@
                 border-radius: 5px;
             }
 
-            .footerNav3-2M {
+            .footerNav3-1DM {
                 height: 40px;
-                width: 130px;
+                width: 200px;
+                cursor: not-allowed;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
                 align-items: center;
                 gap: 10px;
+                margin-top: 10px;
+                margin-left: 100px;
 
-                .matrixLogoMobile {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
+                .imageMobile {
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 70%;
                     height: 30px;
                     width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
+                    transition: filter 300ms;
+                    filter: drop-shadow(0 0 0.6em red);
                 }
 
                 h3 {
-                    color: #03a062;
+                    color: red;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -1418,48 +1328,6 @@
                     text-shadow: 0.5px 0.5px 0 white;
                     transition: background-color 300ms;
                 }
-            }
-
-            .footerNav3-2M:hover h3 {
-                background-color: lightgreen;
-                border: 1px solid #03a062;
-                border-radius: 5px;
-            }
-
-            .footerNav3-3M {
-                height: 40px;
-                width: 130px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-
-                .matrixLogoMobile {
-                    background-image: url("/src/Assets/Images/Logo.PNG");
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    height: 30px;
-                    width: 40px;
-                    border: 1px solid white;
-                    border-radius: 3px;
-                }
-
-                h3 {
-                    color: #03a062;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: fit-content;
-                    width: fit-content;
-                    text-shadow: 0.5px 0.5px 0 white;
-                    transition: background-color 300ms;
-                }
-            }
-
-            .footerNav3-3M:hover h3 {
-                background-color: lightgreen;
-                border: 1px solid #03a062;
-                border-radius: 5px;
             }
         }
     }

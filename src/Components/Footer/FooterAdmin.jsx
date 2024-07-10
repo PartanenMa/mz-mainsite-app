@@ -194,54 +194,32 @@ function FooterAdmin() {
                                 </a>
                             </div>
                             <div className="footerNav3">
-                                <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
-                                    <AnimatePresence>
-                                        <motion.div
-                                            className="footerNav3-1"
-                                            key="FN3-1"
-                                            whileHover={{
-                                                scale: 1.2,
-                                                transition: { duration: 0.1 },
-                                            }}
-                                            whileTap={{ scale: 0.9 }}
-                                        >
-                                            <div className="matrixLogo" />
-                                            <h3>Portfolio</h3>
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </a>
-                                {/*<a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
-                                        <AnimatePresence>
-                                            <motion.div
-                                                className="footerNav3-2"
-                                                key="FN3-2"
-                                                whileHover={{
-                                                    scale: 1.2,
-                                                    transition: { duration: 0.1 },
-                                                }}
-                                                whileTap={{ scale: 0.9 }}
-                                            >
-                                                <div className="matrixLogo" />
-                                                <h3>sitename</h3>
-                                            </motion.div>
-                                        </AnimatePresence>
-                                    </a>
-                                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
-                                        <AnimatePresence>
-                                            <motion.div
-                                                className="footerNav3-3"
-                                                key="FN3-3"
-                                                whileHover={{
-                                                    scale: 1.2,
-                                                    transition: { duration: 0.1 },
-                                                }}
-                                                whileTap={{ scale: 0.9 }}
-                                            >
-                                                <div className="matrixLogo" />
-                                                <h3>sitename</h3>
-                                            </motion.div>
-                                        </AnimatePresence>
-                                    </a>*/}
+                                {projectLinks.length > 0 &&
+                                    projectLinks.map((projectLink, index) =>
+                                        projectLink.disabled ? (
+                                            <div className="footerNav3-1D" key={"FN-3-" + index + 1 + "A"} title={"Currently not available"}>
+                                                <div className="image" style={{ backgroundImage: `url(${projectLink.image})` }} />
+                                                <h3>{projectLink.label}</h3>
+                                            </div>
+                                        ) : (
+                                            <a style={{ textDecoration: "none" }} href={projectLink.link}>
+                                                <AnimatePresence>
+                                                    <motion.div
+                                                        className="footerNav3-1"
+                                                        key={"FN-3-" + index + 1 + "A"}
+                                                        whileHover={{
+                                                            scale: 1.1,
+                                                            transition: { duration: 0.1 },
+                                                        }}
+                                                        whileTap={{ scale: 0.9 }}
+                                                    >
+                                                        <div className="image" style={{ backgroundImage: `url(${projectLink.image})` }} />
+                                                        <h3>{projectLink.label}</h3>
+                                                    </motion.div>
+                                                </AnimatePresence>
+                                            </a>
+                                        )
+                                    )}
                             </div>
                         </div>
                     </div>
@@ -427,54 +405,32 @@ function FooterAdminMobile() {
                     </a>
                 </div>
                 <div className="footerNav3Mobile">
-                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
-                        <AnimatePresence>
-                            <motion.div
-                                className="footerNav3-1M"
-                                key="FN3-1m"
-                                whileHover={{
-                                    scale: 1.2,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <div className="matrixLogoMobile" />
-                                <h3>Portfolio</h3>
-                            </motion.div>
-                        </AnimatePresence>
-                    </a>
-                    {/*<a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
-                        <AnimatePresence>
-                            <motion.div
-                                className="footerNav3-2M"
-                                key="FN3-2m"
-                                whileHover={{
-                                    scale: 1.2,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <div className="matrixLogoMobile" />
-                                <h3>sitename</h3>
-                            </motion.div>
-                        </AnimatePresence>
-                    </a>
-                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
-                        <AnimatePresence>
-                            <motion.div
-                                className="footerNav3-3M"
-                                key="FN3-3m"
-                                whileHover={{
-                                    scale: 1.2,
-                                    transition: { duration: 0.1 },
-                                }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <div className="matrixLogoMobile" />
-                                <h3>sitename</h3>
-                            </motion.div>
-                        </AnimatePresence>
-                    </a>*/}
+                    {projectLinks.length > 0 &&
+                        projectLinks.map((projectLink, index) =>
+                            projectLink.disabled ? (
+                                <div className="footerNav3-1DM" key={"FN-3-" + index + 1 + "A"} title={"Currently not available"}>
+                                    <div className="imageMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
+                                    <h3>{projectLink.label}</h3>
+                                </div>
+                            ) : (
+                                <a style={{ textDecoration: "none" }} href={projectLink.link}>
+                                    <AnimatePresence>
+                                        <motion.div
+                                            className="footerNav3-1M"
+                                            key={"FN-3-" + index + 1 + "A"}
+                                            whileHover={{
+                                                scale: 1.1,
+                                                transition: { duration: 0.1 },
+                                            }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            <div className="imageMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
+                                            <h3>{projectLink.label}</h3>
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </a>
+                            )
+                        )}
                 </div>
             </div>
         </footer>
