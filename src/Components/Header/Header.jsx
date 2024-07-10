@@ -63,6 +63,10 @@ function Header() {
                                 />
                                 <h1>MatrixZone</h1>
                                 <div className="version">
+                                    <div className="mainSiteLogo" />
+                                    <p>
+                                        Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
+                                    </p>
                                     <AnimatePresence>
                                         <motion.div
                                             className="terminalLogo"
@@ -76,9 +80,6 @@ function Header() {
                                             whileTap={{ scale: 0.9 }}
                                         />
                                     </AnimatePresence>
-                                    <p>
-                                        Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
-                                    </p>
                                 </div>
                             </motion.div>
                             <Nav />
@@ -96,6 +97,7 @@ function Header() {
 
 //Mobile:
 function HeaderMobile() {
+    const [isProjectNavOpen, setIsProjectNavOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleLogoClick = () => {
@@ -104,18 +106,21 @@ function HeaderMobile() {
 
     return (
         <header className="headerMobile">
-            <AnimatePresence>
-                <motion.div className="headerTitleMobile" key="headertitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                    <motion.div className="headerLogoMobile" title="Go to front page" onClick={() => handleLogoClick()} key="headerlogomobile" whileTap={{ scale: 0.9 }} />
-                    <div className="headerTitleContainerMobile">
-                        <h1>MatrixZone</h1>
-                        <p>
-                            Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
-                        </p>
-                    </div>
-                </motion.div>
-                <Nav />
-            </AnimatePresence>
+            <div className="headerSection1Mobile">
+                <AnimatePresence>
+                    <motion.div className="headerTitleMobile" key="headertitlemobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                        <motion.div className="headerLogoMobile" title="Go to front page" onClick={() => handleLogoClick()} key="headerlogomobile" whileTap={{ scale: 0.9 }} />
+                        <div className="headerTitleContainerMobile">
+                            <h1>MatrixZone</h1>
+                            <p>
+                                Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
+                            </p>
+                        </div>
+                    </motion.div>
+                    <Nav />
+                </AnimatePresence>
+            </div>
+            <ProjectNav isProjectNavOpen={isProjectNavOpen} setIsProjectNavOpen={setIsProjectNavOpen} />
         </header>
     );
 }

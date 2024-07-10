@@ -327,6 +327,8 @@ function AboutMyProjects() {
 }
 
 function MyPortfolio() {
+    const projectLinks = info.projectLinks;
+
     return (
         <div className="portfolioContainer">
             <div className="portfolioTitle">
@@ -336,7 +338,7 @@ function MyPortfolio() {
                 <AnimatePresence>
                     <motion.a
                         className="pCBox"
-                        href={info.projectRoutes.portfolio}
+                        href={projectLinks[0].link}
                         title="Go to portfolio"
                         key="gotoportfolio"
                         whileHover={{
@@ -606,6 +608,8 @@ function AboutMyProjectsMobile() {
 }
 
 function MyPortfolioMobile() {
+    const projectLinks = info.projectLinks;
+
     return (
         <div className="portfolioContainerMobile">
             <div className="portfolioTitleMobile">
@@ -615,7 +619,7 @@ function MyPortfolioMobile() {
                 <AnimatePresence>
                     <motion.a
                         className="pCBoxMobile"
-                        href={info.projectRoutes.portfolio}
+                        href={projectLinks[0].link}
                         title="Go to portfolio"
                         key="gotoportfoliomobile"
                         whileHover={{

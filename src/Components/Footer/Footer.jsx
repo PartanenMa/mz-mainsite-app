@@ -7,6 +7,7 @@ import "./Footer.scss";
 function Footer() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
+    const projectLinks = info.projectLinks;
 
     useEffect(() => {
         const handleResize = () => {
@@ -194,7 +195,7 @@ function Footer() {
                                     </a>
                                 </div>
                                 <div className="footerNav3" style={{ borderRight: "1px solid #03a062" }}>
-                                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
                                         <AnimatePresence>
                                             <motion.div
                                                 className="footerNav3-1"
@@ -210,7 +211,7 @@ function Footer() {
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
-                                    {/*<a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                                    {/*<a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
                                         <AnimatePresence>
                                             <motion.div
                                                 className="footerNav3-2"
@@ -226,7 +227,7 @@ function Footer() {
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
-                                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
                                         <AnimatePresence>
                                             <motion.div
                                                 className="footerNav3-3"
@@ -256,6 +257,7 @@ function Footer() {
 //Mobile:
 function FooterMobile() {
     const navigate = useNavigate();
+    const projectLinks = info.projectLinks;
 
     return (
         <footer className="footerMobile">
@@ -427,7 +429,7 @@ function FooterMobile() {
                     </a>
                 </div>
                 <div className="footerNav3Mobile">
-                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav3-1M"
@@ -443,7 +445,7 @@ function FooterMobile() {
                             </motion.div>
                         </AnimatePresence>
                     </a>
-                    {/*<a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                    {/*<a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav3-2M"
@@ -459,7 +461,7 @@ function FooterMobile() {
                             </motion.div>
                         </AnimatePresence>
                     </a>
-                    <a style={{ textDecoration: "none" }} href={info.projectRoutes.portfolio}>
+                    <a style={{ textDecoration: "none" }} href={projectLinks[0].link}>
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav3-3M"

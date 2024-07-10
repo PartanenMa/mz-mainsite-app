@@ -3,12 +3,13 @@ import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
+import MainSiteImg from "/src/Assets/Images/MainSite.png";
 import PortfolioImg from "/src/Assets/Images/PortfolioSite.png";
 
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.5.11",
+    version: "Release 1.5.12",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/mainsite",
         dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/mainsite/admin/dashboard",
@@ -30,12 +31,8 @@ export const info = {
         cvPage: deployToGitHubPages ? "/mz-mainsite-app/cv" : "/mainsite/cv",
         cvPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/cv" : "/mainsite/admin/cv",
     },
-    projectRoutes: {
-        portfolio: "https://www.google.fi",
-    },
-    projectLinks: [
-        /*{ label: "Portfolio", image: PortfolioImg, link: "https://www.google.fi" }*/
-    ],
+    mainSiteLink: [{ label: "Main site", image: MainSiteImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-mainsite-app/" : "https://matrixzone.netlify.app/" }],
+    projectLinks: [{ label: "Portfolio", image: PortfolioImg, link: "https://www.google.fi", disabled: false }],
     testLoginFe: {
         enabled: false,
         adminUserName: "AdminTest",
