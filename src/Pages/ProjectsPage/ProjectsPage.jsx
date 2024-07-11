@@ -237,26 +237,37 @@ function Portfolio() {
                 <h3>CHECK OUT MY PORTFOLIO!</h3>
             </div>
             <div className="portfolioContent">
-                <AnimatePresence>
-                    <motion.a
-                        className="pCBox"
-                        href={projectLinks[0].link}
-                        title="Go to portfolio"
-                        key="gotoportfolio"
-                        whileHover={{
-                            scale: 1.03,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.98 }}
-                    >
+                {projectLinks[0].disabled ? (
+                    <div className="pCBoxD" title="Currently not available">
                         <div className="pCB1">
                             <div className="portfolioImg" />
                         </div>
                         <div className="pCB2">
                             <p>{"<MyPortfolio/>"}</p>
                         </div>
-                    </motion.a>
-                </AnimatePresence>
+                    </div>
+                ) : (
+                    <AnimatePresence>
+                        <motion.a
+                            className="pCBox"
+                            href={projectLinks[0].link}
+                            title="Go to portfolio"
+                            key="gotoportfolio"
+                            whileHover={{
+                                scale: 1.03,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            <div className="pCB1">
+                                <div className="portfolioImg" />
+                            </div>
+                            <div className="pCB2">
+                                <p>{"<MyPortfolio/>"}</p>
+                            </div>
+                        </motion.a>
+                    </AnimatePresence>
+                )}
             </div>
             <div className="space1" />
             <div className="or">
@@ -518,26 +529,37 @@ function PortfolioMobile() {
                 <h3>CHECK OUT MY PORTFOLIO!</h3>
             </div>
             <div className="portfolioContentMobile">
-                <AnimatePresence>
-                    <motion.a
-                        className="pCBoxMobile"
-                        href={projectLinks[0].link}
-                        title="Go to portfolio"
-                        key="gotoportfoliomobile"
-                        whileHover={{
-                            scale: 1.03,
-                            transition: { duration: 0.1 },
-                        }}
-                        whileTap={{ scale: 0.98 }}
-                    >
+                {projectLinks[0].disabled ? (
+                    <div className="pCBoxDMobile" title="Currently not available">
                         <div className="pCB1M">
                             <div className="portfolioImgMobile" />
                         </div>
                         <div className="pCB2M">
                             <p>{"<MyPortfolio/>"}</p>
                         </div>
-                    </motion.a>
-                </AnimatePresence>
+                    </div>
+                ) : (
+                    <AnimatePresence>
+                        <motion.a
+                            className="pCBoxMobile"
+                            href={projectLinks[0].link}
+                            title="Go to portfolio"
+                            key="gotoportfoliomobile"
+                            whileHover={{
+                                scale: 1.03,
+                                transition: { duration: 0.1 },
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            <div className="pCB1M">
+                                <div className="portfolioImgMobile" />
+                            </div>
+                            <div className="pCB2M">
+                                <p>{"<MyPortfolio/>"}</p>
+                            </div>
+                        </motion.a>
+                    </AnimatePresence>
+                )}
             </div>
             <div className="space1Mobile" />
             <div className="orMobile">

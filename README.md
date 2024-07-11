@@ -10,11 +10,11 @@
 
 # 2. Run program (Vite):
 
-**cd MatrixZone-APP**  
+**cd mz-mainsite-app**  
 **npm run dev**
 
 # 3. Run program (Docker):
 
-**cd MatrixZone-APP**  
+**cd mz-mainsite-app**  
 **docker compose up -d**  
 **docker compose watch**

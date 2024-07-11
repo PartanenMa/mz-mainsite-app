@@ -3,7 +3,7 @@ version: "3.8"
 services:
     app:
         build: .
-        container_name: MatrixZone-APP-container
+        container_name: mz-mainsite-app-container
         ports:
             - 5173:5173
         develop:

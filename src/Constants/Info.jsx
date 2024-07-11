@@ -9,7 +9,7 @@ import PortfolioImg from "/src/Assets/Images/PortfolioSite.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.5.13",
+    version: "Release 1.5.14",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/mainsite",
         dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/mainsite/admin/dashboard",
