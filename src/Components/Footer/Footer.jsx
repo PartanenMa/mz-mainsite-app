@@ -7,7 +7,7 @@ import "./Footer.scss";
 function Footer() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     useEffect(() => {
         const handleResize = () => {
@@ -195,15 +195,15 @@ function Footer() {
                                     </a>
                                 </div>
                                 <div className="footerNav3" style={{ borderRight: "1px solid #03a062" }}>
-                                    {projectLinks.length > 0 &&
-                                        projectLinks.map((projectLink, index) =>
-                                            projectLink.disabled ? (
+                                    {appLinks.length > 0 &&
+                                        appLinks.map((appLink, index) =>
+                                            appLink.disabled ? (
                                                 <div className="footerNav3-1D" key={"FN-3-" + index + 1} title={"Currently not available"}>
-                                                    <div className="image" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                    <h3>{projectLink.label}</h3>
+                                                    <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                    <h3>{appLink.label}</h3>
                                                 </div>
                                             ) : (
-                                                <a style={{ textDecoration: "none" }} href={projectLink.link}>
+                                                <a style={{ textDecoration: "none" }} href={appLink.link}>
                                                     <AnimatePresence>
                                                         <motion.div
                                                             className="footerNav3-1"
@@ -214,8 +214,8 @@ function Footer() {
                                                             }}
                                                             whileTap={{ scale: 0.9 }}
                                                         >
-                                                            <div className="image" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                            <h3>{projectLink.label}</h3>
+                                                            <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                            <h3>{appLink.label}</h3>
                                                         </motion.div>
                                                     </AnimatePresence>
                                                 </a>
@@ -235,7 +235,7 @@ function Footer() {
 //Mobile:
 function FooterMobile() {
     const navigate = useNavigate();
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     return (
         <footer className="footerMobile">
@@ -407,15 +407,15 @@ function FooterMobile() {
                     </a>
                 </div>
                 <div className="footerNav3Mobile">
-                    {projectLinks.length > 0 &&
-                        projectLinks.map((projectLink, index) =>
-                            projectLink.disabled ? (
+                    {appLinks.length > 0 &&
+                        appLinks.map((appLink, index) =>
+                            appLink.disabled ? (
                                 <div className="footerNav3-1DM" key={"FN-3-" + index + 1} title={"Currently not available"}>
-                                    <div className="imageMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                    <h3>{projectLink.label}</h3>
+                                    <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                    <h3>{appLink.label}</h3>
                                 </div>
                             ) : (
-                                <a style={{ textDecoration: "none" }} href={projectLink.link}>
+                                <a style={{ textDecoration: "none" }} href={appLink.link}>
                                     <AnimatePresence>
                                         <motion.div
                                             className="footerNav3-1M"
@@ -426,8 +426,8 @@ function FooterMobile() {
                                             }}
                                             whileTap={{ scale: 0.9 }}
                                         >
-                                            <div className="imageMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                            <h3>{projectLink.label}</h3>
+                                            <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                            <h3>{appLink.label}</h3>
                                         </motion.div>
                                     </AnimatePresence>
                                 </a>

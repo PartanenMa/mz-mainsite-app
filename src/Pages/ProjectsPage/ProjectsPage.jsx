@@ -229,7 +229,7 @@ function AboutMyProjects() {
 }
 
 function Portfolio() {
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     return (
         <div className="portfolioContainer">
@@ -237,7 +237,7 @@ function Portfolio() {
                 <h3>CHECK OUT MY PORTFOLIO!</h3>
             </div>
             <div className="portfolioContent">
-                {projectLinks[0].disabled ? (
+                {appLinks[0].disabled ? (
                     <div className="pCBoxD" title="Currently not available">
                         <div className="pCB1">
                             <div className="portfolioImg" />
@@ -250,7 +250,7 @@ function Portfolio() {
                     <AnimatePresence>
                         <motion.a
                             className="pCBox"
-                            href={projectLinks[0].link}
+                            href={appLinks[0].link}
                             title="Go to portfolio"
                             key="gotoportfolio"
                             whileHover={{
@@ -521,7 +521,7 @@ function AboutMyProjectsMobile() {
 }
 
 function PortfolioMobile() {
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     return (
         <div className="portfolioContainerMobile">
@@ -529,7 +529,7 @@ function PortfolioMobile() {
                 <h3>CHECK OUT MY PORTFOLIO!</h3>
             </div>
             <div className="portfolioContentMobile">
-                {projectLinks[0].disabled ? (
+                {appLinks[0].disabled ? (
                     <div className="pCBoxDMobile" title="Currently not available">
                         <div className="pCB1M">
                             <div className="portfolioImgMobile" />
@@ -542,7 +542,7 @@ function PortfolioMobile() {
                     <AnimatePresence>
                         <motion.a
                             className="pCBoxMobile"
-                            href={projectLinks[0].link}
+                            href={appLinks[0].link}
                             title="Go to portfolio"
                             key="gotoportfoliomobile"
                             whileHover={{

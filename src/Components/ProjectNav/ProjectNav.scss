@@ -27,7 +27,7 @@
 
 .projectNav {
     background-color: #222;
-    height: 50px;
+    height: 70px;
     width: 100%;
     border: 2px solid #03a062;
     border-radius: 3px;
@@ -39,41 +39,141 @@
     .block1 {
         background-color: #111;
         height: 100%;
-        width: 10%;
+        width: 20%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
 
-        .mainSiteLink {
-            height: 45px;
-            width: 80px;
-            cursor: default;
-            text-decoration: none;
+        .b1Title {
+            height: 20px;
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: filter 300ms;
-            filter: drop-shadow(0 0 0.6em green);
+            justify-content: center;
+            align-items: center;
 
-            .mSImg {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 30%;
-                height: 33px;
-                width: 100%;
+            p {
+                color: #03a062;
+                font-size: 14px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration: underline;
+            }
+        }
+
+        .b1Content {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            .controlLink {
+                height: 45px;
+                width: 80px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background-color 300ms ease-in-out;
+                display: flex;
+                flex-direction: column;
+
+                .cLImg {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 33px;
+                    width: 100%;
+                }
+
+                .cLTitle {
+                    height: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: #03a062;
+                        font-size: 12px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
             }
 
-            .mSTitle {
-                height: 12px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .controlLink:hover .cLImg {
+                transition: filter 300ms;
+                color: lightgreen;
+                filter: drop-shadow(0 0 0.6em lightgreen);
+            }
 
-                p {
-                    color: green;
-                    font-size: 12px;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            .controlLink:hover p {
+                color: lightgreen;
+            }
+
+            .controlLinkC {
+                height: 45px;
+                width: 80px;
+                cursor: default;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em green);
+
+                .cLImg {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 33px;
+                    width: 100%;
+                }
+
+                .cLTitle {
+                    height: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: green;
+                        font-size: 12px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+            }
+
+            .controlLinkD {
+                height: 45px;
+                width: 80px;
+                cursor: not-allowed;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em red);
+
+                .cLImg {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 33px;
+                    width: 100%;
+                }
+
+                .cLTitle {
+                    height: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: red;
+                        font-size: 12px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
                 }
             }
         }
@@ -81,105 +181,186 @@
 
     .block2 {
         height: 100%;
-        width: 80%;
+        width: 60%;
         border-left: 2px solid #03a062;
         border-right: 2px solid #03a062;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
+        flex-direction: column;
 
-        .projectLink {
-            height: 45px;
-            width: 80px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 300ms ease-in-out;
+        .b2Title {
+            height: 20px;
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            justify-content: center;
+            align-items: center;
 
-            .pLImg {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 30%;
-                height: 33px;
-                width: 100%;
+            p {
+                color: #03a062;
+                font-size: 14px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration: underline;
             }
+        }
 
-            .pLTitle {
-                height: 12px;
-                width: 100%;
+        .b2Content {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            .appLink {
+                height: 45px;
+                width: 80px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background-color 300ms ease-in-out;
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                flex-direction: column;
+                overflow: hidden;
 
-                p {
-                    color: #03a062;
-                    font-size: 12px;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                .aImg {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 33px;
+                    width: 100%;
+                }
+
+                .aTitle {
+                    height: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: #03a062;
+                        font-size: 12px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
                 }
             }
-        }
 
-        .projectLink:hover .pLImg {
-            transition: filter 300ms;
-            color: lightgreen;
-            filter: drop-shadow(0 0 0.6em lightgreen);
-        }
-
-        .projectLink:hover p {
-            color: lightgreen;
-        }
-
-        .projectLinkD {
-            height: 45px;
-            width: 80px;
-            cursor: not-allowed;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: filter 300ms;
-            filter: drop-shadow(0 0 0.6em red);
-
-            .pLImg {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 30%;
-                height: 33px;
-                width: 100%;
+            .appLink:hover .aImg {
+                transition: filter 300ms;
+                color: lightgreen;
+                filter: drop-shadow(0 0 0.6em lightgreen);
             }
 
-            .pLTitle {
-                height: 12px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .appLink:hover p {
+                color: lightgreen;
+            }
 
-                p {
-                    color: red;
-                    font-size: 12px;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            .appLinkC {
+                height: 45px;
+                width: 80px;
+                cursor: default;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em green);
+
+                .aImg {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 33px;
+                    width: 100%;
+                }
+
+                .aTitle {
+                    height: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: green;
+                        font-size: 12px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
                 }
             }
-        }
 
-        .noProjectLinks {
-            color: #03a062;
-            font-size: 20px;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            .appLinkD {
+                height: 45px;
+                width: 80px;
+                cursor: not-allowed;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em red);
+
+                .aImg {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 33px;
+                    width: 100%;
+                }
+
+                .aTitle {
+                    height: 12px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: red;
+                        font-size: 12px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+            }
+
+            .noAppLinks {
+                color: #03a062;
+                font-size: 20px;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
         }
     }
 
     .block3 {
         background-color: #111;
         height: 100%;
-        width: 10%;
+        width: 20%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+
+        .b3Title {
+            height: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                color: #03a062;
+                font-size: 14px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration: underline;
+            }
+        }
+
+        .b3Content {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
     }
 }
 
@@ -212,7 +393,7 @@
 
 .projectNavMobile {
     background-color: #222;
-    height: 25px;
+    height: 35px;
     width: 100%;
     border: 1px solid #03a062;
     border-radius: 1.5px;
@@ -224,41 +405,141 @@
     .block1Mobile {
         background-color: #111;
         height: 100%;
-        width: 10%;
+        width: 20%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
 
-        .mainSiteLinkMobile {
-            height: 23px;
-            width: 40px;
-            cursor: default;
-            text-decoration: none;
+        .b1TitleMobile {
+            height: 10px;
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: filter 300ms;
-            filter: drop-shadow(0 0 0.6em green);
+            justify-content: center;
+            align-items: center;
 
-            .mSImgMobile {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 30%;
-                height: 16px;
-                width: 100%;
+            p {
+                color: #03a062;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration: underline;
+            }
+        }
+
+        .b1ContentMobile {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            .controlLinkMobile {
+                height: 23px;
+                width: 40px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background-color 300ms ease-in-out;
+                display: flex;
+                flex-direction: column;
+
+                .cLImgMobile {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 16px;
+                    width: 100%;
+                }
+
+                .cLTitleMobile {
+                    height: 7px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: #03a062;
+                        font-size: 6px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
             }
 
-            .mSTitleMobile {
-                height: 7px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .controlLinkMobile:hover .cLImgMobile {
+                transition: filter 300ms;
+                color: lightgreen;
+                filter: drop-shadow(0 0 0.6em lightgreen);
+            }
 
-                p {
-                    color: green;
-                    font-size: 6px;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            .controlLinkMobile:hover p {
+                color: lightgreen;
+            }
+
+            .controlLinkCMobile {
+                height: 23px;
+                width: 40px;
+                cursor: default;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em green);
+
+                .cLImgMobile {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 16px;
+                    width: 100%;
+                }
+
+                .cLTitleMobile {
+                    height: 7px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: green;
+                        font-size: 6px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+            }
+
+            .controlLinkDMobile {
+                height: 23px;
+                width: 40px;
+                cursor: not-allowed;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em red);
+
+                .cLImgMobile {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 16px;
+                    width: 100%;
+                }
+
+                .cLTitleMobile {
+                    height: 7px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: red;
+                        font-size: 6px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
                 }
             }
         }
@@ -266,104 +547,185 @@
 
     .block2Mobile {
         height: 100%;
-        width: 80%;
+        width: 60%;
         border-left: 2px solid #03a062;
         border-right: 2px solid #03a062;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
+        flex-direction: column;
 
-        .projectLinkMobile {
-            height: 23px;
-            width: 40px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 300ms ease-in-out;
+        .b2TitleMobile {
+            height: 10px;
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            justify-content: center;
+            align-items: center;
 
-            .pLImgMobile {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 30%;
-                height: 16px;
-                width: 100%;
+            p {
+                color: #03a062;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration: underline;
             }
+        }
 
-            .pLTitleMobile {
-                height: 7px;
-                width: 100%;
+        .b2ContentMobile {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            .appLinkMobile {
+                height: 23px;
+                width: 40px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background-color 300ms ease-in-out;
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                flex-direction: column;
+                overflow: hidden;
 
-                p {
-                    color: #03a062;
-                    font-size: 6px;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                .aImgMobile {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 16px;
+                    width: 100%;
+                }
+
+                .aTitleMobile {
+                    height: 7px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: #03a062;
+                        font-size: 6px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
                 }
             }
-        }
 
-        .projectLinkMobile:hover .pLImgMobile {
-            transition: filter 300ms;
-            color: lightgreen;
-            filter: drop-shadow(0 0 0.6em lightgreen);
-        }
-
-        .projectLinkMobile:hover p {
-            color: lightgreen;
-        }
-
-        .projectLinkDMobile {
-            height: 23px;
-            width: 40px;
-            cursor: not-allowed;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: filter 300ms;
-            filter: drop-shadow(0 0 0.6em red);
-
-            .pLImgMobile {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 30%;
-                height: 16px;
-                width: 100%;
+            .appLinkMobile:hover .aImgMobile {
+                transition: filter 300ms;
+                color: lightgreen;
+                filter: drop-shadow(0 0 0.6em lightgreen);
             }
 
-            .pLTitleMobile {
-                height: 7px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .appLinkMobile:hover p {
+                color: lightgreen;
+            }
 
-                p {
-                    color: red;
-                    font-size: 6px;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            .appLinkCMobile {
+                height: 23px;
+                width: 40px;
+                cursor: default;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em green);
+
+                .aImgMobile {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 16px;
+                    width: 100%;
+                }
+
+                .aTitleMobile {
+                    height: 7px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: green;
+                        font-size: 6px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
                 }
             }
-        }
 
-        .noProjectLinksMobile {
-            color: #03a062;
-            font-size: 20px;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            .appLinkDMobile {
+                height: 23px;
+                width: 40px;
+                cursor: not-allowed;
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                transition: filter 300ms;
+                filter: drop-shadow(0 0 0.6em red);
+
+                .aImgMobile {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 30%;
+                    height: 16px;
+                    width: 100%;
+                }
+
+                .aTitleMobile {
+                    height: 7px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        color: red;
+                        font-size: 6px;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    }
+                }
+            }
+
+            .noAppLinksMobile {
+                color: #03a062;
+                font-size: 20px;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            }
         }
     }
 
     .block3Mobile {
         background-color: #111;
         height: 100%;
-        width: 10%;
+        width: 20%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+
+        .b2TitleMobile {
+            height: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                color: #03a062;
+                font-size: 7px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                text-decoration: underline;
+            }
+        }
+
+        .b2ContentMobile {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
     }
 }

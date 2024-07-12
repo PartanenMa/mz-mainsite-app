@@ -327,7 +327,7 @@ function AboutMyProjects() {
 }
 
 function MyPortfolio() {
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     return (
         <div className="portfolioContainer">
@@ -335,7 +335,7 @@ function MyPortfolio() {
                 <h3>MY PORTFOLIO</h3>
             </div>
             <div className="portfolioContent">
-                {projectLinks[0].disabled ? (
+                {appLinks[0].disabled ? (
                     <div className="pCBoxD" title="Currently not available">
                         <div className="pCB1">
                             <div className="portfolioImg" />
@@ -348,7 +348,7 @@ function MyPortfolio() {
                     <AnimatePresence>
                         <motion.a
                             className="pCBox"
-                            href={projectLinks[0].link}
+                            href={appLinks[0].link}
                             title="Go to portfolio"
                             key="gotoportfolioA"
                             whileHover={{
@@ -619,7 +619,7 @@ function AboutMyProjectsMobile() {
 }
 
 function MyPortfolioMobile() {
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     return (
         <div className="portfolioContainerMobile">
@@ -627,7 +627,7 @@ function MyPortfolioMobile() {
                 <h3>MY PORTFOLIO</h3>
             </div>
             <div className="portfolioContentMobile">
-                {projectLinks[0].disabled ? (
+                {appLinks[0].disabled ? (
                     <div className="pCBoxDMobile" title="Currently not available">
                         <div className="pCB1M">
                             <div className="portfolioImgMobile" />
@@ -640,7 +640,7 @@ function MyPortfolioMobile() {
                     <AnimatePresence>
                         <motion.a
                             className="pCBoxMobile"
-                            href={projectLinks[0].link}
+                            href={appLinks[0].link}
                             title="Go to portfolio"
                             key="gotoportfoliomobileA"
                             whileHover={{

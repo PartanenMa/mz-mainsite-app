@@ -5,8 +5,8 @@ import "./ProjectNav.scss";
 
 function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const mainSiteLink = info.mainSiteLink;
-    const projectLinks = info.projectLinks;
+    const controlLinks = info.controlLinks;
+    const appLinks = info.appLinks;
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,49 +32,96 @@ function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
                             <AnimatePresence>
                                 <motion.div className="projectNav" key="projectnav">
                                     <div className="block1">
-                                        {mainSiteLink.length > 0 &&
-                                            mainSiteLink.map((mSL, index) => (
-                                                <div className="mainSiteLink" title={"Currently at Main site"} key={index}>
-                                                    <div className="mSImg" style={{ backgroundImage: `url(${mSL.image})` }} />
-                                                    <div className="mSTitle">
-                                                        <p>{mSL.label}</p>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                        <div className="b1Title">
+                                            <p>Control:</p>
+                                        </div>
+                                        <div className="b1Content">
+                                            {controlLinks.length > 0 &&
+                                                controlLinks.map((controlLink, index) =>
+                                                    controlLink.disabled ? (
+                                                        <div className="controlLinkD" title={"Currently not available"} key={index}>
+                                                            <div className="cLImg" style={{ backgroundImage: `url(${controlLink.image})` }} />
+                                                            <div className="cLTitle">
+                                                                <p>{controlLink.label}</p>
+                                                            </div>
+                                                        </div>
+                                                    ) : controlLink.current ? (
+                                                        <div className="controlLinkC" title={`Currently at ${controlLink.label}`} key={index}>
+                                                            <div className="cLImg" style={{ backgroundImage: `url(${controlLink.image})` }} />
+                                                            <div className="cLTitle">
+                                                                <p>{controlLink.label}</p>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <motion.a
+                                                            className="controlLink"
+                                                            key={index}
+                                                            href={controlLink.link}
+                                                            whileHover={{
+                                                                scale: 1.05,
+                                                                transition: { duration: 0.1 },
+                                                            }}
+                                                            whileTap={{ scale: 0.9 }}
+                                                        >
+                                                            <div className="cLImg" style={{ backgroundImage: `url(${controlLink.image})` }} />
+                                                            <div className="cLTitle">
+                                                                <p>{controlLink.label}</p>
+                                                            </div>
+                                                        </motion.a>
+                                                    )
+                                                )}
+                                        </div>
                                     </div>
                                     <div className="block2">
-                                        {projectLinks.length > 0 ? (
-                                            projectLinks.map((projectLink, index) =>
-                                                projectLink.disabled ? (
-                                                    <div className="projectLinkD" title={"Currently not available"} key={index}>
-                                                        <div className="pLImg" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                        <div className="pLTitle">
-                                                            <p>{projectLink.label}</p>
+                                        <div className="b2Title">
+                                            <p>Applications:</p>
+                                        </div>
+                                        <div className="b2Content">
+                                            {appLinks.length > 0 ? (
+                                                appLinks.map((appLink, index) =>
+                                                    appLink.disabled ? (
+                                                        <div className="appLinkD" title={"Currently not available"} key={index}>
+                                                            <div className="aImg" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                            <div className="aTitle">
+                                                                <p>{appLink.label}</p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                ) : (
-                                                    <motion.a
-                                                        className="projectLink"
-                                                        key={index}
-                                                        href={projectLink.link}
-                                                        whileHover={{
-                                                            scale: 1.05,
-                                                            transition: { duration: 0.1 },
-                                                        }}
-                                                        whileTap={{ scale: 0.9 }}
-                                                    >
-                                                        <div className="pLImg" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                        <div className="pLTitle">
-                                                            <p>{projectLink.label}</p>
+                                                    ) : appLink.current ? (
+                                                        <div className="appLinkC" title={`Currently at ${appLink.label}`} key={index}>
+                                                            <div className="aImg" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                            <div className="aTitle">
+                                                                <p>{appLink.label}</p>
+                                                            </div>
                                                         </div>
-                                                    </motion.a>
+                                                    ) : (
+                                                        <motion.a
+                                                            className="appLink"
+                                                            key={index}
+                                                            href={appLink.link}
+                                                            whileHover={{
+                                                                scale: 1.05,
+                                                                transition: { duration: 0.1 },
+                                                            }}
+                                                            whileTap={{ scale: 0.9 }}
+                                                        >
+                                                            <div className="aImg" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                            <div className="aTitle">
+                                                                <p>{appLink.label}</p>
+                                                            </div>
+                                                        </motion.a>
+                                                    )
                                                 )
-                                            )
-                                        ) : (
-                                            <p className="noProjectLinks">NO OTHER SITES YET!</p>
-                                        )}
+                                            ) : (
+                                                <p className="noAppLinks">NO APPS YET!</p>
+                                            )}
+                                        </div>
                                     </div>
-                                    <div className="block3"></div>
+                                    <div className="block3">
+                                        <div className="b3Title">
+                                            <p></p>
+                                        </div>
+                                        <div className="b3Content"></div>
+                                    </div>
                                 </motion.div>
                             </AnimatePresence>
                         </>
@@ -88,8 +135,8 @@ function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
 
 //Mobile:
 function ProjectNavMobile({ isProjectNavOpen, setIsProjectNavOpen }) {
-    const mainSiteLink = info.mainSiteLink;
-    const projectLinks = info.projectLinks;
+    const controlLinks = info.controlLinks;
+    const appLinks = info.appLinks;
 
     return (
         <>
@@ -101,49 +148,96 @@ function ProjectNavMobile({ isProjectNavOpen, setIsProjectNavOpen }) {
                     <AnimatePresence>
                         <motion.div className="projectNavMobile" key="projectnavmobile">
                             <div className="block1Mobile">
-                                {mainSiteLink.length > 0 &&
-                                    mainSiteLink.map((mSL, index) => (
-                                        <div className="mainSiteLinkMobile" title={"Currently at Main site"} key={index}>
-                                            <div className="mSImgMobile" style={{ backgroundImage: `url(${mSL.image})` }} />
-                                            <div className="mSTitleMobile">
-                                                <p>{mSL.label}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+                                <div className="b1TitleMobile">
+                                    <p>Control:</p>
+                                </div>
+                                <div className="b1ContentMobile">
+                                    {controlLinks.length > 0 &&
+                                        controlLinks.map((controlLink, index) =>
+                                            controlLink.disabled ? (
+                                                <div className="controlLinkDMobile" title={"Currently not available"} key={index}>
+                                                    <div className="cLImgMobile" style={{ backgroundImage: `url(${controlLink.image})` }} />
+                                                    <div className="cLTitleMobile">
+                                                        <p>{controlLink.label}</p>
+                                                    </div>
+                                                </div>
+                                            ) : controlLink.current ? (
+                                                <div className="controlLinkCMobile" title={`Currently at ${controlLink.label}`} key={index}>
+                                                    <div className="cLImgMobile" style={{ backgroundImage: `url(${controlLink.image})` }} />
+                                                    <div className="cLTitleMobile">
+                                                        <p>{controlLink.label}</p>
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <motion.a
+                                                    className="controlLinkMobile"
+                                                    key={index}
+                                                    href={controlLink.link}
+                                                    whileHover={{
+                                                        scale: 1.05,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    <div className="cLImgMobile" style={{ backgroundImage: `url(${controlLink.image})` }} />
+                                                    <div className="cLTitleMobile">
+                                                        <p>{controlLink.label}</p>
+                                                    </div>
+                                                </motion.a>
+                                            )
+                                        )}
+                                </div>
                             </div>
                             <div className="block2Mobile">
-                                {projectLinks.length > 0 ? (
-                                    projectLinks.map((projectLink, index) =>
-                                        projectLink.disabled ? (
-                                            <div className="projectLinkDMobile" title={"Currently not available"} key={index}>
-                                                <div className="pLImgMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                <div className="pLTitleMobile">
-                                                    <p>{projectLink.label}</p>
+                                <div className="b2TitleMobile">
+                                    <p>Applications:</p>
+                                </div>
+                                <div className="b2ContentMobile">
+                                    {appLinks.length > 0 ? (
+                                        appLinks.map((appLink, index) =>
+                                            appLink.disabled ? (
+                                                <div className="appLinkDMobile" title={"Currently not available"} key={index}>
+                                                    <div className="aImgMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                    <div className="aTitleMobile">
+                                                        <p>{appLink.label}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ) : (
-                                            <motion.a
-                                                className="projectLinkMobile"
-                                                key={index}
-                                                href={projectLink.link}
-                                                whileHover={{
-                                                    scale: 1.05,
-                                                    transition: { duration: 0.1 },
-                                                }}
-                                                whileTap={{ scale: 0.9 }}
-                                            >
-                                                <div className="pLImgMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                <div className="pLTitleMobile">
-                                                    <p>{projectLink.label}</p>
+                                            ) : appLink.current ? (
+                                                <div className="appLinkCMobile" title={`Currently at ${appLink.label}`} key={index}>
+                                                    <div className="aImgMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                    <div className="aTitleMobile">
+                                                        <p>{appLink.label}</p>
+                                                    </div>
                                                 </div>
-                                            </motion.a>
+                                            ) : (
+                                                <motion.a
+                                                    className="appLinkMobile"
+                                                    key={index}
+                                                    href={appLink.link}
+                                                    whileHover={{
+                                                        scale: 1.05,
+                                                        transition: { duration: 0.1 },
+                                                    }}
+                                                    whileTap={{ scale: 0.9 }}
+                                                >
+                                                    <div className="aImgMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                    <div className="aTitleMobile">
+                                                        <p>{appLink.label}</p>
+                                                    </div>
+                                                </motion.a>
+                                            )
                                         )
-                                    )
-                                ) : (
-                                    <p className="noProjectLinksMobile">NO OTHER SITES YET!</p>
-                                )}
+                                    ) : (
+                                        <p className="noAppLinksMobile">NO APPS YET!</p>
+                                    )}
+                                </div>
                             </div>
-                            <div className="block3Mobile"></div>
+                            <div className="block3Mobile">
+                                <div className="b3TitleMobile">
+                                    <p></p>
+                                </div>
+                                <div className="b3ContentMobile"></div>
+                            </div>
                         </motion.div>
                     </AnimatePresence>
                 </>

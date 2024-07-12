@@ -7,7 +7,7 @@ import "./Footer.scss";
 function FooterAdmin() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     useEffect(() => {
         const handleResize = () => {
@@ -194,15 +194,15 @@ function FooterAdmin() {
                                 </a>
                             </div>
                             <div className="footerNav3">
-                                {projectLinks.length > 0 &&
-                                    projectLinks.map((projectLink, index) =>
-                                        projectLink.disabled ? (
+                                {appLinks.length > 0 &&
+                                    appLinks.map((appLink, index) =>
+                                        appLink.disabled ? (
                                             <div className="footerNav3-1D" key={"FN-3-" + index + 1 + "A"} title={"Currently not available"}>
-                                                <div className="image" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                <h3>{projectLink.label}</h3>
+                                                <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                <h3>{appLink.label}</h3>
                                             </div>
                                         ) : (
-                                            <a style={{ textDecoration: "none" }} href={projectLink.link}>
+                                            <a style={{ textDecoration: "none" }} href={appLink.link}>
                                                 <AnimatePresence>
                                                     <motion.div
                                                         className="footerNav3-1"
@@ -213,8 +213,8 @@ function FooterAdmin() {
                                                         }}
                                                         whileTap={{ scale: 0.9 }}
                                                     >
-                                                        <div className="image" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                                        <h3>{projectLink.label}</h3>
+                                                        <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                        <h3>{appLink.label}</h3>
                                                     </motion.div>
                                                 </AnimatePresence>
                                             </a>
@@ -233,7 +233,7 @@ function FooterAdmin() {
 //Mobile:
 function FooterAdminMobile() {
     const navigate = useNavigate();
-    const projectLinks = info.projectLinks;
+    const appLinks = info.appLinks;
 
     return (
         <footer className="footerAdminMobile">
@@ -405,15 +405,15 @@ function FooterAdminMobile() {
                     </a>
                 </div>
                 <div className="footerNav3Mobile">
-                    {projectLinks.length > 0 &&
-                        projectLinks.map((projectLink, index) =>
-                            projectLink.disabled ? (
+                    {appLinks.length > 0 &&
+                        appLinks.map((appLink, index) =>
+                            appLink.disabled ? (
                                 <div className="footerNav3-1DM" key={"FN-3-" + index + 1 + "A"} title={"Currently not available"}>
-                                    <div className="imageMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                    <h3>{projectLink.label}</h3>
+                                    <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                    <h3>{appLink.label}</h3>
                                 </div>
                             ) : (
-                                <a style={{ textDecoration: "none" }} href={projectLink.link}>
+                                <a style={{ textDecoration: "none" }} href={appLink.link}>
                                     <AnimatePresence>
                                         <motion.div
                                             className="footerNav3-1M"
@@ -424,8 +424,8 @@ function FooterAdminMobile() {
                                             }}
                                             whileTap={{ scale: 0.9 }}
                                         >
-                                            <div className="imageMobile" style={{ backgroundImage: `url(${projectLink.image})` }} />
-                                            <h3>{projectLink.label}</h3>
+                                            <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                            <h3>{appLink.label}</h3>
                                         </motion.div>
                                     </AnimatePresence>
                                 </a>

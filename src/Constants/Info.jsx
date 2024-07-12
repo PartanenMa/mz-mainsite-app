@@ -4,12 +4,13 @@ import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 import MainSiteImg from "/src/Assets/Images/MainSite.png";
+import MasterCPImg from "/src/Assets/Images/MasterCP.png";
 import PortfolioImg from "/src/Assets/Images/PortfolioSite.png";
 
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.5.14",
+    version: "Release 1.5.15",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/mainsite",
         dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/mainsite/admin/dashboard",
@@ -31,8 +32,13 @@ export const info = {
         cvPage: deployToGitHubPages ? "/mz-mainsite-app/cv" : "/mainsite/cv",
         cvPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/cv" : "/mainsite/admin/cv",
     },
-    mainSiteLink: [{ label: "Main site", image: MainSiteImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-mainsite-app/" : "https://matrixzone.netlify.app/" }],
-    projectLinks: [{ label: "Portfolio", image: PortfolioImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-portfolio-app/" : "https://matrixzone.netlify.app/", disabled: true }],
+    controlLinks: [
+        { label: "Main site", image: MainSiteImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-mainsite-app/" : "https://matrixzone.netlify.app/", disabled: false, current: true },
+        { label: "Master CP", image: MasterCPImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-mastercp-app/" : "https://matrixzone.netlify.app/", disabled: true, current: false },
+    ],
+    appLinks: [
+        { label: "Portfolio", image: PortfolioImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-portfolio-app/" : "https://matrixzone.netlify.app/", disabled: true, current: false },
+    ],
     testLoginFe: {
         enabled: false,
         adminUserName: "AdminTest",
