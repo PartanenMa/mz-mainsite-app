@@ -3,9 +3,9 @@ import Notification from "/src/Components/Notification/Notification.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import "./ResetDBButton.scss";
+import "./ResetDbButton.scss";
 
-function ResetDBButton(props) {
+function ResetDbButton(props) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
     const [notificationContent, setNotificationContent] = useState({
@@ -35,13 +35,22 @@ function ResetDBButton(props) {
     const resetDB = () => {
         const csrfToken = sessionStorage.getItem("csrfToken");
 
-        const originalGoalsData = dataFe.goalsData;
+        const originalDbData = {
+            professionStatus: dataFe.professionStatus,
+            jobStatus: dataFe.jobStatus,
+            technologiesDataP: dataFe.technologiesDataP,
+            technologiesDataJ: dataFe.technologiesDataJ,
+            profileData: dataFe.profileData,
+            projectsData: dataFe.projectsData,
+            videosData: dataFe.videosData,
+            goalsData: dataFe.goalsData,
+        };
 
         fetch("/reset", {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ originalGoalsData, csrfToken }),
+            body: JSON.stringify({ originalDbData, csrfToken }),
         }).then((res) => {
             const statusCode = res.status;
 
@@ -140,4 +149,4 @@ function ResetDBButton(props) {
     );
 }
 
-export default ResetDBButton;
+export default ResetDbButton;

@@ -4,7 +4,7 @@ import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
-import ResetDBButton from "/src/Components/ResetDBButton/ResetDBButton.jsx";
+import ResetDbButton from "/src/Components/ResetDbButton/ResetDbButton.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
@@ -530,8 +530,8 @@ function DatabaseSettingsSection() {
             <div className="dBSSAContent">
                 <div className="dBSSAC1"></div>
                 <div className="dBSSAC2">
-                    <ResetDBButton action={"RESET"} />
-                    <ResetDBButton action={"CLEAR"} />
+                    <ResetDbButton action={"RESET"} />
+                    <ResetDbButton action={"CLEAR"} />
                 </div>
             </div>
         </div>
@@ -893,8 +893,8 @@ function DatabaseSettingsSectionMobile() {
             <div className="dBSSAContentMobile">
                 <div className="dBSSAC1M"></div>
                 <div className="dBSSAC2M">
-                    <ResetDBButton action={"RESET"} />
-                    <ResetDBButton action={"CLEAR"} />
+                    <ResetDbButton action={"RESET"} />
+                    <ResetDbButton action={"CLEAR"} />
                 </div>
             </div>
         </div>

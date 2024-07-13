@@ -404,11 +404,11 @@
             flex-direction: column;
             justify-content: top;
             align-items: left;
-            gap: 10px;
+            gap: 5px;
 
             .footerNav3-1 {
-                height: 40px;
-                width: 260px;
+                height: 20px;
+                width: 130px;
                 display: flex;
                 justify-content: left;
                 align-items: center;
@@ -420,12 +420,13 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 70%;
-                    height: 30px;
-                    width: 40px;
+                    height: 15px;
+                    width: 20px;
                 }
 
                 h3 {
                     color: #03a062;
+                    font-size: 18px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -442,8 +443,8 @@
             }
 
             .footerNav3-1D {
-                height: 40px;
-                width: 260px;
+                height: 20px;
+                width: 130px;
                 cursor: not-allowed;
                 display: flex;
                 justify-content: left;
@@ -456,14 +457,15 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 70%;
-                    height: 30px;
-                    width: 40px;
+                    height: 15px;
+                    width: 20px;
                     transition: filter 300ms;
                     filter: drop-shadow(0 0 0.6em red);
                 }
 
                 h3 {
                     color: red;
+                    font-size: 18px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
