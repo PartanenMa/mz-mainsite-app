@@ -1,0 +1,83 @@
+/*ResetDBButton:*/
+.resetDBBtn {
+    animation: fadeIn 0.3s;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.resetDBBtn:hover {
+    background-color: yellow;
+    color: orange;
+    border: 1px solid orange;
+    transition: background-color 500ms ease-in-out;
+}
+
+.clearDBBtn {
+    animation: fadeIn 0.3s;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.clearDBBtn:hover {
+    background-color: lightcoral;
+    color: red;
+    border: 1px solid red;
+    transition: background-color 500ms ease-in-out;
+}
+
+/*Mobile:*/
+.resetDBBtnMobile {
+    animation: fadeIn 0.3s;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    height: 20px;
+    width: 50px;
+    border-radius: 3px;
+    border: 0.5px solid white;
+    font-size: 7px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.resetDBBtnMobile:hover {
+    background-color: yellow;
+    color: orange;
+    border: 0.5px solid orange;
+    transition: background-color 500ms ease-in-out;
+}
+
+.clearDBBtnMobile {
+    animation: fadeIn 0.3s;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    height: 20px;
+    width: 50px;
+    border-radius: 3px;
+    border: 0.5px solid white;
+    font-size: 7px;
+    font-style: italic;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.clearDBBtnMobile:hover {
+    background-color: lightcoral;
+    color: red;
+    border: 0.5px solid red;
+    transition: background-color 500ms ease-in-out;
+}
