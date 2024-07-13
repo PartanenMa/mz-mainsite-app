@@ -700,6 +700,58 @@
             }
         }
     }
+
+    .databaseSettingsSectionAdmin {
+        height: 230px;
+        width: 100%;
+        border-top: 1px solid #03a062;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .dBSSATitle {
+            background-color: #111;
+            height: 30px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h3 {
+                color: #03a062;
+                font-size: 25px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+                margin-left: 10px;
+            }
+        }
+
+        .dBSSAContent {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+
+            .dBSSAC1 {
+                height: 100%;
+                width: 80%;
+                border-right: 1px solid #03a062;
+            }
+
+            .dBSSAC2 {
+                height: 100%;
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+    }
 }
 
 @keyframes fadeIn {
@@ -1431,6 +1483,58 @@
                     padding: 20px;
                     cursor: default;
                 }
+            }
+        }
+    }
+
+    .databaseSettingsSectionAdminMobile {
+        height: 115px;
+        width: 100%;
+        border-top: 1px solid #03a062;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .dBSSATitleMobile {
+            background-color: #111;
+            height: 15px;
+            width: 100%;
+            border-bottom: 1px solid #03a062;
+            overflow: hidden;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            h3 {
+                color: #03a062;
+                font-size: 12px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+                margin-left: 5px;
+            }
+        }
+
+        .dBSSAContentMobile {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+
+            .dBSSAC1M {
+                height: 100%;
+                width: 80%;
+                border-right: 1px solid #03a062;
+            }
+
+            .dBSSAC2M {
+                height: 100%;
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
             }
         }
     }

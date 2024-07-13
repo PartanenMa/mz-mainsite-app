@@ -4,6 +4,7 @@ import DBstate from "/src/Components/DBstate/DBstate.jsx";
 import Notification from "/src/Components/Notification/Notification.jsx";
 import LoginFirstScreen from "/src/Components/LoginFirstScreen/LoginFirstScreen.jsx";
 import LoadingScreen from "/src/Components/LoadingScreen/LoadingScreen.jsx";
+import ResetDBButton from "/src/Components/ResetDBButton/ResetDBButton.jsx";
 import HeaderAdmin from "/src/Components/Header/HeaderAdmin.jsx";
 import NavAdmin from "/src/Components/Nav/NavAdmin.jsx";
 import FooterAdmin from "/src/Components/Footer/FooterAdmin.jsx";
@@ -166,6 +167,7 @@ function DashboardPage() {
                                 </div>
                                 <LogOutSection />
                                 <PinnedProjectsSection loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
+                                <DatabaseSettingsSection />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -182,6 +184,7 @@ function DashboardPage() {
                                 </div>
                                 <LogOutSectionMobile />
                                 <PinnedProjectsSectionMobile loadingPinnedProjectsData={loadingPinnedProjectsData} statusDB={statusDB} pinnedProjects={pinnedProjects} />
+                                <DatabaseSettingsSectionMobile />
                                 <Notification
                                     isNotificationOpen={isNotificationOpen}
                                     setIsNotificationOpen={setIsNotificationOpen}
@@ -513,6 +516,23 @@ function PinnedProjectsSection({ loadingPinnedProjectsData, statusDB, pinnedProj
                         </motion.div>
                     )}
                 </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function DatabaseSettingsSection() {
+    return (
+        <div className="databaseSettingsSectionAdmin">
+            <div className="dBSSATitle">
+                <h3>DATABASE SETTINGS</h3>
+            </div>
+            <div className="dBSSAContent">
+                <div className="dBSSAC1"></div>
+                <div className="dBSSAC2">
+                    <ResetDBButton action={"RESET"} />
+                    <ResetDBButton action={"CLEAR"} />
+                </div>
             </div>
         </div>
     );
@@ -859,6 +879,23 @@ function PinnedProjectsSectionMobile({ loadingPinnedProjectsData, statusDB, pinn
                         </motion.div>
                     )}
                 </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+function DatabaseSettingsSectionMobile() {
+    return (
+        <div className="databaseSettingsSectionAdminMobile">
+            <div className="dBSSATitleMobile">
+                <h3>DATABASE SETTINGS</h3>
+            </div>
+            <div className="dBSSAContentMobile">
+                <div className="dBSSAC1M"></div>
+                <div className="dBSSAC2M">
+                    <ResetDBButton action={"RESET"} />
+                    <ResetDBButton action={"CLEAR"} />
+                </div>
             </div>
         </div>
     );

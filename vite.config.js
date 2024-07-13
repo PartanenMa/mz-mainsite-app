@@ -22,6 +22,7 @@ export default defineConfig({
             "/videos": apiUrl,
             "/videos/:id": apiUrl,
             "/goals": apiUrl,
+            "/reset": apiUrl,
         },
     },
     plugins: [react()],
