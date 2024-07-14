@@ -197,16 +197,20 @@ function FooterAdmin() {
                                 {appLinks.length > 0 &&
                                     appLinks.map((appLink, index) =>
                                         appLink.disabled ? (
-                                            <div className="footerNav3-1D" key={"FN-3-" + index + 1 + "A"} title={"Currently not available"}>
+                                            <div className="footerNav3-1D" key={`FN-3-${index}A`} title="Currently not available">
+                                                <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                                <h3>{appLink.label}</h3>
+                                            </div>
+                                        ) : appLink.current ? (
+                                            <div className="footerNav3-1C" key={`FN-3-${index}A`} title={`Currently at ${appLink.label}`}>
                                                 <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
                                                 <h3>{appLink.label}</h3>
                                             </div>
                                         ) : (
-                                            <a style={{ textDecoration: "none" }} href={appLink.link}>
+                                            <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}A`}>
                                                 <AnimatePresence>
                                                     <motion.div
                                                         className="footerNav3-1"
-                                                        key={"FN-3-" + index + 1 + "A"}
                                                         whileHover={{
                                                             scale: 1.1,
                                                             transition: { duration: 0.1 },
@@ -243,7 +247,7 @@ function FooterAdminMobile() {
                         className="footerMobileTitleLogo"
                         title="Go to dashboard"
                         onClick={() => navigate(info.routes.dashboardPage)}
-                        key="fibtl"
+                        key="fibtlAM"
                         whileHover={{
                             scale: 1.05,
                             transition: { duration: 0.1 },
@@ -260,7 +264,7 @@ function FooterAdminMobile() {
                             <AnimatePresence>
                                 <motion.h3
                                     onClick={() => navigate(info.routes.homePageAdmin)}
-                                    key="fn1-homem"
+                                    key="fn1-homemAM"
                                     whileHover={{
                                         scale: 1.2,
                                         transition: { duration: 0.1 },
@@ -275,7 +279,7 @@ function FooterAdminMobile() {
                             <AnimatePresence>
                                 <motion.h3
                                     onClick={() => navigate(info.routes.profilePageAdmin)}
-                                    key="fn1-1m"
+                                    key="fn1-1mAM"
                                     whileHover={{
                                         scale: 1.2,
                                         transition: { duration: 0.1 },
@@ -290,7 +294,7 @@ function FooterAdminMobile() {
                             <AnimatePresence>
                                 <motion.h3
                                     onClick={() => navigate(info.routes.projectsPageAdmin)}
-                                    key="fn1-2m"
+                                    key="fn1-2mAM"
                                     whileHover={{
                                         scale: 1.2,
                                         transition: { duration: 0.1 },
@@ -305,7 +309,7 @@ function FooterAdminMobile() {
                             <AnimatePresence>
                                 <motion.h3
                                     onClick={() => navigate(info.routes.videosPageAdmin)}
-                                    key="fn1-3m"
+                                    key="fn1-3mAM"
                                     whileHover={{
                                         scale: 1.2,
                                         transition: { duration: 0.1 },
@@ -320,7 +324,7 @@ function FooterAdminMobile() {
                             <AnimatePresence>
                                 <motion.h3
                                     onClick={() => navigate(info.routes.goalsPageAdmin)}
-                                    key="fn1-4m"
+                                    key="fn1-4mAM"
                                     whileHover={{
                                         scale: 1.2,
                                         transition: { duration: 0.1 },
@@ -335,7 +339,7 @@ function FooterAdminMobile() {
                             <AnimatePresence>
                                 <motion.h3
                                     onClick={() => navigate(info.routes.cvPageAdmin)}
-                                    key="fn1-5m"
+                                    key="fn1-5mAM"
                                     whileHover={{
                                         scale: 1.2,
                                         transition: { duration: 0.1 },
@@ -353,7 +357,7 @@ function FooterAdminMobile() {
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav2-1M"
-                                key="fn2-1m"
+                                key="fn2-1mAM"
                                 whileHover={{
                                     scale: 1.2,
                                     transition: { duration: 0.1 },
@@ -371,7 +375,7 @@ function FooterAdminMobile() {
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav2-2M"
-                                key="fn2-2m"
+                                key="fn2-2mAM"
                                 whileHover={{
                                     scale: 1.2,
                                     transition: { duration: 0.1 },
@@ -389,7 +393,7 @@ function FooterAdminMobile() {
                         <AnimatePresence>
                             <motion.div
                                 className="footerNav2-3M"
-                                key="fn2-3m"
+                                key="fn2-3mAM"
                                 whileHover={{
                                     scale: 1.2,
                                     transition: { duration: 0.1 },
@@ -408,16 +412,20 @@ function FooterAdminMobile() {
                     {appLinks.length > 0 &&
                         appLinks.map((appLink, index) =>
                             appLink.disabled ? (
-                                <div className="footerNav3-1DM" key={"FN-3-" + index + 1 + "A"} title={"Currently not available"}>
+                                <div className="footerNav3-1DM" key={`FN-3-${index}AM`} title="Currently not available">
+                                    <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
+                                    <h3>{appLink.label}</h3>
+                                </div>
+                            ) : appLink.current ? (
+                                <div className="footerNav3-1CM" key={`FN-3-${index}AM`} title={`Currently at ${appLink.label}`}>
                                     <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
                                     <h3>{appLink.label}</h3>
                                 </div>
                             ) : (
-                                <a style={{ textDecoration: "none" }} href={appLink.link}>
+                                <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}AM`}>
                                     <AnimatePresence>
                                         <motion.div
                                             className="footerNav3-1M"
-                                            key={"FN-3-" + index + 1 + "A"}
                                             whileHover={{
                                                 scale: 1.1,
                                                 transition: { duration: 0.1 },
