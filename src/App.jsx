@@ -47,6 +47,7 @@ function App() {
             const timer = setTimeout(() => {
                 setIsAfterIntroLoad(false);
                 sessionStorage.setItem("afterIntroLoading", "false");
+                navigate(info.routes.frontPage);
             }, 1000);
 
             return () => clearTimeout(timer);
