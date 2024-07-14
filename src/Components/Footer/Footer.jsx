@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Footer.scss";
@@ -7,6 +7,7 @@ import "./Footer.scss";
 function Footer() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
+    const location = useLocation();
     const appLinks = info.appLinks;
 
     useEffect(() => {
@@ -31,7 +32,7 @@ function Footer() {
                                 <AnimatePresence>
                                     <motion.div
                                         className="footerInfoBoxTitleLogo"
-                                        title="Go to front page"
+                                        title={location.pathname === info.routes.frontPage ? "" : "Go to front page"}
                                         onClick={() => navigate(info.routes.frontPage)}
                                         key="fibtl"
                                         whileHover={{
@@ -239,6 +240,7 @@ function Footer() {
 //Mobile:
 function FooterMobile() {
     const navigate = useNavigate();
+    const location = useLocation();
     const appLinks = info.appLinks;
 
     return (
@@ -247,7 +249,7 @@ function FooterMobile() {
                 <AnimatePresence>
                     <motion.div
                         className="footerMobileTitleLogo"
-                        title="Go to front page"
+                        title={location.pathname === info.routes.frontPage ? "" : "Go to front page"}
                         onClick={() => navigate(info.routes.frontPage)}
                         key="fibtl"
                         whileHover={{

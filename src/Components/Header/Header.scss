@@ -130,6 +130,10 @@
     border-left: 3px solid #03a062;
     border-right: 3px solid #03a062;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 125px;
 
     .logoContainer {
         background-image: url("/src/Assets/Images/Logo.PNG");
@@ -141,6 +145,7 @@
         border-radius: 10px;
         border: 1px solid #03a062;
         transition: filter 300ms;
+        margin-bottom: 15px;
     }
 
     .logoContainer:hover {
@@ -149,11 +154,9 @@
     }
 
     .titleContainer {
-        height: 0px;
-        float: right;
         position: relative;
-        bottom: 185px;
-        right: 400px;
+        right: 90px;
+        margin-bottom: 15px;
 
         h1 {
             color: #03a062;
@@ -171,9 +174,7 @@
         background-size: 60%;
         height: 90%;
         width: 10%;
-        float: right;
-        position: relative;
-        bottom: 110px;
+        margin-bottom: 15px;
     }
 }
 

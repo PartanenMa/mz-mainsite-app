@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Header.scss";
@@ -41,11 +41,13 @@ function HeaderAdmin() {
 
 function Logo() {
     const navigate = useNavigate();
+    const location = useLocation();
+
     return (
         <AnimatePresence>
             <motion.div
                 className="logoContainer"
-                title="Go to dashboard"
+                title={location.pathname === info.routes.dashboardPage ? "" : "Go to dashboard"}
                 onClick={() => navigate(info.routes.dashboardPage)}
                 key="logocontainerA"
                 whileHover={{
@@ -62,7 +64,7 @@ function Title() {
     return (
         <div className="titleContainer">
             <h1>
-                MatrixZone<span style={{ fontSize: "20px", textShadow: "none" }}> Admin panel</span>
+                MatrixZone<span style={{ fontSize: "20px", textShadow: "none" }}> Main site admin panel</span>
             </h1>
         </div>
     );
@@ -75,11 +77,13 @@ function Matrix() {
 //Mobile:
 function LogoMobile() {
     const navigate = useNavigate();
+    const location = useLocation();
+
     return (
         <AnimatePresence>
             <motion.div
                 className="logoContainerMobile"
-                title="Go to dashboard"
+                title={location.pathname === info.routes.dashboardPage ? "" : "Go to dashboard"}
                 onClick={() => navigate(info.routes.dashboardPage)}
                 key="logocontainermobileA"
                 whileHover={{
@@ -96,7 +100,7 @@ function TitleMobile() {
     return (
         <div className="titleContainerMobile">
             <h1>
-                MatrixZone<span style={{ fontSize: "5px", textShadow: "none" }}> Admin panel</span>
+                MatrixZone<span style={{ fontSize: "5px", textShadow: "none" }}> Main site admin panel</span>
             </h1>
         </div>
     );

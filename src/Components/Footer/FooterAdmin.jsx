@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Footer.scss";
@@ -7,6 +7,7 @@ import "./Footer.scss";
 function FooterAdmin() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
+    const location = useLocation();
     const appLinks = info.appLinks;
 
     useEffect(() => {
@@ -30,7 +31,7 @@ function FooterAdmin() {
                             <AnimatePresence>
                                 <motion.div
                                     className="footerInfoBoxTitleLogo"
-                                    title="Go to dashboard"
+                                    title={location.pathname === info.routes.dashboardPage ? "" : "Go to dashboard"}
                                     onClick={() => navigate(info.routes.dashboardPage)}
                                     key="fibtlA"
                                     whileHover={{
@@ -237,6 +238,7 @@ function FooterAdmin() {
 //Mobile:
 function FooterAdminMobile() {
     const navigate = useNavigate();
+    const location = useLocation();
     const appLinks = info.appLinks;
 
     return (
@@ -245,7 +247,7 @@ function FooterAdminMobile() {
                 <AnimatePresence>
                     <motion.div
                         className="footerMobileTitleLogo"
-                        title="Go to dashboard"
+                        title={location.pathname === info.routes.dashboardPage ? "" : "Go to dashboard"}
                         onClick={() => navigate(info.routes.dashboardPage)}
                         key="fibtlAM"
                         whileHover={{
