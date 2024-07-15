@@ -23,8 +23,10 @@ import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 //Skills (back-end development):
+import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
 import CsLogo from "/src/Assets/Images/CsLogo.svg";
 import GoLogo from "/src/Assets/Images/GoLogo.svg";
+import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 import MariaDBLogo from "/src/Assets/Images/MariaDBLogo.svg";
@@ -376,22 +378,14 @@ export const dataFe = {
                 backEndProgrammingLanguages: [
                     {
                         id: 0,
-                        name: "JavaScript",
+                        name: "Java",
                         skillLevel: "intermediate",
-                        color: "#f0db4f",
-                        image: JavaScriptLogo,
-                        backgroundSize: "65%",
+                        color: "#5382a1",
+                        image: JavaLogo,
+                        backgroundSize: "100%",
                     },
                     {
                         id: 1,
-                        name: "TypeScript",
-                        skillLevel: "beginner",
-                        color: "#007acc",
-                        image: TypeScriptLogo,
-                        backgroundSize: "65%",
-                    },
-                    {
-                        id: 2,
                         name: "C#",
                         skillLevel: "intermediate",
                         color: "#684D95",
@@ -399,11 +393,19 @@ export const dataFe = {
                         backgroundSize: "60%",
                     },
                     {
-                        id: 3,
+                        id: 2,
                         name: "Go",
-                        skillLevel: "beginner",
+                        skillLevel: "experienced",
                         color: "#00add8",
                         image: GoLogo,
+                        backgroundSize: "90%",
+                    },
+                    {
+                        id: 3,
+                        name: "PHP",
+                        skillLevel: "beginner",
+                        color: "#8993be",
+                        image: PHPLogo,
                         backgroundSize: "90%",
                     },
                 ],
