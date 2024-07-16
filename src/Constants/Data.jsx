@@ -379,7 +379,7 @@ export const dataFe = {
                     {
                         id: 0,
                         name: "Java",
-                        skillLevel: "intermediate",
+                        skillLevel: "experienced",
                         color: "#5382a1",
                         image: JavaLogo,
                         backgroundSize: "100%",
@@ -387,7 +387,7 @@ export const dataFe = {
                     {
                         id: 1,
                         name: "C#",
-                        skillLevel: "intermediate",
+                        skillLevel: "experienced",
                         color: "#684D95",
                         image: CsLogo,
                         backgroundSize: "60%",
@@ -395,7 +395,7 @@ export const dataFe = {
                     {
                         id: 2,
                         name: "Go",
-                        skillLevel: "experienced",
+                        skillLevel: "intermediate",
                         color: "#00add8",
                         image: GoLogo,
                         backgroundSize: "90%",
