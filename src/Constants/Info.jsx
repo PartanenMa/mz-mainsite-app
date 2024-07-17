@@ -104,7 +104,12 @@ export const info = {
         emailAddress: "manu111.partanen@gmail.com",
         link: "https://www.linkedin.com/in/manu-partanen-7864b4265/",
         //Profile description:
-        description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.",
+        description1:
+            "Hello, I'm Manu Partanen, a passionate software developer specializing in " +
+            (dataFe.professionStatus.professionTech === "Front-end Developer" ? "front-end" : "") +
+            (dataFe.professionStatus.professionTech === "Back-end Developer" ? "back-end" : "") +
+            (dataFe.professionStatus.professionTech === "Full-stack Developer" ? "full-stack" : "") +
+            " web development.",
         description2:
             "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
             (dataFe.jobStatus.employed ? dataFe.jobStatus.jobTechStackFe : dataFe.professionStatus.professionTechStackFe) +

@@ -217,7 +217,12 @@ function Breadcrumb() {
 }
 
 function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobData }) {
-    let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
+    let description1 =
+        "Hello, I'm Manu Partanen, a passionate software developer specializing in " +
+        (professionData?.professionStatus?.professionTech === "Front-end Developer" ? "front-end" : "") +
+        (professionData?.professionStatus?.professionTech === "Back-end Developer" ? "back-end" : "") +
+        (professionData?.professionStatus?.professionTech === "Full-stack Developer" ? "full-stack" : "") +
+        " web development.";
     let description2 =
         "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
         (jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStackFe : professionData?.professionStatus?.professionTechStackFe) +
@@ -1284,7 +1289,12 @@ function BreadcrumbMobile() {
 }
 
 function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, jobData }) {
-    let description1 = "Hello, I'm Manu Partanen, a passionate software developer specializing in web development.";
+    let description1 =
+        "Hello, I'm Manu Partanen, a passionate software developer specializing in " +
+        (professionData?.professionStatus?.professionTech === "Front-end Developer" ? "front-end" : "") +
+        (professionData?.professionStatus?.professionTech === "Back-end Developer" ? "back-end" : "") +
+        (professionData?.professionStatus?.professionTech === "Full-stack Developer" ? "full-stack" : "") +
+        " web development.";
     let description2 =
         "With a strong foundation in HTML, CSS, and JavaScript, I enjoy creating dynamic and responsive websites using modern front-end technologies like " +
         (jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTechStackFe : professionData?.professionStatus?.professionTechStackFe) +
