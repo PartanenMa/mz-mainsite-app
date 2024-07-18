@@ -12,6 +12,7 @@ import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
+import WordPressLogo from "/src/Assets/Images/WordPressLogo.svg";
 import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
 import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 //Skills (front-end development):
@@ -23,9 +24,9 @@ import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import TailwindCSSLogo from "/src/Assets/Images/TailwindCSSLogo.svg";
 //Skills (back-end development):
+import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import JavaLogo from "/src/Assets/Images/JavaLogo.svg";
 import CsLogo from "/src/Assets/Images/CsLogo.svg";
-import GoLogo from "/src/Assets/Images/GoLogo.svg";
 import PHPLogo from "/src/Assets/Images/PHPLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
@@ -291,9 +292,17 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                 ],
-                containerizationSoftware: [
+                deploymentSoftware: [
                     {
                         id: 0,
+                        name: "WordPress",
+                        skillLevel: "experienced",
+                        color: "#21759b",
+                        image: WordPressLogo,
+                        backgroundSize: "70%",
+                    },
+                    {
+                        id: 1,
                         name: "Docker",
                         skillLevel: "advanced",
                         color: "#0db7ed",
@@ -301,9 +310,9 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                     {
-                        id: 1,
+                        id: 2,
                         name: "Kubernetes",
-                        skillLevel: "beginner",
+                        skillLevel: "experienced",
                         color: "#3970e4",
                         image: KubernetesLogo,
                         backgroundSize: "70%",
@@ -378,6 +387,14 @@ export const dataFe = {
                 backEndProgrammingLanguages: [
                     {
                         id: 0,
+                        name: "Go",
+                        skillLevel: "intermediate",
+                        color: "#00add8",
+                        image: GoLogo,
+                        backgroundSize: "90%",
+                    },
+                    {
+                        id: 1,
                         name: "Java",
                         skillLevel: "experienced",
                         color: "#5382a1",
@@ -385,20 +402,12 @@ export const dataFe = {
                         backgroundSize: "100%",
                     },
                     {
-                        id: 1,
+                        id: 2,
                         name: "C#",
                         skillLevel: "experienced",
                         color: "#684D95",
                         image: CsLogo,
                         backgroundSize: "60%",
-                    },
-                    {
-                        id: 2,
-                        name: "Go",
-                        skillLevel: "intermediate",
-                        color: "#00add8",
-                        image: GoLogo,
-                        backgroundSize: "90%",
                     },
                     {
                         id: 3,

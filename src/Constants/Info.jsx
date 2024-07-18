@@ -126,7 +126,7 @@ export const info = {
         skillsTitle3: "Back-end development",
         skills1SubTitle1: "Utility software",
         skills1SubTitle2: "CLI software",
-        skills1SubTitle3: "Containerization software",
+        skills1SubTitle3: "Deployment software",
         skills2SubTitle1: "Front-end programming languages",
         skills2SubTitle2: "Front-end frameworks",
         skills2SubTitle3: "CSS frameworks",

@@ -84,7 +84,7 @@ function CRUDProfileButton(props) {
                         } else if (props.dataSkillType === "clis") {
                             setRequiredData(data.profileData.skills.webDevelopmentSoftware.cLISoftware.find((d) => d.id === props.id));
                         } else if (props.dataSkillType === "cs") {
-                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.containerizationSoftware.find((d) => d.id === props.id));
+                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.deploymentSoftware.find((d) => d.id === props.id));
                         } else if (props.dataSkillType === "fepl") {
                             setRequiredData(data.profileData.skills.frontEndDevelopment.frontEndProgrammingLanguages.find((d) => d.id === props.id));
                         } else if (props.dataSkillType === "fef") {
@@ -130,7 +130,7 @@ function CRUDProfileButton(props) {
                 skillType = "cLISoftware";
                 typeOfSkill = "web";
             } else if (skillType === "cs") {
-                skillType = "containerizationSoftware";
+                skillType = "deploymentSoftware";
                 typeOfSkill = "web";
             } else if (skillType === "fepl") {
                 skillType = "frontEndProgrammingLanguages";
@@ -364,7 +364,7 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, id, getProfile,
             skillType = "cLISoftware";
             typeOfSkill = "web";
         } else if (skillType === "cs") {
-            skillType = "containerizationSoftware";
+            skillType = "deploymentSoftware";
             typeOfSkill = "web";
         } else if (skillType === "fepl") {
             skillType = "frontEndProgrammingLanguages";
@@ -849,7 +849,7 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
             skillType = "cLISoftware";
             typeOfSkill = "web";
         } else if (skillType === "cs") {
-            skillType = "containerizationSoftware";
+            skillType = "deploymentSoftware";
             typeOfSkill = "web";
         } else if (skillType === "fepl") {
             skillType = "frontEndProgrammingLanguages";

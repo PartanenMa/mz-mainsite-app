@@ -783,7 +783,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                         <AnimatePresence>
                             {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
+                            skills.webDevelopmentSoftware?.deploymentSoftware?.length > 0 ? (
                                 <>
                                     <div className="software">
                                         <h5>{info.profile.skills1SubTitle1}</h5>
@@ -853,7 +853,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                     </div>
                                     <div className="software">
                                         <h5>{info.profile.skills1SubTitle3}</h5>
-                                        {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.deploymentSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
                                                 style={{ backgroundColor: skill.color }}
@@ -1842,7 +1842,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                         <AnimatePresence>
                             {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.containerizationSoftware?.length > 0 ? (
+                            skills.webDevelopmentSoftware?.deploymentSoftware?.length > 0 ? (
                                 <>
                                     <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle1}</h5>
@@ -1908,7 +1908,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                     </div>
                                     <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle3}</h5>
-                                        {skills.webDevelopmentSoftware.containerizationSoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.deploymentSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
                                                 style={{ backgroundColor: skill.color }}
