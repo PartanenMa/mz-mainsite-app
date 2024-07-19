@@ -63,9 +63,8 @@ function Header() {
                                 />
                                 <h1>MatrixZone</h1>
                                 <div className="version">
-                                    <div className="mainSiteLogo" />
                                     <p>
-                                        Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
+                                        Personal website <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
                                     </p>
                                     <AnimatePresence>
                                         <motion.div
@@ -120,7 +119,7 @@ function HeaderMobile() {
                         <div className="headerTitleContainerMobile">
                             <h1>MatrixZone</h1>
                             <p>
-                                Main site <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
+                                Personal website <span style={{ color: "green" }}>{"(" + info.version + ")"}</span>
                             </p>
                         </div>
                     </motion.div>

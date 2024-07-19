@@ -65,116 +65,6 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-
-            .controlLink {
-                height: 45px;
-                width: 80px;
-                cursor: pointer;
-                text-decoration: none;
-                transition: background-color 300ms ease-in-out;
-                display: flex;
-                flex-direction: column;
-
-                .cLImg {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 30%;
-                    height: 33px;
-                    width: 100%;
-                }
-
-                .cLTitle {
-                    height: 12px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    p {
-                        color: #03a062;
-                        font-size: 12px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-            }
-
-            .controlLink:hover .cLImg {
-                transition: filter 300ms;
-                color: lightgreen;
-                filter: drop-shadow(0 0 0.6em lightgreen);
-            }
-
-            .controlLink:hover p {
-                color: lightgreen;
-            }
-
-            .controlLinkC {
-                height: 45px;
-                width: 80px;
-                cursor: default;
-                text-decoration: none;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                transition: filter 300ms;
-                filter: drop-shadow(0 0 0.6em green);
-
-                .cLImg {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 30%;
-                    height: 33px;
-                    width: 100%;
-                }
-
-                .cLTitle {
-                    height: 12px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    p {
-                        color: green;
-                        font-size: 12px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-            }
-
-            .controlLinkD {
-                height: 45px;
-                width: 80px;
-                cursor: not-allowed;
-                text-decoration: none;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                transition: filter 300ms;
-                filter: drop-shadow(0 0 0.6em red);
-
-                .cLImg {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 30%;
-                    height: 33px;
-                    width: 100%;
-                }
-
-                .cLTitle {
-                    height: 12px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    p {
-                        color: red;
-                        font-size: 12px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-            }
         }
     }
 
@@ -429,116 +319,6 @@
             justify-content: center;
             align-items: center;
             gap: 5px;
-
-            .controlLinkMobile {
-                height: 23px;
-                width: 40px;
-                cursor: pointer;
-                text-decoration: none;
-                transition: background-color 300ms ease-in-out;
-                display: flex;
-                flex-direction: column;
-
-                .cLImgMobile {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 30%;
-                    height: 16px;
-                    width: 100%;
-                }
-
-                .cLTitleMobile {
-                    height: 7px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    p {
-                        color: #03a062;
-                        font-size: 6px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-            }
-
-            .controlLinkMobile:hover .cLImgMobile {
-                transition: filter 300ms;
-                color: lightgreen;
-                filter: drop-shadow(0 0 0.6em lightgreen);
-            }
-
-            .controlLinkMobile:hover p {
-                color: lightgreen;
-            }
-
-            .controlLinkCMobile {
-                height: 23px;
-                width: 40px;
-                cursor: default;
-                text-decoration: none;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                transition: filter 300ms;
-                filter: drop-shadow(0 0 0.6em green);
-
-                .cLImgMobile {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 30%;
-                    height: 16px;
-                    width: 100%;
-                }
-
-                .cLTitleMobile {
-                    height: 7px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    p {
-                        color: green;
-                        font-size: 6px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-            }
-
-            .controlLinkDMobile {
-                height: 23px;
-                width: 40px;
-                cursor: not-allowed;
-                text-decoration: none;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                transition: filter 300ms;
-                filter: drop-shadow(0 0 0.6em red);
-
-                .cLImgMobile {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 30%;
-                    height: 16px;
-                    width: 100%;
-                }
-
-                .cLTitleMobile {
-                    height: 7px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    p {
-                        color: red;
-                        font-size: 6px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    }
-                }
-            }
         }
     }
 
@@ -562,7 +342,6 @@
                 font-size: 7px;
                 font-style: italic;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                text-decoration: underline;
             }
         }
 
@@ -687,7 +466,7 @@
 
             .noAppLinksMobile {
                 color: #03a062;
-                font-size: 20px;
+                font-size: 10px;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             }
         }

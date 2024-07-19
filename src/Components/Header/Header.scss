@@ -86,18 +86,9 @@
                 position: relative;
                 right: -20px;
 
-                .mainSiteLogo {
-                    background-image: url("/src/Assets/Images/MainSite.png");
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    height: 20px;
-                    width: 20px;
-                }
-
                 p {
                     color: #03a062;
-                    font-size: 14px;
+                    font-size: 12px;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.3px 0.3px 0 lightgreen;
                     cursor: default;
@@ -133,7 +124,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 125px;
+    gap: 170px;
 
     .logoContainer {
         background-image: url("/src/Assets/Images/Logo.PNG");
@@ -155,7 +146,7 @@
 
     .titleContainer {
         position: relative;
-        right: 90px;
+        right: 120px;
         margin-bottom: 15px;
 
         h1 {
@@ -247,7 +238,7 @@
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     position: relative;
                     bottom: 18px;
-                    right: 21px;
+                    right: 5px;
                 }
             }
 

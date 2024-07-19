@@ -353,7 +353,11 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                                                 <motion.button
                                                     className="videoBtn2"
                                                     key="vbtn2A"
-                                                    onClick={() => navigate(`/mainsite/admin/videos/watch/${video.id}`)}
+                                                    onClick={
+                                                        info.deployToGHPages
+                                                            ? () => navigate(`/mz-personalwebsite-app/admin/videos/watch/${video.id}`)
+                                                            : () => navigate(`/admin/videos/watch/${video.id}`)
+                                                    }
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -525,7 +529,11 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                                                 <motion.button
                                                     className="videoBtn2Mobile"
                                                     key="vbtn2mA"
-                                                    onClick={() => navigate(`/mainsite/admin/videos/watch/${video.id}`)}
+                                                    onClick={
+                                                        info.deployToGHPages
+                                                            ? () => navigate(`/mz-personalwebsite-app/admin/videos/watch/${video.id}`)
+                                                            : () => navigate(`/admin/videos/watch/${video.id}`)
+                                                    }
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

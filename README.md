@@ -10,11 +10,11 @@
 
 # 2. Run program (Vite):
 
-**cd mz-mainsite-app**  
+**cd mz-personalwebsite-app**  
 **npm run dev**
 
 # 3. Run program (Docker):
 
-**cd mz-mainsite-app**  
+**cd mz-personalwebsite-app**  
 **docker compose up -d**  
 **docker compose watch**

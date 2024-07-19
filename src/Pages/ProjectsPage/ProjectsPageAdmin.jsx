@@ -327,6 +327,7 @@ function AboutMyProjects() {
 }
 
 function MyPortfolio() {
+    const navigate = useNavigate();
     const appLinks = info.appLinks;
 
     return (
@@ -335,37 +336,26 @@ function MyPortfolio() {
                 <h3>MY PORTFOLIO</h3>
             </div>
             <div className="portfolioContent">
-                {appLinks[0].disabled ? (
-                    <div className="pCBoxD" title="Currently not available">
+                <AnimatePresence>
+                    <motion.div
+                        className="pCBox"
+                        title="Go to portfolio"
+                        key="gotoportfolioA"
+                        onClick={() => navigate(info.routes.portfolioPageAdmin)}
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
                         <div className="pCB1">
                             <div className="portfolioImg" />
                         </div>
                         <div className="pCB2">
                             <p>{"<MyPortfolio/>"}</p>
                         </div>
-                    </div>
-                ) : (
-                    <AnimatePresence>
-                        <motion.a
-                            className="pCBox"
-                            href={appLinks[0].link}
-                            title="Go to portfolio"
-                            key="gotoportfolioA"
-                            whileHover={{
-                                scale: 1.03,
-                                transition: { duration: 0.1 },
-                            }}
-                            whileTap={{ scale: 0.98 }}
-                        >
-                            <div className="pCB1">
-                                <div className="portfolioImg" />
-                            </div>
-                            <div className="pCB2">
-                                <p>{"<MyPortfolio/>"}</p>
-                            </div>
-                        </motion.a>
-                    </AnimatePresence>
-                )}
+                    </motion.div>
+                </AnimatePresence>
             </div>
             <div className="space1" />
             <div className="or">
@@ -532,7 +522,11 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                                                 <motion.button
                                                     className="projectBtn3"
                                                     key="pbtn3A"
-                                                    onClick={() => navigate(`/mainsite/admin/projects/view/${project.id}`)}
+                                                    onClick={
+                                                        info.deployToGHPages
+                                                            ? () => navigate(`/mz-personalwebsite-app/admin/projects/view/${project.id}`)
+                                                            : () => navigate(`/admin/projects/view/${project.id}`)
+                                                    }
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -619,6 +613,7 @@ function AboutMyProjectsMobile() {
 }
 
 function MyPortfolioMobile() {
+    const navigate = useNavigate();
     const appLinks = info.appLinks;
 
     return (
@@ -627,37 +622,26 @@ function MyPortfolioMobile() {
                 <h3>MY PORTFOLIO</h3>
             </div>
             <div className="portfolioContentMobile">
-                {appLinks[0].disabled ? (
-                    <div className="pCBoxDMobile" title="Currently not available">
+                <AnimatePresence>
+                    <motion.div
+                        className="pCBoxMobile"
+                        title="Go to portfolio"
+                        key="gotoportfoliomobileA"
+                        onClick={() => navigate(info.routes.portfolioPageAdmin)}
+                        whileHover={{
+                            scale: 1.03,
+                            transition: { duration: 0.1 },
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
                         <div className="pCB1M">
                             <div className="portfolioImgMobile" />
                         </div>
                         <div className="pCB2M">
                             <p>{"<MyPortfolio/>"}</p>
                         </div>
-                    </div>
-                ) : (
-                    <AnimatePresence>
-                        <motion.a
-                            className="pCBoxMobile"
-                            href={appLinks[0].link}
-                            title="Go to portfolio"
-                            key="gotoportfoliomobileA"
-                            whileHover={{
-                                scale: 1.03,
-                                transition: { duration: 0.1 },
-                            }}
-                            whileTap={{ scale: 0.98 }}
-                        >
-                            <div className="pCB1M">
-                                <div className="portfolioImgMobile" />
-                            </div>
-                            <div className="pCB2M">
-                                <p>{"<MyPortfolio/>"}</p>
-                            </div>
-                        </motion.a>
-                    </AnimatePresence>
-                )}
+                    </motion.div>
+                </AnimatePresence>
             </div>
             <div className="space1Mobile" />
             <div className="orMobile">
@@ -836,7 +820,11 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
                                                 <motion.button
                                                     className="projectBtn3Mobile"
                                                     key="pbtn3mA"
-                                                    onClick={() => navigate(`/mainsite/admin/projects/view/${project.id}`)}
+                                                    onClick={
+                                                        info.deployToGHPages
+                                                            ? () => navigate(`/mz-personalwebsite-app/admin/projects/view/${project.id}`)
+                                                            : () => navigate(`/admin/projects/view/${project.id}`)
+                                                    }
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

@@ -26,5 +26,5 @@ export default defineConfig({
         },
     },
     plugins: [react()],
-    base: deployToGitHubPages ? "/mz-mainsite-app/" : "/",
+    base: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
 });

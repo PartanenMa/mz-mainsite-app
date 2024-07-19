@@ -5,7 +5,6 @@ import "./ProjectNav.scss";
 
 function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const controlLinks = info.controlLinks;
     const appLinks = info.appLinks;
 
     useEffect(() => {
@@ -33,44 +32,9 @@ function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
                                 <motion.div className="projectNav" key="projectnav">
                                     <div className="block1">
                                         <div className="b1Title">
-                                            <p>Control:</p>
+                                            <p></p>
                                         </div>
-                                        <div className="b1Content">
-                                            {controlLinks.length > 0 &&
-                                                controlLinks.map((controlLink, index) =>
-                                                    controlLink.disabled ? (
-                                                        <div className="controlLinkD" title={"Currently not available"} key={index}>
-                                                            <div className="cLImg" style={{ backgroundImage: `url(${controlLink.image})` }} />
-                                                            <div className="cLTitle">
-                                                                <p>{controlLink.label}</p>
-                                                            </div>
-                                                        </div>
-                                                    ) : controlLink.current ? (
-                                                        <div className="controlLinkC" title={`Currently at ${controlLink.label}`} key={index}>
-                                                            <div className="cLImg" style={{ backgroundImage: `url(${controlLink.image})` }} />
-                                                            <div className="cLTitle">
-                                                                <p>{controlLink.label}</p>
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <motion.a
-                                                            className="controlLink"
-                                                            key={index}
-                                                            href={controlLink.link}
-                                                            whileHover={{
-                                                                scale: 1.05,
-                                                                transition: { duration: 0.1 },
-                                                            }}
-                                                            whileTap={{ scale: 0.9 }}
-                                                        >
-                                                            <div className="cLImg" style={{ backgroundImage: `url(${controlLink.image})` }} />
-                                                            <div className="cLTitle">
-                                                                <p>{controlLink.label}</p>
-                                                            </div>
-                                                        </motion.a>
-                                                    )
-                                                )}
-                                        </div>
+                                        <div className="b1Content"></div>
                                     </div>
                                     <div className="block2">
                                         <div className="b2Title">
@@ -135,7 +99,6 @@ function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
 
 //Mobile:
 function ProjectNavMobile({ isProjectNavOpen, setIsProjectNavOpen }) {
-    const controlLinks = info.controlLinks;
     const appLinks = info.appLinks;
 
     return (
@@ -149,44 +112,9 @@ function ProjectNavMobile({ isProjectNavOpen, setIsProjectNavOpen }) {
                         <motion.div className="projectNavMobile" key="projectnavmobile">
                             <div className="block1Mobile">
                                 <div className="b1TitleMobile">
-                                    <p>Control:</p>
+                                    <p></p>
                                 </div>
-                                <div className="b1ContentMobile">
-                                    {controlLinks.length > 0 &&
-                                        controlLinks.map((controlLink, index) =>
-                                            controlLink.disabled ? (
-                                                <div className="controlLinkDMobile" title={"Currently not available"} key={index}>
-                                                    <div className="cLImgMobile" style={{ backgroundImage: `url(${controlLink.image})` }} />
-                                                    <div className="cLTitleMobile">
-                                                        <p>{controlLink.label}</p>
-                                                    </div>
-                                                </div>
-                                            ) : controlLink.current ? (
-                                                <div className="controlLinkCMobile" title={`Currently at ${controlLink.label}`} key={index}>
-                                                    <div className="cLImgMobile" style={{ backgroundImage: `url(${controlLink.image})` }} />
-                                                    <div className="cLTitleMobile">
-                                                        <p>{controlLink.label}</p>
-                                                    </div>
-                                                </div>
-                                            ) : (
-                                                <motion.a
-                                                    className="controlLinkMobile"
-                                                    key={index}
-                                                    href={controlLink.link}
-                                                    whileHover={{
-                                                        scale: 1.05,
-                                                        transition: { duration: 0.1 },
-                                                    }}
-                                                    whileTap={{ scale: 0.9 }}
-                                                >
-                                                    <div className="cLImgMobile" style={{ backgroundImage: `url(${controlLink.image})` }} />
-                                                    <div className="cLTitleMobile">
-                                                        <p>{controlLink.label}</p>
-                                                    </div>
-                                                </motion.a>
-                                            )
-                                        )}
-                                </div>
+                                <div className="b1ContentMobile"></div>
                             </div>
                             <div className="block2Mobile">
                                 <div className="b2TitleMobile">

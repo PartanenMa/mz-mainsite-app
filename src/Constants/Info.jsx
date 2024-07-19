@@ -3,53 +3,42 @@ import ReactLogo from "/src/Assets/Images/ReactLogo.svg";
 import SassLogo from "/src/Assets/Images/SassLogo.svg";
 import ExpressjsLogo from "/src/Assets/Images/ExpressjsLogo.png";
 import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
-import MainSiteImg from "/src/Assets/Images/MainSite.png";
-import MasterCPImg from "/src/Assets/Images/MasterCP.png";
-import PortfolioImg from "/src/Assets/Images/PortfolioSite.png";
 
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.6",
+    version: "Release 1.6.1",
     routes: {
-        frontPage: deployToGitHubPages ? "/mz-mainsite-app/" : "/mainsite",
-        dashboardPage: deployToGitHubPages ? "/mz-mainsite-app/admin/dashboard" : "/mainsite/admin/dashboard",
-        loginPage: deployToGitHubPages ? "/mz-mainsite-app/login" : "/mainsite/login",
-        homePage: deployToGitHubPages ? "/mz-mainsite-app/home" : "/mainsite/home",
-        homePageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/home" : "/mainsite/admin/home",
-        profilePage: deployToGitHubPages ? "/mz-mainsite-app/profile" : "/mainsite/profile",
-        profilePageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/profile" : "/mainsite/admin/profile",
-        projectsPage: deployToGitHubPages ? "/mz-mainsite-app/projects" : "/mainsite/projects",
-        projectsPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/projects" : "/mainsite/admin/projects",
-        projectPage: deployToGitHubPages ? "/mz-mainsite-app/projects/view/:id" : "/mainsite/projects/view/:id",
-        projectPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/projects/view/:id" : "/mainsite/admin/projects/view/:id",
-        videosPage: deployToGitHubPages ? "/mz-mainsite-app/videos" : "/mainsite/videos",
-        videosPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/videos" : "/mainsite/admin/videos",
-        videoPage: deployToGitHubPages ? "/mz-mainsite-app/videos/watch/:id" : "/mainsite/videos/watch/:id",
-        videoPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/videos/watch/:id" : "/mainsite/admin/videos/watch/:id",
-        goalsPage: deployToGitHubPages ? "/mz-mainsite-app/goals" : "/mainsite/goals",
-        goalsPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/goals" : "/mainsite/admin/goals",
-        cvPage: deployToGitHubPages ? "/mz-mainsite-app/cv" : "/mainsite/cv",
-        cvPageAdmin: deployToGitHubPages ? "/mz-mainsite-app/admin/cv" : "/mainsite/admin/cv",
+        frontPage: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
+        dashboardPage: deployToGitHubPages ? "/mz-personalwebsite-app/admin/dashboard" : "/admin/dashboard",
+        loginPage: deployToGitHubPages ? "/mz-personalwebsite-app/login" : "/login",
+        homePage: deployToGitHubPages ? "/mz-personalwebsite-app/home" : "/home",
+        homePageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/home" : "/admin/home",
+        profilePage: deployToGitHubPages ? "/mz-personalwebsite-app/profile" : "/profile",
+        profilePageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/profile" : "/admin/profile",
+        projectsPage: deployToGitHubPages ? "/mz-personalwebsite-app/projects" : "/projects",
+        projectsPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/projects" : "/admin/projects",
+        portfolioPage: deployToGitHubPages ? "/mz-personalwebsite-app/projects/portfolio" : "/projects/portfolio",
+        portfolioPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/projects/portfolio" : "/admin/projects/portfolio",
+        projectPage: deployToGitHubPages ? "/mz-personalwebsite-app/projects/view/:id" : "/projects/view/:id",
+        projectPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/projects/view/:id" : "/admin/projects/view/:id",
+        videosPage: deployToGitHubPages ? "/mz-personalwebsite-app/videos" : "/videos",
+        videosPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/videos" : "/admin/videos",
+        videoPage: deployToGitHubPages ? "/mz-personalwebsite-app/videos/watch/:id" : "/videos/watch/:id",
+        videoPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/videos/watch/:id" : "/admin/videos/watch/:id",
+        goalsPage: deployToGitHubPages ? "/mz-personalwebsite-app/goals" : "/goals",
+        goalsPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/goals" : "/admin/goals",
+        cvPage: deployToGitHubPages ? "/mz-personalwebsite-app/cv" : "/cv",
+        cvPageAdmin: deployToGitHubPages ? "/mz-personalwebsite-app/admin/cv" : "/admin/cv",
     },
-    controlLinks: [
-        { label: "Main site", image: MainSiteImg, link: deployToGitHubPages ? "https://partanenma.github.io/mz-mainsite-app/" : "https://matrixzone.netlify.app/", disabled: false, current: true },
-        {
-            label: "Master CP",
-            image: MasterCPImg,
-            link: deployToGitHubPages ? "https://partanenma.github.io/mz-mastercp-app/" : "https://matrixzonemastercp.netlify.app/",
-            disabled: true,
-            current: false,
-        },
-    ],
     appLinks: [
-        {
+        /*{
             label: "Portfolio",
             image: PortfolioImg,
             link: deployToGitHubPages ? "https://partanenma.github.io/mz-portfolio-app/" : "https://matrixzoneportfolio.netlify.app/",
             disabled: true,
             current: false,
-        },
+        },*/
     ],
     testLoginFe: {
         enabled: false,
@@ -59,6 +48,7 @@ export const info = {
     api: {
         enabled: false,
     },
+    deployToGHPages: deployToGitHubPages,
     technologiesUsed: [
         {
             name: "React",

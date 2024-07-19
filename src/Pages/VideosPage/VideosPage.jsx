@@ -246,7 +246,7 @@ function Videos({ loadingVideosData, statusDB, videos }) {
                                                 <motion.button
                                                     className="videoBtn2"
                                                     key="vbtn2"
-                                                    onClick={() => navigate(`/mainsite/videos/watch/${video.id}`)}
+                                                    onClick={info.deployToGHPages ? () => navigate(`/mz-personalwebsite-app/videos/watch/${video.id}`) : () => navigate(`/videos/watch/${video.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },
@@ -418,7 +418,7 @@ function VideosMobile({ loadingVideosData, statusDB, videos }) {
                                                 <motion.button
                                                     className="videoBtn2Mobile"
                                                     key="vbtn2m"
-                                                    onClick={() => navigate(`/mainsite/videos/watch/${video.id}`)}
+                                                    onClick={info.deployToGHPages ? () => navigate(`/mz-personalwebsite-app/videos/watch/${video.id}`) : () => navigate(`/videos/watch/${video.id}`)}
                                                     whileHover={{
                                                         scale: 1.1,
                                                         transition: { duration: 0.1 },

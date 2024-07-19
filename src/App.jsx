@@ -16,6 +16,8 @@ import ProfilePage from "./Pages/ProfilePage/ProfilePage.jsx";
 import ProfilePageAdmin from "./Pages/ProfilePage/ProfilePageAdmin.jsx";
 import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage.jsx";
 import ProjectsPageAdmin from "./Pages/ProjectsPage/ProjectsPageAdmin.jsx";
+import PortfolioPage from "./Pages/PortfolioPage/PortfolioPage.jsx";
+import PortfolioPageAdmin from "./Pages/PortfolioPage/PortfolioPageAdmin.jsx";
 import ProjectPage from "./Pages/ProjectPage/ProjectPage.jsx";
 import ProjectPageAdmin from "./Pages/ProjectPage/ProjectPageAdmin.jsx";
 import VideosPage from "./Pages/VideosPage/VideosPage.jsx";
@@ -90,6 +92,8 @@ function App() {
                                 <Route path={info.routes.profilePageAdmin} element={<ProfilePageAdmin />} />
                                 <Route path={info.routes.projectsPage} element={<ProjectsPage />} />
                                 <Route path={info.routes.projectsPageAdmin} element={<ProjectsPageAdmin />} />
+                                <Route path={info.routes.portfolioPage} element={<PortfolioPage />} />
+                                <Route path={info.routes.portfolioPageAdmin} element={<PortfolioPageAdmin />} />
                                 <Route path={info.routes.projectPage} element={<ProjectPage />} />
                                 <Route path={info.routes.projectPageAdmin} element={<ProjectPageAdmin />} />
                                 <Route path={info.routes.videosPage} element={<VideosPage />} />

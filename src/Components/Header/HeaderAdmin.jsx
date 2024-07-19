@@ -64,7 +64,7 @@ function Title() {
     return (
         <div className="titleContainer">
             <h1>
-                MatrixZone<span style={{ fontSize: "20px", textShadow: "none" }}> Main site admin panel</span>
+                MatrixZone<span style={{ fontSize: "20px", textShadow: "none" }}>Admin panel</span>
             </h1>
         </div>
     );
@@ -100,7 +100,7 @@ function TitleMobile() {
     return (
         <div className="titleContainerMobile">
             <h1>
-                MatrixZone<span style={{ fontSize: "5px", textShadow: "none" }}> Main site admin panel</span>
+                MatrixZone<span style={{ fontSize: "5px", textShadow: "none" }}>Admin panel</span>
             </h1>
         </div>
     );

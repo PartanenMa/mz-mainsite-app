@@ -383,53 +383,6 @@
             border: 1px solid lightgreen;
             filter: drop-shadow(0 0 2em lightgreen);
         }
-
-        .pCBoxD {
-            background-color: transparentize($color: darkred, $amount: 0.6);
-            height: 90%;
-            width: 96%;
-            border: 0.5px solid gray;
-            border-radius: 10px;
-            text-decoration: none;
-            cursor: not-allowed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: border 300ms;
-            transition: filter 300ms;
-
-            .pCB1 {
-                height: 100%;
-                width: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .portfolioImg {
-                    background-image: url("/src/Assets/Images/Portfolio.png");
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    height: 160px;
-                    width: 200px;
-                }
-            }
-
-            .pCB2 {
-                height: 100%;
-                width: 50%;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-
-                p {
-                    color: red;
-                    font-size: 60px;
-                    font-style: italic;
-                    font-family: "Courier New", Courier, monospace;
-                }
-            }
-        }
     }
 
     .space1 {
@@ -1379,53 +1332,6 @@
         .pCBoxMobile:hover {
             border: 1px solid lightgreen;
             filter: drop-shadow(0 0 2em lightgreen);
-        }
-
-        .pCBoxDMobile {
-            background-color: transparentize($color: darkred, $amount: 0.6);
-            height: 90%;
-            width: 96%;
-            border: 0.5px solid gray;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: not-allowed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: border 300ms;
-            transition: filter 300ms;
-
-            .pCB1M {
-                height: 100%;
-                width: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .portfolioImgMobile {
-                    background-image: url("/src/Assets/Images/Portfolio.png");
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    height: 80px;
-                    width: 100px;
-                }
-            }
-
-            .pCB2M {
-                height: 100%;
-                width: 50%;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-
-                p {
-                    color: red;
-                    font-size: 18px;
-                    font-style: italic;
-                    font-family: "Courier New", Courier, monospace;
-                }
-            }
         }
     }
 
