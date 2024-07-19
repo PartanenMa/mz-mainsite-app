@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.6.2",
+    version: "Release 1.6.3",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
         dashboardPage: deployToGitHubPages ? "/mz-personalwebsite-app/admin/dashboard" : "/admin/dashboard",
@@ -33,11 +33,10 @@ export const info = {
     },
     appLinks: [
         /*{
-            label: "Portfolio",
-            image: PortfolioImg,
+            label: "ExampleLabel",
+            image: ExampleImg,
             link: deployToGitHubPages ? "https://partanenma.github.io/mz-portfolio-app/" : "https://matrixzoneportfolio.netlify.app/",
             disabled: true,
-            current: false,
         },*/
     ],
     testLoginFe: {
@@ -151,7 +150,12 @@ export const info = {
         user: "PartanenMa",
         link: "https://github.com/PartanenMa",
         //Profile description:
-        description1: "Hello, I'm Manu Partanen, a passionate software developer specializing in web development. Feel free to explore my projects.",
+        description1:
+            "Hello, I'm Manu Partanen, a passionate software developer specializing in " +
+            (dataFe.professionStatus.professionTech === "Front-end Developer" ? "front-end" : "") +
+            (dataFe.professionStatus.professionTech === "Back-end Developer" ? "back-end" : "") +
+            (dataFe.professionStatus.professionTech === "Full-stack Developer" ? "full-stack" : "") +
+            " web development. Feel free to explore my projects.",
         description2: "",
         description3: "",
     },

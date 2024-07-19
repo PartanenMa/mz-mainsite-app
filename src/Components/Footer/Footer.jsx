@@ -203,11 +203,6 @@ function Footer() {
                                                     <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
                                                     <h3>{appLink.label}</h3>
                                                 </div>
-                                            ) : appLink.current ? (
-                                                <div className="footerNav3-1C" key={`FN-3-${index}`} title={`Currently at ${appLink.label}`}>
-                                                    <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                    <h3>{appLink.label}</h3>
-                                                </div>
                                             ) : (
                                                 <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}`}>
                                                     <AnimatePresence>
@@ -417,11 +412,6 @@ function FooterMobile() {
                         appLinks.map((appLink, index) =>
                             appLink.disabled ? (
                                 <div className="footerNav3-1DM" key={`FN-3-${index}`} title="Currently not available">
-                                    <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                    <h3>{appLink.label}</h3>
-                                </div>
-                            ) : appLink.current ? (
-                                <div className="footerNav3-1CM" key={`FN-3-${index}`} title={`Currently at ${appLink.label}`}>
                                     <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
                                     <h3>{appLink.label}</h3>
                                 </div>

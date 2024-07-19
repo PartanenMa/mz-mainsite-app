@@ -442,39 +442,6 @@
                 border-radius: 5px;
             }
 
-            .footerNav3-1C {
-                height: 20px;
-                width: 130px;
-                cursor: default;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-                gap: 10px;
-                margin-top: 10px;
-                margin-left: 10px;
-
-                .image {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 70%;
-                    height: 15px;
-                    width: 20px;
-                    transition: filter 300ms;
-                    filter: drop-shadow(0 0 0.6em green);
-                }
-
-                h3 {
-                    color: green;
-                    font-size: 18px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: fit-content;
-                    width: fit-content;
-                    text-shadow: 0.5px 0.5px 0 white;
-                    transition: background-color 300ms;
-                }
-            }
-
             .footerNav3-1D {
                 height: 20px;
                 width: 130px;
@@ -905,38 +872,6 @@
                 border-radius: 5px;
             }
 
-            .footerNav3-1CM {
-                height: 40px;
-                width: 200px;
-                cursor: default;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-                gap: 10px;
-                margin-top: 10px;
-                margin-left: 100px;
-
-                .imageMobile {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 70%;
-                    height: 30px;
-                    width: 40px;
-                    transition: filter 300ms;
-                    filter: drop-shadow(0 0 0.6em green);
-                }
-
-                h3 {
-                    color: green;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: fit-content;
-                    width: fit-content;
-                    text-shadow: 0.5px 0.5px 0 white;
-                    transition: background-color 300ms;
-                }
-            }
-
             .footerNav3-1DM {
                 height: 40px;
                 width: 200px;
@@ -1363,38 +1298,6 @@
                 background-color: lightgreen;
                 border: 1px solid #03a062;
                 border-radius: 5px;
-            }
-
-            .footerNav3-1CM {
-                height: 40px;
-                width: 200px;
-                cursor: default;
-                display: flex;
-                justify-content: left;
-                align-items: center;
-                gap: 10px;
-                margin-top: 10px;
-                margin-left: 100px;
-
-                .imageMobile {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 70%;
-                    height: 30px;
-                    width: 40px;
-                    transition: filter 300ms;
-                    filter: drop-shadow(0 0 0.6em green);
-                }
-
-                h3 {
-                    color: green;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    height: fit-content;
-                    width: fit-content;
-                    text-shadow: 0.5px 0.5px 0 white;
-                    transition: background-color 300ms;
-                }
             }
 
             .footerNav3-1DM {

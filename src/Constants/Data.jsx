@@ -525,7 +525,7 @@ export const dataFe = {
                 status: "completed",
             },
             step3: {
-                step: "Learn to use containerization software such as Docker and Kubernetes.",
+                step: "Learn to use deployment software such as WordPress, Docker and Kubernetes.",
                 status: "completed",
             },
         },

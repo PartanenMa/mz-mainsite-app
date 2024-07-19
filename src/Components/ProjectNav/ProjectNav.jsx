@@ -30,28 +30,15 @@ function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
                         <>
                             <AnimatePresence>
                                 <motion.div className="projectNav" key="projectnav">
-                                    <div className="block1">
-                                        <div className="b1Title">
-                                            <p></p>
-                                        </div>
-                                        <div className="b1Content"></div>
-                                    </div>
-                                    <div className="block2">
-                                        <div className="b2Title">
+                                    <div className="block">
+                                        <div className="bTitle">
                                             <p>Applications:</p>
                                         </div>
-                                        <div className="b2Content">
+                                        <div className="bContent">
                                             {appLinks.length > 0 ? (
                                                 appLinks.map((appLink, index) =>
                                                     appLink.disabled ? (
                                                         <div className="appLinkD" title={"Currently not available"} key={index}>
-                                                            <div className="aImg" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                            <div className="aTitle">
-                                                                <p>{appLink.label}</p>
-                                                            </div>
-                                                        </div>
-                                                    ) : appLink.current ? (
-                                                        <div className="appLinkC" title={`Currently at ${appLink.label}`} key={index}>
                                                             <div className="aImg" style={{ backgroundImage: `url(${appLink.image})` }} />
                                                             <div className="aTitle">
                                                                 <p>{appLink.label}</p>
@@ -80,12 +67,6 @@ function ProjectNav({ isProjectNavOpen, setIsProjectNavOpen }) {
                                             )}
                                         </div>
                                     </div>
-                                    <div className="block3">
-                                        <div className="b3Title">
-                                            <p></p>
-                                        </div>
-                                        <div className="b3Content"></div>
-                                    </div>
                                 </motion.div>
                             </AnimatePresence>
                         </>
@@ -110,28 +91,15 @@ function ProjectNavMobile({ isProjectNavOpen, setIsProjectNavOpen }) {
                 <>
                     <AnimatePresence>
                         <motion.div className="projectNavMobile" key="projectnavmobile">
-                            <div className="block1Mobile">
-                                <div className="b1TitleMobile">
-                                    <p></p>
-                                </div>
-                                <div className="b1ContentMobile"></div>
-                            </div>
-                            <div className="block2Mobile">
-                                <div className="b2TitleMobile">
+                            <div className="blockMobile">
+                                <div className="bTitleMobile">
                                     <p>Applications:</p>
                                 </div>
-                                <div className="b2ContentMobile">
+                                <div className="bContentMobile">
                                     {appLinks.length > 0 ? (
                                         appLinks.map((appLink, index) =>
                                             appLink.disabled ? (
                                                 <div className="appLinkDMobile" title={"Currently not available"} key={index}>
-                                                    <div className="aImgMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                    <div className="aTitleMobile">
-                                                        <p>{appLink.label}</p>
-                                                    </div>
-                                                </div>
-                                            ) : appLink.current ? (
-                                                <div className="appLinkCMobile" title={`Currently at ${appLink.label}`} key={index}>
                                                     <div className="aImgMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
                                                     <div className="aTitleMobile">
                                                         <p>{appLink.label}</p>
@@ -159,12 +127,6 @@ function ProjectNavMobile({ isProjectNavOpen, setIsProjectNavOpen }) {
                                         <p className="noAppLinksMobile">NO APPS YET!</p>
                                     )}
                                 </div>
-                            </div>
-                            <div className="block3Mobile">
-                                <div className="b3TitleMobile">
-                                    <p></p>
-                                </div>
-                                <div className="b3ContentMobile"></div>
                             </div>
                         </motion.div>
                     </AnimatePresence>
