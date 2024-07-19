@@ -134,7 +134,7 @@ function Breadcrumb({ id }) {
             <div className="breadcrumbLogo" />
             <div className="breadcrumbText">
                 <h2>
-                    {"mainsite/"}
+                    {"/"}
                     <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPage)}>
                         {"projects"}
                     </span>
@@ -263,7 +263,7 @@ function BreadcrumbMobile({ id }) {
             <div className="breadcrumbLogoMobile" />
             <div className="breadcrumbTextMobile">
                 <h2>
-                    {"mainsite/"}
+                    {"/"}
                     <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPage)}>
                         {"projects"}
                     </span>

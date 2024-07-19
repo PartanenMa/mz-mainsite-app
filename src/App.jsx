@@ -32,12 +32,12 @@ import { info } from "./Constants/Info.jsx";
 import "./App.scss";
 
 function App() {
-    const navigate = useNavigate();
-    const location = useLocation();
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
     const afterIntroLoad = sessionStorage.getItem("afterIntroLoading");
     const [isIntroScreenOpen, setIsIntroScreenOpen] = useState(!hasSeenIntro);
     const [isAfterIntroLoad, setIsAfterIntroLoad] = useState(!afterIntroLoad);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         if (!hasSeenIntro) {

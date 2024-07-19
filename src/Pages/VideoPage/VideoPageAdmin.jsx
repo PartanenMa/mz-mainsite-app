@@ -145,8 +145,8 @@ function VideoPageAdmin() {
                             <div className="videoPageContainerAdmin">
                                 <div className="breadcrumb">
                                     <h2>
-                                        {"mainsite/admin/"}
-                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
+                                        {"/admin/"}
+                                        <span title={"Back to videos"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
                                             {"videos"}
                                         </span>
                                         {"/watch/" + id}
@@ -167,8 +167,8 @@ function VideoPageAdmin() {
                             <div className="videoPageContainerAdmin">
                                 <div className="breadcrumb">
                                     <h2>
-                                        {"mainsite/admin/"}
-                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
+                                        {"/admin/"}
+                                        <span title={"Back to videos"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.videosPageAdmin)}>
                                             {"videos"}
                                         </span>
                                         {"/watch/" + id}

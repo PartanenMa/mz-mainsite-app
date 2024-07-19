@@ -145,8 +145,8 @@ function ProjectPageAdmin() {
                             <div className="projectPageContainerAdmin">
                                 <div className="breadcrumb">
                                     <h2>
-                                        {"mainsite/admin/"}
-                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
+                                        {"/admin/"}
+                                        <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
                                             {"projects"}
                                         </span>
                                         {"/view/" + id}
@@ -167,8 +167,8 @@ function ProjectPageAdmin() {
                             <div className="projectPageContainerAdminMobile">
                                 <div className="breadcrumbMobile">
                                     <h2>
-                                        {"mainsite/admin/"}
-                                        <span style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
+                                        {"/admin/"}
+                                        <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPageAdmin)}>
                                             {"projects"}
                                         </span>
                                         {"/view/ " + id}

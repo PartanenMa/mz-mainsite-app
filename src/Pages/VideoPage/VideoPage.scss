@@ -87,6 +87,16 @@
             bottom: 20px;
             left: 10px;
             cursor: default;
+
+            span {
+                transition: filter 300ms;
+                transition: background-color 500ms ease-in-out;
+            }
+
+            span:hover {
+                color: green;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
         }
     }
 }
@@ -422,6 +432,16 @@
             font-style: italic;
             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             cursor: default;
+
+            span {
+                transition: filter 300ms;
+                transition: background-color 500ms ease-in-out;
+            }
+
+            span:hover {
+                color: green;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
         }
     }
 }

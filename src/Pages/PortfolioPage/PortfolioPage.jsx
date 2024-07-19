@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import { info } from "/src/Constants/Info.jsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -64,9 +65,23 @@ function PortfolioPage() {
 }
 
 function Main({ connectionLoading, connection }) {
+    const navigate = useNavigate();
+
     return (
         <div className="main">
             {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+            <div className="breadcrumb">
+                <div className="breadcrumbLogo" />
+                <div className="breadcrumbText">
+                    <h2>
+                        {"/"}
+                        <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPage)}>
+                            {"projects"}
+                        </span>
+                        {"/portfolio"}
+                    </h2>
+                </div>
+            </div>
             <div className="firstSection">
                 <AnimatePresence>
                     <motion.div className="firstSectionTitle" key="firstsectiontitle" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>
@@ -117,9 +132,23 @@ function Main({ connectionLoading, connection }) {
 
 //Mobile:
 function MainMobile({ connectionLoading, connection }) {
+    const navigate = useNavigate();
+
     return (
         <div className="mainMobile">
             {info.api.enabled && <ServerState loading={connectionLoading} connected={connection} />}
+            <div className="breadcrumbMobile">
+                <div className="breadcrumbLogoMobile" />
+                <div className="breadcrumbTextMobile">
+                    <h2>
+                        {"/"}
+                        <span title={"Back to projects"} style={{ cursor: "pointer" }} onClick={() => navigate(info.routes.projectsPage)}>
+                            {"projects"}
+                        </span>
+                        {"/portfolio"}
+                    </h2>
+                </div>
+            </div>
             <div className="firstSectionMobile">
                 <AnimatePresence>
                     <motion.div className="firstSectionTitleMobile" key="firstsectiontitlemobile" initial={{ opacity: 0, x: -1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 1000 }}>

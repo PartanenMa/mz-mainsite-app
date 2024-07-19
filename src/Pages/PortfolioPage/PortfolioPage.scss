@@ -15,242 +15,45 @@
         align-items: center;
         flex-direction: column;
 
-        .main {
-            background-color: #111;
-            min-height: 580px;
-            max-width: 1244px;
-            width: 100%;
-            border: 0.1px solid grey;
-            border-radius: 2px;
-            margin: auto;
-            box-shadow: 0 0 30px 5px #03a062;
+        .breadcrumb {
+            background-color: lightgreen;
+            height: 30px;
             overflow: hidden;
+            border-bottom: 1px solid #03a062;
+            display: flex;
 
-            .firstSection {
-                background-image: url("/src/Assets/Images/PortfolioFirstSectionBG.jpg");
+            .breadcrumbLogo {
+                background-image: url("/src/Assets/Images/Projects.png");
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: cover;
-                height: 600px;
-                width: 100%;
-                box-shadow: inset 0 0 30px 20px black;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-
-                .firstSectionTitle {
-                    height: 100px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    h2 {
-                        font-size: 100px;
-                        background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        font-style: italic;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        letter-spacing: -3px;
-                        transition: 700ms ease;
-                        font-variation-settings: "wght" 311;
-                        outline: none;
-                        margin-bottom: 0.8rem;
-                        text-align: center;
-                        animation: hover-effect 5s infinite;
-                        cursor: default;
-                    }
-                }
-
-                @keyframes hover-effect {
-                    0% {
-                        font-variation-settings: "wght" 582;
-                        letter-spacing: -2px;
-                    }
-                    50% {
-                        font-variation-settings: "wght" 400;
-                        letter-spacing: -3px;
-                    }
-                    100% {
-                        font-variation-settings: "wght" 582;
-                        letter-spacing: -2px;
-                    }
-                }
-
-                .firstSectionContent {
-                    height: 500px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: left;
-                    align-items: center;
-                    margin-left: 280px;
-
-                    .firstSectionBox {
-                        height: 300px;
-                        width: 600px;
-                        border-radius: 10px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 30px;
-
-                        .firstSectionImg {
-                            background-image: url("/src/Assets/Images/Photo.jpeg");
-                            background-repeat: no-repeat;
-                            background-position: 50% 20%;
-                            background-size: cover;
-                            height: 230px;
-                            width: 230px;
-                            border: 3px solid #03a062;
-                            border-radius: 100%;
-                            filter: drop-shadow(0 0 2em #03a062);
-                        }
-
-                        .firstSectionInfo {
-                            height: 280px;
-                            width: 320px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-
-                            h3 {
-                                color: #03a062;
-                                font-size: 40px;
-                                position: relative;
-                                bottom: 50px;
-                                font-style: italic;
-                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                line-height: 1%;
-                                cursor: default;
-                            }
-
-                            .professionOrJobContainer {
-                                height: 50px;
-                                width: 100%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                gap: 10px;
-                                position: relative;
-                                bottom: 50px;
-
-                                p {
-                                    font-size: 20px;
-                                    font-style: italic;
-                                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                    line-height: 1%;
-                                    cursor: default;
-                                }
-
-                                .companyLogo {
-                                    background-color: white;
-                                    background-repeat: no-repeat;
-                                    background-position: center;
-                                    background-size: 90%;
-                                    border-radius: 5px;
-                                    transition: background-color 300ms;
-                                    filter: drop-shadow(0 0 2em var(--company-color));
-                                }
-
-                                .companyLogo:hover {
-                                    background-color: var(--company-color);
-                                }
-                            }
-                        }
-                    }
-                }
+                background-size: 70%;
+                height: 100%;
+                width: 3%;
             }
 
-            .aboutMeSection {
-                background-image: url("/src/Assets/Images/AboutMeSectionBG.jpg");
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-                height: 600px;
-                width: 100%;
-                box-shadow: inset 0 0 30px 20px black;
-                overflow: hidden;
+            .breadcrumbText {
+                height: 100%;
+                width: 97%;
                 display: flex;
-                flex-direction: column;
+                justify-content: left;
+                align-items: center;
+                padding-left: 10px;
 
-                .aboutMeTitle {
-                    height: 100px;
-                    width: 100%;
-                    border-bottom: 1px solid gray;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                h2 {
+                    font-size: 20px;
+                    font-style: italic;
+                    font-family: "Courier New", Courier, monospace;
+                    cursor: default;
 
-                    h2 {
+                    span {
+                        transition: filter 300ms;
+                        transition: background-color 500ms ease-in-out;
+                    }
+
+                    span:hover {
                         color: green;
-                        font-size: 50px;
-                        font-style: italic;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        cursor: default;
+                        filter: drop-shadow(0 0 2em #03a062);
                     }
-                }
-
-                .aboutMeContent {
-                    height: 500px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .aboutMeTextContainer {
-                        height: 100%;
-                        width: 700px;
-                        display: flex;
-                        justify-content: top;
-                        align-items: center;
-                        flex-direction: column;
-                        overflow: hidden;
-
-                        p {
-                            color: #03a062;
-                            font-size: 22px;
-                            font-style: italic;
-                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            cursor: default;
-                        }
-                    }
-                }
-            }
-
-            .projectsSection {
-                background-color: black;
-                height: 600px;
-                width: 100%;
-                box-shadow: inset 0 0 30px 20px black;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-
-                .projectsTitle {
-                    height: 100px;
-                    width: 100%;
-                    border-bottom: 1px solid gray;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    h2 {
-                        color: green;
-                        font-size: 50px;
-                        font-style: italic;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        cursor: default;
-                    }
-                }
-
-                .projectsContent {
-                    height: 500px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                 }
             }
         }
@@ -267,6 +70,284 @@
     }
 }
 
+/*PortfolioPageAdmin:*/
+.portfolioPageContainerAdmin {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 1244px;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumb {
+        background-color: lightgreen;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+            cursor: default;
+
+            span {
+                transition: filter 300ms;
+                transition: background-color 500ms ease-in-out;
+            }
+
+            span:hover {
+                color: green;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+        }
+    }
+}
+
+/*Both:*/
+.main {
+    background-color: #111;
+    min-height: 580px;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+
+    .firstSection {
+        background-image: url("/src/Assets/Images/PortfolioFirstSectionBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 600px;
+        width: 100%;
+        box-shadow: inset 0 0 30px 20px black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .firstSectionTitle {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                font-size: 100px;
+                background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                letter-spacing: -3px;
+                transition: 700ms ease;
+                font-variation-settings: "wght" 311;
+                outline: none;
+                margin-bottom: 0.8rem;
+                text-align: center;
+                animation: hover-effect 5s infinite;
+                cursor: default;
+            }
+        }
+
+        @keyframes hover-effect {
+            0% {
+                font-variation-settings: "wght" 582;
+                letter-spacing: -2px;
+            }
+            50% {
+                font-variation-settings: "wght" 400;
+                letter-spacing: -3px;
+            }
+            100% {
+                font-variation-settings: "wght" 582;
+                letter-spacing: -2px;
+            }
+        }
+
+        .firstSectionContent {
+            height: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin-left: 280px;
+
+            .firstSectionBox {
+                height: 300px;
+                width: 600px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                .firstSectionImg {
+                    background-image: url("/src/Assets/Images/Photo.jpeg");
+                    background-repeat: no-repeat;
+                    background-position: 50% 20%;
+                    background-size: cover;
+                    height: 230px;
+                    width: 230px;
+                    border: 3px solid #03a062;
+                    border-radius: 100%;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+
+                .firstSectionInfo {
+                    height: 280px;
+                    width: 320px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h3 {
+                        color: #03a062;
+                        font-size: 40px;
+                        position: relative;
+                        bottom: 50px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        line-height: 1%;
+                        cursor: default;
+                    }
+
+                    .professionOrJobContainer {
+                        height: 50px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        position: relative;
+                        bottom: 50px;
+
+                        p {
+                            font-size: 20px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            line-height: 1%;
+                            cursor: default;
+                        }
+
+                        .companyLogo {
+                            background-color: white;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 90%;
+                            border-radius: 5px;
+                            transition: background-color 300ms;
+                            filter: drop-shadow(0 0 2em var(--company-color));
+                        }
+
+                        .companyLogo:hover {
+                            background-color: var(--company-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .aboutMeSection {
+        background-image: url("/src/Assets/Images/AboutMeSectionBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 600px;
+        width: 100%;
+        box-shadow: inset 0 0 30px 20px black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .aboutMeTitle {
+            height: 100px;
+            width: 100%;
+            border-bottom: 1px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: green;
+                font-size: 50px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+            }
+        }
+
+        .aboutMeContent {
+            height: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .aboutMeTextContainer {
+                height: 100%;
+                width: 700px;
+                display: flex;
+                justify-content: top;
+                align-items: center;
+                flex-direction: column;
+                overflow: hidden;
+
+                p {
+                    color: #03a062;
+                    font-size: 22px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .projectsSection {
+        background-color: black;
+        height: 600px;
+        width: 100%;
+        box-shadow: inset 0 0 30px 20px black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .projectsTitle {
+            height: 100px;
+            width: 100%;
+            border-bottom: 1px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: green;
+                font-size: 50px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+            }
+        }
+
+        .projectsContent {
+            height: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
 /*PortfolioPage (mobile):*/
 .portfolioPageContainerMobile {
     width: 100%;
@@ -275,242 +356,45 @@
     align-items: center;
     flex-direction: column;
 
-    .mainMobile {
-        background-color: #111;
-        min-height: 580px;
-        max-width: 1244px;
-        width: 100%;
-        border: 0.1px solid grey;
-        border-radius: 2px;
-        margin: auto;
-        box-shadow: 0 0 30px 5px #03a062;
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 15px;
         overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        display: flex;
 
-        .firstSectionMobile {
-            background-image: url("/src/Assets/Images/PortfolioFirstSectionBG.jpg");
+        .breadcrumbLogoMobile {
+            background-image: url("/src/Assets/Images/Projects.png");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover;
-            background-color: transparent;
-            height: 210px;
-            width: 100%;
-            box-shadow: inset 0 0 30px 20px black;
-            overflow: hidden;
-
-            .firstSectionTitleMobile {
-                height: 50px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                h2 {
-                    font-size: 40px;
-                    background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    letter-spacing: -3px;
-                    transition: 700ms ease;
-                    font-variation-settings: "wght" 311;
-                    outline: none;
-                    margin-bottom: 0.8rem;
-                    text-align: center;
-                    animation: hover-effect 5s infinite;
-                    cursor: default;
-                }
-            }
-
-            @keyframes hover-effect {
-                0% {
-                    font-variation-settings: "wght" 582;
-                    letter-spacing: -2px;
-                }
-                50% {
-                    font-variation-settings: "wght" 400;
-                    letter-spacing: -3px;
-                }
-                100% {
-                    font-variation-settings: "wght" 582;
-                    letter-spacing: -2px;
-                }
-            }
-
-            .firstSectionContentMobile {
-                height: 160px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .firstSectionBoxMobile {
-                    height: 80px;
-                    width: 220px;
-                    border-radius: 5px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 10px;
-
-                    .firstSectionImgMobile {
-                        background-image: url("/src/Assets/Images/Photo.jpeg");
-                        background-repeat: no-repeat;
-                        background-position: 50% 20%;
-                        background-size: cover;
-                        height: 60px;
-                        width: 60px;
-                        border: 1px solid #03a062;
-                        border-radius: 100%;
-                        filter: drop-shadow(0 0 2em #03a062);
-                    }
-
-                    .firstSectionInfoMobile {
-                        height: 60px;
-                        width: 130px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-
-                        h3 {
-                            color: #03a062;
-                            font-size: 12px;
-                            font-style: italic;
-                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                            line-height: 1%;
-                            cursor: default;
-                        }
-
-                        .professionOrJobContainerMobile {
-                            height: 25px;
-                            width: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            gap: 5px;
-                            position: relative;
-                            bottom: 10px;
-
-                            p {
-                                font-size: 8px;
-                                font-style: italic;
-                                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                                line-height: 1%;
-                                cursor: default;
-                            }
-
-                            .companyLogoMobile {
-                                background-color: white;
-                                background-repeat: no-repeat;
-                                background-position: center;
-                                background-size: 90%;
-                                border-radius: 2.5px;
-                                transition: background-color 300ms;
-                                filter: drop-shadow(0 0 2em var(--company-color));
-                            }
-
-                            .companyLogoMobile:hover {
-                                background-color: var(--company-color);
-                            }
-                        }
-                    }
-                }
-            }
+            background-size: 70%;
+            height: 100%;
+            width: 3%;
         }
 
-        .aboutMeSectionMobile {
-            background-image: url("/src/Assets/Images/AboutMeSectionBG.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 210px;
-            width: 100%;
-            box-shadow: inset 0 0 30px 20px black;
-            overflow: hidden;
+        .breadcrumbTextMobile {
+            height: 100%;
+            width: 97%;
             display: flex;
-            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            padding-left: 5px;
 
-            .aboutMeTitleMobile {
-                height: 50px;
-                width: 100%;
-                border-bottom: 0.5px solid gray;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            h2 {
+                font-size: 10px;
+                font-style: italic;
+                font-family: "Courier New", Courier, monospace;
+                cursor: default;
 
-                h2 {
+                span {
+                    transition: filter 300ms;
+                    transition: background-color 500ms ease-in-out;
+                }
+
+                span:hover {
                     color: green;
-                    font-size: 25px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    cursor: default;
+                    filter: drop-shadow(0 0 2em #03a062);
                 }
-            }
-
-            .aboutMeContentMobile {
-                height: 160px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .aboutMeTextContainerMobile {
-                    height: 100%;
-                    width: 220px;
-                    display: flex;
-                    justify-content: top;
-                    align-items: center;
-                    flex-direction: column;
-                    overflow: hidden;
-
-                    p {
-                        color: #03a062;
-                        font-size: 7px;
-                        font-style: italic;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                        cursor: default;
-                    }
-                }
-            }
-        }
-
-        .projectsSectionMobile {
-            background-color: black;
-            background-image: url("/src/Assets/Images/ProjectsSectionBG.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 210px;
-            width: 100%;
-            box-shadow: inset 0 0 30px 20px black;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-
-            .projectsTitleMobile {
-                height: 50px;
-                width: 100%;
-                border-bottom: 0.5px solid gray;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                h2 {
-                    color: green;
-                    font-size: 25px;
-                    font-style: italic;
-                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-                    cursor: default;
-                }
-            }
-
-            .projectsContentMobile {
-                height: 160px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
         }
     }
@@ -522,6 +406,285 @@
 
         100% {
             opacity: 1;
+        }
+    }
+}
+
+/*PortfolioPageAdmin (mobile):*/
+.portfolioPageContainerAdminMobile {
+    animation: fadeIn 0.3s;
+    background-color: #111;
+    width: 100%;
+    border-left: 3px solid #03a062;
+    border-right: 3px solid #03a062;
+    overflow: hidden;
+
+    .breadcrumbMobile {
+        background-color: lightgreen;
+        height: 20px;
+        overflow: hidden;
+        border-bottom: 1px solid #03a062;
+        padding-left: 5px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        h2 {
+            font-size: 10px;
+            font-style: italic;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            cursor: default;
+
+            span {
+                transition: filter 300ms;
+                transition: background-color 500ms ease-in-out;
+            }
+
+            span:hover {
+                color: green;
+                filter: drop-shadow(0 0 2em #03a062);
+            }
+        }
+    }
+}
+
+/*Both (mobile):*/
+.mainMobile {
+    background-color: #111;
+    min-height: 580px;
+    max-width: 1244px;
+    width: 100%;
+    border: 0.1px solid grey;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 0 0 30px 5px #03a062;
+    overflow: hidden;
+
+    .firstSectionMobile {
+        background-image: url("/src/Assets/Images/PortfolioFirstSectionBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: transparent;
+        height: 210px;
+        width: 100%;
+        box-shadow: inset 0 0 30px 20px black;
+        overflow: hidden;
+
+        .firstSectionTitleMobile {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                font-size: 40px;
+                background: linear-gradient(to right, green, lightgreen, #03a062, green, lightgreen);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                letter-spacing: -3px;
+                transition: 700ms ease;
+                font-variation-settings: "wght" 311;
+                outline: none;
+                margin-bottom: 0.8rem;
+                text-align: center;
+                animation: hover-effect 5s infinite;
+                cursor: default;
+            }
+        }
+
+        @keyframes hover-effect {
+            0% {
+                font-variation-settings: "wght" 582;
+                letter-spacing: -2px;
+            }
+            50% {
+                font-variation-settings: "wght" 400;
+                letter-spacing: -3px;
+            }
+            100% {
+                font-variation-settings: "wght" 582;
+                letter-spacing: -2px;
+            }
+        }
+
+        .firstSectionContentMobile {
+            height: 160px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .firstSectionBoxMobile {
+                height: 80px;
+                width: 220px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                .firstSectionImgMobile {
+                    background-image: url("/src/Assets/Images/Photo.jpeg");
+                    background-repeat: no-repeat;
+                    background-position: 50% 20%;
+                    background-size: cover;
+                    height: 60px;
+                    width: 60px;
+                    border: 1px solid #03a062;
+                    border-radius: 100%;
+                    filter: drop-shadow(0 0 2em #03a062);
+                }
+
+                .firstSectionInfoMobile {
+                    height: 60px;
+                    width: 130px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h3 {
+                        color: #03a062;
+                        font-size: 12px;
+                        font-style: italic;
+                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        line-height: 1%;
+                        cursor: default;
+                    }
+
+                    .professionOrJobContainerMobile {
+                        height: 25px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 5px;
+                        position: relative;
+                        bottom: 10px;
+
+                        p {
+                            font-size: 8px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            line-height: 1%;
+                            cursor: default;
+                        }
+
+                        .companyLogoMobile {
+                            background-color: white;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 90%;
+                            border-radius: 2.5px;
+                            transition: background-color 300ms;
+                            filter: drop-shadow(0 0 2em var(--company-color));
+                        }
+
+                        .companyLogoMobile:hover {
+                            background-color: var(--company-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .aboutMeSectionMobile {
+        background-image: url("/src/Assets/Images/AboutMeSectionBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 210px;
+        width: 100%;
+        box-shadow: inset 0 0 30px 20px black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .aboutMeTitleMobile {
+            height: 50px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: green;
+                font-size: 25px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+            }
+        }
+
+        .aboutMeContentMobile {
+            height: 160px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .aboutMeTextContainerMobile {
+                height: 100%;
+                width: 220px;
+                display: flex;
+                justify-content: top;
+                align-items: center;
+                flex-direction: column;
+                overflow: hidden;
+
+                p {
+                    color: #03a062;
+                    font-size: 7px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .projectsSectionMobile {
+        background-color: black;
+        background-image: url("/src/Assets/Images/ProjectsSectionBG.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 210px;
+        width: 100%;
+        box-shadow: inset 0 0 30px 20px black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .projectsTitleMobile {
+            height: 50px;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                color: green;
+                font-size: 25px;
+                font-style: italic;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                cursor: default;
+            }
+        }
+
+        .projectsContentMobile {
+            height: 160px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
