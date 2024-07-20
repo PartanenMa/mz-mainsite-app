@@ -2,8 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 const deployToGitHubPages = false;
-const deploy = false;
-const apiUrl = deploy ? "deploy-url (COMING SOON)" : "http://localhost:8000";
+const deployApiEnabled = false;
+const apiUrl = deployApiEnabled ? "deploy-url (COMING SOON)" : "http://localhost:8000";
 
 // https://vitejs.dev/config/
 export default defineConfig({
