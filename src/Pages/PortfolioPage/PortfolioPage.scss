@@ -344,6 +344,186 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            .projectsGrid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 50px;
+
+                .portfolioProject {
+                    background-color: black;
+                    height: 150px;
+                    width: 300px;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    overflow: hidden;
+                    transition: border 300ms;
+                    transition: filter 300ms;
+                    display: flex;
+                    flex-direction: column;
+
+                    .pPCoverTitle {
+                        display: block;
+                        animation: fadeIn 0.3s;
+                        background-color: black;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        p {
+                            display: block;
+                            color: white;
+                            font-size: 20px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            top: 40px;
+                        }
+                    }
+
+                    .pPTitle {
+                        visibility: hidden;
+                        height: 20%;
+                        width: 100%;
+                        border-bottom: 1px solid gray;
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+
+                        p {
+                            color: #03a062;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .pPContent {
+                        visibility: hidden;
+                        background-color: #222;
+                        height: 80%;
+                        width: 100%;
+                        display: flex;
+
+                        .projectLogo {
+                            height: 100%;
+                            width: 50%;
+                            border-right: 1px solid gray;
+                        }
+
+                        .projectImage {
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            height: 100%;
+                            width: 50%;
+                        }
+                    }
+                }
+
+                .portfolioProject:hover {
+                    border: 1px solid gray;
+                    filter: drop-shadow(0 0 2em black);
+                }
+
+                .portfolioProject:hover .pPCoverTitle {
+                    animation: fadeIn 0.3s;
+                    display: none;
+                }
+
+                .portfolioProject:hover .pPTitle {
+                    animation: fadeIn 0.3s;
+                    visibility: visible;
+                }
+
+                .portfolioProject:hover .pPContent {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .noPortfolioProjectsYet {
+                height: 300px;
+                width: 90%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    width: fit-content;
+                    color: yellow;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid yellow;
+                    border-radius: 48%;
+                    padding: 30px;
+                    cursor: default;
+                }
+            }
+
+            .loadingPortfolioProjectsData {
+                height: 300px;
+                width: 95%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .loaderPortfolioProjects {
+                    border: 8px solid #f3f3f3;
+                    border-radius: 50%;
+                    border-top: 8px solid black;
+                    width: 60px;
+                    height: 60px;
+                    -webkit-animation: spin 2s linear infinite;
+                    animation: spin 2s linear infinite;
+                }
+
+                @-webkit-keyframes spin {
+                    0% {
+                        -webkit-transform: rotate(0deg);
+                    }
+                    100% {
+                        -webkit-transform: rotate(360deg);
+                    }
+                }
+
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            .noPortfolioProjectsData {
+                height: 300px;
+                width: 90%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    width: fit-content;
+                    color: red;
+                    font-size: 30px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid red;
+                    border-radius: 48%;
+                    padding: 20px;
+                    cursor: default;
+                }
+            }
         }
     }
 }
@@ -651,10 +831,6 @@
 
     .projectsSectionMobile {
         background-color: black;
-        background-image: url("/src/Assets/Images/ProjectsSectionBG.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
         height: 210px;
         width: 100%;
         box-shadow: inset 0 0 30px 20px black;
@@ -685,6 +861,187 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            .projectsGridMobile {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 20px;
+
+                .portfolioProjectMobile {
+                    background-color: black;
+                    height: 50px;
+                    width: 80px;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    overflow: hidden;
+                    transition: border 300ms;
+                    transition: filter 300ms;
+                    display: flex;
+                    flex-direction: column;
+
+                    .pPCoverTitleMobile {
+                        display: block;
+                        animation: fadeIn 0.3s;
+                        background-color: black;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        p {
+                            display: block;
+                            color: white;
+                            font-size: 8px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            position: relative;
+                            top: 5px;
+                        }
+                    }
+
+                    .pPTitleMobile {
+                        visibility: hidden;
+                        height: 20%;
+                        width: 100%;
+                        border-bottom: 1px solid gray;
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+
+                        p {
+                            color: #03a062;
+                            font-size: 8px;
+                            font-style: italic;
+                            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .pPContentMobile {
+                        visibility: hidden;
+                        background-color: #222;
+                        height: 80%;
+                        width: 100%;
+                        display: flex;
+
+                        .projectLogoMobile {
+                            height: 100%;
+                            width: 50%;
+                            border-right: 1px solid gray;
+                        }
+
+                        .projectImageMobile {
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            height: 100%;
+                            width: 50%;
+                        }
+                    }
+                }
+
+                .portfolioProjectMobile:hover {
+                    border: 1px solid gray;
+                    filter: drop-shadow(0 0 2em black);
+                }
+
+                .portfolioProjectMobile:hover .pPCoverTitleMobile {
+                    animation: fadeIn 0.3s;
+                    display: none;
+                }
+
+                .portfolioProjectMobile:hover .pPTitleMobile {
+                    animation: fadeIn 0.3s;
+                    visibility: visible;
+                }
+
+                .portfolioProjectMobile:hover .pPContentMobile {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .noPortfolioProjectsYetMobile {
+                height: 300px;
+                width: 90%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    width: fit-content;
+                    color: yellow;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid yellow;
+                    border-radius: 48%;
+                    padding: 10px;
+                    cursor: default;
+                }
+            }
+
+            .loadingPortfolioProjectsDataMobile {
+                height: 300px;
+                width: 95%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .loaderPortfolioProjectsMobile {
+                    border: 8px solid #f3f3f3;
+                    border-radius: 50%;
+                    border-top: 8px solid black;
+                    width: 60px;
+                    height: 60px;
+                    -webkit-animation: spin 2s linear infinite;
+                    animation: spin 2s linear infinite;
+                }
+
+                @-webkit-keyframes spin {
+                    0% {
+                        -webkit-transform: rotate(0deg);
+                    }
+                    100% {
+                        -webkit-transform: rotate(360deg);
+                    }
+                }
+
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            .noPortfolioProjectsDataMobile {
+                height: 300px;
+                width: 90%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h4 {
+                    width: fit-content;
+                    color: red;
+                    font-size: 10px;
+                    font-style: italic;
+                    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                    border: 1px solid red;
+                    border-radius: 48%;
+                    padding: 10px;
+                    cursor: default;
+                }
+            }
         }
     }
 }

@@ -2,17 +2,38 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ServerState from "/src/Components/ServerState/ServerState.jsx";
 import { info } from "/src/Constants/Info.jsx";
+import { dataFe } from "/src/Constants/Data.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import "./PortfolioPage.scss";
 
 function PortfolioPage() {
     const [connectionLoading, setConnectionLoading] = useState(true);
     const [connection, setConnection] = useState(false);
+    const [loadingPortfolioProjectsData, setLoadingPortfolioProjectsData] = useState(true);
+    const [portfolioProjects, setPortfolioProjects] = useState([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         if (info.api.enabled) {
             checkConnection();
+            getPortfolioProjects();
+        } else {
+            let portfolioProjects = [];
+
+            if (dataFe.projectsData[0]?.title === 0) {
+                portfolioProjects.push(dataFe.projectsData[0]);
+            } else {
+                dataFe.projectsData.map((p) => {
+                    if (p.portfolio) {
+                        portfolioProjects.push(p);
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                setPortfolioProjects(portfolioProjects);
+                setLoadingPortfolioProjectsData(false);
+            }, 1000);
         }
     }, []);
 
@@ -48,23 +69,53 @@ function PortfolioPage() {
         });
     };
 
+    const getPortfolioProjects = async () => {
+        const message = "Request successful!";
+
+        await fetch("/projects/portfolio", {
+            method: "POST",
+            credentials: "include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message }),
+        })
+            .then(async (res) => {
+                const statusCode = res.status;
+
+                if (statusCode < 400) {
+                    const data = await res.json();
+                    return data;
+                } else {
+                    setTimeout(() => {
+                        setLoadingPortfolioProjectsData(false);
+                        return;
+                    }, 1000);
+                }
+            })
+            .then((data) => {
+                setTimeout(() => {
+                    setPortfolioProjects(data.portfolioProjectsData);
+                    setLoadingPortfolioProjectsData(false);
+                }, 1000);
+            });
+    };
+
     return (
         <div className="prfP">
             {windowWidth >= 1280 && (
                 <div className="portfolioPageContainer">
-                    <Main connectionLoading={connectionLoading} connection={connection} />
+                    <Main connectionLoading={connectionLoading} connection={connection} loadingPortfolioProjectsData={loadingPortfolioProjectsData} portfolioProjects={portfolioProjects} />
                 </div>
             )}
             {windowWidth < 1280 && (
                 <div className="portfolioPageContainerMobile">
-                    <MainMobile connectionLoading={connectionLoading} connection={connection} />
+                    <MainMobile connectionLoading={connectionLoading} connection={connection} loadingPortfolioProjectsData={loadingPortfolioProjectsData} portfolioProjects={portfolioProjects} />
                 </div>
             )}
         </div>
     );
 }
 
-function Main({ connectionLoading, connection }) {
+function Main({ connectionLoading, connection, loadingPortfolioProjectsData, portfolioProjects }) {
     const navigate = useNavigate();
 
     return (
@@ -124,14 +175,61 @@ function Main({ connectionLoading, connection }) {
                 <div className="projectsTitle">
                     <h2>MY PROJECTS</h2>
                 </div>
-                <div className="projectsContent"></div>
+                <div className="projectsContent">
+                    <AnimatePresence>
+                        {portfolioProjects.length > 0 && !loadingPortfolioProjectsData ? (
+                            portfolioProjects[0].title !== 0 ? (
+                                <div className="projectsGrid">
+                                    {portfolioProjects.map((project, index) => (
+                                        <motion.a
+                                            className="portfolioProject"
+                                            key={index}
+                                            href={project.projectLink}
+                                            target="_blank"
+                                            initial={{ opacity: 0, y: -100 }}
+                                            animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            whileHover={{
+                                                scale: 1.03,
+                                                transition: { duration: 0.1 },
+                                            }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            <div className="pPCoverTitle">
+                                                <p>{project.title}</p>
+                                            </div>
+                                            <div className="pPTitle">
+                                                <p>{project.title}</p>
+                                            </div>
+                                            <div className="pPContent">
+                                                <div className="projectLogo" />
+                                                <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
+                                            </div>
+                                        </motion.a>
+                                    ))}
+                                </div>
+                            ) : (
+                                <motion.div className="noPortfolioProjectsYet" key="noportfolioprojectsyet" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                    <h4>NO PORTFOLIO PROJECTS YET!</h4>
+                                </motion.div>
+                            )
+                        ) : loadingPortfolioProjectsData ? (
+                            <motion.div className="loadingPortfolioProjectsData" key="loadingportfolioprojectsdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderPortfolioProjects" />
+                            </motion.div>
+                        ) : (
+                            <motion.div className="noPortfolioProjectsData" key="noportfolioprojectsdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                                <h4>NO DATA!</h4>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );
 }
 
 //Mobile:
-function MainMobile({ connectionLoading, connection }) {
+function MainMobile({ connectionLoading, connection, loadingPortfolioProjectsData, portfolioProjects }) {
     const navigate = useNavigate();
 
     return (
@@ -191,7 +289,66 @@ function MainMobile({ connectionLoading, connection }) {
                 <div className="projectsTitleMobile">
                     <h2>MY PROJECTS</h2>
                 </div>
-                <div className="projectsContentMobile"></div>
+                <div className="projectsContentMobile">
+                    <AnimatePresence>
+                        {portfolioProjects.length > 0 && !loadingPortfolioProjectsData ? (
+                            portfolioProjects[0].title !== 0 ? (
+                                <div className="projectsGridMobile">
+                                    {portfolioProjects.map((project, index) => (
+                                        <motion.a
+                                            className="portfolioProjectMobile"
+                                            key={index}
+                                            href={project.projectLink}
+                                            target="_blank"
+                                            initial={{ opacity: 0, y: -100 }}
+                                            animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            whileHover={{
+                                                scale: 1.03,
+                                                transition: { duration: 0.1 },
+                                            }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            <div className="pPCoverTitleMobile">
+                                                <p>{project.title}</p>
+                                            </div>
+                                            <div className="pPTitleMobile">
+                                                <p>{project.title}</p>
+                                            </div>
+                                            <div className="pPContent">
+                                                <div className="projectLogoMobile" />
+                                                <div className="projectImageMobile" style={{ backgroundImage: `url(${project.image})` }} />
+                                            </div>
+                                        </motion.a>
+                                    ))}
+                                </div>
+                            ) : (
+                                <motion.div
+                                    className="noPortfolioProjectsYetMobile"
+                                    key="noportfolioprojectsyetmobile"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: 100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    <h4>NO PORTFOLIO PROJECTS YET!</h4>
+                                </motion.div>
+                            )
+                        ) : loadingPortfolioProjectsData ? (
+                            <motion.div className="loadingPortfolioProjectsDataMobile" key="loadingportfolioprojectsdatamobile" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <div className="loaderPortfolioProjectsMobile" />
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                className="noPortfolioProjectsDataMobile"
+                                key="noportfolioprojectsdatamobile"
+                                transition={{ delay: 0.5 }}
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                <h4>NO DATA!</h4>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );

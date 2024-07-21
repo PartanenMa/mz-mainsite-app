@@ -25,7 +25,7 @@ function ProjectsPage() {
         } else {
             let pinnedProjects = [];
 
-            if (dataFe.projectsData[0].title === 0) {
+            if (dataFe.projectsData[0]?.title === 0) {
                 pinnedProjects.push(dataFe.projectsData[0]);
             } else {
                 dataFe.projectsData.map((p) => {
@@ -307,16 +307,16 @@ function PinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects })
                                 </motion.a>
                             ))
                         ) : (
-                            <motion.div className="noPinnedProjectsYet" key="nopinnedprojectsyetA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                            <motion.div className="noPinnedProjectsYet" key="nopinnedprojectsyet" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                                 <h4>NO PINNED PROJECTS YET!</h4>
                             </motion.div>
                         )
                     ) : loadingPinnedProjectsData ? (
-                        <motion.div className="loadingPinnedProjectsData" key="loadingpinnedprojectsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                        <motion.div className="loadingPinnedProjectsData" key="loadingpinnedprojectsdata" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
                             <div className="loaderPinnedProjects" />
                         </motion.div>
                     ) : (
-                        <motion.div className="noPinnedProjectsData" key="nopinnedprojectsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
+                        <motion.div className="noPinnedProjectsData" key="nopinnedprojectsdata" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
                             <h4>NO DATA!</h4>
                         </motion.div>
                     )}

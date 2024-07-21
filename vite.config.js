@@ -18,6 +18,7 @@ export default defineConfig({
             "/profile": apiUrl,
             "/projects": apiUrl,
             "/projects/:id": apiUrl,
+            "/projects/portfolio": apiUrl,
             "/projects/pinned": apiUrl,
             "/videos": apiUrl,
             "/videos/:id": apiUrl,

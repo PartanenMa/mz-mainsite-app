@@ -475,6 +475,7 @@ export const dataFe = {
             image: "",
             codeLink: "",
             projectLink: "",
+            portfolio: false,
             pinned: false,
         },
         /*{
@@ -486,6 +487,7 @@ export const dataFe = {
             image: "/src/Assets/Images/HeroSectionBG.jpg",
             codeLink: "https://github.com/PartanenMa",
             projectLink: "https://www.google.fi/",
+            portfolio: true,
             pinned: true,
         },*/
     ],

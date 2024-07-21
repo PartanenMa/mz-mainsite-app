@@ -37,7 +37,7 @@ function DashboardPage() {
         } else {
             let pinnedProjects = [];
 
-            if (dataFe.projectsData[0].title === 0) {
+            if (dataFe.projectsData[0]?.title === 0) {
                 pinnedProjects.push(dataFe.projectsData[0]);
             } else {
                 dataFe.projectsData.map((p) => {
