@@ -270,14 +270,14 @@ function Main({ loadingPortfolioProjectsData, portfolioProjects }) {
                                             }}
                                             whileTap={{ scale: 0.9 }}
                                         >
-                                            <div className="pPCoverTitle">
+                                            <div className="pPCoverTitle" style={{ backgroundImage: `url(${project.image})` }}>
                                                 <p>{project.title}</p>
                                             </div>
                                             <div className="pPTitle">
                                                 <p>{project.title}</p>
                                             </div>
                                             <div className="pPContent">
-                                                <div className="projectLogo" />
+                                                <div className="projectInfo"></div>
                                                 <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
                                             </div>
                                         </motion.a>
@@ -375,14 +375,14 @@ function MainMobile({ loadingPortfolioProjectsData, portfolioProjects }) {
                                             }}
                                             whileTap={{ scale: 0.9 }}
                                         >
-                                            <div className="pPCoverTitleMobile">
+                                            <div className="pPCoverTitleMobile" style={{ backgroundImage: `url(${project.image})` }}>
                                                 <p>{project.title}</p>
                                             </div>
                                             <div className="pPTitleMobile">
                                                 <p>{project.title}</p>
                                             </div>
-                                            <div className="pPContent">
-                                                <div className="projectLogoMobile" />
+                                            <div className="pPContentMobile">
+                                                <div className="projectInfoMobile"></div>
                                                 <div className="projectImageMobile" style={{ backgroundImage: `url(${project.image})` }} />
                                             </div>
                                         </motion.a>
