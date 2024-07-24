@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.6.7",
+    version: "Release 1.6.8",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
         dashboardPage: deployToGitHubPages ? "/mz-personalwebsite-app/admin/dashboard" : "/admin/dashboard",
