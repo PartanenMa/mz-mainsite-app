@@ -201,7 +201,12 @@ function Main({ connectionLoading, connection, loadingPortfolioProjectsData, por
                                                 <p>{project.title}</p>
                                             </div>
                                             <div className="pPContent">
-                                                <div className="projectInfo"></div>
+                                                <div className="projectInfo">
+                                                    <div className="pI1">
+                                                        <p>{project.type}</p>
+                                                    </div>
+                                                    <div className="pI2" style={{ "--project-color": project.color, backgroundImage: `url(${project.logo})` }} />
+                                                </div>
                                                 <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
                                             </div>
                                         </motion.a>
@@ -315,7 +320,12 @@ function MainMobile({ connectionLoading, connection, loadingPortfolioProjectsDat
                                                 <p>{project.title}</p>
                                             </div>
                                             <div className="pPContentMobile">
-                                                <div className="projectInfoMobile"></div>
+                                                <div className="projectInfoMobile">
+                                                    <div className="pI1M">
+                                                        <p>{project.type}</p>
+                                                    </div>
+                                                    <div className="pI2M" style={{ "--project-color": project.color, backgroundImage: `url(${project.logo})` }} />
+                                                </div>
                                                 <div className="projectImageMobile" style={{ backgroundImage: `url(${project.image})` }} />
                                             </div>
                                         </motion.a>

@@ -399,7 +399,12 @@ function MyPinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects 
                                         <p>{project.title}</p>
                                     </div>
                                     <div className="pPContent">
-                                        <div className="projectLogo" />
+                                        <div className="projectInfo">
+                                            <div className="pI1">
+                                                <p>{project.type}</p>
+                                            </div>
+                                            <div className="pI2" style={{ "--project-color": project.color, backgroundImage: `url(${project.logo})` }} />
+                                        </div>
                                         <div className="projectImage" style={{ backgroundImage: `url(${project.image})` }} />
                                     </div>
                                 </motion.a>
@@ -685,7 +690,12 @@ function MyPinnedProjectsMobile({ loadingPinnedProjectsData, statusDB, pinnedPro
                                         <p>{project.title}</p>
                                     </div>
                                     <div className="pPContentMobile">
-                                        <div className="projectLogoMobile" />
+                                        <div className="projectInfoMobile">
+                                            <div className="pI1M">
+                                                <p>{project.type}</p>
+                                            </div>
+                                            <div className="pI2M" style={{ "--project-color": project.color, backgroundImage: `url(${project.logo})` }} />
+                                        </div>
                                         <div className="projectImageMobile" style={{ backgroundImage: `url(${project.image})` }} />
                                     </div>
                                 </motion.a>

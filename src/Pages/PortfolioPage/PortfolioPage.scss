@@ -423,6 +423,33 @@
                         height: 100%;
                         width: 50%;
                         border-right: 1px solid gray;
+                        display: flex;
+                        flex-direction: column;
+
+                        .pI1 {
+                            height: 25%;
+                            width: 100%;
+                            display: flex;
+                            justify-content: left;
+                            align-items: center;
+
+                            p {
+                                color: white;
+                                font-size: 12px;
+                                font-style: italic;
+                                font-family: "Courier New", Courier, monospace;
+                                margin-left: 8px;
+                            }
+                        }
+
+                        .pI2 {
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 60%;
+                            height: 75%;
+                            width: 100%;
+                            filter: drop-shadow(0 0 2em var(--project-color));
+                        }
                     }
 
                     .projectImage {
@@ -949,6 +976,31 @@
                             height: 100%;
                             width: 50%;
                             border-right: 1px solid gray;
+
+                            .pI1M {
+                                height: 25%;
+                                width: 100%;
+                                display: flex;
+                                justify-content: left;
+                                align-items: center;
+
+                                p {
+                                    color: white;
+                                    font-size: 3px;
+                                    font-style: italic;
+                                    font-family: "Courier New", Courier, monospace;
+                                    margin-left: 2px;
+                                }
+                            }
+
+                            .pI2M {
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: 60%;
+                                height: 75%;
+                                width: 100%;
+                                filter: drop-shadow(0 0 2em var(--project-color));
+                            }
                         }
 
                         .projectImageMobile {
