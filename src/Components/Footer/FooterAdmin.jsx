@@ -194,33 +194,7 @@ function FooterAdmin() {
                                     </AnimatePresence>
                                 </a>
                             </div>
-                            <div className="footerNav3">
-                                {appLinks.length > 0 &&
-                                    appLinks.map((appLink, index) =>
-                                        appLink.disabled ? (
-                                            <div className="footerNav3-1D" key={`FN-3-${index}A`} title="Currently not available">
-                                                <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                <h3>{appLink.label}</h3>
-                                            </div>
-                                        ) : (
-                                            <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}A`}>
-                                                <AnimatePresence>
-                                                    <motion.div
-                                                        className="footerNav3-1"
-                                                        whileHover={{
-                                                            scale: 1.1,
-                                                            transition: { duration: 0.1 },
-                                                        }}
-                                                        whileTap={{ scale: 0.9 }}
-                                                    >
-                                                        <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                        <h3>{appLink.label}</h3>
-                                                    </motion.div>
-                                                </AnimatePresence>
-                                            </a>
-                                        )
-                                    )}
-                            </div>
+                            <div className="footerNav3"></div>
                         </div>
                     </div>
                 </footer>
@@ -405,33 +379,7 @@ function FooterAdminMobile() {
                         </AnimatePresence>
                     </a>
                 </div>
-                <div className="footerNav3Mobile">
-                    {appLinks.length > 0 &&
-                        appLinks.map((appLink, index) =>
-                            appLink.disabled ? (
-                                <div className="footerNav3-1DM" key={`FN-3-${index}AM`} title="Currently not available">
-                                    <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                    <h3>{appLink.label}</h3>
-                                </div>
-                            ) : (
-                                <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}AM`}>
-                                    <AnimatePresence>
-                                        <motion.div
-                                            className="footerNav3-1M"
-                                            whileHover={{
-                                                scale: 1.1,
-                                                transition: { duration: 0.1 },
-                                            }}
-                                            whileTap={{ scale: 0.9 }}
-                                        >
-                                            <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                            <h3>{appLink.label}</h3>
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </a>
-                            )
-                        )}
-                </div>
+                <div className="footerNav3Mobile"></div>
             </div>
         </footer>
     );

@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.6.10",
+    version: "Release 1.6.11",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
         dashboardPage: deployToGitHubPages ? "/mz-personalwebsite-app/admin/dashboard" : "/admin/dashboard",
@@ -34,9 +34,9 @@ export const info = {
     appLinks: [
         /*{
             label: "ExampleLabel",
-            image: ExampleImg,
+            image: ReactLogo,
             link: deployToGitHubPages ? "https://partanenma.github.io/mz-portfolio-app/" : "https://matrixzoneportfolio.netlify.app/",
-            disabled: true,
+            disabled: false,
         },*/
     ],
     testLoginFe: {

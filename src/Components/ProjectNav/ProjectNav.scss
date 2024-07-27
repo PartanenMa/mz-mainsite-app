@@ -66,7 +66,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 30px;
 
             .appLink {
                 height: 45px;
@@ -76,7 +76,6 @@
                 transition: background-color 300ms ease-in-out;
                 display: flex;
                 flex-direction: column;
-                overflow: hidden;
 
                 .aImg {
                     background-repeat: no-repeat;
@@ -95,8 +94,9 @@
 
                     p {
                         color: #03a062;
-                        font-size: 12px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        font-size: 10px;
+                        font-style: italic;
+                        font-family: "Courier New", Courier, monospace;
                     }
                 }
             }
@@ -146,9 +146,12 @@
             }
 
             .noAppLinks {
-                color: red;
+                color: yellow;
                 font-size: 20px;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                border: 1px solid yellow;
+                border-radius: 5px;
+                padding: 3px;
                 cursor: default;
             }
         }
@@ -223,7 +226,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 5px;
 
             .appLinkMobile {
                 height: 23px;
@@ -233,7 +235,6 @@
                 transition: background-color 300ms ease-in-out;
                 display: flex;
                 flex-direction: column;
-                overflow: hidden;
 
                 .aImgMobile {
                     background-repeat: no-repeat;
@@ -252,8 +253,9 @@
 
                     p {
                         color: #03a062;
-                        font-size: 6px;
-                        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                        font-size: 3px;
+                        font-style: italic;
+                        font-family: "Courier New", Courier, monospace;
                     }
                 }
             }
@@ -303,9 +305,12 @@
             }
 
             .noAppLinksMobile {
-                color: red;
+                color: yellow;
                 font-size: 10px;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+                border: 0.5px solid yellow;
+                border-radius: 2.5px;
+                padding: 1.5px;
                 cursor: default;
             }
         }

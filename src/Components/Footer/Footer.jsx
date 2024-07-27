@@ -195,33 +195,7 @@ function Footer() {
                                         </AnimatePresence>
                                     </a>
                                 </div>
-                                <div className="footerNav3" style={{ borderRight: "1px solid #03a062" }}>
-                                    {appLinks.length > 0 &&
-                                        appLinks.map((appLink, index) =>
-                                            appLink.disabled ? (
-                                                <div className="footerNav3-1D" key={`FN-3-${index}`} title="Currently not available">
-                                                    <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                    <h3>{appLink.label}</h3>
-                                                </div>
-                                            ) : (
-                                                <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}`}>
-                                                    <AnimatePresence>
-                                                        <motion.div
-                                                            className="footerNav3-1"
-                                                            whileHover={{
-                                                                scale: 1.1,
-                                                                transition: { duration: 0.1 },
-                                                            }}
-                                                            whileTap={{ scale: 0.9 }}
-                                                        >
-                                                            <div className="image" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                                            <h3>{appLink.label}</h3>
-                                                        </motion.div>
-                                                    </AnimatePresence>
-                                                </a>
-                                            )
-                                        )}
-                                </div>
+                                <div className="footerNav3" style={{ borderRight: "1px solid #03a062" }}></div>
                             </div>
                         </div>
                     </div>
@@ -407,33 +381,7 @@ function FooterMobile() {
                         </AnimatePresence>
                     </a>
                 </div>
-                <div className="footerNav3Mobile">
-                    {appLinks.length > 0 &&
-                        appLinks.map((appLink, index) =>
-                            appLink.disabled ? (
-                                <div className="footerNav3-1DM" key={`FN-3-${index}`} title="Currently not available">
-                                    <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                    <h3>{appLink.label}</h3>
-                                </div>
-                            ) : (
-                                <a style={{ textDecoration: "none" }} href={appLink.link} key={`FN-3-${index}`}>
-                                    <AnimatePresence>
-                                        <motion.div
-                                            className="footerNav3-1M"
-                                            whileHover={{
-                                                scale: 1.1,
-                                                transition: { duration: 0.1 },
-                                            }}
-                                            whileTap={{ scale: 0.9 }}
-                                        >
-                                            <div className="imageMobile" style={{ backgroundImage: `url(${appLink.image})` }} />
-                                            <h3>{appLink.label}</h3>
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </a>
-                            )
-                        )}
-                </div>
+                <div className="footerNav3Mobile"></div>
             </div>
         </footer>
     );
