@@ -306,8 +306,11 @@ function AboutMyProjects() {
                 </AnimatePresence>
                 <div className="aboutMyProjectsTextContainer">
                     <div className="aboutMyProjectsTextTitle">
-                        <h4 className="h4_1">{info.projects.user}</h4>
-                        <h4 className="h4_2">{info.profile.name}</h4>
+                        <div className="aboutMyProjectsTextTitleLogo" />
+                        <div className="aboutMyProjectsTextTitleText">
+                            <h4 className="h4_1">{info.projects.user}</h4>
+                            <h4 className="h4_2">{info.profile.name}</h4>
+                        </div>
                     </div>
                     <div className="aboutMyProjectsText">
                         <p>
@@ -597,8 +600,11 @@ function AboutMyProjectsMobile() {
                 </AnimatePresence>
                 <div className="aboutMyProjectsTextContainerMobile">
                     <div className="aboutMyProjectsTextTitleMobile">
-                        <h4 className="h4_1M">{info.projects.user}</h4>
-                        <h4 className="h4_2M">{info.profile.name}</h4>
+                        <div className="aboutMyProjectsTextTitleLogoMobile" />
+                        <div className="aboutMyProjectsTextTitleTextMobile">
+                            <h4 className="h4_1M">{info.projects.user}</h4>
+                            <h4 className="h4_2M">{info.profile.name}</h4>
+                        </div>
                     </div>
                     <div className="aboutMyProjectsTextMobile">
                         <p>

@@ -422,6 +422,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                     />
                     <div className="aboutMeTextContainer">
                         <div className="aboutMeTextTitle">
+                            <div className="aboutMeTextTitleLogo" />
                             <div className="aboutMeTextTitle1">
                                 <h4 className="h4_1">{info.profile.name}</h4>
                                 {info.api.enabled ? (
@@ -1778,6 +1779,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                     />
                     <div className="aboutMeTextContainerMobile">
                         <div className="aboutMeTextTitleMobile">
+                            <div className="aboutMeTextTitleLogoMobile" />
                             <div className="aboutMeTextTitle1Mobile">
                                 <h4 className="h4_1M">{info.profile.name}</h4>
                                 {info.api.enabled ? (
