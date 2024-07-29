@@ -112,7 +112,6 @@
 
 /*Both:*/
 .projectPageTitleContainer {
-    background-color: black;
     height: 120px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -137,7 +136,6 @@
     border-top: 1px solid white;
 
     .projectTitle {
-        background-color: black;
         height: 30px;
         width: 100%;
         overflow: hidden;
@@ -221,7 +219,7 @@
                 }
 
                 .projectBtn1:hover {
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--project-color));
                 }
 
                 .projectBtn2 {
@@ -430,7 +428,6 @@
 
 /*Both (mobile):*/
 .projectPageTitleContainerMobile {
-    background-color: black;
     height: 60px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -454,7 +451,6 @@
     border-top: 1px solid white;
 
     .projectTitleMobile {
-        background-color: black;
         height: 15px;
         width: 100%;
         overflow: hidden;
@@ -538,7 +534,7 @@
                 }
 
                 .projectBtn1Mobile:hover {
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--project-color));
                 }
 
                 .projectBtn2Mobile {

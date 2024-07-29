@@ -377,7 +377,7 @@ function ProfilePageAdmin() {
 
 function ProfileAdminPageTitle() {
     return (
-        <div className="profilePageTitleContainer">
+        <div className="profilePageTitleContainer" style={{ backgroundColor: info.profile.color }}>
             <h2>MY PROFILE</h2>
         </div>
     );
@@ -403,7 +403,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
 
     return (
         <div className="aboutMeContainer">
-            <div className="aboutMeTitle">
+            <div className="aboutMeTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>ABOUT ME</h3>
             </div>
             <div className="aboutMeContent">
@@ -411,6 +411,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                     <motion.a
                         className="aboutMePhoto"
                         title={"My " + info.profile.siteName}
+                        style={{ "--profile-color": info.profile.color }}
                         href={info.profile.link}
                         target="_blank"
                         key="aboutmephotoA"
@@ -433,7 +434,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                                                 : professionData?.professionStatus?.profession}
                                         </motion.h4>
                                     ) : loadingProfessionData || loadingJobData ? (
-                                        <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        <motion.h4 className="h4_2" style={{ color: info.profile.color }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                             LOADING...
                                         </motion.h4>
                                     ) : (
@@ -442,7 +443,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                                         </motion.h4>
                                     )
                                 ) : loadingProfessionData || loadingJobData ? (
-                                    <motion.h4 className="h4_2" style={{ color: "#0072b1" }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                    <motion.h4 className="h4_2" style={{ color: info.profile.color }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                         LOADING...
                                     </motion.h4>
                                 ) : (
@@ -475,7 +476,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                                     </motion.p>
                                 ) : loadingProfessionData || loadingJobData ? (
                                     <motion.div className="loadingProfileDataAboutMe" key="loadinglangprofiledataaboutmeA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                        <div className="loaderProfileAboutMe" />
+                                        <div className="loaderProfileAboutMe" style={{ borderTop: `10px solid ${info.profile.color}` }} />
                                     </motion.div>
                                 ) : (
                                     <motion.p style={{ color: "red", textShadow: "none" }} key="aboutmedescriptionfailA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
@@ -484,7 +485,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                                 )
                             ) : loadingProfessionData || loadingJobData ? (
                                 <motion.div className="loadingProfileDataAboutMe" key="loadinglangprofiledataaboutmeA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfileAboutMe" />
+                                    <div className="loaderProfileAboutMe" style={{ borderTop: `10px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.p key="aboutmedescriptionsuccessA" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
@@ -508,7 +509,7 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
 function Languages({ loadingProfileData, statusDB, languages, getProfileC, getProfileU, getProfileD }) {
     return (
         <div className="languagesContainer">
-            <div className="languagesTitle">
+            <div className="languagesTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     MY LANGUAGES
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -549,7 +550,7 @@ function Languages({ loadingProfileData, statusDB, languages, getProfileC, getPr
                         ))
                     ) : loadingProfileData ? (
                         <motion.div className="loadingProfileData" key="loadinglangprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfile" />
+                            <div className="loaderProfile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileData" key="nolangprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -573,7 +574,7 @@ function Education({ loadingProfileData, statusDB, educations, getProfileC, getP
 
     return (
         <div className="educationsContainer">
-            <div className="educationsTitle">
+            <div className="educationsTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     MY EDUCATION
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -634,7 +635,7 @@ function Education({ loadingProfileData, statusDB, educations, getProfileC, getP
                         ))
                     ) : loadingProfileData ? (
                         <motion.div className="loadingProfileData" key="loadingedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfile" />
+                            <div className="loaderProfile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileData" key="noedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -752,7 +753,7 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
 
     return (
         <div className="experiencesContainer">
-            <div className="experiencesTitle">
+            <div className="experiencesTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     EXPERIENCE
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -900,7 +901,7 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                         ))
                     ) : loadingProfileData ? (
                         <motion.div className="loadingProfileData" key="loadingexpprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfile" />
+                            <div className="loaderProfile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileData" key="noutilexpprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -992,7 +993,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
 
     return (
         <div className="skillsContainer">
-            <div className="skillsTitle">
+            <div className="skillsTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     MY SKILLS
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -1208,7 +1209,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                 </>
                             ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileData" key="loadingwdsprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfile" />
+                                    <div className="loaderProfile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileData" key="nowdsprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -1403,7 +1404,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                 </>
                             ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileData" key="loadingfedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfile" />
+                                    <div className="loaderProfile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileData" key="nofedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -1598,7 +1599,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                 </>
                             ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileData" key="loadingbedprofiledataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfile" />
+                                    <div className="loaderProfile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileData" key="nobedprofiledataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -1616,7 +1617,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
 function Interests() {
     return (
         <div className="interestsContainer">
-            <div className="interestsTitle">
+            <div className="interestsTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>MY INTERESTS</h3>
             </div>
             <div className="interestsContent">
@@ -1658,7 +1659,7 @@ function Interests() {
 function Hobbies() {
     return (
         <div className="hobbiesContainer">
-            <div className="hobbiesTitle">
+            <div className="hobbiesTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>MY HOBBIES</h3>
             </div>
             <div className="hobbiesContent">
@@ -1700,7 +1701,7 @@ function Hobbies() {
 function ContactMe() {
     return (
         <div className="contactContainer">
-            <div className="contactTitle">
+            <div className="contactTitle" style={{ backgroundColor: info.profile.color }}>
                 <h3>MY CONTACT INFO</h3>
             </div>
             <div className="contactContent">
@@ -1734,7 +1735,7 @@ function ContactMe() {
 //Mobile:
 function ProfileAdminPageTitleMobile() {
     return (
-        <div className="profilePageTitleContainerMobile">
+        <div className="profilePageTitleContainerMobile" style={{ backgroundColor: info.profile.color }}>
             <h2>MY PROFILE</h2>
         </div>
     );
@@ -1760,7 +1761,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
 
     return (
         <div className="aboutMeContainerMobile">
-            <div className="aboutMeTitleMobile">
+            <div className="aboutMeTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>ABOUT ME</h3>
             </div>
             <div className="aboutMeContentMobile">
@@ -1768,6 +1769,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                     <motion.a
                         className="aboutMePhotoMobile"
                         title={"My " + info.profile.siteName}
+                        style={{ "--profile-color": info.profile.color }}
                         href={info.profile.link}
                         target="_blank"
                         key="aboutmephotomobileA"
@@ -1790,7 +1792,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                                                 : professionData?.professionStatus?.profession}
                                         </motion.h4>
                                     ) : loadingProfessionData || loadingJobData ? (
-                                        <motion.h4 className="h4_2M" style={{ color: "#0072b1" }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                        <motion.h4 className="h4_2M" style={{ color: info.profile.color }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                             LOADING...
                                         </motion.h4>
                                     ) : (
@@ -1805,7 +1807,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                                         </motion.h4>
                                     )
                                 ) : loadingProfessionData || loadingJobData ? (
-                                    <motion.h4 className="h4_2M" style={{ color: "#0072b1" }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                    <motion.h4 className="h4_2M" style={{ color: info.profile.color }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                         LOADING...
                                     </motion.h4>
                                 ) : (
@@ -1838,7 +1840,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                                     </motion.p>
                                 ) : loadingProfessionData || loadingJobData ? (
                                     <motion.div className="loadingProfileDataAboutMeMobile" key="loadinglangprofiledataaboutmemobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                        <div className="loaderProfileAboutMeMobile" />
+                                        <div className="loaderProfileAboutMeMobile" style={{ borderTop: `5px solid ${info.profile.color}` }} />
                                     </motion.div>
                                 ) : (
                                     <motion.p style={{ color: "red", textShadow: "none" }} key="aboutmedescriptionfailmobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
@@ -1847,7 +1849,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                                 )
                             ) : loadingProfessionData || loadingJobData ? (
                                 <motion.div className="loadingProfileDataAboutMeMobile" key="loadinglangprofiledataaboutmemobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfileAboutMeMobile" />
+                                    <div className="loaderProfileAboutMeMobile" style={{ borderTop: `5px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.p key="aboutmedescriptionsuccessmobileA" transition={{ delay: 1 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
@@ -1871,7 +1873,7 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
 function LanguagesMobile({ loadingProfileData, statusDB, languages, getProfileC, getProfileU, getProfileD }) {
     return (
         <div className="languagesContainerMobile">
-            <div className="languagesTitleMobile">
+            <div className="languagesTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     MY LANGUAGES
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -1912,7 +1914,7 @@ function LanguagesMobile({ loadingProfileData, statusDB, languages, getProfileC,
                         ))
                     ) : loadingProfileData ? (
                         <motion.div className="loadingProfileDataMobile" key="loadinglangprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfileMobile" />
+                            <div className="loaderProfileMobile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileDataMobile" key="nolangprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -1936,7 +1938,7 @@ function EducationMobile({ loadingProfileData, statusDB, educations, getProfileC
 
     return (
         <div className="educationsContainerMobile">
-            <div className="educationsTitleMobile">
+            <div className="educationsTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     MY EDUCATION
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -1997,7 +1999,7 @@ function EducationMobile({ loadingProfileData, statusDB, educations, getProfileC
                         ))
                     ) : loadingProfileData ? (
                         <motion.div className="loadingProfileDataMobile" key="loadingedprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfileMobile" />
+                            <div className="loaderProfileMobile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileDataMobile" key="noedprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -2115,7 +2117,7 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
 
     return (
         <div className="experiencesContainerMobile">
-            <div className="experiencesTitleMobile">
+            <div className="experiencesTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     EXPERIENCE
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -2236,7 +2238,7 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                         ))
                     ) : loadingProfileData ? (
                         <motion.div className="loadingProfileDataMobile" key="loadingexpprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProfileMobile" />
+                            <div className="loaderProfileMobile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProfileDataMobile" key="noutilexpprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -2314,7 +2316,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
 
     return (
         <div className="skillsContainerMobile">
-            <div className="skillsTitleMobile">
+            <div className="skillsTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>
                     MY SKILLS
                     <DBstate loading={loadingProfileData} statusDB={statusDB} />
@@ -2524,7 +2526,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                 </>
                             ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileDataMobile" key="loadingwdsprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfileMobile" />
+                                    <div className="loaderProfileMobile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileDataMobile" key="nowdsprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -2713,7 +2715,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                 </>
                             ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileDataMobile" key="loadingfedprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfileMobile" />
+                                    <div className="loaderProfileMobile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileDataMobile" key="nofedprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -2902,7 +2904,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                 </>
                             ) : loadingProfileData ? (
                                 <motion.div className="loadingProfileDataMobile" key="loadingbedprofiledatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfileMobile" />
+                                    <div className="loaderProfileMobile" style={{ borderTop: `16px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.div className="noProfileDataMobile" key="nobedprofiledatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -2920,7 +2922,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
 function InterestsMobile() {
     return (
         <div className="interestsContainerMobile">
-            <div className="interestsTitleMobile">
+            <div className="interestsTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>MY INTERESTS</h3>
             </div>
             <div className="interestsContentMobile">
@@ -2962,7 +2964,7 @@ function InterestsMobile() {
 function HobbiesMobile() {
     return (
         <div className="hobbiesContainerMobile">
-            <div className="hobbiesTitleMobile">
+            <div className="hobbiesTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>MY HOBBIES</h3>
             </div>
             <div className="hobbiesContentMobile">
@@ -3004,7 +3006,7 @@ function HobbiesMobile() {
 function ContactMeMobile() {
     return (
         <div className="contactContainerMobile">
-            <div className="contactTitleMobile">
+            <div className="contactTitleMobile" style={{ backgroundColor: info.profile.color }}>
                 <h3>MY CONTACT INFO</h3>
             </div>
             <div className="contactContentMobile">

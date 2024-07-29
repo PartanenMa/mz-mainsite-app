@@ -801,7 +801,6 @@
 
 /*Both:*/
 .profilePageTitleContainer {
-    background-color: #0072b1;
     height: 120px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -828,7 +827,6 @@
     border-bottom: 1px solid white;
 
     .aboutMeTitle {
-        background-color: #0072b1;
         height: 10%;
         width: 100%;
         overflow: hidden;
@@ -874,7 +872,7 @@
 
         .aboutMePhoto:hover {
             border: 1px solid white;
-            filter: drop-shadow(0 0 2em #0072b1);
+            filter: drop-shadow(0 0 2em var(--profile-color));
         }
 
         .aboutMeTextContainer {
@@ -968,7 +966,6 @@
                     .loaderProfileAboutMe {
                         border: 10px solid #f3f3f3;
                         border-radius: 50%;
-                        border-top: 10px solid #0072b1;
                         width: 80px;
                         height: 80px;
                         -webkit-animation: spin 2s linear infinite;
@@ -1004,7 +1001,6 @@
     border-bottom: 1px solid white;
 
     .languagesTitle {
-        background-color: #0072b1;
         height: 30px;
         width: 100%;
         overflow: hidden;
@@ -1044,7 +1040,6 @@
     border-bottom: 1px solid white;
 
     .educationsTitle {
-        background-color: #0072b1;
         height: 30px;
         width: 100%;
         overflow: hidden;
@@ -1084,7 +1079,6 @@
 }
 
 .experiencesTitle {
-    background-color: #0072b1;
     height: 30px;
     width: 100%;
     overflow: hidden;
@@ -1215,7 +1209,6 @@
     border-bottom: 1px solid white;
 
     .skillsTitle {
-        background-color: #0072b1;
         height: 30px;
         width: 100%;
         overflow: hidden;
@@ -1517,7 +1510,6 @@
     .loaderProfile {
         border: 16px solid #f3f3f3;
         border-radius: 50%;
-        border-top: 16px solid #0072b1;
         width: 120px;
         height: 120px;
         -webkit-animation: spin 2s linear infinite;
@@ -1571,7 +1563,6 @@
     border-bottom: 1px solid white;
 
     .interestsTitle {
-        background-color: #0072b1;
         height: 10%;
         width: 100%;
         overflow: hidden;
@@ -1822,7 +1813,6 @@
     border-bottom: 1px solid white;
 
     .hobbiesTitle {
-        background-color: #0072b1;
         height: 10%;
         width: 100%;
         overflow: hidden;
@@ -2072,7 +2062,6 @@
     overflow: hidden;
 
     .contactTitle {
-        background-color: #0072b1;
         height: 30px;
         width: 100%;
         overflow: hidden;
@@ -2954,7 +2943,6 @@
 
 /*Both (mobile):*/
 .profilePageTitleContainerMobile {
-    background-color: #0072b1;
     height: 60px;
     width: 100%;
     border-top: 1px solid #03a062;
@@ -2979,7 +2967,6 @@
     border-bottom: 1px solid white;
 
     .aboutMeTitleMobile {
-        background-color: #0072b1;
         height: 10%;
         width: 100%;
         overflow: hidden;
@@ -3023,7 +3010,7 @@
 
         .aboutMePhotoMobile:hover {
             border: 1px solid white;
-            filter: drop-shadow(0 0 2em #0072b1);
+            filter: drop-shadow(0 0 2em var(--profile-color));
         }
 
         .aboutMeTextContainerMobile {
@@ -3115,7 +3102,6 @@
                     .loaderProfileAboutMeMobile {
                         border: 5px solid #f3f3f3;
                         border-radius: 50%;
-                        border-top: 5px solid #0072b1;
                         width: 40px;
                         height: 40px;
                         -webkit-animation: spin 2s linear infinite;
@@ -3151,7 +3137,6 @@
     border-bottom: 1px solid white;
 
     .languagesTitleMobile {
-        background-color: #0072b1;
         height: 15px;
         width: 100%;
         overflow: hidden;
@@ -3190,7 +3175,6 @@
     border-bottom: 1px solid white;
 
     .educationsTitleMobile {
-        background-color: #0072b1;
         height: 15px;
         width: 100%;
         overflow: hidden;
@@ -3231,7 +3215,6 @@
 }
 
 .experiencesTitleMobile {
-    background-color: #0072b1;
     height: 15px;
     width: 100%;
     overflow: hidden;
@@ -3379,7 +3362,6 @@
     border-bottom: 1px solid white;
 
     .skillsTitleMobile {
-        background-color: #0072b1;
         height: 15px;
         width: 100%;
         overflow: hidden;
@@ -3665,7 +3647,7 @@
     }
 }
 
-.loadingProfileData {
+.loadingProfileDataMobile {
     height: 300px;
     width: 95%;
     display: flex;
@@ -3675,7 +3657,6 @@
     .loaderProfileMobile {
         border: 16px solid #f3f3f3;
         border-radius: 50%;
-        border-top: 16px solid #0072b1;
         width: 120px;
         height: 120px;
         -webkit-animation: spin 2s linear infinite;
@@ -3728,7 +3709,6 @@
     border-bottom: 1px solid white;
 
     .interestsTitleMobile {
-        background-color: #0072b1;
         height: 15px;
         width: 100%;
         overflow: hidden;
@@ -3976,7 +3956,6 @@
     border-bottom: 1px solid white;
 
     .hobbiesTitleMobile {
-        background-color: #0072b1;
         height: 15px;
         width: 100%;
         overflow: hidden;
@@ -4225,7 +4204,6 @@
     overflow: hidden;
 
     .contactTitleMobile {
-        background-color: #0072b1;
         height: 15px;
         width: 100%;
         overflow: hidden;

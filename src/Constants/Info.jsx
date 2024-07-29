@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.6.12",
+    version: "Release 1.6.13",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
         dashboardPage: deployToGitHubPages ? "/mz-personalwebsite-app/admin/dashboard" : "/admin/dashboard",
@@ -86,6 +86,7 @@ export const info = {
     profile: {
         //Site data:
         siteName: "LinkedIn",
+        color: "#0072b1",
         //Account data:
         user: "Manu Partanen",
         name: "Manu Partanen",
@@ -146,6 +147,7 @@ export const info = {
     projects: {
         //Site data:
         siteName: "GitHub",
+        color: "black",
         //Account data:
         user: "PartanenMa",
         link: "https://github.com/PartanenMa",
@@ -162,6 +164,7 @@ export const info = {
     videos: {
         //Site data:
         siteName: "YouTube",
+        color: "#c4302b",
         //Account data:
         user: "Manunaama",
         link: "https://www.youtube.com/channel/UCsEePl0jBNlnqYYnyjdQW5g",

@@ -8,7 +8,6 @@ function Footer() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
     const location = useLocation();
-    const appLinks = info.appLinks;
 
     useEffect(() => {
         const handleResize = () => {
@@ -154,7 +153,7 @@ function Footer() {
                                                 <div className="linkedInLogoContainer">
                                                     <div className="linkedInLogo" />
                                                 </div>
-                                                <h3>{info.profile.siteName}</h3>
+                                                <h3 style={{ "--profile-color": info.profile.color }}>{info.profile.siteName}</h3>
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
@@ -172,7 +171,7 @@ function Footer() {
                                                 <div className="gitHubLogoContainer">
                                                     <div className="gitHubLogo" />
                                                 </div>
-                                                <h3>{info.projects.siteName}</h3>
+                                                <h3 style={{ "--projects-color": info.projects.color }}>{info.projects.siteName}</h3>
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
@@ -190,7 +189,7 @@ function Footer() {
                                                 <div className="youTubeLogoContainer">
                                                     <div className="youTubeLogo" />
                                                 </div>
-                                                <h3>{info.videos.siteName}</h3>
+                                                <h3 style={{ "--videos-color": info.videos.color }}>{info.videos.siteName}</h3>
                                             </motion.div>
                                         </AnimatePresence>
                                     </a>
@@ -210,7 +209,6 @@ function Footer() {
 function FooterMobile() {
     const navigate = useNavigate();
     const location = useLocation();
-    const appLinks = info.appLinks;
 
     return (
         <footer className="footerMobile">
@@ -340,7 +338,7 @@ function FooterMobile() {
                                 <div className="linkedInLogoContainerMobile">
                                     <div className="linkedInLogoMobile" />
                                 </div>
-                                <h3>{info.profile.siteName}</h3>
+                                <h3 style={{ "--profile-color": info.profile.color }}>{info.profile.siteName}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </a>
@@ -358,7 +356,7 @@ function FooterMobile() {
                                 <div className="gitHubLogoContainerMobile">
                                     <div className="gitHubLogoMobile" />
                                 </div>
-                                <h3>{info.projects.siteName}</h3>
+                                <h3 style={{ "--projects-color": info.projects.color }}>{info.projects.siteName}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </a>
@@ -376,7 +374,7 @@ function FooterMobile() {
                                 <div className="youTubeLogoContainerMobile">
                                     <div className="youTubeLogoMobile" />
                                 </div>
-                                <h3>{info.videos.siteName}</h3>
+                                <h3 style={{ "--videos-color": info.videos.color }}>{info.videos.siteName}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </a>

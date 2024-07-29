@@ -218,7 +218,7 @@ function VideosPageAdmin() {
 
 function VideosPageTitle() {
     return (
-        <div className="videosPageTitleContainer">
+        <div className="videosPageTitleContainer" style={{ backgroundColor: info.videos.color }}>
             <h2>MY VIDEOS</h2>
         </div>
     );
@@ -227,7 +227,7 @@ function VideosPageTitle() {
 function AboutMyVideos() {
     return (
         <div className="aboutMyVideosContainer">
-            <div className="aboutMyVideosTitle">
+            <div className="aboutMyVideosTitle" style={{ backgroundColor: info.videos.color }}>
                 <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="aboutMyVideosContent">
@@ -235,6 +235,7 @@ function AboutMyVideos() {
                     <motion.a
                         className="aboutMyVideosPhoto"
                         title={"My " + info.videos.siteName}
+                        style={{ "--videos-color": info.videos.color }}
                         href={info.videos.link}
                         target="_blank"
                         key="aboutmyviedosphotoA"
@@ -275,7 +276,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
 
     return (
         <div className="videosContainer">
-            <div className="videosTitle">
+            <div className="videosTitle" style={{ backgroundColor: info.videos.color }}>
                 <h3>
                     MY VIDEOS
                     <DBstate loading={loadingVideosData} statusDB={statusDB} />
@@ -293,6 +294,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                             videos.map((video, index) => (
                                 <motion.div
                                     className="video"
+                                    style={{ "--videos-color": info.videos.color }}
                                     key={index}
                                     initial={{ opacity: 0, y: -100 }}
                                     animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
@@ -301,10 +303,10 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                                         transition: { duration: 0.1 },
                                     }}
                                 >
-                                    <div className="videoCoverTitle">
+                                    <div className="videoCoverTitle" style={{ backgroundColor: info.videos.color }}>
                                         <h2>{video.title}</h2>
                                     </div>
-                                    <div className="videoTitle">
+                                    <div className="videoTitle" style={{ backgroundColor: info.videos.color }}>
                                         <div className="videoTitleSection1">
                                             <h4>{video.title}</h4>
                                         </div>
@@ -344,6 +346,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                                                 <motion.a
                                                     className="videoBtn1"
                                                     title={"Watch video on " + info.videos.siteName}
+                                                    style={{ "--videos-color": info.videos.color }}
                                                     key="vbtn1A"
                                                     href={video.videoLink}
                                                     target="_blank"
@@ -381,7 +384,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
                         )
                     ) : loadingVideosData ? (
                         <motion.div className="loadingVideosData" key="loadingvideosdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderVideos" />
+                            <div className="loaderVideos" style={{ borderTop: `16px solid ${info.videos.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noVideosData" key="novideosdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -397,7 +400,7 @@ function MyVideos({ loadingVideosData, statusDB, videos, getVideosC, getVideosU,
 //Mobile:
 function VideosPageTitleMobile() {
     return (
-        <div className="videosPageTitleContainerMobile">
+        <div className="videosPageTitleContainerMobile" style={{ backgroundColor: info.videos.color }}>
             <h2>MY VIDEOS</h2>
         </div>
     );
@@ -406,7 +409,7 @@ function VideosPageTitleMobile() {
 function AboutMyVideosMobile() {
     return (
         <div className="aboutMyVideosContainerMobile">
-            <div className="aboutMyVideosTitleMobile">
+            <div className="aboutMyVideosTitleMobile" style={{ backgroundColor: info.videos.color }}>
                 <h3>ABOUT MY VIDEOS</h3>
             </div>
             <div className="aboutMyVideosContentMobile">
@@ -414,6 +417,7 @@ function AboutMyVideosMobile() {
                     <motion.a
                         className="aboutMyVideosPhotoMobile"
                         title={"My " + info.videos.siteName}
+                        style={{ "--videos-color": info.videos.color }}
                         href={info.videos.link}
                         target="_blank"
                         key="aboutmyviedosphotomobileA"
@@ -454,7 +458,7 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
 
     return (
         <div className="videosContainerMobile">
-            <div className="videosTitleMobile">
+            <div className="videosTitleMobile" style={{ backgroundColor: info.videos.color }}>
                 <h3>
                     MY VIDEOS
                     <DBstate loading={loadingVideosData} statusDB={statusDB} />
@@ -472,6 +476,7 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                             videos.map((video, index) => (
                                 <motion.div
                                     className="videoMobile"
+                                    style={{ "--videos-color": info.videos.color }}
                                     key={index}
                                     initial={{ opacity: 0, y: -100 }}
                                     animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
@@ -480,10 +485,10 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                                         transition: { duration: 0.1 },
                                     }}
                                 >
-                                    <div className="videoCoverTitleMobile">
+                                    <div className="videoCoverTitleMobile" style={{ backgroundColor: info.videos.color }}>
                                         <h2>{video.title}</h2>
                                     </div>
-                                    <div className="videoTitleMobile">
+                                    <div className="videoTitleMobile" style={{ backgroundColor: info.videos.color }}>
                                         <div className="videoTitleSection1Mobile">
                                             <h4>{video.title}</h4>
                                         </div>
@@ -523,6 +528,7 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                                                 <motion.a
                                                     className="videoBtn1Mobile"
                                                     title={"Watch video on " + info.videos.siteName}
+                                                    style={{ "--videos-color": info.videos.color }}
                                                     key="vbtn1mA"
                                                     href={video.videoLink}
                                                     target="_blank"
@@ -560,7 +566,7 @@ function MyVideosMobile({ loadingVideosData, statusDB, videos, getVideosC, getVi
                         )
                     ) : loadingVideosData ? (
                         <motion.div className="loadingVideosDataMobile" key="loadingvideosdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderVideosMobile" />
+                            <div className="loaderVideosMobile" style={{ borderTop: `16px solid ${info.videos.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noVideosDataMobile" key="novideosdatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>

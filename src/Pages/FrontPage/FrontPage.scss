@@ -261,15 +261,15 @@
                         }
 
                         .profileColor {
-                            color: #0072b1;
+                            color: var(--profile-color);
                         }
 
                         .projectsColor {
-                            color: black;
+                            color: var(--projects-color);
                         }
 
                         .videosColor {
-                            color: #c4302b;
+                            color: var(--videos-color);
                         }
                     }
                 }
@@ -285,7 +285,6 @@
                     padding-top: 10px;
 
                     .heroContent1 {
-                        background-color: #0072b1;
                         height: 90%;
                         width: 30%;
                         cursor: pointer;
@@ -324,7 +323,6 @@
                                 overflow: hidden;
 
                                 h3 {
-                                    color: #0072b1;
                                     font-size: 20px;
                                     font-style: italic;
                                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -343,7 +341,6 @@
                             }
 
                             .contentProfile {
-                                background-color: #0072b1;
                                 height: 80%;
                                 padding-left: 10px;
                                 overflow: hidden;
@@ -372,7 +369,7 @@
 
                     .heroContent1:hover {
                         border: 1px solid lightblue;
-                        filter: drop-shadow(0 0 2em #0072b1);
+                        filter: drop-shadow(0 0 2em var(--profile-color));
                     }
 
                     .heroContent1:hover .hC1-1 {
@@ -390,7 +387,6 @@
                     }
 
                     .heroContent2 {
-                        background-color: black;
                         height: 90%;
                         width: 30%;
                         cursor: pointer;
@@ -429,7 +425,6 @@
                                 overflow: hidden;
 
                                 h3 {
-                                    color: black;
                                     font-size: 20px;
                                     font-style: italic;
                                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -448,7 +443,6 @@
                             }
 
                             .contentProjects {
-                                background-color: black;
                                 height: 80%;
                                 padding-left: 10px;
                                 overflow: hidden;
@@ -477,7 +471,7 @@
 
                     .heroContent2:hover {
                         border: 1px solid gray;
-                        filter: drop-shadow(0 0 2em black);
+                        filter: drop-shadow(0 0 2em var(--projects-color));
                     }
 
                     .heroContent2:hover .hC2-1 {
@@ -495,7 +489,6 @@
                     }
 
                     .heroContent3 {
-                        background-color: #c4302b;
                         height: 90%;
                         width: 30%;
                         cursor: pointer;
@@ -534,7 +527,6 @@
                                 overflow: hidden;
 
                                 h3 {
-                                    color: #c4302b;
                                     font-size: 20px;
                                     font-style: italic;
                                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -553,7 +545,6 @@
                             }
 
                             .contentVideos {
-                                background-color: #c4302b;
                                 height: 80%;
                                 padding-left: 10px;
                                 overflow: hidden;
@@ -582,7 +573,7 @@
 
                     .heroContent3:hover {
                         border: 1px solid lightcoral;
-                        filter: drop-shadow(0 0 2em #c4302b);
+                        filter: drop-shadow(0 0 2em var(--videos-color));
                     }
 
                     .heroContent3:hover .hC3-1 {
@@ -1339,7 +1330,6 @@
                 padding-top: 10px;
 
                 .heroContent1Mobile {
-                    background-color: #0072b1;
                     height: 60px;
                     width: 100px;
                     cursor: pointer;
@@ -1377,7 +1367,6 @@
                             gap: 3px;
 
                             h3 {
-                                color: #0072b1;
                                 font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1394,7 +1383,6 @@
                         }
 
                         .contentProfileMobile {
-                            background-color: #0072b1;
                             height: 80%;
                             padding-left: 5px;
                             overflow: hidden;
@@ -1424,7 +1412,7 @@
 
                 .heroContent1Mobile:hover {
                     border: 1px solid lightblue;
-                    filter: drop-shadow(0 0 2em #0072b1);
+                    filter: drop-shadow(0 0 2em var(--profile-color));
                 }
 
                 .heroContent1Mobile:hover .hC1-1M {
@@ -1442,7 +1430,6 @@
                 }
 
                 .heroContent2Mobile {
-                    background-color: black;
                     height: 60px;
                     width: 100px;
                     cursor: pointer;
@@ -1480,7 +1467,6 @@
                             align-items: center;
 
                             h3 {
-                                color: black;
                                 font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1497,7 +1483,6 @@
                         }
 
                         .contentProjectsMobile {
-                            background-color: black;
                             height: 80%;
                             padding-left: 5px;
                             overflow: hidden;
@@ -1527,7 +1512,7 @@
 
                 .heroContent2Mobile:hover {
                     border: 1px solid gray;
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--projects-color));
                 }
 
                 .heroContent2Mobile:hover .hC2-1M {
@@ -1545,7 +1530,6 @@
                 }
 
                 .heroContent3Mobile {
-                    background-color: #c4302b;
                     height: 60px;
                     width: 100px;
                     cursor: pointer;
@@ -1583,7 +1567,6 @@
                             align-items: center;
 
                             h3 {
-                                color: #c4302b;
                                 font-size: 5px;
                                 font-style: italic;
                                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1600,7 +1583,6 @@
                         }
 
                         .contentVideosMobile {
-                            background-color: #c4302b;
                             height: 80%;
                             padding-left: 5px;
                             overflow: hidden;
@@ -1630,7 +1612,7 @@
 
                 .heroContent3Mobile:hover {
                     border: 1px solid lightcoral;
-                    filter: drop-shadow(0 0 2em #c4302b);
+                    filter: drop-shadow(0 0 2em var(--videos-color));
                 }
 
                 .heroContent3Mobile:hover .hC3-1M {

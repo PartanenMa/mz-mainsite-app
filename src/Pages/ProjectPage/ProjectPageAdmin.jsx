@@ -198,7 +198,7 @@ function ProjectPageAdmin() {
 function MyProjectPageTitle({ loadingProjectData, projectData }) {
     return (
         <AnimatePresence>
-            <div className="projectPageTitleContainer">
+            <div className="projectPageTitleContainer" style={{ backgroundColor: info.projects.color }}>
                 {loadingProjectData ? (
                     <motion.h2 key="projpptA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
                         ...
@@ -218,7 +218,7 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
 
     return (
         <div className="projectContainer">
-            <div className="projectTitle">
+            <div className="projectTitle" style={{ backgroundColor: info.projects.color }}>
                 <h3>
                     MY PROJECT
                     <DBstate loading={loadingProjectData} statusDB={statusDB} />
@@ -246,6 +246,7 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
                             <motion.a
                                 className="projectBtn1"
                                 title={"View code on " + info.projects.siteName}
+                                style={{ "--project-color": info.projects.color }}
                                 key="pbtn1A"
                                 href={projectData.codeLink}
                                 target="_blank"
@@ -308,7 +309,7 @@ function MyProject({ loadingProjectData, projectData, statusDB }) {
 function MyProjectPageTitleMobile({ loadingProjectData, projectData }) {
     return (
         <AnimatePresence>
-            <div className="projectPageTitleContainerMobile">
+            <div className="projectPageTitleContainerMobile" style={{ backgroundColor: info.projects.color }}>
                 {loadingProjectData ? (
                     <motion.h2 key="projpptmA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
                         ...
@@ -328,7 +329,7 @@ function MyProjectMobile({ loadingProjectData, projectData, statusDB }) {
 
     return (
         <div className="projectContainerMobile">
-            <div className="projectTitleMobile">
+            <div className="projectTitleMobile" style={{ backgroundColor: info.projects.color }}>
                 <h3>
                     MY PROJECT
                     <DBstate loading={loadingProjectData} statusDB={statusDB} />
@@ -356,6 +357,7 @@ function MyProjectMobile({ loadingProjectData, projectData, statusDB }) {
                             <motion.a
                                 className="projectBtn1Mobile"
                                 title={"View code on " + info.projects.siteName}
+                                style={{ "--project-color": info.projects.color }}
                                 key="pbtn1mA"
                                 href={projectData.codeLink}
                                 target="_blank"

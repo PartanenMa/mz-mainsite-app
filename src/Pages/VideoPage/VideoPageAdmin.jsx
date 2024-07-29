@@ -198,7 +198,7 @@ function VideoPageAdmin() {
 function MyVideoPageTitle({ loadingVideoData, videoData }) {
     return (
         <AnimatePresence>
-            <div className="videoPageTitleContainer">
+            <div className="videoPageTitleContainer" style={{ backgroundColor: info.videos.color }}>
                 {loadingVideoData ? (
                     <motion.h2 key="vpvtA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
                         ...
@@ -218,7 +218,7 @@ function MyVideo({ loadingVideoData, videoData, statusDB }) {
 
     return (
         <div className="videoContainer">
-            <div className="videoTitle">
+            <div className="videoTitle" style={{ backgroundColor: info.videos.color }}>
                 <h3>
                     MY VIDEO
                     <DBstate loading={loadingVideoData} statusDB={statusDB} />
@@ -261,7 +261,13 @@ function MyVideo({ loadingVideoData, videoData, statusDB }) {
                 <AnimatePresence>
                     <div className="videoImage">
                         {!loadingVideoData && videoData?.videoWatchLink !== "" ? (
-                            <motion.iframe src={videoData.videoWatchLink} key="videoplayerA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }} />
+                            <motion.iframe
+                                src={videoData.videoWatchLink}
+                                style={{ border: `2px solid ${info.videos.color}` }}
+                                key="videoplayerA"
+                                initial={{ opacity: 0, y: -200 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            />
                         ) : (
                             !loadingVideoData && (
                                 <motion.div className="noVideoLink" key="novideolinkA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }}>
@@ -321,7 +327,7 @@ function MyVideo({ loadingVideoData, videoData, statusDB }) {
 function MyVideoPageTitleMobile({ loadingVideoData, videoData }) {
     return (
         <AnimatePresence>
-            <div className="videoPageTitleContainerMobile">
+            <div className="videoPageTitleContainerMobile" style={{ backgroundColor: info.videos.color }}>
                 {loadingVideoData ? (
                     <motion.h2 key="vpvtmA" initial={{ opacity: 0, x: -200 }} animate={{ opacity: 1, x: 0 }}>
                         ...
@@ -341,7 +347,7 @@ function MyVideoMobile({ loadingVideoData, videoData, statusDB }) {
 
     return (
         <div className="videoContainerMobile">
-            <div className="videoTitleMobile">
+            <div className="videoTitleMobile" style={{ backgroundColor: info.videos.color }}>
                 <h3>
                     MY VIDEO
                     <DBstate loading={loadingVideoData} statusDB={statusDB} />
@@ -384,7 +390,13 @@ function MyVideoMobile({ loadingVideoData, videoData, statusDB }) {
                 <AnimatePresence>
                     <div className="videoImageMobile">
                         {!loadingVideoData && videoData?.videoWatchLink !== "" ? (
-                            <motion.iframe src={videoData.videoWatchLink} key="videoplayermA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }} />
+                            <motion.iframe
+                                src={videoData.videoWatchLink}
+                                style={{ border: `1px solid ${info.videos.color}` }}
+                                key="videoplayermA"
+                                initial={{ opacity: 0, y: -200 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            />
                         ) : (
                             !loadingVideoData && (
                                 <motion.div className="noVideoLinkMobile" key="novideolinkmA" initial={{ opacity: 0, y: -200 }} animate={{ opacity: 1, y: 0 }}>
@@ -424,7 +436,7 @@ function MyVideoMobile({ loadingVideoData, videoData, statusDB }) {
                     </div>
                     <div className="vDContentMobile">{loadingVideoData ? <p>...</p> : <p>{videoData.description}</p>}</div>
                 </div>
-                <div className="videoTechMobile">
+                <div className="videoTagsMobile">
                     {loadingVideoData ? (
                         <p>
                             Tags: <span style={{ color: "white" }}>...</span>

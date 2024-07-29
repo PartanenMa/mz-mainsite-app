@@ -277,7 +277,7 @@ function ProjectsPageAdmin() {
 
 function ProjectsPageTitle() {
     return (
-        <div className="projectsPageTitleContainer">
+        <div className="projectsPageTitleContainer" style={{ backgroundColor: info.projects.color }}>
             <h2>MY PROJECTS</h2>
         </div>
     );
@@ -286,7 +286,7 @@ function ProjectsPageTitle() {
 function AboutMyProjects() {
     return (
         <div className="aboutMyProjectsContainer">
-            <div className="aboutMyProjectsTitle">
+            <div className="aboutMyProjectsTitle" style={{ backgroundColor: info.projects.color }}>
                 <h3>ABOUT MY PROJECTS</h3>
             </div>
             <div className="aboutMyProjectsContent">
@@ -294,6 +294,7 @@ function AboutMyProjects() {
                     <motion.a
                         className="aboutMyProjectsPhoto"
                         title={"My " + info.projects.siteName}
+                        style={{ "--projects-color": info.projects.color }}
                         href={info.projects.link}
                         target="_blank"
                         key="aboutmyprojectsphotoA"
@@ -335,7 +336,7 @@ function MyPortfolio() {
 
     return (
         <div className="portfolioContainer">
-            <div className="portfolioTitle">
+            <div className="portfolioTitle" style={{ backgroundColor: info.projects.color }}>
                 <h3>MY PORTFOLIO</h3>
             </div>
             <div className="portfolioContent">
@@ -372,7 +373,7 @@ function MyPortfolio() {
 function MyPinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects }) {
     return (
         <div className="pinnedProjectsContainer">
-            <div className="pPSATitle">
+            <div className="pPSATitle" style={{ backgroundColor: info.projects.color }}>
                 <h3>
                     MY PINNED PROJECTS <DBstate loading={loadingPinnedProjectsData} statusDB={statusDB} />
                 </h3>
@@ -384,6 +385,7 @@ function MyPinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects 
                             pinnedProjects.map((project, index) => (
                                 <motion.a
                                     className="pinnedProject"
+                                    style={{ "--projects-color": info.projects.color, backgroundColor: info.projects.color }}
                                     key={index}
                                     href={project.projectLink}
                                     target="_blank"
@@ -395,7 +397,7 @@ function MyPinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects 
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
-                                    <div className="pPCoverTitle">
+                                    <div className="pPCoverTitle" style={{ backgroundColor: info.projects.color }}>
                                         <p>{project.title}</p>
                                     </div>
                                     <div className="pPTitle">
@@ -419,7 +421,7 @@ function MyPinnedProjects({ loadingPinnedProjectsData, statusDB, pinnedProjects 
                         )
                     ) : loadingPinnedProjectsData ? (
                         <motion.div className="loadingPinnedProjectsData" key="loadingpinnedprojectsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderPinnedProjects" />
+                            <div className="loaderPinnedProjects" style={{ borderTop: `8px solid ${info.projects.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noPinnedProjectsData" key="nopinnedprojectsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -437,7 +439,7 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
 
     return (
         <div className="projectsContainer">
-            <div className="projectsTitle">
+            <div className="projectsTitle" style={{ backgroundColor: info.projects.color }}>
                 <h3>
                     MY PROJECTS
                     <DBstate loading={loadingProjectsData} statusDB={statusDB} />
@@ -455,6 +457,7 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                             projects.map((project, index) => (
                                 <motion.div
                                     className="project"
+                                    style={{ "--projects-color": info.projects.color }}
                                     key={index}
                                     initial={{ opacity: 0, y: -100 }}
                                     animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
@@ -463,10 +466,10 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                                         transition: { duration: 0.1 },
                                     }}
                                 >
-                                    <div className="projectCoverTitle">
+                                    <div className="projectCoverTitle" style={{ backgroundColor: info.projects.color }}>
                                         <h2>{project.title}</h2>
                                     </div>
-                                    <div className="projectTitle">
+                                    <div className="projectTitle" style={{ backgroundColor: info.projects.color }}>
                                         <div className="projectTitleSection1">
                                             <h4>{project.title}</h4>
                                         </div>
@@ -502,10 +505,11 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                                         </div>
                                         <div className="projectContentOther">
                                             <div className="projectContentPhoto" style={{ backgroundImage: `url(${project.image})` }} />
-                                            <div className="projectContentButtons">
+                                            <div className="projectContentButtons" style={{ backgroundColor: info.projects.color }}>
                                                 <motion.a
                                                     className="projectBtn1"
                                                     title={"View my code on " + info.projects.siteName}
+                                                    style={{ "--projects-color": info.projects.color }}
                                                     key="pbtn1A"
                                                     href={project.codeLink}
                                                     target="_blank"
@@ -555,7 +559,7 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
                         )
                     ) : loadingProjectsData ? (
                         <motion.div className="loadingProjectsData" key="loadingprojectsdataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProjects" />
+                            <div className="loaderProjects" style={{ borderTop: `16px solid ${info.projects.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProjectsData" key="noprojectsdataA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -571,7 +575,7 @@ function MyProjects({ loadingProjectsData, statusDB, projects, getProjectsC, get
 //Mobile:
 function ProjectsPageTitleMobile() {
     return (
-        <div className="projectsPageTitleContainerMobile">
+        <div className="projectsPageTitleContainerMobile" style={{ backgroundColor: info.projects.color }}>
             <h2>MY PROJECTS</h2>
         </div>
     );
@@ -580,7 +584,7 @@ function ProjectsPageTitleMobile() {
 function AboutMyProjectsMobile() {
     return (
         <div className="aboutMyProjectsContainerMobile">
-            <div className="aboutMyProjectsTitleMobile">
+            <div className="aboutMyProjectsTitleMobile" style={{ backgroundColor: info.projects.color }}>
                 <h3>ABOUT MY PROJECTS</h3>
             </div>
             <div className="aboutMyProjectsContentMobile">
@@ -588,6 +592,7 @@ function AboutMyProjectsMobile() {
                     <motion.a
                         className="aboutMyProjectsPhotoMobile"
                         title={"My " + info.projects.siteName}
+                        style={{ "--projects-color": info.projects.color }}
                         href={info.projects.link}
                         target="_blank"
                         key="aboutmyprojectsphotomobileA"
@@ -629,7 +634,7 @@ function MyPortfolioMobile() {
 
     return (
         <div className="portfolioContainerMobile">
-            <div className="portfolioTitleMobile">
+            <div className="portfolioTitleMobile" style={{ backgroundColor: info.projects.color }}>
                 <h3>MY PORTFOLIO</h3>
             </div>
             <div className="portfolioContentMobile">
@@ -666,7 +671,7 @@ function MyPortfolioMobile() {
 function MyPinnedProjectsMobile({ loadingPinnedProjectsData, statusDB, pinnedProjects }) {
     return (
         <div className="pinnedProjectsContainerMobile">
-            <div className="pPSATitleMobile">
+            <div className="pPSATitleMobile" style={{ backgroundColor: info.projects.color }}>
                 <h3>
                     MY PINNED PROJECTS <DBstate loading={loadingPinnedProjectsData} statusDB={statusDB} />
                 </h3>
@@ -678,6 +683,7 @@ function MyPinnedProjectsMobile({ loadingPinnedProjectsData, statusDB, pinnedPro
                             pinnedProjects.map((project, index) => (
                                 <motion.a
                                     className="pinnedProjectMobile"
+                                    style={{ "--projects-color": info.projects.color, backgroundColor: info.projects.color }}
                                     key={index}
                                     href={project.projectLink}
                                     target="_blank"
@@ -689,7 +695,7 @@ function MyPinnedProjectsMobile({ loadingPinnedProjectsData, statusDB, pinnedPro
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                 >
-                                    <div className="pPCoverTitleMobile">
+                                    <div className="pPCoverTitleMobile" style={{ backgroundColor: info.projects.color }}>
                                         <p>{project.title}</p>
                                     </div>
                                     <div className="pPTitleMobile">
@@ -719,7 +725,7 @@ function MyPinnedProjectsMobile({ loadingPinnedProjectsData, statusDB, pinnedPro
                         )
                     ) : loadingPinnedProjectsData ? (
                         <motion.div className="loadingPinnedProjectsDataMobile" key="loadingpinnedprojectsdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderPinnedProjectsMobile" />
+                            <div className="loaderPinnedProjectsMobile" style={{ borderTop: `8px solid ${info.projects.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div
@@ -743,7 +749,7 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
 
     return (
         <div className="projectsContainerMobile">
-            <div className="projectsTitleMobile">
+            <div className="projectsTitleMobile" style={{ backgroundColor: info.projects.color }}>
                 <h3>
                     MY PROJECTS
                     <DBstate loading={loadingProjectsData} statusDB={statusDB} />
@@ -761,6 +767,7 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
                             projects.map((project, index) => (
                                 <motion.div
                                     className="projectMobile"
+                                    style={{ "--projects-color": info.projects.color }}
                                     key={index}
                                     initial={{ opacity: 0, y: -100 }}
                                     animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
@@ -769,10 +776,10 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
                                         transition: { duration: 0.1 },
                                     }}
                                 >
-                                    <div className="projectCoverTitleMobile">
+                                    <div className="projectCoverTitleMobile" style={{ backgroundColor: info.projects.color }}>
                                         <h2>{project.title}</h2>
                                     </div>
-                                    <div className="projectTitleMobile">
+                                    <div className="projectTitleMobile" style={{ backgroundColor: info.projects.color }}>
                                         <div className="projectTitleSection1Mobile">
                                             <h4>{project.title}</h4>
                                         </div>
@@ -808,10 +815,11 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
                                         </div>
                                         <div className="projectContentOtherMobile">
                                             <div className="projectContentPhotoMobile" style={{ backgroundImage: `url(${project.image})` }} />
-                                            <div className="projectContentButtonsMobile">
+                                            <div className="projectContentButtonsMobile" style={{ backgroundColor: info.projects.color }}>
                                                 <motion.a
                                                     className="projectBtn1Mobile"
                                                     title={"View my code " + info.projects.siteName}
+                                                    style={{ "--projects-color": info.projects.color }}
                                                     key="pbtn1mA"
                                                     href={project.codeLink}
                                                     target="_blank"
@@ -861,7 +869,7 @@ function MyProjectsMobile({ loadingProjectsData, statusDB, projects, getProjects
                         )
                     ) : loadingProjectsData ? (
                         <motion.div className="loadingProjectsDataMobile" key="loadingprojectsdatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                            <div className="loaderProjects" />
+                            <div className="loaderProjectsMobile" style={{ borderTop: `16px solid ${info.projects.color}` }} />
                         </motion.div>
                     ) : (
                         <motion.div className="noProjectsDataMobile" key="noprojectsdatamobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>

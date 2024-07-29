@@ -279,7 +279,7 @@
                 }
 
                 h3 {
-                    color: #0072b1;
+                    color: var(--profile-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -293,7 +293,7 @@
             }
 
             .footerNav2-1:hover h3 {
-                background-color: #0072b1;
+                background-color: var(--profile-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -328,7 +328,7 @@
                 }
 
                 h3 {
-                    color: black;
+                    color: var(--projects-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -342,7 +342,7 @@
             }
 
             .footerNav2-2:hover h3 {
-                background-color: black;
+                background-color: var(--projects-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -376,7 +376,7 @@
                 }
 
                 h3 {
-                    color: #c4302b;
+                    color: var(--videos-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -390,7 +390,7 @@
             }
 
             .footerNav2-3:hover h3 {
-                background-color: #c4302b;
+                background-color: var(--videos-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -638,7 +638,7 @@
                 }
 
                 h3 {
-                    color: #0072b1;
+                    color: var(--profile-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -652,7 +652,7 @@
             }
 
             .footerNav2-1M:hover h3 {
-                background-color: #0072b1;
+                background-color: var(--profile-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -687,7 +687,7 @@
                 }
 
                 h3 {
-                    color: black;
+                    color: var(--projects-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -701,7 +701,7 @@
             }
 
             .footerNav2-2M:hover h3 {
-                background-color: black;
+                background-color: var(--projects-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -735,7 +735,7 @@
                 }
 
                 h3 {
-                    color: #c4302b;
+                    color: var(--videos-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -749,7 +749,7 @@
             }
 
             .footerNav2-3M:hover h3 {
-                background-color: #c4302b;
+                background-color: var(--videos-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -997,7 +997,7 @@
                 }
 
                 h3 {
-                    color: #0072b1;
+                    color: var(--profile-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -1011,7 +1011,7 @@
             }
 
             .footerNav2-1M:hover h3 {
-                background-color: #0072b1;
+                background-color: var(--profile-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -1046,7 +1046,7 @@
                 }
 
                 h3 {
-                    color: black;
+                    color: var(--projects-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -1060,7 +1060,7 @@
             }
 
             .footerNav2-2M:hover h3 {
-                background-color: black;
+                background-color: var(--projects-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;
@@ -1094,7 +1094,7 @@
                 }
 
                 h3 {
-                    color: #c4302b;
+                    color: var(--videos-color);
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     height: fit-content;
@@ -1108,7 +1108,7 @@
             }
 
             .footerNav2-3M:hover h3 {
-                background-color: #c4302b;
+                background-color: var(--videos-color);
                 color: white;
                 border: 1px solid white;
                 border-radius: 5px;

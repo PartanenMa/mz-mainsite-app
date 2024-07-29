@@ -284,6 +284,21 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
         rotateText();
     }, [currentWordIndex]);
 
+    useEffect(() => {
+        //Set the CSS variable for profile color:
+        document.documentElement.style.setProperty("--profile-color", info.profile.color);
+    }, [info.profile.color]);
+
+    useEffect(() => {
+        //Set the CSS variable for projects color:
+        document.documentElement.style.setProperty("--projects-color", info.projects.color);
+    }, [info.projects.color]);
+
+    useEffect(() => {
+        //Set the CSS variable for videos color:
+        document.documentElement.style.setProperty("--videos-color", info.videos.color);
+    }, [info.videos.color]);
+
     const handleNavigation = (page) => {
         if (page === "profile") {
             navigate(info.routes.profilePage);
@@ -371,6 +386,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                     <motion.div className="heroContent" key="heroC" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
                         <motion.div
                             className="heroContent1"
+                            style={{ "--profile-color": info.profile.color, backgroundColor: info.profile.color }}
                             onClick={() => handleNavigation("profile")}
                             key="heroC1"
                             whileHover={{
@@ -382,10 +398,10 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             <h2 className="hC-1T">PROFILE</h2>
                             <div className="hC1-1">
                                 <div className="titleProfile">
-                                    <h3>View my profile</h3>
+                                    <h3 style={{ color: info.profile.color }}>View my profile</h3>
                                     <div className="logoProfile" />
                                 </div>
-                                <div className="contentProfile">
+                                <div className="contentProfile" style={{ backgroundColor: info.profile.color }}>
                                     <p>- About me.</p>
                                     <p>- My educational background.</p>
                                     <p>- My experience.</p>
@@ -396,6 +412,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                         </motion.div>
                         <motion.div
                             className="heroContent2"
+                            style={{ "--projects-color": info.projects.color, backgroundColor: info.projects.color }}
                             onClick={() => handleNavigation("projects")}
                             key="heroC2"
                             whileHover={{
@@ -407,10 +424,10 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             <h2 className="hC-2T">PROJECTS</h2>
                             <div className="hC2-1">
                                 <div className="titleProjects">
-                                    <h3>View my projects</h3>
+                                    <h3 style={{ color: info.projects.color }}>View my projects</h3>
                                     <div className="logoProjects" />
                                 </div>
-                                <div className="contentProjects">
+                                <div className="contentProjects" style={{ backgroundColor: info.projects.color }}>
                                     <p>- About my projects.</p>
                                     <p>- My portfolio.</p>
                                     <p>- My pinned projects.</p>
@@ -421,6 +438,7 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                         </motion.div>
                         <motion.div
                             className="heroContent3"
+                            style={{ "--videos-color": info.videos.color, backgroundColor: info.videos.color }}
                             onClick={() => handleNavigation("videos")}
                             key="heroC3"
                             whileHover={{
@@ -432,10 +450,10 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                             <h2 className="hC-3T">VIDEOS</h2>
                             <div className="hC3-1">
                                 <div className="titleVideos">
-                                    <h3>View my videos</h3>
+                                    <h3 style={{ color: info.videos.color }}>View my videos</h3>
                                     <div className="logoVideos" />
                                 </div>
-                                <div className="contentVideos">
+                                <div className="contentVideos" style={{ backgroundColor: info.videos.color }}>
                                     <p>- About my videos.</p>
                                     <p>- My videos.</p>
                                 </div>
@@ -959,6 +977,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                     <motion.div className="heroContentMobile" key="herocontentmobile" initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -1000 }}>
                         <motion.div
                             className="heroContent1Mobile"
+                            style={{ "--profile-color": info.profile.color, backgroundColor: info.profile.color }}
                             onClick={() => handleNavigation("profile")}
                             key="herocontent1mobile"
                             whileHover={{
@@ -970,10 +989,10 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             <h2 className="hC-1TM">PROFILE</h2>
                             <div className="hC1-1M">
                                 <div className="titleProfileMobile">
-                                    <h3>View my profile</h3>
+                                    <h3 style={{ color: info.profile.color }}>View my profile</h3>
                                     <div className="logoProfileMobile" />
                                 </div>
-                                <div className="contentProfileMobile">
+                                <div className="contentProfileMobile" style={{ backgroundColor: info.profile.color }}>
                                     <p>- About me.</p>
                                     <p>- My educational background.</p>
                                     <p>- My experience.</p>
@@ -984,6 +1003,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                         </motion.div>
                         <motion.div
                             className="heroContent2Mobile"
+                            style={{ "--projects-color": info.projects.color, backgroundColor: info.projects.color }}
                             onClick={() => handleNavigation("projects")}
                             key="herocontent2mobile"
                             whileHover={{
@@ -995,10 +1015,10 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             <h2 className="hC-2TM">PROJECTS</h2>
                             <div className="hC2-1M">
                                 <div className="titleProjectsMobile">
-                                    <h3>View my projects</h3>
+                                    <h3 style={{ color: info.projects.color }}>View my projects</h3>
                                     <div className="logoProjectsMobile" />
                                 </div>
-                                <div className="contentProjectsMobile">
+                                <div className="contentProjectsMobile" style={{ backgroundColor: info.projects.color }}>
                                     <p>- About my projects.</p>
                                     <p>- My portfolio.</p>
                                     <p>- My pinned projects.</p>
@@ -1009,6 +1029,7 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                         </motion.div>
                         <motion.div
                             className="heroContent3Mobile"
+                            style={{ "--videos-color": info.videos.color, backgroundColor: info.videos.color }}
                             onClick={() => handleNavigation("videos")}
                             key="herocontent3mobile"
                             whileHover={{
@@ -1020,10 +1041,10 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                             <h2 className="hC-3TM">VIDEOS</h2>
                             <div className="hC3-1M">
                                 <div className="titleVideosMobile">
-                                    <h3>View my videos</h3>
+                                    <h3 style={{ color: info.videos.color }}>View my videos</h3>
                                     <div className="logoVideosMobile" />
                                 </div>
-                                <div className="contentVideosMobile">
+                                <div className="contentVideosMobile" style={{ backgroundColor: info.videos.color }}>
                                     <p>- About my videos.</p>
                                     <p>- My videos.</p>
                                 </div>
