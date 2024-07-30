@@ -1032,7 +1032,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                         <AnimatePresence>
                             {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.deploymentSoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.devOpsSoftware?.length > 0 &&
                             !loadingProfileData ? (
                                 <>
                                     <div className="software">
@@ -1151,7 +1151,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                     </div>
                                     <div className="software">
                                         <h5>{info.profile.skills1SubTitle3}</h5>
-                                        {skills.webDevelopmentSoftware.deploymentSoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.devOpsSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
                                                 style={{ backgroundColor: skill.color }}
@@ -2355,7 +2355,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                         <AnimatePresence>
                             {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.deploymentSoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.devOpsSoftware?.length > 0 &&
                             !loadingProfileData ? (
                                 <>
                                     <div className="softwareMobile">
@@ -2470,7 +2470,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                     </div>
                                     <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle3}</h5>
-                                        {skills.webDevelopmentSoftware.deploymentSoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.devOpsSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
                                                 style={{ backgroundColor: skill.color }}

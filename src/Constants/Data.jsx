@@ -12,9 +12,9 @@ import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
 import BashLogo from "/src/Assets/Images/BashLogo.svg";
 import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
-import WordPressLogo from "/src/Assets/Images/WordPressLogo.svg";
 import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
 import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
+import JenkinsLogo from "/src/Assets/Images/JenkinsLogo.svg";
 //Skills (front-end development):
 import HTMLLogo from "/src/Assets/Images/HTMLLogo.svg";
 import CSSLogo from "/src/Assets/Images/CSSLogo.svg";
@@ -292,17 +292,9 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                 ],
-                deploymentSoftware: [
+                devOpsSoftware: [
                     {
                         id: 0,
-                        name: "WordPress",
-                        skillLevel: "experienced",
-                        color: "#21759b",
-                        image: WordPressLogo,
-                        backgroundSize: "70%",
-                    },
-                    {
-                        id: 1,
                         name: "Docker",
                         skillLevel: "advanced",
                         color: "#0db7ed",
@@ -310,12 +302,20 @@ export const dataFe = {
                         backgroundSize: "80%",
                     },
                     {
-                        id: 2,
+                        id: 1,
                         name: "Kubernetes",
                         skillLevel: "experienced",
                         color: "#3970e4",
                         image: KubernetesLogo,
                         backgroundSize: "70%",
+                    },
+                    {
+                        id: 2,
+                        name: "Jenkins",
+                        skillLevel: "advanced",
+                        color: "#D33834",
+                        image: JenkinsLogo,
+                        backgroundSize: "60%",
                     },
                 ],
             },

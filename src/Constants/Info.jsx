@@ -7,7 +7,7 @@ import MongoDBLogo from "/src/Assets/Images/MongoDBLogo.png";
 const deployToGitHubPages = false;
 
 export const info = {
-    version: "Release 1.6.13",
+    version: "Release 1.6.14",
     routes: {
         frontPage: deployToGitHubPages ? "/mz-personalwebsite-app/" : "/",
         dashboardPage: deployToGitHubPages ? "/mz-personalwebsite-app/admin/dashboard" : "/admin/dashboard",
@@ -116,7 +116,7 @@ export const info = {
         skillsTitle3: "Back-end development",
         skills1SubTitle1: "Utility software",
         skills1SubTitle2: "CLI software",
-        skills1SubTitle3: "Deployment software",
+        skills1SubTitle3: "DevOps software",
         skills2SubTitle1: "Front-end programming languages",
         skills2SubTitle2: "Front-end frameworks",
         skills2SubTitle3: "CSS frameworks",
