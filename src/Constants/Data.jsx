@@ -211,7 +211,7 @@ export const dataFe = {
                         time: 4,
                         place: "Pori, Finland",
                         workDescription: "4-month front-end developer internship. My tasks included developing the front-end of the Hausvise housing management system using React and Sass.",
-                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
+                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, Jenkins, HTML, CSS, JavaScript, React, Sass",
                     },
                     {
                         id: 1,
@@ -226,7 +226,7 @@ export const dataFe = {
                         place: "Pori, Finland",
                         workDescription:
                             "My part-time front-end developer job after my internship. I worked (4 days / 30 hours per week). My tasks once again included developing the front-end of the Hausvise housing management system using React and Sass.",
-                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass",
+                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, Jenkins, HTML, CSS, JavaScript, React, Sass",
                     },
                     {
                         id: 2,
@@ -241,7 +241,7 @@ export const dataFe = {
                         place: "Pori, Finland",
                         workDescription:
                             "My full-stack developer job after my internship and part-time jobs. My tasks included developing the front-end, and the back-end of the Hausvise housing management system using React, Sass, Go and MariaDB.",
-                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, HTML, CSS, JavaScript, React, Sass, Go, MariaDB",
+                        workTech: "Visual Studio Code, Node.js, Git, Bash, Docker, Jenkins, HTML, CSS, JavaScript, React, Sass, Go, MariaDB",
                     },
                 ],
             },
@@ -531,7 +531,7 @@ export const dataFe = {
                 status: "completed",
             },
             step3: {
-                step: "Learn to use deployment software such as WordPress, Docker and Kubernetes.",
+                step: "Learn to use DevOps software such as Docker, Kubernetes and Jenkins.",
                 status: "completed",
             },
         },
