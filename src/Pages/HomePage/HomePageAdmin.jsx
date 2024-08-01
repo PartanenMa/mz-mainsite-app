@@ -237,7 +237,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                 <Carousel images={carouselImages} height={"550px"} width={"900px"} />
             </section>
             <section className="homeFirstSection1">
-                <div className="checkMyProfile">
+                <div className="checkMyProfile" style={{ backgroundColor: info.profile.color }}>
                     <h2>MY PROFILE</h2>
                 </div>
                 <div className="goToMyProfile">
@@ -245,6 +245,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         <motion.a
                             className="photo"
                             title={"My " + info.profile.siteName}
+                            style={{ "--profile-color": info.profile.color }}
                             href={info.profile.link}
                             target="_blank"
                             key="photoA"
@@ -255,10 +256,11 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="profileTextBox">
+                    <div className="profileTextBox" style={{ border: `1px solid ${info.profile.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.profile.siteName}
+                                style={{ "--profile-color": info.profile.color }}
                                 href={info.profile.link}
                                 target="_blank"
                                 key="linkedinlogoA"
@@ -269,16 +271,22 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>{info.profile.siteName}</h3>
-                        <p>{info.profile.user}</p>
+                        <h3 style={{ backgroundColor: info.profile.color }}>{info.profile.siteName}</h3>
+                        <p style={{ color: info.profile.color }}>{info.profile.user}</p>
                         {info.api.enabled ? (
                             (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
-                                <motion.p key="professionorjobdatasuccessA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.p
+                                    style={{ color: info.profile.color }}
+                                    key="professionorjobdatasuccessA"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
                                     {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
                                 </motion.p>
                             ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfessionData" key="loadingprofessiondataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfessionData" />
+                                    <div className="loaderProfessionData" style={{ borderTop: `4px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.p style={{ color: "red" }} key="professionorjobdatafailA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -287,16 +295,23 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             )
                         ) : loadingProfessionData ? (
                             <motion.div className="loadingProfessionData" key="loadingprofessiondataA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                <div className="loaderProfessionData" />
+                                <div className="loaderProfessionData" style={{ borderTop: `4px solid ${info.profile.color}` }} />
                             </motion.div>
                         ) : (
-                            <motion.p key="professionorjobdatasuccessA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <motion.p
+                                style={{ color: info.profile.color }}
+                                key="professionorjobdatasuccessA"
+                                transition={{ delay: 0.5 }}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
                                 {info.profile.employed ? info.profile.jobTitle : info.profile.profession}
                             </motion.p>
                         )}
                         <AnimatePresence>
                             <motion.button
                                 className="goToProfile"
+                                style={{ "--profile-color": info.profile.color }}
                                 onClick={() => navigate(info.routes.profilePageAdmin)}
                                 key="gotoprofileA"
                                 whileHover={{
@@ -313,7 +328,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                 </div>
             </section>
             <section className="homeFirstSection2">
-                <div className="checkMyProjects">
+                <div className="checkMyProjects" style={{ backgroundColor: info.projects.color }}>
                     <h2>MY PROJECTS</h2>
                 </div>
                 <div className="goToMyProjects">
@@ -321,6 +336,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         <motion.a
                             className="gHLogo"
                             title={"My " + info.projects.siteName}
+                            style={{ "--projects-color": info.projects.color }}
                             href={info.projects.link}
                             target="_blank"
                             key="ghlogo1A"
@@ -331,10 +347,11 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="projectsTextBox">
+                    <div className="projectsTextBox" style={{ border: `1px solid ${info.profile.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.projects.siteName}
+                                style={{ "--projects-color": info.projects.color }}
                                 href={info.projects.link}
                                 target="_blank"
                                 key="ghlogo2A"
@@ -345,12 +362,13 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>{info.projects.siteName}</h3>
-                        <p>{info.projects.user}</p>
-                        <p>{info.profile.name}</p>
+                        <h3 style={{ backgroundColor: info.projects.color }}>{info.projects.siteName}</h3>
+                        <p style={{ color: info.projects.color }}>{info.projects.user}</p>
+                        <p style={{ color: info.projects.color }}>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToProjects"
+                                style={{ "--projects-color": info.projects.color }}
                                 onClick={() => navigate(info.routes.projectsPageAdmin)}
                                 key="gotoprojectsA"
                                 whileHover={{
@@ -367,7 +385,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                 </div>
             </section>
             <section className="homeFirstSection3">
-                <div className="checkMyVideos">
+                <div className="checkMyVideos" style={{ backgroundColor: info.videos.color }}>
                     <h2>MY VIDEOS</h2>
                 </div>
                 <div className="goToMyVideos">
@@ -375,6 +393,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         <motion.a
                             className="yTLogo"
                             title={"My " + info.videos.siteName}
+                            style={{ "--videos-color": info.videos.color }}
                             href={info.videos.link}
                             target="_blank"
                             key="ytlogo1A"
@@ -385,10 +404,11 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="videosTextBox">
+                    <div className="videosTextBox" style={{ border: `1px solid ${info.videos.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.videos.siteName}
+                                style={{ "--videos-color": info.videos.color }}
                                 href={info.videos.link}
                                 target="_blank"
                                 key="ytlogo2A"
@@ -399,12 +419,13 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>{info.videos.siteName}</h3>
-                        <p>{info.videos.user}</p>
-                        <p>{info.profile.name}</p>
+                        <h3 style={{ backgroundColor: info.videos.color }}>{info.videos.siteName}</h3>
+                        <p style={{ color: info.videos.color }}>{info.videos.user}</p>
+                        <p style={{ color: info.videos.color }}>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToVideos"
+                                style={{ "--videos-color": info.videos.color }}
                                 onClick={() => navigate(info.routes.videosPageAdmin)}
                                 key="gotovideosA"
                                 whileHover={{
@@ -549,7 +570,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                 <Carousel images={carouselImages} height={"90%"} width={"90%"} />
             </section>
             <section className="homeFirstSection1Mobile">
-                <div className="checkMyProfileMobile">
+                <div className="checkMyProfileMobile" style={{ backgroundColor: info.profile.color }}>
                     <h2>MY PROFILE</h2>
                 </div>
                 <div className="goToMyProfileMobile">
@@ -567,10 +588,11 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="profileTextBoxMobile">
+                    <div className="profileTextBoxMobile" style={{ border: `1px solid ${info.profile.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.profile.siteName}
+                                style={{ "--profile-color": info.profile.color }}
                                 href={info.profile.link}
                                 target="_blank"
                                 key="linkedinlogomobileA"
@@ -581,16 +603,22 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>{info.profile.siteName}</h3>
-                        <p>{info.profile.user}</p>
+                        <h3 style={{ backgroundColor: info.profile.color }}>{info.profile.siteName}</h3>
+                        <p style={{ color: info.profile.color }}>{info.profile.user}</p>
                         {info.api.enabled ? (
                             (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
-                                <motion.p key="professionorjobdatasuccessmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                                <motion.p
+                                    style={{ color: info.profile.color }}
+                                    key="professionorjobdatasuccessmobileA"
+                                    transition={{ delay: 0.5 }}
+                                    initial={{ opacity: 0, y: -100 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
                                     {jobData?.jobStatus?.employed ? jobData?.jobStatus?.jobTitle : professionData?.professionStatus?.profession}
                                 </motion.p>
                             ) : loadingProfessionData ? (
                                 <motion.div className="loadingProfessionDataMobile" key="loadingprofessiondatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                    <div className="loaderProfessionDataMobile" />
+                                    <div className="loaderProfessionDataMobile" style={{ borderTop: `2px solid ${info.profile.color}` }} />
                                 </motion.div>
                             ) : (
                                 <motion.p style={{ color: "red" }} key="professionorjobdatafailmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
@@ -599,16 +627,23 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             )
                         ) : loadingProfessionData ? (
                             <motion.div className="loadingProfessionDataMobile" key="loadingprofessiondatamobileA" initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
-                                <div className="loaderProfessionDataMobile" />
+                                <div className="loaderProfessionDataMobile" style={{ borderTop: `2px solid ${info.profile.color}` }} />
                             </motion.div>
                         ) : (
-                            <motion.p key="professionorjobdatasuccessmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }}>
+                            <motion.p
+                                style={{ color: info.profile.color }}
+                                key="professionorjobdatasuccessmobileA"
+                                transition={{ delay: 0.5 }}
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
                                 {info.profile.employed ? info.profile.jobTitle : info.profile.profession}
                             </motion.p>
                         )}
                         <AnimatePresence>
                             <motion.button
                                 className="goToProfileMobile"
+                                style={{ "--profile-color": info.profile.color }}
                                 onClick={() => navigate(info.routes.profilePageAdmin)}
                                 key="gotoprofilemobileA"
                                 whileHover={{
@@ -624,7 +659,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                 </div>
             </section>
             <section className="homeFirstSection2Mobile">
-                <div className="checkMyProjectsMobile">
+                <div className="checkMyProjectsMobile" style={{ backgroundColor: info.projects.color }}>
                     <h2>MY PROJECTS</h2>
                 </div>
                 <div className="goToMyProjectsMobile">
@@ -632,6 +667,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                         <motion.a
                             className="gHLogoMobile"
                             title={"My " + info.projects.siteName}
+                            style={{ "--projects-color": info.projects.color }}
                             href={info.projects.link}
                             target="_blank"
                             key="ghlogo1mobileA"
@@ -642,10 +678,11 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="projectsTextBoxMobile">
+                    <div className="projectsTextBoxMobile" style={{ border: `1px solid ${info.projects.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.projects.siteName}
+                                style={{ "--projects-color": info.projects.color }}
                                 href={info.projects.link}
                                 target="_blank"
                                 key="ghlogo2mobileA"
@@ -656,12 +693,13 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>{info.projects.siteName}</h3>
-                        <p>{info.projects.user}</p>
-                        <p>{info.profile.name}</p>
+                        <h3 style={{ backgroundColor: info.projects.color }}>{info.projects.siteName}</h3>
+                        <p style={{ color: info.projects.color }}>{info.projects.user}</p>
+                        <p style={{ color: info.projects.color }}>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToProjectsMobile"
+                                style={{ "--projects-color": info.projects.color }}
                                 onClick={() => navigate(info.routes.projectsPageAdmin)}
                                 key="gotoprojectsmobileA"
                                 whileHover={{
@@ -677,7 +715,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                 </div>
             </section>
             <section className="homeFirstSection3Mobile">
-                <div className="checkMyVideosMobile">
+                <div className="checkMyVideosMobile" style={{ backgroundColor: info.videos.color }}>
                     <h2>MY VIDEOS</h2>
                 </div>
                 <div className="goToMyVideosMobile">
@@ -685,6 +723,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                         <motion.a
                             className="yTLogoMobile"
                             title={"My " + info.videos.siteName}
+                            style={{ "--videos-color": info.videos.color }}
                             href={info.videos.link}
                             target="_blank"
                             key="ytlogo1mobileA"
@@ -695,10 +734,11 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="videosTextBoxMobile">
+                    <div className="videosTextBoxMobile" style={{ border: `1px solid ${info.videos.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.videos.siteName}
+                                style={{ "--videos-color": info.videos.color }}
                                 href={info.videos.link}
                                 target="_blank"
                                 key="ytlogo2mobileA"
@@ -709,12 +749,13 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                                 whileTap={{ scale: 0.9 }}
                             />
                         </AnimatePresence>
-                        <h3>{info.videos.siteName}</h3>
-                        <p>{info.videos.user}</p>
-                        <p>{info.profile.name}</p>
+                        <h3 style={{ backgroundColor: info.videos.color }}>{info.videos.siteName}</h3>
+                        <p style={{ color: info.videos.color }}>{info.videos.user}</p>
+                        <p style={{ color: info.videos.color }}>{info.profile.name}</p>
                         <AnimatePresence>
                             <motion.button
                                 className="goToVideosMobile"
+                                style={{ "--videos-color": info.videos.color }}
                                 onClick={() => navigate(info.routes.videosPageAdmin)}
                                 key="gotovideosmobileA"
                                 whileHover={{

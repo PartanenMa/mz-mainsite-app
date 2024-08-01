@@ -186,7 +186,6 @@
         border-bottom: 1px solid #03a062;
 
         .checkMyProfile {
-            background-color: #0072b1;
             height: 10%;
             width: 100%;
             border-top: 1px solid white;
@@ -222,7 +221,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: black;
-                border: 5px solid #0072b1;
+                border: 5px solid var(--profile-color);
                 height: 80%;
                 width: 20%;
                 border-radius: 100%;
@@ -233,7 +232,7 @@
 
             .photo:hover {
                 border: 5px solid white;
-                filter: drop-shadow(0 0 2em #0072b1);
+                filter: drop-shadow(0 0 2em var(--profile-color));
             }
 
             .profileTextBox {
@@ -242,7 +241,6 @@
                 width: 18%;
                 border-radius: 10px;
                 margin-top: 30px;
-                border: 1px solid #0072b1;
                 padding-left: 15px;
 
                 a {
@@ -262,11 +260,10 @@
                 }
 
                 a:hover {
-                    filter: drop-shadow(0 0 2em #0072b1);
+                    filter: drop-shadow(0 0 2em var(--profile-color));
                 }
 
                 h3 {
-                    background-color: #0072b1;
                     color: white;
                     border: 1px solid white;
                     height: 20px;
@@ -279,7 +276,6 @@
                 }
 
                 p {
-                    color: #0072b1;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 white;
@@ -299,7 +295,6 @@
                     .loaderProfessionData {
                         border: 4px solid #f3f3f3;
                         border-radius: 50%;
-                        border-top: 4px solid #0072b1;
                         width: 20px;
                         height: 20px;
                         -webkit-animation: spin 2s linear infinite;
@@ -326,7 +321,7 @@
                 }
 
                 .goToProfile {
-                    background-color: #0072b1;
+                    background-color: var(--profile-color);
                     color: white;
                     cursor: pointer;
                     height: 48px;
@@ -343,7 +338,7 @@
                 .goToProfile:hover {
                     background-color: lightblue;
                     transition: background-color 500ms ease-in-out;
-                    filter: drop-shadow(0 0 2em #0072b1);
+                    filter: drop-shadow(0 0 2em var(--profile-color));
                 }
             }
 
@@ -362,7 +357,6 @@
         width: 100%;
 
         .checkMyProjects {
-            background-color: black;
             height: 10%;
             width: 100%;
             border-top: 1px solid white;
@@ -396,7 +390,7 @@
             .gHLogo {
                 background-image: url("/src/Assets/Images/Admin.jpeg");
                 background-color: white;
-                border: 5px solid black;
+                border: 5px solid var(--projects-color);
                 background-size: cover;
                 background-position: center;
                 height: 80%;
@@ -409,7 +403,7 @@
 
             .gHLogo:hover {
                 border: 5px solid white;
-                filter: drop-shadow(0 0 2em black);
+                filter: drop-shadow(0 0 2em var(--projects-color));
             }
 
             .projectsTextBox {
@@ -418,7 +412,6 @@
                 width: 18%;
                 border-radius: 10px;
                 margin-top: 30px;
-                border: 1px solid black;
                 padding-left: 15px;
 
                 a {
@@ -439,11 +432,10 @@
                 }
 
                 a:hover {
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--projects-color));
                 }
 
                 h3 {
-                    background-color: black;
                     color: white;
                     border: 1px solid white;
                     height: 20px;
@@ -456,7 +448,6 @@
                 }
 
                 p {
-                    color: black;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 white;
@@ -464,7 +455,7 @@
                 }
 
                 .goToProjects {
-                    background-color: black;
+                    background-color: var(--projects-color);
                     color: white;
                     cursor: pointer;
                     height: 48px;
@@ -481,7 +472,7 @@
                 .goToProjects:hover {
                     background-color: gray;
                     transition: background-color 500ms ease-in-out;
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--projects-color));
                 }
             }
 
@@ -500,7 +491,6 @@
         width: 100%;
 
         .checkMyVideos {
-            background-color: #c4302b;
             height: 10%;
             width: 100%;
             border-top: 1px solid white;
@@ -534,7 +524,7 @@
             .yTLogo {
                 background-image: url("/src/Assets/Images/VideosBG.jpg");
                 background-color: white;
-                border: 5px solid #c4302b;
+                border: 5px solid var(--videos-color);
                 background-size: 280%;
                 background-position: 53.5% 60%;
                 height: 80%;
@@ -547,7 +537,7 @@
 
             .yTLogo:hover {
                 border: 5px solid white;
-                filter: drop-shadow(0 0 2em #c4302b);
+                filter: drop-shadow(0 0 2em var(--videos-color));
             }
 
             .videosTextBox {
@@ -556,7 +546,6 @@
                 width: 18%;
                 border-radius: 10px;
                 margin-top: 30px;
-                border: 1px solid #c4302b;
                 padding-left: 15px;
 
                 a {
@@ -577,11 +566,10 @@
                 }
 
                 a:hover {
-                    filter: drop-shadow(0 0 2em #c4302b);
+                    filter: drop-shadow(0 0 2em var(--videos-color));
                 }
 
                 h3 {
-                    background-color: #c4302b;
                     color: white;
                     border: 1px solid white;
                     height: 20px;
@@ -594,7 +582,6 @@
                 }
 
                 p {
-                    color: #c4302b;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                     text-shadow: 0.5px 0.5px 0 white;
@@ -602,7 +589,7 @@
                 }
 
                 .goToVideos {
-                    background-color: #c4302b;
+                    background-color: var(--videos-color);
                     color: white;
                     cursor: pointer;
                     height: 48px;
@@ -619,7 +606,7 @@
                 .goToVideos:hover {
                     background-color: lightcoral;
                     transition: background-color 500ms ease-in-out;
-                    filter: drop-shadow(0 0 2em #c4302b);
+                    filter: drop-shadow(0 0 2em var(--videos-color));
                 }
             }
 
@@ -1021,7 +1008,6 @@
         border-bottom: 1px solid #03a062;
 
         .checkMyProfileMobile {
-            background-color: #0072b1;
             height: 15px;
             width: 100%;
             border-top: 1px solid white;
@@ -1061,7 +1047,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: black;
-                border: 2px solid #0072b1;
+                border: 2px solid var(--profile-color);
                 height: 100px;
                 width: 100px;
                 border-radius: 100%;
@@ -1071,7 +1057,7 @@
 
             .photoMobile:hover {
                 border: 2px solid white;
-                filter: drop-shadow(0 0 2em #0072b1);
+                filter: drop-shadow(0 0 2em var(--profile-color));
             }
 
             .profileTextBoxMobile {
@@ -1079,7 +1065,6 @@
                 height: 100px;
                 width: 120px;
                 border-radius: 5px;
-                border: 1px solid #0072b1;
                 padding-left: 7px;
 
                 a {
@@ -1099,11 +1084,10 @@
                 }
 
                 a:hover {
-                    filter: drop-shadow(0 0 2em #0072b1);
+                    filter: drop-shadow(0 0 2em var(--profile-color));
                 }
 
                 h3 {
-                    background-color: #0072b1;
                     color: white;
                     border: 1px solid white;
                     height: 10px;
@@ -1117,7 +1101,6 @@
                 }
 
                 p {
-                    color: #0072b1;
                     font-size: 8px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1138,7 +1121,6 @@
                     .loaderProfessionDataMobile {
                         border: 2px solid #f3f3f3;
                         border-radius: 50%;
-                        border-top: 2px solid #0072b1;
                         width: 10px;
                         height: 10px;
                         -webkit-animation: spin 2s linear infinite;
@@ -1165,7 +1147,7 @@
                 }
 
                 .goToProfileMobile {
-                    background-color: #0072b1;
+                    background-color: var(--profile-color);
                     color: white;
                     cursor: pointer;
                     height: 24px;
@@ -1182,7 +1164,7 @@
                 .goToProfileMobile:hover {
                     background-color: lightblue;
                     transition: background-color 500ms ease-in-out;
-                    filter: drop-shadow(0 0 2em #0072b1);
+                    filter: drop-shadow(0 0 2em var(--profile-color));
                 }
             }
         }
@@ -1192,7 +1174,6 @@
         width: 100%;
 
         .checkMyProjectsMobile {
-            background-color: black;
             height: 15px;
             width: 100%;
             border-top: 1px solid white;
@@ -1229,7 +1210,7 @@
             .gHLogoMobile {
                 background-image: url("/src/Assets/Images/Admin.jpeg");
                 background-color: white;
-                border: 2px solid black;
+                border: 2px solid var(--projects-color);
                 background-size: cover;
                 background-position: center;
                 height: 100px;
@@ -1241,7 +1222,7 @@
 
             .gHLogoMobile:hover {
                 border: 2px solid white;
-                filter: drop-shadow(0 0 2em black);
+                filter: drop-shadow(0 0 2em var(--projects-color));
             }
 
             .projectsTextBoxMobile {
@@ -1249,7 +1230,6 @@
                 height: 100px;
                 width: 120px;
                 border-radius: 5px;
-                border: 1px solid black;
                 padding-left: 7px;
 
                 a {
@@ -1270,11 +1250,10 @@
                 }
 
                 a:hover {
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--projects-color));
                 }
 
                 h3 {
-                    background-color: black;
                     color: white;
                     border: 1px solid white;
                     height: 10px;
@@ -1288,7 +1267,6 @@
                 }
 
                 p {
-                    color: black;
                     font-size: 8px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1297,7 +1275,7 @@
                 }
 
                 .goToProjectsMobile {
-                    background-color: black;
+                    background-color: var(--projects-color);
                     color: white;
                     cursor: pointer;
                     height: 24px;
@@ -1314,7 +1292,7 @@
                 .goToProjectsMobile:hover {
                     background-color: gray;
                     transition: background-color 500ms ease-in-out;
-                    filter: drop-shadow(0 0 2em black);
+                    filter: drop-shadow(0 0 2em var(--projects-color));
                 }
             }
         }
@@ -1324,7 +1302,6 @@
         width: 100%;
 
         .checkMyVideosMobile {
-            background-color: #c4302b;
             height: 15px;
             width: 100%;
             border-top: 1px solid white;
@@ -1361,7 +1338,7 @@
             .yTLogoMobile {
                 background-image: url("/src/Assets/Images/VideosBG.jpg");
                 background-color: white;
-                border: 2px solid #c4302b;
+                border: 2px solid var(--videos-color);
                 background-size: 280%;
                 background-position: 53.5% 60%;
                 height: 100px;
@@ -1373,7 +1350,7 @@
 
             .yTLogoMobile:hover {
                 border: 2px solid white;
-                filter: drop-shadow(0 0 2em #c4302b);
+                filter: drop-shadow(0 0 2em var(--videos-color));
             }
 
             .videosTextBoxMobile {
@@ -1381,7 +1358,6 @@
                 height: 100px;
                 width: 120px;
                 border-radius: 5px;
-                border: 1px solid #c4302b;
                 padding-left: 7px;
 
                 a {
@@ -1402,11 +1378,10 @@
                 }
 
                 a:hover {
-                    filter: drop-shadow(0 0 2em #c4302b);
+                    filter: drop-shadow(0 0 2em var(--videos-color));
                 }
 
                 h3 {
-                    background-color: #c4302b;
                     color: white;
                     border: 1px solid white;
                     height: 10px;
@@ -1420,7 +1395,6 @@
                 }
 
                 p {
-                    color: #c4302b;
                     font-size: 8px;
                     font-style: italic;
                     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -1429,7 +1403,7 @@
                 }
 
                 .goToVideosMobile {
-                    background-color: #c4302b;
+                    background-color: var(--videos-color);
                     color: white;
                     cursor: pointer;
                     height: 24px;
@@ -1446,7 +1420,7 @@
                 .goToVideosMobile:hover {
                     background-color: lightcoral;
                     transition: background-color 500ms ease-in-out;
-                    filter: drop-shadow(0 0 2em #c4302b);
+                    filter: drop-shadow(0 0 2em var(--videos-color));
                 }
             }
         }
