@@ -236,7 +236,6 @@
             }
 
             .profileTextBox {
-                background-color: lightblue;
                 height: 60%;
                 width: 18%;
                 border-radius: 10px;
@@ -336,7 +335,7 @@
                 }
 
                 .goToProfile:hover {
-                    background-color: lightblue;
+                    background-color: var(--profile-secondary-color);
                     transition: background-color 500ms ease-in-out;
                     filter: drop-shadow(0 0 2em var(--profile-color));
                 }
@@ -407,7 +406,6 @@
             }
 
             .projectsTextBox {
-                background-color: gray;
                 height: 60%;
                 width: 18%;
                 border-radius: 10px;
@@ -470,7 +468,7 @@
                 }
 
                 .goToProjects:hover {
-                    background-color: gray;
+                    background-color: var(--projects-secondary-color);
                     transition: background-color 500ms ease-in-out;
                     filter: drop-shadow(0 0 2em var(--projects-color));
                 }
@@ -541,7 +539,6 @@
             }
 
             .videosTextBox {
-                background-color: lightcoral;
                 height: 60%;
                 width: 18%;
                 border-radius: 10px;
@@ -604,7 +601,7 @@
                 }
 
                 .goToVideos:hover {
-                    background-color: lightcoral;
+                    background-color: var(--videos-secondary-color);
                     transition: background-color 500ms ease-in-out;
                     filter: drop-shadow(0 0 2em var(--videos-color));
                 }
@@ -1061,7 +1058,6 @@
             }
 
             .profileTextBoxMobile {
-                background-color: lightblue;
                 height: 100px;
                 width: 120px;
                 border-radius: 5px;
@@ -1162,7 +1158,7 @@
                 }
 
                 .goToProfileMobile:hover {
-                    background-color: lightblue;
+                    background-color: var(--profile-secondary-color);
                     transition: background-color 500ms ease-in-out;
                     filter: drop-shadow(0 0 2em var(--profile-color));
                 }
@@ -1226,7 +1222,6 @@
             }
 
             .projectsTextBoxMobile {
-                background-color: gray;
                 height: 100px;
                 width: 120px;
                 border-radius: 5px;
@@ -1290,7 +1285,7 @@
                 }
 
                 .goToProjectsMobile:hover {
-                    background-color: gray;
+                    background-color: var(--projects-secondary-color);
                     transition: background-color 500ms ease-in-out;
                     filter: drop-shadow(0 0 2em var(--projects-color));
                 }
@@ -1354,7 +1349,6 @@
             }
 
             .videosTextBoxMobile {
-                background-color: lightcoral;
                 height: 100px;
                 width: 120px;
                 border-radius: 5px;
@@ -1418,7 +1412,7 @@
                 }
 
                 .goToVideosMobile:hover {
-                    background-color: lightcoral;
+                    background-color: var(--videos-secondary-color);
                     transition: background-color 500ms ease-in-out;
                     filter: drop-shadow(0 0 2em var(--videos-color));
                 }

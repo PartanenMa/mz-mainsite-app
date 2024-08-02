@@ -308,14 +308,12 @@
 
                         .hC1-1 {
                             display: none;
-                            background-color: lightblue;
                             height: 100%;
                             width: 60%;
 
                             .titleProfile {
                                 height: 20%;
                                 padding-left: 10px;
-                                border-bottom: 1px solid lightblue;
                                 display: flex;
                                 justify-content: center;
                                 flex-direction: row;
@@ -363,12 +361,11 @@
                             background-size: cover;
                             height: 100%;
                             width: 40%;
-                            border-left: 1px solid lightblue;
                         }
                     }
 
                     .heroContent1:hover {
-                        border: 1px solid lightblue;
+                        border: 1px solid var(--profile-secondary-color);
                         filter: drop-shadow(0 0 2em var(--profile-color));
                     }
 
@@ -410,14 +407,12 @@
 
                         .hC2-1 {
                             display: none;
-                            background-color: gray;
                             height: 100%;
                             width: 60%;
 
                             .titleProjects {
                                 height: 20%;
                                 padding-left: 10px;
-                                border-bottom: 1px solid gray;
                                 display: flex;
                                 justify-content: center;
                                 flex-direction: row;
@@ -465,12 +460,11 @@
                             background-size: cover;
                             height: 100%;
                             width: 40%;
-                            border-left: 1px solid gray;
                         }
                     }
 
                     .heroContent2:hover {
-                        border: 1px solid gray;
+                        border: 1px solid var(--projects-secondary-color);
                         filter: drop-shadow(0 0 2em var(--projects-color));
                     }
 
@@ -512,14 +506,12 @@
 
                         .hC3-1 {
                             display: none;
-                            background-color: lightcoral;
                             height: 100%;
                             width: 60%;
 
                             .titleVideos {
                                 height: 20%;
                                 padding-left: 10px;
-                                border-bottom: 1px solid lightcoral;
                                 display: flex;
                                 justify-content: center;
                                 flex-direction: row;
@@ -567,12 +559,11 @@
                             background-position: 53.5% 60%;
                             height: 100%;
                             width: 40%;
-                            border-left: 1px solid lightcoral;
                         }
                     }
 
                     .heroContent3:hover {
-                        border: 1px solid lightcoral;
+                        border: 1px solid var(--videos-secondary-color);
                         filter: drop-shadow(0 0 2em var(--videos-color));
                     }
 
@@ -1352,14 +1343,12 @@
 
                     .hC1-1M {
                         display: none;
-                        background-color: lightblue;
                         height: 100%;
                         width: 60%;
 
                         .titleProfileMobile {
                             height: 20%;
                             padding-left: 5px;
-                            border-bottom: 1px solid lightblue;
                             overflow: hidden;
                             display: flex;
                             justify-content: center;
@@ -1406,12 +1395,11 @@
                         background-size: cover;
                         height: 100%;
                         width: 40%;
-                        border-left: 1px solid lightblue;
                     }
                 }
 
                 .heroContent1Mobile:hover {
-                    border: 1px solid lightblue;
+                    border: 1px solid var(--profile-secondary-color);
                     filter: drop-shadow(0 0 2em var(--profile-color));
                 }
 
@@ -1452,14 +1440,12 @@
 
                     .hC2-1M {
                         display: none;
-                        background-color: gray;
                         height: 100%;
                         width: 60%;
 
                         .titleProjectsMobile {
                             height: 20%;
                             padding-left: 5px;
-                            border-bottom: 1px solid gray;
                             gap: 3px;
                             overflow: hidden;
                             display: flex;
@@ -1506,12 +1492,11 @@
                         background-size: cover;
                         height: 100%;
                         width: 40%;
-                        border-left: 1px solid gray;
                     }
                 }
 
                 .heroContent2Mobile:hover {
-                    border: 1px solid gray;
+                    border: 1px solid var(--projects-secondary-color);
                     filter: drop-shadow(0 0 2em var(--projects-color));
                 }
 
@@ -1552,14 +1537,12 @@
 
                     .hC3-1M {
                         display: none;
-                        background-color: lightcoral;
                         height: 100%;
                         width: 60%;
 
                         .titleVideosMobile {
                             height: 20%;
                             padding-left: 5px;
-                            border-bottom: 1px solid lightcoral;
                             gap: 3px;
                             overflow: hidden;
                             display: flex;
@@ -1606,12 +1589,11 @@
                         background-position: 53.5% 60%;
                         height: 100%;
                         width: 40%;
-                        border-left: 1px solid lightcoral;
                     }
                 }
 
                 .heroContent3Mobile:hover {
-                    border: 1px solid lightcoral;
+                    border: 1px solid var(--videos-secondary-color);
                     filter: drop-shadow(0 0 2em var(--videos-color));
                 }
 

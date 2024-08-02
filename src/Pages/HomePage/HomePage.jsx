@@ -199,7 +199,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="profileTextBox" style={{ border: `1px solid ${info.profile.color}` }}>
+                    <div className="profileTextBox" style={{ backgroundColor: info.profile.secondaryColor, border: `1px solid ${info.profile.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.profile.siteName}
@@ -254,7 +254,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         <AnimatePresence>
                             <motion.button
                                 className="goToProfile"
-                                style={{ "--profile-color": info.profile.color }}
+                                style={{ "--profile-color": info.profile.color, "--profile-secondary-color": info.profile.secondaryColor }}
                                 onClick={() => navigate(info.routes.profilePage)}
                                 key="gotoprofile"
                                 whileHover={{
@@ -290,7 +290,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="projectsTextBox" style={{ border: `1px solid ${info.projects.color}` }}>
+                    <div className="projectsTextBox" style={{ backgroundColor: info.projects.secondaryColor, border: `1px solid ${info.projects.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.projects.siteName}
@@ -311,7 +311,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         <AnimatePresence>
                             <motion.button
                                 className="goToProjects"
-                                style={{ "--projects-color": info.projects.color }}
+                                style={{ "--projects-color": info.projects.color, "--projects-secondary-color": info.projects.secondaryColor }}
                                 onClick={() => navigate(info.routes.projectsPage)}
                                 key="gotoprojects"
                                 whileHover={{
@@ -347,7 +347,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="videosTextBox" style={{ border: `1px solid ${info.videos.color}` }}>
+                    <div className="videosTextBox" style={{ backgroundColor: info.videos.secondaryColor, border: `1px solid ${info.videos.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.videos.siteName}
@@ -368,7 +368,7 @@ function FirstSection({ loadingProfessionData, loadingJobData, professionData, j
                         <AnimatePresence>
                             <motion.button
                                 className="goToVideos"
-                                style={{ "--videos-color": info.videos.color }}
+                                style={{ "--videos-color": info.videos.color, "--videos-secondary-color": info.videos.secondaryColor }}
                                 onClick={() => navigate(info.routes.videosPage)}
                                 key="gotovideos"
                                 whileHover={{
@@ -547,7 +547,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="profileTextBoxMobile" style={{ border: `1px solid ${info.profile.color}` }}>
+                    <div className="profileTextBoxMobile" style={{ backgroundColor: info.profile.secondaryColor, border: `1px solid ${info.profile.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.profile.siteName}
@@ -602,7 +602,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                         <AnimatePresence>
                             <motion.button
                                 className="goToProfileMobile"
-                                style={{ "--profile-color": info.profile.color }}
+                                style={{ "--profile-color": info.profile.color, "--profile-secondary-color": info.profile.secondaryColor }}
                                 onClick={() => navigate(info.routes.profilePage)}
                                 key="gotoprofilemobile"
                                 whileHover={{
@@ -637,7 +637,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="projectsTextBoxMobile" style={{ border: `1px solid ${info.projects.color}` }}>
+                    <div className="projectsTextBoxMobile" style={{ backgroundColor: info.projects.secondaryColor, border: `1px solid ${info.projects.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.projects.siteName}
@@ -658,7 +658,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                         <AnimatePresence>
                             <motion.button
                                 className="goToProjectsMobile"
-                                style={{ "--projects-color": info.projects.color }}
+                                style={{ "--projects-color": info.projects.color, "--projects-secondary-color": info.projects.secondaryColor }}
                                 onClick={() => navigate(info.routes.projectsPage)}
                                 key="gotoprojectsmobile"
                                 whileHover={{
@@ -693,7 +693,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                             whileTap={{ scale: 0.9 }}
                         />
                     </AnimatePresence>
-                    <div className="videosTextBoxMobile" style={{ border: `1px solid ${info.videos.color}` }}>
+                    <div className="videosTextBoxMobile" style={{ backgroundColor: info.videos.secondaryColor, border: `1px solid ${info.videos.color}` }}>
                         <AnimatePresence>
                             <motion.a
                                 title={"My " + info.videos.siteName}
@@ -714,7 +714,7 @@ function FirstSectionMobile({ loadingProfessionData, loadingJobData, professionD
                         <AnimatePresence>
                             <motion.button
                                 className="goToVideosMobile"
-                                style={{ "--videos-color": info.videos.color }}
+                                style={{ "--videos-color": info.videos.color, "--videos-secondary-color": info.videos.secondaryColor }}
                                 onClick={() => navigate(info.routes.videosPage)}
                                 key="gotovideosmobile"
                                 whileHover={{
