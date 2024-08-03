@@ -790,9 +790,19 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                                 </span>
                                                 <span
                                                     title="Currently employed"
-                                                    style={{ color: "lightgreen", fontSize: "25px", fontStyle: "normal", position: "relative", bottom: "10px", left: "20px" }}
+                                                    style={{
+                                                        color: "lightgreen",
+                                                        fontSize: "25px",
+                                                        fontStyle: "normal",
+                                                        border: "2px solid lightgreen",
+                                                        borderRadius: "5px",
+                                                        paddingRight: "5px",
+                                                        position: "relative",
+                                                        bottom: "10px",
+                                                        left: "20px",
+                                                    }}
                                                 >
-                                                    {experience.current ? " (CURRENT JOB)" : ""}
+                                                    {experience.current ? " CURRENT JOB" : ""}
                                                 </span>
                                             </h4>
                                         </div>
@@ -817,7 +827,7 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                 </motion.div>
                                 <div className="experienceContentContainer" style={{ display: isVisibleEx[index] ? "block" : "none" }}>
                                     <div className="createRole">
-                                        <CRUDProfileButton loading={loadingProfileData} action={"Create"} id={experience.id} data={"role"} getProfile={getProfileC} />
+                                        {info.api.enabled && <CRUDProfileButton loading={loadingProfileData} action={"Create"} id={experience.id} data={"role"} getProfile={getProfileC} />}
                                     </div>
                                     {experience.roles.map((r, i) => (
                                         <div className="experienceContent">
@@ -831,7 +841,20 @@ function Experience({ loadingProfileData, statusDB, experiences, getProfileC, ge
                                                                 <span style={{ color: "gray", fontSize: "12px", position: "relative", left: "10px", bottom: "5px" }}>{" (Former company name)"}</span>
                                                             )}
                                                             {r.current && (
-                                                                <span style={{ color: "lightgreen", fontSize: "20px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENT ROLE)"}</span>
+                                                                <span
+                                                                    style={{
+                                                                        color: "lightgreen",
+                                                                        fontSize: "20px",
+                                                                        border: "1.5px solid lightgreen",
+                                                                        borderRadius: "5px",
+                                                                        paddingRight: "6px",
+                                                                        position: "relative",
+                                                                        left: "10px",
+                                                                        bottom: "1px",
+                                                                    }}
+                                                                >
+                                                                    {" CURRENT ROLE"}
+                                                                </span>
                                                             )}
                                                         </p>
                                                     </div>
@@ -2154,9 +2177,19 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                                                 </span>
                                                 <span
                                                     title="Currently employed"
-                                                    style={{ color: "lightgreen", fontSize: "8px", fontStyle: "normal", position: "relative", bottom: "4px", left: "20px" }}
+                                                    style={{
+                                                        color: "lightgreen",
+                                                        fontSize: "8px",
+                                                        fontStyle: "normal",
+                                                        border: "1px solid lightgreen",
+                                                        borderRadius: "2px",
+                                                        paddingRight: "2px",
+                                                        position: "relative",
+                                                        bottom: "4px",
+                                                        left: "20px",
+                                                    }}
                                                 >
-                                                    {experience.current ? " (CURRENT JOB)" : ""}
+                                                    {experience.current ? " CURRENT JOB" : ""}
                                                 </span>
                                             </h4>
                                         </div>
@@ -2191,7 +2224,20 @@ function ExperienceMobile({ loadingProfileData, statusDB, experiences, getProfil
                                                             <span style={{ color: "gray", fontSize: "4px", position: "relative", left: "5px", bottom: "2.5px" }}>{" (Former company name)"}</span>
                                                         )}
                                                         {r.current && (
-                                                            <span style={{ color: "lightgreen", fontSize: "10px", position: "relative", left: "5px", bottom: "1px" }}>{" (CURRENT ROLE)"}</span>
+                                                            <span
+                                                                style={{
+                                                                    color: "lightgreen",
+                                                                    fontSize: "10px",
+                                                                    border: "0.5px solid lightgreen",
+                                                                    borderRadius: "2px",
+                                                                    paddingRight: "3px",
+                                                                    position: "relative",
+                                                                    left: "5px",
+                                                                    bottom: "1px",
+                                                                }}
+                                                            >
+                                                                {" CURRENT ROLE"}
+                                                            </span>
                                                         )}
                                                     </p>
                                                 </div>
