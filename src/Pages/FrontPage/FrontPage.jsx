@@ -760,9 +760,23 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                         </h4>
                                     </div>
                                     {info.api.enabled ? (
-                                        <div className="tCB1T2" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                        <div
+                                            className="tCB1T2"
+                                            style={{
+                                                backgroundColor: jobData?.jobStatus?.employed && "white",
+                                                backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})`,
+                                                borderLeft: jobData?.jobStatus?.employed && `1px solid ${jobData?.jobStatus?.companyColor}`,
+                                            }}
+                                        />
                                     ) : (
-                                        <div className="tCB1T2" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
+                                        <div
+                                            className="tCB1T2"
+                                            style={{
+                                                backgroundColor: info.profile.employed && "white",
+                                                backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})`,
+                                                borderLeft: info.profile.employed && `1px solid ${info.profile.companyColor}`,
+                                            }}
+                                        />
                                     )}
                                 </div>
                                 <div className="tCB1Content">
@@ -846,9 +860,23 @@ function Main({ connectionLoading, connection, loadingProfessionData, loadingJob
                                         </h4>
                                     </div>
                                     {info.api.enabled ? (
-                                        <div className="tCB2T2" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                        <div
+                                            className="tCB2T2"
+                                            style={{
+                                                backgroundColor: jobData?.jobStatus?.employed && "white",
+                                                backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})`,
+                                                borderLeft: jobData?.jobStatus?.employed && `1px solid ${jobData?.jobStatus?.companyColor}`,
+                                            }}
+                                        />
                                     ) : (
-                                        <div className="tCB2T2" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
+                                        <div
+                                            className="tCB2T2"
+                                            style={{
+                                                backgroundColor: info.profile.employed && "white",
+                                                backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})`,
+                                                borderLeft: info.profile.employed && `1px solid ${info.profile.companyColor}`,
+                                            }}
+                                        />
                                     )}
                                 </div>
                                 <div className="tCB2Content">
@@ -1358,9 +1386,23 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                         </h4>
                                     </div>
                                     {info.api.enabled ? (
-                                        <div className="tCB1T2M" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                        <div
+                                            className="tCB1T2M"
+                                            style={{
+                                                backgroundColor: jobData?.jobStatus?.employed && "white",
+                                                backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})`,
+                                                borderLeft: jobData?.jobStatus?.employed && `1px solid ${jobData?.jobStatus?.companyColor}`,
+                                            }}
+                                        />
                                     ) : (
-                                        <div className="tCB1T2M" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
+                                        <div
+                                            className="tCB1T2M"
+                                            style={{
+                                                backgroundColor: info.profile.employed && "white",
+                                                backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})`,
+                                                borderLeft: info.profile.employed && `1px solid ${info.profile.companyColor}`,
+                                            }}
+                                        />
                                     )}
                                 </div>
                                 <div className="tCB1ContentMobile">
@@ -1436,9 +1478,23 @@ function MainMobile({ connectionLoading, connection, loadingProfessionData, load
                                         </h4>
                                     </div>
                                     {info.api.enabled ? (
-                                        <div className="tCB2T2M" style={{ backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})` }} />
+                                        <div
+                                            className="tCB2T2M"
+                                            style={{
+                                                backgroundColor: jobData?.jobStatus?.employed && "white",
+                                                backgroundImage: jobData?.jobStatus?.employed && `url(${jobData?.jobStatus?.companyLogo})`,
+                                                borderLeft: jobData?.jobStatus?.employed && `1px solid ${jobData?.jobStatus?.companyColor}`,
+                                            }}
+                                        />
                                     ) : (
-                                        <div className="tCB2T2M" style={{ backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})` }} />
+                                        <div
+                                            className="tCB2T2M"
+                                            style={{
+                                                backgroundColor: info.profile.employed && "white",
+                                                backgroundImage: info.profile.employed && `url(${info.profile.companyLogo})`,
+                                                borderLeft: info.profile.employed && `1px solid ${info.profile.companyColor}`,
+                                            }}
+                                        />
                                     )}
                                 </div>
                                 <div className="tCB2ContentMobile">
