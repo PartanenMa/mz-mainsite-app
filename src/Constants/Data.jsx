@@ -10,8 +10,8 @@ import VismaLogo from "/src/Assets/Images/VismaLogo.svg";
 import VisualStudioCodeLogo from "/src/Assets/Images/VisualStudioCodeLogo.svg";
 import NodejsLogo from "/src/Assets/Images/NodejsLogo.svg";
 import GitLogo from "/src/Assets/Images/GitLogo.svg";
-import BashLogo from "/src/Assets/Images/BashLogo.svg";
-import PowerShellLogo from "/src/Assets/Images/PowerShellLogo.png";
+import BrowserDevToolsLogo from "/src/Assets/Images/BrowserDevToolsLogo.svg";
+import PostmanLogo from "/src/Assets/Images/PostmanLogo.svg";
 import DockerLogo from "/src/Assets/Images/DockerLogo.svg";
 import KubernetesLogo from "/src/Assets/Images/KubernetesLogo.svg";
 import JenkinsLogo from "/src/Assets/Images/JenkinsLogo.svg";
@@ -248,7 +248,7 @@ export const dataFe = {
         ],
         skills: {
             webDevelopmentSoftware: {
-                utilitySoftware: [
+                developmentSoftware: [
                     {
                         id: 0,
                         name: "Visual Studio Code",
@@ -274,22 +274,22 @@ export const dataFe = {
                         backgroundSize: "70%",
                     },
                 ],
-                cLISoftware: [
+                utilitySoftware: [
                     {
                         id: 0,
-                        name: "Bash",
+                        name: "Browser dev tools",
                         skillLevel: "advanced",
-                        color: "darkgreen",
-                        image: BashLogo,
+                        color: "gray",
+                        image: BrowserDevToolsLogo,
                         backgroundSize: "80%",
                     },
                     {
                         id: 1,
-                        name: "PowerShell",
+                        name: "Postman",
                         skillLevel: "intermediate",
-                        color: "#012456",
-                        image: PowerShellLogo,
-                        backgroundSize: "80%",
+                        color: "#EF5B25",
+                        image: PostmanLogo,
+                        backgroundSize: "70%",
                     },
                 ],
                 devOpsSoftware: [

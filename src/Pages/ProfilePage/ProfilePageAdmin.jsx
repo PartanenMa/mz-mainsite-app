@@ -1053,13 +1053,70 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                     </div>
                     <div className="wDSContent">
                         <AnimatePresence>
-                            {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
+                            {skills.webDevelopmentSoftware?.developmentSoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.devOpsSoftware?.length > 0 &&
                             !loadingProfileData ? (
                                 <>
                                     <div className="software">
                                         <h5>{info.profile.skills1SubTitle1}</h5>
+                                        {skills.webDevelopmentSoftware.developmentSoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skill"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogo"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContent">
+                                                    <div className="sC1">
+                                                        <div className="sC1-1">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2">
+                                                            <div className="sC1-2-1">
+                                                                <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
+                                                                    {getSkillLevelTitle(skill.skillLevel)}
+                                                                </p>
+                                                            </div>
+                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"ds"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"ds"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="software">
+                                        <h5>{info.profile.skills1SubTitle2}</h5>
                                         {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
@@ -1116,63 +1173,6 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                         ))}
                                     </div>
                                     <div className="software">
-                                        <h5>{info.profile.skills1SubTitle2}</h5>
-                                        {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
-                                            <motion.div
-                                                className="skill"
-                                                style={{ backgroundColor: skill.color }}
-                                                key={index}
-                                                initial={{ opacity: 0, y: -100 }}
-                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                            >
-                                                <div
-                                                    className="skillLogo"
-                                                    style={{
-                                                        backgroundImage: `url(${skill.image})`,
-                                                        backgroundSize: skill.backgroundSize,
-                                                    }}
-                                                />
-                                                <div className="skillContent">
-                                                    <div className="sC1">
-                                                        <div className="sC1-1">
-                                                            <h4>{skill.name}</h4>
-                                                        </div>
-                                                        <div className="sC1-2">
-                                                            <div className="sC1-2-1">
-                                                                <p title={getSkillTitle(skill.skillLevel)} style={{ color: getSkillColor(skill.skillLevel) }}>
-                                                                    {getSkillLevelTitle(skill.skillLevel)}
-                                                                </p>
-                                                            </div>
-                                                            <div className="sC1-2-2">{getSkillLevel(skill.skillLevel)}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="sC2">
-                                                        {info.api.enabled && (
-                                                            <>
-                                                                <CRUDProfileButton
-                                                                    loading={loadingProfileData}
-                                                                    action={"Update"}
-                                                                    id={skill.id}
-                                                                    data={"skill"}
-                                                                    dataSkillType={"clis"}
-                                                                    getProfile={getProfileU}
-                                                                />
-                                                                <CRUDProfileButton
-                                                                    loading={loadingProfileData}
-                                                                    action={"Delete"}
-                                                                    id={skill.id}
-                                                                    data={"skill"}
-                                                                    dataSkillType={"clis"}
-                                                                    getProfile={getProfileD}
-                                                                />
-                                                            </>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                    <div className="software">
                                         <h5>{info.profile.skills1SubTitle3}</h5>
                                         {skills.webDevelopmentSoftware.devOpsSoftware.map((skill, index) => (
                                             <motion.div
@@ -1211,7 +1211,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                                     action={"Update"}
                                                                     id={skill.id}
                                                                     data={"skill"}
-                                                                    dataSkillType={"cs"}
+                                                                    dataSkillType={"dos"}
                                                                     getProfile={getProfileU}
                                                                 />
                                                                 <CRUDProfileButton
@@ -1219,7 +1219,7 @@ function Skills({ loadingProfileData, statusDB, skills, getProfileC, getProfileU
                                                                     action={"Delete"}
                                                                     id={skill.id}
                                                                     data={"skill"}
-                                                                    dataSkillType={"cs"}
+                                                                    dataSkillType={"dos"}
                                                                     getProfile={getProfileD}
                                                                 />
                                                             </>
@@ -2399,13 +2399,68 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                     </div>
                     <div className="wDSContentMobile">
                         <AnimatePresence>
-                            {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
+                            {skills.webDevelopmentSoftware?.developmentSoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.devOpsSoftware?.length > 0 &&
                             !loadingProfileData ? (
                                 <>
                                     <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle1}</h5>
+                                        {skills.webDevelopmentSoftware.developmentSoftware.map((skill, index) => (
+                                            <motion.div
+                                                className="skillMobile"
+                                                style={{ backgroundColor: skill.color }}
+                                                key={index}
+                                                initial={{ opacity: 0, y: -100 }}
+                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+                                            >
+                                                <div
+                                                    className="skillLogoMobile"
+                                                    style={{
+                                                        backgroundImage: `url(${skill.image})`,
+                                                        backgroundSize: skill.backgroundSize,
+                                                    }}
+                                                />
+                                                <div className="skillContentMobile">
+                                                    <div className="sC1M">
+                                                        <div className="sC1-1M">
+                                                            <h4>{skill.name}</h4>
+                                                        </div>
+                                                        <div className="sC1-2M">
+                                                            <div className="sC1-2-1M">
+                                                                <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
+                                                            </div>
+                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="sC2M">
+                                                        {info.api.enabled && (
+                                                            <>
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Update"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"ds"}
+                                                                    getProfile={getProfileU}
+                                                                />
+                                                                <CRUDProfileButton
+                                                                    loading={loadingProfileData}
+                                                                    action={"Delete"}
+                                                                    id={skill.id}
+                                                                    data={"skill"}
+                                                                    dataSkillType={"ds"}
+                                                                    getProfile={getProfileD}
+                                                                />
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    <div className="softwareMobile">
+                                        <h5>{info.profile.skills1SubTitle2}</h5>
                                         {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
@@ -2460,61 +2515,6 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                         ))}
                                     </div>
                                     <div className="softwareMobile">
-                                        <h5>{info.profile.skills1SubTitle2}</h5>
-                                        {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
-                                            <motion.div
-                                                className="skillMobile"
-                                                style={{ backgroundColor: skill.color }}
-                                                key={index}
-                                                initial={{ opacity: 0, y: -100 }}
-                                                animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
-                                            >
-                                                <div
-                                                    className="skillLogoMobile"
-                                                    style={{
-                                                        backgroundImage: `url(${skill.image})`,
-                                                        backgroundSize: skill.backgroundSize,
-                                                    }}
-                                                />
-                                                <div className="skillContentMobile">
-                                                    <div className="sC1M">
-                                                        <div className="sC1-1M">
-                                                            <h4>{skill.name}</h4>
-                                                        </div>
-                                                        <div className="sC1-2M">
-                                                            <div className="sC1-2-1M">
-                                                                <p style={{ color: getSkillColor(skill.skillLevel) }}>{getSkillLevelTitle(skill.skillLevel)}</p>
-                                                            </div>
-                                                            <div className="sC1-2-2M">{getSkillLevel(skill.skillLevel)}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="sC2M">
-                                                        {info.api.enabled && (
-                                                            <>
-                                                                <CRUDProfileButton
-                                                                    loading={loadingProfileData}
-                                                                    action={"Update"}
-                                                                    id={skill.id}
-                                                                    data={"skill"}
-                                                                    dataSkillType={"clis"}
-                                                                    getProfile={getProfileU}
-                                                                />
-                                                                <CRUDProfileButton
-                                                                    loading={loadingProfileData}
-                                                                    action={"Delete"}
-                                                                    id={skill.id}
-                                                                    data={"skill"}
-                                                                    dataSkillType={"clis"}
-                                                                    getProfile={getProfileD}
-                                                                />
-                                                            </>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                    <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle3}</h5>
                                         {skills.webDevelopmentSoftware.devOpsSoftware.map((skill, index) => (
                                             <motion.div
@@ -2551,7 +2551,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                                                     action={"Update"}
                                                                     id={skill.id}
                                                                     data={"skill"}
-                                                                    dataSkillType={"cs"}
+                                                                    dataSkillType={"dos"}
                                                                     getProfile={getProfileU}
                                                                 />
                                                                 <CRUDProfileButton
@@ -2559,7 +2559,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills, getProfileC, getPr
                                                                     action={"Delete"}
                                                                     id={skill.id}
                                                                     data={"skill"}
-                                                                    dataSkillType={"cs"}
+                                                                    dataSkillType={"dos"}
                                                                     getProfile={getProfileD}
                                                                 />
                                                             </>

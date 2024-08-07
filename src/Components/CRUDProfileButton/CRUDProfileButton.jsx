@@ -79,11 +79,11 @@ function CRUDProfileButton(props) {
                         const experience = data.profileData.experiences.find((d) => d.id === props.id);
                         setRequiredData(experience.roles.find((r) => r.id === props.roleId));
                     } else if (props.data === "skill") {
-                        if (props.dataSkillType === "us") {
+                        if (props.dataSkillType === "ds") {
+                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.developmentSoftware.find((d) => d.id === props.id));
+                        } else if (props.dataSkillType === "us") {
                             setRequiredData(data.profileData.skills.webDevelopmentSoftware.utilitySoftware.find((d) => d.id === props.id));
-                        } else if (props.dataSkillType === "clis") {
-                            setRequiredData(data.profileData.skills.webDevelopmentSoftware.cLISoftware.find((d) => d.id === props.id));
-                        } else if (props.dataSkillType === "cs") {
+                        } else if (props.dataSkillType === "dos") {
                             setRequiredData(data.profileData.skills.webDevelopmentSoftware.devOpsSoftware.find((d) => d.id === props.id));
                         } else if (props.dataSkillType === "fepl") {
                             setRequiredData(data.profileData.skills.frontEndDevelopment.frontEndProgrammingLanguages.find((d) => d.id === props.id));
@@ -123,13 +123,13 @@ function CRUDProfileButton(props) {
 
             let typeOfSkill = "";
 
-            if (skillType === "us") {
+            if (skillType === "ds") {
+                skillType = "developmentSoftware";
+                typeOfSkill = "web";
+            } else if (skillType === "us") {
                 skillType = "utilitySoftware";
                 typeOfSkill = "web";
-            } else if (skillType === "clis") {
-                skillType = "cLISoftware";
-                typeOfSkill = "web";
-            } else if (skillType === "cs") {
+            } else if (skillType === "dos") {
                 skillType = "devOpsSoftware";
                 typeOfSkill = "web";
             } else if (skillType === "fepl") {
@@ -357,13 +357,13 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, id, getProfile,
 
         let typeOfSkill = "";
 
-        if (skillType === "us") {
+        if (skillType === "ds") {
+            skillType = "developmentSoftware";
+            typeOfSkill = "web";
+        } else if (skillType === "us") {
             skillType = "utilitySoftware";
             typeOfSkill = "web";
-        } else if (skillType === "clis") {
-            skillType = "cLISoftware";
-            typeOfSkill = "web";
-        } else if (skillType === "cs") {
+        } else if (skillType === "dos") {
             skillType = "devOpsSoftware";
             typeOfSkill = "web";
         } else if (skillType === "fepl") {
@@ -678,9 +678,9 @@ function ModalCreateProfile({ isModalOpen, setIsModalOpen, data, id, getProfile,
                                             <div>
                                                 <label htmlFor="skillType">Skill type:</label>
                                                 <select name="skillType" id="skillType">
+                                                    <option value="ds">Development software</option>
                                                     <option value="us">Utility software</option>
-                                                    <option value="clis">CLI software</option>
-                                                    <option value="cs">DevOps software</option>
+                                                    <option value="dos">DevOps software</option>
                                                     <option value="fepl">Fe programming language</option>
                                                     <option value="fef">Fe framework</option>
                                                     <option value="cssf">CSS framework</option>
@@ -842,13 +842,13 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
 
         let typeOfSkill = "";
 
-        if (skillType === "us") {
+        if (skillType === "ds") {
+            skillType = "developmentSoftware";
+            typeOfSkill = "web";
+        } else if (skillType === "us") {
             skillType = "utilitySoftware";
             typeOfSkill = "web";
-        } else if (skillType === "clis") {
-            skillType = "cLISoftware";
-            typeOfSkill = "web";
-        } else if (skillType === "cs") {
+        } else if (skillType === "dos") {
             skillType = "devOpsSoftware";
             typeOfSkill = "web";
         } else if (skillType === "fepl") {
@@ -1163,9 +1163,9 @@ function ModalUpdateProfile({ isModalOpen, setIsModalOpen, data, dataSkillType, 
                                             <div>
                                                 <label htmlFor="skillType">Skill type:</label>
                                                 <select name="skillType" id="skillType" defaultValue={dataSkillType}>
+                                                    <option value="ds">Development software</option>
                                                     <option value="us">Utility software</option>
-                                                    <option value="clis">CLI software</option>
-                                                    <option value="cs">DevOps software</option>
+                                                    <option value="dos">DevOps software</option>
                                                     <option value="fepl">Fe programming language</option>
                                                     <option value="fef">Fe framework</option>
                                                     <option value="cssf">CSS framework</option>

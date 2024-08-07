@@ -811,13 +811,13 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                     </div>
                     <div className="wDSContent">
                         <AnimatePresence>
-                            {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
+                            {skills.webDevelopmentSoftware?.developmentSoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.devOpsSoftware?.length > 0 ? (
                                 <>
                                     <div className="software">
                                         <h5>{info.profile.skills1SubTitle1}</h5>
-                                        {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.developmentSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
                                                 style={{ backgroundColor: skill.color }}
@@ -850,7 +850,7 @@ function Skills({ loadingProfileData, statusDB, skills }) {
                                     </div>
                                     <div className="software">
                                         <h5>{info.profile.skills1SubTitle2}</h5>
-                                        {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skill"
                                                 style={{ backgroundColor: skill.color }}
@@ -1900,13 +1900,13 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                     </div>
                     <div className="wDSContentMobile">
                         <AnimatePresence>
-                            {skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
-                            skills.webDevelopmentSoftware?.cLISoftware?.length > 0 &&
+                            {skills.webDevelopmentSoftware?.developmentSoftware?.length > 0 &&
+                            skills.webDevelopmentSoftware?.utilitySoftware?.length > 0 &&
                             skills.webDevelopmentSoftware?.devOpsSoftware?.length > 0 ? (
                                 <>
                                     <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle1}</h5>
-                                        {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.developmentSoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
                                                 style={{ backgroundColor: skill.color }}
@@ -1937,7 +1937,7 @@ function SkillsMobile({ loadingProfileData, statusDB, skills }) {
                                     </div>
                                     <div className="softwareMobile">
                                         <h5>{info.profile.skills1SubTitle2}</h5>
-                                        {skills.webDevelopmentSoftware.cLISoftware.map((skill, index) => (
+                                        {skills.webDevelopmentSoftware.utilitySoftware.map((skill, index) => (
                                             <motion.div
                                                 className="skillMobile"
                                                 style={{ backgroundColor: skill.color }}
