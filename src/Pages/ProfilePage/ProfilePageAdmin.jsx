@@ -425,32 +425,38 @@ function AboutMe({ loadingProfessionData, loadingJobData, professionData, jobDat
                         <div className="aboutMeTextTitle">
                             <div className="aboutMeTextTitleLogo" />
                             <div className="aboutMeTextTitle1">
-                                <h4 className="h4_1">{info.profile.name}</h4>
-                                {info.api.enabled ? (
-                                    (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
-                                        <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                            {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
-                                                ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
-                                                : professionData?.professionStatus?.profession}
-                                        </motion.h4>
+                                <div className="aMTTT1">
+                                    <h4 className="h4_1">{info.profile.name}</h4>
+                                </div>
+                                <div className="aMTTT2">
+                                    {info.api.enabled ? (
+                                        (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                            <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                                {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                                    ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                                    : professionData?.professionStatus?.profession}
+                                            </motion.h4>
+                                        ) : loadingProfessionData || loadingJobData ? (
+                                            <motion.h4 className="h4_2" style={{ color: info.profile.color }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                                LOADING...
+                                            </motion.h4>
+                                        ) : (
+                                            <motion.h4 className="h4_2" style={{ color: "red", textShadow: "none" }} key="h4_2failA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                                NO DATA!
+                                            </motion.h4>
+                                        )
                                     ) : loadingProfessionData || loadingJobData ? (
                                         <motion.h4 className="h4_2" style={{ color: info.profile.color }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                             LOADING...
                                         </motion.h4>
                                     ) : (
-                                        <motion.h4 className="h4_2" style={{ color: "red", textShadow: "none" }} key="h4_2failA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                            NO DATA!
+                                        <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            {dataFe.jobStatus.employed && info.profile.jobTitle && info.profile.company
+                                                ? info.profile.jobTitle + " at " + info.profile.company
+                                                : info.profile.profession}
                                         </motion.h4>
-                                    )
-                                ) : loadingProfessionData || loadingJobData ? (
-                                    <motion.h4 className="h4_2" style={{ color: info.profile.color }} key="h4_2loaderA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                        LOADING...
-                                    </motion.h4>
-                                ) : (
-                                    <motion.h4 className="h4_2" key="h4_2successA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                        {dataFe.jobStatus.employed && info.profile.jobTitle && info.profile.company ? info.profile.jobTitle + " at " + info.profile.company : info.profile.profession}
-                                    </motion.h4>
-                                )}
+                                    )}
+                                </div>
                             </div>
                             <div className="aboutMeTextTitle2">
                                 {info.api.enabled && professionData?.professionStatus && (
@@ -1806,38 +1812,44 @@ function AboutMeMobile({ loadingProfessionData, loadingJobData, professionData, 
                         <div className="aboutMeTextTitleMobile">
                             <div className="aboutMeTextTitleLogoMobile" />
                             <div className="aboutMeTextTitle1Mobile">
-                                <h4 className="h4_1M">{info.profile.name}</h4>
-                                {info.api.enabled ? (
-                                    (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
-                                        <motion.h4 className="h4_2M" key="h4_2successmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                            {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
-                                                ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
-                                                : professionData?.professionStatus?.profession}
-                                        </motion.h4>
+                                <div className="aMTTT1M">
+                                    <h4 className="h4_1M">{info.profile.name}</h4>
+                                </div>
+                                <div className="aMTTT2M">
+                                    {info.api.enabled ? (
+                                        (professionData?.professionStatus && !loadingProfessionData) || (jobData?.jobStatus && !loadingJobData) ? (
+                                            <motion.h4 className="h4_2M" key="h4_2successmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                                {jobData?.jobStatus?.employed && jobData?.jobStatus?.jobTitle && jobData?.jobStatus?.company
+                                                    ? jobData?.jobStatus?.jobTitle + " at " + jobData?.jobStatus?.company
+                                                    : professionData?.professionStatus?.profession}
+                                            </motion.h4>
+                                        ) : loadingProfessionData || loadingJobData ? (
+                                            <motion.h4 className="h4_2M" style={{ color: info.profile.color }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                                LOADING...
+                                            </motion.h4>
+                                        ) : (
+                                            <motion.h4
+                                                className="h4_2M"
+                                                style={{ color: "red", textShadow: "none" }}
+                                                key="h4_2failmobileA"
+                                                initial={{ opacity: 0, x: -100 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                            >
+                                                NO DATA!
+                                            </motion.h4>
+                                        )
                                     ) : loadingProfessionData || loadingJobData ? (
                                         <motion.h4 className="h4_2M" style={{ color: info.profile.color }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
                                             LOADING...
                                         </motion.h4>
                                     ) : (
-                                        <motion.h4
-                                            className="h4_2M"
-                                            style={{ color: "red", textShadow: "none" }}
-                                            key="h4_2failmobileA"
-                                            initial={{ opacity: 0, x: -100 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                        >
-                                            NO DATA!
+                                        <motion.h4 className="h4_2M" key="h4_2successmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
+                                            {dataFe.jobStatus.employed && info.profile.jobTitle && info.profile.company
+                                                ? info.profile.jobTitle + " at " + info.profile.company
+                                                : info.profile.profession}
                                         </motion.h4>
-                                    )
-                                ) : loadingProfessionData || loadingJobData ? (
-                                    <motion.h4 className="h4_2M" style={{ color: info.profile.color }} key="h4_2loadermobileA" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                        LOADING...
-                                    </motion.h4>
-                                ) : (
-                                    <motion.h4 className="h4_2M" key="h4_2successmobileA" transition={{ delay: 0.5 }} initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
-                                        {dataFe.jobStatus.employed && info.profile.jobTitle && info.profile.company ? info.profile.jobTitle + " at " + info.profile.company : info.profile.profession}
-                                    </motion.h4>
-                                )}
+                                    )}
+                                </div>
                             </div>
                             <div className="aboutMeTextTitle2Mobile">
                                 {info.api.enabled && professionData?.professionStatus && (

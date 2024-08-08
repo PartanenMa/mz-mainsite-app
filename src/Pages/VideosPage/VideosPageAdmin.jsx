@@ -250,8 +250,12 @@ function AboutMyVideos() {
                     <div className="aboutMyVideosTextTitle">
                         <div className="aboutMyVideosTextTitleLogo" />
                         <div className="aboutMyVideosTextTitleText">
-                            <h4 className="h4_1">{info.videos.user}</h4>
-                            <h4 className="h4_2">{info.profile.name}</h4>
+                            <div className="aMVTTT1">
+                                <h4 className="h4_1">{info.videos.user}</h4>
+                            </div>
+                            <div className="aMVTTT2">
+                                <h4 className="h4_2">{info.profile.name}</h4>
+                            </div>
                         </div>
                     </div>
                     <div className="aboutMyVideosText">
@@ -432,8 +436,12 @@ function AboutMyVideosMobile() {
                     <div className="aboutMyVideosTextTitleMobile">
                         <div className="aboutMyVideosTextTitleLogoMobile" />
                         <div className="aboutMyVideosTextTitleTextMobile">
-                            <h4 className="h4_1M">{info.videos.user}</h4>
-                            <h4 className="h4_2M">{info.profile.name}</h4>
+                            <div className="aMVTTT1M">
+                                <h4 className="h4_1M">{info.videos.user}</h4>
+                            </div>
+                            <div className="aMVTTT2M">
+                                <h4 className="h4_2M">{info.profile.name}</h4>
+                            </div>
                         </div>
                     </div>
                     <div className="aboutMyVideosTextMobile">

@@ -211,8 +211,12 @@ function AboutMyProjects() {
                     <div className="aboutMyProjectsTextTitle">
                         <div className="aboutMyProjectsTextTitleLogo" />
                         <div className="aboutMyProjectsTextTitleText">
-                            <h4 className="h4_1">{info.projects.user}</h4>
-                            <h4 className="h4_2">{info.profile.name}</h4>
+                            <div className="aMPTTT1">
+                                <h4 className="h4_1">{info.projects.user}</h4>
+                            </div>
+                            <div className="aMPTTT2">
+                                <h4 className="h4_2">{info.profile.name}</h4>
+                            </div>
                         </div>
                     </div>
                     <div className="aboutMyProjectsText">
@@ -507,8 +511,12 @@ function AboutMyProjectsMobile() {
                     <div className="aboutMyProjectsTextTitleMobile">
                         <div className="aboutMyProjectsTextTitleLogoMobile" />
                         <div className="aboutMyProjectsTextTitleTextMobile">
-                            <h4 className="h4_1M">{info.projects.user}</h4>
-                            <h4 className="h4_2M">{info.profile.name}</h4>
+                            <div className="aMPTTT1M">
+                                <h4 className="h4_1M">{info.projects.user}</h4>
+                            </div>
+                            <div className="aMPTTT2M">
+                                <h4 className="h4_2M">{info.profile.name}</h4>
+                            </div>
                         </div>
                     </div>
                     <div className="aboutMyProjectsTextMobile">
