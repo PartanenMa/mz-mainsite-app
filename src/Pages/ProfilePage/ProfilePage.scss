@@ -313,6 +313,9 @@
                             font-style: italic;
                             font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                             cursor: default;
+                            border-radius: 5px;
+                            padding-left: 5px;
+                            padding-right: 5px;
                             margin-left: 5px;
                         }
                     }
@@ -765,6 +768,9 @@
                                 0 0 7px black,
                                 0 0 3px black;
                             cursor: default;
+                            border-radius: 5px;
+                            padding-left: 5px;
+                            padding-right: 5px;
                         }
                     }
 
@@ -2526,6 +2532,9 @@
                         font-style: italic;
                         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
                         cursor: default;
+                        border-radius: 2px;
+                        padding-left: 2px;
+                        padding-right: 2px;
                         margin-left: 5px;
                     }
                 }
@@ -2931,6 +2940,9 @@
                             text-shadow:
                                 0 0 7px black,
                                 0 0 3px black;
+                            border-radius: 2px;
+                            padding-left: 2px;
+                            padding-right: 2px;
                         }
                     }
 
@@ -3476,7 +3488,7 @@
 
             p {
                 color: #03a062;
-                font-size: 6px;
+                font-size: 5px;
                 font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
             }
         }
